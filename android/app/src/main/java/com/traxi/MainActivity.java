@@ -2,6 +2,7 @@ package com.traxi;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
+import com.facebook.appevents.AppEventsLogger;
 
 // Crashlytics
 import com.crashlytics.android.Crashlytics;
@@ -11,6 +12,12 @@ import io.fabric.sdk.android.Fabric;
 import com.mixpanel.android.mpmetrics.MixpanelAPI; 
 
 public class MainActivity extends ReactActivity {
+    @Override
+    protected void onResume() { 
+      super.onResume(); 
+      AppEventsLogger.activateApp(this); 
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
