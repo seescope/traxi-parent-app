@@ -4,7 +4,7 @@ exports[`test renders on Android correctly 1`] = `
     onPress={[Function]}
     style={
       Object {
-        "backgroundColor": "rgba(75, 73, 73, 1)",
+        "backgroundColor": "#448AFF",
       }
     }>
     <Text
