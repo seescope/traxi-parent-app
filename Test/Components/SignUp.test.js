@@ -11,7 +11,7 @@ import SignUp, { beginSetup } from '../../App/Components/SignUp';
 // Why? Why!?
 global.Promise = require.requireActual('promise');
 
-jest.mock('../../App/Actions/LoginWithMethod', () => {
+jest.mock('../Actions/LoginWithMethod', () => {
   return jest.fn(() => {
     return (dispatch) => {
       console.log('hola');
@@ -38,5 +38,6 @@ it('renders the <SignUp> component', () => {
 });
 
 it('does beginSetup', () => {
-  testStore.dispatch(beginSetup('test-price'));
+  const mockDispatch = jest.fn(() => Promise.resolve());
+  return beginSetup('one-dollar')(mockDispatch);
 });
