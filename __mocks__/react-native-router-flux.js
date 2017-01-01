@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
 export const Actions = {
-  selectDevice: () => {},
-  congratulations: () => {},
+  selectDevice: jest.fn(),
+  congratulations: jest.fn(),
 };
 
 export const Scene = (props) => <View {...props} />;

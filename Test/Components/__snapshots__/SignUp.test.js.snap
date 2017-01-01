@@ -1,3 +1,27 @@
+exports[`test does beginSetup with a free transaction 1`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`test does beginSetup with a one-dollar transaction 1`] = `
+Array [
+  Array [
+    "one-dollar",
+  ],
+]
+`;
+
+exports[`test does beginSetup with a one-dollar transaction 2`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
 exports[`test renders the <SignUp> component 1`] = `
 <Image
   resizeMode="cover"

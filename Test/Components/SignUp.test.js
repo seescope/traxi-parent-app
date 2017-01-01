@@ -2,23 +2,16 @@ import { View } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import { Actions } from 'react-native-router-flux';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+import InAppBilling from 'react-native-billing';
 
 import SignUp, { beginSetup } from '../../App/Components/SignUp';
 
 // Why? Why!?
 global.Promise = require.requireActual('promise');
-
-jest.mock('../Actions/LoginWithMethod', () => {
-  return jest.fn(() => {
-    return (dispatch) => {
-      console.log('hola');
-      return new Promise.resolve({ type: 'SOMETHIGN' });
-    }
-  });
-});
 
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({ some: 'state', price: 'test-price'});
@@ -37,7 +30,23 @@ it('renders the <SignUp> component', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('does beginSetup', () => {
+it('does beginSetup with a one-dollar transaction', () => {
   const mockDispatch = jest.fn(() => Promise.resolve());
-  return beginSetup('one-dollar')(mockDispatch);
+  return beginSetup('one-dollar')(mockDispatch).then(() => {
+    expect(InAppBilling.subscribe.mock.calls).toMatchSnapshot();
+    expect(mockDispatch.mock.calls).toMatchSnapshot();
+    expect(Actions.selectDevice).toHaveBeenCalled();
+
+    InAppBilling.subscribe.mockClear();
+    Actions.selectDevice.mockClear();
+  });
+});
+
+it('does beginSetup with a free transaction', () => {
+  const mockDispatch = jest.fn(() => Promise.resolve());
+  return beginSetup('free')(mockDispatch).then(() => {
+    expect(InAppBilling.subscribe).not.toHaveBeenCalled();
+    expect(mockDispatch.mock.calls).toMatchSnapshot();
+    expect(Actions.selectDevice).toHaveBeenCalled();
+  });
 });

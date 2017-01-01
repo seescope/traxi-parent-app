@@ -27,7 +27,6 @@ const handleBillingError = error => {
 
 export const beginSetup = price =>
   dispatch => {
-    console.log('hey man');
     if (price === 'free') {
       return dispatch(loginWithMethod('anonymous'))
         .then(Actions.selectDevice);
