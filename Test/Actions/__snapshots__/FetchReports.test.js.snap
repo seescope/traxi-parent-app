@@ -1,0 +1,208 @@
+exports[`fetchReports calls DynamoDB and gets the reports for the given user 1`] = `
+Object {
+  "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",
+  "report": Object {
+    "2016-12-14": Object {
+      "circles": Array [
+        Object {
+          "minutesUsed": 0,
+          "name": "Late Night",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 38,
+          "name": "Device Time",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 0,
+          "name": "Social Time",
+          "status": "good",
+        },
+      ],
+      "trail": Array [
+        Object {
+          "name": "Afternoon",
+          "trailItems": Array [
+            Object {
+              "appHash": "d6029f3bb36a93ec65d23c05b8c14d772ff13da4",
+              "category": "Tools",
+              "logo": "http://media.kylekrajnyak.com/wp-content/uploads/2013/07/AppStoreLogo-512x512.png",
+              "minutesUsed": 2,
+              "name": "App Store",
+              "timeStamp": "2016-12-14T13:54:57+11:00",
+            },
+            Object {
+              "appHash": "d6029f3bb36a93ec65d23c05b8c14d772ff13da4",
+              "category": "Tools",
+              "logo": "http://media.kylekrajnyak.com/wp-content/uploads/2013/07/AppStoreLogo-512x512.png",
+              "minutesUsed": 7,
+              "name": "App Store",
+              "timeStamp": "2016-12-14T13:58:20+11:00",
+            },
+            Object {
+              "appHash": "1feae5ae05d7eff98cd2774e1c0ae279e46e1bd6",
+              "category": "Entertainment",
+              "logo": "https://lh3.googleusercontent.com/-E-jAfuwURMbYgvRhS8xLL8p280U9ueeC-IDrJOFmxGZpBJCWOY4jTbOKK1DZkPIFAUu=w300",
+              "minutesUsed": 25,
+              "name": "Apple Music",
+              "timeStamp": "2016-12-14T13:52:42+11:00",
+            },
+            Object {
+              "appHash": "7ef89b8a17233d0389b29ef5605db8551f38873b",
+              "category": "Tools",
+              "logo": "http://media.kylekrajnyak.com/wp-content/uploads/2013/07/AppStoreLogo-512x512.png",
+              "minutesUsed": 4,
+              "name": "App Store",
+              "timeStamp": "2016-12-14T13:40:48+11:00",
+            },
+          ],
+        },
+      ],
+    },
+    "2016-12-16": Object {
+      "circles": Array [
+        Object {
+          "minutesUsed": 0,
+          "name": "Late Night",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 41,
+          "name": "Device Time",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 0,
+          "name": "Social Time",
+          "status": "good",
+        },
+      ],
+      "trail": Array [
+        Object {
+          "name": "Evening",
+          "trailItems": Array [
+            Object {
+              "appHash": "983aa19550f4d29ef81ab1b7bb7b83bee34e6862",
+              "category": "Entertainment",
+              "logo": "http://is5.mzstatic.com/image/thumb/Purple62/v4/f4/7a/bb/f47abb73-3f72-995c-5c2d-70b6e91403e8/source/512x512bb.jpg",
+              "minutesUsed": 10,
+              "name": "ABC iView",
+              "timeStamp": "2016-12-16T18:38:55+11:00",
+            },
+            Object {
+              "appHash": "983aa19550f4d29ef81ab1b7bb7b83bee34e6862",
+              "category": "Entertainment",
+              "logo": "http://is5.mzstatic.com/image/thumb/Purple62/v4/f4/7a/bb/f47abb73-3f72-995c-5c2d-70b6e91403e8/source/512x512bb.jpg",
+              "minutesUsed": 31,
+              "name": "ABC iView",
+              "timeStamp": "2016-12-16T19:03:16+11:00",
+            },
+          ],
+        },
+      ],
+    },
+    "2016-12-17": Object {
+      "circles": Array [
+        Object {
+          "minutesUsed": 0,
+          "name": "Late Night",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 12,
+          "name": "Device Time",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 0,
+          "name": "Social Time",
+          "status": "good",
+        },
+      ],
+      "trail": Array [
+        Object {
+          "name": "Morning",
+          "trailItems": Array [
+            Object {
+              "appHash": "d6029f3bb36a93ec65d23c05b8c14d772ff13da4",
+              "category": "Tools",
+              "logo": "http://media.kylekrajnyak.com/wp-content/uploads/2013/07/AppStoreLogo-512x512.png",
+              "minutesUsed": 12,
+              "name": "App Store",
+              "timeStamp": "2016-12-17T10:25:16+11:00",
+            },
+          ],
+        },
+      ],
+    },
+    "2016-12-18": Object {
+      "circles": Array [
+        Object {
+          "minutesUsed": 0,
+          "name": "Late Night",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 33,
+          "name": "Device Time",
+          "status": "good",
+        },
+        Object {
+          "minutesUsed": 0,
+          "name": "Social Time",
+          "status": "good",
+        },
+      ],
+      "trail": Array [
+        Object {
+          "name": "Afternoon",
+          "trailItems": Array [
+            Object {
+              "appHash": "394ceeda0dfa5e86a4609faf05a7a2943be75756",
+              "category": "Games",
+              "logo": "http://is3.mzstatic.com/image/thumb/Purple111/v4/d1/e1/2b/d1e12bc9-4d92-3ad1-17c9-a181b97e7a8b/source/350x350bb.jpg",
+              "minutesUsed": 4,
+              "name": "Super Mario Run",
+              "timeStamp": "2016-12-18T14:44:14+11:00",
+            },
+            Object {
+              "appHash": "b850cd30176d87a88e92dbc3ae913c4c16bc40ad",
+              "category": "Education",
+              "logo": "http://is1.mzstatic.com/image/thumb/Purple49/v4/6d/25/e9/6d25e95d-0562-9882-2672-039ebd4971e5/source/350x350bb.jpg",
+              "minutesUsed": 2,
+              "name": "ABC Kids iView",
+              "timeStamp": "2016-12-18T14:57:33+11:00",
+            },
+            Object {
+              "appHash": "b850cd30176d87a88e92dbc3ae913c4c16bc40ad",
+              "category": "Education",
+              "logo": "http://is1.mzstatic.com/image/thumb/Purple49/v4/6d/25/e9/6d25e95d-0562-9882-2672-039ebd4971e5/source/350x350bb.jpg",
+              "minutesUsed": 3,
+              "name": "ABC Kids iView",
+              "timeStamp": "2016-12-18T15:02:11+11:00",
+            },
+            Object {
+              "appHash": "394ceeda0dfa5e86a4609faf05a7a2943be75756",
+              "category": "Games",
+              "logo": "http://is3.mzstatic.com/image/thumb/Purple111/v4/d1/e1/2b/d1e12bc9-4d92-3ad1-17c9-a181b97e7a8b/source/350x350bb.jpg",
+              "minutesUsed": 22,
+              "name": "Super Mario Run",
+              "timeStamp": "2016-12-18T14:20:40+11:00",
+            },
+            Object {
+              "appHash": "b850cd30176d87a88e92dbc3ae913c4c16bc40ad",
+              "category": "Education",
+              "logo": "http://is1.mzstatic.com/image/thumb/Purple49/v4/6d/25/e9/6d25e95d-0562-9882-2672-039ebd4971e5/source/350x350bb.jpg",
+              "minutesUsed": 2,
+              "name": "ABC Kids iView",
+              "timeStamp": "2016-12-18T15:09:42+11:00",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  "type": "FETCHED_REPORT",
+}
+`;

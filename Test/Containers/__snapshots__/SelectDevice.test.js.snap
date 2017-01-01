@@ -1,0 +1,135 @@
+exports[`test renders the <SelectDevice> component 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontSize": 30,
+        "fontWeight": "200",
+        "marginBottom": -2,
+        "textAlign": "center",
+      }
+    }>
+    What kind of device, 
+    Name
+    ?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontSize": 18,
+        "fontWeight": "200",
+        "textAlign": "center",
+      }
+    }>
+    Tap one of the devices below to choose what kind of device your child is using.
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 36,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginHorizontal": 8,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Phone
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginHorizontal": 8,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Tablet
+      </Text>
+    </View>
+  </View>
+</View>
+`;

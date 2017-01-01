@@ -1,0 +1,71 @@
+exports[`test handles when the device has been installed 1`] = `
+Array [
+  Array [
+    "value",
+    [Function],
+    [Function],
+  ],
+  Array [
+    "value",
+    [Function],
+    [Function],
+  ],
+]
+`;
+
+exports[`test handles when the device has been installed 2`] = `
+Array [
+  Array [
+    Object {
+      "selectedKid": Object {
+        "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",
+        "avatarURL": "https://s-media-cache-ak0.pinimg.com/736x/24/48/12/2448127e36c0e72de41aa768322639a3.jpg",
+        "name": "Edith Crawley",
+        "status": "INSTALLED",
+      },
+      "type": "DEVICE_UPDATED",
+    },
+  ],
+  Array [
+    Object {
+      "profile": Object {
+        "kids": Array [
+          "First Kid",
+          Object {
+            "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",
+            "avatarURL": "https://s-media-cache-ak0.pinimg.com/736x/24/48/12/2448127e36c0e72de41aa768322639a3.jpg",
+            "name": "Edith Crawley",
+            "status": "INSTALLED",
+          },
+        ],
+      },
+      "type": "LOGGED_IN",
+    },
+  ],
+]
+`;
+
+exports[`test registers a listener with Firebase that dispatches a DEVICE_UPDATED action 1`] = `
+Array [
+  Array [
+    "value",
+    [Function],
+    [Function],
+  ],
+]
+`;
+
+exports[`test registers a listener with Firebase that dispatches a DEVICE_UPDATED action 2`] = `
+Array [
+  Array [
+    Object {
+      "selectedKid": Object {
+        "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",
+        "avatarURL": "https://s-media-cache-ak0.pinimg.com/736x/24/48/12/2448127e36c0e72de41aa768322639a3.jpg",
+        "name": "Edith Crawley",
+      },
+      "type": "DEVICE_UPDATED",
+    },
+  ],
+]
+`;

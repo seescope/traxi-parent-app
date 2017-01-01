@@ -1,0 +1,41 @@
+exports[`test sets up an iPad 1`] = `
+Array [
+  Object {
+    "UUID": "non-random-uuid",
+    "setupID": 1234,
+    "type": "ADD_IPAD",
+  },
+]
+`;
+
+exports[`test sets up an iPad 2`] = `
+Array [
+  "https://traxiapp.firebaseio.com/setupIDs/1234",
+]
+`;
+
+exports[`test sets up an iPad 3`] = `
+Array [
+  "https://traxiapp.firebaseio.com/kids/non-random-uuid",
+]
+`;
+
+exports[`test sets up an iPad 4`] = `
+Array [
+  "non-random-uuid",
+  [Function],
+]
+`;
+
+exports[`test sets up an iPad 5`] = `
+Array [
+  Object {
+    "UUID": "non-random-uuid",
+    "deviceType": "iPad",
+    "name": "Test Name",
+    "phoneNumber": "+61401633346",
+    "setupID": 1234,
+  },
+  [Function],
+]
+`;

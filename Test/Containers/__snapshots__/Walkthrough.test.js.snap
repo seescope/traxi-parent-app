@@ -1,0 +1,4062 @@
+exports[`test renders the Walkthrough component at each stage for Android 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Sending SMS...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 2`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Open the SMS on Brett\'s phone and tap the link
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 3`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 4`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Swipe from the top and tap on \"Download complete\"
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 5`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Settings\" (don\'t worry, this is normal)
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 6`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Unknown Sources\", then tap \"OK\"
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 7`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Install\" in the bottom right
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 8`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Open\" in the bottom right
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 9`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#4CAF50",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "#4CAF50",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Waiting for traxi to start on 
+        Brett
+        \'s 
+        Android
+        ...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Hold on one second...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Browse to traxiapp.firebaseapp.com on Brett\'s iPad
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Enter the setup code 
+        1234
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 96,
+          }
+        } />
+      <View>
+        <ActivityIndicator
+          animating={true}
+          color="#FFF"
+          hidesWhenStopped={true}
+          size="large"
+          style={
+            Object {
+              "marginBottom": 16,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Waiting for 
+          Brett
+          \'s iPad...
+        </Text>
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap the \"Install\" button in the top right
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap the \"Install\" button again (don\'t worry, this is normal)
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Install\" for the last time (promise)
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Done\"
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#4CAF50",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "#4CAF50",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Waiting for traxi to start on 
+        Brett
+        \'s 
+        iPad
+        ...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Sending SMS...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Open the SMS on Brett\'s phone and tap the link
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap the \"Install\" button in the top right
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap the \"Install\" button again (don\'t worry, this is normal)
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Install\" for the last time (promise)
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontSize": 30,
+              "fontWeight": "200",
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          Tap \"Done\"
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontSize": 28,
+                "fontWeight": "200",
+              }
+            }>
+            Next Step
+             
+          </Text>
+          <Image
+            source={1} />
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 1334,
+              "marginTop": -667,
+              "top": 667,
+              "width": 654,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#4CAF50",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "#4CAF50",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Waiting for traxi to start on 
+        Brett
+        \'s 
+        iPhone
+        ...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`test renders the loading screen when waiting to identify a device 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4282682111,
+      4287679225,
+    ]
+  }
+  locations={null}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 20,
+      "paddingTop": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(75, 73, 73, 1)",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+    <Image
+      animation="pulse"
+      duration={2000}
+      iterationCount="infinite"
+      source={
+        Object {
+          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+        }
+      }
+      style={
+        Object {
+          "borderColor": "rgba(75, 73, 73, 1)",
+          "borderRadius": 25,
+          "borderWidth": 2.5,
+          "height": 50,
+          "marginBottom": 5,
+          "shadowColor": "rgba(0,0,0,0.5)",
+          "shadowOffset": Object {
+            "height": 2,
+          },
+          "shadowRadius": 5,
+          "width": 50,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFF",
+          "height": 3,
+          "width": 0,
+        }
+      } />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }>
+    <View>
+      <ActivityIndicator
+        animating={true}
+        color="#FFF"
+        hidesWhenStopped={true}
+        size="large"
+        style={
+          Object {
+            "marginBottom": 16,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontSize": 30,
+            "fontWeight": "200",
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Connecting to 
+        Brett
+        \'s device...
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;

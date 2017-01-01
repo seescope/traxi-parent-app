@@ -1,0 +1,9 @@
+exports[`experimentViewed sends an Experiment Viewed tracking event to Segment 1`] = `
+Array [
+  "Experiment Viewed",
+  Object {
+    "experimentName": "test-experiment",
+    "variantName": "test-variant",
+  },
+]
+`;

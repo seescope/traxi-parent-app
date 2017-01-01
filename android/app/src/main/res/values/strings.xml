@@ -1,0 +1,5 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">5ydThs2U5GHDHLEimIYYvxW5FjBlEyk1LPYVz</string>
+    <string name="RNB_GOOGLE_PLAY_LICENSE_KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsgs6XpOCsQMwBGggpqMSrrZzEAPGK8sNwMOB/xjUaI0qL8AIZLQzDE+hVCfj5NwfSGVSKuOmiG1L3OVugM+iuSg2pjx3R/XxMyhPI8nuqk7JTeRGACrYnd7uoUh8wV3WJfkMiXqqb9ESqn5AgKzB7zepFP/HKTOn39kmEFQACbvEOpfTDLp3PrQx1hgmn2EPcGLT/Cf8Tr8pc+sm8670p/NDfEzzdFZDd1zpr/KDyJKDNh9uxtyl8FVY36mgYtuaXEYkQel4jKxWFKIXUJCvqcjGOVzFBSniCqnvg+jNta7oE62llDrey38DmJVBbNATtXzcdIdD68R9MCuv4RRQaQIDAQAB</string>
+    <string name="app_name">traxi</string>
+</resources>

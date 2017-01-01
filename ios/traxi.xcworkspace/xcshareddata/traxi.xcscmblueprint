@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5E18E5E31C5596F535B6BD36212D65468D7073DF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "006D93CFF4B40A588F98C069A5B32812695A22B3" : 9223372036854775807,
+    "5E18E5E31C5596F535B6BD36212D65468D7073DF" : 9223372036854775807,
+    "8CFE556BE538395FB97AA3C33793698EB9CADB9D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C7CABE5C-BC6C-4369-B38A-7E401A6407FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "006D93CFF4B40A588F98C069A5B32812695A22B3" : "traxi\/node_modules\/react-native-image-picker\/",
+    "5E18E5E31C5596F535B6BD36212D65468D7073DF" : "traxi\/",
+    "8CFE556BE538395FB97AA3C33793698EB9CADB9D" : "traxi\/node_modules\/react-native-contacts\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "traxi",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/traxi.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kanerogers\/react-native-image-picker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "006D93CFF4B40A588F98C069A5B32812695A22B3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/traxicorp\/traxi.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E18E5E31C5596F535B6BD36212D65468D7073DF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kanerogers\/react-native-contacts.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8CFE556BE538395FB97AA3C33793698EB9CADB9D"
+    }
+  ]
+}

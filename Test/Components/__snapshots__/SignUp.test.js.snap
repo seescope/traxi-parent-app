@@ -1,0 +1,77 @@
+exports[`test renders the <SignUp> component 1`] = `
+<Image
+  resizeMode="cover"
+  source={1}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "raleway",
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "marginBottom": 16,
+        "textAlign": "center",
+      }
+    }>
+    Keep your children safe.
+  </Text>
+  <View />
+  <View
+    style={
+      Object {
+        "height": 24,
+      }
+    } />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(75, 73, 73, 1)",
+          "fontSize": 28,
+          "fontWeight": "200",
+        }
+      }>
+      Start Monitoring
+       
+    </Text>
+    <Image
+      source={1} />
+  </View>
+</Image>
+`;
