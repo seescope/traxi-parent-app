@@ -1,5 +1,11 @@
-## Traxi
+# traxi-parent-app
 
-![https://media.giphy.com/media/Q6y0yVMpJgCA0/giphy.gif](There's no God)
+traxi app for parents.
 
-Welcome to madness.
+## Setup
+
+`yarn`
+
+## Tests
+
+`yarn test`
