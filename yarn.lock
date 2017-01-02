@@ -233,11 +233,13 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-"aws-sdk-react-native-core@file:/Users/kanerogers/Development/aws-sdk-react-native/Core/":
+"aws-sdk-react-native-core@https://github.com/traxicorp/aws-sdk-react-native-core":
   version "0.0.3"
+  resolved "https://github.com/traxicorp/aws-sdk-react-native-core#f1acc5a92845b68a5810c050780d0edfffb09fb8"
 
-"aws-sdk-react-native-dynamodb@file:/Users/kanerogers/Development/aws-sdk-react-native/DynamoDB":
+"aws-sdk-react-native-dynamodb@https://github.com/traxicorp/aws-sdk-react-native-dynamodb":
   version "0.0.1"
+  resolved "https://github.com/traxicorp/aws-sdk-react-native-dynamodb#0990bc73ff994f51b5836606c9fd82b769caa204"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
@@ -3602,9 +3604,6 @@ jest-mock@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-17.0.2.tgz#3dfe9221afd9aa61b3d9992840813a358bb2f429"
 
-"jest-react-native@file:/Users/kanerogers/Development/jest/packages/jest-react-native":
-  version "17.0.3"
-
 jest-resolve-dependencies@^17.0.3:
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-17.0.3.tgz#bbd37f4643704b97a980927212f3ab12b06e8894"
@@ -4710,15 +4709,13 @@ react-dom@15.0.2:
   version "15.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.0.2.tgz#f8a20ac1bc2da9eb494fce3b44c3ec19d0951e27"
 
-"react-native-ab@file:/Users/kanerogers/Development/react-native-ab":
+"react-native-ab@https://github.com/traxicorp/react-native-ab":
   version "0.1.3"
+  resolved "https://github.com/traxicorp/react-native-ab#3f08b719f44c50f5efebe9a81d0dc3ef8f9c5331"
 
-"react-native-ab@https://github.com/tigranbalayan/react-native-ab.git":
-  version "0.1.3"
-  resolved "https://github.com/tigranbalayan/react-native-ab.git#65169d502dd7aa117e353f7c844b84a4a7a41834"
-
-"react-native-analytics@file:/Users/kanerogers/Development/react-native-analytics":
+"react-native-analytics@https://github.com/traxicorp/react-native-analytics":
   version "0.1.1"
+  resolved "https://github.com/traxicorp/react-native-analytics#516d8564bc1ca50ecb3833884b00ba1a0002f7c2"
 
 react-native-android-sms@0.0.1:
   version "0.0.1"
@@ -4728,8 +4725,9 @@ react-native-animatable@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-0.6.1.tgz#bd85023d42ad0ceb3cc98d7b490f7d6dd6ba11b0"
 
-"react-native-billing@file:/Users/kanerogers/Development/react-native-billing":
+"react-native-billing@https://github.com/traxicorp/react-native-billing":
   version "2.1.2"
+  resolved "https://github.com/traxicorp/react-native-billing#09e9070363d941506de8772688aa69b0fae8e378"
 
 react-native-code-push@latest:
   version "1.16.1-beta"
@@ -4759,8 +4757,9 @@ react-native-fabric@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/react-native-fabric/-/react-native-fabric-0.3.2.tgz#cb1bf2f1c1dc2b6f01ae6ab318066e058e81db17"
 
-"react-native-image-picker@file:/Users/kanerogers/Development/react-native-image-picker":
+"react-native-image-picker@https://github.com/traxicorp/react-native-image-picker":
   version "0.24.1"
+  resolved "https://github.com/traxicorp/react-native-image-picker#e4dc969bf69ada0dca73630de9fc379bdb3c3466"
 
 react-native-linear-gradient@^1.5.9:
   version "1.5.15"
