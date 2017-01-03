@@ -164,6 +164,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-locale')
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')
