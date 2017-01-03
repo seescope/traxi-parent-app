@@ -1,6 +1,17 @@
 export const TEST_CONTACTS_LIST = [
   {
     emailAddresses: [
+      { label: 'home', email: 'yin.quak.soon@gmail.com' }
+    ],
+    phoneNumbers: [ { label: 'mobile', number: '+60 14 2837 979' } ],
+    thumbnailPath: 'content://com.android.contacts/contacts/1005/photo',
+    familyName: 'Yin',
+    middleName: 'Soon',
+    givenName: 'Quak',
+    recordID: 1006 
+  },
+  {
+    emailAddresses: [
       { label: 'other', email: '113@172.23.4.2' },
       { label: 'work', email: 'marc.robinson@bluereef.com.au' },
       { label: 'home', email: 'mcrobo@gmail.com' }

@@ -5,6 +5,11 @@ Array [
       "contacts": Array [
         Object {
           "avatarURL": "content://com.android.contacts/contacts/1005/photo",
+          "name": "Quak Yin",
+          "phoneNumber": "+60142837979",
+        },
+        Object {
+          "avatarURL": "content://com.android.contacts/contacts/1005/photo",
           "name": "Marc Robinson",
           "phoneNumber": "+61400669057",
         },
