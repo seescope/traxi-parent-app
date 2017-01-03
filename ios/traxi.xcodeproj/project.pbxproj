@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -52,6 +51,7 @@
 		C3DCDCCA1DCC8DF1009091E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3DCDCC91DCC8DF1009091E8 /* GoogleService-Info.plist */; };
 		C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FB10911D06A85800F1B2C9 /* libc++.tbd */; };
 		C5FF76DC0EBE4282ABF605B6 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF443938E0F546E9AB9806F5 /* libCore.a */; };
+		1D6260E5D11F4EACBA157863 /* libRCTLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80CA129B8F41BC8AA24ADB /* libRCTLocale.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +348,8 @@
 		ECF6543406C04ACDB77385A0 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		EF443938E0F546E9AB9806F5 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCore.a; sourceTree = "<group>"; };
 		FEAC2EE473D643669C3ECCBB /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTContacts.xcodeproj; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; };
+		CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */ = {isa = PBXFileReference; name = "RCTLocale.xcodeproj"; path = "../node_modules/react-native-locale/ios/RCTLocale.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DF80CA129B8F41BC8AA24ADB /* libRCTLocale.a */ = {isa = PBXFileReference; name = "libRCTLocale.a"; path = "libRCTLocale.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +384,7 @@
 				4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
+				1D6260E5D11F4EACBA157863 /* libRCTLocale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +556,7 @@
 				B1E7F236B38C40CEB0D01243 /* Core.xcodeproj */,
 				4DA31B5E59E54533835C5A7D /* DynamoDB.xcodeproj */,
 				86F52D4FAE8B447A9227B36C /* CodePush.xcodeproj */,
+				CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -730,7 +734,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 820;
 				ORGANIZATIONNAME = traxi;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
@@ -1218,11 +1222,15 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
@@ -1259,11 +1267,15 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
@@ -1327,6 +1339,7 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1384,6 +1397,7 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

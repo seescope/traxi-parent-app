@@ -1,7 +1,8 @@
 import Contacts from 'react-native-contacts';
 import { PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber';
+import Locale from 'react-native-locale';
 
-const getCountryCode = () => 'AU';
+const getCountryCode = () => Locale.constants().localeIdentifier.split('_')[1];
 
 // Take a phone number and convert it to a format our SMS API will be happy with.
 const parseNumber = (result, { number }) => {
