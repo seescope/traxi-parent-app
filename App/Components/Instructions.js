@@ -26,7 +26,7 @@ const IPHONE_INSTRUCTIONS = [
 const iPadInstructions = (step, kidName, setupID) => {
   const instructions = [
     '',
-    `Browse to traxiapp.firebaseapp.com on ${kidName}'s iPad`,
+    `Browse to gettraxi.com on ${kidName}'s iPad`,
     `Enter the 4-digit code ${setupID}`,
     `Tap the "Install" button in the top right`,
     `Tap the "Install" button again (don't worry, this is normal)`,
