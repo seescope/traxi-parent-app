@@ -1,21 +1,44 @@
 import Contacts from 'react-native-contacts';
-import { PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber';
+import { PhoneNumberType, PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber';
 import Locale from 'react-native-locale';
 
-const getCountryCode = () => Locale.constants().localeIdentifier.split('_')[1];
+const getCountryCode = () => {
+  const locale = Locale.constants();
+  
+  // The Locale library is guaranteed to produce a string like 'en_AU', this should be safe.
+  return locale.localeIdentifier.split('_')[1];
+}
 
 // Take a phone number and convert it to a format our SMS API will be happy with.
 const parseNumber = (result, { number }) => {
-  const phoneUtil = PhoneNumberUtil.getInstance();
-  const phoneNumber = phoneUtil.parse(number, getCountryCode());
+  // If we've already found a valid number, just return that.
+  if (result !== null) return result;
 
+  const phoneUtil = PhoneNumberUtil.getInstance();
+  let phoneNumber;
+
+  try {
+    phoneNumber = phoneUtil.parse(number, getCountryCode());
+  } catch(error) {
+    // This is normal; some of the phone numbers will be junk.
+    return null;
+  }
+
+  // Not valid: return null.
   if (!phoneUtil.isValidNumber(phoneNumber)) return null;
 
+  // Not a mobile number: return null.
+  if (phoneUtil.getNumberType(phoneNumber) !== PhoneNumberType.MOBILE) return null;
+
+  // This is probably a valid number! Return it.
   return phoneUtil.format(phoneNumber, PhoneNumberFormat.E164);
 };
 
 const parseContact = contact => {
   const { givenName, familyName, phoneNumbers, thumbnailPath } = contact;
+
+  // As we have multiple phone numbers, use reduce to get a single, valid number back.
+  // TODO: If there are two valid mobile numbers, we'll just return the first. This may be an issue.
   const phoneNumber = phoneNumbers
     .reduce(parseNumber, null);
 
