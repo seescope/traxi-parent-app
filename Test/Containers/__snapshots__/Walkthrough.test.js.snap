@@ -1661,7 +1661,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "textAlign": "center",
             }
           }>
-          Browse to traxiapp.firebaseapp.com on Brett\'s iPad
+          Browse to gettraxi.com on Brett\'s iPad
         </Text>
         <View
           style={
