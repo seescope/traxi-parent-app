@@ -68,7 +68,8 @@ class ParentApp extends React.Component {
         identity_pool_id: IDENTITY_POOL_ID,
       })).then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
       .then(() => {
-        this.fetchReports(kids);
+        this.fetchReports();
+        Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
       });
     }
 
@@ -92,21 +93,21 @@ class ParentApp extends React.Component {
   }
 
   componentWillUnmount() {
-    Timer.clearTimeout(this);
+    Timer.clearInterval(TIMER_NAME);
   }
 
-  fetchReports(kids) {
+  fetchReports() {
+    const { profile } = this.props;
+    const kids = profile.kids;
+
+    if (!kids) { return null; }
+
     kids.forEach(kid => {
       const action = fetchReportsAction(kid);
       this.store.dispatch(action);
     });
 
-    Timer.setTimeout(
-      this,
-      TIMER_NAME,
-      () => this.fetchReports(kids),
-      REFRESH_INTERVAL
-    );
+    return null;
   }
 
   render() {

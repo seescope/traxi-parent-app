@@ -265,6 +265,8 @@ const fetchReports = (kid) =>
   dispatch => {
     dispatch({ type: 'FETCHING_REPORT' });
 
+    console.log('Fetching reports!');
+
     return getReportForKid(kid)
     .then(cleanDynamoDBResponse)
     .then(getAppMetadata)

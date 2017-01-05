@@ -77,7 +77,7 @@ const ReportHome = ({ kids, reports, loading, selectKid }) => (
     {kids.map(kid => <KidTile key={kid.UUID} kid={kid} onPress={() => selectKid(kid)}>
       <HeaderText>{firstName(kid.name)}</HeaderText>
       {getCircle(kid, reports) && <Circle {...getCircle(kid, reports)} />}
-      {loading && <ActivityIndicator size="large" color={WHITE} />}
+      {!getCircle(kid, reports) && loading && <ActivityIndicator size="large" color={WHITE} />}
     </KidTile>)}
 
     <Background style={style.bottomContainer}>
