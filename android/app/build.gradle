@@ -88,6 +88,7 @@ def enableProguardInReleaseBuilds = false
 android {
     compileSdkVersion 23
     buildToolsVersion "24.0.2"
+    checkReleaseBuilds false
 
     defaultConfig {
       vectorDrawables.useSupportLibrary = true
