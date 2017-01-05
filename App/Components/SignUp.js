@@ -29,7 +29,7 @@ export const beginSetup = price =>
   dispatch => {
     if (price === 'free') {
       return dispatch(loginWithMethod('anonymous'))
-        .then(Actions.selectDevice);
+        .then(() => Actions.selectDevice());
     }
 
     return dispatch(loginWithMethod('anonymous'))

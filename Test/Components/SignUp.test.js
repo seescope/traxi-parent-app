@@ -1,20 +1,16 @@
-import { View } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
 import { Actions } from 'react-native-router-flux';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import InAppBilling from 'react-native-billing';
 
 import SignUp, { beginSetup } from '../../App/Components/SignUp';
 
-// Why? Why!?
-global.Promise = require.requireActual('promise');
-
 const mockStore = configureStore([thunk]);
-const testStore = mockStore({ some: 'state', price: 'test-price'});
+const testStore = mockStore({ some: 'state', price: 'test-price' });
 
 const SignUpComponent = () => (
   <Provider store={testStore}>
