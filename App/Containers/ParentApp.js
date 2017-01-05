@@ -24,10 +24,13 @@ import fetchReportsAction from '../Actions/FetchReports';
 import { loggingMiddleware, trackingMiddleware } from '../Utils';
 import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
+import Timer from 'react-native-timer';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
 const DYNAMODB_REGION = 'ap-southeast-2';
+const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
+const TIMER_NAME = 'refreshReports';
 
 const RouterWithRedux = connect()(Router);
 
@@ -36,7 +39,6 @@ class ParentApp extends React.Component {
     super(props);
 
     const { profile } = props;
-    console.log('Profile:', profile);
     const { kids } = profile;
 
     const INITIAL_STATE = {
@@ -89,11 +91,22 @@ class ParentApp extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    Timer.clearTimeout(this);
+  }
+
   fetchReports(kids) {
     kids.forEach(kid => {
       const action = fetchReportsAction(kid);
       this.store.dispatch(action);
     });
+
+    Timer.setTimeout(
+      this,
+      TIMER_NAME,
+      () => this.fetchReports(kids),
+      REFRESH_INTERVAL
+    );
   }
 
   render() {

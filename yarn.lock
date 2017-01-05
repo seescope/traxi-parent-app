@@ -4829,6 +4829,10 @@ react-native-tabs@malkomalko/react-native-tabs:
   version "0.1.2"
   resolved "https://codeload.github.com/malkomalko/react-native-tabs/tar.gz/069015d101150fc4a3d62678e194a8355ef42c99"
 
+react-native-timer@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-timer/-/react-native-timer-1.1.3.tgz#51f4524043aa5b3242f1160f6edc2689db65efe4"
+
 react-native-vector-icons@^2.0.3:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-2.1.0.tgz#37ff40e2fc753a56624846e7471282b818b92edc"
