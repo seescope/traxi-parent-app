@@ -18,10 +18,7 @@ const saveProfileToFirebase = (newProfile) => new Promise((resolve, reject) => {
   });
 });
 
-const saveProfileToStorage = ({ UUID }) => {
-  const profile = { UUID };
-  return AsyncStorage.setItem('profile', JSON.stringify(profile));
-};
+const saveProfileToStorage = profile => AsyncStorage.setItem('profile', JSON.stringify(profile));
 
 const saveProfile = (profile) => NativeModules.NotificationManager.register()
   .then(token => Promise.resolve({
