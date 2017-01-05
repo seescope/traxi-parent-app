@@ -2,10 +2,10 @@
 import base64 from 'base-64';
 import uuid from 'uuid';
 import Firebase from 'firebase';
-const firstName = (kid) => kid.name.split(' ')[0];
+import { logError, firstName } from '../Utils';
 
 const sendSMS = (kid) => {
-  const KID_NAME = firstName(kid);
+  const KID_NAME = firstName(kid.name);
   const TWILLIO_SID = 'ACc04c9d7b6237604d95c65a9d3b991c0c';
   const UUID = uuid.v4();
   const TWILLIO_TOKEN = '913d983370eed59f0e428a6c0f809616';
@@ -34,7 +34,7 @@ const sendSMS = (kid) => {
 
     return sendSMSPromise
       .then(() => fetch(TWILLIO_URL, TWILLIO_PARAMS))
-      .then(() => dispatch({ type: 'SMS_SENT', UUID })) // TODO: Handle failure.
+      .then(() => dispatch({ type: 'SMS_SENT', UUID }))
       .then(() => {
         const firebase = new Firebase(`https://traxiapp.firebaseio.com/kids/${UUID}`);
         return new Promise((resolve, reject) => {
@@ -50,7 +50,7 @@ const sendSMS = (kid) => {
           });
         });
       })
-      .catch(error => console.error('Error sending SMS:', error));
+      .catch(error => logError(`Error sending SMS: ${JSON.stringify(error)}`));
   };
 };
 

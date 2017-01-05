@@ -1,0 +1,60 @@
+exports[`sendSMS dispatches a SENDING_SMS action, calls fetch, then dispatches SMS_SENT 1`] = `
+Array [
+  Array [
+    "https://api.twilio.com/2010-04-01/Accounts/ACc04c9d7b6237604d95c65a9d3b991c0c/Messages",
+    Object {
+      "body": FormData {
+        "_parts": Array [
+          Array [
+            "To",
+            "+61401633346",
+          ],
+          Array [
+            "From",
+            "traxi",
+          ],
+          Array [
+            "Body",
+            "Hi, Test! Welcome to traxi. Tap the following link to get started: http://gettraxi.com/#non-random-uuid",
+          ],
+        ],
+      },
+      "headers": Object {
+        "Authorization": "Basic QUNjMDRjOWQ3YjYyMzc2MDRkOTVjNjVhOWQzYjk5MWMwYzo5MTNkOTgzMzcwZWVkNTlmMGU0MjhhNmMwZjgwOTYxNg==",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`sendSMS dispatches a SENDING_SMS action, calls fetch, then dispatches SMS_SENT 2`] = `
+Array [
+  Array [
+    Object {
+      "type": "SENDING_SMS",
+    },
+  ],
+  Array [
+    Object {
+      "UUID": "non-random-uuid",
+      "type": "SMS_SENT",
+    },
+  ],
+]
+`;
+
+exports[`sendSMS dispatches a SENDING_SMS action, calls fetch, then dispatches SMS_SENT 3`] = `
+Array [
+  Array [
+    Object {
+      "UUID": "non-random-uuid",
+      "deviceType": "unknown",
+      "name": "Test Name",
+      "phoneNumber": "+61401633346",
+      "status": "DOWNLOADING",
+    },
+    [Function],
+  ],
+]
+`;

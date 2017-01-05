@@ -1,0 +1,20 @@
+exports[`saveProfile saves the profile to AsyncStorage 1`] = `
+Array [
+  Array [
+    "profile",
+    "{\"UUID\":\"arbostrisand\"}",
+  ],
+]
+`;
+
+exports[`saveProfile saves the profile to AsyncStorage 2`] = `
+Array [
+  Array [
+    Object {
+      "UUID": "arbostrisand",
+      "token": "mock-token",
+    },
+    [Function],
+  ],
+]
+`;
