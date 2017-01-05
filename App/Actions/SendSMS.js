@@ -11,7 +11,7 @@ const sendSMS = (kid) => {
   const TWILLIO_TOKEN = '913d983370eed59f0e428a6c0f809616';
   const BASIC_AUTH_STRING = base64.encode(`${TWILLIO_SID}:${TWILLIO_TOKEN}`);
   const TWILLIO_URL = `https://api.twilio.com/2010-04-01/Accounts/${TWILLIO_SID}/Messages`;
-  const SMS_LINK = `https://gettraxi.com/#${UUID}`;
+  const SMS_LINK = `http://gettraxi.com/#${UUID}`;
   const SMS_BODY = new FormData();
 
   SMS_BODY.append('To', kid.phoneNumber);
