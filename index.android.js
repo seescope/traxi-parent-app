@@ -25,7 +25,7 @@ const getUUIDFromSMS = (smsList = []) => {
 class traxi extends React.Component {
   constructor() {
     super();
-    AsyncStorage.removeItem('profile');
+    // AsyncStorage.removeItem('profile');
 
     // AsyncStorage.setItem('profile', JSON.stringify({
     //   kids: [],
