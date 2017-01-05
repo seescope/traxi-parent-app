@@ -27,10 +27,10 @@ class traxi extends React.Component {
     super();
     // AsyncStorage.removeItem('profile');
 
-    AsyncStorage.setItem('profile', JSON.stringify({
-      kids: [],
-      UUID: 'R1r9IfVPDVa15PUCJLKhgNnIgnu1',
-    }));
+    // AsyncStorage.setItem('profile', JSON.stringify({
+    //   kids: [],
+    //   UUID: 'R1r9IfVPDVa15PUCJLKhgNnIgnu1',
+    // }));
     this.state = {
       profile: {},
       loading: true,
