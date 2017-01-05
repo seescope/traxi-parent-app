@@ -62,16 +62,15 @@ class ParentApp extends React.Component {
       this.store.dispatch({ type: 'LOGGED_IN', profile });
     }
 
-    if (kids) {
-      Promise.resolve(AWSCognitoCredentials.initWithOptions({
-        region: COGNITO_REGION,
-        identity_pool_id: IDENTITY_POOL_ID,
-      })).then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
-      .then(() => {
-        this.fetchReports();
-        Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
-      });
-    }
+    Promise.resolve(AWSCognitoCredentials.initWithOptions({
+      region: COGNITO_REGION,
+      identity_pool_id: IDENTITY_POOL_ID,
+    }))
+    .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
+    .then(() => {
+      this.fetchReports();
+      Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
+    });
 
     BackAndroid.addEventListener('hardwareBackPress', () => {
       const store = this.store;
@@ -97,7 +96,7 @@ class ParentApp extends React.Component {
   }
 
   fetchReports() {
-    const { profile } = this.props;
+    const { profile } = this.store.getState();
     const kids = profile.kids;
 
     if (!kids) { return null; }
