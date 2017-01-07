@@ -20,6 +20,7 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.*;
@@ -79,8 +80,6 @@ public class AuthenticationModule extends ReactContextBaseJavaModule
       // Do nothing.
     }
 
-
-
   // JS Entry Point
   @ReactMethod
     public void authenticate(Promise promise) {
@@ -115,7 +114,8 @@ public class AuthenticationModule extends ReactContextBaseJavaModule
         Crashlytics.log(Log.DEBUG, TAG, "onActivityResult Success:" + result);
         firebaseAuthWithGoogle(account);
       } else {
-        mPromise.reject("[AuthenticationModule] Unable to authenticate:" + result);
+        int statusCode = result.getStatus().getStatusCode();
+        mPromise.reject("[AuthenticationModule] Unable to authenticate with Google:" + statusCode);
       }
     }
   }
