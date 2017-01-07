@@ -101,7 +101,14 @@ public class AuthenticationModule extends ReactContextBaseJavaModule
   public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
     // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
     if (requestCode == RC_SIGN_IN) {
+      Crashlytics.log(Log.DEBUG, TAG, "onActivityResult data:" + data);
+
       GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+      if (result == null) {
+        Crashlytics.log(Log.ERROR, TAG, "getSignInResultFromIntent returned null!");
+        mPromise.reject("[AuthenticationModule] Unable to authenticate: GoogleSignInResult was null!");
+      }
+
       if (result.isSuccess()) {
         // Google Sign In was successful, authenticate with Firebase
         GoogleSignInAccount account = result.getSignInAccount();

@@ -4721,10 +4721,6 @@ react-dom@15.0.2:
   version "0.1.1"
   resolved "https://github.com/traxicorp/react-native-analytics#516d8564bc1ca50ecb3833884b00ba1a0002f7c2"
 
-react-native-android-sms@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-android-sms/-/react-native-android-sms-0.0.1.tgz#a854a99a6250ad939cf32fa4d4b70d8ef3104379"
-
 react-native-animatable@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-0.6.1.tgz#bd85023d42ad0ceb3cc98d7b490f7d6dd6ba11b0"

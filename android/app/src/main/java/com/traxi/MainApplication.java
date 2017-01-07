@@ -25,7 +25,6 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 // Custom packages.
-import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -61,7 +60,6 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new NotificationManagerPackage(),
-        new RNSmsAndroidPackage(),
         new VPNClientPackage(),
         new MainReactPackage(),
             new RCTLocalePackage(),

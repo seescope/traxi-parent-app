@@ -22,7 +22,6 @@
     "react-native": "0.39.0",
     "react-native-ab": "https://github.com/traxicorp/react-native-ab",
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
-    "react-native-android-sms": "0.0.1",
     "react-native-animatable": "^0.6.1",
     "react-native-billing": "https://github.com/traxicorp/react-native-billing",
     "react-native-code-push": "latest",
