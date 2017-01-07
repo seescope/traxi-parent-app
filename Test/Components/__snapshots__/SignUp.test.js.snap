@@ -25,7 +25,7 @@ Array [
 exports[`test handles InAppBilling errors correctly 1`] = `
 Array [
   Array [
-    "InAppBilling error: testing",
+    "Error signing up: testing",
   ],
 ]
 `;

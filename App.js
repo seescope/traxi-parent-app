@@ -24,7 +24,9 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
+    console.log('Fetching profile');
     AsyncStorage.getItem('profile').then(profileJSON => {
+      console.log('Got profile:', profileJSON);
       if (profileJSON !== null) {
         const profile = JSON.parse(profileJSON);
         const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;

@@ -14,14 +14,16 @@ import loginWithMethod from '../Actions/LoginWithMethod';
 import { selectPrice } from '../Actions/Actions';
 import { logError } from '../Utils';
 
+const isBillingError = error =>
+  error.message.indexOf('[AuthenticationModule]') < 0;
 
-export const handleBillingError = error => {
-  if (__DEV__) {
+export const handleError = error => {
+  if (__DEV__ && isBillingError(error)) {
     console.log(`Ignoring InAppBilling error in DEV mode: ${error.message}`);
     return InAppBilling.close().then(Actions.selectDevice());
   }
 
-  logError(`InAppBilling error: ${error.message}`);
+  logError(`Error signing up: ${error.message}`);
   return null;
 };
 
@@ -29,7 +31,8 @@ export const beginSetup = price =>
   dispatch => {
     if (price === 'free') {
       return dispatch(loginWithMethod('anonymous'))
-        .then(() => Actions.selectDevice());
+        .then(() => Actions.selectDevice())
+        .catch(handleError);
     }
 
     return dispatch(loginWithMethod('anonymous'))
@@ -40,7 +43,7 @@ export const beginSetup = price =>
         return InAppBilling.close();
       })
       .then(() => Actions.selectDevice())
-      .catch(handleBillingError);
+      .catch(handleError);
   };
 
 const onSelectPrice = price =>
