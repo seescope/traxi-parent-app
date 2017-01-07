@@ -183,7 +183,6 @@ dependencies {
     compile project(':react-native-contacts')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
-    compile project(':react-native-sms-android')
 
     // Google Authentication
     compile 'com.google.android.gms:play-services-auth:9.4.0'
