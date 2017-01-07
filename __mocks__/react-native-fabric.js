@@ -1,5 +1,5 @@
 export const Crashlytics = {
-  logException: () => {},
-  log: () => {},
-  recordError: () => {},
+  logException: jest.fn(),
+  log: jest.fn(),
+  recordError: jest.fn(),
 };

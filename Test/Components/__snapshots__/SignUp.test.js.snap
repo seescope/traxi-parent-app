@@ -22,6 +22,14 @@ Array [
 ]
 `;
 
+exports[`test handles InAppBilling errors correctly 1`] = `
+Array [
+  Array [
+    "InAppBilling error: testing",
+  ],
+]
+`;
+
 exports[`test renders the <SignUp> component 1`] = `
 <Image
   resizeMode="cover"
