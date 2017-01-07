@@ -1,13 +1,7 @@
 import {
-  TEST_REPORT_DATA,
-  TEST_DATE,
   TEST_KID,
 } from '../Test/Mocks';
 
-
-const data = {
-  val: () => TEST_REPORT_DATA[TEST_DATE],
-};
 
 const onData = {
   val: () => TEST_KID,
@@ -19,9 +13,15 @@ mockOn.setData = mockData => {
   onData.val = () => mockData;
 };
 
+export const mockOnce = jest.fn((_, cb) => cb(onData));
+
+mockOnce.setData = mockData => {
+  onData.val = () => mockData;
+};
+
 const firebaseClient = {
   on: mockOn,
-  once: jest.fn((_, cb) => cb(data)),
+  once: mockOnce,
   set: mockSet,
 };
 

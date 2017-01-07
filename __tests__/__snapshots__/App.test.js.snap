@@ -1,48 +1,32 @@
 exports[`test renders 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      4282682111,
-      4287679225,
-    ]
-  }
-  locations={null}
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "center",
-      "paddingHorizontal": 20,
-    }
-  }>
-  <View>
-    <ActivityIndicator
-      animating={true}
-      color="#FFF"
-      hidesWhenStopped={true}
-      size="large"
-      style={
-        Object {
-          "marginBottom": 16,
-        }
-      } />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontSize": 30,
-          "fontWeight": "200",
-          "marginBottom": -2,
-          "textAlign": "center",
-        }
-      }>
-      Loading...
-    </Text>
-  </View>
-</BVLinearGradient>
+<View>
+  <View
+    component={[Function]}
+    initial={false} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    } />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+</View>
 `;
