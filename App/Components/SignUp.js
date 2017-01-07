@@ -15,13 +15,13 @@ import { selectPrice } from '../Actions/Actions';
 import { logError } from '../Utils';
 
 
-const handleBillingError = error => {
+export const handleBillingError = error => {
   if (__DEV__) {
-    console.log('Ignoring billing error %j in dev mode', error);
+    console.log(`Ignoring InAppBilling error in DEV mode: ${error.message}`);
     return InAppBilling.close().then(Actions.selectDevice());
   }
 
-  logError('InAppBilling error: %j', error);
+  logError(`InAppBilling error: ${error.message}`);
   return null;
 };
 

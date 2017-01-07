@@ -6,8 +6,9 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import InAppBilling from 'react-native-billing';
+import { Crashlytics } from 'react-native-fabric';
 
-import SignUp, { beginSetup } from '../../App/Components/SignUp';
+import SignUp, { beginSetup, handleBillingError } from '../../App/Components/SignUp';
 
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({ some: 'state', price: 'test-price' });
@@ -45,4 +46,11 @@ it('does beginSetup with a free transaction', () => {
     expect(mockDispatch.mock.calls).toMatchSnapshot();
     expect(Actions.selectDevice).toHaveBeenCalled();
   });
+});
+
+it('handles InAppBilling errors correctly', () => {
+  __DEV__ = false;
+  const testError = new Error('testing');
+  handleBillingError(testError);
+  expect(Crashlytics.recordError.mock.calls).toMatchSnapshot();
 });
