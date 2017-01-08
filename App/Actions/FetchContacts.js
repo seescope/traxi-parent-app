@@ -4,10 +4,10 @@ import Locale from 'react-native-locale';
 
 const getCountryCode = () => {
   const locale = Locale.constants();
-  
+
   // The Locale library is guaranteed to produce a string like 'en_AU', this should be safe.
   return locale.localeIdentifier.split('_')[1];
-}
+};
 
 // Take a phone number and convert it to a format our SMS API will be happy with.
 const parseNumber = (result, { number }) => {
@@ -19,7 +19,7 @@ const parseNumber = (result, { number }) => {
 
   try {
     phoneNumber = phoneUtil.parse(number, getCountryCode());
-  } catch(error) {
+  } catch (error) {
     // This is normal; some of the phone numbers will be junk.
     return null;
   }
@@ -51,7 +51,7 @@ const parseContact = contact => {
 
 // Some contacts might not even have a phone number, so just filter them out.
 const isValidContact = contact =>
-  typeof(contact.phoneNumber) === 'string'
+  typeof(contact.phoneNumber) === 'string';
 
 // Fetch contacts from the database, parse them and then dispatch
 // a GOT_CONTACTS action.
