@@ -4,6 +4,8 @@ import moment from 'moment';
 import { Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
+import InAppBilling from 'react-native-billing';
+import { selectPrice } from '../Actions/Actions';
 
 export const firstName = name => name && name.split(' ')[0];
 
@@ -84,3 +86,15 @@ export const experimentViewed = (variantName) => {
     price: variantName,
   });
 };
+
+export const handleBilling = price => InAppBilling.open()
+  .then(() => InAppBilling.subscribe(price))
+  .then(details => {
+    console.log('Successful InAppBilling purchase!', details);
+    return InAppBilling.close();
+  });
+
+export const onSelectPrice = price =>
+  dispatch =>
+    dispatch(selectPrice(price));
+
