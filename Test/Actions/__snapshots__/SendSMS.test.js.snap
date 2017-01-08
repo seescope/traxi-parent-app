@@ -1,17 +1,17 @@
 exports[`sendSMS dispatches a SENDING_SMS action, calls fetch, then dispatches SMS_SENT 1`] = `
 Array [
   Array [
-    "https://api.twilio.com/2010-04-01/Accounts/ACc04c9d7b6237604d95c65a9d3b991c0c/Messages",
+    "https://api.twilio.com/2010-04-01/Accounts/ACc04c9d7b6237604d95c65a9d3b991c0c/Messages.json",
     Object {
       "body": FormData {
         "_parts": Array [
           Array [
-            "To",
-            "+61401633346",
+            "From",
+            "+14157421909",
           ],
           Array [
-            "From",
-            "traxi",
+            "To",
+            "+60 11 2116 4143",
           ],
           Array [
             "Body",
@@ -51,10 +51,50 @@ Array [
       "UUID": "non-random-uuid",
       "deviceType": "unknown",
       "name": "Test Name",
-      "phoneNumber": "+61401633346",
+      "phoneNumber": "+60 11 2116 4143",
       "status": "DOWNLOADING",
     },
     [Function],
+  ],
+]
+`;
+
+exports[`sendSMS handles Twilio errors 1`] = `
+Array [
+  Array [
+    "https://api.twilio.com/2010-04-01/Accounts/ACc04c9d7b6237604d95c65a9d3b991c0c/Messages.json",
+    Object {
+      "body": FormData {
+        "_parts": Array [
+          Array [
+            "From",
+            "+14157421909",
+          ],
+          Array [
+            "To",
+            "+60 11 2116 4143",
+          ],
+          Array [
+            "Body",
+            "Hi, Test! Welcome to traxi. Tap the following link to get started: http://gettraxi.com/#non-random-uuid",
+          ],
+        ],
+      },
+      "headers": Object {
+        "Authorization": "Basic QUNjMDRjOWQ3YjYyMzc2MDRkOTVjNjVhOWQzYjk5MWMwYzo5MTNkOTgzMzcwZWVkNTlmMGU0MjhhNmMwZjgwOTYxNg==",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`sendSMS handles Twilio errors 2`] = `
+Array [
+  Array [
+    Object {
+      "type": "SENDING_SMS",
+    },
   ],
 ]
 `;

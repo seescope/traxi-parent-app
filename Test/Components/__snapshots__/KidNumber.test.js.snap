@@ -1,0 +1,17 @@
+exports[`<KidNumber> renders a kid's number 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "color": "#FFF",
+      "fontSize": 17,
+      "fontWeight": "300",
+      "textAlign": "center",
+    }
+  }>
+  +61412345678
+</Text>
+`;
