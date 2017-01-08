@@ -13,11 +13,8 @@ const KidNumberStyle = StyleSheet.create({
   },
 });
 
-const formatNumber = (number) =>
-    `0${number.slice(3, 6)} ${number.slice(6, 9)} ${number.slice(9, 12)}`;
-
 const KidNumber = ({ children }) => (
-  <Text style={KidNumberStyle.text}>{formatNumber(children)}</Text>
+  <Text style={KidNumberStyle.text}>{children}</Text>
 );
 
 KidNumber.propTypes = {
