@@ -2,7 +2,7 @@
 
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Text, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import Button from '../Components/Button';
@@ -44,7 +44,6 @@ const subHeaderStyle = {
 const containerStyle = {
   flex: 1,
   alignItems: 'center',
-  justifyContent: 'center',
 };
 
 const SignUpComponent = ({ onPress }) =>
@@ -53,12 +52,15 @@ const SignUpComponent = ({ onPress }) =>
     style={containerStyle}
     resizeMode="cover"
   >
-    <Text style={logoStyle}>Keep your children safe.</Text>
-    <Text style={subHeaderStyle}>Monitor unlimited devices free of charge.</Text>
+    <View style={containerStyle} />
+    <View style={containerStyle}>
+      <Text style={logoStyle}>What are your children doing online?</Text>
+      <Text style={subHeaderStyle}>Find out in less than 60 seconds.</Text>
 
-    <Spacing />
+      <Spacing />
 
-    <Button primary onPress={() => onPress()}>Start Monitoring</Button>
+      <Button primary onPress={() => onPress()}>Get started</Button>
+    </View>
   </Image>;
 
 
