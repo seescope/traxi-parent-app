@@ -47,19 +47,25 @@ export const SendSMSComponent = ({ kid, onPress }) => {
 
       <BodyText>
         To get traxi installed on {kidName}'s phone,
-        we're going to send an <Text style={STYLES.BOLD}>SMS with a special link</Text>.
+        we're going to send a <Text style={STYLES.BOLD}>message with a special link</Text>.
       </BodyText>
 
       <Spacing height={16} />
 
       <BodyText>
-        When the SMS arrives, <Text style={STYLES.BOLD}>open it on their phone </Text>
+        When the message arrives, <Text style={STYLES.BOLD}>open it on their phone </Text>
         and follow the instructions.
+      </BodyText>
+
+      <Spacing height={16} />
+
+      <BodyText>
+        Don't worry - <Text style={STYLES.BOLD}>it's totally free</Text>.
       </BodyText>
 
       <Spacing height={32} />
 
-      <Button onPress={onPress}>Send SMS</Button>
+      <Button onPress={onPress}>Send message</Button>
     </Background>
   );
 };
