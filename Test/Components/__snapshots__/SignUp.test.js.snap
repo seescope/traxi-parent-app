@@ -6,30 +6,6 @@ Array [
 ]
 `;
 
-exports[`test does beginSetup with a one-dollar transaction 1`] = `
-Array [
-  Array [
-    "one-dollar",
-  ],
-]
-`;
-
-exports[`test does beginSetup with a one-dollar transaction 2`] = `
-Array [
-  Array [
-    [Function],
-  ],
-]
-`;
-
-exports[`test handles InAppBilling errors correctly 1`] = `
-Array [
-  Array [
-    "Error signing up: testing",
-  ],
-]
-`;
-
 exports[`test renders the <SignUp> component 1`] = `
 <Image
   resizeMode="cover"
@@ -58,7 +34,23 @@ exports[`test renders the <SignUp> component 1`] = `
     }>
     Keep your children safe.
   </Text>
-  <View />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "raleway",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "marginBottom": 24,
+        "textAlign": "center",
+      }
+    }>
+    Monitor unlimited devices free of charge.
+  </Text>
   <View
     style={
       Object {

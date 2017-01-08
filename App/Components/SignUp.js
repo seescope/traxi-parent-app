@@ -4,51 +4,22 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import InAppBilling from 'react-native-billing';
-import { Experiment, Variant } from 'react-native-ab';
 
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import loginWithMethod from '../Actions/LoginWithMethod';
-import { selectPrice } from '../Actions/Actions';
 import { logError } from '../Utils';
 
-const isBillingError = error =>
-  error.message.indexOf('[AuthenticationModule]') < 0;
-
 export const handleError = error => {
-  if (__DEV__ && isBillingError(error)) {
-    console.log(`Ignoring InAppBilling error in DEV mode: ${error.message}`);
-    return InAppBilling.close().then(Actions.selectDevice());
-  }
-
   logError(`Error signing up: ${error.message}`);
   return null;
 };
 
-export const beginSetup = price =>
-  dispatch => {
-    if (price === 'free') {
-      return dispatch(loginWithMethod('anonymous'))
-        .then(() => Actions.selectDevice())
-        .catch(handleError);
-    }
-
-    return dispatch(loginWithMethod('anonymous'))
-      .then(() => InAppBilling.open())
-      .then(() => InAppBilling.subscribe(price))
-      .then(details => {
-        console.log('Successful InAppBilling purchase!', details);
-        return InAppBilling.close();
-      })
-      .then(() => Actions.selectDevice())
-      .catch(handleError);
-  };
-
-const onSelectPrice = price =>
-  dispatch =>
-    dispatch(selectPrice(price));
+export const beginSetup = () => dispatch =>
+  dispatch(loginWithMethod('anonymous'))
+  .then(() => Actions.selectDevice())
+  .catch(handleError);
 
 const logoStyle = {
   backgroundColor: TRANSPARENT,
@@ -76,46 +47,30 @@ const containerStyle = {
   justifyContent: 'center',
 };
 
-const SignUpComponent = ({ onPress, onChoice, price }) =>
+const SignUpComponent = ({ onPress }) =>
   <Image
     source={require('../Images/signup_background.png')}
     style={containerStyle}
     resizeMode="cover"
   >
     <Text style={logoStyle}>Keep your children safe.</Text>
-    <Experiment
-      name="launch-pricing-experiment"
-      onChoice={(experimentId, variantId) => onChoice(variantId)}
-    >
-      <Variant name="free">
-        <Text style={subHeaderStyle}>Monitor unlimited devices free of charge.</Text>
-      </Variant>
-      <Variant name="subscription_one_dollar">
-        <Text style={subHeaderStyle}>Monitor unlimited devices for just $0.99 per month.</Text>
-      </Variant>
-      <Variant name="subscription_five_dollars">
-        <Text style={subHeaderStyle}>Monitor unlimited devices for just $4.99 per month.</Text>
-      </Variant>
-    </Experiment>
+    <Text style={subHeaderStyle}>Monitor unlimited devices free of charge.</Text>
 
     <Spacing />
 
-    <Button primary onPress={() => onPress(price)}>Start Monitoring</Button>
+    <Button primary onPress={() => onPress()}>Start Monitoring</Button>
   </Image>;
 
 
 const SignUp = connect(
-  ({ price }) => ({ price }),
+  null,
   {
     onPress: beginSetup,
-    onChoice: onSelectPrice,
   }
 )(SignUpComponent);
 
 SignUpComponent.propTypes = {
-  price: PropTypes.string,
   onPress: PropTypes.func.isRequired,
-  onChoice: PropTypes.func.isRequired,
 };
 
 export default SignUp;

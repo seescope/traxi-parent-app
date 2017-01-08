@@ -100,7 +100,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "textAlign": "center",
           }
         }>
-        Sending SMS...
+        Sending message...
       </Text>
     </View>
   </View>
@@ -2780,7 +2780,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "textAlign": "center",
           }
         }>
-        Sending SMS...
+        Sending message...
       </Text>
     </View>
   </View>
