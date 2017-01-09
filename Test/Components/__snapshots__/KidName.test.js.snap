@@ -1,0 +1,35 @@
+exports[`<KidName> handles null last name 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "color": "#FFF",
+      "fontFamily": "Raleway-Regular",
+      "fontSize": 19,
+      "textAlign": "center",
+    }
+  }>
+  First 
+</Text>
+`;
+
+exports[`<KidName> renders a kid's name 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "color": "#FFF",
+      "fontFamily": "Raleway-Regular",
+      "fontSize": 19,
+      "textAlign": "center",
+    }
+  }>
+  First Last
+</Text>
+`;
