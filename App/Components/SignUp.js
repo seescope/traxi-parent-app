@@ -53,11 +53,11 @@ const SignUpComponent = ({ onPress }) =>
     <View style={containerStyle} />
     <View style={containerStyle}>
       <Text style={logoStyle}>What are your children doing online?</Text>
-      <Text style={subHeaderStyle}>Find out in less than 60 seconds.</Text>
+      <Text style={subHeaderStyle}>Find out in less than 60 seconds - it's easy!</Text>
 
       <Spacing />
 
-      <Button primary onPress={() => onPress()}>Get started</Button>
+      <Button primary onPress={() => onPress()}>Monitor your child's device</Button>
     </View>
   </Image>;
 
