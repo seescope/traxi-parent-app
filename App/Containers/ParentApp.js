@@ -42,7 +42,6 @@ class ParentApp extends React.Component {
     const { kids } = profile;
 
     const INITIAL_STATE = {
-      parentName: 'REPLACEME',
       loading: false,
       profile,
       contacts: [],
