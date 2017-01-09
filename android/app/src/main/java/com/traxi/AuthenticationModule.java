@@ -149,6 +149,7 @@ public class AuthenticationModule extends ReactContextBaseJavaModule
     profile.putString("name", firebaseUser.getDisplayName());
     profile.putString("UUID", firebaseUser.getUid());
     profile.putString("picture", firebaseUser.getPhotoUrl().toString());
+    profile.putString("email", firebaseUser.getEmail());
 
     Crashlytics.log(Log.DEBUG, TAG, "Built profile for user with UUID: " + firebaseUser.getUid());
 

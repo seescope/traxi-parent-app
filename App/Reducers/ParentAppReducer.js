@@ -14,13 +14,15 @@ const ParentAppReducer = (state = {}, action = {}) => {
     case 'LOGGED_IN': {
       const { profile } = action;
       console.log('Logged in', profile);
+
       const parentName = firstName(profile.name);
-      const { price } = state;
 
       if (!isIOS) {
         Analytics.identify(profile.UUID, {
-          price,
-          firstName: parentName,
+          email: profile.email,
+          name: profile.name,
+          avatar: profile.picture,
+          id: profile.UUID,
         });
       }
 
