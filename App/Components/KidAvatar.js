@@ -25,18 +25,23 @@ const getKidAvatarStyle = (size, state) =>
     },
   });
 
+const getAvatarURL = avatarURL => {
+  if (avatarURL !== '') return { uri: avatarURL };
+  return require('../Images/placeholder_avatar.png');
+};
+
 const KidAvatar = ({ avatarURL, size, state, animation, duration, iterationCount }) => (
   <Animatable.Image
     animation={animation}
     iterationCount={iterationCount}
     duration={duration}
     style={getKidAvatarStyle(size, state).image}
-    source={{ uri: avatarURL }}
+    source={getAvatarURL(avatarURL)}
   />
 );
 
 KidAvatar.propTypes = {
-  avatarURL: PropTypes.string.isRequired,
+  avatarURL: PropTypes.string,
   size: PropTypes.number.isRequired,
   state: PropTypes.oneOf(['good', 'bad', 'neutral']),
   animation: PropTypes.string,

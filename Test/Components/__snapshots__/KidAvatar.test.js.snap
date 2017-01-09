@@ -1,0 +1,49 @@
+exports[`test Renders an avatar when an image is supplied 1`] = `
+<Image
+  animation={undefined}
+  duration={undefined}
+  iterationCount={undefined}
+  source={
+    Object {
+      "uri": "http://www4.pictures.gi.zimbio.com/Premiere+MGM+Rocky+Balboa+Arrivals+pczqT_rwQxcl.jpg",
+    }
+  }
+  style={
+    Object {
+      "borderColor": "rgba(75, 73, 73, 1)",
+      "borderRadius": 50,
+      "borderWidth": 5,
+      "height": 100,
+      "marginBottom": 10,
+      "shadowColor": "rgba(0,0,0,0.5)",
+      "shadowOffset": Object {
+        "height": 2,
+      },
+      "shadowRadius": 5,
+      "width": 100,
+    }
+  } />
+`;
+
+exports[`test Returns a default avatar when none is supplied 1`] = `
+<Image
+  animation={undefined}
+  duration={undefined}
+  iterationCount={undefined}
+  source={1}
+  style={
+    Object {
+      "borderColor": "rgba(75, 73, 73, 1)",
+      "borderRadius": 50,
+      "borderWidth": 5,
+      "height": 100,
+      "marginBottom": 10,
+      "shadowColor": "rgba(0,0,0,0.5)",
+      "shadowOffset": Object {
+        "height": 2,
+      },
+      "shadowRadius": 5,
+      "width": 100,
+    }
+  } />
+`;
