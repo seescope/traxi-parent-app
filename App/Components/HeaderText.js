@@ -5,9 +5,9 @@ import { isIOS } from '../Utils';
 
 const headerStyle = style => {
   const defaultStyle = {
+    fontFamily: 'Raleway-ExtraBold',
     color: WHITE,
     textAlign: 'center',
-    fontWeight: isIOS ? '200' : '500',
     fontSize: isIOS ? 30 : 23,
     marginBottom: -2,
     backgroundColor: 'transparent',

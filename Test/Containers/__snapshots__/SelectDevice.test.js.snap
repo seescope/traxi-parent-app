@@ -1,55 +1,11 @@
 exports[`test renders the <SelectDevice> component 1`] = `
 <View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontSize": 30,
-        "fontWeight": "200",
-        "marginBottom": -2,
-        "textAlign": "center",
-      }
-    }>
-    What kind of device, 
-    Name
-    ?
-  </Text>
-  <View
-    style={
-      Object {
-        "height": 24,
-      }
-    } />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontSize": 18,
-        "fontWeight": "200",
-        "textAlign": "center",
-      }
-    }>
-    Tap one of the devices below to choose what kind of device your child is using.
-  </Text>
-  <View
-    style={
-      Object {
-        "height": 36,
-      }
-    } />
   <View
     style={
       Object {
         "alignItems": "flex-end",
         "flexDirection": "row",
+        "justifyContent": "center",
       }
     }>
     <View
@@ -67,29 +23,21 @@ exports[`test renders the <SelectDevice> component 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "marginHorizontal": 8,
+          "flexDirection": "column",
+          "justifyContent": "flex-end",
           "opacity": 1,
         }
       }
       testID={undefined}>
       <Image
-        source={1} />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        animation="bounceInLeft"
+        source={1}
         style={
           Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontSize": 30,
-            "fontWeight": "200",
-            "marginBottom": -2,
-            "textAlign": "center",
+            "justifyContent": "flex-end",
+            "marginHorizontal": 16,
           }
-        }>
-        Phone
-      </Text>
+        } />
     </View>
     <View
       accessibilityComponentType={undefined}
@@ -106,30 +54,66 @@ exports[`test renders the <SelectDevice> component 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "marginHorizontal": 8,
+          "flexDirection": "column",
+          "justifyContent": "flex-end",
           "opacity": 1,
         }
       }
       testID={undefined}>
       <Image
-        source={1} />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        animation="bounceInRight"
+        source={1}
         style={
           Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontSize": 30,
-            "fontWeight": "200",
-            "marginBottom": -2,
-            "textAlign": "center",
+            "justifyContent": "flex-end",
+            "marginHorizontal": 16,
           }
-        }>
-        Tablet
-      </Text>
+        } />
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 30,
+        "marginBottom": -2,
+        "textAlign": "center",
+      }
+    }>
+    What kind of device?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 8,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 18,
+        "fontWeight": "200",
+        "textAlign": "center",
+      }
+    }>
+    Tap one of the devices above to start monitoring.
+  </Text>
 </View>
 `;

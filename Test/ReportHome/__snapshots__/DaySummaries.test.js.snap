@@ -42,8 +42,8 @@ exports[`test Renders a list of day summaries 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "left",
           }
@@ -142,8 +142,8 @@ exports[`test Renders a list of day summaries 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "left",
           }
@@ -242,8 +242,8 @@ exports[`test Renders a list of day summaries 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "left",
           }
@@ -342,8 +342,8 @@ exports[`test Renders a list of day summaries 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "left",
           }

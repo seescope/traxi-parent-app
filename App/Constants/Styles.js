@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { NEUTRAL, WHITE, TRAXI_BLUE } from '../Constants/Colours';
+import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
 export default StyleSheet.create({
@@ -17,6 +17,7 @@ export default StyleSheet.create({
     height: 13,
   },
   TEXT: {
+    fontFamily: 'Raleway-Regular',
     color: WHITE,
     textAlign: 'center',
     fontWeight: isIOS ? '200' : 'normal',

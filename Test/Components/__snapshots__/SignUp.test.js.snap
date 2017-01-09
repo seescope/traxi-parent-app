@@ -14,88 +14,100 @@ exports[`test renders the <SignUp> component 1`] = `
     Object {
       "alignItems": "center",
       "flex": 1,
-      "justifyContent": "center",
     }
   }>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontFamily": "raleway",
-        "fontSize": 26,
-        "fontWeight": "bold",
-        "marginBottom": 16,
-        "textAlign": "center",
-      }
-    }>
-    Keep your children safe.
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontFamily": "raleway",
-        "fontSize": 13,
-        "fontWeight": "bold",
-        "marginBottom": 24,
-        "textAlign": "center",
-      }
-    }>
-    Monitor unlimited devices free of charge.
-  </Text>
   <View
-    style={
-      Object {
-        "height": 24,
-      }
-    } />
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "transparent",
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "opacity": 1,
+        "flex": 1,
       }
-    }
-    testID={undefined}>
+    } />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+      }
+    }>
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "rgba(75, 73, 73, 1)",
-          "fontSize": 28,
-          "fontWeight": "200",
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "marginBottom": 16,
+          "textAlign": "center",
         }
       }>
-      Start Monitoring
-       
+      What are your children doing online?
     </Text>
-    <Image
-      source={1} />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 13,
+          "marginBottom": 24,
+          "textAlign": "center",
+        }
+      }>
+      Find out in less than 60 seconds.
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 24,
+        }
+      } />
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(75, 73, 73, 1)",
+            "fontSize": 28,
+            "fontWeight": "200",
+          }
+        }>
+        Get started
+         
+      </Text>
+      <Image
+        source={1} />
+    </View>
   </View>
 </Image>
 `;
