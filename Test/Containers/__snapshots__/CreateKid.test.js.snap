@@ -8,8 +8,8 @@ exports[`test renders the <CreateKid> component 1`] = `
       Object {
         "backgroundColor": "transparent",
         "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
         "fontSize": 30,
-        "fontWeight": "200",
         "marginBottom": -2,
         "textAlign": "center",
       }
@@ -31,6 +31,7 @@ exports[`test renders the <CreateKid> component 1`] = `
       Object {
         "backgroundColor": "transparent",
         "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
         "fontSize": 18,
         "fontWeight": "200",
         "textAlign": "center",

@@ -94,8 +94,8 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -208,8 +208,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -383,8 +383,8 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -558,8 +558,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -733,8 +733,8 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -908,8 +908,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1083,8 +1083,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1258,8 +1258,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1428,8 +1428,8 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -1541,8 +1541,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -1655,8 +1655,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1815,8 +1815,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -1849,8 +1849,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1966,8 +1966,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2141,8 +2141,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2316,8 +2316,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2491,8 +2491,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2661,8 +2661,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -2774,8 +2774,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -2888,8 +2888,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3063,8 +3063,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3238,8 +3238,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3413,8 +3413,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3588,8 +3588,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3763,8 +3763,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
               "fontSize": 30,
-              "fontWeight": "200",
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3933,8 +3933,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -4046,8 +4046,8 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
           Object {
             "backgroundColor": "transparent",
             "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
             "fontSize": 30,
-            "fontWeight": "200",
             "marginBottom": -2,
             "textAlign": "center",
           }

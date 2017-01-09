@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import * as Animatable from 'react-native-animatable';
 
 import Background from '../Components/Background';
 import HeaderText from '../Components/HeaderText';
@@ -16,50 +17,57 @@ const style = {
     flex: 1,
     padding: 8,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
   },
   devicesContainer: {
+    justifyContent: 'center',
     alignItems: 'flex-end',
     flexDirection: 'row',
   },
   deviceContainer: {
-    marginHorizontal: 8,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+  deviceImage: {
+    justifyContent: 'flex-end',
+    marginHorizontal: 16,
   },
 };
 
-const SelectDevice = ({ parentName, onPress }) => (
+const SelectDevice = ({ onPress }) => (
   <Background style={style.container}>
-    <HeaderText>What kind of device, {parentName}?</HeaderText>
-
-    <Spacing />
-
-    <BodyText>
-      Tap one of the devices below to choose what kind of device your child is using.
-    </BodyText>
-
-    <Spacing height={36} />
-
     <View style={style.devicesContainer}>
       <TouchableOpacity onPress={() => onPress('phone')} style={style.deviceContainer}>
-        <Image source={require('../Images/phone.png')} />
-        <HeaderText>Phone</HeaderText>
+        <Animatable.Image
+          animation={'bounceInLeft'}
+          style={style.deviceImage}
+          source={require('../Images/phone.png')}
+        />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onPress('iPad')} style={style.deviceContainer}>
-        <Image source={require('../Images/tablet.png')} />
-        <HeaderText>Tablet</HeaderText>
+        <Animatable.Image
+          animation={'bounceInRight'}
+          style={style.deviceImage}
+          source={require('../Images/tablet.png')}
+        />
       </TouchableOpacity>
     </View>
+
+    <Spacing height={32} />
+
+    <HeaderText>What kind of device?</HeaderText>
+
+    <Spacing height={8} />
+
+    <BodyText>
+      Tap one of the devices above to start monitoring.
+    </BodyText>
   </Background>
 );
 
 SelectDevice.propTypes = {
-  parentName: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  parentName: state.parentName,
-});
 
 const mapDispatchToProps = dispatch => ({
   onPress: deviceType => {
@@ -74,4 +82,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectDevice);
+export default connect(null, mapDispatchToProps)(SelectDevice);

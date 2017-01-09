@@ -26,8 +26,7 @@ const logoStyle = {
   color: WHITE,
   fontSize: 26,
   textAlign: 'center',
-  fontWeight: 'bold',
-  fontFamily: 'raleway',
+  fontFamily: 'Raleway-ExtraBold',
   marginBottom: 16,
 };
 
@@ -36,8 +35,7 @@ const subHeaderStyle = {
   color: WHITE,
   fontSize: 13,
   textAlign: 'center',
-  fontWeight: 'bold',
-  fontFamily: 'raleway',
+  fontFamily: 'Raleway-Regular',
   marginBottom: 24,
 };
 

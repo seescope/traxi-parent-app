@@ -116,7 +116,7 @@ class ParentApp extends React.Component {
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar>
-          <Scene key="signup" initial={!isInstalled} component={SignUp} />
+          <Scene key="signup" initial={isInstalled} component={SignUp} />
           <Scene key="selectDevice" component={SelectDevice} />
           <Scene key="findKid" component={FindKid} />
           <Scene key="createKid" component={CreateKid} />
