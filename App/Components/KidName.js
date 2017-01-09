@@ -13,8 +13,11 @@ const KidNameStyle = StyleSheet.create({
   },
 });
 
+const cleanName = name => name.replace('null', '');
+
+
 const KidName = ({ children }) => (
-  <Text style={KidNameStyle.text}>{children}</Text>
+  <Text style={KidNameStyle.text}>{cleanName(children)}</Text>
 );
 
 KidName.propTypes = {

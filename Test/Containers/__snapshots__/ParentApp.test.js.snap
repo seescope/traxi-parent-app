@@ -2,7 +2,7 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
 <View>
   <View
     component={[Function]}
-    initial={Array []} />
+    initial={false} />
   <View
     component={[Function]} />
   <View
@@ -29,7 +29,7 @@ exports[`<ParentApp /> renders the Parent with the reports component active if i
 <View>
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={true} />
   <View
     component={[Function]} />
   <View
