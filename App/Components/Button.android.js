@@ -10,10 +10,10 @@ const Button = ({ children, onPress, primary = true }) => {
   const AndroidButton = MKButton.coloredButton()
       .withBackgroundColor(BACKGROUND_COLOUR)
       .withTextStyle({
+        fontFamily: 'Raleway-Bold',
         color: TEXT_COLOUR,
-        fontWeight: 'normal',
       })
-      .withText(children.toUpperCase())
+      .withText(children)
       .withOnPress(onPress)
       .build();
 

@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import * as Animatable from 'react-native-animatable';
 
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
@@ -45,21 +46,25 @@ const containerStyle = {
 };
 
 const SignUpComponent = ({ onPress }) =>
-  <Image
+  <Animatable.Image
+    animation="fadeIn"
     source={require('../Images/signup_background.png')}
     style={containerStyle}
+    easing="ease-in"
     resizeMode="cover"
   >
     <View style={containerStyle} />
     <View style={containerStyle}>
-      <Text style={logoStyle}>What are your children doing online?</Text>
-      <Text style={subHeaderStyle}>Find out in less than 60 seconds - it's easy!</Text>
+      <Animatable.Text animation="fadeIn" delay={1000} style={logoStyle}>What are your children doing online?</Animatable.Text>
+      <Animatable.Text animation="fadeIn" delay={1200} style={subHeaderStyle}>Find out in less than 60 seconds - it's easy!</Animatable.Text>
 
       <Spacing />
 
-      <Button primary onPress={() => onPress()}>Monitor your child's device</Button>
+      <Animatable.View animation="bounceIn" delay={2000}>
+        <Button primary onPress={() => onPress()}>Monitor your child's device</Button>
+      </Animatable.View>
     </View>
-  </Image>;
+  </Animatable.Image>;
 
 
 const SignUp = connect(
