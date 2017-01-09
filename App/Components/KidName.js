@@ -7,7 +7,7 @@ const KidNameStyle = StyleSheet.create({
   text: {
     color: WHITE,
     textAlign: 'center',
-    fontWeight: 'normal',
+    fontFamily: 'Raleway-Regular',
     fontSize: isIOS ? 19 : 14,
     backgroundColor: TRANSPARENT,
   },

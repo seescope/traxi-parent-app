@@ -3,7 +3,7 @@ import {
   View,
   ActivityIndicator,
 } from 'react-native';
-import HeaderText from './HeaderText';
+import BodyText from './BodyText';
 import { WHITE } from '../Constants/Colours';
 
 const spinnerStyle = {
@@ -13,7 +13,7 @@ const spinnerStyle = {
 const LoadingIndicator = ({ children }) => (
   <View>
     <ActivityIndicator size={'large'} color={WHITE} style={spinnerStyle} />
-    <HeaderText>{children}</HeaderText>
+    <BodyText>{children}</BodyText>
   </View>
 );
 

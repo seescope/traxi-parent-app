@@ -31,14 +31,14 @@ const FindKidStyle = {
     justifyContent: 'center',
   },
   textInput: {
+    fontFamily: 'Raleway-Regular',
     width: width - 32,
     color: isIOS ? NEUTRAL : WHITE,
-    fontWeight: 'normal',
     fontSize: isIOS ? 16 : 13,
     backgroundColor: isIOS ? '#EEE' : 'transparent',
     borderRadius: isIOS ? 6 : 0,
     height: isIOS ? 32 : null,
-    padding: isIOS ? 8 : 0,
+    padding: isIOS ? 8 : 4,
     marginBottom: 13,
   },
 };
@@ -70,7 +70,6 @@ class FindKidComponent extends React.Component {
 
   render() {
     const {
-      parentName,
       contacts,
       onSearchForKid,
       kidSuggestions,
@@ -80,13 +79,13 @@ class FindKidComponent extends React.Component {
     return (
       <Background style={FindKidStyle.container}>
         <HeaderText>
-          {`Find your child, ${parentName}`}
+          Find your child's number
         </HeaderText>
 
-        <Spacing />
+        <Spacing height={8} />
 
         {contacts.length > 0 && <BodyText>
-          Start typing their name in the box below
+          Start typing their name in the box below:
         </BodyText>}
 
         <Spacing />
@@ -94,15 +93,12 @@ class FindKidComponent extends React.Component {
         {contacts.length > 0 &&
           <TextInput
             autoCorrect={false}
-            placeholderTextColor={isIOS ? NEUTRAL : WHITE}
-            underlineColorAndroid={WHITE}
             autoCapitalize={'words'}
             style={FindKidStyle.textInput}
             onChangeText={onSearchForKid}
-            placeholder={'eg. Jen Smith'}
           /> ||
           <View style={FindKidStyle.loading}>
-            <LoadingIndicator>Just one second..</LoadingIndicator>
+            <LoadingIndicator>Finding contacts...</LoadingIndicator>
           </View>
         }
 
@@ -115,7 +111,6 @@ class FindKidComponent extends React.Component {
 FindKidComponent.propTypes = {
   getContacts: PropTypes.func.isRequired,
   contacts: PropTypes.array.isRequired,
-  parentName: PropTypes.string.isRequired,
   onSearchForKid: PropTypes.func.isRequired,
   kidSuggestions: PropTypes.arrayOf(PropTypes.object).isRequired,
   onSelectKid: PropTypes.func.isRequired,
