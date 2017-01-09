@@ -92,6 +92,7 @@ class FindKidComponent extends React.Component {
 
         {contacts.length > 0 &&
           <TextInput
+            underlineColorAndroid={WHITE}
             autoCorrect={false}
             autoCapitalize={'words'}
             style={FindKidStyle.textInput}
