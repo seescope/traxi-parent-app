@@ -7,11 +7,11 @@ exports[`<KidNumber> renders a kid's number 1`] = `
     Object {
       "backgroundColor": "transparent",
       "color": "#FFF",
+      "fontFamily": "Raleway-Light",
       "fontSize": 17,
-      "fontWeight": "300",
       "textAlign": "center",
     }
   }>
-  +61412345678
+  +61 412 345 678
 </Text>
 `;
