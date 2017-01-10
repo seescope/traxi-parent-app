@@ -1,12 +1,11 @@
 exports[`test renders the Walkthrough component at each stage for Android 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -104,18 +103,17 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 2`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -279,18 +277,17 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 3`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -454,18 +451,17 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 4`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -629,18 +625,17 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 5`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -804,18 +799,17 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 6`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -979,18 +973,17 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 7`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1154,18 +1147,17 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 8`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1329,18 +1321,17 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for Android 9`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1442,18 +1433,17 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1551,18 +1541,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1726,18 +1715,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -1862,18 +1850,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2037,18 +2024,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2212,18 +2198,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2387,18 +2372,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2562,18 +2546,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2675,18 +2658,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2784,18 +2766,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -2959,18 +2940,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3134,18 +3114,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3309,18 +3288,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3484,18 +3462,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3659,18 +3636,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3834,18 +3810,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
       </View>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -3947,18 +3922,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`test renders the loading screen when waiting to identify a device 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4282682111,
-      4287679225,
+      "#448AFF",
+      "#90CAF9",
     ]
   }
-  locations={null}
   style={
     Object {
       "alignItems": "center",
@@ -4058,5 +4032,5 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
