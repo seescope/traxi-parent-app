@@ -7,7 +7,7 @@ exports[`<KidName> handles null last name 1`] = `
     Object {
       "backgroundColor": "transparent",
       "color": "#FFF",
-      "fontFamily": "Raleway-Regular",
+      "fontFamily": "Raleway-Bold",
       "fontSize": 19,
       "textAlign": "center",
     }
@@ -25,7 +25,7 @@ exports[`<KidName> renders a kid's name 1`] = `
     Object {
       "backgroundColor": "transparent",
       "color": "#FFF",
-      "fontFamily": "Raleway-Regular",
+      "fontFamily": "Raleway-Bold",
       "fontSize": 19,
       "textAlign": "center",
     }

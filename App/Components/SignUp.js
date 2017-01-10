@@ -55,8 +55,21 @@ const SignUpComponent = ({ onPress }) =>
   >
     <View style={containerStyle} />
     <View style={containerStyle}>
-      <Animatable.Text animation="fadeIn" delay={1000} style={logoStyle}>What are your children doing online?</Animatable.Text>
-      <Animatable.Text animation="fadeIn" delay={1200} style={subHeaderStyle}>Find out in less than 60 seconds - it's easy!</Animatable.Text>
+      <Animatable.Text
+        animation="fadeIn"
+        delay={1000}
+        style={logoStyle}
+      >
+        What are your children doing online?
+      </Animatable.Text>
+
+      <Animatable.Text
+        animation="fadeIn"
+        delay={1200}
+        style={subHeaderStyle}
+      >
+        Find out in less than 60 seconds - it's easy!
+      </Animatable.Text>
 
       <Spacing />
 

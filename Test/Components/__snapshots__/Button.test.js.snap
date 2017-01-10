@@ -14,10 +14,10 @@ exports[`test renders on Android correctly 1`] = `
       style={
         Object {
           "color": "#FFF",
-          "fontWeight": "normal",
+          "fontFamily": "Raleway-Bold",
         }
       }>
-      TESTING!
+      Testing!
     </Text>
   </View>
 </View>

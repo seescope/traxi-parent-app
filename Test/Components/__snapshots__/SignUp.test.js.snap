@@ -8,6 +8,8 @@ Array [
 
 exports[`test renders the <SignUp> component 1`] = `
 <Image
+  animation="fadeIn"
+  easing="ease-in"
   resizeMode="cover"
   source={1}
   style={
@@ -33,6 +35,8 @@ exports[`test renders the <SignUp> component 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      animation="fadeIn"
+      delay={1000}
       ellipsizeMode="tail"
       style={
         Object {
@@ -49,6 +53,8 @@ exports[`test renders the <SignUp> component 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      animation="fadeIn"
+      delay={1200}
       ellipsizeMode="tail"
       style={
         Object {
@@ -60,7 +66,7 @@ exports[`test renders the <SignUp> component 1`] = `
           "textAlign": "center",
         }
       }>
-      Find out in less than 60 seconds.
+      Find out in less than 60 seconds - it\'s easy!
     </Text>
     <View
       style={
@@ -69,44 +75,48 @@ exports[`test renders the <SignUp> component 1`] = `
         }
       } />
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}>
-      <Text
+      animation="bounceIn"
+      delay={2000}>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
         accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "color": "rgba(75, 73, 73, 1)",
-            "fontSize": 28,
-            "fontWeight": "200",
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
           }
-        }>
-        Get started
-         
-      </Text>
-      <Image
-        source={1} />
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "rgba(75, 73, 73, 1)",
+              "fontSize": 28,
+              "fontWeight": "200",
+            }
+          }>
+          Monitor your child\'s device
+           
+        </Text>
+        <Image
+          source={1} />
+      </View>
     </View>
   </View>
 </Image>
