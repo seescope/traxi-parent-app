@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-    - npm install --verbose
+    - npm install
 
 test:
   override:
