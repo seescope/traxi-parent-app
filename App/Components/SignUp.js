@@ -28,16 +28,21 @@ const logoStyle = {
   fontSize: 26,
   textAlign: 'center',
   fontFamily: 'Raleway-ExtraBold',
+  marginHorizontal: 16,
   marginBottom: 16,
 };
 
 const subHeaderStyle = {
   backgroundColor: TRANSPARENT,
   color: WHITE,
-  fontSize: 13,
+  fontSize: 16,
   textAlign: 'center',
-  fontFamily: 'Raleway-Regular',
+  fontFamily: 'Raleway-Bold',
   marginBottom: 24,
+};
+
+const paddingStyle = {
+  flex: 0.5,
 };
 
 const containerStyle = {
@@ -53,28 +58,28 @@ const SignUpComponent = ({ onPress }) =>
     easing="ease-in"
     resizeMode="cover"
   >
-    <View style={containerStyle} />
+    <View style={paddingStyle} />
     <View style={containerStyle}>
       <Animatable.Text
         animation="fadeIn"
         delay={1000}
         style={logoStyle}
       >
-        What are your children doing online?
+        Find out what your kids are doing right now
       </Animatable.Text>
 
       <Animatable.Text
         animation="fadeIn"
-        delay={1200}
+        delay={1500}
         style={subHeaderStyle}
       >
-        Find out in less than 60 seconds - it's easy!
+        Get started in less than 60 seconds.
       </Animatable.Text>
 
       <Spacing />
 
-      <Animatable.View animation="bounceIn" delay={2000}>
-        <Button primary onPress={() => onPress()}>Monitor your child's device</Button>
+      <Animatable.View animation="bounceIn" delay={2500}>
+        <Button primary onPress={() => onPress()}>Monitor your kid's device</Button>
       </Animatable.View>
     </View>
   </Animatable.Image>;
