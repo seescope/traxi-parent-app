@@ -21,8 +21,7 @@ exports[`test renders the <SignUp> component 1`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
-        "flex": 1,
+        "flex": 0.5,
       }
     } />
   <View
@@ -45,28 +44,29 @@ exports[`test renders the <SignUp> component 1`] = `
           "fontFamily": "Raleway-ExtraBold",
           "fontSize": 26,
           "marginBottom": 16,
+          "marginHorizontal": 16,
           "textAlign": "center",
         }
       }>
-      What are your children doing online?
+      Find out what your kids are doing right now
     </Text>
     <Text
       accessible={true}
       allowFontScaling={true}
       animation="fadeIn"
-      delay={1200}
+      delay={1500}
       ellipsizeMode="tail"
       style={
         Object {
           "backgroundColor": "transparent",
           "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 13,
+          "fontFamily": "Raleway-Bold",
+          "fontSize": 16,
           "marginBottom": 24,
           "textAlign": "center",
         }
       }>
-      Find out in less than 60 seconds - it\'s easy!
+      Get started in less than 60 seconds.
     </Text>
     <View
       style={
@@ -76,7 +76,7 @@ exports[`test renders the <SignUp> component 1`] = `
       } />
     <View
       animation="bounceIn"
-      delay={2000}>
+      delay={2500}>
       <View
         accessibilityComponentType={undefined}
         accessibilityLabel={undefined}
@@ -111,7 +111,7 @@ exports[`test renders the <SignUp> component 1`] = `
               "fontWeight": "200",
             }
           }>
-          Monitor your child\'s device
+          Monitor your kid\'s device
            
         </Text>
         <Image
