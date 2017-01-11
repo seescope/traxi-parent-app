@@ -1,17 +1,19 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5E18E5E31C5596F535B6BD36212D65468D7073DF",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E58D986B3A82245227855204B24D1EFEF2BCB7B0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "006D93CFF4B40A588F98C069A5B32812695A22B3" : 9223372036854775807,
     "5E18E5E31C5596F535B6BD36212D65468D7073DF" : 9223372036854775807,
+    "006D93CFF4B40A588F98C069A5B32812695A22B3" : 9223372036854775807,
+    "E58D986B3A82245227855204B24D1EFEF2BCB7B0" : 9223372036854775807,
     "8CFE556BE538395FB97AA3C33793698EB9CADB9D" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C7CABE5C-BC6C-4369-B38A-7E401A6407FD",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "006D93CFF4B40A588F98C069A5B32812695A22B3" : "traxi\/node_modules\/react-native-image-picker\/",
     "5E18E5E31C5596F535B6BD36212D65468D7073DF" : "traxi\/",
+    "006D93CFF4B40A588F98C069A5B32812695A22B3" : "traxi\/node_modules\/react-native-image-picker\/",
+    "E58D986B3A82245227855204B24D1EFEF2BCB7B0" : "traxi-parent-app\/",
     "8CFE556BE538395FB97AA3C33793698EB9CADB9D" : "traxi\/node_modules\/react-native-contacts\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "traxi",
@@ -32,6 +34,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kanerogers\/react-native-contacts.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8CFE556BE538395FB97AA3C33793698EB9CADB9D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/traxicorp\/traxi-parent-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E58D986B3A82245227855204B24D1EFEF2BCB7B0"
     }
   ]
 }

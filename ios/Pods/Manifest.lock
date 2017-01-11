@@ -1,28 +1,30 @@
 PODS:
-  - Analytics (3.5.3)
+  - Analytics (3.5.6)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
-  - Firebase/Auth (3.9.0):
+  - Firebase/Auth (3.11.0):
     - Firebase/Core
-    - FirebaseAuth (= 3.0.6)
-  - Firebase/Core (3.9.0):
-    - FirebaseAnalytics (= 3.5.1)
-    - FirebaseCore (= 3.4.4)
-  - FirebaseAnalytics (3.5.1):
+    - FirebaseAuth (= 3.1.0)
+  - Firebase/Core (3.11.0):
+    - FirebaseAnalytics (= 3.6.0)
+    - FirebaseCore (= 3.4.6)
+  - FirebaseAnalytics (3.6.0):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (3.0.6):
-    - FirebaseAnalytics (~> 3.4)
+  - FirebaseAuth (3.1.0):
+    - FirebaseAnalytics (~> 3.6)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.4.4):
+  - FirebaseCore (3.4.6):
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
+  - GoogleAnalytics (3.17.0)
+  - GoogleIDFASupport (3.14.0)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
@@ -37,9 +39,19 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
-  - Mixpanel (3.0.6):
-    - Mixpanel/Mixpanel (= 3.0.6)
-  - Mixpanel/Mixpanel (3.0.6)
+  - Mixpanel (3.0.8):
+    - Mixpanel/Mixpanel (= 3.0.8)
+  - Mixpanel/Mixpanel (3.0.8)
+  - Segment-GoogleAnalytics (1.1.5):
+    - Analytics (~> 3.0)
+    - Segment-GoogleAnalytics/GoogleIDFASupport (= 1.1.5)
+  - Segment-GoogleAnalytics/Core (1.1.5):
+    - Analytics (~> 3.0)
+    - GoogleAnalytics (~> 3.14)
+  - Segment-GoogleAnalytics/GoogleIDFASupport (1.1.5):
+    - Analytics (~> 3.0)
+    - GoogleIDFASupport (~> 3.14)
+    - Segment-GoogleAnalytics/Core
   - Segment-Mixpanel (1.1.0):
     - Analytics (~> 3.0)
     - Mixpanel (~> 3.0)
@@ -50,24 +62,28 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Auth
   - Firebase/Core
+  - Segment-GoogleAnalytics
   - Segment-Mixpanel
 
 SPEC CHECKSUMS:
-  Analytics: e9f07fe57d1d5d14c47e72e719d1f30c6d0ec548
+  Analytics: 3f083546175de3e62185a72c14670aa00ca6a201
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
-  FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
-  FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
-  FirebaseCore: d0ed25f27b6f9158eccc439f1be6f92e81207e28
+  Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseAuth: b436e4ecebe068bf8e8c6e4e29de5756ffe7ee24
+  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleIDFASupport: aaf8c10bd429abb1c15349d5252244f5eda8ead1
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
-  Mixpanel: c462992e6fe84d74a8d0408c0b25852ddd067e4b
+  Mixpanel: 550a23d5dd95f8e9cda21e697661ffddbc8da46b
+  Segment-GoogleAnalytics: 0a6954c2e17cc2b242e0b4069681d44ffcee204a
   Segment-Mixpanel: 8e9f449c86d929f0e7abb2e89c760e65f5182d6e
 
-PODFILE CHECKSUM: a3d4ef3dff90776962bbe0b49ec61670725ce475
+PODFILE CHECKSUM: cd4960bcf296fae0378a60366e1b3a0c07161b89
 
 COCOAPODS: 1.1.1

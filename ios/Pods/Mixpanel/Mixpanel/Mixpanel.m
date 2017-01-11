@@ -21,7 +21,7 @@
 #define MIXPANEL_NO_APP_LIFECYCLE_SUPPORT (defined(MIXPANEL_APP_EXTENSION) || defined(MIXPANEL_WATCH_EXTENSION))
 #define MIXPANEL_NO_UIAPPLICATION_ACCESS (defined(MIXPANEL_APP_EXTENSION) || defined(MIXPANEL_WATCH_EXTENSION))
 
-#define VERSION @"3.0.6"
+#define VERSION @"3.0.8"
 
 @implementation Mixpanel
 
@@ -96,8 +96,6 @@ static NSString *defaultProjectToken;
         self.telephonyInfo = [[CTTelephonyNetworkInfo alloc] init];
 #endif
 #endif
-        MPSetLoggingEnabled(YES);
-
         self.apiToken = apiToken;
         _flushInterval = flushInterval;
         self.useIPAddressForGeoLocation = YES;
@@ -135,7 +133,7 @@ static NSString *defaultProjectToken;
 
         [self setUpListeners];
         [self unarchive];
-#if !MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#if !MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
         [self executeCachedVariants];
         [self executeCachedEventBindings];
 
@@ -993,7 +991,7 @@ static NSString *defaultProjectToken;
 }
 
 - (void) initializeGestureRecognizer {
-#if !MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#if !MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
     dispatch_async(dispatch_get_main_queue(), ^{
         self.testDesignerGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                            action:@selector(connectGestureRecognized:)];
@@ -1009,7 +1007,7 @@ static NSString *defaultProjectToken;
         self.testDesignerGestureRecognizer.enabled = self.enableVisualABTestAndCodeless;
         [[UIApplication sharedApplication].keyWindow addGestureRecognizer:self.testDesignerGestureRecognizer];
     });
-#endif // MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#endif // MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
 }
 
 #if !MIXPANEL_NO_REACHABILITY_SUPPORT
@@ -1045,7 +1043,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     MPLogInfo(@"%@ application did become active", self);
     [self startFlushTimer];
 
-#if !MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#if !MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
     if (self.checkForSurveysOnActive || self.checkForNotificationsOnActive || self.checkForVariantsOnActive) {
         NSDate *start = [NSDate date];
 
@@ -1070,7 +1068,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
             });
         }];
     }
-#endif // MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#endif // MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
 }
 
 - (void)applicationWillResignActive:(NSNotification *)notification
@@ -1097,8 +1095,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
         NSString *requestData = [MPNetwork encodeArrayForAPI:@[@{@"event": @"Integration", @"properties": @{@"token": @"85053bf24bba75239b16a601d9387e17", @"mp_lib": @"iphone", @"distinct_id": self.apiToken}}]];
         NSString *postBody = [NSString stringWithFormat:@"ip=%d&data=%@", self.useIPAddressForGeoLocation, requestData];
         NSURLRequest *request = [self.network buildPostRequestForEndpoint:MPNetworkEndpointTrack andBody:postBody];
-        NSURLSession *session = [NSURLSession sharedSession];
-        [[session dataTaskWithRequest:request completionHandler:^(NSData *responseData,
+        [[[MPNetwork sharedURLSession] dataTaskWithRequest:request completionHandler:^(NSData *responseData,
                                                                   NSURLResponse *urlResponse,
                                                                   NSError *error) {
             if (!error) {
@@ -1178,7 +1175,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     return gLoggingEnabled;
 }
 
-#if !MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#if !MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
 
 #pragma mark - Decide
 
@@ -1231,8 +1228,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
             
             // Send the network request
             dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-            NSURLSession *session = [NSURLSession sharedSession];
-            [[session dataTaskWithRequest:request completionHandler:^(NSData *responseData,
+            [[[MPNetwork sharedURLSession] dataTaskWithRequest:request completionHandler:^(NSData *responseData,
                                                                       NSURLResponse *urlResponse,
                                                                       NSError *error) {
 
@@ -1400,7 +1396,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     });
 }
 
-- (void)checkForSurveysWithCompletion:(void (^)(NSArray *surveys))completion
+- (void)checkForSurveysWithCompletion:(void (^)(NSArray *surveys))completion MIXPANEL_SURVEYS_DEPRECATED
 {
     [self checkForDecideResponseWithCompletion:^(NSArray *surveys, NSArray *notifications, NSSet *variants, NSSet *eventBindings) {
         if (completion) {
@@ -1428,15 +1424,15 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
 }
 
 #pragma mark - Surveys
-- (BOOL)isSurveyAvailable {
+- (BOOL)isSurveyAvailable MIXPANEL_SURVEYS_DEPRECATED {
     return (self.surveys.count > 0);
 }
 
-- (NSArray<MPSurvey *> *)availableSurveys {
+- (NSArray<MPSurvey *> *)availableSurveys MIXPANEL_SURVEYS_DEPRECATED {
     return self.surveys;
 }
 
-- (void)presentSurveyWithRootViewController:(MPSurvey *)survey
+- (void)presentSurveyWithRootViewController:(MPSurvey *)survey MIXPANEL_SURVEYS_DEPRECATED
 {
     UIViewController *presentingViewController = [Mixpanel topPresentedViewController];
 
@@ -1450,7 +1446,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }
 }
 
-- (void)showSurveyWithObject:(MPSurvey *)survey withAlert:(BOOL)showAlert
+- (void)showSurveyWithObject:(MPSurvey *)survey withAlert:(BOOL)showAlert MIXPANEL_SURVEYS_DEPRECATED
 {
     if (survey) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -1485,12 +1481,12 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }
 }
 
-- (void)showSurveyWithObject:(MPSurvey *)survey
+- (void)showSurveyWithObject:(MPSurvey *)survey MIXPANEL_SURVEYS_DEPRECATED
 {
     [self showSurveyWithObject:survey withAlert:NO];
 }
 
-- (void)showSurvey
+- (void)showSurvey MIXPANEL_SURVEYS_DEPRECATED
 {
     [self checkForSurveysWithCompletion:^(NSArray *surveys) {
         if (surveys.count > 0) {
@@ -1499,7 +1495,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }];
 }
 
-- (void)showSurveyWithID:(NSUInteger)ID
+- (void)showSurveyWithID:(NSUInteger)ID MIXPANEL_SURVEYS_DEPRECATED
 {
     [self checkForSurveysWithCompletion:^(NSArray *surveys) {
         for (MPSurvey *survey in surveys) {
@@ -1511,7 +1507,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }];
 }
 
-- (void)markSurvey:(MPSurvey *)survey shown:(BOOL)shown withAnswerCount:(NSUInteger)count
+- (void)markSurvey:(MPSurvey *)survey shown:(BOOL)shown withAnswerCount:(NSUInteger)count MIXPANEL_SURVEYS_DEPRECATED
 {
     MPLogInfo(@"%@ marking survey shown: %@, %@", self, @(survey.collectionID), _shownSurveyCollections);
     [_shownSurveyCollections addObject:@(survey.collectionID)];
@@ -1526,7 +1522,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }
 }
 
-- (void)surveyController:(MPSurveyNavigationController *)controller wasDismissedWithAnswers:(NSArray *)answers
+- (void)surveyController:(MPSurveyNavigationController *)controller wasDismissedWithAnswers:(NSArray *)answers MIXPANEL_SURVEYS_DEPRECATED
 {
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     self.currentlyShowingSurvey = nil;
@@ -1865,6 +1861,6 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     }
 }
 
-#endif // MIXPANEL_NO_SURVEY_NOTIFICATION_AB_TEST_SUPPORT
+#endif // MIXPANEL_NO_NOTIFICATION_AB_TEST_SUPPORT
 
 @end
