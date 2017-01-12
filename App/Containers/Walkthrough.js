@@ -62,11 +62,7 @@ const getWrapperStyle = (step, deviceType) => {
 };
 
 const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
-  if (step === 0 && deviceType !== 'iPad') {
-    return <LoadingIndicator>Sending message...</LoadingIndicator>;
-  }
-
-  if (step === 0 && deviceType === 'iPad') {
+  if (step === 0) {
     return <LoadingIndicator>Hold on one second...</LoadingIndicator>;
   }
 

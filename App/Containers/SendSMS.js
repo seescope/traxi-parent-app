@@ -65,7 +65,7 @@ export const SendSMSComponent = ({ kid, onPress }) => {
 
       <Spacing height={32} />
 
-      <Button onPress={onPress}>Send message</Button>
+      <Button onPress={onPress}>Next Step</Button>
     </Background>
   );
 };
