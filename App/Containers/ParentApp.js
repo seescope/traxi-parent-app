@@ -10,11 +10,8 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
 import SignUp from '../Components/SignUp';
-import SelectDevice from './SelectDevice';
-import FindKid from './FindKid';
 import CreateKid from './CreateKid';
 import Walkthrough from './Walkthrough';
-import SendSMS from './SendSMS';
 import Congratulations from './Congratulations';
 import ReportHome from '../ReportHome';
 import WeekView from '../ReportHome/WeekView';
@@ -117,10 +114,7 @@ class ParentApp extends React.Component {
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar>
           <Scene key="signup" initial={!isInstalled} component={SignUp} />
-          <Scene key="selectDevice" component={SelectDevice} />
-          <Scene key="findKid" component={FindKid} />
           <Scene key="createKid" component={CreateKid} />
-          <Scene key="sendSMS" component={SendSMS} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />

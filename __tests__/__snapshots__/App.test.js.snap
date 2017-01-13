@@ -10,12 +10,6 @@ exports[`test renders 1`] = `
   <View
     component={[Function]} />
   <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
     component={[Function]}
     initial={
       Array [
