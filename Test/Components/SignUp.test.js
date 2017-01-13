@@ -29,6 +29,6 @@ it('does beginSetup with a free transaction', () => {
   const mockDispatch = jest.fn(() => Promise.resolve());
   return beginSetup()(mockDispatch).then(() => {
     expect(mockDispatch.mock.calls).toMatchSnapshot();
-    expect(Actions.selectDevice).toHaveBeenCalled();
+    expect(Actions.createKid).toHaveBeenCalled();
   });
 });

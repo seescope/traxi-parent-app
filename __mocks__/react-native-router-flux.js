@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
 export const Actions = {
-  selectDevice: jest.fn(),
+  createKid: jest.fn(),
   congratulations: jest.fn(),
 };
 

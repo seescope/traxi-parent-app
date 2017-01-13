@@ -19,7 +19,7 @@ export const handleError = error => {
 
 export const beginSetup = () => dispatch =>
   dispatch(loginWithMethod('anonymous'))
-  .then(() => Actions.selectDevice())
+  .then(() => Actions.createKid())
   .catch(handleError);
 
 const logoStyle = {
