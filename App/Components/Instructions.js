@@ -27,7 +27,7 @@ const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
     '',
     `Browse to gettraxi.com on ${kidName}'s device`,
-    `Enter the 4-digit code ${setupID}`,
+    `Enter the code ${setupID}`,
     '',
     '',
     '',
@@ -39,18 +39,21 @@ const unknownInstructions = (step, kidName, setupID) => {
 };
 
 
-const ANDROID_INSTRUCTIONS = [
-  '',
-  '',
-  '',
-  `Swipe from the top and tap on "Download complete"`,
-  `Tap "Settings" (don't worry, this is normal)`,
-  `Tap "Unknown Sources", then tap "OK"`,
-  `Tap "Install" in the bottom right`,
-  `Tap "Open" in the bottom right`,
-  '',
-  '',
-];
+const androidInstructions = (step, kidName, setupID) => { 
+  const instructions = [
+    '',
+    '',
+    '',
+    `Tap "Install App"`,
+    `Tap "Install"`,
+    `Tap "Open"`,
+    `Enter the code ${setupID} again`,
+    'Tap "OK"',
+    '',
+  ];
+
+  return instructions[step];
+};
 
 const IOS_IMAGES = [
   {},
@@ -81,7 +84,7 @@ const instructionText = (step, kidName, deviceType, setupID) => {
     case 'iPhone':
       return IOS_INSTRUCTIONS[step];
     case 'Android':
-      return ANDROID_INSTRUCTIONS[step];
+      return androidInstructions(step, kidName, setupID);
     case 'iPad':
       return IOS_INSTRUCTIONS[step];
     default:
