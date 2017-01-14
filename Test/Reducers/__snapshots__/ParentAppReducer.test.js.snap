@@ -3,6 +3,7 @@ Object {
   "kids": Array [],
   "selectedKid": Object {
     "UUID": "new-UUID",
+    "deviceType": "unknown",
     "setupID": "setupID",
     "status": "WAITING",
   },
