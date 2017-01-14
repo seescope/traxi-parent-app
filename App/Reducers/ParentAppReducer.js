@@ -77,7 +77,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
     case 'ADD_KID': {
       const { UUID, setupID } = action;
       const { selectedKid } = state;
-      const newKid = { ...selectedKid, UUID, setupID, status: 'WAITING' };
+      const newKid = { ...selectedKid, UUID, setupID, deviceType: 'unknown', status: 'WAITING' };
 
       return {
         ...state,

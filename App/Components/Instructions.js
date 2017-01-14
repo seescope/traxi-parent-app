@@ -11,7 +11,7 @@ import Button from './Button';
 
 const { height, width } = Dimensions.get('window');
 
-const IPHONE_INSTRUCTIONS = [
+const IOS_INSTRUCTIONS = [
   '',
   '',
   '',
@@ -23,21 +23,21 @@ const IPHONE_INSTRUCTIONS = [
   '',
 ];
 
-const iPadInstructions = (step, kidName, setupID) => {
+const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
     '',
-    `Browse to gettraxi.com on ${kidName}'s iPad`,
+    `Browse to gettraxi.com on ${kidName}'s device`,
     `Enter the 4-digit code ${setupID}`,
-    `Tap the "Install" button in the top right`,
-    `Tap the "Install" button again (don't worry, this is normal)`,
-    `Tap "Install" for the last time (promise)`,
-    `Tap "Done"`,
+    '',
+    '',
+    '',
     '',
     '',
   ];
 
   return instructions[step];
 };
+
 
 const ANDROID_INSTRUCTIONS = [
   '',
@@ -52,7 +52,7 @@ const ANDROID_INSTRUCTIONS = [
   '',
 ];
 
-const IPHONE_IMAGES = [
+const IOS_IMAGES = [
   {},
   {},
   {},
@@ -75,17 +75,15 @@ const ANDROID_IMAGES = [
 
 
 const instructionText = (step, kidName, deviceType, setupID) => {
-  if (deviceType !== 'iPad' && step === 1) {
-    return `Open the SMS on ${kidName}'s phone and tap the link`;
-  }
-
   switch (deviceType) {
+    case 'unknown':
+      return unknownInstructions(step, kidName, setupID);
     case 'iPhone':
-      return IPHONE_INSTRUCTIONS[step];
+      return IOS_INSTRUCTIONS[step];
     case 'Android':
       return ANDROID_INSTRUCTIONS[step];
     case 'iPad':
-      return iPadInstructions(step, kidName, setupID);
+      return IOS_INSTRUCTIONS[step];
     default:
       return 'Sorry, that device is not supported.';
   }
@@ -93,17 +91,13 @@ const instructionText = (step, kidName, deviceType, setupID) => {
 
 // ReactNative forces us to be explicit about image locations.
 const imagePath = (step, deviceType) => {
-  if (step === 1 && deviceType === 'unknown') {
-    return {};
-  }
-
   switch (deviceType) {
     case 'iPhone':
-      return IPHONE_IMAGES[step];
+      return IOS_IMAGES[step];
     case 'Android':
       return ANDROID_IMAGES[step];
     case 'iPad':
-      return IPHONE_IMAGES[step];
+      return IOS_IMAGES[step];
     default:
       return {};
   }

@@ -51,9 +51,9 @@ const WALKTHROUGH_STYLES = {
   },
 };
 
-const getWrapperStyle = (step, deviceType) => {
+const getWrapperStyle = (step) => {
   if (step === 0
-    || (deviceType !== 'iPad' && step === 2)
+    || step === 2
     || step >= 5) {
     return WALKTHROUGH_STYLES.loadingindicatorContainer;
   }
@@ -62,26 +62,18 @@ const getWrapperStyle = (step, deviceType) => {
 };
 
 const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
-  if (step === 0 && deviceType !== 'iPad') {
-    return <LoadingIndicator>Sending message...</LoadingIndicator>;
-  }
-
-  if (step === 0 && deviceType === 'iPad') {
+  if (step === 0) {
     return <LoadingIndicator>Hold on one second...</LoadingIndicator>;
   }
 
-  if (step === 2 && deviceType === 'iPad') {
+  if (step === 2) {
     return (
       <View>
         <HeaderText>Enter the setup code {setupID}</HeaderText>
         <Spacing height={96} />
-        <LoadingIndicator>Waiting for {kidName}'s iPad...</LoadingIndicator>
+        <LoadingIndicator>Waiting for {kidName}'s device...</LoadingIndicator>
       </View>
     );
-  }
-
-  if (step === 2 && deviceType === 'unknown') {
-    return <LoadingIndicator>Connecting to {kidName}'s device...</LoadingIndicator>;
   }
 
   const lastStep = NUMBER_OF_STEPS[deviceType];
@@ -111,7 +103,7 @@ const Walkthrough = ({ step, kid, nextStep }) => (
       avatarURL={kid.avatarURL}
     />
 
-    <View style={getWrapperStyle(step, kid.deviceType)}>
+    <View style={getWrapperStyle(step)}>
       {getNextComponent(step, firstName(kid.name), nextStep, kid.deviceType, kid.setupID)}
     </View>
   </Background>
