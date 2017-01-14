@@ -44,7 +44,7 @@ const androidInstructions = (step, kidName, setupID) => {
     '',
     '',
     '',
-    `Tap "Install App"`,
+    `Tap "Next Step"`,
     `Tap "Install"`,
     `Tap "Open"`,
     `Enter the code ${setupID} again`,
