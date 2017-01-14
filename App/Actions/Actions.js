@@ -1,3 +1,7 @@
+export const selectKid = selectedKid => (
+  { type: 'SELECT_KID', selectedKid }
+);
+
 export const enterKidName = kidName => (
   { type: 'ENTER_KID_NAME', kidName }
 );
