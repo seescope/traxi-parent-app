@@ -1,5 +1,37 @@
+exports[`test handles when the image is selected 1`] = `
+Array [
+  Array [
+    Object {
+      "avatarURL": "heythere",
+      "type": "SELECT_KID_IMAGE",
+    },
+  ],
+  Array [
+    [Function],
+  ],
+  Array [
+    [Function],
+  ],
+]
+`;
+
 exports[`test renders the <CreateKid> component 1`] = `
-<View>
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "padding": 16,
+    }
+  }>
   <Text
     accessible={true}
     allowFontScaling={true}

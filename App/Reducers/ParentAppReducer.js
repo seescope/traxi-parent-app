@@ -13,8 +13,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'LOGGED_IN': {
       const { profile } = action;
-      console.log('Logged in', profile);
-
       const parentName = firstName(profile.name);
 
       if (!isIOS) {
@@ -30,33 +28,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'ERROR_LOGGING_IN': {
       return state;
-    }
-    case 'GOT_CONTACTS': {
-      const { contacts } = action;
-      console.log('[ParentAppReducer] || Got contacts', contacts);
-      return { ...state, contacts };
-    }
-    case 'SEARCH_FOR_KID': {
-      const kidSuggestions = state.contacts.filter(c =>
-        c.name.toLowerCase().startsWith(action.hint.toLowerCase()));
-      return { ...state, kidSuggestions };
-    }
-    case 'SELECT_KID': {
-      const { selectedKid } = action;
-      const selectedKidWithDevice = {
-        ...selectedKid,
-        deviceType: 'unknown',
-      };
-
-      return { ...state, selectedKid: selectedKidWithDevice };
-    }
-    case 'SENDING_SMS': {
-      return state;
-    }
-    case 'SMS_SENT': {
-      const { UUID } = action;
-      const selectedKid = { ...state.selectedKid, UUID, deviceType: 'unknown' };
-      return { ...state, selectedKid };
     }
     case 'FETCHING_REPORT': {
       return { ...state, loading: true };
@@ -95,20 +66,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
         selectedKid: newKid,
       };
     }
-    case 'SELECT_DEVICE': {
-      const { deviceType } = action;
-      const selectedKid = {
-        name: '',
-        UUID: '',
-        avatarURL: 'http://placehold.it/5x5',
-        deviceType,
-      };
-
-      return {
-        ...state,
-        selectedKid,
-      };
-    }
     case 'SELECT_PRICE': {
       const { price } = action;
 
@@ -117,7 +74,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
         price,
       };
     }
-    case 'ADD_IPAD': {
+    case 'ADD_KID': {
       const { UUID, setupID } = action;
       const { selectedKid } = state;
       const newKid = { ...selectedKid, UUID, setupID, status: 'WAITING' };
