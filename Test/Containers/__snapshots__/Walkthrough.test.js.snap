@@ -521,7 +521,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "textAlign": "center",
             }
           }>
-          Swipe from the top and tap on \"Download complete\"
+          Tap \"Install App\"
         </Text>
         <View
           style={
@@ -695,7 +695,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"Settings\" (don\'t worry, this is normal)
+          Tap \"Install\"
         </Text>
         <View
           style={
@@ -869,7 +869,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"Unknown Sources\", then tap \"OK\"
+          Tap \"Open\"
         </Text>
         <View
           style={
@@ -1043,7 +1043,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"Install\" in the bottom right
+          Enter the code 1234 again
         </Text>
         <View
           style={
@@ -1217,7 +1217,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"Open\" in the bottom right
+          Tap \"OK\"
         </Text>
         <View
           style={
