@@ -69,6 +69,7 @@ const ANDROID_IMAGES = [
   {},
   {},
   {},
+  {},
   require('../Images/android-step-3.png'),
   require('../Images/android-step-4.png'),
   require('../Images/android-step-5.png'),
