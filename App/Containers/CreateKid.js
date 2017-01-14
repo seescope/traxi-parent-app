@@ -4,7 +4,7 @@ import { Image, TouchableOpacity, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 
-import { enterKidName, selectKidImage } from '../Actions/Actions';
+import { enterKidName, selectKidImage, RESET_STATE } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
 import watchDevice from '../Actions/WatchDevice';
 import Background from '../Components/Background';
@@ -39,6 +39,9 @@ export const selectImage = dispatch => {
   };
 
   ImagePicker.launchImageLibrary(options, response => {
+    // Just make sure we're in a clean state.
+    dispatch(RESET_STATE);
+
     if (response.didCancel) {
       return;
     }
