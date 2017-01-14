@@ -1,22 +1,22 @@
-import setupIpad from '../../App/Actions/SetupIpad';
+import setupKid from '../../App/Actions/SetupKid';
 import mockFirebase, { mockSet } from 'firebase';
 
 global.Promise = require.requireActual('promise');
 
-it('sets up an iPad', () => {
+it('sets up a Kid', () => {
   const TEST_KID = {
     name: 'Test Name',
     phoneNumber: '+61401633346',
-    deviceType: 'iPad',
   };
 
   Math.random = () => 0.1234;
+
   const mockDispatch = jest.fn();
   const mockGetState = () => ({
-    selectedKid: TEST_KID
+    selectedKid: TEST_KID,
   });
 
-  return setupIpad()(mockDispatch, mockGetState).then(() => {
+  return setupKid()(mockDispatch, mockGetState).then(() => {
     // Dispatch SET_UUID
     expect(mockDispatch.mock.calls[0]).toMatchSnapshot();
 

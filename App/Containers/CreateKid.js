@@ -5,7 +5,7 @@ import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 
 import { enterKidName, selectKidImage } from '../Actions/Actions';
-import setupIpad from '../Actions/SetupIpad';
+import setupKid from '../Actions/SetupKid';
 import watchDevice from '../Actions/WatchDevice';
 import Background from '../Components/Background';
 import HeaderText from '../Components/HeaderText';
@@ -30,7 +30,7 @@ const getSource = response => {
   return source;
 };
 
-const selectImage = dispatch => {
+export const selectImage = dispatch => {
   const options = {
     title: 'Select Image',
     storageOptions: {
@@ -60,7 +60,7 @@ const selectImage = dispatch => {
 
     Actions.walkthrough();
 
-    dispatch(setupIpad()).then(() => {
+    dispatch(setupKid()).then(() => {
       dispatch(watchDevice());
     });
   });
