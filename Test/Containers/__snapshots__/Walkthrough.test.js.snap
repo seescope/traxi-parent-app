@@ -257,8 +257,6 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -566,8 +564,6 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -740,8 +736,6 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -914,8 +908,6 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1088,8 +1080,6 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1262,8 +1252,6 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1656,8 +1644,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1965,8 +1951,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2139,8 +2123,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2313,8 +2295,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2487,8 +2467,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2881,8 +2859,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3189,8 +3165,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3363,8 +3337,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3537,8 +3509,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3711,8 +3681,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
