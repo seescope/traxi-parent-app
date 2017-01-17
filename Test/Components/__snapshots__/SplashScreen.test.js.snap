@@ -1,12 +1,4 @@
-exports[`test does beginSetup with a free transaction 1`] = `
-Array [
-  Array [
-    [Function],
-  ],
-]
-`;
-
-exports[`test renders the <SignUp> component 1`] = `
+exports[`test renders the <SplashScreen> component 1`] = `
 <Image
   animation="fadeIn"
   easing="ease-in"

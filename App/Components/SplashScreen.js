@@ -1,7 +1,6 @@
 /* eslint global-require: "off" */
 
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
@@ -50,7 +49,7 @@ const containerStyle = {
   alignItems: 'center',
 };
 
-const SignUpComponent = ({ onPress }) =>
+const SplashScreen = () =>
   <Animatable.Image
     animation="fadeIn"
     source={require('../Images/signup_background.png')}
@@ -85,15 +84,4 @@ const SignUpComponent = ({ onPress }) =>
   </Animatable.Image>;
 
 
-const SignUp = connect(
-  null,
-  {
-    onPress: beginSetup,
-  }
-)(SignUpComponent);
-
-SignUpComponent.propTypes = {
-  onPress: PropTypes.func.isRequired,
-};
-
-export default SignUp;
+export default SplashScreen;
