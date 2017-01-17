@@ -9,7 +9,7 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
-import SignUp from '../Components/SignUp';
+import SplashScreen from '../Components/SplashScreen';
 import CreateKid from './CreateKid';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
@@ -113,7 +113,7 @@ class ParentApp extends React.Component {
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar>
-          <Scene key="signup" initial={!isInstalled} component={SignUp} />
+          <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="createKid" component={CreateKid} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
