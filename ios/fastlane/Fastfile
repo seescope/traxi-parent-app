@@ -35,10 +35,6 @@ platform :ios do
     cert
     sigh(force: true)
     gym(scheme: 'traxi', use_legacy_build_api: true)
-
-    crashlytics(api_token: 'f404ee355a5e1e71ad21fee38c1e5f00877eef07',
-                build_secret: '7efe66b06ae826dfebe50bd038153654b00a416b93705db5d54ce7991bf736f5',
-                groups: ['testers'])
   end
 
   desc "Deploy a new version to the App Store"
