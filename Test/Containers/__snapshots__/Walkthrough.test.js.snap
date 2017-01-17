@@ -521,7 +521,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"Install App\"
+          Tap \"Next Step\"
         </Text>
         <View
           style={
@@ -574,7 +574,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
         <Image
           animation="bounceInUp"
           resizeMode="contain"
-          source={1}
+          source={Object {}}
           style={
             Object {
               "height": 1334,
