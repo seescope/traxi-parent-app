@@ -7,6 +7,7 @@ import {
   selectPrice,
   deviceUpdated,
   addKid,
+  selectKid,
 } from '../../App/Actions/Actions';
 
 it('FETCHED_REPORT', () => {
@@ -27,6 +28,14 @@ it('RESET_STATE', () => {
 it('ENTER_KID_NAME', () => {
   const oldState = { selectedKid: { name: 'Jeff', UUID: '123' } };
   const newState = parentAppReducer(oldState, enterKidName('Bob'));
+
+  expect(newState).toMatchSnapshot();
+});
+
+it('SELECT_KID', () => {
+  const TEST_KID = { UUID: 'abc123' };
+  const oldState = { selectedKid: TEST_KID };
+  const newState = parentAppReducer(oldState, selectKid(TEST_KID));
 
   expect(newState).toMatchSnapshot();
 });

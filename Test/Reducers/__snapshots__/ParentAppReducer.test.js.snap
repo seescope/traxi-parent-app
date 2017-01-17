@@ -149,6 +149,15 @@ Object {
 }
 `;
 
+exports[`test SELECT_KID 1`] = `
+Object {
+  "selectedKid": Object {
+    "UUID": "abc123",
+    "deviceType": "unknown",
+  },
+}
+`;
+
 exports[`test SELECT_KID_IMAGE 1`] = `
 Object {
   "selectedKid": Object {

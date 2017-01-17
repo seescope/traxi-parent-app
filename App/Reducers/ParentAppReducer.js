@@ -56,6 +56,15 @@ const ParentAppReducer = (state = {}, action = {}) => {
         selectedKid: newKid,
       };
     }
+    case 'SELECT_KID': {
+      const { selectedKid } = action;
+      const selectedKidWithDevice = {
+        ...selectedKid,
+        deviceType: 'unknown',
+      };
+
+      return { ...state, selectedKid: selectedKidWithDevice };
+    }
     case 'SELECT_KID_IMAGE': {
       const { avatarURL } = action;
       const { selectedKid } = state;
