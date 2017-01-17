@@ -13,6 +13,7 @@
 #import "RCTBundleURLProvider.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Analytics/SEGAnalytics.h>
 
 @import Firebase;
 
@@ -40,6 +41,10 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"OrHTwtpRdZV1ZUDnYUSg3LsE8qKeJ6g9"];
+  configuration.trackApplicationLifecycleEvents = YES;
+  [SEGAnalytics setupWithConfiguration:configuration];
   
   // Firebase
   [FIRApp configure];
