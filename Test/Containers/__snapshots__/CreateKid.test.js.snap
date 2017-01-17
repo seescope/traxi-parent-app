@@ -2,6 +2,11 @@ exports[`test handles when the image is selected 1`] = `
 Array [
   Array [
     Object {
+      "type": "RESET_STATE",
+    },
+  ],
+  Array [
+    Object {
       "avatarURL": "heythere",
       "type": "SELECT_KID_IMAGE",
     },
