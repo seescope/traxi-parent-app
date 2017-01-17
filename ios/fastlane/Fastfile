@@ -32,8 +32,7 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     ensure_git_status_clean
-    cert
-    sigh(force: true)
+    match(type: "appstore")
     gym(scheme: 'traxi', use_legacy_build_api: true)
     testflight
   end
