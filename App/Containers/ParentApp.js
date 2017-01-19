@@ -118,7 +118,7 @@ class ParentApp extends React.Component {
         <RouterWithRedux hideNavBar>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" initial={isInstalled} component={Intro} />
-          <Scene key="areYouReady" initial={isInstalled} component={AreYouReady} />
+          <Scene key="areYouReady" initial={!isInstalled} component={AreYouReady} />
           <Scene key="notReadyYet" initial={isInstalled} component={NotReadyYet} />
           <Scene key="createKid" component={CreateKid} />
           <Scene key="walkthrough" component={Walkthrough} />

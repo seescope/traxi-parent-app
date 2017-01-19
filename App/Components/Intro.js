@@ -1,5 +1,6 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
+import { Actions } from 'react-native-router-flux';
 import { TouchableOpacity, Platform, View, Image, Dimensions, Text } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Button from '../Components/Button';
@@ -7,9 +8,6 @@ import * as Animatable from 'react-native-animatable';
 
 const { width, height } = Dimensions.get('window');
 const imageStyle = {
-  marginTop: Platform.select({
-    ios: 0,
-  }),
   width,
   height,
 };
@@ -65,6 +63,20 @@ const PROGRESS_IMAGES = [
   require('../Images/progress-bar-2.png'),
   require('../Images/progress-bar-3.png'),
   require('../Images/progress-bar-4.png'),
+];
+
+const HEADER_TEXT = [
+  'First, get your kid\'s device',
+  'Then enter a PIN',
+  'Follow the instructions',
+  'Then you\'re all done!',
+];
+
+const SUBHEADER_TEXT = [
+  'Don\'t worry, you can do this later if you like.',
+  'We\'ll tell you what it is soon',
+  'It only takes a couple of seconds',
+  'Doesn\'t that look easy?',
 ];
 
 export default class extends React.Component {
@@ -130,16 +142,16 @@ export default class extends React.Component {
 
           <Spacing height={32} />
 
-          <Text style={headerStyle}>First, get your kid's device</Text>
+          <Text style={headerStyle}>{HEADER_TEXT[this.state.step]}</Text>
 
-          <Text style={subHeaderStyle}>Don't worry, you can do this later if you like.</Text>
+          <Text style={subHeaderStyle}>{SUBHEADER_TEXT[this.state.step]}</Text>
 
           <Spacing height={16} />
 
           {this.state.step === 3 && <Animatable.View
             animation="bounce"
           >
-            <Button onPress={() => {}} primary={false}>Got it!</Button>
+            <Button onPress={() => Actions.areYouReady()} primary={false}>Got it!</Button>
           </Animatable.View>}
         </View>
       </Image>
