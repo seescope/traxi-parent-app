@@ -30,6 +30,10 @@ const subHeaderStyle = {
 };
 
 const paddingStyle = {
+  paddingHorizontal: 32,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
   flex: 6,
 };
 
@@ -54,7 +58,10 @@ export default class extends React.Component {
         style={imageStyle}
         source={require('../Images/intro-step-1.png')}
       >
-        <View style={paddingStyle} />
+        <View style={paddingStyle}>
+          <Image source={require('../Images/left-arrow.png')} />
+          <Image source={require('../Images/right-arrow.png')} />
+        </View>
 
         <View style={textContainer}>
           <Image source={require('../Images/progress-bar-1.png')} />
