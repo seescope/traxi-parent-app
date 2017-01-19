@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Image, TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { WHITE, NEUTRAL } from '../Constants/Colours';
 
 const Button = ({ children, onPress, primary }) => {
@@ -14,8 +14,7 @@ const Button = ({ children, onPress, primary }) => {
     },
     text: {
       fontFamily: 'Raleway-Regular',
-      fontWeight: '200',
-      fontSize: 28,
+      fontSize: 20,
       color: colour,
     },
   };
