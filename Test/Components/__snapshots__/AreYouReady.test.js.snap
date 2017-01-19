@@ -81,8 +81,7 @@ exports[`test renders the <AreYouReady> component 1`] = `
           Object {
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
-            "fontSize": 28,
-            "fontWeight": "200",
+            "fontSize": 20,
           }
         }>
         Show me how

@@ -13,7 +13,7 @@ exports[`test renders 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 6,
+        "flex": 5,
         "flexDirection": "row",
         "justifyContent": "space-between",
         "paddingHorizontal": 32,
@@ -78,8 +78,7 @@ exports[`test renders 1`] = `
       Don\'t worry, you can do this later if you like.
     </Text>
     <View
-      animation="bounce"
-      iterationCount="infinite">
+      animation="bounce">
       <View
         accessibilityComponentType={undefined}
         accessibilityLabel={undefined}
@@ -111,8 +110,7 @@ exports[`test renders 1`] = `
             Object {
               "color": "#FFF",
               "fontFamily": "Raleway-Regular",
-              "fontSize": 28,
-              "fontWeight": "200",
+              "fontSize": 20,
             }
           }>
           Got it!

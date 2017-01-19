@@ -251,8 +251,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -559,8 +558,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -732,8 +730,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -905,8 +902,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -1078,8 +1074,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -1251,8 +1246,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -1644,8 +1638,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -1952,8 +1945,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -2125,8 +2117,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -2298,8 +2289,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -2471,8 +2461,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -2864,8 +2853,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -3171,8 +3159,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -3344,8 +3331,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -3517,8 +3503,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
@@ -3690,8 +3675,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               Object {
                 "color": "#FFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontSize": 20,
               }
             }>
             Next Step
