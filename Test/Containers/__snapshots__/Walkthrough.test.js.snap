@@ -250,15 +250,13 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -559,15 +557,13 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -733,15 +729,13 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -907,15 +901,13 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1081,15 +1073,13 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1255,15 +1245,13 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1649,15 +1637,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -1958,15 +1944,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2132,15 +2116,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2306,15 +2288,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2480,15 +2460,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -2874,15 +2852,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3182,15 +3158,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3356,15 +3330,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3530,15 +3502,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>
@@ -3704,15 +3674,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
             style={
               Object {
                 "color": "#FFF",
-                "fontSize": 28,
-                "fontWeight": "200",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
               }
             }>
             Next Step
              
           </Text>
-          <Image
-            source={1} />
         </View>
       </View>
       <View>

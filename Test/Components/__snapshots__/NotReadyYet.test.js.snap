@@ -1,4 +1,4 @@
-exports[`test renders the <SplashScreen> component 1`] = `
+exports[`test renders the <NotReadyYet> component 1`] = `
 <View
   colors={
     Array [

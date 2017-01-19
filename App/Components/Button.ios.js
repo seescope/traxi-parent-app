@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Image, TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { WHITE, NEUTRAL } from '../Constants/Colours';
 
 const Button = ({ children, onPress, primary }) => {
@@ -13,8 +13,8 @@ const Button = ({ children, onPress, primary }) => {
       backgroundColor: 'transparent',
     },
     text: {
-      fontWeight: '200',
-      fontSize: 28,
+      fontFamily: 'Raleway-Regular',
+      fontSize: 20,
       color: colour,
     },
   };
@@ -22,7 +22,6 @@ const Button = ({ children, onPress, primary }) => {
   return (
     <TouchableOpacity onPress={onPress} style={BUTTON_STYLE.button} activeOpacity={0.6}>
       <Text style={BUTTON_STYLE.text}>{children} </Text>
-      <Image source={require('../Images/chevron_right.png')} />
     </TouchableOpacity>
   );
 };
