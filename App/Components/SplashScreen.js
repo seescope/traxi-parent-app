@@ -9,18 +9,6 @@ import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
-import loginWithMethod from '../Actions/LoginWithMethod';
-import { logError } from '../Utils';
-
-export const handleError = error => {
-  logError(`Error signing up: ${error.message}`);
-  return null;
-};
-
-export const beginSetup = () => dispatch =>
-  dispatch(loginWithMethod('anonymous'))
-  .then(() => Actions.createKid())
-  .catch(handleError);
 
 const logoStyle = {
   backgroundColor: TRANSPARENT,
@@ -61,7 +49,7 @@ const SplashScreen = () =>
       animation="bounceInUp"
       delay={2000}
     >
-      <Button onPress={() => {}}>Show me how</Button>
+      <Button onPress={() => Actions.intro()}>Show me how</Button>
     </Animatable.View>
   </Background>;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
-import { Platform, View, Image, Dimensions, Text } from 'react-native';
+import { TouchableOpacity, Platform, View, Image, Dimensions, Text } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Button from '../Components/Button';
 import * as Animatable from 'react-native-animatable';
@@ -53,13 +53,43 @@ const textContainer = {
   flex: 3,
 };
 
+const STEP_IMAGES = [
+  require('../Images/intro-step-1.png'),
+  require('../Images/intro-step-2.png'),
+  require('../Images/intro-step-3.png'),
+  require('../Images/intro-step-4.png'),
+];
+
+const PROGRESS_IMAGES = [
+  require('../Images/progress-bar-1.png'),
+  require('../Images/progress-bar-2.png'),
+  require('../Images/progress-bar-3.png'),
+  require('../Images/progress-bar-4.png'),
+];
+
 export default class extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      screen: 0,
+      step: 0,
     };
+  }
+
+  nextStep() {
+    const { step } = this.state;
+    const newStep = step < 4 ? step + 1 : step;
+    this.setState({
+      step: newStep,
+    });
+  }
+
+  previousStep() {
+    const { step } = this.state;
+    const newStep = step > 0 ? step - 1 : step;
+    this.setState({
+      step: newStep,
+    });
   }
 
   render() {
@@ -67,22 +97,35 @@ export default class extends React.Component {
       <Image
         resizeMode="cover"
         style={imageStyle}
-        source={require('../Images/intro-step-1.png')}
+        source={STEP_IMAGES[this.state.step]}
       >
         <View style={paddingStyle}>
-          <Image source={require('../Images/left-arrow.png')} />
-          <Animatable.Image
+          {this.state.step > 0 ? <TouchableOpacity onPress={() => this.previousStep()}>
+            <Image
+              source={require('../Images/left-arrow.png')}
+            />
+          </TouchableOpacity> : <View />}
+          {this.state.step < 3 ? <Animatable.View
+            animation="bounce"
+            duration={2000}
             iterationCount="infinite"
-            delay={2000}
-            source={require('../Images/right-arrow.png')}
-          />
+            delay={3000}
+          >
+            <TouchableOpacity onPress={() => this.nextStep()}>
+              <Image
+                source={require('../Images/right-arrow.png')}
+              />
+            </TouchableOpacity>
+          </Animatable.View> : <View />}
         </View>
 
         <View style={textContainer}>
           <Animatable.Image
             easing="ease-out"
+            duration={1000}
+            delay={1000}
             animation="bounceInLeft"
-            source={require('../Images/progress-bar-1.png')}
+            source={PROGRESS_IMAGES[this.state.step]}
           />
 
           <Spacing height={32} />
@@ -91,11 +134,13 @@ export default class extends React.Component {
 
           <Text style={subHeaderStyle}>Don't worry, you can do this later if you like.</Text>
 
-          <Animatable.View
+          <Spacing height={16} />
+
+          {this.state.step === 3 && <Animatable.View
             animation="bounce"
           >
             <Button onPress={() => {}} primary={false}>Got it!</Button>
-          </Animatable.View>
+          </Animatable.View>}
         </View>
       </Image>
     );
