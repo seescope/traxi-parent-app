@@ -2,11 +2,13 @@
 
 import React from 'react';
 import { Dimensions, Platform, View, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
-import { Actions } from 'react-native-router-flux';
+import LoginWithMethod from '../Actions/LoginWithMethod';
 
 const { width } = Dimensions.get('window');
 
@@ -43,10 +45,7 @@ const buttonContainer = {
   justifyContent: 'space-between',
 };
 
-const getStarted = () => {
-};
-
-const AreYouReady = () =>
+const AreYouReady = ({ getStarted }) =>
   <Image
     resizeMode="cover"
     style={containerStyle}
@@ -60,9 +59,14 @@ const AreYouReady = () =>
 
       <View style={buttonContainer}>
         <Button onPress={() => Actions.notReadyYet()} primary={false}>Not just yet</Button>
-        <Button onPress={() => getStarted()}>I'm ready!</Button>
+        <Button onPress={getStarted}>I'm ready!</Button>
       </View>
     </View>
   </Image>;
 
-export default AreYouReady;
+const mapDispatchToProps = dispatch => ({
+  getStarted: dispatch(LoginWithMethod)
+    .then(() => Actions.createKid()),
+});
+
+export default connect(null, mapDispatchToProps)(AreYouReady);
