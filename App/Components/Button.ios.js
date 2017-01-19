@@ -13,6 +13,7 @@ const Button = ({ children, onPress, primary }) => {
       backgroundColor: 'transparent',
     },
     text: {
+      fontFamily: 'Raleway-Regular',
       fontWeight: '200',
       fontSize: 28,
       color: colour,
@@ -22,7 +23,6 @@ const Button = ({ children, onPress, primary }) => {
   return (
     <TouchableOpacity onPress={onPress} style={BUTTON_STYLE.button} activeOpacity={0.6}>
       <Text style={BUTTON_STYLE.text}>{children} </Text>
-      <Image source={require('../Images/chevron_right.png')} />
     </TouchableOpacity>
   );
 };
