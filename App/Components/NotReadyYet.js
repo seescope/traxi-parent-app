@@ -1,8 +1,9 @@
 import React from 'react';
-import { Dimensions, Text, Platform, View, TextInput } from 'react-native';
+import { Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
 import { WHITE, NEUTRAL, TRANSPARENT, LIGHTEST_GREY } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
 import Button from '../Components/Button';
+import { isIOS } from '../Utils';
 
 const { width } = Dimensions.get('window');
 
@@ -60,11 +61,20 @@ const buttonContainer = {
   alignItems: 'center',
 };
 
+const topContainerStyle = {
+  justifyContent: 'space-between',
+  flexDirection: 'row',
+};
+
 export default () => (
   <View style={containerStyle}>
-    <Text style={headerStyle}>
-      Not ready yet?
-    </Text>
+    <View style={topContainerStyle}>
+      {isIOS ? <Image source={require('../Images/chevron_left.png')} /> : <View />}
+      <Text style={headerStyle}>
+        Not ready yet?
+      </Text>
+      <View />
+    </View>
 
     <Spacing height={32} />
 
