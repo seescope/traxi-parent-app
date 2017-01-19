@@ -16,6 +16,9 @@ exports[`test renders 1`] = `
     component={[Function]}
     initial={false} />
   <View
+    component={[Function]}
+    initial={false} />
+  <View
     component={[Function]} />
   <View
     component={[Function]} />

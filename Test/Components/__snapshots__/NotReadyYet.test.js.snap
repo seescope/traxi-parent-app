@@ -1,0 +1,93 @@
+exports[`test renders the <NotReadyYet> component 1`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "paddingHorizontal": 32,
+    }
+  }>
+  <Image
+    animation="bounceInDown"
+    source={1} />
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    animation="bounceIn"
+    delay={1000}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 32,
+        "marginBottom": 16,
+        "marginHorizontal": 16,
+        "textAlign": "center",
+      }
+    }>
+    Start seeing what your kids are doing.
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <View
+    animation="bounceInUp"
+    delay={2000}>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
+          }
+        }>
+        Show me how
+         
+      </Text>
+    </View>
+  </View>
+</View>
+`;
