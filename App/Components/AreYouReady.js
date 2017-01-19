@@ -8,7 +8,7 @@ import { Actions } from 'react-native-router-flux';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
-import LoginWithMethod from '../Actions/LoginWithMethod';
+import loginWithMethod from '../Actions/LoginWithMethod';
 
 const { width } = Dimensions.get('window');
 
@@ -64,8 +64,12 @@ const AreYouReady = ({ getStarted }) =>
     </View>
   </Image>;
 
+AreYouReady.propTypes = {
+  getStarted: React.PropTypes.func.isRequired,
+};
+
 const mapDispatchToProps = dispatch => ({
-  getStarted: dispatch(LoginWithMethod)
+  getStarted: () => dispatch(loginWithMethod())
     .then(() => Actions.createKid()),
 });
 
