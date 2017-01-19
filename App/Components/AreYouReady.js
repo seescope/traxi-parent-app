@@ -9,8 +9,13 @@ import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import loginWithMethod from '../Actions/LoginWithMethod';
+import { logError } from '../Utils';
 
 const { width } = Dimensions.get('window');
+const handleError = error => {
+  logError(`Error logging in: ${error}`);
+  alert('There was an error logging you in. Please try again.');
+};
 
 const headerStyle = {
   backgroundColor: TRANSPARENT,
@@ -70,7 +75,8 @@ AreYouReady.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   getStarted: () => dispatch(loginWithMethod())
-    .then(() => Actions.createKid()),
+    .then(() => Actions.createKid())
+    .catch(handleError),
 });
 
 export default connect(null, mapDispatchToProps)(AreYouReady);

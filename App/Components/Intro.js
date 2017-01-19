@@ -120,7 +120,6 @@ export default class extends React.Component {
           {this.state.step < 3 ? <Animatable.View
             animation="bounce"
             duration={2000}
-            iterationCount="infinite"
             delay={3000}
           >
             <TouchableOpacity onPress={() => this.nextStep()}>
@@ -149,7 +148,10 @@ export default class extends React.Component {
           <Spacing height={16} />
 
           {this.state.step === 3 && <Animatable.View
-            animation="bounce"
+            delay={1000}
+            duration={1000}
+            easing="ease-in-out"
+            animation="bounceInUp"
           >
             <Button onPress={() => Actions.areYouReady()} primary={false}>Got it!</Button>
           </Animatable.View>}
