@@ -1,1 +1,125 @@
-exports[`test renders 1`] = `<View />`;
+exports[`test renders 1`] = `
+<Image
+  resizeMode="cover"
+  source={1}
+  style={
+    Object {
+      "height": 1334,
+      "marginTop": 0,
+      "width": 750,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 6,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingHorizontal": 32,
+      }
+    }>
+    <Image
+      source={1} />
+    <Image
+      delay={2000}
+      iterationCount="infinite"
+      source={1} />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 3,
+      }
+    }>
+    <Image
+      animation="bounceInLeft"
+      easing="ease-out"
+      source={1} />
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 28,
+          "marginBottom": 16,
+          "marginHorizontal": 16,
+          "textAlign": "center",
+        }
+      }>
+      First, get your kid\'s device
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
+          "marginBottom": 16,
+          "marginHorizontal": 16,
+          "textAlign": "center",
+        }
+      }>
+      Don\'t worry, you can do this later if you like.
+    </Text>
+    <View
+      animation="bounce"
+      iterationCount="infinite">
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 28,
+              "fontWeight": "200",
+            }
+          }>
+          Got it!
+           
+        </Text>
+      </View>
+    </View>
+  </View>
+</Image>
+`;

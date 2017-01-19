@@ -17,7 +17,10 @@ const imageStyle = {
 const headerStyle = {
   backgroundColor: TRANSPARENT,
   color: WHITE,
-  fontSize: 28,
+  fontSize: Platform.select({
+    ios: 28,
+    android: 24,
+  }),
   textAlign: 'center',
   fontFamily: 'Raleway-ExtraBold',
   marginHorizontal: 16,
@@ -27,7 +30,10 @@ const headerStyle = {
 const subHeaderStyle = {
   backgroundColor: TRANSPARENT,
   color: WHITE,
-  fontSize: 16,
+  fontSize: Platform.select({
+    ios: 16,
+    android: 14,
+  }),
   textAlign: 'center',
   fontFamily: 'Raleway-Regular',
   marginHorizontal: 16,
@@ -39,7 +45,7 @@ const paddingStyle = {
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
-  flex: 6,
+  flex: 5,
 };
 
 const textContainer = {
@@ -87,7 +93,6 @@ export default class extends React.Component {
 
           <Animatable.View
             animation="bounce"
-            iterationCount="infinite"
           >
             <Button onPress={() => {}} primary={false}>Got it!</Button>
           </Animatable.View>

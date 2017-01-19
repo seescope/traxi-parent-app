@@ -10,6 +10,7 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
 import SplashScreen from '../Components/SplashScreen';
+import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import CreateKid from './CreateKid';
 import Walkthrough from './Walkthrough';
@@ -116,6 +117,7 @@ class ParentApp extends React.Component {
         <RouterWithRedux hideNavBar>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" initial={!isInstalled} component={Intro} />
+          <Scene key="areYouReady" initial={isInstalled} component={AreYouReady} />
           <Scene key="createKid" component={CreateKid} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />

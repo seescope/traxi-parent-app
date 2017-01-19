@@ -4,6 +4,9 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
     component={[Function]}
     initial={false} />
   <View
+    component={[Function]}
+    initial={false} />
+  <View
     component={[Function]} />
   <View
     component={[Function]} />
@@ -21,6 +24,9 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
 
 exports[`<ParentApp /> renders the Parent with the reports component active if installed 1`] = `
 <View>
+  <View
+    component={[Function]}
+    initial={true} />
   <View
     component={[Function]}
     initial={true} />
