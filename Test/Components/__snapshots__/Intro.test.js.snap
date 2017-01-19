@@ -5,7 +5,6 @@ exports[`test renders 1`] = `
   style={
     Object {
       "height": 1334,
-      "marginTop": 0,
       "width": 750,
     }
   }>
@@ -19,12 +18,34 @@ exports[`test renders 1`] = `
         "paddingHorizontal": 32,
       }
     }>
-    <Image
-      source={1} />
-    <Image
-      delay={2000}
-      iterationCount="infinite"
-      source={1} />
+    <View />
+    <View
+      animation="bounce"
+      delay={3000}
+      duration={2000}>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Image
+          source={1} />
+      </View>
+    </View>
   </View>
   <View
     style={
@@ -35,6 +56,8 @@ exports[`test renders 1`] = `
     }>
     <Image
       animation="bounceInLeft"
+      delay={1000}
+      duration={1000}
       easing="ease-out"
       source={1} />
     <View
@@ -78,46 +101,11 @@ exports[`test renders 1`] = `
       Don\'t worry, you can do this later if you like.
     </Text>
     <View
-      animation="bounce">
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "opacity": 1,
-          }
+      style={
+        Object {
+          "height": 16,
         }
-        testID={undefined}>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
-            }
-          }>
-          Got it!
-           
-        </Text>
-      </View>
-    </View>
+      } />
   </View>
 </Image>
 `;
