@@ -9,7 +9,11 @@ it('renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('saves the parent\'s state and transitions to the next screen', () => onPress().then(() => {
-  expect(Actions.areYouReady).toHaveBeenCalled();
-  expect(AsyncStorage.setItem.mock.calls).toMatchSnapshot();
-}));
+it('saves the parent\'s state and transitions to the next screen', () => {
+  AsyncStorage.setItem = jest.fn(() => Promise.resolve());
+
+  return onPress().then(() => {
+    expect(Actions.areYouReady).toHaveBeenCalled();
+    expect(AsyncStorage.setItem.mock.calls).toMatchSnapshot();
+  });
+});
