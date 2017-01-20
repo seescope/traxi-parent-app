@@ -66,7 +66,7 @@ const topContainerStyle = {
   flexDirection: 'row',
 };
 
-export default () => (
+const NotReadyYet = ({ onPress }) => (
   <View style={containerStyle}>
     <View style={topContainerStyle}>
       {isIOS ? <Image source={require('../Images/chevron_left.png')} /> : <View />}
@@ -101,9 +101,25 @@ export default () => (
     <Spacing height={32} />
 
     <View style={buttonContainer}>
-      <Button onPress={() => {}}>
+      <Button onPress={() => onPress}>
         Remind me tomorrow
       </Button>
     </View>
   </View>
 );
+
+NotReadyYet.propTypes = {
+  onPress: React.PropTypes.func.isRequired,
+};
+
+const mapStateToProps = {
+  phoneNumber,
+};
+
+const mapDispatchToProps = {
+  onPress: dispatch => {
+    
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotReadyYet);
