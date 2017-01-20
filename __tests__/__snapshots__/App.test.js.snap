@@ -4,20 +4,11 @@ exports[`test renders 1`] = `
     component={[Function]}
     initial={false} />
   <View
-    component={[Function]}
-    initial={
-      Array [
-        1,
-        2,
-        3,
-      ]
-    } />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={false} />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={false} />
+    component={[Function]} />
   <View
     component={[Function]} />
   <View
