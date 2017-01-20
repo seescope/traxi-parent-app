@@ -1,0 +1,222 @@
+exports[`test calls ImagePicker if pickImage is true 1`] = `
+Array [
+  Array [
+    Object {
+      "avatarURL": "heythere",
+      "type": "SELECT_KID_IMAGE",
+    },
+  ],
+  Array [
+    [Function],
+  ],
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`test renders the <SetName> component 1`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingHorizontal": 32,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "flex": 4,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 30,
+          "marginBottom": -2,
+          "textAlign": "center",
+        }
+      }>
+      Thanks, 
+      Name
+      !
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 24,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
+          "textAlign": "left",
+        }
+      }>
+      Next, let\'s set a picture for 
+      Jeff
+       to make you feel more at home.
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 24,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
+          "textAlign": "left",
+        }
+      }>
+      Don\'t worry, only you will be able to see it.
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 64,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 16,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }>
+          Not right now
+           
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }>
+          Set a picture for 
+          Jeff
+           
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test uses a default image of pickImage is false 1`] = `
+Array [
+  Array [
+    Object {
+      "avatarURL": "http://i.imgur.com/ZrwsRFD.png",
+      "type": "SELECT_KID_IMAGE",
+    },
+  ],
+  Array [
+    [Function],
+  ],
+  Array [
+    [Function],
+  ],
+]
+`;
