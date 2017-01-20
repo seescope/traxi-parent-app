@@ -1,19 +1,6 @@
 exports[`test posts a number to Slack 1`] = `
 Array [
   Array [
-    Promise {
-      "_45": 0,
-      "_54": null,
-      "_65": undefined,
-      "_81": 1,
-    },
-  ],
-]
-`;
-
-exports[`test posts a number to Slack 2`] = `
-Array [
-  Array [
     "0401633346",
   ],
 ]
@@ -36,28 +23,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "justifyContent": "space-between",
       }
     }>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
-      testID={undefined}>
-      <Image
-        source={1} />
-    </View>
+    <View />
     <Text
       accessible={true}
       allowFontScaling={true}

@@ -1,10 +1,13 @@
-jest.mock('../../App/Actions/SendPhoneNumberToSlack', () => jest.fn(() => Promise.resolve()));
+jest.mock('../../App/Utils', () => ({
+  sendPhoneNumberToSlack: jest.fn(() => Promise.resolve()),
+}));
 
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import SendPhoneNumberToSlack from '../../App/Actions/SendPhoneNumberToSlack';
+import { Actions } from 'react-native-router-flux';
+import { sendPhoneNumberToSlack } from '../../App/Utils';
 
 import NotReadyYet, { remindMeTomorrow } from '../../App/Components/NotReadyYet';
 
@@ -19,9 +22,7 @@ it('renders the <NotReadyYet> component', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('posts a number to Slack', () => {
-  const mockDispatch = jest.fn(() => Promise.resolve());
-  remindMeTomorrow('0401633346')(mockDispatch);
-  expect(mockDispatch.mock.calls).toMatchSnapshot();
-  expect(SendPhoneNumberToSlack.mock.calls).toMatchSnapshot();
-});
+it('posts a number to Slack', () => remindMeTomorrow('0401633346').then(() => {
+  expect(sendPhoneNumberToSlack.mock.calls).toMatchSnapshot();
+  expect(Actions.thankyou).toHaveBeenCalled();
+}));

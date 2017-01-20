@@ -1,9 +1,0 @@
-exports[`test sends a phone number to Slack 1`] = `Array []`;
-
-exports[`test sends a phone number to Slack 2`] = `
-Array [
-  Array [
-    "+61401633346",
-  ],
-]
-`;

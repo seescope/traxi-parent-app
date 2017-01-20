@@ -1,13 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import sendPhoneNumberToSlack from '../Actions/SendPhoneNumberToSlack';
 import { WHITE, NEUTRAL, TRANSPARENT, LIGHTEST_GREY } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
 import Button from '../Components/Button';
-import { isIOS, logError } from '../Utils';
+import { isIOS, logError, sendPhoneNumberToSlack } from '../Utils';
 
 const { width } = Dimensions.get('window');
 
@@ -75,22 +73,26 @@ const topContainerStyle = {
   flexDirection: 'row',
 };
 
-export const remindMeTomorrow = (phoneNumber) => (dispatch) => {
-  dispatch(sendPhoneNumberToSlack(phoneNumber))
-    .then(Actions.thankyou())
-    .catch(handleError);
+export const remindMeTomorrow = (component, phoneNumber) => {
+  component.setState({ loading: true });
+  return sendPhoneNumberToSlack(phoneNumber)
+    .then(() => Actions.thankyou())
+    .catch(handleError)
+    .finally(() => {
+      component.setState({ loading: false });
+    });
 };
 
 class NotReadyYet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
       phoneNumber: null,
     };
   }
 
   render() {
-    const { onPress } = this.props;
     return (
       <View style={containerStyle}>
         <View style={topContainerStyle}>
@@ -130,22 +132,16 @@ class NotReadyYet extends React.Component {
 
         <Spacing height={32} />
 
-        <View style={buttonContainer}>
-          <Button onPress={() => onPress(this.state.phoneNumber)}>
-            Remind me tomorrow
-          </Button>
-        </View>
+        {this.state.loading ?
+          <ActivityIndicator size="large" /> :
+          <View style={buttonContainer}>
+            <Button onPress={() => remindMeTomorrow(this, this.state.phoneNumber)}>
+              Remind me tomorrow
+            </Button>
+          </View>}
       </View>
     );
   }
 }
 
-NotReadyYet.propTypes = {
-  onPress: React.PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = {
-  onPress: remindMeTomorrow,
-};
-
-export default connect(null, mapDispatchToProps)(NotReadyYet);
+export default NotReadyYet;

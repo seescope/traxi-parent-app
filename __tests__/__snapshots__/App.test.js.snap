@@ -8,7 +8,8 @@ exports[`test renders 1`] = `
   <View
     component={[Function]} />
   <View
-    component={[Function]} />
+    component={[Function]}
+    initial={true} />
   <View
     component={[Function]} />
   <View
