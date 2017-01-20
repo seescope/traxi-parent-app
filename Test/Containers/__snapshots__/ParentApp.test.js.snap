@@ -4,14 +4,11 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
     component={[Function]}
     initial={false} />
   <View
-    component={[Function]}
-    initial={Array []} />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={false} />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={false} />
+    component={[Function]} />
   <View
     component={[Function]} />
   <View
@@ -34,14 +31,11 @@ exports[`<ParentApp /> renders the Parent with the reports component active if i
     component={[Function]}
     initial={true} />
   <View
-    component={[Function]}
-    initial={undefined} />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={true} />
+    component={[Function]} />
   <View
-    component={[Function]}
-    initial={true} />
+    component={[Function]} />
   <View
     component={[Function]} />
   <View

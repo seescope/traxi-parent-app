@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
+import { TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import { WHITE, NEUTRAL, TRANSPARENT, LIGHTEST_GREY } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
 import Button from '../Components/Button';
@@ -69,7 +70,11 @@ const topContainerStyle = {
 export default () => (
   <View style={containerStyle}>
     <View style={topContainerStyle}>
-      {isIOS ? <Image source={require('../Images/chevron_left.png')} /> : <View />}
+      {isIOS ?
+        <TouchableOpacity onPress={() => Actions.pop()}>
+          <Image source={require('../Images/chevron_left.png')} />
+        </TouchableOpacity> :
+        <View />}
       <Text style={headerStyle}>
         Not ready yet?
       </Text>
