@@ -1,16 +1,15 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Text, View } from 'react-native';
+import { Keyboard, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
+import { enterKidName } from '../Actions/Actions';
 import Background from '../Components/Background';
 import Button from '../Components/Button';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
-
-const setKidName = () => dispatch => {};
 
 const style = {
   container: {
@@ -38,6 +37,13 @@ const style = {
   },
 };
 
+export const setKidName = kidName => dispatch => dispatch(enterKidName(kidName));
+
+const nextStep = () => {
+  Keyboard.dismiss();
+  Actions.setImage();
+};
+
 const SetName = ({ parentName, onChangeText }) => (
   <Background style={style.container}>
     <View style={style.padding} />
@@ -50,14 +56,16 @@ const SetName = ({ parentName, onChangeText }) => (
         What is your kid's name?
       </Text>
 
-      <Spacing />
-
       <TextInput
+        refFunc={ref => { this.textInput = ref; }}
         onChangeText={onChangeText}
+        onSubmitEditing={() => Actions.setImage()}
       />
 
+      <Spacing />
+
       <View style={style.buttonContainer}>
-        <Button onPress={() => Actions.setImage()}>Next step</Button>
+        <Button onPress={() => nextStep()}>Next step</Button>
       </View>
     </View>
   </Background>
