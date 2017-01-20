@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`test renders the <CreateKid> component 1`] = `
+exports[`test renders the <SetImage> component 1`] = `
 <View
   colors={
     Array [

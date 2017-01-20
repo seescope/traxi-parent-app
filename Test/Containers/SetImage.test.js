@@ -6,7 +6,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Actions } from 'react-native-router-flux';
 
-import CreateKid, { selectImage } from '../../App/Containers/CreateKid';
+import SetImage, { selectImage } from '../../App/Containers/SetImage';
 
 // Why? Why!?
 global.Promise = require.requireActual('promise');
@@ -14,15 +14,15 @@ global.Promise = require.requireActual('promise');
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({ parentName: 'Name' });
 
-const CreateKidComponent = () => (
+const SetImageComponent = () => (
   <Provider store={testStore}>
-    <CreateKid />
+    <SetImage />
   </Provider>
 );
 
-it('renders the <CreateKid> component', () => {
+it('renders the <SetImage> component', () => {
   const tree = renderer.create(
-    <CreateKidComponent />
+    <SetImageComponent />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

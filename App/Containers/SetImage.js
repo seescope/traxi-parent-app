@@ -1,19 +1,17 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Image, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 
-import { enterKidName, selectKidImage, RESET_STATE } from '../Actions/Actions';
+import { selectKidImage, RESET_STATE } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
 import watchDevice from '../Actions/WatchDevice';
 import Background from '../Components/Background';
+import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import BodyText from '../Components/BodyText';
-import SmallText from '../Components/SmallText';
-import TextInput from '../Components/TextInput';
-import { TRAXI_BLUE } from '../Constants/Colours';
+import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
 import { isIOS, logError } from '../Utils';
 
 const getSource = response => {
@@ -30,7 +28,7 @@ const getSource = response => {
   return source;
 };
 
-export const selectImage = dispatch => {
+export const selectImage = pickImage => dispatch => {
   const options = {
     title: 'Select Image',
     storageOptions: {
@@ -73,55 +71,74 @@ const style = {
   container: {
     backgroundColor: TRAXI_BLUE,
     flex: 1,
-    padding: 16,
+    paddingHorizontal: 32,
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  padding: {
+    flex: 1,
+  },
+  bodyText: {
+    fontFamily: 'Raleway-Regular',
+    fontSize: 16,
+    color: WHITE,
+    backgroundColor: TRANSPARENT,
+    textAlign: 'left',
+  },
+  innerContainer: {
+    flex: 4,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+  },
 };
 
-const CreateKid = ({ parentName, onChangeText, onPress }) => (
+const CreateKid = ({ parentName, kidName, onPress }) => (
   <Background style={style.container}>
-    <HeaderText>Add your child, {parentName}</HeaderText>
+    <View style={style.padding} />
+    <View style={style.innerContainer}>
+      <HeaderText>Thanks, {parentName}!</HeaderText>
 
-    <Spacing />
+      <Spacing />
 
-    <BodyText>
-      Type your child's name in the box below, then tap on the circle
-      to add a picture.
-    </BodyText>
+      <Text style={style.bodyText}>
+        Next, let's set a picture for {kidName} to make you feel more at home.
+      </Text>
 
-    <Spacing />
+      <Spacing />
 
-    <SmallText>
-      Don't worry, only you can see your child's picture. If you feel
-      uncomfortable using their photo, you can use any image you like.
-    </SmallText>
+      <Text style={style.bodyText}>
+        Don't worry, only you will be able to see it.
+      </Text>
 
-    <Spacing height={36} />
+      <Spacing />
 
-    <TextInput placeholder="eg. Jen Smith" onChangeText={onChangeText} />
+      <View style={style.buttonContainer}>
+        <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
+        <Button onPress={() => onPress(true)}>Set a picture</Button>
+      </View>
 
-    <Spacing height={16} />
-
-    <TouchableOpacity onPress={onPress} style={style.deviceContainer}>
-      <Image source={require('../Images/add_image.png')} />
-    </TouchableOpacity>
+    </View>
   </Background>
 );
 
 CreateKid.propTypes = {
+  kidName: PropTypes.string.isRequired,
   parentName: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
+  kidName: state.selectedKid.name,
   parentName: state.parentName,
 });
 
-const mapDispatchToProps = dispatch => ({
-  onChangeText: text => dispatch(enterKidName(text)),
-  onPress: () => selectImage(dispatch),
-});
+const mapDispatchToProps = {
+  onPress: selectImage,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateKid);
