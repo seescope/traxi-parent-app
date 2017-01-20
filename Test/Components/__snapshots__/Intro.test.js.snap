@@ -113,8 +113,8 @@ exports[`test renders 1`] = `
 exports[`test saves the parent's state and transitions to the next screen 1`] = `
 Array [
   Array [
-    "seenIntro",
-    "true",
+    "profile",
+    "{\"introSeen\":true}",
   ],
 ]
 `;

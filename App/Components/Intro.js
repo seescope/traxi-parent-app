@@ -79,7 +79,7 @@ const SUBHEADER_TEXT = [
   'Doesn\'t that look easy?',
 ];
 
-export const onPress = () => AsyncStorage.setItem('seenIntro', 'true')
+export const onPress = () => AsyncStorage.setItem('profile', JSON.stringify({ introSeen: true }))
   .then(() => Actions.areYouReady());
 
 export default class extends React.Component {

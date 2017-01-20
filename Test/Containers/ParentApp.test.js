@@ -5,13 +5,18 @@ import ParentApp from '../../App/Containers/ParentApp';
 jest.mock('aws-sdk-react-native-dynamodb');
 
 describe('<ParentApp />', () => {
-  it('renders the Parent with the reports component active if installed', () => {
-    const tree = renderer.create(<ParentApp profile={{}} />).toJSON();
+  it('renders the Parent with the ReportHome component active if installed', () => {
+    const tree = renderer.create(<ParentApp profile={{ kids: [] }} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders the Parent with the SignUp component active if not installed', () => {
-    const tree = renderer.create(<ParentApp profile={{ kids: [] }}/>).toJSON();
+  it('renders the Parent with the AreYouReady component active if not installed', () => {
+    const tree = renderer.create(<ParentApp profile={{ seenIntro: true }} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the Parent with the SplashScreen component active if not installed', () => {
+    const tree = renderer.create(<ParentApp profile={{}} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

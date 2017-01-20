@@ -1,4 +1,34 @@
-exports[`<ParentApp /> renders the Parent with the SignUp component active if not installed 1`] = `
+exports[`<ParentApp /> renders the Parent with the AreYouReady component active if not installed 1`] = `
+<View>
+  <View
+    component={[Function]}
+    initial={true} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={true} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={undefined} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+</View>
+`;
+
+exports[`<ParentApp /> renders the Parent with the ReportHome component active if installed 1`] = `
 <View>
   <View
     component={[Function]}
@@ -9,7 +39,7 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
     component={[Function]} />
   <View
     component={[Function]}
-    initial={true} />
+    initial={undefined} />
   <View
     component={[Function]} />
   <View
@@ -28,7 +58,7 @@ exports[`<ParentApp /> renders the Parent with the SignUp component active if no
 </View>
 `;
 
-exports[`<ParentApp /> renders the Parent with the reports component active if installed 1`] = `
+exports[`<ParentApp /> renders the Parent with the SplashScreen component active if not installed 1`] = `
 <View>
   <View
     component={[Function]}
@@ -39,7 +69,7 @@ exports[`<ParentApp /> renders the Parent with the reports component active if i
     component={[Function]} />
   <View
     component={[Function]}
-    initial={true} />
+    initial={undefined} />
   <View
     component={[Function]} />
   <View
