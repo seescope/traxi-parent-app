@@ -101,7 +101,7 @@ export const sendPhoneNumberToSlack = (phoneNumber) => fetch(
   {
     method: 'POST',
     body: JSON.stringify({
-      tex: `Reminder received! ${phoneNumber}`,
+      text: `Reminder received! ${phoneNumber}`,
     }),
   }
 )
