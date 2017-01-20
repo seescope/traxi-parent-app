@@ -44,17 +44,13 @@ class ParentApp extends React.Component {
     const { kids } = profile;
 
     const INITIAL_STATE = {
-      parentName: 'Fairul',
       loading: false,
       profile,
       contacts: [],
       step: 0,
       kidSuggestions: [],
       kids: kids || [],
-      // selectedKid: kids && kids[0] || {},
-      selectedKid: {
-        name: 'Aziz',
-      },
+      selectedKid: kids && kids[0] || {},
       reports: {},
     };
 
@@ -128,7 +124,7 @@ class ParentApp extends React.Component {
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene key="setName" initial component={SetName} />
+          <Scene key="setName" component={SetName} />
           <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
