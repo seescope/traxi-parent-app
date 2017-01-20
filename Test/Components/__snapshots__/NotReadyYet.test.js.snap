@@ -6,6 +6,21 @@ Array [
 ]
 `;
 
+exports[`test posts a number to Slack 2`] = `
+Array [
+  Array [
+    Object {
+      "loading": true,
+    },
+  ],
+  Array [
+    Object {
+      "loading": false,
+    },
+  ],
+]
+`;
+
 exports[`test renders the <NotReadyYet> component 1`] = `
 <View
   style={

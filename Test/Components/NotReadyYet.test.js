@@ -22,7 +22,12 @@ it('renders the <NotReadyYet> component', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('posts a number to Slack', () => remindMeTomorrow('0401633346').then(() => {
+const mockComponent = {
+  setState: jest.fn(),
+};
+
+it('posts a number to Slack', () => remindMeTomorrow(mockComponent, '0401633346').then(() => {
   expect(sendPhoneNumberToSlack.mock.calls).toMatchSnapshot();
   expect(Actions.thankyou).toHaveBeenCalled();
+  expect(mockComponent.setState.mock.calls).toMatchSnapshot();
 }));
