@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Text, View, Alert } from 'react-native';
+import { Dimensions, Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 
-import { selectKidImage, RESET_STATE } from '../Actions/Actions';
+import { selectKidImage } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
 import watchDevice from '../Actions/WatchDevice';
 import Background from '../Components/Background';
@@ -12,7 +12,7 @@ import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
-import { isIOS, logError } from '../Utils';
+import { isIOS, logError, firstName } from '../Utils';
 
 const getSource = response => {
   let source;
@@ -36,10 +36,16 @@ export const selectImage = pickImage => dispatch => {
     },
   };
 
-  ImagePicker.launchImageLibrary(options, response => {
-    // Just make sure we're in a clean state.
-    dispatch(RESET_STATE);
+  if (!pickImage) {
+    dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
+    Actions.walkthrough();
 
+    return dispatch(setupKid()).then(() => {
+      dispatch(watchDevice());
+    });
+  }
+
+  return ImagePicker.launchImageLibrary(options, response => {
     if (response.didCancel) {
       return;
     }
@@ -89,6 +95,7 @@ const style = {
     flex: 4,
   },
   buttonContainer: {
+    paddingHorizontal: 16,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -114,11 +121,11 @@ const CreateKid = ({ parentName, kidName, onPress }) => (
         Don't worry, only you will be able to see it.
       </Text>
 
-      <Spacing />
+      <Spacing height={64} />
 
       <View style={style.buttonContainer}>
         <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
-        <Button onPress={() => onPress(true)}>Set a picture</Button>
+        <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
       </View>
 
     </View>
@@ -128,12 +135,11 @@ const CreateKid = ({ parentName, kidName, onPress }) => (
 CreateKid.propTypes = {
   kidName: PropTypes.string.isRequired,
   parentName: PropTypes.string.isRequired,
-  onChangeText: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  kidName: state.selectedKid.name,
+  kidName: firstName(state.selectedKid.name),
   parentName: state.parentName,
 });
 
