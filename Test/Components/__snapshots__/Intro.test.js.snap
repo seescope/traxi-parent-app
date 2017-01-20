@@ -109,3 +109,12 @@ exports[`test renders 1`] = `
   </View>
 </Image>
 `;
+
+exports[`test saves the parent's state and transitions to the next screen 1`] = `
+Array [
+  Array [
+    "seenIntro",
+    "true",
+  ],
+]
+`;
