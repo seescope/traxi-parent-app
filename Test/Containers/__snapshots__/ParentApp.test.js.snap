@@ -20,6 +20,8 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component active 
   <View
     component={[Function]} />
   <View
+    component={[Function]} />
+  <View
     component={[Function]}
     initial={undefined} />
   <View
@@ -51,6 +53,8 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
   <View
     component={[Function]} />
   <View
+    component={[Function]} />
+  <View
     component={[Function]}
     initial={Array []} />
   <View
@@ -77,6 +81,8 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
   <View
     component={[Function]}
     initial={true} />
+  <View
+    component={[Function]} />
   <View
     component={[Function]} />
   <View

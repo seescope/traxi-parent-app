@@ -14,6 +14,7 @@ import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import NotReadyYet from '../Components/NotReadyYet';
 import Thankyou from '../Components/Thankyou';
+import SetName from './SetName';
 import SetImage from './SetImage';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
@@ -127,7 +128,8 @@ class ParentApp extends React.Component {
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene key="setImage" initial component={SetImage} />
+          <Scene key="setName" initial component={SetName} />
+          <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
