@@ -1,37 +1,56 @@
 /* eslint global-require: "off" */
 
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import * as Animatable from 'react-native-animatable';
-
-import Background from '../Components/Background';
-import Button from '../Components/Button';
-import Spacing from '../Components/Spacing';
+import { Dimensions, Platform, Text, Image } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import Spacing from '../Components/Spacing';
 
-const logoStyle = {
-  backgroundColor: TRANSPARENT,
-  color: WHITE,
-  fontSize: 32,
-  textAlign: 'center',
-  fontFamily: 'Raleway-ExtraBold',
-  marginHorizontal: 16,
-  marginBottom: 16,
-};
+const { width } = Dimensions.get('window');
 
 const containerStyle = {
-  flex: 1,
-  alignItems: 'center',
+  paddingTop: 32,
   paddingHorizontal: 32,
+  flex: 1,
+  width,
 };
 
-const Thankyou = () =>
-  <Image source={require('../Images/thankyou-background.png')}>
-    <Text>Thanks!</Text>
-    <Text>We'll send you a reminder tomorrow.</Text>
-    <Text>Remember, you can come back to the app and start monitoring your kids at any time.</Text>
-  </Image>
+const bodyStyle = {
+  paddingBottom: 16,
+  backgroundColor: TRANSPARENT,
+  color: WHITE,
+  fontSize: Platform.select({
+    ios: 16,
+    android: 14,
+  }),
+  textAlign: 'left',
+  fontFamily: 'Raleway-Regular',
+};
 
+const headerStyle = {
+  backgroundColor: TRANSPARENT,
+  color: WHITE,
+  fontSize: Platform.select({
+    ios: 26,
+    android: 24,
+  }),
+  textAlign: 'center',
+  fontFamily: 'Raleway-ExtraBold',
+};
 
-export default Thankyou;
+export default () =>
+  <Image
+    style={containerStyle}
+    source={require('../Images/thankyou-background.png')}
+  >
+    <Text style={headerStyle}>Thanks!</Text>
+
+    <Spacing height={36} />
+
+    <Text style={bodyStyle}>
+      We'll send you a reminder tomorrow.
+    </Text>
+
+    <Text style={bodyStyle}>
+      Remember, you can come back to the app and start monitoring your kids at any time.
+    </Text>
+  </Image>;
