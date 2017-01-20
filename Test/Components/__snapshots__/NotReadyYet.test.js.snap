@@ -11,6 +11,14 @@ Array [
 ]
 `;
 
+exports[`test posts a number to Slack 2`] = `
+Array [
+  Array [
+    "0401633346",
+  ],
+]
+`;
+
 exports[`test renders the <NotReadyYet> component 1`] = `
 <View
   style={
