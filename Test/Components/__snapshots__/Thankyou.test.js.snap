@@ -1,0 +1,66 @@
+exports[`test renders the <Thankyou> component 1`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "flex": 1,
+      "paddingHorizontal": 32,
+      "paddingTop": 32,
+      "width": 750,
+    }
+  }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 26,
+        "textAlign": "center",
+      }
+    }>
+    Thanks!
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 36,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "paddingBottom": 16,
+        "textAlign": "left",
+      }
+    }>
+    We\'ll send you a reminder tomorrow.
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "paddingBottom": 16,
+        "textAlign": "left",
+      }
+    }>
+    Remember, you can come back to the app and start monitoring your kids at any time.
+  </Text>
+</Image>
+`;

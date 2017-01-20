@@ -1,7 +1,7 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
 import { Actions } from 'react-native-router-flux';
-import { TouchableOpacity, Platform, View, Image, Dimensions, Text } from 'react-native';
+import { AsyncStorage, TouchableOpacity, Platform, View, Image, Dimensions, Text } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Button from '../Components/Button';
 import * as Animatable from 'react-native-animatable';
@@ -79,6 +79,9 @@ const SUBHEADER_TEXT = [
   'Doesn\'t that look easy?',
 ];
 
+export const onPress = () => AsyncStorage.setItem('profile', JSON.stringify({ introSeen: true }))
+  .then(() => Actions.areYouReady());
+
 export default class extends React.Component {
   constructor() {
     super();
@@ -153,7 +156,7 @@ export default class extends React.Component {
             easing="ease-in-out"
             animation="bounceInUp"
           >
-            <Button onPress={() => Actions.areYouReady()} primary={false}>Got it!</Button>
+            <Button onPress={() => onPress()} primary={false}>Got it!</Button>
           </Animatable.View>}
         </View>
       </Image>

@@ -1,12 +1,18 @@
 import React from 'react';
-import { TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+
 import { WHITE, NEUTRAL, TRANSPARENT, LIGHTEST_GREY } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
 import Button from '../Components/Button';
-import { isIOS } from '../Utils';
+import { isIOS, logError, sendPhoneNumberToSlack } from '../Utils';
 
 const { width } = Dimensions.get('window');
+
+const handleError = error => {
+  logError(error);
+  alert('Sorry, there was an error saving your reminder. Please try again!');
+};
 
 const containerStyle = {
   backgroundColor: NEUTRAL,
@@ -67,48 +73,75 @@ const topContainerStyle = {
   flexDirection: 'row',
 };
 
-export default () => (
-  <View style={containerStyle}>
-    <View style={topContainerStyle}>
-      {isIOS ?
-        <TouchableOpacity onPress={() => Actions.pop()}>
-          <Image source={require('../Images/chevron_left.png')} />
-        </TouchableOpacity> :
-        <View />}
-      <Text style={headerStyle}>
-        Not ready yet?
-      </Text>
-      <View />
-    </View>
+export const remindMeTomorrow = (component, phoneNumber) => {
+  component.setState({ loading: true });
+  return sendPhoneNumberToSlack(phoneNumber)
+    .then(() => Actions.thankyou())
+    .catch(handleError)
+    .finally(() => {
+      component.setState({ loading: false });
+    });
+};
 
-    <Spacing height={32} />
+class NotReadyYet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false,
+      phoneNumber: null,
+    };
+  }
 
-    <Text style={bodyStyle}>
-      If your kid isn't around right now or you don't have time to set up traxi, don't worry.
-    </Text>
+  render() {
+    return (
+      <View style={containerStyle}>
+        <View style={topContainerStyle}>
+          {isIOS ?
+            <TouchableOpacity onPress={() => Actions.pop()}>
+              <Image source={require('../Images/chevron_left.png')} />
+            </TouchableOpacity> :
+            <View />}
+          <Text style={headerStyle}>
+            Not ready yet?
+          </Text>
+          <View />
+        </View>
 
-    <Text style={bodyStyle}>
-      Enter your phone number below and we'll remind you tomorrow.
-    </Text>
+        <Spacing height={32} />
 
-    <Text style={bodyStyle}>
-      You can also come back to the app whenever you're ready.
-    </Text>
+        <Text style={bodyStyle}>
+          If your kid isn't around right now or you don't have time to set up traxi, don't worry.
+        </Text>
 
-    <Spacing height={16} />
+        <Text style={bodyStyle}>
+          Enter your phone number below and we'll remind you tomorrow.
+        </Text>
 
-    <TextInput
-      keyboardType="phone-pad"
-      underlineColorAndroid={WHITE}
-      style={textInputStyle}
-    />
+        <Text style={bodyStyle}>
+          You can also come back to the app whenever you're ready.
+        </Text>
 
-    <Spacing height={32} />
+        <Spacing height={16} />
 
-    <View style={buttonContainer}>
-      <Button onPress={() => {}}>
-        Remind me tomorrow
-      </Button>
-    </View>
-  </View>
-);
+        <TextInput
+          onChangeText={phoneNumber => this.setState({ phoneNumber })}
+          keyboardType="phone-pad"
+          underlineColorAndroid={WHITE}
+          style={textInputStyle}
+        />
+
+        <Spacing height={32} />
+
+        {this.state.loading ?
+          <ActivityIndicator size="large" /> :
+          <View style={buttonContainer}>
+            <Button onPress={() => remindMeTomorrow(this, this.state.phoneNumber)}>
+              Remind me tomorrow
+            </Button>
+          </View>}
+      </View>
+    );
+  }
+}
+
+export default NotReadyYet;

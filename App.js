@@ -15,8 +15,6 @@ export default class extends React.Component {
     // AsyncStorage.setItem('profile', JSON.stringify({
     //   UUID: "R1r9IfVPDVa15PUCJLKhgNnIgnu1",
     // }));
-    //
-    //
 
     this.state = {
       profile: {},
@@ -26,8 +24,8 @@ export default class extends React.Component {
 
   componentDidMount() {
     AsyncStorage.getItem('profile').then(profileJSON => {
-      if (profileJSON !== null) {
-        const profile = JSON.parse(profileJSON);
+      const profile = JSON.parse(profileJSON);
+      if (profile !== null && profile.UUID) {
         const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;
 
         new Firebase(URI).once('value',
@@ -48,6 +46,11 @@ export default class extends React.Component {
             this.setState({ loading: false });
           }
         );
+      } else if (profile !== null && profile.introSeen) {
+        this.setState({
+          profile,
+          loading: false,
+        });
       } else {
         this.setState({ loading: false });
       }

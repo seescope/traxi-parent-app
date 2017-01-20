@@ -89,12 +89,25 @@ export const experimentViewed = (variantName) => {
 
 export const handleBilling = price => InAppBilling.open()
   .then(() => InAppBilling.subscribe(price))
-  .then(details => {
-    console.log('Successful InAppBilling purchase!', details);
-    return InAppBilling.close();
-  });
+  .then(() => InAppBilling.close());
 
 export const onSelectPrice = price =>
   dispatch =>
     dispatch(selectPrice(price));
 
+
+export const sendPhoneNumberToSlack = (phoneNumber) => fetch(
+  'https://hooks.slack.com/services/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',
+  {
+    method: 'POST',
+    body: JSON.stringify({
+      text: `Reminder received! ${phoneNumber}`,
+    }),
+  }
+)
+.then(res => res.text())
+.then(body => {
+  if (body !== 'ok') {
+    throw new Error(`Error posting to Slack: ${body}`);
+  }
+});

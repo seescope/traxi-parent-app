@@ -1,10 +1,13 @@
-exports[`test renders 1`] = `
+exports[`test renders when there is a profile 1`] = `
 <View>
   <View
     component={[Function]}
     initial={false} />
   <View
     component={[Function]} />
+  <View
+    component={[Function]}
+    initial={undefined} />
   <View
     component={[Function]} />
   <View
@@ -24,6 +27,66 @@ exports[`test renders 1`] = `
         3,
       ]
     } />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+</View>
+`;
+
+exports[`test renders when there is a profile that has no kids, but introSeen is true 1`] = `
+<View>
+  <View
+    component={[Function]}
+    initial={true} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={true} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={undefined} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+</View>
+`;
+
+exports[`test renders when there is no profile 1`] = `
+<View>
+  <View
+    component={[Function]}
+    initial={true} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={undefined} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]} />
+  <View
+    component={[Function]}
+    initial={undefined} />
   <View
     component={[Function]} />
   <View

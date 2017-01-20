@@ -13,6 +13,7 @@ import SplashScreen from '../Components/SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import NotReadyYet from '../Components/NotReadyYet';
+import Thankyou from '../Components/Thankyou';
 import CreateKid from './CreateKid';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
@@ -112,14 +113,16 @@ class ParentApp extends React.Component {
   render() {
     const { profile } = this.props;
     const isInstalled = profile.kids;
+    const introSeen = profile.introSeen;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
-          <Scene key="areYouReady" component={AreYouReady} />
+          <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
+          <Scene key="thankyou" component={Thankyou} />
           <Scene key="createKid" component={CreateKid} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
