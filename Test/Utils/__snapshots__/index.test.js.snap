@@ -7,7 +7,7 @@ Array [
   Array [
     "https://hooks.slack.com/services/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",
     Object {
-      "body": "{\"tex\":\"Reminder received! +61401633346\"}",
+      "body": "{\"text\":\"Reminder received! +61401633346\"}",
       "method": "POST",
     },
   ],
