@@ -27,7 +27,7 @@ const Button = ({ children, onPress, primary }) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   onPress: PropTypes.func.isRequired,
   primary: PropTypes.bool,
 };

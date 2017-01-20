@@ -14,7 +14,7 @@ import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import NotReadyYet from '../Components/NotReadyYet';
 import Thankyou from '../Components/Thankyou';
-import CreateKid from './CreateKid';
+import SetImage from './SetImage';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
 import ReportHome from '../ReportHome';
@@ -43,13 +43,17 @@ class ParentApp extends React.Component {
     const { kids } = profile;
 
     const INITIAL_STATE = {
+      parentName: 'Fairul',
       loading: false,
       profile,
       contacts: [],
       step: 0,
       kidSuggestions: [],
       kids: kids || [],
-      selectedKid: kids && kids[0] || {},
+      // selectedKid: kids && kids[0] || {},
+      selectedKid: {
+        name: 'Aziz',
+      },
       reports: {},
     };
 
@@ -123,7 +127,7 @@ class ParentApp extends React.Component {
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene key="createKid" component={CreateKid} />
+          <Scene key="setImage" initial component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
