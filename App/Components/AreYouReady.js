@@ -75,7 +75,7 @@ AreYouReady.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   getStarted: () => dispatch(loginWithMethod())
-    .then(() => Actions.createKid())
+    .then(() => Actions.setName())
     .catch(handleError),
 });
 
