@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { TouchableOpacity, Image, Dimensions, Text, Platform, View, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { WHITE, NEUTRAL, TRANSPARENT, LIGHTEST_GREY } from '../Constants/Colours';
@@ -117,14 +118,9 @@ NotReadyYet.propTypes = {
   onPress: React.PropTypes.func.isRequired,
 };
 
-const mapStateToProps = {
-  phoneNumber,
-};
-
 const mapDispatchToProps = {
   onPress: dispatch => {
-    
-  };
+  },
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotReadyYet);
+export default connect(null, null)(NotReadyYet);
