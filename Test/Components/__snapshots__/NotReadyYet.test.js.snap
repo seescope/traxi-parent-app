@@ -1,21 +1,72 @@
+exports[`test posts a number to Slack 1`] = `
+Array [
+  Array [
+    Promise {
+      "_45": 0,
+      "_54": null,
+      "_65": undefined,
+      "_81": 1,
+    },
+  ],
+]
+`;
+
 exports[`test renders the <NotReadyYet> component 1`] = `
 <View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
+      "backgroundColor": "rgba(75, 73, 73, 1)",
       "flex": 1,
       "paddingHorizontal": 32,
+      "paddingTop": 32,
     }
   }>
-  <Image
-    animation="bounceInDown"
-    source={1} />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1} />
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "textAlign": "center",
+        }
+      }>
+      Not ready yet?
+    </Text>
+    <View />
+  </View>
   <View
     style={
       Object {
@@ -25,22 +76,71 @@ exports[`test renders the <NotReadyYet> component 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    animation="bounceIn"
-    delay={1000}
     ellipsizeMode="tail"
     style={
       Object {
         "backgroundColor": "transparent",
         "color": "#FFF",
-        "fontFamily": "Raleway-ExtraBold",
-        "fontSize": 32,
-        "marginBottom": 16,
-        "marginHorizontal": 16,
-        "textAlign": "center",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "paddingBottom": 16,
+        "textAlign": "left",
       }
     }>
-    Start seeing what your kids are doing.
+    If your kid isn\'t around right now or you don\'t have time to set up traxi, don\'t worry.
   </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "paddingBottom": 16,
+        "textAlign": "left",
+      }
+    }>
+    Enter your phone number below and we\'ll remind you tomorrow.
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "paddingBottom": 16,
+        "textAlign": "left",
+      }
+    }>
+    You can also come back to the app whenever you\'re ready.
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 16,
+      }
+    } />
+  <TextInput
+    keyboardType="phone-pad"
+    onChangeText={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#EFEFEF",
+        "borderRadius": 4,
+        "color": "rgba(75, 73, 73, 1)",
+        "height": 32,
+        "paddingHorizontal": 8,
+        "width": 686,
+      }
+    }
+    underlineColorAndroid="#FFF" />
   <View
     style={
       Object {
@@ -48,8 +148,11 @@ exports[`test renders the <NotReadyYet> component 1`] = `
       }
     } />
   <View
-    animation="bounceInUp"
-    delay={2000}>
+    style={
+      Object {
+        "alignItems": "center",
+      }
+    }>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -84,7 +187,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Show me how
+        Remind me tomorrow
          
       </Text>
     </View>
