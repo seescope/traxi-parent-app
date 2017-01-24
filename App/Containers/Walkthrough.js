@@ -97,7 +97,7 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
 const Walkthrough = ({ step, kid, nextStep }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
-      progress={step / NUMBER_OF_STEPS[kid.deviceType]}
+      stage={1}
       width={width - 80}
       state={step === NUMBER_OF_STEPS[kid.deviceType] ? 'good' : 'neutral'}
       avatarURL={kid.avatarURL}
