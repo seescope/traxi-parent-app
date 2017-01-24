@@ -34,6 +34,7 @@ const imageStyle = {
 const SplashScreen = () =>
   <Background style={containerStyle}>
     <Animatable.Image
+      useNativeDriver
       resizeMode="contain"
       style={imageStyle}
       animation="bounceInDown"
@@ -43,6 +44,7 @@ const SplashScreen = () =>
     <Spacing height={32} />
 
     <Animatable.Text
+      useNativeDriver
       animation="bounceIn"
       delay={1000}
       style={logoStyle}
@@ -53,6 +55,7 @@ const SplashScreen = () =>
     <Spacing height={32} />
 
     <Animatable.View
+      useNativeDriver
       animation="bounceInUp"
       delay={2000}
     >
