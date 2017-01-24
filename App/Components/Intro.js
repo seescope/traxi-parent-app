@@ -1,13 +1,29 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
 import { Actions } from 'react-native-router-flux';
-import { AsyncStorage, TouchableOpacity, Platform, View, Image, Dimensions, Text } from 'react-native';
+import {
+  Animated,
+  AsyncStorage,
+  TouchableOpacity,
+  Platform,
+  View,
+  Image,
+  Dimensions,
+  Text,
+} from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Button from '../Components/Button';
 import * as Animatable from 'react-native-animatable';
 
+const containerStyle = {
+  flex: 1,
+};
+
+const ANIMATION_DURATION = 500;
+
 const { width, height } = Dimensions.get('window');
 const imageStyle = {
+  position: 'absolute',
   width,
   height,
 };
@@ -89,11 +105,34 @@ export default class extends React.Component {
     this.state = {
       step: 0,
     };
+
+    this.animations = [
+      new Animated.Value(1),
+      new Animated.Value(0),
+      new Animated.Value(0),
+      new Animated.Value(0),
+    ];
+
+    this.styles = [
+      { opacity: this.animations[0] },
+      { opacity: this.animations[1] },
+      { opacity: this.animations[2] },
+      { opacity: this.animations[3] },
+    ];
   }
 
   nextStep() {
     const { step } = this.state;
     const newStep = step < 4 ? step + 1 : step;
+
+    Animated.timing(
+      this.animations[newStep],
+      {
+        toValue: 1,
+        duration: ANIMATION_DURATION,
+      }
+    ).start();
+
     this.setState({
       step: newStep,
     });
@@ -102,6 +141,15 @@ export default class extends React.Component {
   previousStep() {
     const { step } = this.state;
     const newStep = step > 0 ? step - 1 : step;
+
+    Animated.timing(
+      this.animations[step],
+      {
+        toValue: 0,
+        duration: ANIMATION_DURATION,
+      }
+    ).start();
+
     this.setState({
       step: newStep,
     });
@@ -109,11 +157,28 @@ export default class extends React.Component {
 
   render() {
     return (
-      <Image
-        resizeMode="cover"
-        style={imageStyle}
-        source={STEP_IMAGES[this.state.step]}
-      >
+      <View style={containerStyle}>
+        <Animated.Image
+          resizeMode="cover"
+          style={[imageStyle, this.styles[0]]}
+          source={STEP_IMAGES[0]}
+        />
+        <Animated.Image
+          resizeMode="cover"
+          style={[imageStyle, this.styles[1]]}
+          source={STEP_IMAGES[1]}
+        />
+        <Animated.Image
+          resizeMode="cover"
+          style={[imageStyle, this.styles[2]]}
+          source={STEP_IMAGES[2]}
+        />
+        <Animated.Image
+          resizeMode="cover"
+          style={[imageStyle, this.styles[3]]}
+          source={STEP_IMAGES[3]}
+        />
+
         <View style={paddingStyle}>
           {this.state.step > 0 ? <TouchableOpacity onPress={() => this.previousStep()}>
             <Image
@@ -121,6 +186,7 @@ export default class extends React.Component {
             />
           </TouchableOpacity> : <View />}
           {this.state.step < 3 ? <Animatable.View
+            useNativeDriver
             animation="bounce"
             duration={2000}
             delay={3000}
@@ -135,6 +201,7 @@ export default class extends React.Component {
 
         <View style={textContainer}>
           <Animatable.Image
+            useNativeDriver
             easing="ease-out"
             duration={1000}
             delay={1000}
@@ -151,6 +218,7 @@ export default class extends React.Component {
           <Spacing height={16} />
 
           {this.state.step === 3 && <Animatable.View
+            useNativeDriver
             delay={1000}
             duration={1000}
             easing="ease-in-out"
@@ -159,7 +227,7 @@ export default class extends React.Component {
             <Button onPress={() => onPress()} primary={false}>Got it!</Button>
           </Animatable.View>}
         </View>
-      </Image>
+      </View>
     );
   }
 }
