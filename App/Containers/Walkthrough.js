@@ -139,7 +139,7 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
 const Walkthrough = ({ step, kid, nextStep }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
-      stage={getStage(step, kid.deviceType)}
+      stage={step}
       width={width - 80}
     />
 
