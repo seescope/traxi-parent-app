@@ -1,10 +1,13 @@
+jest.mock('../../App/Components/ProgressTrack', () => () => null);
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
-
+import { View } from 'react-native';
 import Walkthrough from '../../App/Containers/Walkthrough';
+
 
 const TEST_ACTIONS = { 
   NEXT_STEP: 'test',

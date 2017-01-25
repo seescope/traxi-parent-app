@@ -1,13 +1,54 @@
 exports[`test renders 1`] = `
-<Image
-  resizeMode="cover"
-  source={1}
+<View
   style={
     Object {
-      "height": 1334,
-      "width": 750,
+      "flex": 1,
     }
   }>
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Object {
+        "height": 1334,
+        "opacity": 1,
+        "position": "absolute",
+        "width": 750,
+      }
+    } />
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Object {
+        "height": 1334,
+        "opacity": 0,
+        "position": "absolute",
+        "width": 750,
+      }
+    } />
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Object {
+        "height": 1334,
+        "opacity": 0,
+        "position": "absolute",
+        "width": 750,
+      }
+    } />
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Object {
+        "height": 1334,
+        "opacity": 0,
+        "position": "absolute",
+        "width": 750,
+      }
+    } />
   <View
     style={
       Object {
@@ -22,7 +63,8 @@ exports[`test renders 1`] = `
     <View
       animation="bounce"
       delay={3000}
-      duration={2000}>
+      duration={2000}
+      useNativeDriver={true}>
       <View
         accessibilityComponentType={undefined}
         accessibilityLabel={undefined}
@@ -59,7 +101,8 @@ exports[`test renders 1`] = `
       delay={1000}
       duration={1000}
       easing="ease-out"
-      source={1} />
+      source={1}
+      useNativeDriver={true} />
     <View
       style={
         Object {
@@ -107,7 +150,7 @@ exports[`test renders 1`] = `
         }
       } />
   </View>
-</Image>
+</View>
 `;
 
 exports[`test saves the parent's state and transitions to the next screen 1`] = `
