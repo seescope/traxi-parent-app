@@ -53,7 +53,7 @@ const WALKTHROUGH_STYLES = {
 
 const getStage = (step, deviceType) => {
   const stageMap = {
-    android: {
+    Android: {
       0: 0,
       1: 0,
       2: 0,
@@ -139,7 +139,7 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
 const Walkthrough = ({ step, kid, nextStep }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
-      stage={step}
+      stage={getStage(step, kid.deviceType)}
       width={width - 80}
     />
 

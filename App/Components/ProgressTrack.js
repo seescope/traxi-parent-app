@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Easing, Animated } from 'react-native';
-import { GOOD, WHITE, NEUTRAL, TRAXI_BLUE } from '../Constants/Colours';
-import KidAvatar from './KidAvatar';
+import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 
 const TRACK_COLOUR = WHITE;
 const TRACK_THICKNESS = 4;
 const STAGES = [0, 1, 2, 3];
 
 const containerStyle = {
-  zIndex: 100,
   height: 32,
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -26,6 +24,7 @@ const trackStyle = width => ({
 });
 
 const circleStyle = {
+  elevation: 5,
   alignItems: 'center',
   justifyContent: 'center',
   height: 14,
@@ -64,6 +63,9 @@ class ProgressTrack extends React.Component {
     this.animateCircles();
   }
 
+  componentDidUpdate() {
+    this.animateCircles();
+  }
 
   animateCircles() {
     const { stage } = this.props;
