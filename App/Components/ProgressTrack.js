@@ -9,93 +9,85 @@ const STAGES = [0, 1, 2, 3];
 
 const containerStyle = {
   zIndex: 100,
-  height: 50,
-  alignItems: 'flex-start',
+  height: 32,
+  alignItems: 'center',
   justifyContent: 'space-between',
   flexDirection: 'row',
+  paddingHorizontal: 14,
 };
 
 const trackStyle = width => ({
-  top: 11,
+  top: (32 / 2) - (TRACK_THICKNESS / 2),
   position: 'absolute',
   backgroundColor: TRACK_COLOUR,
   height: TRACK_THICKNESS,
-  width,
+  left: 14,
+  width: width - (14 * 2),
 });
 
 const circleStyle = {
   alignItems: 'center',
   justifyContent: 'center',
-  height: 26,
-  width: 26,
-  borderRadius: 13,
+  height: 14,
+  width: 14,
+  borderRadius: 7,
   backgroundColor: WHITE,
 };
 
 const textStyle = {
   fontWeight: 'bold',
-  fontSize: 20,
+  fontSize: 10, // Will be doubled by scaling
   color: TRAXI_BLUE,
 };
 
 class ProgressTrack extends React.Component {
   componentWillMount() {
-    this.animatedValue = new Animated.Value(0.5);
+    this.animatedValues = STAGES.map(() => new Animated.Value(0));
+
+    const interpolationOptions = {
+      inputRange: [0, 1],
+      outputRange: [1, 2],
+    };
+
+    this.animatedCircleStyles = STAGES.map(i => ({
+      transform: [{
+        scale: this.animatedValues[i].interpolate(interpolationOptions),
+      }],
+    }));
+
+    this.animatedTextStyles = STAGES.map(i => ({
+      opacity: this.animatedValues[i],
+    }));
   }
 
   componentDidMount() {
-    Animated.spring(this.animatedValue, {
+    this.animateCircles();
+  }
+
+
+  animateCircles() {
+    const { stage } = this.props;
+
+    Animated.spring(this.animatedValues[stage], {
       toValue: 1,
       friction: 3,
       tension: 40,
     }).start();
   }
 
-  getProgressTrackStyle() {
-    return {
-      completedTrack: {
-        backgroundColor: this.props.state === 'neutral' ? NEUTRAL : GOOD,
-        height: TRACK_THICKNESS,
-        width: this.state.completedTrackWidth,
-      },
-    };
-  }
-
-  animateTracks() {
-    const { width, stage } = this.props;
-
-    // Animated.parallel([
-    //   Animated.timing(
-    //     this.state.completedTrackWidth,
-    //     {
-    //       toValue: width * progress,
-    //       easing: Easing.elastic(0.1),
-    //     }
-    //   ),
-    //   Animated.timing(
-    //     this.state.trackWidth,
-    //     {
-    //       toValue: width * (1 - progress),
-    //       easing: Easing.elastic(0.1),
-    //     }
-    //   ),
-    // ]).start();
-  }
-
   render() {
     const { width } = this.props;
-    const animatedStyle = {
-      transform: [{ scale: this.animatedValue }],
-    };
 
     return (
       <View style={{ width }}>
         <View style={containerStyle}>
-          {STAGES.map(i => <Animated.View key={i} style={[circleStyle, animatedStyle]}>
-            <Text style={textStyle}>
-              {i + 1}
-            </Text>
-          </Animated.View>)}
+          {STAGES.map(i =>
+            <Animated.View key={i} style={[circleStyle, this.animatedCircleStyles[i]]}>
+              <Animated.Text style={[textStyle, this.animatedTextStyles[i]]}>
+                {i + 1}
+              </Animated.Text>
+            </Animated.View>
+          )}
         </View>
         <View style={trackStyle(width)} />
       </View>
@@ -104,10 +96,8 @@ class ProgressTrack extends React.Component {
 }
 
 ProgressTrack.propTypes = {
-  avatarURL: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
   stage: PropTypes.number.isRequired,
-  state: PropTypes.oneOf(['neutral', 'good']).isRequired,
 };
 
 export default ProgressTrack;

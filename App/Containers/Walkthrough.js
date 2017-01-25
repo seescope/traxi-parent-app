@@ -51,6 +51,48 @@ const WALKTHROUGH_STYLES = {
   },
 };
 
+const getStage = (step, deviceType) => {
+  const stageMap = {
+    android: {
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 1,
+      4: 1,
+      5: 2,
+      6: 2,
+      7: 2,
+      8: 3,
+    },
+    iPhone: {
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 1,
+      4: 1,
+      5: 2,
+      6: 2,
+      7: 2,
+      8: 3,
+    },
+    iPad: {
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 1,
+      4: 1,
+      5: 2,
+      6: 2,
+      7: 2,
+      8: 3,
+    },
+  };
+
+  return stageMap[deviceType]
+    && stageMap[deviceType][step]
+    || 0;
+};
+
 const getWrapperStyle = (step) => {
   if (step === 0
     || step === 2
@@ -97,10 +139,8 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
 const Walkthrough = ({ step, kid, nextStep }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
-      stage={1}
+      stage={getStage(step, kid.deviceType)}
       width={width - 80}
-      state={step === NUMBER_OF_STEPS[kid.deviceType] ? 'good' : 'neutral'}
-      avatarURL={kid.avatarURL}
     />
 
     <View style={getWrapperStyle(step)}>
