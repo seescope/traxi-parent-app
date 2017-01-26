@@ -15,8 +15,20 @@ Object {
   "kids": Array [],
   "selectedKid": Object {
     "UUID": "surprise",
+    "deviceType": "unknown",
   },
   "step": 1,
+}
+`;
+
+exports[`test DEVICE_UPDATED 2`] = `
+Object {
+  "kids": Array [],
+  "selectedKid": Object {
+    "UUID": "surprise",
+    "deviceType": "Android",
+  },
+  "step": 2,
 }
 `;
 

@@ -56,9 +56,17 @@ it('ADD_KID', () => {
 
 it('DEVICE_UPDATED', () => {
   const oldState = { selectedKid: { UUID: 'nope' }, kids: [], step: 1 };
-  const newState = parentAppReducer(oldState, deviceUpdated({ UUID: 'surprise' }));
+  const newState = parentAppReducer(
+    oldState, deviceUpdated({ UUID: 'surprise', deviceType: 'unknown' })
+  );
 
   expect(newState).toMatchSnapshot();
+
+  const anotherState = parentAppReducer(newState,
+    deviceUpdated({ UUID: 'surprise', deviceType: 'Android' })
+  );
+  expect(anotherState).not.toEqual(newState);
+  expect(anotherState).toMatchSnapshot();
 });
 
 it('LOGGED_IN', () => {

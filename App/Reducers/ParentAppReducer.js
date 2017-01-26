@@ -95,14 +95,15 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'DEVICE_UPDATED': {
       const { selectedKid } = action;
-      console.log('DEVICE_UPDATED', state.step);
-      const step = state.step > 3 ?
-        state.step + 1 :
-        state.step;
+      const { step } = state;
+
+      const newStep = selectedKid.deviceType === 'unknown'
+        ? step
+        : step + 1;
 
       return {
         ...state,
-        step,
+        step: newStep,
         selectedKid,
       };
     }
