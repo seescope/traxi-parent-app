@@ -76,10 +76,12 @@ const ANDROID_IMAGES = [
   {},
   {},
   {},
+  {},
+  require('../Images/android-step-1.png'),
+  require('../Images/android-step-2.png'),
   require('../Images/android-step-3.png'),
-  require('../Images/android-step-4.png'),
-  require('../Images/android-step-5.png'),
-  require('../Images/android-step-6.png'),
+  {},
+  {},
   {},
 ];
 
@@ -120,8 +122,10 @@ const INSTRUCTION_STYLES = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: width - 96,
+    alignItems: 'center',
+    width,
     height,
+    left: -16,
     marginTop: -(height / 2),
     top: height / 2,
   },
@@ -136,7 +140,7 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
 
       <View style={buttonContainer}>
         <Button onPress={() => {}} primary={false}>I need help</Button>
-        <Button onPress={nextStep}>Next Step</Button>
+        <Button onPress={nextStep}>Next step</Button>
       </View>
     </View>
     <View>

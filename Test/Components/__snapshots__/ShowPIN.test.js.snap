@@ -69,14 +69,13 @@ exports[`test renders 1`] = `
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 18,
-          "fontWeight": "200",
-          "textAlign": "center",
-        }
+        Array [
+          undefined,
+          Object {
+            "color": "#FFF",
+            "textAlign": "center",
+          },
+        ]
       }>
       Waiting...
     </Text>

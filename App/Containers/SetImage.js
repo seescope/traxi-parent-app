@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Dimensions, Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import { Actions } from 'react-native-router-flux';
 
 import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';

@@ -857,14 +857,13 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
-            }
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
           }>
           Waiting...
         </Text>
@@ -1077,7 +1076,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -1090,10 +1089,12 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -1253,7 +1254,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -1266,10 +1267,12 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -1429,7 +1432,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -1442,10 +1445,12 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -2490,14 +2495,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
-            }
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
           }>
           Waiting...
         </Text>
@@ -2709,7 +2713,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -2722,10 +2726,12 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -2884,7 +2890,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -2897,10 +2903,12 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -3945,14 +3953,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
-            }
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
           }>
           Waiting...
         </Text>
@@ -4164,7 +4171,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -4177,10 +4184,12 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -4339,7 +4348,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next Step
+              Next step
                
             </Text>
           </View>
@@ -4352,10 +4361,12 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
+              "left": -16,
               "marginTop": -667,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>

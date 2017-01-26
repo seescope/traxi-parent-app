@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 import {
+  Text,
   View,
   ActivityIndicator,
 } from 'react-native';
-import BodyText from './BodyText';
 import { WHITE } from '../Constants/Colours';
+import { TEXT } from '../Constants/Styles';
 
 const spinnerStyle = {
   marginBottom: 16,
@@ -13,7 +14,7 @@ const spinnerStyle = {
 const LoadingIndicator = ({ children }) => (
   <View>
     <ActivityIndicator size={'large'} color={WHITE} style={spinnerStyle} />
-    <BodyText>{children}</BodyText>
+    <Text style={[TEXT, { color: WHITE, textAlign: 'center'}]}>{children}</Text>
   </View>
 );
 

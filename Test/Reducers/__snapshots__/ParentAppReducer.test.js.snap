@@ -16,7 +16,7 @@ Object {
   "selectedKid": Object {
     "UUID": "surprise",
   },
-  "step": 2,
+  "step": 1,
 }
 `;
 
