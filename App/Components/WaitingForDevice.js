@@ -33,7 +33,7 @@ const WaitingForDevice = ({ kidName, avatarURL, deviceType }) => (
       start on {kidName}'s {deviceType}
     </HeaderText>
 
-    <Spacing height={64} />
+    <Spacing height={32} />
 
     <KidAvatar
       size={166}
@@ -44,6 +44,9 @@ const WaitingForDevice = ({ kidName, avatarURL, deviceType }) => (
     <Spacing height={32} />
 
     <ActivityIndicator size="large" />
+
+    <Spacing height={32} />
+
     <Text style={style.bodyText}>
       Waiting...
     </Text>
