@@ -11,7 +11,14 @@ import HeaderText from '../Components/HeaderText';
 import BodyText from '../Components/BodyText';
 import { TRAXI_BLUE, WHITE } from '../Constants/Colours';
 
-const mapStateToProps = state => ({ kid: state.selectedKid });
+const firstName = (kid) => kid.name.split(' ')[0];
+
+const mapStateToProps = state => ({
+  parentName: state.parentName,
+  kidName: firstName(state.selectedKid),
+  deviceType: state.selectedKid.deviceType,
+  avatarURL: state.selectedKid.avatarURL,
+});
 const mapDispatchToProps = dispatch => ({
   onPress: () => {
     dispatch(RESET_STATE);
@@ -20,43 +27,45 @@ const mapDispatchToProps = dispatch => ({
 });
 
 // TODO: Extract
-const firstName = (kid) => kid.name.split(' ')[0];
 const headerTextStyle = { marginBottom: 16, color: WHITE };
 
 const congratulationsStyle = {
   backgroundColor: TRAXI_BLUE,
   flex: 1,
-  paddingTop: 32,
-  padding: 16,
+  paddingTop: 64,
+  padding: 32,
   justifyContent: 'flex-start',
   alignItems: 'center',
 };
 
-export const CongratulationsComponent = ({ kid, onPress }) => (
+const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, deviceType }) => (
   <Background style={congratulationsStyle}>
-    <KidAvatar animation="tada" size={210} state="good" avatarURL={kid.avatarURL} />
+    <KidAvatar animation="tada" size={210} state="good" avatarURL={avatarURL} />
 
-    <HeaderText style={headerTextStyle}>Congratulations!</HeaderText>
-
-    <BodyText>
-      {firstName(kid)}'s device is now being monitored by traxi.
-    </BodyText>
-
-    <Spacing />
+    <HeaderText style={headerTextStyle}>
+      {kidName} is being monitored!
+    </HeaderText>
 
     <BodyText>
-      We'll start collecting data about how {firstName(kid)} is using the Internet,
-      then send you a notification at 9AM tomorrow to tell you what happened.
+      Great work, {parentName}! {kidName}'s {deviceType} is now being monitored by traxi.
+      You will soon be able to see what they are doing on their {deviceType}.
+      {'\n'}
+      {'\n'}
+      It will take a couple minutes for {kidName}'s usage to be sent to traxi, so you might
+      want to come back to the app a little later.
     </BodyText>
 
     <Spacing height={32} />
 
-    <Button onPress={() => onPress()}>Done</Button>
+    <Button onPress={() => onPress()}>Finished!</Button>
   </Background>
 );
 
 CongratulationsComponent.propTypes = {
-  kid: PropTypes.object.isRequired,
+  parentName: PropTypes.string.isRequired,
+  kidName: PropTypes.string.isRequired,
+  avatarURL: PropTypes.string.isRequired,
+  deviceType: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 

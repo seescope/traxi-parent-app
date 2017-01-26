@@ -49,7 +49,7 @@ class ParentApp extends React.Component {
       contacts: [],
       step: 8, // FIXME: !!! CHANGE!!!
       kidSuggestions: [],
-      parentName: 'Boris',
+      parentName: 'Vladimir',
       kids: kids || [],
       // selectedKid: kids && kids[0] || {}, // FIXME: CHANGE!!!
       selectedKid: {
@@ -133,8 +133,8 @@ class ParentApp extends React.Component {
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />
           <Scene key="setImage" component={SetImage} />
-          <Scene key="walkthrough" initial component={Walkthrough} />
-          <Scene key="congratulations" component={Congratulations} />
+          <Scene key="walkthrough" component={Walkthrough} />
+          <Scene key="congratulations" initial component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
