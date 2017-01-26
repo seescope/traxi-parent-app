@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import ProgressTrack from '../Components/ProgressTrack';
 import SetName from './SetName';
+import SetImage from './SetImage';
 import LoadingIndicator from '../Components/LoadingIndicator';
 import Instructions from '../Components/Instructions';
 import { NEXT_STEP } from '../Actions/Actions';
@@ -106,6 +107,10 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
     return <SetName />;
   }
 
+  if (step === 1) {
+    return <SetImage />;
+  }
+
   if (step === 2) {
     return (
       <View>
@@ -138,7 +143,7 @@ const Walkthrough = ({ step, kid, nextStep }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
       stage={getStage(step, kid.deviceType)}
-      width={width - 80}
+      width={width - 64}
     />
 
     <View style={getWrapperStyle(step)}>

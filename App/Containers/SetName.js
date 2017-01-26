@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Keyboard, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { enterKidName } from '../Actions/Actions';
+import { enterKidName, NEXT_STEP } from '../Actions/Actions';
 import Button from '../Components/Button';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
@@ -18,9 +18,6 @@ const style = {
     backgroundColor: TRANSPARENT,
     textAlign: 'left',
   },
-  innerContainer: {
-    flex: 4,
-  },
   buttonContainer: {
     alignItems: 'center',
   },
@@ -28,13 +25,13 @@ const style = {
 
 export const setKidName = kidName => dispatch => dispatch(enterKidName(kidName));
 
-const nextStep = () => {
+export const nextStep = () => dispatch => {
   Keyboard.dismiss();
-  Actions.setImage();
+  dispatch(NEXT_STEP);
 };
 
-const SetName = ({ onChangeText }) => (
-  <View style={style.container}>
+const SetName = ({ onChangeText, onPress }) => (
+  <View>
     <HeaderText>Let's get started!</HeaderText>
 
     <Spacing height={32} />
@@ -48,20 +45,20 @@ const SetName = ({ onChangeText }) => (
     <TextInput
       refFunc={ref => { this.textInput = ref; }}
       onChangeText={onChangeText}
-      onSubmitEditing={() => Actions.setImage()}
+      onSubmitEditing={() => onPress()}
     />
 
     <Spacing />
 
     <View style={style.buttonContainer}>
-      <Button onPress={() => nextStep()}>Next step</Button>
+      <Button onPress={() => onPress()}>Next step</Button>
     </View>
   </View>
 );
 
 SetName.propTypes = {
-  parentName: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -70,6 +67,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   onChangeText: setKidName,
+  onPress: nextStep,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetName);

@@ -1,3 +1,13 @@
+exports[`test handles going to the nextStep 1`] = `
+Array [
+  Array [
+    Object {
+      "type": "NEXT_STEP",
+    },
+  ],
+]
+`;
+
 exports[`test handles setting the kid's name 1`] = `
 Array [
   Array [
@@ -11,140 +21,117 @@ Array [
 
 exports[`test renders the <SetName> component 1`] = `
 <View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 32,
-    }
-  }>
+  style={undefined}>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 30,
+        "marginBottom": -2,
+        "textAlign": "center",
+      }
+    }>
+    Let\'s get started!
+  </Text>
   <View
     style={
       Object {
-        "flex": 1,
+        "height": 32,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "textAlign": "left",
+      }
+    }>
+    What is your kid\'s name?
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 16,
+      }
+    } />
+  <TextInput
+    autoCapitalize="words"
+    autoCorrect={false}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholderTextColor="rgba(75, 73, 73, 0.8)"
+    style={
+      Object {
+        "backgroundColor": "#EFEFEF",
+        "borderRadius": 4,
+        "color": "rgba(75, 73, 73, 1)",
+        "fontFamily": "Raleway-Regular",
+        "height": 32,
+        "paddingHorizontal": 8,
+        "width": 686,
+      }
+    }
+    underlineColorAndroid="rgba(255, 255, 255, 1)" />
+  <View
+    style={
+      Object {
+        "height": 24,
       }
     } />
   <View
     style={
       Object {
-        "flex": 4,
+        "alignItems": "center",
       }
     }>
-    <Text
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 30,
-          "marginBottom": -2,
-          "textAlign": "center",
-        }
-      }>
-      Let\'s get started 
-      Name
-      !
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 24,
-        }
-      } />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "left",
-        }
-      }>
-      What is your kid\'s name?
-    </Text>
-    <TextInput
-      autoCapitalize="words"
-      autoCorrect={false}
-      onChangeText={[Function]}
-      onSubmitEditing={[Function]}
-      placeholderTextColor="rgba(75, 73, 73, 0.8)"
-      style={
-        Object {
-          "backgroundColor": "#EFEFEF",
-          "borderRadius": 4,
-          "color": "rgba(75, 73, 73, 1)",
-          "fontFamily": "Raleway-Regular",
-          "height": 32,
-          "paddingHorizontal": 8,
-          "width": 686,
-        }
-      }
-      underlineColorAndroid="rgba(255, 255, 255, 1)" />
-    <View
-      style={
-        Object {
-          "height": 24,
-        }
-      } />
-    <View
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
           "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
         }
-      }>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
+      }
+      testID={undefined}>
+      <Text
         accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "opacity": 1,
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
           }
-        }
-        testID={undefined}>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
-            }
-          }>
-          Next step
-           
-        </Text>
-      </View>
+        }>
+        Next step
+         
+      </Text>
     </View>
   </View>
 </View>

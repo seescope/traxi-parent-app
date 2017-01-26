@@ -2,28 +2,19 @@ jest.mock('../../App/Components/ProgressTrack', () => () => null);
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import configureStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { View } from 'react-native';
 import Walkthrough from '../../App/Containers/Walkthrough';
-
-
-const TEST_ACTIONS = { 
-  NEXT_STEP: 'test',
-  waitForInstall: jest.fn(),
-  saveProfile: jest.fn(() => Promise.resolve()),
-};
-
-const TEST_ROUTER_FLUX = { Actions: { congratulations: jest.fn() } };
 
 const TEST_KID = {
   name: 'Brett Bastian',
   number: '+61401633346',
-  avatarURL: 'https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg'
+  avatarURL: 'https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg',
 };
 
-let TEST_STATE = { 
+const TEST_STATE = {
+  parentName: 'Jeff Bezos',
   selectedKid: TEST_KID,
   step: 1,
   profile: { user_id: 1 },
@@ -35,7 +26,7 @@ const testStore = mockStore(() => TEST_STATE);
 
 const WalkthroughComponent = () => (
   <Provider store={testStore}>
-    <Walkthrough/>
+    <Walkthrough />
   </Provider>
 );
 

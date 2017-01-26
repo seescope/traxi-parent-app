@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
+import { Keyboard } from 'react-native';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import SetName, { setKidName } from '../../App/Containers/SetName';
+import SetName, { setKidName, nextStep } from '../../App/Containers/SetName';
 
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({ parentName: 'Name' });
@@ -26,5 +26,14 @@ it('renders the <SetName> component', () => {
 it('handles setting the kid\'s name', () => {
   const mockDispatch = jest.fn();
   setKidName('Test')(mockDispatch);
+  expect(mockDispatch.mock.calls).toMatchSnapshot();
+});
+
+it('handles going to the nextStep', () => {
+  const mockDispatch = jest.fn();
+  Keyboard.dismiss = jest.fn();
+  nextStep()(mockDispatch);
+
+  expect(Keyboard.dismiss).toHaveBeenCalled();
   expect(mockDispatch.mock.calls).toMatchSnapshot();
 });

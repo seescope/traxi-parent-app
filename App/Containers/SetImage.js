@@ -74,13 +74,6 @@ export const selectImage = pickImage => dispatch => {
 };
 
 const style = {
-  container: {
-    backgroundColor: TRAXI_BLUE,
-    flex: 1,
-    paddingHorizontal: 32,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
   padding: {
     flex: 1,
   },
@@ -91,9 +84,6 @@ const style = {
     backgroundColor: TRANSPARENT,
     textAlign: 'left',
   },
-  innerContainer: {
-    flex: 4,
-  },
   buttonContainer: {
     paddingHorizontal: 16,
     flex: 1,
@@ -103,36 +93,33 @@ const style = {
   },
 };
 
-const CreateKid = ({ parentName, kidName, onPress }) => (
-  <Background style={style.container}>
-    <View style={style.padding} />
-    <View style={style.innerContainer}>
-      <HeaderText>Thanks, {parentName}!</HeaderText>
+const SetImage = ({ parentName, kidName, onPress }) => (
+  <View>
+    <HeaderText>Thanks, {parentName}!</HeaderText>
 
-      <Spacing />
+    <Spacing />
 
-      <Text style={style.bodyText}>
-        Next, let's set a picture for {kidName} to make you feel more at home.
-      </Text>
+    <Text style={style.bodyText}>
+      Next, let's set a picture for {kidName} to make you feel more at home.
+    </Text>
 
-      <Spacing />
+    <Spacing />
 
-      <Text style={style.bodyText}>
-        Don't worry, only you will be able to see it.
-      </Text>
+    <Text style={style.bodyText}>
+      Don't worry, only you will be able to see it.
+    </Text>
 
-      <Spacing height={64} />
+    <Spacing height={64} />
 
-      <View style={style.buttonContainer}>
-        <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
-        <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
-      </View>
-
+    <View style={style.buttonContainer}>
+      <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
+      <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
     </View>
-  </Background>
+
+  </View>
 );
 
-CreateKid.propTypes = {
+SetImage.propTypes = {
   kidName: PropTypes.string.isRequired,
   parentName: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
@@ -147,4 +134,4 @@ const mapDispatchToProps = {
   onPress: selectImage,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateKid);
+export default connect(mapStateToProps, mapDispatchToProps)(SetImage);
