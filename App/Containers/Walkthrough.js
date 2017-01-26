@@ -3,6 +3,7 @@ import { View, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 
 import ProgressTrack from '../Components/ProgressTrack';
+import SetName from './SetName';
 import LoadingIndicator from '../Components/LoadingIndicator';
 import Instructions from '../Components/Instructions';
 import { NEXT_STEP } from '../Actions/Actions';
@@ -34,15 +35,13 @@ const WALKTHROUGH_STYLES = {
   container: {
     backgroundColor: TRAXI_BLUE,
     flex: 1,
-    paddingTop: 32,
+    paddingTop: 16,
     paddingHorizontal: 20,
-    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   instructionsContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 64,
   },
   loadingindicatorContainer: {
     flex: 1,
@@ -94,8 +93,7 @@ const getStage = (step, deviceType) => {
 };
 
 const getWrapperStyle = (step) => {
-  if (step === 0
-    || step === 2
+  if (step === 2
     || step >= 5) {
     return WALKTHROUGH_STYLES.loadingindicatorContainer;
   }
@@ -105,7 +103,7 @@ const getWrapperStyle = (step) => {
 
 const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
   if (step === 0) {
-    return <LoadingIndicator>Hold on one second...</LoadingIndicator>;
+    return <SetName />;
   }
 
   if (step === 2) {

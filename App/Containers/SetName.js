@@ -4,24 +4,13 @@ import { Keyboard, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { enterKidName } from '../Actions/Actions';
-import Background from '../Components/Background';
 import Button from '../Components/Button';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
+import { WHITE, TRANSPARENT } from '../Constants/Colours';
 
 const style = {
-  container: {
-    backgroundColor: TRAXI_BLUE,
-    flex: 1,
-    paddingHorizontal: 32,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  padding: {
-    flex: 1,
-  },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
@@ -44,31 +33,30 @@ const nextStep = () => {
   Actions.setImage();
 };
 
-const SetName = ({ parentName, onChangeText }) => (
-  <Background style={style.container}>
-    <View style={style.padding} />
-    <View style={style.innerContainer}>
-      <HeaderText>Let's get started {parentName}!</HeaderText>
+const SetName = ({ onChangeText }) => (
+  <View style={style.container}>
+    <HeaderText>Let's get started!</HeaderText>
 
-      <Spacing />
+    <Spacing height={32} />
 
-      <Text style={style.bodyText}>
-        What is your kid's name?
-      </Text>
+    <Text style={style.bodyText}>
+      What is your kid's name?
+    </Text>
 
-      <TextInput
-        refFunc={ref => { this.textInput = ref; }}
-        onChangeText={onChangeText}
-        onSubmitEditing={() => Actions.setImage()}
-      />
+    <Spacing height={16} />
 
-      <Spacing />
+    <TextInput
+      refFunc={ref => { this.textInput = ref; }}
+      onChangeText={onChangeText}
+      onSubmitEditing={() => Actions.setImage()}
+    />
 
-      <View style={style.buttonContainer}>
-        <Button onPress={() => nextStep()}>Next step</Button>
-      </View>
+    <Spacing />
+
+    <View style={style.buttonContainer}>
+      <Button onPress={() => nextStep()}>Next step</Button>
     </View>
-  </Background>
+  </View>
 );
 
 SetName.propTypes = {

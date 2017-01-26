@@ -25,7 +25,7 @@ const IOS_INSTRUCTIONS = [
 
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
-    '',
+    'Let\'s get started!',
     `Browse to gettraxi.com on ${kidName}'s device`,
     `Enter the code ${setupID}`,
     '',

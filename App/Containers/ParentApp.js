@@ -49,13 +49,9 @@ class ParentApp extends React.Component {
       contacts: [],
       step: 0, // TODO: !!! CHANGE!!!
       kidSuggestions: [],
+      parentName: 'Boris',
       kids: kids || [],
-      // selectedKid: kids && kids[0] || {},
-      selectedKid: {
-        name: 'Jack Johnson',
-        avatarURL: '',
-        deviceType: 'Android',
-      },
+      selectedKid: kids && kids[0] || {},
       reports: {},
     };
 
