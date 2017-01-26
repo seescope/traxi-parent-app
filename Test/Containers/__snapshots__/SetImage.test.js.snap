@@ -7,6 +7,11 @@ Array [
     },
   ],
   Array [
+    Object {
+      "type": "NEXT_STEP",
+    },
+  ],
+  Array [
     [Function],
   ],
   Array [
@@ -17,188 +22,189 @@ Array [
 
 exports[`test renders the <SetImage> component 1`] = `
 <View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 32,
     }
   }>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 30,
+        "marginBottom": -2,
+        "textAlign": "center",
+      }
+    }>
+    Thanks, 
+    Name
+    !
+  </Text>
   <View
     style={
       Object {
-        "flex": 1,
+        "height": 32,
+      }
+    } />
+  <Image
+    animation={undefined}
+    duration={undefined}
+    iterationCount={undefined}
+    source={1}
+    style={
+      Object {
+        "borderColor": undefined,
+        "borderRadius": 102,
+        "borderWidth": 10.2,
+        "height": 204,
+        "marginBottom": 20.4,
+        "shadowColor": "rgba(0,0,0,0.5)",
+        "shadowOffset": Object {
+          "height": 2,
+        },
+        "shadowRadius": 5,
+        "width": 204,
       }
     } />
   <View
     style={
       Object {
-        "flex": 4,
+        "height": 32,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "textAlign": "left",
       }
     }>
-    <Text
+    Now, let\'s set a picture for 
+    Jeff
+    .
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "textAlign": "left",
+      }
+    }>
+    Don\'t worry, only you will be able to see it.
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": 686,
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
+          "alignItems": "center",
           "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 30,
-          "marginBottom": -2,
-          "textAlign": "center",
-        }
-      }>
-      Thanks, 
-      Name
-      !
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 24,
-        }
-      } />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "left",
-        }
-      }>
-      Next, let\'s set a picture for 
-      Jeff
-       to make you feel more at home.
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 24,
-        }
-      } />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "left",
-        }
-      }>
-      Don\'t worry, only you will be able to see it.
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 64,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "flex": 1,
           "flexDirection": "row",
-          "justifyContent": "space-between",
-          "paddingHorizontal": 16,
+          "justifyContent": "center",
+          "opacity": 1,
         }
-      }>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
+      }
+      testID={undefined}>
+      <Text
         accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "opacity": 1,
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
           }
+        }>
+        Not right now
+         
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
         }
-        testID={undefined}>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
-            }
-          }>
-          Not right now
-           
-        </Text>
-      </View>
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
+      }
+      testID={undefined}>
+      <Text
         accessible={true}
-        hitSlop={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "opacity": 1,
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
           }
-        }
-        testID={undefined}>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
-            }
-          }>
-          Set a picture for 
-          Jeff
-           
-        </Text>
-      </View>
+        }>
+        Set a picture for 
+        Jeff
+         
+      </Text>
     </View>
   </View>
 </View>
@@ -214,6 +220,11 @@ Array [
   ],
   Array [
     [Function],
+  ],
+  Array [
+    Object {
+      "type": "NEXT_STEP",
+    },
   ],
   Array [
     [Function],

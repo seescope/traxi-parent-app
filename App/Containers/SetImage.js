@@ -4,15 +4,17 @@ import { Dimensions, Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Actions } from 'react-native-router-flux';
 
-import { selectKidImage } from '../Actions/Actions';
+import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
 import watchDevice from '../Actions/WatchDevice';
-import Background from '../Components/Background';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
+import KidAvatar from '../Components/KidAvatar';
+import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import { isIOS, logError, firstName } from '../Utils';
+
+const { width } = Dimensions.get('window');
 
 const getSource = response => {
   let source;
@@ -38,9 +40,9 @@ export const selectImage = pickImage => dispatch => {
 
   if (!pickImage) {
     dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
-    Actions.walkthrough();
 
     return dispatch(setupKid()).then(() => {
+      dispatch(NEXT_STEP);
       dispatch(watchDevice());
     });
   }
@@ -64,8 +66,7 @@ export const selectImage = pickImage => dispatch => {
 
     const source = getSource(response);
     dispatch(selectKidImage(source.uri));
-
-    Actions.walkthrough();
+    dispatch(NEXT_STEP);
 
     dispatch(setupKid()).then(() => {
       dispatch(watchDevice());
@@ -74,8 +75,8 @@ export const selectImage = pickImage => dispatch => {
 };
 
 const style = {
-  padding: {
-    flex: 1,
+  container: {
+    alignItems: 'center',
   },
   bodyText: {
     fontFamily: 'Raleway-Regular',
@@ -85,22 +86,27 @@ const style = {
     textAlign: 'left',
   },
   buttonContainer: {
-    paddingHorizontal: 16,
-    flex: 1,
+    width: width - 64,
     flexDirection: 'row',
-    alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
 };
 
 const SetImage = ({ parentName, kidName, onPress }) => (
-  <View>
+  <View style={style.container}>
     <HeaderText>Thanks, {parentName}!</HeaderText>
 
-    <Spacing />
+    <Spacing height={32} />
+
+    <KidAvatar
+      size={204}
+      avatarURL=''
+    />
+
+    <Spacing height={32} />
 
     <Text style={style.bodyText}>
-      Next, let's set a picture for {kidName} to make you feel more at home.
+      Now, let's set a picture for {kidName}.
     </Text>
 
     <Spacing />
@@ -109,7 +115,7 @@ const SetImage = ({ parentName, kidName, onPress }) => (
       Don't worry, only you will be able to see it.
     </Text>
 
-    <Spacing height={64} />
+    <Spacing height={32} />
 
     <View style={style.buttonContainer}>
       <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
