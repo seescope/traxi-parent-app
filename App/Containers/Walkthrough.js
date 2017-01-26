@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ProgressTrack from '../Components/ProgressTrack';
 import SetName from './SetName';
 import SetImage from './SetImage';
+import Prompt from '../Components/Prompt';
 import LoadingIndicator from '../Components/LoadingIndicator';
 import Instructions from '../Components/Instructions';
 import { NEXT_STEP } from '../Actions/Actions';
@@ -26,6 +27,7 @@ export const mapStateToProps = state => ({
   step: state.step,
   kid: state.selectedKid,
   profile: state.profile,
+  parentName: state.parentName,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -56,7 +58,7 @@ const getStage = (step, deviceType) => {
     Android: {
       0: 0,
       1: 0,
-      2: 0,
+      2: 1,
       3: 1,
       4: 1,
       5: 2,
@@ -102,7 +104,7 @@ const getWrapperStyle = (step) => {
   return WALKTHROUGH_STYLES.instructionsContainer;
 };
 
-const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
+const getNextComponent = (step, kidName, nextStep, deviceType, setupID, parentName) => {
   if (step === 0) {
     return <SetName />;
   }
@@ -111,7 +113,18 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
     return <SetImage />;
   }
 
-  if (step === 2) {
+  if (step === 2 || step === 3) {
+    return (
+      <Prompt
+        step={step - 2}
+        kidName={kidName}
+        parentName={parentName}
+        nextStep={nextStep}
+      />
+    );
+  }
+
+  if (step === 4) {
     return (
       <View>
         <HeaderText>Enter the setup code {setupID}</HeaderText>
@@ -139,7 +152,7 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
   );
 };
 
-const Walkthrough = ({ step, kid, nextStep }) => (
+const Walkthrough = ({ step, kid, nextStep, parentName }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
       stage={getStage(step, kid.deviceType)}
@@ -147,7 +160,14 @@ const Walkthrough = ({ step, kid, nextStep }) => (
     />
 
     <View style={getWrapperStyle(step)}>
-      {getNextComponent(step, firstName(kid.name), nextStep, kid.deviceType, kid.setupID)}
+      {getNextComponent(
+        step,
+        firstName(kid.name),
+        nextStep,
+        kid.deviceType,
+        kid.setupID,
+        parentName
+      )}
     </View>
   </Background>
 );
@@ -156,6 +176,7 @@ Walkthrough.propTypes = {
   step: PropTypes.number.isRequired,
   kid: PropTypes.object.isRequired,
   nextStep: PropTypes.func.isRequired,
+  parentName: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Walkthrough);

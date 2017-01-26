@@ -47,7 +47,7 @@ class ParentApp extends React.Component {
       loading: false,
       profile,
       contacts: [],
-      step: 1, // FIXME: !!! CHANGE!!!
+      step: 2, // FIXME: !!! CHANGE!!!
       kidSuggestions: [],
       parentName: 'Boris',
       kids: kids || [],
