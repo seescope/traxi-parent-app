@@ -100,7 +100,7 @@ const SetImage = ({ parentName, kidName, onPress }) => (
 
     <KidAvatar
       size={204}
-      avatarURL=''
+      avatarURL=""
     />
 
     <Spacing height={32} />

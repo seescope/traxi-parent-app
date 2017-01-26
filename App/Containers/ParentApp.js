@@ -54,6 +54,7 @@ class ParentApp extends React.Component {
       // selectedKid: kids && kids[0] || {}, // FIXME: CHANGE!!!
       selectedKid: {
         name: 'Boris',
+        avatarURL: 'http://www.todaysparent.com/wp-content/uploads/2015/12/TP01_SS_BigKid_Article.jpg',
       },
       reports: {},
     };

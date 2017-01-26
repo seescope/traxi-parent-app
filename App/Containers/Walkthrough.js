@@ -104,7 +104,10 @@ const getWrapperStyle = (step) => {
   return WALKTHROUGH_STYLES.instructionsContainer;
 };
 
-const getNextComponent = (step, kidName, nextStep, deviceType, setupID, parentName) => {
+const getNextComponent = (step, nextStep, kid, parentName) => {
+  const kidName = firstName(kid.name);
+  const { deviceType, setupID, avatarURL } = kid;
+
   if (step === 0) {
     return <SetName />;
   }
@@ -120,6 +123,7 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID, parentNa
         kidName={kidName}
         parentName={parentName}
         nextStep={nextStep}
+        avatarURL={avatarURL}
       />
     );
   }
@@ -162,10 +166,8 @@ const Walkthrough = ({ step, kid, nextStep, parentName }) => (
     <View style={getWrapperStyle(step)}>
       {getNextComponent(
         step,
-        firstName(kid.name),
         nextStep,
-        kid.deviceType,
-        kid.setupID,
+        kid,
         parentName
       )}
     </View>
