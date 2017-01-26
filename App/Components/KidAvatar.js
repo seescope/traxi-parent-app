@@ -21,7 +21,7 @@ const getKidAvatarStyle = (size, state) =>
       shadowRadius: 5,
       marginBottom: size / 10,
       borderColor: stateColours[state],
-      borderWidth: size / 20,
+      borderWidth: size / 35,
     },
   });
 

@@ -96,8 +96,7 @@ const getStage = (step, deviceType) => {
 };
 
 const getWrapperStyle = (step) => {
-  if (step === 2
-    || step >= 5) {
+  if (step >= 5) {
     return WALKTHROUGH_STYLES.loadingindicatorContainer;
   }
 

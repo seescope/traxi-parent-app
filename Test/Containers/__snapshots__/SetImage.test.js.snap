@@ -60,7 +60,7 @@ exports[`test renders the <SetImage> component 1`] = `
       Object {
         "borderColor": undefined,
         "borderRadius": 102,
-        "borderWidth": 10.2,
+        "borderWidth": 5.828571428571428,
         "height": 204,
         "marginBottom": 20.4,
         "shadowColor": "rgba(0,0,0,0.5)",
@@ -87,7 +87,6 @@ exports[`test renders the <SetImage> component 1`] = `
         "color": "#FFF",
         "fontFamily": "Raleway-Regular",
         "fontSize": 16,
-        "textAlign": "left",
       }
     }>
     Now, let\'s set a picture for 
@@ -110,7 +109,6 @@ exports[`test renders the <SetImage> component 1`] = `
         "color": "#FFF",
         "fontFamily": "Raleway-Regular",
         "fontSize": 16,
-        "textAlign": "left",
       }
     }>
     Don\'t worry, only you will be able to see it.

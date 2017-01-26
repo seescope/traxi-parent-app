@@ -7,6 +7,7 @@ it('renders', () => {
     step={1}
     parentName="Kane"
     kidName="Jeff"
+    avatarURL=""
     nextStep={() => {}}
   />).toJSON();
   expect(tree).toMatchSnapshot();

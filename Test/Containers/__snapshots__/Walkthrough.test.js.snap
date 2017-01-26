@@ -203,7 +203,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
           Object {
             "borderColor": undefined,
             "borderRadius": 102,
-            "borderWidth": 10.2,
+            "borderWidth": 5.828571428571428,
             "height": 204,
             "marginBottom": 20.4,
             "shadowColor": "rgba(0,0,0,0.5)",
@@ -230,7 +230,6 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Now, let\'s set a picture for 
@@ -253,7 +252,6 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Don\'t worry, only you will be able to see it.
@@ -375,11 +373,72 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -406,7 +465,69 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
         "flex": 1,
         "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -1122,7 +1243,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
           Object {
             "borderColor": undefined,
             "borderRadius": 102,
-            "borderWidth": 10.2,
+            "borderWidth": 5.828571428571428,
             "height": 204,
             "marginBottom": 20.4,
             "shadowColor": "rgba(0,0,0,0.5)",
@@ -1149,7 +1270,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Now, let\'s set a picture for 
@@ -1172,7 +1292,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Don\'t worry, only you will be able to see it.
@@ -1294,11 +1413,72 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -1325,7 +1505,69 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
         "flex": 1,
         "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -1920,7 +2162,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
           Object {
             "borderColor": undefined,
             "borderRadius": 102,
-            "borderWidth": 10.2,
+            "borderWidth": 5.828571428571428,
             "height": 204,
             "marginBottom": 20.4,
             "shadowColor": "rgba(0,0,0,0.5)",
@@ -1947,7 +2189,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Now, let\'s set a picture for 
@@ -1970,7 +2211,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 16,
-            "textAlign": "left",
           }
         }>
         Don\'t worry, only you will be able to see it.
@@ -2092,11 +2332,72 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -2123,7 +2424,69 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
         "flex": 1,
         "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;
 
@@ -2532,10 +2895,71 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
-    } />
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        } />
+    </View>
+  </View>
 </View>
 `;

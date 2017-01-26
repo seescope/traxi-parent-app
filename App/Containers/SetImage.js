@@ -83,7 +83,6 @@ const style = {
     fontSize: 16,
     color: WHITE,
     backgroundColor: TRANSPARENT,
-    textAlign: 'left',
   },
   buttonContainer: {
     width: width - 64,
