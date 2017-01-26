@@ -47,7 +47,7 @@ class ParentApp extends React.Component {
       loading: false,
       profile,
       contacts: [],
-      step: 2, // FIXME: !!! CHANGE!!!
+      step: 8, // FIXME: !!! CHANGE!!!
       kidSuggestions: [],
       parentName: 'Boris',
       kids: kids || [],
@@ -55,6 +55,8 @@ class ParentApp extends React.Component {
       selectedKid: {
         name: 'Boris',
         avatarURL: 'http://www.todaysparent.com/wp-content/uploads/2015/12/TP01_SS_BigKid_Article.jpg',
+        setupID: 1234,
+        deviceType: 'Android',
       },
       reports: {},
     };

@@ -1,5 +1,4 @@
-/* eslint-disable global-require */
-/* eslint-disable quotes */
+/* eslint-disable global-require */ /* eslint-disable quotes */
 /* eslint-disable import/no-unresolved */
 import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
@@ -10,6 +9,14 @@ import HeaderText from './HeaderText';
 import Button from './Button';
 
 const { height, width } = Dimensions.get('window');
+
+const buttonContainer = {
+  paddingHorizontal: 32,
+  width: width - 64,
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+};
 
 const IOS_INSTRUCTIONS = [
   '',
@@ -44,12 +51,11 @@ const androidInstructions = (step, kidName, setupID) => {
     '',
     '',
     '',
-    `Tap "Next Step"`,
-    `Tap "Install"`,
-    `Tap "Open"`,
-    `Enter the code ${setupID} again`,
-    'Tap "OK"',
     '',
+    '',
+    `Install the Child App \n on ${kidName}'s phone`,
+    `Enter the PIN ${setupID} \n and tap "Done"`,
+    'Tap "OK" on the next \n screen.',
   ];
 
   return instructions[step];
@@ -125,8 +131,13 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
   <View style={INSTRUCTION_STYLES.container}>
     <View style={INSTRUCTION_STYLES.container}>
       <HeaderText>{instructionText(step, kidName, deviceType, setupID)}</HeaderText>
+
       <Spacing height={64} />
-      <Button onPress={nextStep}>Next Step</Button>
+
+      <View style={buttonContainer}>
+        <Button onPress={() => {}} primary={false}>I need help</Button>
+        <Button onPress={nextStep}>Next Step</Button>
+      </View>
     </View>
     <View>
       <Animatable.Image
