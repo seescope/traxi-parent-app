@@ -15,7 +15,14 @@ exports[`test renders the <SplashScreen> component 1`] = `
   }>
   <Image
     animation="bounceInDown"
-    source={1} />
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "height": 667,
+      }
+    }
+    useNativeDriver={true} />
   <View
     style={
       Object {
@@ -33,12 +40,12 @@ exports[`test renders the <SplashScreen> component 1`] = `
         "backgroundColor": "transparent",
         "color": "#FFF",
         "fontFamily": "Raleway-ExtraBold",
-        "fontSize": 32,
+        "fontSize": 28,
         "marginBottom": 16,
-        "marginHorizontal": 16,
         "textAlign": "center",
       }
-    }>
+    }
+    useNativeDriver={true}>
     Start seeing what your kids are doing.
   </Text>
   <View
@@ -49,7 +56,8 @@ exports[`test renders the <SplashScreen> component 1`] = `
     } />
   <View
     animation="bounceInUp"
-    delay={2000}>
+    delay={2000}
+    useNativeDriver={true}>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}

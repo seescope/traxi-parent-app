@@ -9,8 +9,8 @@
 
 #import "AppDelegate.h"
 #import "CodePush.h"
-#import "RCTRootView.h"
-#import "RCTBundleURLProvider.h"
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Analytics/SEGAnalytics.h>

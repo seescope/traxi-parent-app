@@ -1,96 +1,105 @@
 import React, { PropTypes } from 'react';
-import { View, Easing, Animated } from 'react-native';
-import { GOOD, WHITE, NEUTRAL } from '../Constants/Colours';
-import KidAvatar from './KidAvatar';
+import { View, Text, Easing, Animated } from 'react-native';
+import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 
 const TRACK_COLOUR = WHITE;
-const TRACK_WIDTH = 3;
+const TRACK_THICKNESS = 4;
+const STAGES = [0, 1, 2, 3];
 
+const containerStyle = {
+  height: 32,
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flexDirection: 'row',
+  paddingHorizontal: 14,
+};
+
+const trackStyle = width => ({
+  top: (32 / 2) - (TRACK_THICKNESS / 2),
+  position: 'absolute',
+  backgroundColor: TRACK_COLOUR,
+  height: TRACK_THICKNESS,
+  left: 14,
+  width: width - (14 * 2),
+});
+
+const circleStyle = {
+  elevation: 5,
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 14,
+  width: 14,
+  borderRadius: 7,
+  backgroundColor: WHITE,
+};
+
+const textStyle = {
+  fontWeight: 'bold',
+  fontSize: 10, // Will be doubled by scaling
+  color: TRAXI_BLUE,
+};
 
 class ProgressTrack extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      completedTrackWidth: new Animated.Value(0),
-      trackWidth: new Animated.Value(0),
+  componentWillMount() {
+    this.animatedValues = STAGES.map(() => new Animated.Value(0));
+
+    const interpolationOptions = {
+      inputRange: [0, 1],
+      outputRange: [1, 2],
     };
+
+    this.animatedCircleStyles = STAGES.map(i => ({
+      transform: [{
+        scale: this.animatedValues[i].interpolate(interpolationOptions),
+      }],
+    }));
+
+    this.animatedTextStyles = STAGES.map(i => ({
+      opacity: this.animatedValues[i],
+    }));
   }
 
   componentDidMount() {
-    this.animateTracks();
+    this.animateCircles();
   }
 
   componentDidUpdate() {
-    this.animateTracks();
+    this.animateCircles();
   }
 
-  getProgressTrackStyle() {
-    return {
-      container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 50,
-        flexDirection: 'row',
-      },
-      completedTrack: {
-        backgroundColor: this.props.state === 'neutral' ? NEUTRAL : GOOD,
-        height: TRACK_WIDTH,
-        width: this.state.completedTrackWidth,
-      },
-      track: {
-        backgroundColor: TRACK_COLOUR,
-        height: TRACK_WIDTH,
-        width: this.state.trackWidth,
-      },
-    };
-  }
+  animateCircles() {
+    const { stage } = this.props;
 
-  animateTracks() {
-    const { width, progress } = this.props;
-
-    Animated.parallel([
-      Animated.timing(
-        this.state.completedTrackWidth,
-        {
-          toValue: width * progress,
-          easing: Easing.elastic(0.1),
-        }
-      ),
-      Animated.timing(
-        this.state.trackWidth,
-        {
-          toValue: width * (1 - progress),
-          easing: Easing.elastic(0.1),
-        }
-      ),
-    ]).start();
+    Animated.spring(this.animatedValues[stage], {
+      toValue: 1,
+      friction: 3,
+      tension: 40,
+    }).start();
   }
 
   render() {
-    const style = this.getProgressTrackStyle();
-    const { avatarURL, state } = this.props;
+    const { width } = this.props;
+
     return (
-      <View style={style.container}>
-        <Animated.View style={style.completedTrack} />
-        <KidAvatar
-          animation="pulse"
-          duration={2000}
-          iterationCount="infinite"
-          avatarURL={avatarURL}
-          state={state}
-          size={50}
-        />
-        <Animated.View style={style.track} />
+      <View style={{ width }}>
+        <View style={containerStyle}>
+          {STAGES.map(i =>
+            <Animated.View key={i} style={[circleStyle, this.animatedCircleStyles[i]]}>
+              <Animated.Text style={[textStyle, this.animatedTextStyles[i]]}>
+                {i + 1}
+              </Animated.Text>
+            </Animated.View>
+          )}
+        </View>
+        <View style={trackStyle(width)} />
       </View>
     );
   }
 }
 
 ProgressTrack.propTypes = {
-  avatarURL: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
-  progress: PropTypes.number.isRequired,
-  state: PropTypes.oneOf(['neutral', 'good']).isRequired,
+  stage: PropTypes.number.isRequired,
 };
 
 export default ProgressTrack;

@@ -20,56 +20,6 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -124,56 +74,6 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -300,56 +200,6 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -431,56 +281,6 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -607,56 +407,6 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -775,56 +525,6 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -951,56 +651,6 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -1119,56 +769,6 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -1295,56 +895,6 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#4CAF50",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "#4CAF50",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -1407,56 +957,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -1511,56 +1011,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -1687,56 +1137,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -1818,56 +1218,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -1994,56 +1344,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -2162,56 +1462,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -2338,56 +1588,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -2510,56 +1710,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#4CAF50",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "#4CAF50",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -2622,56 +1772,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -2726,56 +1826,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -2902,56 +1952,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -3032,56 +2032,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -3208,56 +2158,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -3376,56 +2276,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
@@ -3552,56 +2402,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -3724,56 +2524,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "#4CAF50",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "#4CAF50",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
         "flex": 1,
         "justifyContent": "center",
       }
@@ -3832,56 +2582,6 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
       "paddingTop": 32,
     }
   }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 50,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "backgroundColor": "rgba(75, 73, 73, 1)",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-    <Image
-      animation="pulse"
-      duration={2000}
-      iterationCount="infinite"
-      source={
-        Object {
-          "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
-        }
-      }
-      style={
-        Object {
-          "borderColor": "rgba(75, 73, 73, 1)",
-          "borderRadius": 25,
-          "borderWidth": 2.5,
-          "height": 50,
-          "marginBottom": 5,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 50,
-        }
-      } />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#FFF",
-          "height": 3,
-          "width": 0,
-        }
-      } />
-  </View>
   <View
     style={
       Object {
