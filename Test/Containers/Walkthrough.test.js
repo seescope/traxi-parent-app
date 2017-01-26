@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import Walkthrough from '../../App/Containers/Walkthrough';
 
 const TEST_KID = {
+  setupID: 1234,
   name: 'Brett Bastian',
   number: '+61401633346',
   avatarURL: 'https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg',
@@ -44,7 +45,6 @@ it('renders the Walkthrough component at each stage for iPhone', () => {
 
 it('renders the Walkthrough component at each stage for iPad', () => {
   TEST_KID.deviceType = 'iPad';
-  TEST_KID.setupID = 1234;
   TEST_STATE.step = 0;
 
   while (TEST_STATE.step <= 7) {

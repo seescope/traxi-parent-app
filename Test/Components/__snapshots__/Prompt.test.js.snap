@@ -17,6 +17,12 @@ exports[`test renders 1`] = `
         "fontSize": 30,
         "marginBottom": -2,
         "textAlign": "center",
+        "textShadowColor": "rgba(75, 73, 73, 0.8)",
+        "textShadowOffset": Object {
+          "height": 3,
+          "width": 3,
+        },
+        "textShadowRadius": 20,
       }
     }>
     Go to www.gettraxi.com on Jeff\'s device
@@ -50,10 +56,114 @@ exports[`test renders 1`] = `
   <View
     style={
       Object {
+        "height": 32,
+      }
+    } />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 16,
+        "textAlign": "center",
+      }
+    }>
+    Open a web browser on Jeff\'s phone or tablet and go to the website www.gettraxi.com
+  </Text>
+  <View
+    style={
+      Object {
+        "height": 24,
+      }
+    } />
+  <View
+    style={
+      Object {
         "flexDirection": "row",
         "justifyContent": "space-between",
         "width": 686,
       }
-    } />
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
+          }
+        }>
+        I need help
+         
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 20,
+          }
+        }>
+        Next step
+         
+      </Text>
+    </View>
+  </View>
 </View>
 `;

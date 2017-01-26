@@ -1,26 +1,10 @@
-exports[`test handles going to the nextStep 1`] = `
-Array [
-  Array [
+exports[`test renders 1`] = `
+<View
+  style={
     Object {
-      "type": "NEXT_STEP",
-    },
-  ],
-]
-`;
-
-exports[`test handles setting the kid's name 1`] = `
-Array [
-  Array [
-    Object {
-      "kidName": "Test",
-      "type": "ENTER_KID_NAME",
-    },
-  ],
-]
-`;
-
-exports[`test renders the <SetName> component 1`] = `
-<View>
+      "alignItems": "center",
+    }
+  }>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -41,8 +25,55 @@ exports[`test renders the <SetName> component 1`] = `
         "textShadowRadius": 20,
       }
     }>
-    Let\'s get started!
+    Waiting for traxi to 
+    
+    
+    start on 
+    Jeff
+    \'s 
+    Android
   </Text>
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <Image
+    animation={undefined}
+    duration={undefined}
+    iterationCount={undefined}
+    source={
+      Object {
+        "uri": "yep",
+      }
+    }
+    style={
+      Object {
+        "borderColor": "#FFF",
+        "borderRadius": 83,
+        "borderWidth": 4.742857142857143,
+        "height": 166,
+        "marginBottom": 16.6,
+        "shadowColor": "rgba(0,0,0,0.5)",
+        "shadowOffset": Object {
+          "height": 2,
+        },
+        "shadowRadius": 5,
+        "width": 166,
+      }
+    } />
+  <View
+    style={
+      Object {
+        "height": 32,
+      }
+    } />
+  <ActivityIndicator
+    animating={true}
+    color="#999999"
+    hidesWhenStopped={true}
+    size="large" />
   <View
     style={
       Object {
@@ -59,35 +90,11 @@ exports[`test renders the <SetName> component 1`] = `
         "color": "#FFF",
         "fontFamily": "Raleway-Regular",
         "fontSize": 16,
-        "textAlign": "left",
+        "textAlign": "center",
       }
     }>
-    What is your kid\'s name?
+    Waiting...
   </Text>
-  <View
-    style={
-      Object {
-        "height": 16,
-      }
-    } />
-  <TextInput
-    autoCapitalize="words"
-    autoCorrect={false}
-    onChangeText={[Function]}
-    onSubmitEditing={[Function]}
-    placeholderTextColor="rgba(75, 73, 73, 0.8)"
-    style={
-      Object {
-        "backgroundColor": "#EFEFEF",
-        "borderRadius": 4,
-        "color": "rgba(75, 73, 73, 1)",
-        "fontFamily": "Raleway-Regular",
-        "height": 32,
-        "paddingHorizontal": 8,
-        "width": 686,
-      }
-    }
-    underlineColorAndroid="rgba(255, 255, 255, 1)" />
   <View
     style={
       Object {
@@ -98,6 +105,7 @@ exports[`test renders the <SetName> component 1`] = `
     style={
       Object {
         "alignItems": "center",
+        "width": 686,
       }
     }>
     <View
@@ -134,7 +142,7 @@ exports[`test renders the <SetName> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Next step
+        I need help
          
       </Text>
     </View>
