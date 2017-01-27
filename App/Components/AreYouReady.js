@@ -2,20 +2,13 @@
 
 import React from 'react';
 import { Dimensions, Platform, View, Text, Image } from 'react-native';
-import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
-import loginWithMethod from '../Actions/LoginWithMethod';
-import { logError } from '../Utils';
 
 const { width } = Dimensions.get('window');
-const handleError = error => {
-  logError(`Error logging in: ${error}`);
-  alert('There was an error logging you in. Please try again.');
-};
 
 const headerStyle = {
   backgroundColor: TRANSPARENT,
@@ -50,7 +43,7 @@ const buttonContainer = {
   justifyContent: 'space-between',
 };
 
-const AreYouReady = ({ getStarted }) =>
+export default () =>
   <Image
     resizeMode="cover"
     style={containerStyle}
@@ -64,19 +57,7 @@ const AreYouReady = ({ getStarted }) =>
 
       <View style={buttonContainer}>
         <Button onPress={() => Actions.notReadyYet()} primary={false}>Not just yet</Button>
-        <Button onPress={getStarted}>I'm ready!</Button>
+        <Button onPress={() => Actions.setName()}>I'm ready!</Button>
       </View>
     </View>
   </Image>;
-
-AreYouReady.propTypes = {
-  getStarted: React.PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = dispatch => ({
-  getStarted: () => dispatch(loginWithMethod())
-    .then(() => Actions.setName())
-    .catch(handleError),
-});
-
-export default connect(null, mapDispatchToProps)(AreYouReady);

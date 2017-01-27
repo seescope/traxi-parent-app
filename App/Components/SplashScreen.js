@@ -3,14 +3,21 @@
 import React from 'react';
 import { Dimensions, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
 
 import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import loginWithMethod from '../Actions/LoginWithMethod';
+import { logError } from '../Utils';
 
 const { height } = Dimensions.get('window');
+const handleError = error => {
+  logError(`Error logging in: ${error}`);
+  alert('There was an error logging you in. Please try again.');
+};
 
 const logoStyle = {
   backgroundColor: TRANSPARENT,
@@ -64,4 +71,14 @@ const SplashScreen = () =>
   </Background>;
 
 
-export default SplashScreen;
+SplashScreen.propTypes = {
+  getStarted: React.PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  getStarted: () => dispatch(loginWithMethod())
+    .then(() => Actions.setName())
+    .catch(handleError),
+});
+
+export default connect(null, mapDispatchToProps)(SplashScreen);

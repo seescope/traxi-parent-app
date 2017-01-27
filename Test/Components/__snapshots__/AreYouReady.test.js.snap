@@ -1,101 +1,134 @@
 exports[`test renders the <AreYouReady> component 1`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
+<Image
+  resizeMode="cover"
+  source={1}
   style={
     Object {
-      "alignItems": "center",
       "flex": 1,
-      "paddingHorizontal": 32,
+      "width": 750,
     }
   }>
-  <Image
-    animation="bounceInDown"
-    resizeMode="contain"
-    source={1}
-    style={
-      Object {
-        "height": 667,
-      }
-    }
-    useNativeDriver={true} />
   <View
     style={
       Object {
-        "height": 32,
-      }
-    } />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    animation="bounceIn"
-    delay={1000}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontFamily": "Raleway-ExtraBold",
-        "fontSize": 28,
-        "marginBottom": 16,
-        "textAlign": "center",
-      }
-    }
-    useNativeDriver={true}>
-    Start seeing what your kids are doing.
-  </Text>
-  <View
-    style={
-      Object {
-        "height": 32,
+        "flex": 7,
       }
     } />
   <View
-    animation="bounceInUp"
-    delay={2000}
-    useNativeDriver={true}>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
+    style={
+      Object {
+        "flex": 3,
+        "paddingHorizontal": 32,
+      }
+    }>
+    <Text
       accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
       style={
         Object {
-          "alignItems": "center",
           "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "opacity": 1,
+          "color": "#FFF",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "textAlign": "center",
         }
-      }
-      testID={undefined}>
-      <Text
+      }>
+      Ready to see what your kids are looking at?
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      } />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 32,
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
         accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
           }
-        }>
-        Show me how
-         
-      </Text>
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }>
+          Not just yet
+           
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+        testID={undefined}>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }>
+          I\'m ready!
+           
+        </Text>
+      </View>
     </View>
   </View>
-</View>
+</Image>
 `;
