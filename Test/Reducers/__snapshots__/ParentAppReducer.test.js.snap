@@ -129,13 +129,6 @@ Object {
 }
 `;
 
-exports[`test FOCUS 1`] = `
-Object {
-  "other": "remains",
-  "sceneName": "hey",
-}
-`;
-
 exports[`test LOGGED_IN 1`] = `
 Object {
   "kids": Array [],
@@ -150,6 +143,19 @@ Object {
     "name": "Jim Bob",
   },
   "step": 1,
+}
+`;
+
+exports[`test PREVIOUS_STEP 1`] = `
+Object {
+  "step": 0,
+}
+`;
+
+exports[`test REACT_NATIVE_ROUTER_FLUX_PUSH 1`] = `
+Object {
+  "other": "remains",
+  "sceneName": "something",
 }
 `;
 
@@ -175,11 +181,5 @@ Object {
   "selectedKid": Object {
     "avatarURL": "file://something",
   },
-}
-`;
-
-exports[`test SELECT_PRICE 1`] = `
-Object {
-  "price": "one dollar",
 }
 `;

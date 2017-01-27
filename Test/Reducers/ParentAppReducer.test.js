@@ -82,16 +82,26 @@ it('LOGGED_IN', () => {
   expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({ userId: 'orange' });
 });
 
-it('FOCUS', () => {
+it('REACT_NATIVE_ROUTER_FLUX_PUSH', () => {
   const oldState = { sceneName: 'something', other: 'remains' };
-  const newState = parentAppReducer(oldState, { type: 'focus', scene: { name: 'hey' } });
+  const newState = parentAppReducer(
+    oldState, { type: 'REACT_NATIVE_ROUTER_FLUX_PUSH', key: 'hey' }
+  );
 
   expect(newState).toMatchSnapshot();
 });
 
-it('SELECT_PRICE', () => {
-  const oldState = { };
-  const newState = parentAppReducer(oldState, selectPrice('one dollar'));
+it('PREVIOUS_STEP', () => {
+  const oldState = { step: 1 };
+
+  const newState = parentAppReducer(
+    oldState, { type: 'PREVIOUS_STEP' }
+  );
 
   expect(newState).toMatchSnapshot();
+
+  const sameState = parentAppReducer(
+    newState, { type: 'PREVIOUS_STEP' }
+  );
+  expect(newState).toEqual(sameState);
 });

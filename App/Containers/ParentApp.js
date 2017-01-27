@@ -77,12 +77,12 @@ class ParentApp extends React.Component {
 
     this.backButtonHandler = () => {
       const store = this.store;
-      const { sceneName } = store.getState();
-
-      console.log('Back received. Scene', sceneName);
+      const { sceneName, step } = store.getState();
 
       if (sceneName === 'walkthrough') {
-        store.dispatch({ type: 'PREVIOUS_STEP' });
+        if (step === 0) Actions.pop();
+        else store.dispatch({ type: 'PREVIOUS_STEP' });
+
         return true;
       } else if (sceneName === 'congratulations') {
         return true;

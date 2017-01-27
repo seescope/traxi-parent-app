@@ -5,7 +5,9 @@ import Intercom from 'react-native-intercom';
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {
     case 'PREVIOUS_STEP': {
-      const previousStep = state.step - 1;
+      const previousStep = state.step > 0
+        ? state.step - 1
+        : state.step;
       return { ...state, step: previousStep };
     }
     case 'NEXT_STEP': {
@@ -108,12 +110,11 @@ const ParentAppReducer = (state = {}, action = {}) => {
         selectedKid,
       };
     }
-    case 'REACT_NATIVE_ROUTER_FLUX_PUSH': {
-      const { key } = action;
-      console.log('Got screen', key);
+    case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {
+      const { scene } = action;
       return {
         ...state,
-        sceneName: key,
+        sceneName: scene.name,
       };
     }
     default: {
