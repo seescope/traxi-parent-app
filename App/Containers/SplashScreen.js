@@ -38,7 +38,7 @@ const imageStyle = {
   height: height / 2,
 };
 
-const SplashScreen = () =>
+const SplashScreen = ({ getStarted }) =>
   <Background style={containerStyle}>
     <Animatable.Image
       useNativeDriver
@@ -66,7 +66,7 @@ const SplashScreen = () =>
       animation="bounceInUp"
       delay={2000}
     >
-      <Button onPress={() => Actions.intro()}>Show me how</Button>
+      <Button onPress={getStarted}>Show me how</Button>
     </Animatable.View>
   </Background>;
 
@@ -75,9 +75,9 @@ SplashScreen.propTypes = {
   getStarted: React.PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getStarted: () => dispatch(loginWithMethod())
-    .then(() => Actions.setName())
+    .then(() => Actions.intro())
     .catch(handleError),
 });
 

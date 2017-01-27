@@ -9,7 +9,7 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
-import SplashScreen from '../Components/SplashScreen';
+import SplashScreen from './SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import NotReadyYet from '../Components/NotReadyYet';
