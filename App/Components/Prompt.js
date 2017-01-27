@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Intercom from 'react-native-intercom';
 
 import HeaderText from '../Components/HeaderText';
 import KidAvatar from '../Components/KidAvatar';
@@ -61,7 +62,8 @@ const SECONDARY_BUTTON_TEXT = [
 ];
 
 const getSecondaryButton = step => {
-  if (step === 0) { Actions.notReadyYet(); }
+  if (step === 0) Actions.notReadyYet();
+  else Intercom.displayMessageComposer();
 };
 
 const Prompt = ({ step, parentName, kidName, nextStep, avatarURL }) => (

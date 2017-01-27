@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -57,6 +56,7 @@
 		C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FB10911D06A85800F1B2C9 /* libc++.tbd */; };
 		C5FF76DC0EBE4282ABF605B6 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF443938E0F546E9AB9806F5 /* libCore.a */; };
 		D9C7FA2A84564AC781C876D1 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75920FF9F098424C98318244 /* Raleway-Regular.ttf */; };
+		729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF403B07C6664E38AEBA23E7 /* libRNIntercom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -374,6 +374,8 @@
 		ECF6543406C04ACDB77385A0 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		EF443938E0F546E9AB9806F5 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCore.a; sourceTree = "<group>"; };
 		FEAC2EE473D643669C3ECCBB /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTContacts.xcodeproj; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; };
+		C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */ = {isa = PBXFileReference; name = "RNIntercom.xcodeproj"; path = "../node_modules/react-native-intercom/iOS/RNIntercom.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DF403B07C6664E38AEBA23E7 /* libRNIntercom.a */ = {isa = PBXFileReference; name = "libRNIntercom.a"; path = "libRNIntercom.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
 				1D6260E5D11F4EACBA157863 /* libRCTLocale.a in Frameworks */,
 				48BAEC4D1B99411F80F8555A /* libRNSegmentIOAnalytics.a in Frameworks */,
+				729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +589,7 @@
 				86F52D4FAE8B447A9227B36C /* CodePush.xcodeproj */,
 				CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */,
 				A0F3C16B708240C0A5972CEF /* RNSegmentIOAnalytics.xcodeproj */,
+				C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1311,12 +1315,14 @@
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
+					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
 					"\"$(SRCROOT)/traxi\"",
 					"\"$(SRCROOT)/traxi\"",
 				);
@@ -1361,12 +1367,14 @@
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
+					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
 					"\"$(SRCROOT)/traxi\"",
 					"\"$(SRCROOT)/traxi\"",
 				);
@@ -1437,6 +1445,7 @@
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
+					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1496,6 +1505,7 @@
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
+					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

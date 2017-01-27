@@ -9,6 +9,7 @@ import {
   addKid,
   selectKid,
 } from '../../App/Actions/Actions';
+import Intercom from 'react-native-intercom';
 
 it('FETCHED_REPORT', () => {
   const state = { reports: {} };
@@ -78,6 +79,7 @@ it('LOGGED_IN', () => {
   } });
 
   expect(newState).toMatchSnapshot();
+  expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({ userId: 'orange' });
 });
 
 it('FOCUS', () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Dimensions, ActivityIndicator } from 'react-native';
+import Intercom from 'react-native-intercom';
 
 import HeaderText from '../Components/HeaderText';
 import KidAvatar from '../Components/KidAvatar';
@@ -54,7 +55,7 @@ const WaitingForDevice = ({ kidName, avatarURL, deviceType }) => (
     <Spacing />
 
     <View style={style.buttonContainer}>
-      <Button primary={false} onPress={() => {}}>
+      <Button primary={false} onPress={() => Intercom.displayMessageComposer()}>
         I need help
       </Button>
     </View>
