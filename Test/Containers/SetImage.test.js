@@ -9,9 +9,6 @@ import ImagePicker from 'react-native-image-picker';
 
 import SetImage, { selectImage } from '../../App/Containers/SetImage';
 
-// Why? Why!?
-global.Promise = require.requireActual('promise');
-
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({ parentName: 'Name', selectedKid: { name: 'Jeff Goldstein' } });
 
@@ -36,7 +33,6 @@ it('calls ImagePicker if pickImage is true', () => {
   return Promise.resolve().then(() => {
     expect(ImagePicker.launchImageLibrary).toHaveBeenCalled();
     expect(dispatch.mock.calls).toMatchSnapshot();
-    expect(Actions.walkthrough).toHaveBeenCalled();
   });
 });
 
@@ -49,6 +45,5 @@ it('uses a default image of pickImage is false', () => {
   return Promise.resolve().then(() => {
     expect(ImagePicker.launchImageLibrary).not.toHaveBeenCalled();
     expect(dispatch.mock.calls).toMatchSnapshot();
-    expect(Actions.walkthrough).toHaveBeenCalled();
   });
 });

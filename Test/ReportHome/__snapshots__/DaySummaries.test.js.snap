@@ -46,6 +46,12 @@ exports[`test Renders a list of day summaries 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "left",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
         Tuesday
@@ -146,6 +152,12 @@ exports[`test Renders a list of day summaries 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "left",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
         Monday
@@ -246,6 +258,12 @@ exports[`test Renders a list of day summaries 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "left",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
         Sunday
@@ -346,6 +364,12 @@ exports[`test Renders a list of day summaries 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "left",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
         Saturday

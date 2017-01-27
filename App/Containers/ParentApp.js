@@ -45,15 +45,20 @@ class ParentApp extends React.Component {
 
     const INITIAL_STATE = {
       loading: false,
-      profile,
+      profile: {
+        name: 'Vladimir Putin',
+        UUID: 'abc-123',
+      },
       contacts: [],
-      step: 0, // TODO: !!! CHANGE!!!
+      step: 5, // FIXME: !!! CHANGE!!!
       kidSuggestions: [],
+      parentName: 'Vladimir',
       kids: kids || [],
-      // selectedKid: kids && kids[0] || {},
+      // selectedKid: kids && kids[0] || {}, // FIXME: CHANGE!!!
       selectedKid: {
-        name: 'Jack Johnson',
-        avatarURL: '',
+        name: 'Boris',
+        avatarURL: 'http://www.todaysparent.com/wp-content/uploads/2015/12/TP01_SS_BigKid_Article.jpg',
+        setupID: 1234,
         deviceType: 'Android',
       },
       reports: {},

@@ -3,34 +3,20 @@ import { connect } from 'react-redux';
 import { Keyboard, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { enterKidName } from '../Actions/Actions';
-import Background from '../Components/Background';
+import { enterKidName, NEXT_STEP } from '../Actions/Actions';
 import Button from '../Components/Button';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
+import { WHITE, TRANSPARENT } from '../Constants/Colours';
 
 const style = {
-  container: {
-    backgroundColor: TRAXI_BLUE,
-    flex: 1,
-    paddingHorizontal: 32,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  padding: {
-    flex: 1,
-  },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
     color: WHITE,
     backgroundColor: TRANSPARENT,
     textAlign: 'left',
-  },
-  innerContainer: {
-    flex: 4,
   },
   buttonContainer: {
     alignItems: 'center',
@@ -39,41 +25,40 @@ const style = {
 
 export const setKidName = kidName => dispatch => dispatch(enterKidName(kidName));
 
-const nextStep = () => {
+export const nextStep = () => dispatch => {
   Keyboard.dismiss();
-  Actions.setImage();
+  dispatch(NEXT_STEP);
 };
 
-const SetName = ({ parentName, onChangeText }) => (
-  <Background style={style.container}>
-    <View style={style.padding} />
-    <View style={style.innerContainer}>
-      <HeaderText>Let's get started {parentName}!</HeaderText>
+const SetName = ({ onChangeText, onPress }) => (
+  <View>
+    <HeaderText>Let's get started!</HeaderText>
 
-      <Spacing />
+    <Spacing height={32} />
 
-      <Text style={style.bodyText}>
-        What is your kid's name?
-      </Text>
+    <Text style={style.bodyText}>
+      What is your kid's name?
+    </Text>
 
-      <TextInput
-        refFunc={ref => { this.textInput = ref; }}
-        onChangeText={onChangeText}
-        onSubmitEditing={() => Actions.setImage()}
-      />
+    <Spacing height={16} />
 
-      <Spacing />
+    <TextInput
+      refFunc={ref => { this.textInput = ref; }}
+      onChangeText={onChangeText}
+      onSubmitEditing={() => onPress()}
+    />
 
-      <View style={style.buttonContainer}>
-        <Button onPress={() => nextStep()}>Next step</Button>
-      </View>
+    <Spacing />
+
+    <View style={style.buttonContainer}>
+      <Button onPress={() => onPress()}>Next step</Button>
     </View>
-  </Background>
+  </View>
 );
 
 SetName.propTypes = {
-  parentName: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -82,6 +67,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   onChangeText: setKidName,
+  onPress: nextStep,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetName);

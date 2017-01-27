@@ -95,10 +95,16 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'DEVICE_UPDATED': {
       const { selectedKid } = action;
-      const step = state.step + 1;
+      const { step } = state;
+
+      // Only advance through the walkthrough if we know the deviceType.
+      const newStep = selectedKid.deviceType === 'unknown'
+        ? step
+        : step + 1;
+
       return {
         ...state,
-        step,
+        step: newStep,
         selectedKid,
       };
     }

@@ -11,28 +11,44 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
         style={
           Object {
-            "marginBottom": 16,
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Let\'s get started!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
           }
         } />
       <Text
@@ -44,82 +60,48 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
+            "fontSize": 16,
+            "textAlign": "left",
           }
         }>
-        Hold on one second...
+        What is your kid\'s name?
       </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for Android 2`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        } />
+      <TextInput
+        autoCapitalize="words"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onSubmitEditing={[Function]}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
         }
-      }>
+        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
       <View
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
           }
         }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -154,24 +136,229 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontSize": 20,
               }
             }>
-            Next Step
+            Next step
              
           </Text>
         </View>
       </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={Object {}}
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 2`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Thanks, 
+        Jeff Bezos
+        !
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={1}
+        style={
+          Object {
+            "borderColor": undefined,
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Now, let\'s set a picture for 
+        Brett
+        .
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Don\'t worry, only you will be able to see it.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
             }
-          } />
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Not right now
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Set a picture for 
+            Brett
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -191,17 +378,413 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Do you have Brett\'s phone or tablet?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            No I don\'t
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I have Brett\'s device
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 4`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Open a web browser on Brett\'s phone or tablet and go to the website www.gettraxi.com
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I need help
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Next step
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for Android 5`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
       }
     }>
     <View>
@@ -217,9 +800,39 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
-        Enter the setup code 
+        Enter the PIN 
+        1234
+        
+        
+        on 
+        Brett
+        \'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 96,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontSize": 64,
+            "textAlign": "center",
+          }
+        }>
         1234
       </Text>
       <View
@@ -244,89 +857,30 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
-            }
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          Waiting...
         </Text>
       </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for Android 4`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
-            "justifyContent": "center",
           }
         }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap \"Next Step\"
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -361,146 +915,10 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                 "fontSize": 20,
               }
             }>
-            Next Step
+            I need help
              
           </Text>
         </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={Object {}}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for Android 5`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap \"Install\"
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }>
-            Next Step
-             
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
       </View>
     </View>
   </View>
@@ -520,17 +938,15 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -561,9 +977,16 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Tap \"Open\"
+          Install the Child App 
+           on Brett\'s phone
         </Text>
         <View
           style={
@@ -572,42 +995,91 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
             }
           } />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
+              "alignItems": "flex-start",
               "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
             }
-          }
-          testID={undefined}>
-          <Text
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
               }
-            }>
-            Next Step
-             
-          </Text>
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
         </View>
       </View>
       <View>
@@ -617,10 +1089,12 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
-              "marginTop": -667,
+              "left": -16,
+              "marginTop": -635,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -642,17 +1116,15 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -683,9 +1155,16 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Enter the code 1234 again
+          Enter the PIN 1234 
+           and tap \"Done\"
         </Text>
         <View
           style={
@@ -694,42 +1173,91 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
             }
           } />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
+              "alignItems": "flex-start",
               "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
             }
-          }
-          testID={undefined}>
-          <Text
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
               }
-            }>
-            Next Step
-             
-          </Text>
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
         </View>
       </View>
       <View>
@@ -739,10 +1267,12 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
-              "marginTop": -667,
+              "left": -16,
+              "marginTop": -635,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -764,17 +1294,15 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -805,9 +1333,16 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Tap \"OK\"
+          Tap \"OK\" on the next 
+           screen.
         </Text>
         <View
           style={
@@ -816,42 +1351,91 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
             }
           } />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
+              "alignItems": "flex-start",
               "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
             }
-          }
-          testID={undefined}>
-          <Text
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
               }
-            }>
-            Next Step
-             
-          </Text>
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
         </View>
       </View>
       <View>
@@ -861,10 +1445,12 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
-              "marginTop": -667,
+              "left": -16,
+              "marginTop": -635,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -886,177 +1472,126 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
-        style={
-          Object {
-            "marginBottom": 16,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
-          }
-        }>
-        Waiting for traxi to start on 
-        Brett
-        \'s 
-        Android
-        ...
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
-        style={
-          Object {
-            "marginBottom": 16,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
-          }
-        }>
-        Hold on one second...
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
       style={
         Object {
           "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
         }
       }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Waiting for traxi to 
+        
+        
+        start on 
+        Brett
+        \'s 
+        Android
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 83,
+            "borderWidth": 4.742857142857143,
+            "height": 166,
+            "marginBottom": 16.6,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 166,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <ActivityIndicator
+        animating={true}
+        color="#999999"
+        hidesWhenStopped={true}
+        size="large" />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Waiting...
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
       <View
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
+            "width": 686,
           }
         }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1091,24 +1626,377 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontSize": 20,
               }
             }>
-            Next Step
+            I need help
              
           </Text>
         </View>
       </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={Object {}}
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Let\'s get started!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+          }
+        }>
+        What is your kid\'s name?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        } />
+      <TextInput
+        autoCapitalize="words"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onSubmitEditing={[Function]}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
+        }
+        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
             }
-          } />
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Next step
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Thanks, 
+        Jeff Bezos
+        !
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={1}
+        style={
+          Object {
+            "borderColor": undefined,
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Now, let\'s set a picture for 
+        Brett
+        .
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Don\'t worry, only you will be able to see it.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Not right now
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Set a picture for 
+            Brett
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -1128,17 +2016,413 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Do you have Brett\'s phone or tablet?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            No I don\'t
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I have Brett\'s device
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Open a web browser on Brett\'s phone or tablet and go to the website www.gettraxi.com
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I need help
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Next step
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
       }
     }>
     <View>
@@ -1154,9 +2438,39 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
-        Enter the setup code 
+        Enter the PIN 
+        1234
+        
+        
+        on 
+        Brett
+        \'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 96,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontSize": 64,
+            "textAlign": "center",
+          }
+        }>
         1234
       </Text>
       <View
@@ -1181,89 +2495,30 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
-            }
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          Waiting...
         </Text>
       </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
-            "justifyContent": "center",
           }
         }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap the \"Install\" button in the top right
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1298,146 +2553,10 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                 "fontSize": 20,
               }
             }>
-            Next Step
+            I need help
              
           </Text>
         </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap the \"Install\" button again (don\'t worry, this is normal)
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }>
-            Next Step
-             
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
       </View>
     </View>
   </View>
@@ -1457,17 +2576,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -1498,9 +2615,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Tap \"Install\" for the last time (promise)
+          Tap the \"Install\"
+           button in the top right
         </Text>
         <View
           style={
@@ -1509,42 +2633,91 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
             }
           } />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
+              "alignItems": "flex-start",
               "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
             }
-          }
-          testID={undefined}>
-          <Text
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
               }
-            }>
-            Next Step
-             
-          </Text>
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
         </View>
       </View>
       <View>
@@ -1554,10 +2727,12 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
-              "marginTop": -667,
+              "left": -16,
+              "marginTop": -635,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -1579,17 +2754,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -1620,9 +2793,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Tap \"Done\"
+          Tap the \"Install\"
+           button again
         </Text>
         <View
           style={
@@ -1631,42 +2811,91 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
             }
           } />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
+              "alignItems": "flex-start",
               "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
             }
-          }
-          testID={undefined}>
-          <Text
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
               }
-            }>
-            Next Step
-             
-          </Text>
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
         </View>
       </View>
       <View>
@@ -1676,10 +2905,12 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
           source={1}
           style={
             Object {
+              "alignItems": "center",
               "height": 1334,
-              "marginTop": -667,
+              "left": -16,
+              "marginTop": -635,
               "top": 667,
-              "width": 654,
+              "width": 750,
             }
           } />
       </View>
@@ -1701,137 +2932,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
-        style={
-          Object {
-            "marginBottom": 16,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
-          }
-        }>
-        Waiting for traxi to start on 
-        Brett
-        \'s 
-        iPad
-        ...
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
-        style={
-          Object {
-            "marginBottom": 16,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
-          }
-        }>
-        Hold on one second...
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
@@ -1862,9 +2971,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          
+          Tap \"Done\"
         </Text>
         <View
           style={
@@ -1872,6 +2987,219 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "height": 64,
             }
           } />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 1334,
+              "left": -16,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Let\'s get started!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "left",
+          }
+        }>
+        What is your kid\'s name?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        } />
+      <TextInput
+        autoCapitalize="words"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onSubmitEditing={[Function]}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
+        }
+        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+          }
+        }>
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1906,24 +3234,229 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontSize": 20,
               }
             }>
-            Next Step
+            Next step
              
           </Text>
         </View>
       </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={Object {}}
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Thanks, 
+        Jeff Bezos
+        !
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={1}
+        style={
+          Object {
+            "borderColor": undefined,
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Now, let\'s set a picture for 
+        Brett
+        .
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+          }
+        }>
+        Don\'t worry, only you will be able to see it.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
             }
-          } />
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Not right now
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Set a picture for 
+            Brett
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -1943,20 +3476,23 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
-    <View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1969,45 +3505,157 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
-        Enter the setup code 
+        Looking good, Jeff Bezos!
       </Text>
       <View
         style={
           Object {
-            "height": 96,
+            "height": 32,
           }
         } />
-      <View>
-        <ActivityIndicator
-          animating={true}
-          color="#FFF"
-          hidesWhenStopped={true}
-          size="large"
-          style={
-            Object {
-              "marginBottom": 16,
-            }
-          } />
-        <Text
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Do you have Brett\'s phone or tablet?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
           accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
+              "alignItems": "center",
               "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
-              "textAlign": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
             }
-          }>
-          Waiting for 
-          Brett
-          \'s device...
-        </Text>
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            No I don\'t
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I have Brett\'s device
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -2027,57 +3675,110 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View
       style={
         Object {
           "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
         }
       }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Go to www.gettraxi.com on Brett\'s device
+      </Text>
       <View
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
           }
         }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap the \"Install\" button in the top right
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
+        Open a web browser on Brett\'s phone or tablet and go to the website www.gettraxi.com
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -2112,24 +3813,48 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                 "fontSize": 20,
               }
             }>
-            Next Step
+            I need help
              
           </Text>
         </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
             }
-          } />
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            Next step
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -2149,445 +3874,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
       "alignItems": "center",
       "backgroundColor": "#448AFF",
       "flex": 1,
-      "justifyContent": "flex-start",
       "paddingHorizontal": 20,
-      "paddingTop": 32,
+      "paddingTop": 16,
     }
   }>
   <View
     style={
       Object {
-        "alignItems": "center",
         "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap the \"Install\" button again (don\'t worry, this is normal)
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }>
-            Next Step
-             
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap \"Install\" for the last time (promise)
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }>
-            Next Step
-             
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }>
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
-              "marginBottom": -2,
-              "textAlign": "center",
-            }
-          }>
-          Tap \"Done\"
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 64,
-            }
-          } />
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "opacity": 1,
-            }
-          }
-          testID={undefined}>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#FFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }>
-            Next Step
-             
-          </Text>
-        </View>
-      </View>
-      <View>
-        <Image
-          animation="bounceInUp"
-          resizeMode="contain"
-          source={1}
-          style={
-            Object {
-              "height": 1334,
-              "marginTop": -667,
-              "top": 667,
-              "width": 654,
-            }
-          } />
-      </View>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
-      }
-    }>
-    <View>
-      <ActivityIndicator
-        animating={true}
-        color="#FFF"
-        hidesWhenStopped={true}
-        size="large"
-        style={
-          Object {
-            "marginBottom": 16,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 18,
-            "fontWeight": "200",
-            "textAlign": "center",
-          }
-        }>
-        Waiting for traxi to start on 
-        Brett
-        \'s 
-        iPhone
-        ...
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`test renders the loading screen when waiting to identify a device 1`] = `
-<View
-  colors={
-    Array [
-      "#448AFF",
-      "#90CAF9",
-    ]
-  }
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
-      "flex": 1,
-      "justifyContent": "flex-start",
-      "paddingHorizontal": 20,
-      "paddingTop": 32,
-    }
-  }>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-        "justifyContent": "center",
+        "paddingTop": 64,
       }
     }>
     <View>
@@ -2603,9 +3898,39 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
           }
         }>
-        Enter the setup code 
+        Enter the PIN 
+        1234
+        
+        
+        on 
+        Brett
+        \'s device
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 96,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFF",
+            "fontSize": 64,
+            "textAlign": "center",
+          }
+        }>
         1234
       </Text>
       <View
@@ -2630,19 +3955,800 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
           allowFontScaling={true}
           ellipsizeMode="tail"
           style={
+            Array [
+              undefined,
+              Object {
+                "color": "#FFF",
+                "textAlign": "center",
+              },
+            ]
+          }>
+          Waiting...
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I need help
+             
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
             Object {
               "backgroundColor": "transparent",
               "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 18,
-              "fontWeight": "200",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
               "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
             }
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          Tap the \"Install\"
+           button in the top right
         </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 1334,
+              "left": -16,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
+              "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
+            }
+          }>
+          Tap the \"Install\"
+           button again
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 1334,
+              "left": -16,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
+              "textAlign": "center",
+              "textShadowColor": "rgba(75, 73, 73, 0.8)",
+              "textShadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "textShadowRadius": 20,
+            }
+          }>
+          Tap \"Done\"
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 64,
+            }
+          } />
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingHorizontal": 32,
+              "width": 686,
+            }
+          }>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              I need help
+               
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+              }
+            }
+            testID={undefined}>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }>
+              Next step
+               
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 1334,
+              "left": -16,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
+            }
+          } />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test renders the loading screen when waiting to identify a device 1`] = `
+<View
+  colors={
+    Array [
+      "#448AFF",
+      "#90CAF9",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 16,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "paddingTop": 64,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-ExtraBold",
+            "fontSize": 30,
+            "marginBottom": -2,
+            "textAlign": "center",
+            "textShadowColor": "rgba(75, 73, 73, 0.8)",
+            "textShadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "textShadowRadius": 20,
+          }
+        }>
+        Looking good, Jeff Bezos!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Image
+        animation={undefined}
+        duration={undefined}
+        iterationCount={undefined}
+        source={
+          Object {
+            "uri": "https://www.wired.com/wp-content/uploads/archive/images/slideshow/magazine/1505/FF_raves_heroes1_f.jpg",
+          }
+        }
+        style={
+          Object {
+            "borderColor": "#FFF",
+            "borderRadius": 102,
+            "borderWidth": 5.828571428571428,
+            "height": 204,
+            "marginBottom": 20.4,
+            "shadowColor": "rgba(0,0,0,0.5)",
+            "shadowOffset": Object {
+              "height": 2,
+            },
+            "shadowRadius": 5,
+            "width": 204,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#FFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }>
+        Do you have Brett\'s phone or tablet?
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 24,
+          }
+        } />
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 686,
+          }
+        }>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            No I don\'t
+             
+          </Text>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+            }
+          }
+          testID={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 20,
+              }
+            }>
+            I have Brett\'s device
+             
+          </Text>
+        </View>
       </View>
     </View>
   </View>

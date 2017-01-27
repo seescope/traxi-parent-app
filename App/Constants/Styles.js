@@ -19,7 +19,7 @@ export default StyleSheet.create({
   TEXT: {
     fontFamily: 'Raleway-Regular',
     color: WHITE,
-    textAlign: 'center',
+    textAlign: 'left',
     fontWeight: isIOS ? '200' : 'normal',
     fontSize: isIOS ? 18 : 13,
     backgroundColor: 'transparent',

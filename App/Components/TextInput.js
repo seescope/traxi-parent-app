@@ -10,6 +10,7 @@ const androidInputStyle = {
   fontFamily: 'Raleway-Regular',
   color: WHITE,
   height: 42,
+  fontSize: 16,
   width: width - 64,
 };
 

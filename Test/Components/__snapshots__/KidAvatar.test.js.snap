@@ -10,9 +10,9 @@ exports[`test Renders an avatar when an image is supplied 1`] = `
   }
   style={
     Object {
-      "borderColor": "rgba(75, 73, 73, 1)",
+      "borderColor": "#FFF",
       "borderRadius": 50,
-      "borderWidth": 5,
+      "borderWidth": 2.857142857142857,
       "height": 100,
       "marginBottom": 10,
       "shadowColor": "rgba(0,0,0,0.5)",
@@ -33,9 +33,9 @@ exports[`test Returns a default avatar when none is supplied 1`] = `
   source={1}
   style={
     Object {
-      "borderColor": "rgba(75, 73, 73, 1)",
+      "borderColor": "#FFF",
       "borderRadius": 50,
-      "borderWidth": 5,
+      "borderWidth": 2.857142857142857,
       "height": 100,
       "marginBottom": 10,
       "shadowColor": "rgba(0,0,0,0.5)",

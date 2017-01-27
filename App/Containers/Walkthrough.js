@@ -3,27 +3,25 @@ import { View, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 
 import ProgressTrack from '../Components/ProgressTrack';
-import LoadingIndicator from '../Components/LoadingIndicator';
+import SetName from './SetName';
+import SetImage from './SetImage';
+import Prompt from '../Components/Prompt';
+import ShowPIN from '../Components/ShowPIN';
+import WaitingForDevice from '../Components/WaitingForDevice';
 import Instructions from '../Components/Instructions';
 import { NEXT_STEP } from '../Actions/Actions';
 import Background from '../Components/Background';
-import HeaderText from '../Components/HeaderText';
-import Spacing from '../Components/Spacing';
 import { TRAXI_BLUE } from '../Constants/Colours';
 import { firstName } from '../Utils';
 
 const { width } = Dimensions.get('window');
-const NUMBER_OF_STEPS = {
-  unknown: 7,
-  iPhone: 7,
-  Android: 8,
-  iPad: 7,
-};
+const NUMBER_OF_STEPS = 8;
 
 export const mapStateToProps = state => ({
   step: state.step,
   kid: state.selectedKid,
   profile: state.profile,
+  parentName: state.parentName,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -34,15 +32,13 @@ const WALKTHROUGH_STYLES = {
   container: {
     backgroundColor: TRAXI_BLUE,
     flex: 1,
-    paddingTop: 32,
+    paddingTop: 16,
     paddingHorizontal: 20,
-    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   instructionsContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 64,
   },
   loadingindicatorContainer: {
     flex: 1,
@@ -51,77 +47,53 @@ const WALKTHROUGH_STYLES = {
   },
 };
 
-const getStage = (step, deviceType) => {
-  const stageMap = {
-    Android: {
-      0: 0,
-      1: 0,
-      2: 0,
-      3: 1,
-      4: 1,
-      5: 2,
-      6: 2,
-      7: 2,
-      8: 3,
-    },
-    iPhone: {
-      0: 0,
-      1: 0,
-      2: 0,
-      3: 1,
-      4: 1,
-      5: 2,
-      6: 2,
-      7: 2,
-      8: 3,
-    },
-    iPad: {
-      0: 0,
-      1: 0,
-      2: 0,
-      3: 1,
-      4: 1,
-      5: 2,
-      6: 2,
-      7: 2,
-      8: 3,
-    },
-  };
-
-  return stageMap[deviceType]
-    && stageMap[deviceType][step]
-    || 0;
+const STAGE_MAP = {
+  0: 0,
+  1: 0,
+  2: 1,
+  3: 1,
+  4: 1,
+  5: 2,
+  6: 2,
+  7: 2,
+  8: 3,
 };
 
-const getWrapperStyle = (step) => {
-  if (step === 0
-    || step === 2
-    || step >= 5) {
-    return WALKTHROUGH_STYLES.loadingindicatorContainer;
-  }
+const getNextComponent = (step, nextStep, kid, parentName) => {
+  const kidName = firstName(kid.name);
+  const { deviceType, setupID, avatarURL } = kid;
 
-  return WALKTHROUGH_STYLES.instructionsContainer;
-};
-
-const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
   if (step === 0) {
-    return <LoadingIndicator>Hold on one second...</LoadingIndicator>;
+    return <SetName />;
   }
 
-  if (step === 2) {
+  if (step === 1) {
+    return <SetImage />;
+  }
+
+  if (step === 2 || step === 3) {
     return (
-      <View>
-        <HeaderText>Enter the setup code {setupID}</HeaderText>
-        <Spacing height={96} />
-        <LoadingIndicator>Waiting for {kidName}'s device...</LoadingIndicator>
-      </View>
+      <Prompt
+        step={step - 2}
+        kidName={kidName}
+        parentName={parentName}
+        nextStep={nextStep}
+        avatarURL={avatarURL}
+      />
     );
   }
 
-  const lastStep = NUMBER_OF_STEPS[deviceType];
-  if (step === lastStep) {
+  if (step === 4) {
+    return <ShowPIN setupID={setupID} kidName={kidName} />;
+  }
+
+  if (step === NUMBER_OF_STEPS) {
     return (
-      <LoadingIndicator>Waiting for traxi to start on {kidName}'s {deviceType}...</LoadingIndicator>
+      <WaitingForDevice
+        avatarURL={avatarURL}
+        kidName={kidName}
+        deviceType={deviceType}
+      />
     );
   }
 
@@ -136,15 +108,20 @@ const getNextComponent = (step, kidName, nextStep, deviceType, setupID) => {
   );
 };
 
-const Walkthrough = ({ step, kid, nextStep }) => (
+const Walkthrough = ({ step, kid, nextStep, parentName }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
     <ProgressTrack
-      stage={getStage(step, kid.deviceType)}
-      width={width - 80}
+      stage={STAGE_MAP[step]}
+      width={width - 64}
     />
 
-    <View style={getWrapperStyle(step)}>
-      {getNextComponent(step, firstName(kid.name), nextStep, kid.deviceType, kid.setupID)}
+    <View style={WALKTHROUGH_STYLES.instructionsContainer}>
+      {getNextComponent(
+        step,
+        nextStep,
+        kid,
+        parentName
+      )}
     </View>
   </Background>
 );
@@ -153,6 +130,7 @@ Walkthrough.propTypes = {
   step: PropTypes.number.isRequired,
   kid: PropTypes.object.isRequired,
   nextStep: PropTypes.func.isRequired,
+  parentName: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Walkthrough);

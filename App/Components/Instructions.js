@@ -1,5 +1,4 @@
-/* eslint-disable global-require */
-/* eslint-disable quotes */
+/* eslint-disable global-require */ /* eslint-disable quotes */
 /* eslint-disable import/no-unresolved */
 import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
@@ -11,13 +10,22 @@ import Button from './Button';
 
 const { height, width } = Dimensions.get('window');
 
+const buttonContainer = {
+  paddingHorizontal: 32,
+  width: width - 64,
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+};
+
 const IOS_INSTRUCTIONS = [
   '',
   '',
   '',
-  `Tap the "Install" button in the top right`,
-  `Tap the "Install" button again (don't worry, this is normal)`,
-  `Tap "Install" for the last time (promise)`,
+  '',
+  '',
+  `Tap the "Install"\n button in the top right`,
+  `Tap the "Install"\n button again`,
   `Tap "Done"`,
   '',
   '',
@@ -25,7 +33,7 @@ const IOS_INSTRUCTIONS = [
 
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
-    '',
+    'Let\'s get started!',
     `Browse to gettraxi.com on ${kidName}'s device`,
     `Enter the code ${setupID}`,
     '',
@@ -44,12 +52,11 @@ const androidInstructions = (step, kidName, setupID) => {
     '',
     '',
     '',
-    `Tap "Next Step"`,
-    `Tap "Install"`,
-    `Tap "Open"`,
-    `Enter the code ${setupID} again`,
-    'Tap "OK"',
     '',
+    '',
+    `Install the Child App \n on ${kidName}'s phone`,
+    `Enter the PIN ${setupID} \n and tap "Done"`,
+    'Tap "OK" on the next \n screen.',
   ];
 
   return instructions[step];
@@ -59,10 +66,14 @@ const IOS_IMAGES = [
   {},
   {},
   {},
+  {},
+  {},
+  require('../Images/iphone-step-1.png'),
+  require('../Images/iphone-step-2.png'),
   require('../Images/iphone-step-3.png'),
-  require('../Images/iphone-step-4.png'),
-  require('../Images/iphone-step-5.png'),
-  require('../Images/iphone-step-6.png'),
+  {},
+  {},
+  {},
 ];
 
 const ANDROID_IMAGES = [
@@ -70,10 +81,12 @@ const ANDROID_IMAGES = [
   {},
   {},
   {},
+  {},
+  require('../Images/android-step-1.png'),
+  require('../Images/android-step-2.png'),
   require('../Images/android-step-3.png'),
-  require('../Images/android-step-4.png'),
-  require('../Images/android-step-5.png'),
-  require('../Images/android-step-6.png'),
+  {},
+  {},
   {},
 ];
 
@@ -114,9 +127,11 @@ const INSTRUCTION_STYLES = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: width - 96,
+    alignItems: 'center',
+    width,
     height,
-    marginTop: -(height / 2),
+    left: -16,
+    marginTop: -(height / 2) + 32,
     top: height / 2,
   },
 });
@@ -125,8 +140,13 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
   <View style={INSTRUCTION_STYLES.container}>
     <View style={INSTRUCTION_STYLES.container}>
       <HeaderText>{instructionText(step, kidName, deviceType, setupID)}</HeaderText>
+
       <Spacing height={64} />
-      <Button onPress={nextStep}>Next Step</Button>
+
+      <View style={buttonContainer}>
+        <Button onPress={() => {}} primary={false}>I need help</Button>
+        <Button onPress={nextStep}>Next step</Button>
+      </View>
     </View>
     <View>
       <Animatable.Image

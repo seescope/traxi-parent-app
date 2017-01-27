@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
-import { GOOD, BAD, NEUTRAL, SHADOW_COLOR } from '../Constants/Colours';
+import { GOOD, BAD, WHITE, SHADOW_COLOR } from '../Constants/Colours';
 
 const stateColours = {
   good: GOOD,
   bad: BAD,
-  neutral: NEUTRAL,
+  neutral: WHITE,
 };
 
 const getKidAvatarStyle = (size, state) =>
@@ -21,7 +21,7 @@ const getKidAvatarStyle = (size, state) =>
       shadowRadius: 5,
       marginBottom: size / 10,
       borderColor: stateColours[state],
-      borderWidth: size / 20,
+      borderWidth: size / 35,
     },
   });
 
