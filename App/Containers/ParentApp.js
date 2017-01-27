@@ -9,7 +9,7 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
-import SplashScreen from '../Components/SplashScreen';
+import SplashScreen from './SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
 import Intro from '../Components/Intro';
 import NotReadyYet from '../Components/NotReadyYet';
@@ -45,22 +45,12 @@ class ParentApp extends React.Component {
 
     const INITIAL_STATE = {
       loading: false,
-      profile: {
-        name: 'Vladimir Putin',
-        UUID: 'abc-123',
-      },
+      profile,
       contacts: [],
-      step: 5, // FIXME: !!! CHANGE!!!
+      step: 0,
       kidSuggestions: [],
-      parentName: 'Vladimir',
       kids: kids || [],
-      // selectedKid: kids && kids[0] || {}, // FIXME: CHANGE!!!
-      selectedKid: {
-        name: 'Boris',
-        avatarURL: 'http://www.todaysparent.com/wp-content/uploads/2015/12/TP01_SS_BigKid_Article.jpg',
-        setupID: 1234,
-        deviceType: 'Android',
-      },
+      selectedKid: kids && kids[0] || {},
       reports: {},
     };
 
@@ -136,7 +126,7 @@ class ParentApp extends React.Component {
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />
           <Scene key="setImage" component={SetImage} />
-          <Scene key="walkthrough" initial component={Walkthrough} />
+          <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />

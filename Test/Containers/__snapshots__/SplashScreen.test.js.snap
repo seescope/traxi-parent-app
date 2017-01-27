@@ -1,3 +1,16 @@
+exports[`test handles logins 1`] = `
+Array [
+  Array [
+    Promise {
+      "_45": 0,
+      "_54": null,
+      "_65": undefined,
+      "_81": 1,
+    },
+  ],
+]
+`;
+
 exports[`test renders the <SplashScreen> component 1`] = `
 <View
   colors={
