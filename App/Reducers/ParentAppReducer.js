@@ -22,7 +22,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
         avatar: profile.picture,
         id: profile.UUID,
       });
-      Intercom.registerIdentifiedUser({ userId: profile.id });
+      Intercom.registerIdentifiedUser({ userId: profile.UUID });
 
       return { ...state, parentName, profile };
     }
