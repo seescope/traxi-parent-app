@@ -57,7 +57,7 @@ export default () =>
 
       <View style={buttonContainer}>
         <Button onPress={() => Actions.notReadyYet()} primary={false}>Not just yet</Button>
-        <Button onPress={() => Actions.setName()}>I'm ready!</Button>
+        <Button onPress={() => Actions.walkthrough()}>I'm ready!</Button>
       </View>
     </View>
   </Image>;

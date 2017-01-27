@@ -11,9 +11,11 @@ import {
   Dimensions,
   Text,
 } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+
+import ProgressTrack from '../Components/ProgressTrack';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Button from '../Components/Button';
-import * as Animatable from 'react-native-animatable';
 
 const containerStyle = {
   flex: 1,
@@ -200,14 +202,17 @@ export default class extends React.Component {
         </View>
 
         <View style={textContainer}>
-          <Animatable.Image
+          <Animatable.View
             useNativeDriver
             easing="ease-out"
             duration={1000}
-            delay={1000}
             animation="bounceInLeft"
-            source={PROGRESS_IMAGES[this.state.step]}
-          />
+          >
+            <ProgressTrack
+              stage={this.state.step}
+              width={width - 64}
+            />
+          </Animatable.View>
 
           <Spacing height={32} />
 
