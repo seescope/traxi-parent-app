@@ -108,11 +108,12 @@ const ParentAppReducer = (state = {}, action = {}) => {
         selectedKid,
       };
     }
-    case 'focus': {
-      const { scene } = action;
+    case 'REACT_NATIVE_ROUTER_FLUX_PUSH': {
+      const { key } = action;
+      console.log('Got screen', key);
       return {
         ...state,
-        sceneName: scene.name,
+        sceneName: key,
       };
     }
     default: {

@@ -34,6 +34,7 @@ const DYNAMODB_REGION = 'ap-southeast-2';
 const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
 const TIMER_NAME = 'refreshReports';
 
+
 const RouterWithRedux = connect()(Router);
 
 class ParentApp extends React.Component {
@@ -74,24 +75,27 @@ class ParentApp extends React.Component {
       Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
     });
 
-    BackAndroid.addEventListener('hardwareBackPress', () => {
+    this.backButtonHandler = () => {
       const store = this.store;
       const { sceneName } = store.getState();
 
+      console.log('Back received. Scene', sceneName);
+
       if (sceneName === 'walkthrough') {
         store.dispatch({ type: 'PREVIOUS_STEP' });
+        return true;
       } else if (sceneName === 'congratulations') {
         return true;
       } else if (sceneName === 'reports') {
         BackAndroid.exitApp();
         return false;
-      } else {
-        Actions.pop();
       }
 
+      Actions.pop();
       return true;
-    });
+    };
   }
+
 
   componentWillUnmount() {
     Timer.clearInterval(TIMER_NAME);
@@ -118,7 +122,7 @@ class ParentApp extends React.Component {
 
     return (
       <Provider store={this.store} onExitApp={false}>
-        <RouterWithRedux hideNavBar>
+        <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler.bind(this)}>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
