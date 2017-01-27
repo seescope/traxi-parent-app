@@ -1,5 +1,6 @@
 import { firstName, isIOS } from '../Utils';
 import Analytics from 'react-native-analytics';
+import Intercom from 'react-native-intercom';
 
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {
@@ -15,14 +16,13 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const { profile } = action;
       const parentName = firstName(profile.name);
 
-      if (!isIOS) {
-        Analytics.identify(profile.UUID, {
-          email: profile.email,
-          name: profile.name,
-          avatar: profile.picture,
-          id: profile.UUID,
-        });
-      }
+      Analytics.identify(profile.UUID, {
+        email: profile.email,
+        name: profile.name,
+        avatar: profile.picture,
+        id: profile.UUID,
+      });
+      Intercom.registerIdentifiedUser({ userId: profile.id });
 
       return { ...state, parentName, profile };
     }

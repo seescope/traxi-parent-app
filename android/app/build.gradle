@@ -103,6 +103,7 @@ android {
       ndk {
         abiFilters "armeabi-v7a", "x86"
       }
+      multiDexEnabled true
     }
 
     signingConfigs {
@@ -168,6 +169,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-intercom')
     compile project(':react-native-locale')
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
@@ -184,6 +186,9 @@ dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
 
+    // Multidex
+    compile 'com.android.support:multidex:1.0.1'
+    
     // Google Authentication
     compile 'com.google.android.gms:play-services-auth:9.4.0'
 
@@ -202,8 +207,8 @@ dependencies {
 
     // Firebase
     compile 'com.google.firebase:firebase-core:9.4.0'
-    compile 'com.google.firebase:firebase-messaging:9.4.0'
     compile 'com.google.firebase:firebase-database:9.4.0'
+    compile 'com.google.firebase:firebase-messaging:9.4.0'
     compile 'com.google.firebase:firebase-auth:9.4.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;

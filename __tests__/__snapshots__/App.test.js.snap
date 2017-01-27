@@ -17,7 +17,8 @@ exports[`test renders when there is a profile 1`] = `
   <View
     component={[Function]} />
   <View
-    component={[Function]} />
+    component={[Function]}
+    initial={true} />
   <View
     component={[Function]} />
   <View
@@ -55,7 +56,8 @@ exports[`test renders when there is a profile that has no kids, but introSeen is
   <View
     component={[Function]} />
   <View
-    component={[Function]} />
+    component={[Function]}
+    initial={true} />
   <View
     component={[Function]} />
   <View
@@ -87,7 +89,8 @@ exports[`test renders when there is no profile 1`] = `
   <View
     component={[Function]} />
   <View
-    component={[Function]} />
+    component={[Function]}
+    initial={true} />
   <View
     component={[Function]} />
   <View

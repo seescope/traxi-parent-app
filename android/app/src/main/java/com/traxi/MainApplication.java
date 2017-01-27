@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import com.robinpowered.react.Intercom.IntercomPackage;
 import io.fixd.rctlocale.RCTLocalePackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
@@ -21,6 +22,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+// Intercom
+import io.intercom.android.sdk.Intercom;
+
 // Facebook
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
@@ -32,8 +36,6 @@ import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
-
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,6 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		AppEventsLogger.activateApp(this);
+    Intercom.initialize(this, "android_sdk-e738f250b733dee699dc65b124ffb95e5a8a62d1", "bduhw6bc");
 	}
 
 	private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -64,6 +67,7 @@ public class MainApplication extends Application implements ReactApplication {
         new NotificationManagerPackage(),
         new VPNClientPackage(),
         new MainReactPackage(),
+            new IntercomPackage(),
             new RCTLocalePackage(),
             new InAppBillingBridgePackage(),
             new RNSegmentIOAnalyticsPackage(),

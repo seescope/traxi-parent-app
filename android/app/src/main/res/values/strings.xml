@@ -3,4 +3,5 @@
     <string name="RNB_GOOGLE_PLAY_LICENSE_KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsgs6XpOCsQMwBGggpqMSrrZzEAPGK8sNwMOB/xjUaI0qL8AIZLQzDE+hVCfj5NwfSGVSKuOmiG1L3OVugM+iuSg2pjx3R/XxMyhPI8nuqk7JTeRGACrYnd7uoUh8wV3WJfkMiXqqb9ESqn5AgKzB7zepFP/HKTOn39kmEFQACbvEOpfTDLp3PrQx1hgmn2EPcGLT/Cf8Tr8pc+sm8670p/NDfEzzdFZDd1zpr/KDyJKDNh9uxtyl8FVY36mgYtuaXEYkQel4jKxWFKIXUJCvqcjGOVzFBSniCqnvg+jNta7oE62llDrey38DmJVBbNATtXzcdIdD68R9MCuv4RRQaQIDAQAB</string>
     <string name="app_name">traxi</string>
     <string name="facebook_app_id">1693665037552032</string>
+    <string name="intercom_gcm_sender_id">204102393429</string>
 </resources>

@@ -3,6 +3,7 @@
 import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import Intercom from 'react-native-intercom';
 
 import Spacing from './Spacing';
 import HeaderText from './HeaderText';
@@ -144,7 +145,7 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
       <Spacing height={64} />
 
       <View style={buttonContainer}>
-        <Button onPress={() => {}} primary={false}>I need help</Button>
+        <Button onPress={() => Intercom.displayMessageComposer()} primary={false}>I need help</Button>
         <Button onPress={nextStep}>Next step</Button>
       </View>
     </View>

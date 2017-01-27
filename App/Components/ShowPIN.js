@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Intercom from 'react-native-intercom';
 
 import HeaderText from './HeaderText';
 import Spacing from './Spacing';
@@ -38,7 +39,9 @@ const ShowPIN = ({ setupID, kidName }) => (
     <Spacing height={32} />
 
     <View style={buttonContainer}>
-      <Button onPress={() => {}} primary={false}>I need help</Button>
+      <Button primary={false} onPress={() => Intercom.displayMessageComposer()}>
+        I need help
+      </Button>
     </View>
   </View>
 );
