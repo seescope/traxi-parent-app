@@ -13,7 +13,6 @@ const watchDevice = () => (dispatch, getState) => {
       'value',
       data => {
         const updatedKid = data.val();
-        dispatch(deviceUpdated(updatedKid));
 
         if (updatedKid.status === 'INSTALLED') {
           const { profile } = getState();
@@ -27,6 +26,8 @@ const watchDevice = () => (dispatch, getState) => {
             resolve();
             firebase.off('value');
           });
+        } else {
+          dispatch(deviceUpdated(updatedKid));
         }
       },
       e => {

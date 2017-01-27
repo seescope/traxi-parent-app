@@ -15,12 +15,7 @@ import { TRAXI_BLUE } from '../Constants/Colours';
 import { firstName } from '../Utils';
 
 const { width } = Dimensions.get('window');
-const NUMBER_OF_STEPS = {
-  unknown: 7,
-  iPhone: 7,
-  Android: 8,
-  iPad: 7,
-};
+const NUMBER_OF_STEPS = 8;
 
 export const mapStateToProps = state => ({
   step: state.step,
@@ -92,8 +87,7 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
     return <ShowPIN setupID={setupID} kidName={kidName} />;
   }
 
-  const lastStep = NUMBER_OF_STEPS[deviceType];
-  if (step === lastStep) {
+  if (step === NUMBER_OF_STEPS) {
     return (
       <WaitingForDevice
         avatarURL={avatarURL}

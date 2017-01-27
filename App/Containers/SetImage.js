@@ -39,9 +39,9 @@ export const selectImage = pickImage => dispatch => {
 
   if (!pickImage) {
     dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
+    dispatch(NEXT_STEP);
 
     return dispatch(setupKid()).then(() => {
-      dispatch(NEXT_STEP);
       dispatch(watchDevice());
     });
   }

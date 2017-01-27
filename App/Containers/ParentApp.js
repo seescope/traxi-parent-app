@@ -45,9 +45,12 @@ class ParentApp extends React.Component {
 
     const INITIAL_STATE = {
       loading: false,
-      profile,
+      profile: {
+        name: 'Vladimir Putin',
+        UUID: 'abc-123',
+      },
       contacts: [],
-      step: 0, // FIXME: !!! CHANGE!!!
+      step: 5, // FIXME: !!! CHANGE!!!
       kidSuggestions: [],
       parentName: 'Vladimir',
       kids: kids || [],

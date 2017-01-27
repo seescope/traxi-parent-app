@@ -223,12 +223,12 @@ Array [
     },
   ],
   Array [
-    [Function],
-  ],
-  Array [
     Object {
       "type": "NEXT_STEP",
     },
+  ],
+  Array [
+    [Function],
   ],
   Array [
     [Function],

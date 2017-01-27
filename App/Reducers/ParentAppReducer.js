@@ -97,6 +97,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const { selectedKid } = action;
       const { step } = state;
 
+      // Only advance through the walkthrough if we know the deviceType.
       const newStep = selectedKid.deviceType === 'unknown'
         ? step
         : step + 1;
