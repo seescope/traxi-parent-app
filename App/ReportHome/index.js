@@ -82,7 +82,7 @@ const ReportHome = ({ kids, reports, loading, selectKid }) => (
 
     <Background style={style.bottomContainer}>
       <View style={style.buttonContainer}>
-        <Button primary={false} onPress={() => Actions.createKid()}>Add another child</Button>
+        <Button primary={false} onPress={() => Actions.walkthrough()}>Add another child</Button>
       </View>
     </Background>
   </ScrollView>

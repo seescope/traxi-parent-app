@@ -70,13 +70,13 @@ export const loggingMiddleware = store => next => action => {
 
 export const trackingMiddleware = store => next => action => {
   // If this isn't a screen change, we're not interested.
-  if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_PUSH') {
+  if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
     return next(action);
   }
 
   // Grab the name of the screen from the flux action.
-  const { key } = action;
-  Analytics.screen(key);
+  const { scene } = action;
+  Analytics.screen(scene.name);
 
   return next(action);
 };
