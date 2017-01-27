@@ -1,3 +1,5 @@
+jest.mock('../../App/Components/ProgressTrack', () => () => null);
+
 import React from 'react';
 import { AsyncStorage } from 'react-native';
 import renderer from 'react-test-renderer';

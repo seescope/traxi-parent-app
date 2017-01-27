@@ -96,12 +96,10 @@ exports[`test renders 1`] = `
         "flex": 3,
       }
     }>
-    <Image
+    <View
       animation="bounceInLeft"
-      delay={1000}
       duration={1000}
       easing="ease-out"
-      source={1}
       useNativeDriver={true} />
     <View
       style={
