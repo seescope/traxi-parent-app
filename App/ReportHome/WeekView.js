@@ -35,7 +35,7 @@ const WeekView = ({ kid, reports }) => (
           <Spacing height={64} />
           <HeaderText>No activity just yet.</HeaderText>
           <Spacing height={32} />
-          <BodyText>Check back soon!</BodyText>
+          <BodyText align="center">Check back soon!</BodyText>
         </View>}
     </Background>
   </ScrollView>
