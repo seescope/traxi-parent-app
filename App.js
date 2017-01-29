@@ -46,11 +46,6 @@ export default class extends React.Component {
             this.setState({ loading: false });
           }
         );
-      } else if (profile !== null && profile.introSeen) {
-        this.setState({
-          profile,
-          loading: false,
-        });
       } else {
         this.setState({ loading: false });
       }
