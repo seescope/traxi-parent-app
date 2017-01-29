@@ -97,9 +97,6 @@ const SUBHEADER_TEXT = [
   'Doesn\'t that look easy?',
 ];
 
-export const onPress = () => AsyncStorage.setItem('profile', JSON.stringify({ introSeen: true }))
-  .then(() => Actions.areYouReady());
-
 export default class extends React.Component {
   constructor() {
     super();
@@ -229,7 +226,7 @@ export default class extends React.Component {
             easing="ease-in-out"
             animation="bounceInUp"
           >
-            <Button onPress={() => onPress()} primary={false}>Got it!</Button>
+            <Button onPress={() => Actions.areYouReady()} primary={false}>Got it!</Button>
           </Animatable.View>}
         </View>
       </View>
