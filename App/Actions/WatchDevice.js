@@ -1,4 +1,5 @@
 import Firebase from 'firebase';
+import Analytics from 'react-native-analytics';
 import { Actions } from 'react-native-router-flux';
 import saveProfile from './SaveProfile';
 import { deviceUpdated } from '../Actions/Actions';
@@ -15,6 +16,7 @@ const watchDevice = () => (dispatch, getState) => {
         const updatedKid = data.val();
 
         if (updatedKid.status === 'INSTALLED') {
+          Analytics.track('Completed Installation', updatedKid);
           const { profile } = getState();
           const kids = profile.kids ? profile.kids : [];
           const updatedKids = _.uniqBy([...kids, updatedKid], 'UUID');

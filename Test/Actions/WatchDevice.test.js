@@ -3,6 +3,7 @@ global.Promise = require.requireActual('promise');
 
 import { mockOn } from 'firebase';
 import { TEST_KID } from '../Mocks';
+import Analytics from 'react-native-analytics';
 import watchDevice from '../../App/Actions/WatchDevice';
 import saveProfile from '../../App/Actions/SaveProfile';
 
@@ -29,6 +30,7 @@ it('handles when the device has been installed', () => {
   return watchDevice()(mockDispatch, mockGetState).then(() => {
     expect(mockOn.mock.calls).toMatchSnapshot();
     expect(mockDispatch.mock.calls).toMatchSnapshot();
+    expect(Analytics.track.mock.calls).toMatchSnapshot();
   });
 });
 
