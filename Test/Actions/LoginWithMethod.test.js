@@ -15,12 +15,15 @@ describe('LoginWithMethod', () => {
     };
 
     // Exercise
-    return loginWithMethod(TEST_METHOD)(mockDispatch).then(() => {
+    return loginWithMethod(TEST_METHOD)(mockDispatch).then(profile => {
       expect(mockAuthenticate).toHaveBeenCalled();
       expect(mockDispatch.mock.calls).toMatchSnapshot();
+      expect(profile).toEqual(TEST_PROFILE);
 
       done();
-    }).catch(e => done(e));
+    }).catch(e => {
+      done.fail(e);
+    });
   });
 });
 
