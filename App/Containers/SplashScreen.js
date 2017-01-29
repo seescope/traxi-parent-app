@@ -11,6 +11,7 @@ import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import loginWithMethod from '../Actions/LoginWithMethod';
+import saveProfile from '../Actions/SaveProfile';
 import { logError } from '../Utils';
 
 const { height } = Dimensions.get('window');
@@ -77,8 +78,12 @@ SplashScreen.propTypes = {
 
 export const mapDispatchToProps = dispatch => ({
   getStarted: () => dispatch(loginWithMethod())
-    .then(() => Actions.intro())
-    .catch(handleError),
+  .then(profile => {
+    // We'll just let this run whenever, no point holding up the user.
+    saveProfile(profile);
+    return Actions.intro();
+  })
+  .catch(handleError),
 });
 
 export default connect(null, mapDispatchToProps)(SplashScreen);
