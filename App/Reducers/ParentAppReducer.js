@@ -107,6 +107,10 @@ const ParentAppReducer = (state = {}, action = {}) => {
         ? step
         : step + 1;
 
+      if (selectedKid.deviceType !== 'unknown') {
+        Analytics.track('Verified Device', selectedKid);
+      }
+
       return {
         ...state,
         step: newStep,

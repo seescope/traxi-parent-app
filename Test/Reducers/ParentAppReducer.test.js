@@ -12,6 +12,10 @@ import {
   selectKid,
 } from '../../App/Actions/Actions';
 
+beforeEach(() => {
+  Analytics.track.mockClear();
+});
+
 it('FETCHED_REPORT', () => {
   const state = { reports: {} };
   const FETCHED_REPORT = { type: 'FETCHED_REPORT', report: TEST_REPORTS, UUID: TEST_UUID };
@@ -63,12 +67,15 @@ it('DEVICE_UPDATED', () => {
   );
 
   expect(newState).toMatchSnapshot();
+  expect(Analytics.track).not.toHaveBeenCalled();
 
+  const updatedDevice = { UUID: 'surprise', deviceType: 'Android' };
   const anotherState = parentAppReducer(newState,
-    deviceUpdated({ UUID: 'surprise', deviceType: 'Android' })
+    deviceUpdated(updatedDevice)
   );
   expect(anotherState).not.toEqual(newState);
   expect(anotherState).toMatchSnapshot();
+  expect(Analytics.track).toHaveBeenCalledWith('Verified Device', updatedDevice);
 });
 
 it('LOGGED_IN', () => {
