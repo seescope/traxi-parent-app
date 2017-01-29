@@ -12,6 +12,9 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'NEXT_STEP': {
       const nextStep = state.step + 1;
+      Analytics.track('Advanced Through Walkthrough', {
+        value: nextStep,
+      });
       return { ...state, step: nextStep };
     }
     case 'LOGGED_IN': {

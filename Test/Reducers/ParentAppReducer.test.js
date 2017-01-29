@@ -1,15 +1,16 @@
+import Intercom from 'react-native-intercom';
+import Analytics from 'react-native-analytics';
+
 import { TEST_UUID, TEST_REPORTS } from '../Mocks';
 import parentAppReducer from '../../App/Reducers/ParentAppReducer';
 import {
   RESET_STATE,
   enterKidName,
   selectKidImage,
-  selectPrice,
   deviceUpdated,
   addKid,
   selectKid,
 } from '../../App/Actions/Actions';
-import Intercom from 'react-native-intercom';
 
 it('FETCHED_REPORT', () => {
   const state = { reports: {} };
@@ -104,4 +105,14 @@ it('PREVIOUS_STEP', () => {
     newState, { type: 'PREVIOUS_STEP' }
   );
   expect(newState).toEqual(sameState);
+});
+
+it('NEXT_STEP', () => {
+  const oldState = { step: 1 };
+  const newState = parentAppReducer(
+    oldState, { type: 'NEXT_STEP' }
+  );
+
+  expect(newState.step).toEqual(2);
+  expect(Analytics.track.mock.calls).toMatchSnapshot();
 });

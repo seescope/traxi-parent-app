@@ -146,6 +146,17 @@ Object {
 }
 `;
 
+exports[`test NEXT_STEP 1`] = `
+Array [
+  Array [
+    "Advanced Through Walkthrough",
+    Object {
+      "value": 2,
+    },
+  ],
+]
+`;
+
 exports[`test PREVIOUS_STEP 1`] = `
 Object {
   "step": 0,
