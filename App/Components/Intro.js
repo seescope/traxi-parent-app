@@ -3,7 +3,6 @@ import Spacing from '../Components/Spacing';
 import { Actions } from 'react-native-router-flux';
 import {
   Animated,
-  AsyncStorage,
   TouchableOpacity,
   Platform,
   View,
@@ -12,6 +11,7 @@ import {
   Text,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import Analytics from 'react-native-analytics';
 
 import ProgressTrack from '../Components/ProgressTrack';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
@@ -76,13 +76,6 @@ const STEP_IMAGES = [
   require('../Images/intro-step-4.png'),
 ];
 
-const PROGRESS_IMAGES = [
-  require('../Images/progress-bar-1.png'),
-  require('../Images/progress-bar-2.png'),
-  require('../Images/progress-bar-3.png'),
-  require('../Images/progress-bar-4.png'),
-];
-
 const HEADER_TEXT = [
   'First, get your kid\'s device',
   'Then enter a PIN',
@@ -96,6 +89,11 @@ const SUBHEADER_TEXT = [
   'It only takes a couple of seconds',
   'Doesn\'t that look easy?',
 ];
+
+export const onPress = () => {
+  Analytics.track('Finished Intro');
+  Actions.areYouReady();
+};
 
 export default class extends React.Component {
   constructor() {
@@ -226,7 +224,7 @@ export default class extends React.Component {
             easing="ease-in-out"
             animation="bounceInUp"
           >
-            <Button onPress={() => Actions.areYouReady()} primary={false}>Got it!</Button>
+            <Button onPress={() => onPress()} primary={false}>Got it!</Button>
           </Animatable.View>}
         </View>
       </View>

@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import Analytics from 'react-native-analytics';
 import moment from 'moment';
 
 import Circle from './Circle';
@@ -104,6 +105,9 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   selectKid: (kid) => {
     dispatch(selectKidAction(kid));
+    Analytics.track('Viewed Report', {
+      UUID: kid.UUID,
+    });
     Actions.weekView();
   },
 });

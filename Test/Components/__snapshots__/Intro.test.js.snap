@@ -150,3 +150,11 @@ exports[`test renders 1`] = `
   </View>
 </View>
 `;
+
+exports[`test sends tracking to Segment that intro was seen 1`] = `
+Array [
+  Array [
+    "Finished Intro",
+  ],
+]
+`;

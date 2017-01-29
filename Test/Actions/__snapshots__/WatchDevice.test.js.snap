@@ -116,6 +116,20 @@ Array [
 ]
 `;
 
+exports[`test handles when the device has been installed 3`] = `
+Array [
+  Array [
+    "Completed Installation",
+    Object {
+      "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",
+      "avatarURL": "https://s-media-cache-ak0.pinimg.com/736x/24/48/12/2448127e36c0e72de41aa768322639a3.jpg",
+      "name": "Edith Crawley",
+      "status": "INSTALLED",
+    },
+  ],
+]
+`;
+
 exports[`test registers a listener with Firebase that dispatches a DEVICE_UPDATED action 1`] = `
 Array [
   Array [

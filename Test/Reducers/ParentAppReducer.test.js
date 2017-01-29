@@ -1,15 +1,20 @@
+import Intercom from 'react-native-intercom';
+import Analytics from 'react-native-analytics';
+
 import { TEST_UUID, TEST_REPORTS } from '../Mocks';
 import parentAppReducer from '../../App/Reducers/ParentAppReducer';
 import {
   RESET_STATE,
   enterKidName,
   selectKidImage,
-  selectPrice,
   deviceUpdated,
   addKid,
   selectKid,
 } from '../../App/Actions/Actions';
-import Intercom from 'react-native-intercom';
+
+beforeEach(() => {
+  Analytics.track.mockClear();
+});
 
 it('FETCHED_REPORT', () => {
   const state = { reports: {} };
@@ -62,12 +67,15 @@ it('DEVICE_UPDATED', () => {
   );
 
   expect(newState).toMatchSnapshot();
+  expect(Analytics.track).not.toHaveBeenCalled();
 
+  const updatedDevice = { UUID: 'surprise', deviceType: 'Android' };
   const anotherState = parentAppReducer(newState,
-    deviceUpdated({ UUID: 'surprise', deviceType: 'Android' })
+    deviceUpdated(updatedDevice)
   );
   expect(anotherState).not.toEqual(newState);
   expect(anotherState).toMatchSnapshot();
+  expect(Analytics.track).toHaveBeenCalledWith('Verified Device', updatedDevice);
 });
 
 it('LOGGED_IN', () => {
@@ -104,4 +112,14 @@ it('PREVIOUS_STEP', () => {
     newState, { type: 'PREVIOUS_STEP' }
   );
   expect(newState).toEqual(sameState);
+});
+
+it('NEXT_STEP', () => {
+  const oldState = { step: 1 };
+  const newState = parentAppReducer(
+    oldState, { type: 'NEXT_STEP' }
+  );
+
+  expect(newState.step).toEqual(2);
+  expect(Analytics.track.mock.calls).toMatchSnapshot();
 });

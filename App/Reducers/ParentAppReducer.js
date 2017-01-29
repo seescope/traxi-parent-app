@@ -1,4 +1,4 @@
-import { firstName, isIOS } from '../Utils';
+import { firstName } from '../Utils';
 import Analytics from 'react-native-analytics';
 import Intercom from 'react-native-intercom';
 
@@ -12,6 +12,9 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'NEXT_STEP': {
       const nextStep = state.step + 1;
+      Analytics.track('Advanced Through Walkthrough', {
+        value: nextStep,
+      });
       return { ...state, step: nextStep };
     }
     case 'LOGGED_IN': {
@@ -103,6 +106,10 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const newStep = selectedKid.deviceType === 'unknown'
         ? step
         : step + 1;
+
+      if (selectedKid.deviceType !== 'unknown') {
+        Analytics.track('Verified Device', selectedKid);
+      }
 
       return {
         ...state,
