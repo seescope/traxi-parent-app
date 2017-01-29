@@ -117,8 +117,8 @@ class ParentApp extends React.Component {
 
   render() {
     const { profile } = this.props;
-    const isInstalled = profile.kids;
-    const introSeen = profile.introSeen;
+    const isInstalled = !!profile.kids;
+    const introSeen = !!profile.UUID;
 
     return (
       <Provider store={this.store} onExitApp={false}>

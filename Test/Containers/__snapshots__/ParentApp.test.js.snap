@@ -1,4 +1,4 @@
-exports[`<ParentApp /> renders the Parent with the AreYouReady component active if not installed 1`] = `
+exports[`<ParentApp /> renders the Parent with the AreYouReady component if no kids in the profile 1`] = `
 <View>
   <View
     component={[Function]}
@@ -7,7 +7,7 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component active 
     component={[Function]} />
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={true} />
   <View
     component={[Function]} />
   <View
@@ -22,7 +22,7 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component active 
     component={[Function]} />
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={false} />
   <View
     component={[Function]} />
   <View
@@ -39,7 +39,7 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
     component={[Function]} />
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={false} />
   <View
     component={[Function]} />
   <View
@@ -54,7 +54,7 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
     component={[Function]} />
   <View
     component={[Function]}
-    initial={Array []} />
+    initial={true} />
   <View
     component={[Function]} />
   <View
@@ -71,7 +71,7 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
     component={[Function]} />
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={false} />
   <View
     component={[Function]} />
   <View
@@ -86,7 +86,7 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
     component={[Function]} />
   <View
     component={[Function]}
-    initial={undefined} />
+    initial={false} />
   <View
     component={[Function]} />
   <View
