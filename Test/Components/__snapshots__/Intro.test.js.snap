@@ -150,12 +150,3 @@ exports[`test renders 1`] = `
   </View>
 </View>
 `;
-
-exports[`test saves the parent's state and transitions to the next screen 1`] = `
-Array [
-  Array [
-    "profile",
-    "{\"introSeen\":true}",
-  ],
-]
-`;
