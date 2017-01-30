@@ -39,6 +39,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - Intercom (3.0.22)
   - Mixpanel (3.0.8):
     - Mixpanel/Mixpanel (= 3.0.8)
   - Mixpanel/Mixpanel (3.0.8)
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Auth
   - Firebase/Core
+  - Intercom
   - Segment-GoogleAnalytics
   - Segment-Mixpanel
 
@@ -80,10 +82,11 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  Intercom: 71c165df999c876f030a784819dc9aed4a84086a
   Mixpanel: 550a23d5dd95f8e9cda21e697661ffddbc8da46b
   Segment-GoogleAnalytics: 0a6954c2e17cc2b242e0b4069681d44ffcee204a
   Segment-Mixpanel: 8e9f449c86d929f0e7abb2e89c760e65f5182d6e
 
-PODFILE CHECKSUM: cd4960bcf296fae0378a60366e1b3a0c07161b89
+PODFILE CHECKSUM: 8cbf91bdacbf5b2cae204c0d9051af88a855c682
 
 COCOAPODS: 1.1.1

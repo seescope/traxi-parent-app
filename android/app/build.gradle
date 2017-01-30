@@ -98,8 +98,8 @@ android {
       applicationId "com.traxi"
       minSdkVersion 16
       targetSdkVersion 22
-      versionCode 510
-      versionName "5.1.0"
+      versionCode 522
+      versionName "5.2.2"
       ndk {
         abiFilters "armeabi-v7a", "x86"
       }
@@ -170,7 +170,6 @@ android {
 
 dependencies {
     compile project(':react-native-intercom')
-    compile project(':react-native-locale')
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')

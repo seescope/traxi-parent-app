@@ -15,4 +15,7 @@ target 'traxi' do
   pod 'Analytics'
   pod 'Segment-Mixpanel'
   pod 'Segment-GoogleAnalytics'
+
+  # Intercom
+  pod 'Intercom'
 end

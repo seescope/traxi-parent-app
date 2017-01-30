@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.facebook.react.ReactApplication;
 import com.robinpowered.react.Intercom.IntercomPackage;
-import io.fixd.rctlocale.RCTLocalePackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
 import com.microsoft.codepush.react.CodePush;
@@ -14,7 +13,7 @@ import com.amazonaws.reactnative.dynamodb.AWSRNDynamoDBPackage;
 import com.smixx.fabric.FabricPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.horcrux.svg.RNSvgPackage;
+import com.horcrux.svg.SvgPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -68,7 +67,6 @@ public class MainApplication extends Application implements ReactApplication {
         new VPNClientPackage(),
         new MainReactPackage(),
             new IntercomPackage(),
-            new RCTLocalePackage(),
             new InAppBillingBridgePackage(),
             new RNSegmentIOAnalyticsPackage(),
             new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),
@@ -77,7 +75,7 @@ public class MainApplication extends Application implements ReactApplication {
             new FabricPackage(),
             new RandomBytesPackage(),
             new ImagePickerPackage(),
-            new RNSvgPackage(),
+            new SvgPackage(),
             new ReactMaterialKitPackage(),
         new ReactNativeContacts(),
         new VectorIconsPackage(),
