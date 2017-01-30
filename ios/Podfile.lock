@@ -39,9 +39,16 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - Intercom (3.0.22)
   - Mixpanel (3.0.8):
     - Mixpanel/Mixpanel (= 3.0.8)
   - Mixpanel/Mixpanel (3.0.8)
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - react-native-intercom (5.0.0):
+    - Intercom (> 3)
+    - React
+  - React/Core (0.11.0)
   - Segment-GoogleAnalytics (1.1.5):
     - Analytics (~> 3.0)
     - Segment-GoogleAnalytics/GoogleIDFASupport (= 1.1.5)
@@ -62,8 +69,13 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Auth
   - Firebase/Core
+  - react-native-intercom (from `../node_modules/react-native-intercom`)
   - Segment-GoogleAnalytics
   - Segment-Mixpanel
+
+EXTERNAL SOURCES:
+  react-native-intercom:
+    :path: "../node_modules/react-native-intercom"
 
 SPEC CHECKSUMS:
   Analytics: 3f083546175de3e62185a72c14670aa00ca6a201
@@ -80,10 +92,13 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  Intercom: 71c165df999c876f030a784819dc9aed4a84086a
   Mixpanel: 550a23d5dd95f8e9cda21e697661ffddbc8da46b
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  react-native-intercom: a76840ee32eb26228ed3b4f5d6bfb3d00c14a790
   Segment-GoogleAnalytics: 0a6954c2e17cc2b242e0b4069681d44ffcee204a
   Segment-Mixpanel: 8e9f449c86d929f0e7abb2e89c760e65f5182d6e
 
-PODFILE CHECKSUM: cd4960bcf296fae0378a60366e1b3a0c07161b89
+PODFILE CHECKSUM: a4733ddea736538b6a3fd7c238a9ba46788e11d0
 
 COCOAPODS: 1.1.1
