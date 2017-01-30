@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.facebook.react.ReactApplication;
 import com.robinpowered.react.Intercom.IntercomPackage;
-import io.fixd.rctlocale.RCTLocalePackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
 import com.microsoft.codepush.react.CodePush;
@@ -68,7 +67,6 @@ public class MainApplication extends Application implements ReactApplication {
         new VPNClientPackage(),
         new MainReactPackage(),
             new IntercomPackage(),
-            new RCTLocalePackage(),
             new InAppBillingBridgePackage(),
             new RNSegmentIOAnalyticsPackage(),
             new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),

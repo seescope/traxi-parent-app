@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -24,7 +23,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1D0348627AAE45DBBC02FA5D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBE235C6ED3F4255A2E02234 /* MaterialIcons.ttf */; };
-		1D6260E5D11F4EACBA157863 /* libRCTLocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF80CA129B8F41BC8AA24ADB /* libRCTLocale.a */; };
 		3464D6CD68154D93924EF9C9 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770297D0C85649378B99CB5C /* libBVLinearGradient.a */; };
 		36D10BA6DA65496BB302A97D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8740B799E594C499B3996F5 /* Raleway-Bold.ttf */; };
 		3C9B93F2A6484E5FB59DEF7A /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 523EB38C2B0E40B4AB1C69B4 /* libRNVectorIcons.a */; };
@@ -271,13 +269,6 @@
 			remoteGlobalIDString = 73EEC9391BFE4B1D00D468EB;
 			remoteInfo = RNRandomBytes;
 		};
-		C351492F1E2DBF5F00A5B82E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DB248BF21C18396500105A5D;
-			remoteInfo = RCTLocale;
-		};
 		C35149781E2DC16500A5B82E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0F3C16B708240C0A5972CEF /* RNSegmentIOAnalytics.xcodeproj */;
@@ -414,13 +405,11 @@
 		C3FB10911D06A85800F1B2C9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNIntercom.xcodeproj; path = "../node_modules/react-native-intercom/iOS/RNIntercom.xcodeproj"; sourceTree = "<group>"; };
 		C8740B799E594C499B3996F5 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../App/Fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
-		CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTLocale.xcodeproj; path = "../node_modules/react-native-locale/ios/RCTLocale.xcodeproj"; sourceTree = "<group>"; };
 		CE4C146C18674F00ABF48E77 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTMaterialKit.xcodeproj; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; };
 		DAD5517A6CBF41E1AEBBD41A /* libRCTMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTMaterialKit.a; sourceTree = "<group>"; };
 		DB7967210B504CCB87D65DC7 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		DC5557B972D24AEC81D4C82D /* RNRandomBytes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNRandomBytes.xcodeproj; path = "../node_modules/react-native-randombytes/RNRandomBytes.xcodeproj"; sourceTree = "<group>"; };
 		DF403B07C6664E38AEBA23E7 /* libRNIntercom.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNIntercom.a; sourceTree = "<group>"; };
-		DF80CA129B8F41BC8AA24ADB /* libRCTLocale.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTLocale.a; sourceTree = "<group>"; };
 		E7CB5F46F5FD46CBA8EB146E /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		EBE235C6ED3F4255A2E02234 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		ECF6543406C04ACDB77385A0 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -460,7 +449,6 @@
 				4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
-				1D6260E5D11F4EACBA157863 /* libRCTLocale.a in Frameworks */,
 				48BAEC4D1B99411F80F8555A /* libRNSegmentIOAnalytics.a in Frameworks */,
 				729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */,
 			);
@@ -643,7 +631,6 @@
 				B1E7F236B38C40CEB0D01243 /* Core.xcodeproj */,
 				4DA31B5E59E54533835C5A7D /* DynamoDB.xcodeproj */,
 				86F52D4FAE8B447A9227B36C /* CodePush.xcodeproj */,
-				CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */,
 				A0F3C16B708240C0A5972CEF /* RNSegmentIOAnalytics.xcodeproj */,
 				C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */,
 			);
@@ -739,14 +726,6 @@
 			isa = PBXGroup;
 			children = (
 				C350BB911DDB137200E2EC1C /* libRNImagePicker.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C351491F1E2DBF5F00A5B82E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C35149301E2DBF5F00A5B82E /* libRCTLocale.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -913,10 +892,6 @@
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
 					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
-				},
-				{
-					ProductGroup = C351491F1E2DBF5F00A5B82E /* Products */;
-					ProjectRef = CB1143B334254AF883A49331 /* RCTLocale.xcodeproj */;
 				},
 				{
 					ProductGroup = C3CEED661DA0AAA300412B25 /* Products */;
@@ -1193,13 +1168,6 @@
 			remoteRef = C350BB931DDB137200E2EC1C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C35149301E2DBF5F00A5B82E /* libRCTLocale.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTLocale.a;
-			remoteRef = C351492F1E2DBF5F00A5B82E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		C35149791E2DC16500A5B82E /* libRNSegmentIOAnalytics.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1430,7 +1398,6 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
@@ -1440,9 +1407,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/traxi\"",
-					"\"$(SRCROOT)/traxi\"",
-					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
@@ -1483,7 +1447,6 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
@@ -1493,9 +1456,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/traxi\"",
-					"\"$(SRCROOT)/traxi\"",
-					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
@@ -1562,7 +1522,6 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
@@ -1622,7 +1581,6 @@
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-core/ios/Core/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-dynamodb/ios/DynamoDB/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/react-native-locale/ios/RCTLocale",
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 				);
