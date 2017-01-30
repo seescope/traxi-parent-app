@@ -17,5 +17,5 @@ target 'traxi' do
   pod 'Segment-GoogleAnalytics'
 
   # Intercom
-  pod 'react-native-intercom', :path => '../node_modules/react-native-intercom'
+  pod 'Intercom'
 end
