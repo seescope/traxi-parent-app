@@ -35,7 +35,7 @@ const IOS_INSTRUCTIONS = [
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
     'Let\'s get started!',
-    `Browse to gettraxi.com on ${kidName}'s device`,
+    `Go to www.gettraxi.com on ${kidName}'s device`,
     `Enter the code ${setupID}`,
     '',
     '',
@@ -56,7 +56,7 @@ const androidInstructions = (step, kidName, setupID) => {
     '',
     '',
     `Install the Child App \n on ${kidName}'s phone`,
-    `Enter the PIN ${setupID} \n and tap "Done"`,
+    `Enter the code ${setupID} \n and tap "Done"`,
     'Tap "OK" on the next \n screen.',
   ];
 
