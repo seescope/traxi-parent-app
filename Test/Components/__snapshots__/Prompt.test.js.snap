@@ -25,7 +25,9 @@ exports[`test renders 1`] = `
         "textShadowRadius": 20,
       }
     }>
-    Go to www.gettraxi.com on Jeff\'s device
+    Looking good, 
+    Kane
+    !
   </Text>
   <View
     style={
@@ -72,7 +74,9 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Open a web browser on Jeff\'s phone or tablet and go to the website www.gettraxi.com
+    Do you have 
+    Jeff
+    \'s phone or tablet?
   </Text>
   <View
     style={
@@ -122,7 +126,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I need help
+        No I don\'t
          
       </Text>
     </View>
@@ -160,7 +164,9 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        Next step
+        I have 
+        Jeff
+        \'s device
          
       </Text>
     </View>

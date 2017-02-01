@@ -71,10 +71,9 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
     return <SetImage />;
   }
 
-  if (step === 2 || step === 3) {
+  if (step === 2) {
     return (
       <Prompt
-        step={step - 2}
         kidName={kidName}
         parentName={parentName}
         nextStep={nextStep}
