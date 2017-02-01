@@ -4,7 +4,7 @@ import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 
 const TRACK_COLOUR = WHITE;
 const TRACK_THICKNESS = 4;
-const STAGES = [0, 1, 2, 3];
+const STAGES = [0, 1, 2, 3, 4];
 
 const containerStyle = {
   height: 32,

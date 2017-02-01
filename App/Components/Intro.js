@@ -74,10 +74,12 @@ const STEP_IMAGES = [
   require('../Images/intro-step-2.png'),
   require('../Images/intro-step-3.png'),
   require('../Images/intro-step-4.png'),
+  require('../Images/intro-step-5.png'),
 ];
 
 const HEADER_TEXT = [
   'First, get your kid\'s device',
+  'Go to www.gettraxi.com',
   'Then enter a PIN',
   'Follow the instructions',
   'Then you\'re all done!',
@@ -85,6 +87,7 @@ const HEADER_TEXT = [
 
 const SUBHEADER_TEXT = [
   'Don\'t worry, you can do this later if you like.',
+  'Use the web browser on your kid’s device',
   'We\'ll tell you what it is soon',
   'It only takes a couple of seconds',
   'Doesn\'t that look easy?',
@@ -108,6 +111,7 @@ export default class extends React.Component {
       new Animated.Value(0),
       new Animated.Value(0),
       new Animated.Value(0),
+      new Animated.Value(0),
     ];
 
     this.styles = [
@@ -115,6 +119,7 @@ export default class extends React.Component {
       { opacity: this.animations[1] },
       { opacity: this.animations[2] },
       { opacity: this.animations[3] },
+      { opacity: this.animations[4] },
     ];
   }
 
@@ -175,6 +180,11 @@ export default class extends React.Component {
           style={[imageStyle, this.styles[3]]}
           source={STEP_IMAGES[3]}
         />
+        <Animated.Image
+          resizeMode="cover"
+          style={[imageStyle, this.styles[4]]}
+          source={STEP_IMAGES[4]}
+        />
 
         <View style={paddingStyle}>
           {this.state.step > 0 ? <TouchableOpacity onPress={() => this.previousStep()}>
@@ -182,7 +192,7 @@ export default class extends React.Component {
               source={require('../Images/left-arrow.png')}
             />
           </TouchableOpacity> : <View />}
-          {this.state.step < 3 ? <Animatable.View
+          {this.state.step < 4 ? <Animatable.View
             useNativeDriver
             animation="bounce"
             duration={2000}
@@ -217,7 +227,7 @@ export default class extends React.Component {
 
           <Spacing height={16} />
 
-          {this.state.step === 3 && <Animatable.View
+          {this.state.step === 4 && <Animatable.View
             useNativeDriver
             delay={1000}
             duration={1000}
