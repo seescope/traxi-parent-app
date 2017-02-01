@@ -163,6 +163,23 @@ Object {
 }
 `;
 
+exports[`test PREVIOUS_STEP 2`] = `
+Array [
+  Array [
+    "Went Back in Walkthrough",
+    Object {
+      "value": 0,
+    },
+  ],
+  Array [
+    "Went Back in Walkthrough",
+    Object {
+      "value": 0,
+    },
+  ],
+]
+`;
+
 exports[`test REACT_NATIVE_ROUTER_FLUX_PUSH 1`] = `
 Object {
   "other": "remains",

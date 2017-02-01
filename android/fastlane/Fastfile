@@ -53,10 +53,14 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
+    gradle(task: "clean")
     gradle(
       task: "assembleRelease",
     )
-    supply
+    supply(
+      apk: "app/build/outputs/apk/app-release.apk",
+    )
+
   end
 
   # You can define as many lanes as you want
