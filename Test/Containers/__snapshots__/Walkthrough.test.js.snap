@@ -969,7 +969,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "textShadowRadius": 20,
             }
           }>
-          Install the Child App 
+          Install traxi Child App 
            on Brett\'s phone
         </Text>
         <View
@@ -1147,8 +1147,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "textShadowRadius": 20,
             }
           }>
-          Enter the code 1234 
-           and tap \"Done\"
+          Open traxi Child App 
+           on Brett\'s phone
         </Text>
         <View
           style={

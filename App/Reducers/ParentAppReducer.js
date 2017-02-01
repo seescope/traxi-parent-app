@@ -8,6 +8,9 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const previousStep = state.step > 0
         ? state.step - 1
         : state.step;
+      Analytics.track('Went Back in Walkthrough', {
+        value: previousStep,
+      });
       return { ...state, step: previousStep };
     }
     case 'NEXT_STEP': {
@@ -106,6 +109,10 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const newStep = selectedKid.deviceType === 'unknown'
         ? step
         : step + 1;
+
+      if (selectedKid.deviceType === 'unknown') {
+        Analytics.track('Started Setup', selectedKid);
+      }
 
       if (selectedKid.deviceType !== 'unknown') {
         Analytics.track('Verified Device', selectedKid);

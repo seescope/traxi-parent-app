@@ -62,12 +62,13 @@ it('ADD_KID', () => {
 
 it('DEVICE_UPDATED', () => {
   const oldState = { selectedKid: { UUID: 'nope' }, kids: [], step: 1 };
+  const initialDevice = { UUID: 'surprise', deviceType: 'unknown' };
   const newState = parentAppReducer(
-    oldState, deviceUpdated({ UUID: 'surprise', deviceType: 'unknown' })
+    oldState, deviceUpdated(initialDevice)
   );
 
   expect(newState).toMatchSnapshot();
-  expect(Analytics.track).not.toHaveBeenCalled();
+  expect(Analytics.track).toHaveBeenCalledWith('Started Setup', initialDevice);
 
   const updatedDevice = { UUID: 'surprise', deviceType: 'Android' };
   const anotherState = parentAppReducer(newState,
@@ -112,6 +113,7 @@ it('PREVIOUS_STEP', () => {
     newState, { type: 'PREVIOUS_STEP' }
   );
   expect(newState).toEqual(sameState);
+  expect(Analytics.track.mock.calls).toMatchSnapshot();
 });
 
 it('NEXT_STEP', () => {
