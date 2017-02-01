@@ -4090,9 +4090,9 @@ react-native-fabric@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-native-fabric/-/react-native-fabric-0.4.1.tgz#5fcb604daf17d0dff70603ff3eeba9e3f3160ddd"
 
-react-native-image-picker@^0.25.0:
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.25.1.tgz#0743f1c30bb942559560295e3408f9fce73da44b"
+"react-native-image-picker@https://github.com/traxicorp/react-native-image-picker":
+  version "0.24.1"
+  resolved "https://github.com/traxicorp/react-native-image-picker#e4dc969bf69ada0dca73630de9fc379bdb3c3466"
 
 react-native-intercom@^5.0.0:
   version "5.0.0"

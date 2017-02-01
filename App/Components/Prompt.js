@@ -32,7 +32,7 @@ const style = {
 const getHeaderText = (step, parentName, kidName) => {
   const HEADER_TEXT = [
     `Looking good, ${parentName}!`,
-    `Go to www.gettraxi.com on ${kidName}'s device`,
+    `Go to www.gettraxi.com \n on ${kidName}'s device`,
   ];
 
   return HEADER_TEXT[step];
