@@ -32,15 +32,15 @@ const IOS_INSTRUCTIONS = [
   '',
 ];
 
-const androidInstructions = (step, kidName, setupID) => {
+const androidInstructions = (step, kidName) => {
   const instructions = [
     '',
     '',
     '',
     '',
     '',
-    `Install the Child App \n on ${kidName}'s phone`,
-    `Enter the code ${setupID} \n and tap "Done"`,
+    `Install traxi Child App \n on ${kidName}'s phone`,
+    `Open traxi Child App \n on ${kidName}'s phone`,
     'Tap "OK" on the next \n screen.',
   ];
 
@@ -76,14 +76,14 @@ const ANDROID_IMAGES = [
 ];
 
 
-const instructionText = (step, kidName, deviceType, setupID) => {
+const instructionText = (step, kidName, deviceType) => {
   switch (deviceType) {
     case 'unknown':
       return `Go to www.gettraxi.com on ${kidName}’s device`;
     case 'iPhone':
       return IOS_INSTRUCTIONS[step];
     case 'Android':
-      return androidInstructions(step, kidName, setupID);
+      return androidInstructions(step, kidName);
     case 'iPad':
       return IOS_INSTRUCTIONS[step];
     default:
