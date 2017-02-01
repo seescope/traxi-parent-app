@@ -79,7 +79,7 @@ const STEP_IMAGES = [
 
 const HEADER_TEXT = [
   'First, get your kid\'s device',
-  'Go to www.gettraxi.com',
+  'Go to mytraxi.com',
   'Then enter a PIN',
   'Follow the instructions',
   'Then you\'re all done!',
