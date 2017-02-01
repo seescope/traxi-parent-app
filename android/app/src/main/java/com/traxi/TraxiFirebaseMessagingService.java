@@ -1,5 +1,7 @@
 package com.traxi;
 
+import java.util.Map;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -11,9 +13,14 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.google.firebase.messaging.RemoteMessage.Notification;
+
+import io.intercom.android.sdk.push.IntercomPushClient;
+import io.intercom.android.sdk.Intercom;
 
 public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
     private static String TAG = "TraxiFirebaseMessagingService";
+    private final IntercomPushClient intercomPushClient = new IntercomPushClient();
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -21,10 +28,13 @@ public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
         // If the application is in the foreground handle both data and notification messages here.
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
-        Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
-        String messageBody = remoteMessage.getNotification().getBody();
-        sendNotification(messageBody);
+        Map message = remoteMessage.getData();
+
+        if (intercomPushClient.isIntercomPush(message)) {
+          intercomPushClient.handlePush(getApplication(), message);
+        } else {
+          sendNotification(remoteMessage.getNotification());
+        }
     }
 
     /**
@@ -32,7 +42,7 @@ public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(String messageBody) {
+    private void sendNotification(Notification notification) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
@@ -41,8 +51,8 @@ public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_accessibility)
-                .setContentTitle("FCM Message")
-                .setContentText(messageBody)
+                .setContentTitle(notification.getTitle())
+                .setContentText(notification.getBody())
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
