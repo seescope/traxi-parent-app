@@ -32,22 +32,6 @@ const IOS_INSTRUCTIONS = [
   '',
 ];
 
-const unknownInstructions = (step, kidName, setupID) => {
-  const instructions = [
-    'Let\'s get started!',
-    `Go to www.gettraxi.com on ${kidName}'s device`,
-    `Enter the code ${setupID}`,
-    '',
-    '',
-    '',
-    '',
-    '',
-  ];
-
-  return instructions[step];
-};
-
-
 const androidInstructions = (step, kidName, setupID) => {
   const instructions = [
     '',
@@ -95,7 +79,7 @@ const ANDROID_IMAGES = [
 const instructionText = (step, kidName, deviceType, setupID) => {
   switch (deviceType) {
     case 'unknown':
-      return unknownInstructions(step, kidName, setupID);
+      return `Go to www.gettraxi.com on ${kidName}’s device`;
     case 'iPhone':
       return IOS_INSTRUCTIONS[step];
     case 'Android':
@@ -117,7 +101,7 @@ const imagePath = (step, deviceType) => {
     case 'iPad':
       return IOS_IMAGES[step];
     default:
-      return {};
+      return require('../Images/web-step.png');
   }
 };
 
