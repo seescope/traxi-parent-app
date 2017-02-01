@@ -49,6 +49,17 @@ exports[`test renders 1`] = `
         "width": 750,
       }
     } />
+  <Image
+    resizeMode="cover"
+    source={1}
+    style={
+      Object {
+        "height": 1334,
+        "opacity": 0,
+        "position": "absolute",
+        "width": 750,
+      }
+    } />
   <View
     style={
       Object {
