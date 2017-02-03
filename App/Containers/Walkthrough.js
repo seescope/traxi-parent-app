@@ -50,13 +50,13 @@ const WALKTHROUGH_STYLES = {
 const STAGE_MAP = {
   0: 0,
   1: 0,
-  2: 1,
+  2: 0,
   3: 1,
-  4: 1,
-  5: 2,
-  6: 2,
-  7: 2,
-  8: 3,
+  4: 2,
+  5: 3,
+  6: 3,
+  7: 3,
+  8: 4,
 };
 
 const getNextComponent = (step, nextStep, kid, parentName) => {
