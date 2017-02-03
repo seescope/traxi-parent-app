@@ -22,19 +22,20 @@ const buttonContainer = {
 const ShowPIN = ({ setupID, kidName }) => (
   <View>
     <HeaderText>
-      Enter the PIN {setupID}{'\n'}
-      on {kidName}'s device
+      On {kidName}'s device {'\n'}
+      go to mytraxi.com {'\n'}
+      and enter the code:
     </HeaderText>
 
-    <Spacing height={96} />
+    <Spacing height={64} />
 
     <Text style={PINstyle}>
       {setupID}
     </Text>
 
-    <Spacing height={96} />
+    <Spacing height={64} />
 
-    <LoadingIndicator>Waiting...</LoadingIndicator>
+    <LoadingIndicator>Waiting for {kidName}'s device...</LoadingIndicator>
 
     <Spacing height={32} />
 
