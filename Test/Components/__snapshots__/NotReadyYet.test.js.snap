@@ -1,26 +1,3 @@
-exports[`test posts a number to Slack 1`] = `
-Array [
-  Array [
-    "0401633346",
-  ],
-]
-`;
-
-exports[`test posts a number to Slack 2`] = `
-Array [
-  Array [
-    Object {
-      "loading": true,
-    },
-  ],
-  Array [
-    Object {
-      "loading": false,
-    },
-  ],
-]
-`;
-
 exports[`test renders the <NotReadyYet> component 1`] = `
 <View
   style={
@@ -38,7 +15,28 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "justifyContent": "space-between",
       }
     }>
-    <View />
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}>
+      <Image
+        source={1} />
+    </View>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -92,7 +90,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "textAlign": "left",
       }
     }>
-    Enter your phone number below and we\'ll remind you tomorrow.
+    Press the button below and we\'ll send you a reminder tomorrow.
   </Text>
   <Text
     accessible={true}
@@ -114,26 +112,6 @@ exports[`test renders the <NotReadyYet> component 1`] = `
     style={
       Object {
         "height": 16,
-      }
-    } />
-  <TextInput
-    keyboardType="phone-pad"
-    onChangeText={[Function]}
-    style={
-      Object {
-        "backgroundColor": "#EFEFEF",
-        "borderRadius": 4,
-        "color": "rgba(75, 73, 73, 1)",
-        "height": 32,
-        "paddingHorizontal": 8,
-        "width": 686,
-      }
-    }
-    underlineColorAndroid="#FFF" />
-  <View
-    style={
-      Object {
-        "height": 32,
       }
     } />
   <View

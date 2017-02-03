@@ -4,9 +4,11 @@ import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import io.intercom.android.sdk.push.IntercomPushClient;
 
 public class TraxiFirebaseInstanceIDService extends FirebaseInstanceIdService {
     private static final String TAG = "TraxiFirebaseInstanceIDService";
+    private final IntercomPushClient intercomPushClient = new IntercomPushClient();
 
     @Override
     public void onTokenRefresh() {
@@ -19,7 +21,7 @@ public class TraxiFirebaseInstanceIDService extends FirebaseInstanceIdService {
     }
 
     private void sendRegistrationToServer(String token) {
-      // TODO: Something.
+      String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+      intercomPushClient.sendTokenToIntercom(getApplication(), refreshedToken);
     }
-
 }

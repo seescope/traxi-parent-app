@@ -189,7 +189,7 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     
     // Google Authentication
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
+    compile 'com.google.android.gms:play-services-auth:10.0.1'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])
@@ -205,12 +205,17 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 
     // Firebase
-    compile 'com.google.firebase:firebase-core:9.4.0'
-    compile 'com.google.firebase:firebase-database:9.4.0'
-    compile 'com.google.firebase:firebase-messaging:9.4.0'
-    compile 'com.google.firebase:firebase-auth:9.4.0'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;
+    }
+
+    // Intercom Push
+    compile('io.intercom.android:intercom-sdk-fcm:3.+') {
+      exclude group: 'io.intercom.android', module: 'intercom-sdk-base'
     }
 }
 
