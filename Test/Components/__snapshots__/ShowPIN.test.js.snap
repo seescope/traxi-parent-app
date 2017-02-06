@@ -20,18 +20,20 @@ exports[`test renders 1`] = `
         "textShadowRadius": 20,
       }
     }>
-    Enter the PIN 
-    1234
-    
-    
-    on 
+    On 
     Test
-    \'s device
+    \'s device 
+    
+    
+    go to mytraxi.com 
+    
+    
+    and enter the code:
   </Text>
   <View
     style={
       Object {
-        "height": 96,
+        "height": 64,
       }
     } />
   <Text
@@ -50,7 +52,7 @@ exports[`test renders 1`] = `
   <View
     style={
       Object {
-        "height": 96,
+        "height": 64,
       }
     } />
   <View>
@@ -77,7 +79,9 @@ exports[`test renders 1`] = `
           },
         ]
       }>
-      Waiting...
+      Waiting for 
+      Test
+      \'s device...
     </Text>
   </View>
   <View

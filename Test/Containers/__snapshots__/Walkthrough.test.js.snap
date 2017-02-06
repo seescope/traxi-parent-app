@@ -792,18 +792,20 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "textShadowRadius": 20,
           }
         }>
-        Enter the PIN 
-        1234
-        
-        
-        on 
+        On 
         Brett
-        \'s device
+        \'s device 
+        
+        
+        go to mytraxi.com 
+        
+        
+        and enter the code:
       </Text>
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <Text
@@ -822,7 +824,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <View>
@@ -849,7 +851,9 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
               },
             ]
           }>
-          Waiting...
+          Waiting for 
+          Brett
+          \'s device...
         </Text>
       </View>
       <View
@@ -2414,18 +2418,20 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "textShadowRadius": 20,
           }
         }>
-        Enter the PIN 
-        1234
-        
-        
-        on 
+        On 
         Brett
-        \'s device
+        \'s device 
+        
+        
+        go to mytraxi.com 
+        
+        
+        and enter the code:
       </Text>
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <Text
@@ -2444,7 +2450,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <View>
@@ -2471,7 +2477,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
               },
             ]
           }>
-          Waiting...
+          Waiting for 
+          Brett
+          \'s device...
         </Text>
       </View>
       <View
@@ -3858,18 +3866,20 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "textShadowRadius": 20,
           }
         }>
-        Enter the PIN 
-        1234
-        
-        
-        on 
+        On 
         Brett
-        \'s device
+        \'s device 
+        
+        
+        go to mytraxi.com 
+        
+        
+        and enter the code:
       </Text>
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <Text
@@ -3888,7 +3898,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
       <View
         style={
           Object {
-            "height": 96,
+            "height": 64,
           }
         } />
       <View>
@@ -3915,7 +3925,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
               },
             ]
           }>
-          Waiting...
+          Waiting for 
+          Brett
+          \'s device...
         </Text>
       </View>
       <View
