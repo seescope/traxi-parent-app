@@ -12,7 +12,7 @@ This is where our users first meet traxi. By following an ad, or being referred 
 
 The parent app serves two primary purposes:
 
-### Setting up their child's device
+### 1. Setting up their child's device
 
 ![Setup1](https://github.com/traxicorp/traxi-parent-app/blob/master/Artwork/setup1.png?raw=true)
 ![Setup3](https://github.com/traxicorp/traxi-parent-app/blob/master/Artwork/setup3.png?raw=true)
@@ -27,7 +27,7 @@ The first thing a user (or *parent*, as we'll refer to them from now on) does af
 
 So how does the setup process actually work? We'll get in to that later.
 
-### Monitoring their child's device
+### 2. Monitoring their child's device
 
 ![Monitoring 2](https://github.com/traxicorp/traxi-parent-app/blob/master/Artwork/monitoring2.png?raw=true)
 ![Monitoring 3](https://github.com/traxicorp/traxi-parent-app/blob/master/Artwork/monitoring3.png?raw=true)
@@ -127,3 +127,21 @@ Tests can be found in `Test/*/*.test.js`. Tests that do not end in ".test.js" ar
 - Once upon a time, `traxi-parent-app` also contained `traxi-child-app`. This is why you may see references to things like "ParentApp" or "ChildApp". This will be fixed some day :laughing:
 - The directory structure is a little odd and could use some fixing. This isn't a high priority yet, and can be left alone for now.
 - There are a number of dependencies that have been forked due to compatibility or functionality issues. At some point, these changes should probably be merged upstream.
+
+## Implementation Details
+
+### App Structure
+For the most part, `traxi-parent-app` is reasonably straightforward. It uses [Redux](http://redux.js.org/docs/introduction/)
+to handle state and [react-native-router-flux](https://github.com/aksonov/react-native-router-flux) for navigation. This isn't current best practice, and we should instead be moving to [React Navigation](https://reactnavigation.org/docs/intro/) to get better navigations and a more fluent API.
+
+### Components
+**TODO** Overview of dumb components smart containers, redux etc.
+
+### User Authentication
+**TODO** Overview of profiles, Firebase, etc.
+
+### Setup Implementation
+**TODO** Explain how devices are setup
+
+### Reports Implementation
+**TODO** Explain how reports are fetched
