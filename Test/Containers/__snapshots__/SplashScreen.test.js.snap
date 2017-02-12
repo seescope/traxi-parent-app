@@ -59,7 +59,7 @@ exports[`test renders the <SplashScreen> component 1`] = `
       }
     }
     useNativeDriver={true}>
-    Start seeing what your kids are doing.
+    What are your children doing online?
   </Text>
   <View
     style={
@@ -105,7 +105,7 @@ exports[`test renders the <SplashScreen> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Show me how
+        Find out now
          
       </Text>
     </View>
