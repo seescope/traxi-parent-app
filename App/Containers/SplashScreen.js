@@ -57,7 +57,7 @@ const SplashScreen = ({ getStarted }) =>
       delay={1000}
       style={logoStyle}
     >
-      Start seeing what your kids are doing.
+      What are your children doing online?
     </Animatable.Text>
 
     <Spacing height={32} />
@@ -67,7 +67,7 @@ const SplashScreen = ({ getStarted }) =>
       animation="bounceInUp"
       delay={2000}
     >
-      <Button onPress={getStarted}>Show me how</Button>
+      <Button onPress={getStarted}>Find out now</Button>
     </Animatable.View>
   </Background>;
 
