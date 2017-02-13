@@ -13,7 +13,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "5E18E5E31C5596F535B6BD36212D65468D7073DF" : "traxi\/",
     "006D93CFF4B40A588F98C069A5B32812695A22B3" : "traxi\/node_modules\/react-native-image-picker\/",
-    "E58D986B3A82245227855204B24D1EFEF2BCB7B0" : "traxi-parent-app\/",
+    "E58D986B3A82245227855204B24D1EFEF2BCB7B0" : "test\/",
     "8CFE556BE538395FB97AA3C33793698EB9CADB9D" : "traxi\/node_modules\/react-native-contacts\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "traxi",
