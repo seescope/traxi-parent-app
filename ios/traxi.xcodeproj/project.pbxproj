@@ -56,6 +56,8 @@
 		C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FB10911D06A85800F1B2C9 /* libc++.tbd */; };
 		C5FF76DC0EBE4282ABF605B6 /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF443938E0F546E9AB9806F5 /* libCore.a */; };
 		D9C7FA2A84564AC781C876D1 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75920FF9F098424C98318244 /* Raleway-Regular.ttf */; };
+		88A30EFF829845D2967B2730 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40909FC3FB524E80B6DE3B47 /* MaterialCommunityIcons.ttf */; };
+		8700BCCB4750401AAC679CBA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A52B9E48CA645F587719F3F /* SimpleLineIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -415,6 +417,8 @@
 		ECF6543406C04ACDB77385A0 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		EF443938E0F546E9AB9806F5 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCore.a; sourceTree = "<group>"; };
 		FEAC2EE473D643669C3ECCBB /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTContacts.xcodeproj; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; };
+		40909FC3FB524E80B6DE3B47 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A52B9E48CA645F587719F3F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,6 +588,8 @@
 				8E3F1B22EC35408D9304FA49 /* Raleway-ExtraBold.ttf */,
 				15C37DAD2FDE40899E2F1A9C /* Raleway-Light.ttf */,
 				75920FF9F098424C98318244 /* Raleway-Regular.ttf */,
+				40909FC3FB524E80B6DE3B47 /* MaterialCommunityIcons.ttf */,
+				0A52B9E48CA645F587719F3F /* SimpleLineIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1246,6 +1252,8 @@
 				09B9F4F248344F1AA09461DA /* Raleway-ExtraBold.ttf in Resources */,
 				8AFFF54AF322427F990D2E68 /* Raleway-Light.ttf in Resources */,
 				D9C7FA2A84564AC781C876D1 /* Raleway-Regular.ttf in Resources */,
+				88A30EFF829845D2967B2730 /* MaterialCommunityIcons.ttf in Resources */,
+				8700BCCB4750401AAC679CBA /* SimpleLineIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

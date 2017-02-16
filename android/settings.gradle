@@ -13,6 +13,8 @@ include ':aws-sdk-react-native-dynamodb'
 project(':aws-sdk-react-native-dynamodb').projectDir = new File(rootProject.projectDir, '../node_modules/aws-sdk-react-native-dynamodb/android')
 
 include ':app'
+include ':react-native-sms-android'
+project(':react-native-sms-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sms-android/android')
 include ':react-native-fabric'
 project(':react-native-fabric').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fabric/android')
 include ':react-native-randombytes'

@@ -18,4 +18,5 @@ target 'traxi' do
 
   # Intercom
   pod 'Intercom'
+  pod 'react-native-intercom', :path => '../node_modules/react-native-intercom'
 end

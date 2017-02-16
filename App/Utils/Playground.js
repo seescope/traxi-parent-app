@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactNative, { View, Dimensions } from 'react-native';
-import SetImage from '../Containers/SetImage';
-//import SetImage from '../Containers/SetImage';
+import Congratulations from '../Containers/Congratulations';
 
 const style = {
   container: {
@@ -23,7 +22,7 @@ class Playground extends React.Component  {
   render () {
     return (
       <View style={style.container}>
-        <SetImage kidName={'Chris'} parentName={'Fred'}/>
+        <Congratulations kidName={'Chris'} parentName={'Fred'}/>
       </View>
     );
   }

@@ -32,8 +32,8 @@ const headerTextStyle = { marginBottom: 16, color: WHITE };
 const congratulationsStyle = {
   backgroundColor: TRAXI_BLUE,
   flex: 1,
-  paddingTop: 64,
-  padding: 32,
+  paddingTop: 10,
+  padding: 28,
   justifyContent: 'flex-start',
   alignItems: 'center',
 };
