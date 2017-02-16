@@ -82,6 +82,7 @@ class ProgressTrack extends React.Component {
 
     return (
       <View style={{ width }}>
+        <View style={trackStyle(width)} />
         <View style={containerStyle}>
           {STAGES.map(i =>
             <Animated.View key={i} style={[circleStyle, this.animatedCircleStyles[i]]}>
@@ -91,7 +92,6 @@ class ProgressTrack extends React.Component {
             </Animated.View>
           )}
         </View>
-        <View style={trackStyle(width)} />
       </View>
     );
   }
@@ -103,4 +103,3 @@ ProgressTrack.propTypes = {
 };
 
 export default ProgressTrack;
-

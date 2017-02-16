@@ -36,7 +36,6 @@ const innerContainerStyle = {
 };
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   flex: 1,
   flexDirection: 'row',
   alignItems: 'flex-start',
