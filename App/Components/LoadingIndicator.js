@@ -14,7 +14,7 @@ const spinnerStyle = {
 const LoadingIndicator = ({ children }) => (
   <View>
     <ActivityIndicator size={'large'} color={WHITE} style={spinnerStyle} />
-    <Text style={[TEXT, { color: WHITE, textAlign: 'center'}]}>{children}</Text>
+    <Text style={[TEXT, { color: WHITE, textAlign: 'center', backgroundColor: 'transparent'}]}>{children}</Text>
   </View>
 );
 

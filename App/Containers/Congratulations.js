@@ -62,7 +62,7 @@ const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, dev
 );
 
 CongratulationsComponent.propTypes = {
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
   kidName: PropTypes.string.isRequired,
   avatarURL: PropTypes.string.isRequired,
   deviceType: PropTypes.string.isRequired,

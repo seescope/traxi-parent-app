@@ -6,13 +6,12 @@ import ParentApp from './App/Containers/ParentApp';
 import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
 import { logError } from './App/Utils';
-import Playground from './App/Utils/Playground'
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    AsyncStorage.removeItem('profile');
+    // AsyncStorage.removeItem('profile');
     // AsyncStorage.setItem('profile', JSON.stringify({
     //   UUID: "YwS0vJ8OE8N6yenxHaV6PdMVLbG3",
     // }));
@@ -65,7 +64,6 @@ export default class extends React.Component {
     }
 
     return (
-      //<Playground/>
       <ParentApp profile={profile} />
     );
   }

@@ -28,6 +28,8 @@ import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import Timer from 'react-native-timer';
 
+import Playground from '../Utils/Playground';
+
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
 const DYNAMODB_REGION = 'ap-southeast-2';
@@ -135,6 +137,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
+          <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>
     );

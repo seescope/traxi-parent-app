@@ -25,12 +25,13 @@ const style = {
     width: width - 64,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    padding: 32,
   },
 };
 
 const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
   <View style={style.container}>
-    <HeaderText>Looking good, {parentName}!</HeaderText>
+    <HeaderText>Thanks{ parentName && ', ' + parentName} !</HeaderText>
 
     <Spacing height={32} />
 
@@ -50,16 +51,16 @@ const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
 
     <View style={style.buttonContainer}>
       <Button primary={false} onPress={() => Actions.notReadyYet()}>
-        No I don't
+        No
       </Button>
       <Button onPress={() => nextStep()}>
-        I have {kidName}'s device
+        Yes
       </Button>
     </View>
   </View>;
 
 Prompt.propTypes = {
-  parentName: React.PropTypes.string.isRequired,
+  parentName: React.PropTypes.string,
   kidName: React.PropTypes.string.isRequired,
   avatarURL: React.PropTypes.string.isRequired,
   nextStep: React.PropTypes.func.isRequired,

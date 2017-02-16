@@ -75,57 +75,60 @@ export const selectImage = pickImage => dispatch => {
 
 const style = {
   container: {
+    flexDirection: 'column',
     alignItems: 'center',
   },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
     color: WHITE,
+    alignItems: 'center',
+    textAlign: 'center',
     backgroundColor: TRANSPARENT,
   },
   buttonContainer: {
-    width: width - 64,
     flexDirection: 'row',
+    alignItems: 'flex-end',
     justifyContent: 'space-between',
   },
 };
 
 const SetImage = ({ parentName, kidName, onPress }) => (
-  <View style={style.container}>
-    <HeaderText>Thanks, {parentName}!</HeaderText>
+  <View style={{flex:1}}>
+    <View style={style.container}>
+      <HeaderText>Thanks{ parentName && ', ' + parentName} !</HeaderText>
 
-    <Spacing height={32} />
+      <Spacing height={32} />
 
-    <KidAvatar
-      size={204}
-      avatarURL=""
-    />
+      <KidAvatar
+        size={204}
+        avatarURL=""
+      />
 
-    <Spacing height={32} />
+      <Spacing height={32} />
 
-    <Text style={style.bodyText}>
-      Now, let's set a picture for {kidName}.
-    </Text>
+      <Text style={style.bodyText}>
+        Now, let's set a picture for {kidName}.
+      </Text>
 
-    <Spacing />
+      <Spacing />
 
-    <Text style={style.bodyText}>
-      Don't worry, only you will be able to see it.
-    </Text>
+      <Text style={style.bodyText}>
+        Don't worry, only you will be able to see it.
+      </Text>
 
-    <Spacing height={32} />
-
-    <View style={style.buttonContainer}>
-      <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
-      <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
+      <Spacing height={32} />
     </View>
-
+    <View style={style.buttonContainer}>
+      <Button style={style.button} primary={false} onPress={() => onPress(false)}>Not right now</Button>
+      <Button style={style.button} onPress={() => onPress(true)}>Set a picture</Button>
+    </View>
   </View>
 );
 
 SetImage.propTypes = {
   kidName: PropTypes.string.isRequired,
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
   onPress: PropTypes.func.isRequired,
 };
 

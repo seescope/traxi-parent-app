@@ -12,7 +12,6 @@ import Button from './Button';
 const { height, width } = Dimensions.get('window');
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   width: width - 64,
   flexDirection: 'row',
   alignItems: 'flex-start',

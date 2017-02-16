@@ -24,12 +24,16 @@ RCT_REMAP_METHOD(authenticate,
      NSString *deviceName = [[UIDevice currentDevice] name];
      NSArray *split = [deviceName componentsSeparatedByString:@"'"];
      NSString *firstName = split[0];
-     
+
+     if([firstName isEqualToString:@"iPhone"]) {
+       firstName = [NSNull null];
+     }
+
      NSDictionary *profile = @{
                               @"name": firstName,
                               @"UUID": user.uid,
                               };
-     
+
      resolve(profile);
    }];
 
