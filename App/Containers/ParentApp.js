@@ -48,16 +48,11 @@ class ParentApp extends React.Component {
       loading: false,
       profile,
       contacts: [],
-      step: 7,
+      step: 0,
       kidSuggestions: [],
       kids: kids || [],
-      // selectedKid: kids && kids[0] || {},
-      selectedKid: {
-        name: 'Usuri',
-        deviceType: 'Android',
-      },
+      selectedKid: kids && kids[0] || {},
       reports: {},
-      parentName: 'Mohammad',
     };
 
     this.store = createStore(
@@ -133,7 +128,9 @@ class ParentApp extends React.Component {
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene key="walkthrough" initial component={Walkthrough} />
+          <Scene key="setName" component={SetName} />
+          <Scene key="setImage" component={SetImage} />
+          <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
