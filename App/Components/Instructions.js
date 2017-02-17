@@ -44,9 +44,9 @@ const androidInstructions = (step, kidName) => {
     '',
     '',
     '',
-    `Install traxi Child App \n on ${kidName}'s phone`,
-    `Open traxi Child App \n on ${kidName}'s phone`,
-    'Tap "OK" on the next \n screen.',
+    I18n.t('instructions.android0', { kidName }),
+    I18n.t('instructions.android1', { kidName }),
+    I18n.t('instructions.android2'),
   ];
 
   return instructions[step];

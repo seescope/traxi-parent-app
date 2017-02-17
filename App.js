@@ -58,6 +58,9 @@ I18n.translations = {
       ios0: `Tap the "Install"\n button in the top right`,
       ios1: `Tap the "Install"\n button again`,
       ios2: 'Tap "Done"',
+      android0: "Install traxi Child App \n on {{kidName}}'s phone",
+      android1: "Open traxi Child App \n on {{kidName}}'s phone",
+      android2: 'Tap "OK" on the next \n screen.',
       goToMyTraxi: 'Go to mytraxi.com on {{kidName}}’s device',
     },
     showPin: {
@@ -113,6 +116,9 @@ I18n.translations = {
       ios0: 'Ketik butang "memasang"',
       ios1: 'Ketik "memasang" lagi',
       ios2: 'Ketik "dilakukan"',
+      android0: 'Pasang traxi Child App pada telefon {{kidName}}',
+      android1: 'traxi Child App buka pada telefon {{kidName}}',
+      android2: 'Ketik "OK"',
       goToMyTraxi: 'Pergi ke mytraxi.com pada peranti {{kidName}}',
     },
     showPin: {
