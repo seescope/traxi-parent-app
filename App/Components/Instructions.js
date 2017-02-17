@@ -1,5 +1,3 @@
-/* eslint-disable global-require */ /* eslint-disable quotes */
-/* eslint-disable import/no-unresolved */
 import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
@@ -12,7 +10,6 @@ import Button from './Button';
 const { height, width } = Dimensions.get('window');
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   width: width - 64,
   flexDirection: 'row',
   alignItems: 'flex-start',
@@ -25,9 +22,9 @@ const IOS_INSTRUCTIONS = [
   '',
   '',
   '',
-  `Tap the "Install"\n button in the top right`,
-  `Tap the "Install"\n button again`,
-  `Tap "Done"`,
+  'Tap the "Install"\n button in the top right',
+  'Tap the "Install"\n button again',
+  'Tap "Done"',
   '',
   '',
 ];
@@ -129,7 +126,11 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
       <Spacing height={64} />
 
       <View style={buttonContainer}>
-        <Button onPress={() => Intercom.displayMessageComposer()} primary={false}>I need help</Button>
+        <Button
+          onPress={
+          () => Intercom.displayMessageComposer()} primary={false}
+        >I need help
+        </Button>
         <Button onPress={nextStep}>Next step</Button>
       </View>
     </View>

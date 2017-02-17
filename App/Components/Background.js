@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import STYLES from '../Constants/Styles';
 import { TRAXI_BLUE, TRAXI_LIGHT_BLUE } from '../Constants/Colours';
+// eslint-disable-next-line
 import LinearGradient from 'react-native-linear-gradient';
 
 const Background = ({ style, children }) => (

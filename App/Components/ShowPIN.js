@@ -12,6 +12,7 @@ const PINstyle = {
   fontSize: 64,
   color: WHITE,
   textAlign: 'center',
+  backgroundColor: 'transparent',
 };
 
 const buttonContainer = {

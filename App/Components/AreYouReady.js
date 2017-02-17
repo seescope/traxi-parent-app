@@ -1,5 +1,3 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, Platform, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -36,7 +34,6 @@ const innerContainerStyle = {
 };
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   flex: 1,
   flexDirection: 'row',
   alignItems: 'flex-start',
