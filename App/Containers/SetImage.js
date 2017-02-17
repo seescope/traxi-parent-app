@@ -95,7 +95,7 @@ const SetImage = ({ parentName, kidName, onPress }) => (
    // eslint-disable-next-line
   <View style={{ flex: 1 }}>
     <View style={style.container}>
-      <HeaderText>Thanks{parentName && `, ${parentName}`} !</HeaderText>
+      <HeaderText>Thanks{parentName && `, ${parentName}`}!</HeaderText>
 
       <Spacing height={32} />
 
