@@ -35,12 +35,6 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Let\'s get started!
@@ -195,12 +189,6 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Thanks
@@ -418,12 +406,6 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Thanks
@@ -632,12 +614,6 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -793,12 +769,6 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         On 
@@ -976,12 +946,6 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Install traxi Child App 
@@ -1153,12 +1117,6 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Open traxi Child App 
@@ -1330,12 +1288,6 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap \"OK\" on the next 
@@ -1497,12 +1449,6 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Waiting for traxi to 
@@ -1669,12 +1615,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Let\'s get started!
@@ -1829,12 +1769,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Thanks
@@ -2052,12 +1986,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Thanks
@@ -2266,12 +2194,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -2427,12 +2349,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         On 
@@ -2610,12 +2526,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap the \"Install\"
@@ -2787,12 +2697,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap the \"Install\"
@@ -2964,12 +2868,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap \"Done\"
@@ -3125,12 +3023,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Let\'s get started!
@@ -3285,12 +3177,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Thanks
@@ -3508,12 +3394,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Thanks
@@ -3722,12 +3602,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -3883,12 +3757,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         On 
@@ -4066,12 +3934,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap the \"Install\"
@@ -4243,12 +4105,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap the \"Install\"
@@ -4420,12 +4276,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           Tap \"Done\"
@@ -4586,12 +4436,6 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
         Thanks
