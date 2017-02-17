@@ -1,5 +1,6 @@
 import Contacts from 'react-native-contacts';
 import { PhoneNumberType, PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber';
+// eslint-disable-next-line
 import Locale from 'react-native-locale';
 
 const getCountryCode = () => {

@@ -14,8 +14,6 @@ const KidApp = ({ isInstalled, UUID }) => {
   const initialState = {};
   const store = createStore(reducer, initialState, applyMiddleware(ReduxThunk));
 
-  console.log('Starting KidApp. isInstalled: ', isInstalled);
-
   return (
     <Provider store={store}>
       <RouterWithRedux hideNavBar>
