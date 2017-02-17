@@ -72,7 +72,7 @@ const fetchContacts = () =>
     return parseContacts.then(
       contacts => {
         dispatch({ type: 'GOT_CONTACTS', contacts });
-      }).catch(e => console.error('Error fetching contacts', e));
+      });
   };
 
 export default fetchContacts;

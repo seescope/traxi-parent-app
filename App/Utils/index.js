@@ -63,6 +63,7 @@ export const loggingMiddleware = store => next => action => {
   return next(action);
 };
 
+/* eslint-disable no-unused-vars */
 export const trackingMiddleware = store => next => action => {
   // If this isn't a screen change, we're not interested.
   if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
