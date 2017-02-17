@@ -31,7 +31,7 @@ const style = {
 
 const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
   <View style={style.container}>
-    <HeaderText>Thanks{ parentName && ', ' + parentName} !</HeaderText>
+    <HeaderText>Thanks{parentName && `, ${parentName}`} !</HeaderText>
 
     <Spacing height={32} />
 

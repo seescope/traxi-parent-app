@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Keyboard, Text, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 
 import { enterKidName, NEXT_STEP } from '../Actions/Actions';
 import Button from '../Components/Button';

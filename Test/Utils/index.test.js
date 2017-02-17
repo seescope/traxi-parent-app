@@ -1,5 +1,3 @@
-/* eslint no-native-reassign: "off" */
-
 import { TEST_KID_FIRST_NAME, TEST_KID_NAME } from '../Mocks';
 import {
   sendPhoneNumberToSlack,
@@ -73,7 +71,7 @@ describe('sendPhoneNumberToSlack', () => {
     const phoneNumber = '+61401633346';
 
     const mockDispatch = jest.fn();
-    fetch = jest.fn(() => Promise.resolve({
+    const fetch = jest.fn(() => Promise.resolve({
       text: () => Promise.resolve('ok'),
     }));
 

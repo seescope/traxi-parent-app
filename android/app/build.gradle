@@ -169,6 +169,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-locale')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
     compile project(':react-native-billing')

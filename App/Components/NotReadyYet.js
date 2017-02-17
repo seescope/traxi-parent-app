@@ -47,7 +47,7 @@ const topContainerStyle = {
   flexDirection: 'row',
 };
 
-export default (selectedKid) => {
+export default () => {
   const showThankYou = () => {
     Analytics.track('Reminder Requested');
     Actions.thankyou();
@@ -89,5 +89,5 @@ export default (selectedKid) => {
         </Button>
       </View>
     </View>
-  )
-}
+  );
+};

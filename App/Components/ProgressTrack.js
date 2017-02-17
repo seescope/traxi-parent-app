@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { View, Text, Easing, Animated } from 'react-native';
+import { View, Text, Animated } from 'react-native';
 import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 
 const TRACK_COLOUR = WHITE;

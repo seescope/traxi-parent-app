@@ -11,8 +11,7 @@ import STYLES from '../Constants/Styles';
 import { WHITE } from '../Constants/Colours';
 
 const onPress = (UUID) => startVPN(UUID)
-      .then(() => Actions.kidReports())
-      .catch(e => console.error(e));
+  .then(() => Actions.kidReports());
 
 const headerStyle = {
   color: WHITE,
