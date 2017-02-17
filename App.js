@@ -11,6 +11,10 @@ import { logError } from './App/Utils';
 I18n.fallbacks = true;
 I18n.translations = {
   en: {
+    general: {
+      nextStep: 'Next step',
+      thanks: 'Thanks',
+    },
     splashScreen: {
       mainHeader: 'What is your child doing online?',
       button: 'Find out now',
@@ -28,8 +32,27 @@ I18n.translations = {
       subheader4: 'Doesn\'t that look easy?',
       button: 'Got it!',
     },
+    areYouReady: {
+      header: 'Ready to see what your kids are looking at?',
+      notReadyYet: 'Not right now',
+      ready: 'I\'m ready!',
+    },
+    setName: {
+      header: 'Let\'s get started!',
+      kidsName: 'What is your kid\'s name?',
+    },
+    setImage: {
+      setAPictureFor: 'Now, let\'s set a picture for',
+      chooseAPicture: 'Choose a picture',
+      dontWorry: 'Don\'t worry, only you can see it',
+      notNow: 'Not right now',
+    },
   },
   ms: {
+    general: {
+      nextStep: 'Seterusnya',
+      thanks: 'Terima kasih',
+    },
     splashScreen: {
       mainHeader: 'Apa yang anak anda lakukan dalam talian?',
       button: 'Cari sekarang',
@@ -46,6 +69,21 @@ I18n.translations = {
       subheader3: 'Ia sangat cepat',
       subheader4: 'Bukankah itu mudah?',
       button: 'Faham!',
+    },
+    areYouReady: {
+      header: 'Adakah anda bersedia?',
+      notReadyYet: 'Belum lagi',
+      ready: 'Ready!',
+    },
+    setName: {
+      header: 'Mari mulakan!',
+      kidsName: 'Apakah nama anak anda?',
+    },
+    setImage: {
+      setAPictureFor: 'Pilih gambar untuk',
+      chooseAPicture: 'Pilih gambar',
+      dontWorry: 'Hanya anda boleh melihatnya',
+      notNow: 'Bukan sekarang',
     },
   },
 };

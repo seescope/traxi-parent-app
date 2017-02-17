@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Dimensions, Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import I18n from 'react-native-i18n';
 
 import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
@@ -92,7 +93,7 @@ const style = {
 
 const SetImage = ({ parentName, kidName, onPress }) => (
   <View style={style.container}>
-    <HeaderText>Thanks, {parentName}!</HeaderText>
+    <HeaderText>{I18n.t('general.thanks')}, {parentName}!</HeaderText>
 
     <Spacing height={32} />
 
@@ -104,20 +105,20 @@ const SetImage = ({ parentName, kidName, onPress }) => (
     <Spacing height={32} />
 
     <Text style={style.bodyText}>
-      Now, let's set a picture for {kidName}.
+      {I18n.t('setImage.setAPictureFor')} {kidName}.
     </Text>
 
     <Spacing />
 
     <Text style={style.bodyText}>
-      Don't worry, only you will be able to see it.
+      {I18n.t('setImage.dontWorry')}.
     </Text>
 
     <Spacing height={32} />
 
     <View style={style.buttonContainer}>
-      <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
-      <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
+      <Button primary={false} onPress={() => onPress(false)}>{I18n.t('setImage.notNow')}</Button>
+      <Button onPress={() => onPress(true)}>{I18n.t('setImage.chooseAPicture')}</Button>
     </View>
 
   </View>
