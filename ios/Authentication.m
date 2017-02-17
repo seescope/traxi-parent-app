@@ -25,8 +25,8 @@ RCT_REMAP_METHOD(authenticate,
 
      NSString *fullName = @"";
      if(deviceName.length > 0) {
-         NSArray *names = [self nameFromDeviceName:deviceName];
-         fullName = [names componentsJoinedByString:@" "];
+       NSArray *names = [self nameFromDeviceName:deviceName];
+       fullName = [names componentsJoinedByString:@" "];
      }
 
      NSDictionary *profile = @{
