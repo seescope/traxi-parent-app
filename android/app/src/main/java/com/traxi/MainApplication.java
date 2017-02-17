@@ -4,11 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
-<<<<<<< HEAD
 import com.i18n.reactnativei18n.ReactNativeI18n;
-=======
-import io.fixd.rctlocale.RCTLocalePackage;
->>>>>>> master
 import com.robinpowered.react.Intercom.IntercomPackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
@@ -71,10 +67,10 @@ public class MainApplication extends Application implements ReactApplication {
         new NotificationManagerPackage(),
         new VPNClientPackage(),
         new MainReactPackage(),
-            new RCTLocalePackage(),
+            new ReactNativeI18n(),
             new IntercomPackage(),
             new InAppBillingBridgePackage(),
-            new RNSegmentIOAnalyticsPackage(),
+            new RNSegmentIOAnalyticsPackage("7FVcLGkqV6zCPqN4oiy4ZK8HjWoNafrW"),
             new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),
             new AWSRNCorePackage(),
             new AWSRNDynamoDBPackage(),

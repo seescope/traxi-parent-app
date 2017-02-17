@@ -75,7 +75,7 @@ export const selectImage = pickImage => dispatch => {
 const style = {
   outerContainer: {
     flex: 1,
-  }
+  },
   container: {
     flexDirection: 'column',
     alignItems: 'center',
