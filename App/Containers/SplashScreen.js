@@ -13,6 +13,7 @@ import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import loginWithMethod from '../Actions/LoginWithMethod';
 import saveProfile from '../Actions/SaveProfile';
 import { logError } from '../Utils';
+import I18n from 'react-native-i18n';
 
 const { height } = Dimensions.get('window');
 const handleError = error => {
@@ -57,7 +58,7 @@ const SplashScreen = ({ getStarted }) =>
       delay={1000}
       style={logoStyle}
     >
-      What are your children doing online?
+      {I18n.t('splashScreen.mainHeader')}
     </Animatable.Text>
 
     <Spacing height={32} />
@@ -67,7 +68,7 @@ const SplashScreen = ({ getStarted }) =>
       animation="bounceInUp"
       delay={2000}
     >
-      <Button onPress={getStarted}>Find out now</Button>
+      <Button onPress={getStarted}>{I18n.t('splashScreen.button')}</Button>
     </Animatable.View>
   </Background>;
 
@@ -77,13 +78,14 @@ SplashScreen.propTypes = {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  getStarted: () => dispatch(loginWithMethod())
-  .then(profile => {
-    // We'll just let this run whenever, no point holding up the user.
-    saveProfile(profile);
+  // getStarted: () => dispatch(loginWithMethod())
+  // .then(profile => {
+  //   // We'll just let this run whenever, no point holding up the user.
+  //   saveProfile(profile);
+  getStarted: () => {
     return Actions.intro();
-  })
-  .catch(handleError),
+  }
+  // .catch(handleError),
 });
 
 export default connect(null, mapDispatchToProps)(SplashScreen);

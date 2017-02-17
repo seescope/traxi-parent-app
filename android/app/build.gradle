@@ -169,6 +169,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-i18n')
     compile project(':react-native-intercom')
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
