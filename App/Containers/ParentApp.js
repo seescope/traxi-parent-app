@@ -51,7 +51,11 @@ class ParentApp extends React.Component {
       step: 1,
       kidSuggestions: [],
       kids: kids || [],
-      selectedKid: kids && kids[0] || {},
+      // selectedKid: kids && kids[0] || {},
+      selectedKid: {
+        name: 'Usuri',
+        deviceType: 'unknown',
+      },
       reports: {},
       parentName: 'Mohammad',
     };

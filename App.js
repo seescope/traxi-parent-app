@@ -47,6 +47,12 @@ I18n.translations = {
       dontWorry: 'Don\'t worry, only you can see it',
       notNow: 'Not right now',
     },
+    prompt: {
+      header: 'Looking good',
+      doYouHave: 'Do you have {{kidName}}\'s phone or tablet?',
+      no: 'No, I don\'t',
+      yes: 'Yes, I do',
+    },
   },
   ms: {
     general: {
@@ -84,6 +90,12 @@ I18n.translations = {
       chooseAPicture: 'Pilih gambar',
       dontWorry: 'Hanya anda boleh melihatnya',
       notNow: 'Bukan sekarang',
+    },
+    prompt: {
+      header: 'Syabas',
+      doYouHave: 'Adakah anda mempunyai telefon atau tablet {{kidName}}?',
+      no: 'Saya tidak',
+      yes: 'Ya, saya ada',
     },
   },
 };
