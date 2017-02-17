@@ -4,6 +4,7 @@ import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Intercom from 'react-native-intercom';
+import I18n from 'react-native-i18n';
 
 import Spacing from './Spacing';
 import HeaderText from './HeaderText';
@@ -19,18 +20,22 @@ const buttonContainer = {
   justifyContent: 'space-between',
 };
 
-const IOS_INSTRUCTIONS = [
-  '',
-  '',
-  '',
-  '',
-  '',
-  `Tap the "Install"\n button in the top right`,
-  `Tap the "Install"\n button again`,
-  `Tap "Done"`,
-  '',
-  '',
-];
+const iosInstructions = step => {
+  const instructions = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    I18n.t('instructions.ios0'),
+    I18n.t('instructions.ios1'),
+    I18n.t('instructions.ios2'),
+    '',
+    '',
+  ];
+
+  return instructions[step];
+};
 
 const androidInstructions = (step, kidName) => {
   const instructions = [
@@ -79,13 +84,13 @@ const ANDROID_IMAGES = [
 const instructionText = (step, kidName, deviceType) => {
   switch (deviceType) {
     case 'unknown':
-      return `Go to mytraxi.com on ${kidName}’s device`;
+      return I18n.t('instructions.goToMyTraxi', { kidName });
     case 'iPhone':
-      return IOS_INSTRUCTIONS[step];
+      return iosInstructions(step);
     case 'Android':
       return androidInstructions(step, kidName);
     case 'iPad':
-      return IOS_INSTRUCTIONS[step];
+      return iosInstructions(step);
     default:
       return 'Sorry, that device is not supported.';
   }
@@ -129,8 +134,12 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
       <Spacing height={64} />
 
       <View style={buttonContainer}>
-        <Button onPress={() => Intercom.displayMessageComposer()} primary={false}>I need help</Button>
-        <Button onPress={nextStep}>Next step</Button>
+        <Button onPress={() => Intercom.displayMessageComposer()} primary={false}>
+          {I18n.t('general.needHelp')}
+        </Button>
+        <Button onPress={nextStep}>
+          {I18n.t('general.nextStep')}
+        </Button>
       </View>
     </View>
     <View>

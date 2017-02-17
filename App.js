@@ -14,6 +14,7 @@ I18n.translations = {
     general: {
       nextStep: 'Next step',
       thanks: 'Thanks',
+      needHelp: 'I need help',
     },
     splashScreen: {
       mainHeader: 'What is your child doing online?',
@@ -53,11 +54,22 @@ I18n.translations = {
       no: 'No, I don\'t',
       yes: 'Yes, I do',
     },
+    instructions: {
+      ios0: `Tap the "Install"\n button in the top right`,
+      ios1: `Tap the "Install"\n button again`,
+      ios2: 'Tap "Done"',
+      goToMyTraxi: 'Go to mytraxi.com on {{kidName}}’s device',
+    },
+    showPin: {
+      header: "On {{kidName}}'s device \n go to mytraxi.com \n and enter the code:",
+      waiting: "Waiting for {{kidName}}'s device...",
+    },
   },
   ms: {
     general: {
       nextStep: 'Seterusnya',
       thanks: 'Terima kasih',
+      needHelp: 'Tolong saya',
     },
     splashScreen: {
       mainHeader: 'Apa yang anak anda lakukan dalam talian?',
@@ -96,6 +108,16 @@ I18n.translations = {
       doYouHave: 'Adakah anda mempunyai telefon atau tablet {{kidName}}?',
       no: 'Saya tidak',
       yes: 'Ya, saya ada',
+    },
+    instructions: {
+      ios0: 'Ketik butang "memasang"',
+      ios1: 'Ketik "memasang" lagi',
+      ios2: 'Ketik "dilakukan"',
+      goToMyTraxi: 'Pergi ke mytraxi.com pada peranti {{kidName}}',
+    },
+    showPin: {
+      header: 'Pada peranti {{kidName}} pergi ke mytraxi.com dan masukkan kod',
+      waiting: 'Menunggu untuk peranti {{kidName}}',
     },
   },
 };
