@@ -67,6 +67,10 @@ I18n.translations = {
       header: "On {{kidName}}'s device \n go to mytraxi.com \n and enter the code:",
       waiting: "Waiting for {{kidName}}'s device...",
     },
+    waitingForDevice: {
+      header: `Waiting for traxi to \n start on {{kidName}}'s {{deviceType}}`,
+      waiting: 'Waiting',
+    },
   },
   ms: {
     general: {
@@ -124,6 +128,10 @@ I18n.translations = {
     showPin: {
       header: 'Pada peranti {{kidName}} pergi ke mytraxi.com dan masukkan kod',
       waiting: 'Menunggu untuk peranti {{kidName}}',
+    },
+    waitingForDevice: {
+      header: 'Menunggu traxi bermula pada {{deviceType}} {{kidName}}',
+      waiting: 'Menunggu...',
     },
   },
 };
