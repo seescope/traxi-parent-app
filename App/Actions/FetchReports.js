@@ -1,5 +1,3 @@
-/* eslint new-cap: "off" */
-
 import moment from 'moment';
 import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import lodash from 'lodash';

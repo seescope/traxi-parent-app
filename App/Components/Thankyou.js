@@ -1,5 +1,3 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, Platform, Text, Image } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';

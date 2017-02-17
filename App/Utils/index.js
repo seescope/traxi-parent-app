@@ -1,5 +1,3 @@
-/* eslint no-unused-vars: ["error", {"args": "none"}] */
-
 import moment from 'moment';
 import { Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
@@ -54,12 +52,9 @@ export const getAppNiceName = name => niceNames[name] || name;
 
 export const isToday = date => moment(date).isSame(moment(), 'day');
 
-export const logError = error => {
-  console.error(error);
-  return (isIOS ?
+export const logError = error => (isIOS ?
     Crashlytics.recordError(error.toString()) :
     Crashlytics.logException(error.toString()));
-};
 
 export const loggingMiddleware = store => next => action => {
   Crashlytics.log(JSON.stringify(action));

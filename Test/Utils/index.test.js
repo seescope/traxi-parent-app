@@ -1,5 +1,3 @@
-/* eslint no-native-reassign: "off" */
-
 import { TEST_KID_FIRST_NAME, TEST_KID_NAME } from '../Mocks';
 import {
   sendPhoneNumberToSlack,

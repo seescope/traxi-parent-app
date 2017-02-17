@@ -1,7 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable quotes */
-/* eslint-disable import/no-unresolved */
-
 import React, { PropTypes } from 'react';
 import { BackAndroid } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';

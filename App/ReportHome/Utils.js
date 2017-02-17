@@ -50,8 +50,6 @@ export const getTrailColours = (trailSegments, index) => {
     return [startColour, BAD];
   }
 
-
-  console.log('Weird:', thisSegment.name, index);
   const colour = trailColours[thisSegment.name];
   return [colour, colour];
 };

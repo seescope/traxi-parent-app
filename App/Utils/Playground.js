@@ -1,4 +1,4 @@
-// @flow
+/* eslint-disable */
 
 import React from 'react';
 import ReactNative, { View, Dimensions } from 'react-native';

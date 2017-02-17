@@ -1,5 +1,3 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, Platform, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
