@@ -1,6 +1,7 @@
 package com.traxi;
 
 import com.facebook.react.ReactActivity;
+import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import android.os.Bundle;
 import com.facebook.appevents.AppEventsLogger;
 

@@ -12,12 +12,6 @@ exports[`test renders 1`] = `
         "fontSize": 30,
         "marginBottom": -2,
         "textAlign": "center",
-        "textShadowColor": "rgba(75, 73, 73, 0.8)",
-        "textShadowOffset": Object {
-          "height": 3,
-          "width": 3,
-        },
-        "textShadowRadius": 20,
       }
     }>
     On 
@@ -42,6 +36,7 @@ exports[`test renders 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
+        "backgroundColor": "transparent",
         "color": "#FFF",
         "fontSize": 64,
         "textAlign": "center",
@@ -74,6 +69,7 @@ exports[`test renders 1`] = `
         Array [
           undefined,
           Object {
+            "backgroundColor": "transparent",
             "color": "#FFF",
             "textAlign": "center",
           },

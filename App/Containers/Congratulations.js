@@ -32,8 +32,8 @@ const headerTextStyle = { marginBottom: 16, color: WHITE };
 const congratulationsStyle = {
   backgroundColor: TRAXI_BLUE,
   flex: 1,
-  paddingTop: 64,
-  padding: 32,
+  paddingTop: 10,
+  padding: 28,
   justifyContent: 'flex-start',
   alignItems: 'center',
 };
@@ -62,7 +62,7 @@ const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, dev
 );
 
 CongratulationsComponent.propTypes = {
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
   kidName: PropTypes.string.isRequired,
   avatarURL: PropTypes.string.isRequired,
   deviceType: PropTypes.string.isRequired,

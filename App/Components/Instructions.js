@@ -1,5 +1,3 @@
-/* eslint-disable global-require */ /* eslint-disable quotes */
-/* eslint-disable import/no-unresolved */
 import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
 import * as Animatable from 'react-native-animatable';
@@ -13,7 +11,6 @@ import Button from './Button';
 const { height, width } = Dimensions.get('window');
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   width: width - 64,
   flexDirection: 'row',
   alignItems: 'flex-start',

@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-
 import React, { PropTypes } from 'react';
 import {
   View,

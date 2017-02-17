@@ -1,5 +1,3 @@
-/* eslint new-cap: "off" */
-
 import moment from 'moment';
 import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import lodash from 'lodash';
@@ -8,8 +6,6 @@ import { logError } from '../Utils';
 
 const METADATA_TABLE_NAME = 'AppMetadata';
 const TRAIL_ITEMS_TABLE_NAME = 'TrailItems';
-
-moment.fn.toJSON = function () { return this.format(); };
 
 const isLateNight = r => r.timeStamp.hour() < 4 || r.timeStamp.hour() >= 22;
 
@@ -206,6 +202,7 @@ const dateComparator = (date1, date2) => (date1.toString() < date2.toString() ? 
 
 const getAppMetadata = data => {
   const appHashKeys = getAppHashKeys(data);
+  // eslint-disable-next-line
   return AWSDynamoDB.BatchGetItem({
     RequestItems: {
       [METADATA_TABLE_NAME]: {
@@ -258,14 +255,13 @@ const getReportForKid = (kid) => {
     ProjectionExpression: 'StartTime, MinutesUsed, AppHash',
   };
 
+  // eslint-disable-next-line
   return AWSDynamoDB.Query(queryRequest);
 };
 
 const fetchReports = (kid) =>
   dispatch => {
     dispatch({ type: 'FETCHING_REPORT' });
-
-    console.log('Fetching reports!');
 
     return getReportForKid(kid)
     .then(cleanDynamoDBResponse)

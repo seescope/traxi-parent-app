@@ -27,6 +27,9 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
     component={[Function]} />
   <View
     component={[Function]} />
+  <View
+    component={[Function]}
+    initial={false} />
 </View>
 `;
 
@@ -59,6 +62,9 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
     component={[Function]} />
   <View
     component={[Function]} />
+  <View
+    component={[Function]}
+    initial={false} />
 </View>
 `;
 
@@ -91,5 +97,8 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
     component={[Function]} />
   <View
     component={[Function]} />
+  <View
+    component={[Function]}
+    initial={false} />
 </View>
 `;

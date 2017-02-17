@@ -1,5 +1,6 @@
 import Contacts from 'react-native-contacts';
 import { PhoneNumberType, PhoneNumberUtil, PhoneNumberFormat } from 'google-libphonenumber';
+// eslint-disable-next-line
 import Locale from 'react-native-locale';
 
 const getCountryCode = () => {
@@ -72,7 +73,7 @@ const fetchContacts = () =>
     return parseContacts.then(
       contacts => {
         dispatch({ type: 'GOT_CONTACTS', contacts });
-      }).catch(e => console.error('Error fetching contacts', e));
+      });
   };
 
 export default fetchContacts;

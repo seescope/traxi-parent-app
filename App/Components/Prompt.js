@@ -26,12 +26,13 @@ const style = {
     width: width - 64,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    padding: 32,
   },
 };
 
 const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
   <View style={style.container}>
-    <HeaderText>{I18n.t('prompt.header')}, {parentName}!</HeaderText>
+    <HeaderText>{I18n.t('prompt.header')}, {parentName && `, ${parentName}`}</HeaderText>
 
     <Spacing height={32} />
 
@@ -60,7 +61,7 @@ const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
   </View>;
 
 Prompt.propTypes = {
-  parentName: React.PropTypes.string.isRequired,
+  parentName: React.PropTypes.string,
   kidName: React.PropTypes.string.isRequired,
   avatarURL: React.PropTypes.string.isRequired,
   nextStep: React.PropTypes.func.isRequired,
