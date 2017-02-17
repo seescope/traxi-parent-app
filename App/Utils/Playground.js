@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import ReactNative, { View, Dimensions } from 'react-native';
 import Congratulations from '../Containers/Congratulations';

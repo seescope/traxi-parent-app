@@ -25,9 +25,9 @@ exports[`test renders 1`] = `
         "textShadowRadius": 20,
       }
     }>
-    Looking good, 
-    Kane
-    !
+    Thanks
+    , Kane
+     !
   </Text>
   <View
     style={
@@ -89,6 +89,7 @@ exports[`test renders 1`] = `
       Object {
         "flexDirection": "row",
         "justifyContent": "space-between",
+        "padding": 32,
         "width": 686,
       }
     }>
@@ -126,7 +127,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        No I don\'t
+        No
          
       </Text>
     </View>
@@ -164,9 +165,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I have 
-        Jeff
-        \'s device
+        Yes
          
       </Text>
     </View>
