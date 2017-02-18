@@ -32,6 +32,11 @@ const DYNAMODB_REGION = 'ap-southeast-2';
 const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
 const TIMER_NAME = 'refreshReports';
 
+const CLOSING_SCENES = {
+  reports: true,
+  splashScreen: true,
+};
+
 
 const RouterWithRedux = connect()(Router);
 
@@ -91,7 +96,7 @@ class ParentApp extends React.Component {
       return true;
     } else if (sceneName === 'congratulations') {
       return true;
-    } else if (sceneName === 'reports') {
+    } else if (CLOSING_SCENES[sceneName]) {
       BackAndroid.exitApp();
       return false;
     }
