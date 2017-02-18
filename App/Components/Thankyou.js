@@ -2,6 +2,7 @@ import React from 'react';
 import { Dimensions, Platform, Text, Image } from 'react-native';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
+import I18n from 'react-native-i18n';
 
 const { width } = Dimensions.get('window');
 
@@ -40,15 +41,15 @@ export default () =>
     style={containerStyle}
     source={require('../Images/thankyou-background.png')}
   >
-    <Text style={headerStyle}>Thanks!</Text>
+    <Text style={headerStyle}>{I18n.t('thankyou.header')}</Text>
 
     <Spacing height={36} />
 
     <Text style={bodyStyle}>
-      We'll send you a reminder tomorrow.
+      {I18n.t('thankyou.body1')}
     </Text>
 
     <Text style={bodyStyle}>
-      Remember, you can come back to the app and start monitoring your kids at any time.
+      {I18n.t('thankyou.body2')}
     </Text>
   </Image>;
