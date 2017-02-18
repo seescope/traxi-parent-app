@@ -69,7 +69,7 @@ export default {
       body3: "You can also come back to the app whenever you're ready.",
       button: 'Remind me tomorrow',
     },
-    thanks: {
+    thankyou: {
       header: 'Thanks!',
       body1: 'We\'ll send you a reminder tomorrow.',
       body2: 'Remember, you can come back to the app and start monitoring your kids at any time.',
@@ -143,7 +143,7 @@ export default {
       body3: 'Anda juga boleh kembali ke traxi apabila anda sudah bersedia',
       button: 'Ingatkan saya esok',
     },
-    thanks: {
+    thankyou: {
       header: 'Terima kasih!',
       body1: 'Kami akan menghantar mesej kepada anda esok',
       body2: 'Ingat, anda boleh kembali ke traxi dan mula memantau anak anda bila-bila masa',
