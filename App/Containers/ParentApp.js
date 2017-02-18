@@ -35,6 +35,7 @@ const TIMER_NAME = 'refreshReports';
 const CLOSING_SCENES = {
   reports: true,
   splashScreen: true,
+  thankyou: true,
 };
 
 
