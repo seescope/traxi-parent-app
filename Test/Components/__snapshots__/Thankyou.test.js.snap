@@ -22,7 +22,7 @@ exports[`test renders the <Thankyou> component 1`] = `
         "textAlign": "center",
       }
     }>
-    Thanks!
+    [missing \"en.thankyou.header\" translation]
   </Text>
   <View
     style={
@@ -44,7 +44,7 @@ exports[`test renders the <Thankyou> component 1`] = `
         "textAlign": "left",
       }
     }>
-    We\'ll send you a reminder tomorrow.
+    [missing \"en.thankyou.body1\" translation]
   </Text>
   <Text
     accessible={true}
@@ -60,7 +60,7 @@ exports[`test renders the <Thankyou> component 1`] = `
         "textAlign": "left",
       }
     }>
-    Remember, you can come back to the app and start monitoring your kids at any time.
+    [missing \"en.thankyou.body2\" translation]
   </Text>
 </Image>
 `;

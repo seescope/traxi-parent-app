@@ -37,7 +37,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "textAlign": "center",
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -58,7 +58,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -130,7 +130,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -191,9 +191,10 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "textAlign": "center",
             }
           }>
-          Thanks
-          , Jeff Bezos
-           !
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
         </Text>
         <View
           style={
@@ -221,6 +222,25 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "width": 204,
             }
           } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
         <View
           style={
             Object {
@@ -241,8 +261,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "textAlign": "center",
             }
           }>
-          Now, let\'s set a picture for 
-          Brett
+          [missing \"en.setImage.dontWorry\" translation]
           .
         </Text>
         <View
@@ -316,7 +335,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -354,7 +373,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontSize": 20,
               }
             }>
-            Set a picture
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -408,9 +427,9 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "textAlign": "center",
           }
         }>
-        Thanks
+        [missing \"en.prompt.header\" translation]
+        , 
         , Jeff Bezos
-         !
       </Text>
       <View
         style={
@@ -461,9 +480,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -514,7 +531,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontSize": 20,
               }
             }>
-            No
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -552,7 +569,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontSize": 20,
               }
             }>
-            Yes
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -667,7 +684,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -705,7 +722,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -771,15 +788,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "textAlign": "center",
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -832,9 +841,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -884,7 +891,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -948,8 +955,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "textAlign": "center",
             }
           }>
-          Install traxi Child App 
-           on Brett\'s phone
+          [missing \"en.instructions.android0\" translation]
         </Text>
         <View
           style={
@@ -1000,7 +1006,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1038,7 +1044,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1119,8 +1125,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "textAlign": "center",
             }
           }>
-          Open traxi Child App 
-           on Brett\'s phone
+          [missing \"en.instructions.android1\" translation]
         </Text>
         <View
           style={
@@ -1171,7 +1176,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1209,7 +1214,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1290,8 +1295,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "textAlign": "center",
             }
           }>
-          Tap \"OK\" on the next 
-           screen.
+          [missing \"en.instructions.android2\" translation]
         </Text>
         <View
           style={
@@ -1342,7 +1346,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1380,7 +1384,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1451,13 +1455,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "textAlign": "center",
           }
         }>
-        Waiting for traxi to 
-        
-        
-        start on 
-        Brett
-        \'s 
-        Android
+        [missing \"en.waitingForDevice.header\" translation]
       </Text>
       <View
         style={
@@ -1519,7 +1517,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "textAlign": "center",
           }
         }>
-        Waiting...
+        [missing \"en.waitingForDevice.waiting\" translation]
       </Text>
       <View
         style={
@@ -1568,7 +1566,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -1617,7 +1615,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "textAlign": "center",
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -1638,7 +1636,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -1710,7 +1708,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -1771,9 +1769,10 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "textAlign": "center",
             }
           }>
-          Thanks
-          , Jeff Bezos
-           !
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
         </Text>
         <View
           style={
@@ -1801,6 +1800,25 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "width": 204,
             }
           } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
         <View
           style={
             Object {
@@ -1821,8 +1839,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "textAlign": "center",
             }
           }>
-          Now, let\'s set a picture for 
-          Brett
+          [missing \"en.setImage.dontWorry\" translation]
           .
         </Text>
         <View
@@ -1896,7 +1913,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -1934,7 +1951,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontSize": 20,
               }
             }>
-            Set a picture
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -1988,9 +2005,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "textAlign": "center",
           }
         }>
-        Thanks
+        [missing \"en.prompt.header\" translation]
+        , 
         , Jeff Bezos
-         !
       </Text>
       <View
         style={
@@ -2041,9 +2058,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -2094,7 +2109,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontSize": 20,
               }
             }>
-            No
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -2132,7 +2147,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontSize": 20,
               }
             }>
-            Yes
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -2247,7 +2262,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2285,7 +2300,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2351,15 +2366,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "textAlign": "center",
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -2412,9 +2419,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -2464,7 +2469,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -2528,8 +2533,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "textAlign": "center",
             }
           }>
-          Tap the \"Install\"
-           button in the top right
+          [missing \"en.instructions.ios0\" translation]
         </Text>
         <View
           style={
@@ -2580,7 +2584,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2618,7 +2622,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2699,8 +2703,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "textAlign": "center",
             }
           }>
-          Tap the \"Install\"
-           button again
+          [missing \"en.instructions.ios1\" translation]
         </Text>
         <View
           style={
@@ -2751,7 +2754,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2789,7 +2792,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2870,7 +2873,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "textAlign": "center",
             }
           }>
-          Tap \"Done\"
+          [missing \"en.instructions.ios2\" translation]
         </Text>
         <View
           style={
@@ -2921,7 +2924,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2959,7 +2962,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -3025,7 +3028,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "textAlign": "center",
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -3046,7 +3049,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -3118,7 +3121,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -3179,9 +3182,10 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "textAlign": "center",
             }
           }>
-          Thanks
-          , Jeff Bezos
-           !
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
         </Text>
         <View
           style={
@@ -3209,6 +3213,25 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "width": 204,
             }
           } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
         <View
           style={
             Object {
@@ -3229,8 +3252,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "textAlign": "center",
             }
           }>
-          Now, let\'s set a picture for 
-          Brett
+          [missing \"en.setImage.dontWorry\" translation]
           .
         </Text>
         <View
@@ -3304,7 +3326,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -3342,7 +3364,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontSize": 20,
               }
             }>
-            Set a picture
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -3396,9 +3418,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "textAlign": "center",
           }
         }>
-        Thanks
+        [missing \"en.prompt.header\" translation]
+        , 
         , Jeff Bezos
-         !
       </Text>
       <View
         style={
@@ -3449,9 +3471,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -3502,7 +3522,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontSize": 20,
               }
             }>
-            No
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -3540,7 +3560,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontSize": 20,
               }
             }>
-            Yes
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -3655,7 +3675,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -3693,7 +3713,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -3759,15 +3779,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "textAlign": "center",
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -3820,9 +3832,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -3872,7 +3882,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -3936,8 +3946,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "textAlign": "center",
             }
           }>
-          Tap the \"Install\"
-           button in the top right
+          [missing \"en.instructions.ios0\" translation]
         </Text>
         <View
           style={
@@ -3988,7 +3997,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4026,7 +4035,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4107,8 +4116,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "textAlign": "center",
             }
           }>
-          Tap the \"Install\"
-           button again
+          [missing \"en.instructions.ios1\" translation]
         </Text>
         <View
           style={
@@ -4159,7 +4167,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4197,7 +4205,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4278,7 +4286,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "textAlign": "center",
             }
           }>
-          Tap \"Done\"
+          [missing \"en.instructions.ios2\" translation]
         </Text>
         <View
           style={
@@ -4329,7 +4337,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4367,7 +4375,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4438,9 +4446,9 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "textAlign": "center",
           }
         }>
-        Thanks
+        [missing \"en.prompt.header\" translation]
+        , 
         , Jeff Bezos
-         !
       </Text>
       <View
         style={
@@ -4491,9 +4499,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -4544,7 +4550,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontSize": 20,
               }
             }>
-            No
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -4582,7 +4588,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontSize": 20,
               }
             }>
-            Yes
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>

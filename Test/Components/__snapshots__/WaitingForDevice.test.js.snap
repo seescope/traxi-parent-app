@@ -19,13 +19,7 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Waiting for traxi to 
-    
-    
-    start on 
-    Jeff
-    \'s 
-    Android
+    [missing \"en.waitingForDevice.header\" translation]
   </Text>
   <View
     style={
@@ -87,7 +81,7 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Waiting...
+    [missing \"en.waitingForDevice.waiting\" translation]
   </Text>
   <View
     style={
@@ -136,7 +130,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I need help
+        [missing \"en.general.needHelp\" translation]
          
       </Text>
     </View>

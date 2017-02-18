@@ -50,7 +50,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
           "textAlign": "center",
         }
       }>
-      Not ready yet?
+      [missing \"en.notReadyYet.header\" translation]
     </Text>
     <View />
   </View>
@@ -74,7 +74,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "textAlign": "left",
       }
     }>
-    If your kid isn\'t around right now or you don\'t have time to set up traxi, don\'t worry.
+    [missing \"en.notReadyYet.body1\" translation]
   </Text>
   <Text
     accessible={true}
@@ -90,7 +90,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "textAlign": "left",
       }
     }>
-    Press the button below and we\'ll send you a reminder tomorrow.
+    [missing \"en.notReadyYet.body2\" translation]
   </Text>
   <Text
     accessible={true}
@@ -106,7 +106,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "textAlign": "left",
       }
     }>
-    You can also come back to the app whenever you\'re ready.
+    [missing \"en.notReadyYet.body3\" translation]
   </Text>
   <View
     style={
@@ -154,7 +154,7 @@ exports[`test renders the <NotReadyYet> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Remind me tomorrow
+        [missing \"en.notReadyYet.button\" translation]
          
       </Text>
     </View>

@@ -35,7 +35,7 @@ exports[`test renders the <SetName> component 1`] = `
         "textAlign": "center",
       }
     }>
-    Let\'s get started!
+    [missing \"en.setName.header\" translation]
   </Text>
   <View
     style={
@@ -56,7 +56,7 @@ exports[`test renders the <SetName> component 1`] = `
         "textAlign": "left",
       }
     }>
-    What is your kid\'s name?
+    [missing \"en.setName.kidsName\" translation]
   </Text>
   <View
     style={
@@ -128,7 +128,7 @@ exports[`test renders the <SetName> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Next step
+        [missing \"en.general.nextStep\" translation]
          
       </Text>
     </View>
