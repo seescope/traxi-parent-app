@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Image, Text, Platform, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Analytics from 'react-native-analytics';
+import I18n from 'react-native-i18n';
 
 import { WHITE, NEUTRAL, TRANSPARENT } from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
@@ -62,7 +63,7 @@ export default () => {
           </TouchableOpacity> :
           <View />}
         <Text style={headerStyle}>
-          Not ready yet?
+          {I18n.t('notReadyYet.header')}
         </Text>
         <View />
       </View>
@@ -70,22 +71,22 @@ export default () => {
       <Spacing height={32} />
 
       <Text style={bodyStyle}>
-        If your kid isn't around right now or you don't have time to set up traxi, don't worry.
+        {I18n.t('notReadyYet.body1')}
       </Text>
 
       <Text style={bodyStyle}>
-        Press the button below and we'll send you a reminder tomorrow.
+        {I18n.t('notReadyYet.body2')}
       </Text>
 
       <Text style={bodyStyle}>
-        You can also come back to the app whenever you're ready.
+        {I18n.t('notReadyYet.body3')}
       </Text>
 
       <Spacing height={16} />
 
       <View style={buttonContainer}>
         <Button onPress={showThankYou}>
-          Remind me tomorrow
+          {I18n.t('notReadyYet.button')}
         </Button>
       </View>
     </View>

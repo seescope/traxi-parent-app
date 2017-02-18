@@ -1,11 +1,17 @@
 import React from 'react';
 import Firebase from 'firebase';
 import { AsyncStorage } from 'react-native';
+import I18n from 'react-native-i18n';
 
 import ParentApp from './App/Containers/ParentApp';
 import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
+import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
+
+I18n.fallbacks = true;
+I18n.translations = Translation;
+
 
 export default class extends React.Component {
   constructor(props) {

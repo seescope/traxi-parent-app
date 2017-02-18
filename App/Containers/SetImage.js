@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import I18n from 'react-native-i18n';
 
 import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
@@ -72,6 +73,9 @@ export const selectImage = pickImage => dispatch => {
 };
 
 const style = {
+  outerContainer: {
+    flex: 1,
+  },
   container: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -92,10 +96,9 @@ const style = {
 };
 
 const SetImage = ({ parentName, kidName, onPress }) => (
-   // eslint-disable-next-line
-  <View style={{ flex: 1 }}>
+  <View style={style.outerContainer}>
     <View style={style.container}>
-      <HeaderText>Thanks{parentName && `, ${parentName}`}!</HeaderText>
+      <HeaderText>{I18n.t('general.thanks')}, {parentName}!</HeaderText>
 
       <Spacing height={32} />
 
@@ -104,10 +107,14 @@ const SetImage = ({ parentName, kidName, onPress }) => (
         avatarURL=""
       />
 
+      <Text style={style.bodyText}>
+        {I18n.t('setImage.setAPictureFor')} {kidName}.
+      </Text>
+
       <Spacing height={32} />
 
       <Text style={style.bodyText}>
-        Now, let's set a picture for {kidName}.
+        {I18n.t('setImage.dontWorry')}.
       </Text>
 
       <Spacing />
@@ -119,13 +126,8 @@ const SetImage = ({ parentName, kidName, onPress }) => (
       <Spacing height={32} />
     </View>
     <View style={style.buttonContainer}>
-      <Button
-        style={style.button} primary={false} onPress={
-        () => onPress(false)}
-      >
-        Not right now
-      </Button>
-      <Button style={style.button} onPress={() => onPress(true)}>Set a picture</Button>
+      <Button primary={false} onPress={() => onPress(false)}>{I18n.t('setImage.notNow')}</Button>
+      <Button onPress={() => onPress(true)}>{I18n.t('setImage.chooseAPicture')}</Button>
     </View>
   </View>
 );

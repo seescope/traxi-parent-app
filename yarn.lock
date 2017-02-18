@@ -4044,6 +4044,10 @@ react-native-fabric@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-native-fabric/-/react-native-fabric-0.4.1.tgz#5fcb604daf17d0dff70603ff3eeba9e3f3160ddd"
 
+react-native-i18n@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-1.0.0.tgz#0c407d9ebb846aae1aa5e05de6503008553f02fd"
+
 "react-native-image-picker@https://github.com/traxicorp/react-native-image-picker":
   version "0.24.1"
   resolved "https://github.com/traxicorp/react-native-image-picker#e4dc969bf69ada0dca73630de9fc379bdb3c3466"
