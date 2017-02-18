@@ -12,7 +12,6 @@ import { logError } from './App/Utils';
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
-
 export default class extends React.Component {
   constructor(props) {
     super(props);
