@@ -34,7 +34,7 @@ const iosInstructions = step => {
   return instructions[step];
 };
 
-const androidInstructions = (step, kidName) => {
+const androidInstructions = (step, kidName, setupID) => {
   const instructions = [
     '',
     '',
@@ -43,7 +43,7 @@ const androidInstructions = (step, kidName) => {
     '',
     I18n.t('instructions.android0', { kidName }),
     I18n.t('instructions.android1', { kidName }),
-    I18n.t('instructions.android2'),
+    I18n.t('instructions.android2', { setupID }),
   ];
 
   return instructions[step];
@@ -78,14 +78,14 @@ const ANDROID_IMAGES = [
 ];
 
 
-const instructionText = (step, kidName, deviceType) => {
+const instructionText = (step, kidName, deviceType, setupID) => {
   switch (deviceType) {
     case 'unknown':
       return I18n.t('instructions.goToMyTraxi', { kidName });
     case 'iPhone':
       return iosInstructions(step);
     case 'Android':
-      return androidInstructions(step, kidName);
+      return androidInstructions(step, kidName, setupID);
     case 'iPad':
       return iosInstructions(step);
     default:
