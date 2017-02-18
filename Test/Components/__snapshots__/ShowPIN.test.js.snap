@@ -14,15 +14,7 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    On 
-    Test
-    \'s device 
-    
-    
-    go to mytraxi.com 
-    
-    
-    and enter the code:
+    [missing \"en.showPin.header\" translation]
   </Text>
   <View
     style={
@@ -75,9 +67,7 @@ exports[`test renders 1`] = `
           },
         ]
       }>
-      Waiting for 
-      Test
-      \'s device...
+      [missing \"en.showPin.waiting\" translation]
     </Text>
   </View>
   <View
@@ -127,7 +117,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I need help
+        [missing \"en.general.needHelp\" translation]
          
       </Text>
     </View>

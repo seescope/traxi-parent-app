@@ -133,7 +133,7 @@ exports[`test renders 1`] = `
           "textAlign": "center",
         }
       }>
-      First, get your kid\'s device
+      [missing \"en.intro.header0\" translation]
     </Text>
     <Text
       accessible={true}
@@ -150,7 +150,7 @@ exports[`test renders 1`] = `
           "textAlign": "center",
         }
       }>
-      Don\'t worry, you can do this later if you like.
+      [missing \"en.intro.subheader0\" translation]
     </Text>
     <View
       style={

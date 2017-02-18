@@ -19,9 +19,9 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Thanks
+    [missing \"en.prompt.header\" translation]
+    , 
     , Kane
-     !
   </Text>
   <View
     style={
@@ -68,9 +68,7 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Do you have 
-    Jeff
-    \'s phone or tablet?
+    [missing \"en.prompt.doYouHave\" translation]
   </Text>
   <View
     style={
@@ -121,7 +119,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        No
+        [missing \"en.prompt.no\" translation]
          
       </Text>
     </View>
@@ -159,7 +157,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        Yes
+        [missing \"en.prompt.yes\" translation]
          
       </Text>
     </View>
