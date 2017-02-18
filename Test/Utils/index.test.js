@@ -65,19 +65,3 @@ describe('experimentViewed', () => {
     expect(event).toMatchSnapshot();
   });
 });
-
-describe('sendPhoneNumberToSlack', () => {
-  it('sends a phone number to Slack', () => {
-    const phoneNumber = '+61401633346';
-
-    const mockDispatch = jest.fn();
-    const fetch = jest.fn(() => Promise.resolve({
-      text: () => Promise.resolve('ok'),
-    }));
-
-    return sendPhoneNumberToSlack(phoneNumber).then(() => {
-      expect(mockDispatch.mock.calls).toMatchSnapshot();
-      expect(fetch.mock.calls).toMatchSnapshot();
-    });
-  });
-});

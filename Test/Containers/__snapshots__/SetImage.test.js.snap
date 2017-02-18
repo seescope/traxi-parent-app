@@ -48,9 +48,10 @@ exports[`test renders the <SetImage> component 1`] = `
           "textAlign": "center",
         }
       }>
-      Thanks
-      , Name
-       !
+      [missing \"en.general.thanks\" translation]
+      , 
+      Name
+      !
     </Text>
     <View
       style={
@@ -78,6 +79,25 @@ exports[`test renders the <SetImage> component 1`] = `
           "width": 204,
         }
       } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
+          "textAlign": "center",
+        }
+      }>
+      [missing \"en.setImage.setAPictureFor\" translation]
+       
+      Jeff
+      .
+    </Text>
     <View
       style={
         Object {
@@ -98,8 +118,7 @@ exports[`test renders the <SetImage> component 1`] = `
           "textAlign": "center",
         }
       }>
-      Now, let\'s set a picture for 
-      Jeff
+      [missing \"en.setImage.dontWorry\" translation]
       .
     </Text>
     <View
@@ -173,7 +192,7 @@ exports[`test renders the <SetImage> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Not right now
+        [missing \"en.setImage.notNow\" translation]
          
       </Text>
     </View>
@@ -211,7 +230,7 @@ exports[`test renders the <SetImage> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Set a picture
+        [missing \"en.setImage.chooseAPicture\" translation]
          
       </Text>
     </View>
