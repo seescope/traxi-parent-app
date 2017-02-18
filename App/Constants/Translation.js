@@ -1,3 +1,5 @@
+/* eslint max-len: ["error", { "ignoreStrings": true }] */
+
 export default {
   en: {
     general: {
@@ -44,8 +46,8 @@ export default {
       yes: 'Yes, I do',
     },
     instructions: {
-      ios0: `Tap the "Install"\n button in the top right`,
-      ios1: `Tap the "Install"\n button again`,
+      ios0: 'Tap the "Install"\n button in the top right',
+      ios1: 'Tap the "Install"\n button again',
       ios2: 'Tap "Done"',
       android0: "Install traxi Child App \n on {{kidName}}'s phone",
       android1: "Open traxi Child App \n on {{kidName}}'s phone",
@@ -57,8 +59,20 @@ export default {
       waiting: "Waiting for {{kidName}}'s device...",
     },
     waitingForDevice: {
-      header: `Waiting for traxi to \n start on {{kidName}}'s {{deviceType}}`,
+      header: 'Waiting for traxi to \n start on {{kidName}}\'s {{deviceType}}',
       waiting: 'Waiting',
+    },
+    notReadyYet: {
+      header: 'Not ready yet?',
+      body1: "If your kid isn't around right now or you don't have time to set up traxi, don't worry.",
+      body2: "Press the button below and we'll send you a reminder tomorrow.",
+      body3: "You can also come back to the app whenever you're ready.",
+      button: 'Remind me tomorrow',
+    },
+    thanks: {
+      header: 'Thanks!',
+      body1: 'We\'ll send you a reminder tomorrow.',
+      body2: 'Remember, you can come back to the app and start monitoring your kids at any time.',
     },
   },
   ms: {
@@ -121,6 +135,18 @@ export default {
     waitingForDevice: {
       header: 'Menunggu traxi bermula pada {{deviceType}} {{kidName}}',
       waiting: 'Menunggu...',
+    },
+    notReadyYet: {
+      header: 'Tidak bersedia lagi?',
+      body1: 'Jika anak anda tidak ada di sini, yang tidak ada masalah',
+      body2: 'Ketik butang di bawah dan kami akan menghantar mesej kepada anda esok',
+      body3: 'Anda juga boleh kembali ke traxi apabila anda sudah bersedia',
+      button: 'Ingatkan saya esok',
+    },
+    thanks: {
+      header: 'Terima kasih!',
+      body1: 'Kami akan menghantar mesej kepada anda esok',
+      body2: 'Ingat, anda boleh kembali ke traxi dan mula memantau anak anda bila-bila masa',
     },
   },
 };
