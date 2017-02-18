@@ -51,7 +51,7 @@ export default {
       ios2: 'Tap "Done"',
       android0: "Install traxi Child App \n on {{kidName}}'s phone",
       android1: "Open traxi Child App \n on {{kidName}}'s phone",
-      android2: 'Tap "OK" on the next \n screen.',
+      android2: 'Insert the code {{setupID}} if needed, then tap "OK"',
       goToMyTraxi: 'Go to mytraxi.com on {{kidName}}’s device',
     },
     showPin: {
@@ -125,7 +125,7 @@ export default {
       ios2: 'Ketik "dilakukan"',
       android0: 'Pasang traxi Child App pada telefon {{kidName}}',
       android1: 'traxi Child App buka pada telefon {{kidName}}',
-      android2: 'Ketik "OK"',
+      android2: 'Memasukkan kod {{setupID}} jika perlu, kemudian ketik OK',
       goToMyTraxi: 'Pergi ke mytraxi.com pada peranti {{kidName}}',
     },
     showPin: {
