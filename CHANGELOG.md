@@ -1,3 +1,6 @@
+## 5.4.1
+Hotfix: Fix initial screen.
+
 ## 5.4.0
 - Fix iOS Support
 - Add Malay translation
