@@ -1,3 +1,6 @@
+## 5.4.2
+- Fix initial stage and selectedKid
+
 ## 5.4.1
 Hotfix: Fix initial screen.
 
