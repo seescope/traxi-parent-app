@@ -1,9 +1,5 @@
 import React, { PropTypes } from 'react';
-import {
-  Text,
-  View,
-  ActivityIndicator,
-} from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 import { WHITE } from '../Constants/Colours';
 import { TEXT } from '../Constants/Styles';
 
@@ -15,10 +11,11 @@ const LoadingIndicator = ({ children }) => (
   <View>
     <ActivityIndicator size={'large'} color={WHITE} style={spinnerStyle} />
     <Text
-      style={
-        // eslint-disable-next-line
-      [TEXT, { color: WHITE, textAlign: 'center', backgroundColor: 'transparent' }]
-    }
+      style={// eslint-disable-next-line
+      [
+        TEXT,
+        { color: WHITE, textAlign: 'center', backgroundColor: 'transparent' },
+      ]}
     >
       {children}
     </Text>
@@ -26,10 +23,7 @@ const LoadingIndicator = ({ children }) => (
 );
 
 LoadingIndicator.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 };
 
 export default LoadingIndicator;

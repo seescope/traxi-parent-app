@@ -15,12 +15,12 @@ const containerStyle = {
 };
 
 const trackStyle = width => ({
-  top: (32 / 2) - (TRACK_THICKNESS / 2),
+  top: 32 / 2 - TRACK_THICKNESS / 2,
   position: 'absolute',
   backgroundColor: TRACK_COLOUR,
   height: TRACK_THICKNESS,
   left: 14,
-  width: width - (14 * 2),
+  width: width - 14 * 2,
 });
 
 const circleStyle = {
@@ -49,9 +49,11 @@ class ProgressTrack extends React.Component {
     };
 
     this.animatedCircleStyles = STAGES.map(i => ({
-      transform: [{
-        scale: this.animatedValues[i].interpolate(interpolationOptions),
-      }],
+      transform: [
+        {
+          scale: this.animatedValues[i].interpolate(interpolationOptions),
+        },
+      ],
     }));
 
     this.animatedTextStyles = STAGES.map(i => ({
@@ -70,11 +72,13 @@ class ProgressTrack extends React.Component {
   animateCircles() {
     const { stage } = this.props;
 
-    Animated.spring(this.animatedValues[stage], {
-      toValue: 1,
-      friction: 3,
-      tension: 40,
-    }).start();
+    Animated
+      .spring(this.animatedValues[stage], {
+        toValue: 1,
+        friction: 3,
+        tension: 40,
+      })
+      .start();
   }
 
   render() {
@@ -84,13 +88,16 @@ class ProgressTrack extends React.Component {
       <View style={{ width }}>
         <View style={trackStyle(width)} />
         <View style={containerStyle}>
-          {STAGES.map(i =>
-            <Animated.View key={i} style={[circleStyle, this.animatedCircleStyles[i]]}>
+          {STAGES.map(i => (
+            <Animated.View
+              key={i}
+              style={[circleStyle, this.animatedCircleStyles[i]]}
+            >
               <Animated.Text style={[textStyle, this.animatedTextStyles[i]]}>
                 {i + 1}
               </Animated.Text>
             </Animated.View>
-          )}
+          ))}
         </View>
       </View>
     );

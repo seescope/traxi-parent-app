@@ -13,9 +13,7 @@ import moment from 'moment';
 
 import Circle from './Circle';
 import KidTile from './KidTile';
-import {
-  WHITE,
-} from '../Constants/Colours';
+import { WHITE } from '../Constants/Colours';
 import { firstName } from '../Utils';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
@@ -43,7 +41,6 @@ const style = StyleSheet.create({
   },
 });
 
-
 export const buildProps = (kid, reports) => {
   let report;
   let loading;
@@ -68,22 +65,31 @@ export const buildProps = (kid, reports) => {
 
 const getCircle = (kid, reports) => {
   const today = moment().format('YYYY-MM-DD');
-  return reports[kid.UUID]
-    && reports[kid.UUID][today]
-    && reports[kid.UUID][today].circles[1];
+  return reports[kid.UUID] &&
+    reports[kid.UUID][today] &&
+    reports[kid.UUID][today].circles[1];
 };
 
 const ReportHome = ({ kids, reports, loading, selectKid }) => (
-  <ScrollView contentContainerStyle={style.container} style={style.outerContainer}>
-    {kids.map(kid => <KidTile key={kid.UUID} kid={kid} onPress={() => selectKid(kid)}>
-      <HeaderText>{firstName(kid.name)}</HeaderText>
-      {getCircle(kid, reports) && <Circle {...getCircle(kid, reports)} />}
-      {!getCircle(kid, reports) && loading && <ActivityIndicator size="large" color={WHITE} />}
-    </KidTile>)}
+  <ScrollView
+    contentContainerStyle={style.container}
+    style={style.outerContainer}
+  >
+    {kids.map(kid => (
+      <KidTile key={kid.UUID} kid={kid} onPress={() => selectKid(kid)}>
+        <HeaderText>{firstName(kid.name)}</HeaderText>
+        {getCircle(kid, reports) && <Circle {...getCircle(kid, reports)} />}
+        {!getCircle(kid, reports) &&
+          loading &&
+          <ActivityIndicator size="large" color={WHITE} />}
+      </KidTile>
+    ))}
 
     <Background style={style.bottomContainer}>
       <View style={style.buttonContainer}>
-        <Button primary={false} onPress={() => Actions.walkthrough()}>Add another child</Button>
+        <Button primary={false} onPress={() => Actions.walkthrough()}>
+          Add another child
+        </Button>
       </View>
     </Background>
   </ScrollView>
@@ -103,7 +109,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  selectKid: (kid) => {
+  selectKid: kid => {
     dispatch(selectKidAction(kid));
     Analytics.track('Viewed Report', {
       UUID: kid.UUID,

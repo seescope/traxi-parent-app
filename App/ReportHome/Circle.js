@@ -3,13 +3,7 @@ import { View, Image, Text } from 'react-native';
 import Svg, { Circle as SVGCircle } from 'react-native-svg';
 import { isIOS } from '../Utils';
 
-import {
-  BAD,
-  WHITE,
-  NEUTRAL,
-  TRANSPARENT,
-  GOOD,
-} from '../Constants/Colours';
+import { BAD, WHITE, NEUTRAL, TRANSPARENT, GOOD } from '../Constants/Colours';
 
 const style = {
   outerCircle: {
@@ -83,7 +77,9 @@ const prettyTime = minutesUsed => {
 const Circle = ({ name, status, minutesUsed }) => (
   <View style={style.outerCircle} elevation={11}>
     <Image style={style.circle} source={images[name]}>
-      <Text style={getCircleHeaderStyle(status)}>{prettyTime(minutesUsed)}</Text>
+      <Text style={getCircleHeaderStyle(status)}>
+        {prettyTime(minutesUsed)}
+      </Text>
       <Text style={style.circleSubHeaderText}>{name}</Text>
     </Image>
     <Svg width={96} height={96} style={style.circleDonut}>

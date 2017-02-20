@@ -21,10 +21,7 @@ const HeaderText = ({ children, style }) => (
 );
 
 HeaderText.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   style: PropTypes.object,
 };
 

@@ -14,7 +14,7 @@ const { height, width } = Dimensions.get('window');
 
 const style = StyleSheet.create({
   innerContainer: {
-    minHeight: height - (width / 2),
+    minHeight: height - width / 2,
     justifyContent: 'center',
     flex: 1,
   },
@@ -30,8 +30,8 @@ const WeekView = ({ kid, reports }) => (
       <HeaderText>This Week</HeaderText>
     </KidTile>
     <Background style={style.innerContainer}>
-      {reports && <DaySummaries reports={reports} />
-        || <View style={style.container}>
+      {reports && <DaySummaries reports={reports} /> ||
+        <View style={style.container}>
           <Spacing height={64} />
           <HeaderText>No activity just yet.</HeaderText>
           <Spacing height={32} />

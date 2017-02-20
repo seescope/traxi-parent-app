@@ -8,8 +8,8 @@ jest.mock('react-native-material-kit');
 
 it('renders on Android correctly', () => {
   const onPress = () => {};
-  const tree = renderer.create(
-    <AndroidButton onPress={onPress}>Testing!</AndroidButton>
-  ).toJSON();
+  const tree = renderer
+    .create(<AndroidButton onPress={onPress}>Testing!</AndroidButton>)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });

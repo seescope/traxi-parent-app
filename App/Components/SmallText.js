@@ -13,15 +13,10 @@ const style = StyleSheet.create({
   },
 });
 
-const SmallText = ({ children }) => (
-  <Text style={style.text}>{children}</Text>
-);
+const SmallText = ({ children }) => <Text style={style.text}>{children}</Text>;
 
 SmallText.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 };
 
 export default SmallText;

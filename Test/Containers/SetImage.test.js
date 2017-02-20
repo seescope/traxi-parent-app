@@ -10,7 +10,10 @@ import ImagePicker from 'react-native-image-picker';
 import SetImage, { selectImage } from '../../App/Containers/SetImage';
 
 const mockStore = configureStore([thunk]);
-const testStore = mockStore({ parentName: 'Name', selectedKid: { name: 'Jeff Goldstein' } });
+const testStore = mockStore({
+  parentName: 'Name',
+  selectedKid: { name: 'Jeff Goldstein' },
+});
 
 const SetImageComponent = () => (
   <Provider store={testStore}>
@@ -19,9 +22,7 @@ const SetImageComponent = () => (
 );
 
 it('renders the <SetImage> component', () => {
-  const tree = renderer.create(
-    <SetImageComponent />
-  ).toJSON();
+  const tree = renderer.create(<SetImageComponent />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 

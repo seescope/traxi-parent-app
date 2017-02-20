@@ -10,8 +10,7 @@ import startVPN from '../Actions/StartVPN';
 import STYLES from '../Constants/Styles';
 import { WHITE } from '../Constants/Colours';
 
-const onPress = (UUID) => startVPN(UUID)
-  .then(() => Actions.kidReports());
+const onPress = UUID => startVPN(UUID).then(() => Actions.kidReports());
 
 const headerStyle = {
   color: WHITE,
@@ -39,9 +38,7 @@ const KidSetup = ({ UUID }) => (
     <Button onPress={() => onPress(UUID)}>OK, Got it</Button>
   </Background>
 );
-
 KidSetup.propTypes = {
   UUID: PropTypes.string.isRequired,
 };
-
 export default KidSetup;

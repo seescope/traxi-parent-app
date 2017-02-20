@@ -15,10 +15,12 @@ const style = StyleSheet.create({
 const TrailSegment = ({ trailItems, name, isToday }) => (
   <View style={style.trailContainer}>
     <TrailHeader segmentName={isToday ? `${name}` : name} {...trailItems[0]} />
-    {trailItems.slice(1).map((t, i) => [
-      <TrailLine index={i} />,
-      <TrailItem key={i} index={i} {...t} />,
-    ])}
+    {trailItems
+      .slice(1)
+      .map((t, i) => [
+        <TrailLine index={i} />,
+        <TrailItem key={i} index={i} {...t} />,
+      ])}
   </View>
 );
 

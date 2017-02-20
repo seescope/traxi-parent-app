@@ -36,11 +36,7 @@ const WaitingForDevice = ({ kidName, avatarURL, deviceType }) => (
 
     <Spacing height={32} />
 
-    <KidAvatar
-      size={166}
-      avatarURL={avatarURL}
-      state="neutral"
-    />
+    <KidAvatar size={166} avatarURL={avatarURL} state="neutral" />
 
     <Spacing height={32} />
 

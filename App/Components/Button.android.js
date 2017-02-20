@@ -8,14 +8,14 @@ const Button = ({ children, onPress, primary = true }) => {
   const TEXT_COLOUR = WHITE;
 
   const AndroidButton = MKButton.coloredButton()
-      .withBackgroundColor(BACKGROUND_COLOUR)
-      .withTextStyle({
-        fontFamily: 'Raleway-Bold',
-        color: TEXT_COLOUR,
-      })
-      .withText(children)
-      .withOnPress(onPress)
-      .build();
+    .withBackgroundColor(BACKGROUND_COLOUR)
+    .withTextStyle({
+      fontFamily: 'Raleway-Bold',
+      color: TEXT_COLOUR,
+    })
+    .withText(children)
+    .withOnPress(onPress)
+    .build();
 
   return (
     <View>

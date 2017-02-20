@@ -11,7 +11,7 @@ const style = {
     padding: 16,
   },
   container: {
-    minHeight: height - (width / 2),
+    minHeight: height - width / 2,
   },
 };
 

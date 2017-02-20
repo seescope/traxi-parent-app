@@ -1,10 +1,5 @@
 import React, { PropTypes } from 'react';
-import {
-  Image,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-} from 'react-native';
+import { Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 
@@ -27,12 +22,13 @@ const DayView = ({ kid, report, date }) => (
       <Image source={require('../Images/chevron_left.png')} />
       <HeaderText>{relativeDate(date)}</HeaderText>
     </KidTile>
-    {report && <Day
-      day={date}
-      isToday={isToday(date)}
-      trail={report.trail}
-      circles={report.circles}
-    />}
+    {report &&
+      <Day
+        day={date}
+        isToday={isToday(date)}
+        trail={report.trail}
+        circles={report.circles}
+      />}
   </ScrollView>
 );
 

@@ -35,7 +35,9 @@ const ShowPIN = ({ setupID, kidName }) => (
 
     <Spacing height={64} />
 
-    <LoadingIndicator>{I18n.t('showPin.waiting', { kidName })}</LoadingIndicator>
+    <LoadingIndicator>
+      {I18n.t('showPin.waiting', { kidName })}
+    </LoadingIndicator>
 
     <Spacing height={32} />
 

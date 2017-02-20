@@ -15,10 +15,10 @@ const KidApp = proxyquire.noCallThru()('../../App/Containers/KidApp', {
     Scene: View,
   },
   'react-redux': {
-    connect: () => ( a => a ),
+    connect: () => a => a,
     Provider: View,
   },
-  'redux': {
+  redux: {
     createStore: TEST_CREATE_STORE,
     applyMiddleware: TEST_APPLY_MIDDLEWARE,
   },
@@ -45,7 +45,7 @@ describe('<KidApp />', () => {
     const wrapper = shallow(<KidApp isInstalled={false} UUID={'test'} />);
     const initialState = TEST_CREATE_STORE.getCall(0).args[1];
 
-    const EXPECTED_INITIAL_STATE = { };
+    const EXPECTED_INITIAL_STATE = {};
 
     expect(initialState).to.eql(EXPECTED_INITIAL_STATE);
   });

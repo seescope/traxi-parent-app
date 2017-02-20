@@ -17,13 +17,11 @@ const SetNameComponent = () => (
 );
 
 it('renders the <SetName> component', () => {
-  const tree = renderer.create(
-    <SetNameComponent />
-  ).toJSON();
+  const tree = renderer.create(<SetNameComponent />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('handles setting the kid\'s name', () => {
+it("handles setting the kid's name", () => {
   const mockDispatch = jest.fn();
   setKidName('Test')(mockDispatch);
   expect(mockDispatch.mock.calls).toMatchSnapshot();

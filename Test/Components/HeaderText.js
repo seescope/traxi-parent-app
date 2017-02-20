@@ -14,9 +14,11 @@ describe('<HeaderText>', () => {
   it('allows the style to be changed', () => {
     const TEST_TEXT = 'Test Text';
     const TEST_STYLE = { color: 'blue' };
-    const wrapper = shallow(<HeaderText style={TEST_STYLE}>{TEST_TEXT}</HeaderText>);
+    const wrapper = shallow(
+      <HeaderText style={TEST_STYLE}>{TEST_TEXT}</HeaderText>,
+    );
 
-    const actual = (wrapper.prop('style')).color;
+    const actual = wrapper.prop('style').color;
     expect(actual).to.equal(TEST_STYLE.color);
   });
 });

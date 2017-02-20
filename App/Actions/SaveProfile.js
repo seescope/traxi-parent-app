@@ -7,8 +7,10 @@ if (!NativeModules.NotificationManager) {
   };
 }
 
-const saveProfileToFirebase = (newProfile) => new Promise((resolve, reject) => {
-  const firebase = new Firebase(`https://traxiapp.firebaseio.com/parents/${newProfile.UUID}`);
+const saveProfileToFirebase = newProfile => new Promise((resolve, reject) => {
+  const firebase = new Firebase(
+    `https://traxiapp.firebaseio.com/parents/${newProfile.UUID}`,
+  );
   firebase.set(newProfile, error => {
     if (error) {
       reject(error);
@@ -18,16 +20,19 @@ const saveProfileToFirebase = (newProfile) => new Promise((resolve, reject) => {
   });
 });
 
-const saveProfileToStorage = profile => AsyncStorage.setItem('profile', JSON.stringify(profile));
+const saveProfileToStorage = profile =>
+  AsyncStorage.setItem('profile', JSON.stringify(profile));
 
-const saveProfile = (profile) => NativeModules.NotificationManager.register()
+const saveProfile = profile => NativeModules.NotificationManager
+  .register()
   .then(token => Promise.resolve({
     ...profile,
     token,
   }))
-  .then(newProfile => Promise.all([
-    saveProfileToStorage(newProfile),
-    saveProfileToFirebase(newProfile),
-  ]));
+  .then(newProfile =>
+    Promise.all([
+      saveProfileToStorage(newProfile),
+      saveProfileToFirebase(newProfile),
+    ]));
 
 export default saveProfile;

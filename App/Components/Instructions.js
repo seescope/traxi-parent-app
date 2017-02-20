@@ -77,7 +77,6 @@ const ANDROID_IMAGES = [
   {},
 ];
 
-
 const instructionText = (step, kidName, deviceType, setupID) => {
   switch (deviceType) {
     case 'unknown':
@@ -126,12 +125,17 @@ const INSTRUCTION_STYLES = StyleSheet.create({
 const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
   <View style={INSTRUCTION_STYLES.container}>
     <View style={INSTRUCTION_STYLES.container}>
-      <HeaderText>{instructionText(step, kidName, deviceType, setupID)}</HeaderText>
+      <HeaderText>
+        {instructionText(step, kidName, deviceType, setupID)}
+      </HeaderText>
 
       <Spacing height={64} />
 
       <View style={buttonContainer}>
-        <Button onPress={() => Intercom.displayMessageComposer()} primary={false}>
+        <Button
+          onPress={() => Intercom.displayMessageComposer()}
+          primary={false}
+        >
           {I18n.t('general.needHelp')}
         </Button>
         <Button onPress={nextStep}>

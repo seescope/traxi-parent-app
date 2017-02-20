@@ -23,7 +23,8 @@ const style = {
   },
 };
 
-export const setKidName = kidName => dispatch => dispatch(enterKidName(kidName));
+export const setKidName = kidName =>
+  dispatch => dispatch(enterKidName(kidName));
 
 export const nextStep = () => dispatch => {
   Keyboard.dismiss();
@@ -43,7 +44,9 @@ const SetName = ({ onChangeText, onPress }) => (
     <Spacing height={16} />
 
     <TextInput
-      refFunc={ref => { this.textInput = ref; }}
+      refFunc={ref => {
+        this.textInput = ref;
+      }}
       onChangeText={onChangeText}
       onSubmitEditing={() => onPress()}
     />

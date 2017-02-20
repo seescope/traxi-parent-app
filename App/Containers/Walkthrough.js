@@ -109,18 +109,10 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
 
 const Walkthrough = ({ step, kid, nextStep, parentName }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
-    <ProgressTrack
-      stage={STAGE_MAP[step]}
-      width={width - 64}
-    />
+    <ProgressTrack stage={STAGE_MAP[step]} width={width - 64} />
 
     <View style={WALKTHROUGH_STYLES.instructionsContainer}>
-      {getNextComponent(
-        step,
-        nextStep,
-        kid,
-        parentName
-      )}
+      {getNextComponent(step, nextStep, kid, parentName)}
     </View>
   </Background>
 );

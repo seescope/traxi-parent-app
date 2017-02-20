@@ -9,25 +9,24 @@ const style = {
     backgroundColor: '#111',
     flex: 1,
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
 };
 
 const { width } = Dimensions.get('window');
 
-class Playground extends React.Component  {
+class Playground extends React.Component {
   constructor() {
     super();
-
   }
 
-  render () {
+  render() {
     return (
       <View style={style.container}>
-        <Congratulations kidName={'Chris'} parentName={'Fred'}/>
+        <Congratulations kidName={'Chris'} parentName={'Fred'} />
       </View>
     );
   }
 }
 
-export default Playground
+export default Playground;

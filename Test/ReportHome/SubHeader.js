@@ -5,7 +5,7 @@ chai.use(chaiEnzyme());
 import { shallow } from 'enzyme';
 import SubHeader from '../../App/ReportHome/SubHeader';
 
-describe ('<SubHeader>', () => {
+describe('<SubHeader>', () => {
   it('renders correctly', () => {
     const testText = 'Test Text';
     const wrapper = shallow(<SubHeader>{testText}</SubHeader>);

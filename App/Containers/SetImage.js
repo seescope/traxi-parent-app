@@ -54,7 +54,7 @@ export const selectImage = pickImage => dispatch => {
       if (response.error === 'Photo library permissions not granted') {
         Alert.alert(
           'Unable to access your photos',
-          'Please allow traxi to access your photos to continue.'
+          'Please allow traxi to access your photos to continue.',
         );
       }
 
@@ -102,10 +102,7 @@ const SetImage = ({ parentName, kidName, onPress }) => (
 
       <Spacing height={32} />
 
-      <KidAvatar
-        size={204}
-        avatarURL=""
-      />
+      <KidAvatar size={204} avatarURL="" />
 
       <Text style={style.bodyText}>
         {I18n.t('setImage.setAPictureFor')} {kidName}.
@@ -126,8 +123,12 @@ const SetImage = ({ parentName, kidName, onPress }) => (
       <Spacing height={32} />
     </View>
     <View style={style.buttonContainer}>
-      <Button primary={false} onPress={() => onPress(false)}>{I18n.t('setImage.notNow')}</Button>
-      <Button onPress={() => onPress(true)}>{I18n.t('setImage.chooseAPicture')}</Button>
+      <Button primary={false} onPress={() => onPress(false)}>
+        {I18n.t('setImage.notNow')}
+      </Button>
+      <Button onPress={() => onPress(true)}>
+        {I18n.t('setImage.chooseAPicture')}
+      </Button>
     </View>
   </View>
 );

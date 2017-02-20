@@ -115,13 +115,12 @@ export default class extends React.Component {
     const { step } = this.state;
     const newStep = step < 4 ? step + 1 : step;
 
-    Animated.timing(
-      this.animations[newStep],
-      {
+    Animated
+      .timing(this.animations[newStep], {
         toValue: 1,
         duration: ANIMATION_DURATION,
-      }
-    ).start();
+      })
+      .start();
 
     this.setState({
       step: newStep,
@@ -132,13 +131,12 @@ export default class extends React.Component {
     const { step } = this.state;
     const newStep = step > 0 ? step - 1 : step;
 
-    Animated.timing(
-      this.animations[step],
-      {
+    Animated
+      .timing(this.animations[step], {
         toValue: 0,
         duration: ANIMATION_DURATION,
-      }
-    ).start();
+      })
+      .start();
 
     this.setState({
       step: newStep,
@@ -175,23 +173,23 @@ export default class extends React.Component {
         />
 
         <View style={paddingStyle}>
-          {this.state.step > 0 ? <TouchableOpacity onPress={() => this.previousStep()}>
-            <Image
-              source={require('../Images/left-arrow.png')}
-            />
-          </TouchableOpacity> : <View />}
-          {this.state.step < 4 ? <Animatable.View
-            useNativeDriver
-            animation="bounce"
-            duration={2000}
-            delay={3000}
-          >
-            <TouchableOpacity onPress={() => this.nextStep()}>
-              <Image
-                source={require('../Images/right-arrow.png')}
-              />
-            </TouchableOpacity>
-          </Animatable.View> : <View />}
+          {this.state.step > 0
+            ? <TouchableOpacity onPress={() => this.previousStep()}>
+                <Image source={require('../Images/left-arrow.png')} />
+              </TouchableOpacity>
+            : <View />}
+          {this.state.step < 4
+            ? <Animatable.View
+                useNativeDriver
+                animation="bounce"
+                duration={2000}
+                delay={3000}
+              >
+                <TouchableOpacity onPress={() => this.nextStep()}>
+                  <Image source={require('../Images/right-arrow.png')} />
+                </TouchableOpacity>
+              </Animatable.View>
+            : <View />}
         </View>
 
         <View style={textContainer}>
@@ -201,10 +199,7 @@ export default class extends React.Component {
             duration={1000}
             animation="bounceInLeft"
           >
-            <ProgressTrack
-              stage={this.state.step}
-              width={width - 64}
-            />
+            <ProgressTrack stage={this.state.step} width={width - 64} />
           </Animatable.View>
 
           <Spacing height={32} />
@@ -215,15 +210,18 @@ export default class extends React.Component {
 
           <Spacing height={16} />
 
-          {this.state.step === 4 && <Animatable.View
-            useNativeDriver
-            delay={1000}
-            duration={1000}
-            easing="ease-in-out"
-            animation="bounceInUp"
-          >
-            <Button onPress={() => onPress()} primary={false}>{I18n.t('intro.button')}</Button>
-          </Animatable.View>}
+          {this.state.step === 4 &&
+            <Animatable.View
+              useNativeDriver
+              delay={1000}
+              duration={1000}
+              easing="ease-in-out"
+              animation="bounceInUp"
+            >
+              <Button onPress={() => onPress()} primary={false}>
+                {I18n.t('intro.button')}
+              </Button>
+            </Animatable.View>}
         </View>
       </View>
     );

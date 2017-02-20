@@ -1,11 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Dimensions, Text, View, Image } from 'react-native';
 
-import {
-  WHITE,
-  NEUTRAL,
-  NEUTRAL_WITH_OPACITY,
-} from '../Constants/Colours';
+import { WHITE, NEUTRAL, NEUTRAL_WITH_OPACITY } from '../Constants/Colours';
 import PILL_INDENTS from '../Constants/PillIndents';
 import { isIOS, getAppNiceName } from '../Utils';
 
@@ -48,7 +44,7 @@ const style = {
     borderRadius: 8,
   },
   trailHeaderText: {
-    width: (width / 2) - 32,
+    width: width / 2 - 32,
     marginLeft: 16,
     color: NEUTRAL_WITH_OPACITY,
   },
@@ -58,7 +54,6 @@ const getPillStyle = index => ({
   ...style.pill,
   marginLeft: PILL_INDENTS[(index + 1) % PILL_INDENTS.length],
 });
-
 
 const TrailItem = ({ index, name, logo, timeStamp, minutesUsed }) => (
   <View style={style.pillRow}>

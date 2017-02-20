@@ -33,7 +33,8 @@ export default class extends React.Component {
       if (profile !== null && profile.UUID) {
         const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;
 
-        new Firebase(URI).once('value',
+        new Firebase(URI).once(
+          'value',
           data => {
             if (data.val() !== null) {
               this.setState({
@@ -41,7 +42,9 @@ export default class extends React.Component {
                 loading: false,
               });
             } else {
-              logError(`No profile found for ${profile.UUID}. Continuing as new user.`);
+              logError(
+                `No profile found for ${profile.UUID}. Continuing as new user.`,
+              );
               this.setState({ loading: false });
             }
           },
@@ -49,7 +52,7 @@ export default class extends React.Component {
             logError(`Error fetching profile: ${error.message}`);
             alert('Error fetching data from traxi.');
             this.setState({ loading: false });
-          }
+          },
         );
       } else {
         this.setState({ loading: false });
@@ -68,8 +71,6 @@ export default class extends React.Component {
       );
     }
 
-    return (
-      <ParentApp profile={profile} />
-    );
+    return <ParentApp profile={profile} />;
   }
 }

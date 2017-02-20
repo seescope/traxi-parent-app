@@ -1,8 +1,10 @@
 import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
-import fetchReports, { parseReport, coalesceApps, isOverlapping } from '../../App/Actions/FetchReports';
-import {
-  TEST_KID,
-} from '../Mocks';
+import fetchReports, {
+  parseReport,
+  coalesceApps,
+  isOverlapping,
+} from '../../App/Actions/FetchReports';
+import { TEST_KID } from '../Mocks';
 import moment from 'moment';
 
 const testTrailItems = [
@@ -46,14 +48,14 @@ describe('parseReport', () => {
   it('handles reports with missing data', () => {
     const testReportData = [];
     expect(() => {
-      parseReport(testReportData)
+      parseReport(testReportData);
     }).toThrow();
   });
 
   it('handles null data', () => {
     const testReportData = null;
     expect(() => {
-      parseReport(testReportData)
+      parseReport(testReportData);
     }).toThrow();
   });
 });
@@ -68,7 +70,7 @@ describe('coalesceApps', () => {
 describe('isOverlapping', () => {
   it.only('finds overlapping apps', () => {
     const times = [
-      { 
+      {
         name: 'App A',
         timeStamp: moment('2016-12-14T13:40:56Z'),
         minutesUsed: 10,
@@ -77,7 +79,7 @@ describe('isOverlapping', () => {
         name: 'App A',
         timeStamp: moment('2016-12-17T10:37:16Z'),
         minutesUsed: 10,
-      }
+      },
     ];
     expect(isOverlapping(times[0], times[1])).toBeFalsy();
     expect(isOverlapping(testTrailItems[1], testTrailItems[0])).toBeTruthy();

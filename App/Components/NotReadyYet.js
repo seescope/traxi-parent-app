@@ -57,11 +57,11 @@ export default () => {
   return (
     <View style={containerStyle}>
       <View style={topContainerStyle}>
-        {isIOS ?
-          <TouchableOpacity onPress={() => Actions.pop()}>
-            <Image source={require('../Images/chevron_left.png')} />
-          </TouchableOpacity> :
-          <View />}
+        {isIOS
+          ? <TouchableOpacity onPress={() => Actions.pop()}>
+              <Image source={require('../Images/chevron_left.png')} />
+            </TouchableOpacity>
+          : <View />}
         <Text style={headerStyle}>
           {I18n.t('notReadyYet.header')}
         </Text>

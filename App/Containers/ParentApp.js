@@ -38,7 +38,6 @@ const CLOSING_SCENES = {
   thankyou: true,
 };
 
-
 const RouterWithRedux = connect()(Router);
 
 class ParentApp extends React.Component {
@@ -67,22 +66,29 @@ class ParentApp extends React.Component {
     this.store = createStore(
       ParentAppReducer,
       INITIAL_STATE,
-      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware)
+      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
     );
 
     if (profile && profile.name) {
       this.store.dispatch({ type: 'LOGGED_IN', profile });
     }
 
-    Promise.resolve(AWSCognitoCredentials.initWithOptions({
-      region: COGNITO_REGION,
-      identity_pool_id: IDENTITY_POOL_ID,
-    }))
-    .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
-    .then(() => {
-      this.fetchReports();
-      Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
-    });
+    Promise
+      .resolve(
+        AWSCognitoCredentials.initWithOptions({
+          region: COGNITO_REGION,
+          identity_pool_id: IDENTITY_POOL_ID,
+        }),
+      )
+      .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
+      .then(() => {
+        this.fetchReports();
+        Timer.setInterval(
+          TIMER_NAME,
+          this.fetchReports.bind(this),
+          REFRESH_INTERVAL,
+        );
+      });
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
   }
@@ -115,7 +121,9 @@ class ParentApp extends React.Component {
     const { profile } = this.store.getState();
     const kids = profile.kids;
 
-    if (!kids) { return null; }
+    if (!kids) {
+      return null;
+    }
 
     kids.forEach(kid => {
       const action = fetchReportsAction(kid);
@@ -133,9 +141,17 @@ class ParentApp extends React.Component {
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
-          <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
+          <Scene
+            key="splashScreen"
+            initial={!isInstalled}
+            component={SplashScreen}
+          />
           <Scene key="intro" component={Intro} />
-          <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
+          <Scene
+            key="areYouReady"
+            initial={introSeen}
+            component={AreYouReady}
+          />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />

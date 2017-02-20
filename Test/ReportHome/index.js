@@ -15,14 +15,18 @@ const ReportHome = proxyquire.noCallThru()('../../App/ReportHome', {
   'react-native-viewpager': View,
 });
 
-const { ReportHomeComponent, buildProps, mapStateToProps, mapDispatchToProps } = ReportHome;
-
+const {
+  ReportHomeComponent,
+  buildProps,
+  mapStateToProps,
+  mapDispatchToProps,
+} = ReportHome;
 
 describe('<ReportHome/>', () => {
   it('component renders', () => {
     const report = {
       alerts: [],
-      goodBehaviour: []
+      goodBehaviour: [],
     };
 
     const props = {
@@ -39,7 +43,11 @@ describe('<ReportHome/>', () => {
 
   it('builds the correct props', () => {
     const TEST_DATE = '2016-07-10';
-    const { status, date, report, kid } = buildProps(TEST_KID, TEST_STATE.reports, TEST_DATE);
+    const { status, date, report, kid } = buildProps(
+      TEST_KID,
+      TEST_STATE.reports,
+      TEST_DATE,
+    );
 
     expect(date).to.equal(TEST_DATE);
     expect(status).to.equal('bad');
