@@ -52,7 +52,7 @@ class ParentApp extends React.Component {
       loading: false,
       profile,
       contacts: [],
-      step: 7,
+      step: 0,
       kidSuggestions: [],
       kids: kids || [],
       selectedKid: kids && kids[0] || {},
