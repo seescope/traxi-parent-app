@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import I18n from 'react-native-i18n';
 
 import HeaderText from '../Components/HeaderText';
 import KidAvatar from '../Components/KidAvatar';
@@ -25,12 +26,13 @@ const style = {
     width: width - 64,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    padding: 32,
   },
 };
 
 const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
   <View style={style.container}>
-    <HeaderText>Looking good, {parentName}!</HeaderText>
+    <HeaderText>{I18n.t('prompt.header')}, {parentName && `, ${parentName}`}</HeaderText>
 
     <Spacing height={32} />
 
@@ -43,23 +45,23 @@ const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
     <Spacing height={32} />
 
     <Text style={style.bodyText}>
-      Do you have {kidName}'s phone or tablet?
+      {I18n.t('prompt.doYouHave', { kidName })}
     </Text>
 
     <Spacing />
 
     <View style={style.buttonContainer}>
       <Button primary={false} onPress={() => Actions.notReadyYet()}>
-        No I don't
+        {I18n.t('prompt.no')}
       </Button>
       <Button onPress={() => nextStep()}>
-        I have {kidName}'s device
+        {I18n.t('prompt.yes')}
       </Button>
     </View>
   </View>;
 
 Prompt.propTypes = {
-  parentName: React.PropTypes.string.isRequired,
+  parentName: React.PropTypes.string,
   kidName: React.PropTypes.string.isRequired,
   avatarURL: React.PropTypes.string.isRequired,
   nextStep: React.PropTypes.func.isRequired,

@@ -12,23 +12,9 @@ exports[`test renders 1`] = `
         "fontSize": 30,
         "marginBottom": -2,
         "textAlign": "center",
-        "textShadowColor": "rgba(75, 73, 73, 0.8)",
-        "textShadowOffset": Object {
-          "height": 3,
-          "width": 3,
-        },
-        "textShadowRadius": 20,
       }
     }>
-    On 
-    Test
-    \'s device 
-    
-    
-    go to mytraxi.com 
-    
-    
-    and enter the code:
+    [missing \"en.showPin.header\" translation]
   </Text>
   <View
     style={
@@ -42,6 +28,7 @@ exports[`test renders 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
+        "backgroundColor": "transparent",
         "color": "#FFF",
         "fontSize": 64,
         "textAlign": "center",
@@ -74,14 +61,13 @@ exports[`test renders 1`] = `
         Array [
           undefined,
           Object {
+            "backgroundColor": "transparent",
             "color": "#FFF",
             "textAlign": "center",
           },
         ]
       }>
-      Waiting for 
-      Test
-      \'s device...
+      [missing \"en.showPin.waiting\" translation]
     </Text>
   </View>
   <View
@@ -131,7 +117,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I need help
+        [missing \"en.general.needHelp\" translation]
          
       </Text>
     </View>

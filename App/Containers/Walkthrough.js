@@ -38,7 +38,7 @@ const WALKTHROUGH_STYLES = {
   },
   instructionsContainer: {
     flex: 1,
-    paddingTop: 64,
+    paddingTop: 20,
   },
   loadingindicatorContainer: {
     flex: 1,
@@ -129,7 +129,7 @@ Walkthrough.propTypes = {
   step: PropTypes.number.isRequired,
   kid: PropTypes.object.isRequired,
   nextStep: PropTypes.func.isRequired,
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Walkthrough);

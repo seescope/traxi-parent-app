@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Analytics from 'react-native-analytics';
+import I18n from 'react-native-i18n';
 
 import ProgressTrack from '../Components/ProgressTrack';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
@@ -77,21 +78,8 @@ const STEP_IMAGES = [
   require('../Images/intro-step-5.png'),
 ];
 
-const HEADER_TEXT = [
-  'First, get your kid\'s device',
-  'Go to mytraxi.com',
-  'Then enter a PIN',
-  'Follow the instructions',
-  'Then you\'re all done!',
-];
-
-const SUBHEADER_TEXT = [
-  'Don\'t worry, you can do this later if you like.',
-  'Use the web browser on your kid’s device',
-  'We\'ll tell you what it is soon',
-  'It only takes a couple of seconds',
-  'Doesn\'t that look easy?',
-];
+const headerText = step => I18n.t(`intro.header${step}`);
+const subheaderText = step => I18n.t(`intro.subheader${step}`);
 
 export const onPress = () => {
   Analytics.track('Finished Intro');
@@ -221,9 +209,9 @@ export default class extends React.Component {
 
           <Spacing height={32} />
 
-          <Text style={headerStyle}>{HEADER_TEXT[this.state.step]}</Text>
+          <Text style={headerStyle}>{headerText(this.state.step)}</Text>
 
-          <Text style={subHeaderStyle}>{SUBHEADER_TEXT[this.state.step]}</Text>
+          <Text style={subHeaderStyle}>{subheaderText(this.state.step)}</Text>
 
           <Spacing height={16} />
 
@@ -234,7 +222,7 @@ export default class extends React.Component {
             easing="ease-in-out"
             animation="bounceInUp"
           >
-            <Button onPress={() => onPress()} primary={false}>Got it!</Button>
+            <Button onPress={() => onPress()} primary={false}>{I18n.t('intro.button')}</Button>
           </Animatable.View>}
         </View>
       </View>

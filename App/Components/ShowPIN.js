@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import Intercom from 'react-native-intercom';
+import I18n from 'react-native-i18n';
 
 import HeaderText from './HeaderText';
 import Spacing from './Spacing';
@@ -12,6 +13,7 @@ const PINstyle = {
   fontSize: 64,
   color: WHITE,
   textAlign: 'center',
+  backgroundColor: 'transparent',
 };
 
 const buttonContainer = {
@@ -22,9 +24,7 @@ const buttonContainer = {
 const ShowPIN = ({ setupID, kidName }) => (
   <View>
     <HeaderText>
-      On {kidName}'s device {'\n'}
-      go to mytraxi.com {'\n'}
-      and enter the code:
+      {I18n.t('showPin.header', { kidName })}
     </HeaderText>
 
     <Spacing height={64} />
@@ -35,13 +35,13 @@ const ShowPIN = ({ setupID, kidName }) => (
 
     <Spacing height={64} />
 
-    <LoadingIndicator>Waiting for {kidName}'s device...</LoadingIndicator>
+    <LoadingIndicator>{I18n.t('showPin.waiting', { kidName })}</LoadingIndicator>
 
     <Spacing height={32} />
 
     <View style={buttonContainer}>
       <Button primary={false} onPress={() => Intercom.displayMessageComposer()}>
-        I need help
+        {I18n.t('general.needHelp')}
       </Button>
     </View>
   </View>

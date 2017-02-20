@@ -1,7 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable quotes */
-/* eslint-disable import/no-unresolved */
-
 import React, { PropTypes } from 'react';
 import { BackAndroid } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
@@ -28,11 +24,19 @@ import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import Timer from 'react-native-timer';
 
+import Playground from '../Utils/Playground';
+
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
 const DYNAMODB_REGION = 'ap-southeast-2';
 const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
 const TIMER_NAME = 'refreshReports';
+
+const CLOSING_SCENES = {
+  reports: true,
+  splashScreen: true,
+  thankyou: true,
+};
 
 
 const RouterWithRedux = connect()(Router);
@@ -48,10 +52,15 @@ class ParentApp extends React.Component {
       loading: false,
       profile,
       contacts: [],
-      step: 0,
+      step: 7,
       kidSuggestions: [],
       kids: kids || [],
-      selectedKid: kids && kids[0] || {},
+      // selectedKid: kids && kids[0] || {},
+      selectedKid: {
+        name: 'Mohammad',
+        setupID: 1234,
+        deviceType: 'Android',
+      },
       reports: {},
     };
 
@@ -75,30 +84,31 @@ class ParentApp extends React.Component {
       Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
     });
 
-    this.backButtonHandler = () => {
-      const store = this.store;
-      const { sceneName, step } = store.getState();
-
-      if (sceneName === 'walkthrough') {
-        if (step === 0) Actions.pop();
-        else store.dispatch({ type: 'PREVIOUS_STEP' });
-
-        return true;
-      } else if (sceneName === 'congratulations') {
-        return true;
-      } else if (sceneName === 'reports') {
-        BackAndroid.exitApp();
-        return false;
-      }
-
-      Actions.pop();
-      return true;
-    };
+    this.backButtonHandler = this.backButtonHandler.bind(this);
   }
-
 
   componentWillUnmount() {
     Timer.clearInterval(TIMER_NAME);
+  }
+
+  backButtonHandler() {
+    const store = this.store;
+    const { sceneName, step } = store.getState();
+
+    if (sceneName === 'walkthrough') {
+      if (step === 0) Actions.pop();
+      else store.dispatch({ type: 'PREVIOUS_STEP' });
+
+      return true;
+    } else if (sceneName === 'congratulations') {
+      return true;
+    } else if (CLOSING_SCENES[sceneName]) {
+      BackAndroid.exitApp();
+      return false;
+    }
+
+    Actions.pop();
+    return true;
   }
 
   fetchReports() {
@@ -122,7 +132,7 @@ class ParentApp extends React.Component {
 
     return (
       <Provider store={this.store} onExitApp={false}>
-        <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler.bind(this)}>
+        <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
           <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
@@ -135,6 +145,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
+          <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>
     );

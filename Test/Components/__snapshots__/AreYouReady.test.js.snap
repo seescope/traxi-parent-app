@@ -34,7 +34,7 @@ exports[`test renders the <AreYouReady> component 1`] = `
           "textAlign": "center",
         }
       }>
-      Ready to see what your kids are looking at?
+      [missing \"en.areYouReady.header\" translation]
     </Text>
     <View
       style={
@@ -49,7 +49,6 @@ exports[`test renders the <AreYouReady> component 1`] = `
           "flex": 1,
           "flexDirection": "row",
           "justifyContent": "space-between",
-          "paddingHorizontal": 32,
         }
       }>
       <View
@@ -86,7 +85,7 @@ exports[`test renders the <AreYouReady> component 1`] = `
               "fontSize": 20,
             }
           }>
-          Not just yet
+          [missing \"en.areYouReady.notReadyYet\" translation]
            
         </Text>
       </View>
@@ -124,7 +123,7 @@ exports[`test renders the <AreYouReady> component 1`] = `
               "fontSize": 20,
             }
           }>
-          I\'m ready!
+          [missing \"en.areYouReady.ready\" translation]
            
         </Text>
       </View>

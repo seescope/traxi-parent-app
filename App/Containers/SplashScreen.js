@@ -1,5 +1,3 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -17,7 +15,6 @@ import { logError } from '../Utils';
 const { height } = Dimensions.get('window');
 const handleError = error => {
   logError(`Error logging in: ${error}`);
-  alert('There was an error logging you in. Please try again.');
 };
 
 const logoStyle = {

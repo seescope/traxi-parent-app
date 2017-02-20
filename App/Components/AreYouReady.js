@@ -1,8 +1,7 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, Platform, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import I18n from 'react-native-i18n';
 
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
@@ -36,7 +35,6 @@ const innerContainerStyle = {
 };
 
 const buttonContainer = {
-  paddingHorizontal: 32,
   flex: 1,
   flexDirection: 'row',
   alignItems: 'flex-start',
@@ -51,13 +49,17 @@ export default () =>
   >
     <View style={paddingStyle} />
     <View style={innerContainerStyle}>
-      <Text style={headerStyle}>Ready to see what your kids are looking at?</Text>
+      <Text style={headerStyle}>{I18n.t('areYouReady.header')}</Text>
 
       <Spacing height={32} />
 
       <View style={buttonContainer}>
-        <Button onPress={() => Actions.notReadyYet()} primary={false}>Not just yet</Button>
-        <Button onPress={() => Actions.walkthrough()}>I'm ready!</Button>
+        <Button onPress={() => Actions.notReadyYet()} primary={false}>
+          {I18n.t('areYouReady.notReadyYet')}
+        </Button>
+        <Button onPress={() => Actions.walkthrough()}>
+          {I18n.t('areYouReady.ready')}
+        </Button>
       </View>
     </View>
   </Image>;
