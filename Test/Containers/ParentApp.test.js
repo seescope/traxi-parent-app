@@ -26,7 +26,7 @@ describe('<ParentApp />', () => {
 
     expect(initialProps[0]).toBeTruthy();
 
-    initialProps.slice(1, initialProps.length - 1).forEach(initial =>
+    initialProps.slice(1, initialProps.length).forEach(initial =>
         expect(initial).not.toBeTruthy()
     );
   });
@@ -34,8 +34,6 @@ describe('<ParentApp />', () => {
   it('ensures the INITIAL_STATE is correct', () => {
     const parentApp = new ParentApp({ profile: {} });
     const initialState = parentApp.store.getState();
-
-    console.log(initialState);
 
     expect(initialState.step).toEqual(0);
     expect(initialState.selectedKid).toEqual({});
