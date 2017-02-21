@@ -1,10 +1,9 @@
-import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import fetchReports, {
   parseReport,
   coalesceApps,
   isOverlapping,
 } from '../../App/Actions/FetchReports';
-import { TEST_KID } from '../Mocks';
+import {TEST_KID} from '../Mocks';
 import moment from 'moment';
 
 const testTrailItems = [

@@ -1,21 +1,13 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
-import { Actions } from 'react-native-router-flux';
-import {
-  Animated,
-  TouchableOpacity,
-  Platform,
-  View,
-  Image,
-  Dimensions,
-  Text,
-} from 'react-native';
+import {Actions} from 'react-native-router-flux';
+import {Animated, TouchableOpacity, Platform, View, Image, Dimensions, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Analytics from 'react-native-analytics';
 import I18n from 'react-native-i18n';
 
 import ProgressTrack from '../Components/ProgressTrack';
-import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import {WHITE, TRANSPARENT} from '../Constants/Colours';
 import Button from '../Components/Button';
 
 const containerStyle = {
@@ -24,7 +16,7 @@ const containerStyle = {
 
 const ANIMATION_DURATION = 500;
 
-const { width, height } = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 const imageStyle = {
   position: 'absolute',
   width,
@@ -103,16 +95,16 @@ export default class extends React.Component {
     ];
 
     this.styles = [
-      { opacity: this.animations[0] },
-      { opacity: this.animations[1] },
-      { opacity: this.animations[2] },
-      { opacity: this.animations[3] },
-      { opacity: this.animations[4] },
+      {opacity: this.animations[0]},
+      {opacity: this.animations[1]},
+      {opacity: this.animations[2]},
+      {opacity: this.animations[3]},
+      {opacity: this.animations[4]},
     ];
   }
 
   nextStep() {
-    const { step } = this.state;
+    const {step} = this.state;
     const newStep = step < 4 ? step + 1 : step;
 
     Animated
@@ -128,7 +120,7 @@ export default class extends React.Component {
   }
 
   previousStep() {
-    const { step } = this.state;
+    const {step} = this.state;
     const newStep = step > 0 ? step - 1 : step;
 
     Animated
@@ -179,12 +171,7 @@ export default class extends React.Component {
               </TouchableOpacity>
             : <View />}
           {this.state.step < 4
-            ? <Animatable.View
-                useNativeDriver
-                animation="bounce"
-                duration={2000}
-                delay={3000}
-              >
+            ? <Animatable.View useNativeDriver animation="bounce" duration={2000} delay={3000}>
                 <TouchableOpacity onPress={() => this.nextStep()}>
                   <Image source={require('../Images/right-arrow.png')} />
                 </TouchableOpacity>

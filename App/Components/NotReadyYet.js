@@ -1,13 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, Image, Text, Platform, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import {TouchableOpacity, Image, Text, Platform, View} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 import Analytics from 'react-native-analytics';
 import I18n from 'react-native-i18n';
 
-import { WHITE, NEUTRAL, TRANSPARENT } from '../Constants/Colours';
+import {WHITE, NEUTRAL, TRANSPARENT} from '../Constants/Colours';
 import Spacing from '../Components/Spacing';
 import Button from '../Components/Button';
-import { isIOS } from '../Utils';
+import {isIOS} from '../Utils';
 
 const containerStyle = {
   backgroundColor: NEUTRAL,

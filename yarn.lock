@@ -1913,6 +1913,12 @@ eslint-config-airbnb@^9.0.1:
   dependencies:
     eslint-config-airbnb-base "^3.0.0"
 
+eslint-config-prettier@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-1.2.0.tgz#7f87a9af62d9a5ee525849a24b662893e82b7bdc"
+  dependencies:
+    get-stdin "^5.0.1"
+
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz#5add8106e8c928db2cba232bcd9efa846e3da16c"
@@ -1954,7 +1960,7 @@ eslint-plugin-react-native@^1.1.0-beta:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-native/-/eslint-plugin-react-native-1.2.1.tgz#49c5edc82944b993b0a3d229ce09e8217e851377"
 
-eslint-plugin-react@^5.1.1:
+eslint-plugin-react@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-5.2.2.tgz#7db068e1f5487f6871e4deef36a381c303eac161"
   dependencies:
@@ -2349,6 +2355,10 @@ generate-object-property@^1.1.0:
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
+
+get-stdin@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
 
 getpass@^0.1.1:
   version "0.1.6"

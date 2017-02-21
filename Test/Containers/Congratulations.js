@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import proxyquire from 'proxyquire';
 import { TEST_KID } from '../Mocks';
 

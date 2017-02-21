@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { Actions } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 
 import SetImage, { selectImage } from '../../App/Containers/SetImage';

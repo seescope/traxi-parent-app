@@ -2,7 +2,6 @@ import React from 'react';
 import { View } from 'react-native';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import moment from 'moment';
 import proxyquire from 'proxyquire';
 
 const {

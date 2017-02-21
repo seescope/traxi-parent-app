@@ -7,7 +7,6 @@ import sinon from 'sinon';
 
 const TEST_CREATE_STORE = sinon.spy();
 const TEST_APPLY_MIDDLEWARE = sinon.spy();
-const TEST_PHONE_NUMBER = 'test';
 
 const KidApp = proxyquire.noCallThru()('../../App/Containers/KidApp', {
   'react-native-router-flux': {
