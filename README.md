@@ -128,6 +128,13 @@ Tests can be found in `Test/*/*.test.js`. Tests that do not end in ".test.js" ar
 - The directory structure is a little odd and could use some fixing. This isn't a high priority yet, and can be left alone for now.
 - There are a number of dependencies that have been forked due to compatibility or functionality issues. At some point, these changes should probably be merged upstream.
 
+## Releasing
+Releasing traxi is easy.
+
+1. Increment the version number in `package.json`. Try to follow [semver](http://semver.org/).
+2. Run `bin/release.sh` and sit back while everything runs smoothly and perfectly.
+3. If you need to, log into iTunes Connect and do the Apple thing.
+
 ## Implementation Details
 
 ### App Structure

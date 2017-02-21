@@ -51,9 +51,7 @@ class ParentApp extends React.Component {
     const INITIAL_STATE = {
       loading: false,
       profile,
-      contacts: [],
       step: 0,
-      kidSuggestions: [],
       kids: kids || [],
       selectedKid: kids && kids[0] || {},
       reports: {},
