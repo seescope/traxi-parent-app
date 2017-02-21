@@ -36,6 +36,8 @@
 		4C83FEB6C32DE8E9F9E3E729 /* libPods-traxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */; };
 		4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C97D9BD011B4737BBAFE674 /* libDynamoDB.a */; };
 		554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7505E1BBEE114F4CB23DC267 /* libRNSVG.a */; };
+		5E236C071E5BCFD800F23D61 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; };
+		5E236C081E5BCFD800F23D61 /* AWSSNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; };
 		6458187C95154FA99DD430C6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C14CCAF2644A9895AE9EE7 /* Zocial.ttf */; };
 		69D64F33A7EA40F89C1D5365 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F31334C4B8546E6BA09F52C /* EvilIcons.ttf */; };
@@ -357,6 +359,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C302EEF41DFF9DDA00A00489 /* AWSDynamoDB.framework in Embed Frameworks */,
+				5E236C081E5BCFD800F23D61 /* AWSSNS.framework in Embed Frameworks */,
 				C302EEB71DFF9A8A00A00489 /* AWSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -483,6 +486,7 @@
 				729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */,
 				5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */,
 				D57ABCB2EABD4F65BA846FF3 /* libReact.a in Frameworks */,
+				5E236C071E5BCFD800F23D61 /* AWSSNS.framework in Frameworks */,
 				038E071F46A141C5A9119F7F /* libyoga.a in Frameworks */,
 				3C9F6B82BF454E4EB873107B /* libcxxreact.a in Frameworks */,
 				31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */,
