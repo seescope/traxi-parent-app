@@ -41,8 +41,7 @@ exports[`test renders Intro when there is no profile 1`] = `
   <View
     component={[Function]} />
   <View
-    component={[Function]}
-    initial={false} />
+    component={[Function]} />
   <View
     component={[Function]} />
   <View
@@ -76,8 +75,7 @@ exports[`test renders ReportHome when there is a profile that has kids in Fireba
   <View
     component={[Function]} />
   <View
-    component={[Function]}
-    initial={true} />
+    component={[Function]} />
   <View
     component={[Function]} />
   <View

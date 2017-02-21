@@ -105,7 +105,7 @@ exports[`test renders the <SplashScreen> component 1`] = `
             "fontSize": 20,
           }
         }>
-        Find out now
+        Start monitoring
          
       </Text>
     </View>

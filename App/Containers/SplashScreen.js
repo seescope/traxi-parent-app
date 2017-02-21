@@ -64,7 +64,7 @@ const SplashScreen = ({ getStarted }) =>
       animation="bounceInUp"
       delay={2000}
     >
-      <Button onPress={getStarted}>Find out now</Button>
+      <Button onPress={getStarted}>Start monitoring</Button>
     </Animatable.View>
   </Background>;
 
@@ -78,7 +78,7 @@ export const mapDispatchToProps = dispatch => ({
   .then(profile => {
     // We'll just let this run whenever, no point holding up the user.
     saveProfile(profile);
-    return Actions.intro();
+    return Actions.walkthrough();
   })
   .catch(handleError),
 });

@@ -22,11 +22,7 @@ Array [
 
 exports[`test renders the <SetImage> component 1`] = `
 <View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }>
+  style={Object {}}>
   <View
     style={
       Object {
@@ -127,22 +123,6 @@ exports[`test renders the <SetImage> component 1`] = `
           "height": 24,
         }
       } />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "center",
-        }
-      }>
-      Don\'t worry, only you will be able to see it.
-    </Text>
     <View
       style={
         Object {
@@ -156,6 +136,7 @@ exports[`test renders the <SetImage> component 1`] = `
         "alignItems": "flex-end",
         "flexDirection": "row",
         "justifyContent": "space-between",
+        "width": 686,
       }
     }>
     <View
