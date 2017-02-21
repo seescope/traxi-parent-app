@@ -32,4 +32,24 @@ describe('<ParentApp />', () => {
       expect(tree).toMatchSnapshot();
     },
   );
+
+  it('ensures the correct components have their initial prop set', () => {
+    const tree = renderer.create(<ParentApp profile={{}} />).toJSON();
+    const initialProps = tree.children.map(c => c.props.initial);
+
+    expect(initialProps[0]).toBeTruthy();
+
+    initialProps
+      .slice(1, initialProps.length)
+      .forEach(initial => expect(initial).not.toBeTruthy());
+  });
+
+  it('ensures the INITIAL_STATE is correct', () => {
+    const parentApp = new ParentApp({ profile: {} });
+    const initialState = parentApp.store.getState();
+
+    expect(initialState.step).toEqual(0);
+    expect(initialState.selectedKid).toEqual({});
+    expect(initialState.kids).toEqual([]);
+  });
 });
