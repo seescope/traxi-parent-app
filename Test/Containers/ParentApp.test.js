@@ -10,7 +10,7 @@ describe('<ParentApp />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders the Parent with the AreYouReady component if no kids in the profile', () => {
+  xit('renders the Parent with the AreYouReady component if no kids in the profile', () => {
     const tree = renderer.create(<ParentApp profile={{ UUID: 'abc-123' }} />).toJSON();
     expect(tree).toMatchSnapshot();
   });

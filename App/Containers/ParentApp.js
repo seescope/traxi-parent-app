@@ -121,14 +121,13 @@ class ParentApp extends React.Component {
   render() {
     const { profile } = this.props;
     const isInstalled = !!profile.kids;
-    const introSeen = !!profile.UUID;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
           <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
-          <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
+          <Scene key="areYouReady" component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />
