@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react';
-import {BackAndroid} from 'react-native';
-import {createStore, applyMiddleware} from 'redux';
-import {connect, Provider} from 'react-redux';
-import {Scene, Router, Actions} from 'react-native-router-flux';
+import React, { PropTypes } from 'react';
+import { BackAndroid } from 'react-native';
+import { createStore, applyMiddleware } from 'redux';
+import { connect, Provider } from 'react-redux';
+import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
 import SplashScreen from './SplashScreen';
@@ -19,9 +19,9 @@ import WeekView from '../ReportHome/WeekView';
 import DayView from '../ReportHome/DayView';
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Actions/FetchReports';
-import {loggingMiddleware, trackingMiddleware} from '../Utils';
-import {AWSDynamoDB} from 'aws-sdk-react-native-dynamodb';
-import {AWSCognitoCredentials} from 'aws-sdk-react-native-core';
+import { loggingMiddleware, trackingMiddleware } from '../Utils';
+import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
+import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import Timer from 'react-native-timer';
 
 import Playground from '../Utils/Playground';
@@ -44,8 +44,8 @@ class ParentApp extends React.Component {
   constructor(props) {
     super(props);
 
-    const {profile} = props;
-    const {kids} = profile;
+    const { profile } = props;
+    const { kids } = profile;
 
     const INITIAL_STATE = {
       loading: false,
@@ -63,7 +63,7 @@ class ParentApp extends React.Component {
     );
 
     if (profile && profile.name) {
-      this.store.dispatch({type: 'LOGGED_IN', profile});
+      this.store.dispatch({ type: 'LOGGED_IN', profile });
     }
 
     Promise
@@ -73,10 +73,14 @@ class ParentApp extends React.Component {
           identity_pool_id: IDENTITY_POOL_ID,
         }),
       )
-      .then(AWSDynamoDB.initWithOptions({region: DYNAMODB_REGION}))
+      .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
       .then(() => {
         this.fetchReports();
-        Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
+        Timer.setInterval(
+          TIMER_NAME,
+          this.fetchReports.bind(this),
+          REFRESH_INTERVAL,
+        );
       });
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
@@ -88,11 +92,11 @@ class ParentApp extends React.Component {
 
   backButtonHandler() {
     const store = this.store;
-    const {sceneName, step} = store.getState();
+    const { sceneName, step } = store.getState();
 
     if (sceneName === 'walkthrough') {
       if (step === 0) Actions.pop();
-      else store.dispatch({type: 'PREVIOUS_STEP'});
+      else store.dispatch({ type: 'PREVIOUS_STEP' });
 
       return true;
     } else if (sceneName === 'congratulations') {
@@ -107,7 +111,7 @@ class ParentApp extends React.Component {
   }
 
   fetchReports() {
-    const {profile} = this.store.getState();
+    const { profile } = this.store.getState();
     const kids = profile.kids;
 
     if (!kids) {
@@ -123,16 +127,24 @@ class ParentApp extends React.Component {
   }
 
   render() {
-    const {profile} = this.props;
+    const { profile } = this.props;
     const isInstalled = !!profile.kids;
     const introSeen = !!profile.UUID;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
-          <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
+          <Scene
+            key="splashScreen"
+            initial={!isInstalled}
+            component={SplashScreen}
+          />
           <Scene key="intro" component={Intro} />
-          <Scene key="areYouReady" initial={introSeen} component={AreYouReady} />
+          <Scene
+            key="areYouReady"
+            initial={introSeen}
+            component={AreYouReady}
+          />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />
@@ -142,7 +154,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
-          <Scene key="playground" initial={false} component={Playground} />
+          <Scene key="playground" initial={true} component={Playground} />
         </RouterWithRedux>
       </Provider>
     );

@@ -8,3 +8,7 @@ const codePushOptions = {
   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
 };
 AppRegistry.registerComponent('traxi', () => codePush(codePushOptions)(App));
+
+// import { configureEndpoint } from './Notifications';
+//
+// configureEndpoint();

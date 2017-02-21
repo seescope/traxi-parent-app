@@ -169,6 +169,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-push-notification')
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')

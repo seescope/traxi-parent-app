@@ -1,8 +1,8 @@
 import moment from 'moment';
-import {AWSDynamoDB} from 'aws-sdk-react-native-dynamodb';
+import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
 import lodash from 'lodash';
 
-import {logError} from '../Utils';
+import { logError } from '../Utils';
 
 const METADATA_TABLE_NAME = 'AppMetadata';
 const TRAIL_ITEMS_TABLE_NAME = 'TrailItems';
@@ -12,10 +12,13 @@ const isLateNight = r => r.timeStamp.hour() < 4 || r.timeStamp.hour() >= 22;
 const getLateNightMinutes = reportData =>
   reportData.filter(isLateNight).reduce((acc, r) => acc + r.minutesUsed, 0);
 
-const getDeviceTime = reportData => reportData.reduce((acc, r) => acc + r.minutesUsed, 0);
+const getDeviceTime = reportData =>
+  reportData.reduce((acc, r) => acc + r.minutesUsed, 0);
 
 const getSocialTime = reportData =>
-  reportData.filter(r => r.category === 'Social').reduce((acc, r) => acc + r.minutesUsed, 0);
+  reportData
+    .filter(r => r.category === 'Social')
+    .reduce((acc, r) => acc + r.minutesUsed, 0);
 
 const buildCircles = data => {
   const lateNightTimes = getLateNightMinutes(data);
@@ -48,15 +51,21 @@ const buildTrail = data => [
   },
   {
     name: 'Evening',
-    trailItems: data.filter(d => d.timeStamp.hour() >= 17 && d.timeStamp.hour() < 22),
+    trailItems: data.filter(
+      d => d.timeStamp.hour() >= 17 && d.timeStamp.hour() < 22,
+    ),
   },
   {
     name: 'Afternoon',
-    trailItems: data.filter(d => d.timeStamp.hour() >= 12 && d.timeStamp.hour() < 17),
+    trailItems: data.filter(
+      d => d.timeStamp.hour() >= 12 && d.timeStamp.hour() < 17,
+    ),
   },
   {
     name: 'Morning',
-    trailItems: data.filter(d => d.timeStamp.hour() >= 4 && d.timeStamp.hour() < 12),
+    trailItems: data.filter(
+      d => d.timeStamp.hour() >= 4 && d.timeStamp.hour() < 12,
+    ),
   },
   {
     name: 'Late Night',
@@ -65,7 +74,8 @@ const buildTrail = data => [
 ].filter(t => t.trailItems.length > 0);
 
 const cleanDynamoDBResponse = data => {
-  if (!data.Items || data.Items.length === 0) throw new Error('No data received from DynamoDB');
+  if (!data.Items || data.Items.length === 0)
+    throw new Error('No data received from DynamoDB');
 
   return data.Items.map(entry => ({
     timeStamp: moment(entry.StartTime.S).local(),
@@ -103,7 +113,8 @@ const getAppHashKeys = data => lodash
   .value();
 
 const reduceMetadata = (accumulator, metadataItem) => {
-  if (!metadataItem.Logo || !metadataItem.Name || !metadataItem.Category) return accumulator;
+  if (!metadataItem.Logo || !metadataItem.Name || !metadataItem.Category)
+    return accumulator;
   const appHash = metadataItem.AppHash.S;
   const parsedMetadataItem = {
     logo: metadataItem.Logo.S,
@@ -118,7 +129,8 @@ const reduceMetadata = (accumulator, metadataItem) => {
 };
 
 const parseMetadata = metadata => {
-  if (!metadata.Responses[METADATA_TABLE_NAME]) throw new Error('No data received from DynamoDB');
+  if (!metadata.Responses[METADATA_TABLE_NAME])
+    throw new Error('No data received from DynamoDB');
   return metadata.Responses[METADATA_TABLE_NAME].reduce(reduceMetadata, {});
 };
 
@@ -142,9 +154,14 @@ const getUpdatedMinutesUsed = (lastTrailItem, trailItem) => {
   const lastTrailItemEnd = lastTrailItem.timeStamp
     .clone()
     .add(lastTrailItem.minutesUsed, 'minutes');
-  const trailItemEnd = trailItem.timeStamp.clone().clone().add(trailItem.minutesUsed, 'minutes');
+  const trailItemEnd = trailItem.timeStamp
+    .clone()
+    .clone()
+    .add(trailItem.minutesUsed, 'minutes');
 
-  const delta = moment.duration(trailItemEnd.diff(lastTrailItemEnd)).asMinutes();
+  const delta = moment
+    .duration(trailItemEnd.diff(lastTrailItemEnd))
+    .asMinutes();
 
   const normalisedDelta = delta > 0 ? delta : 0;
 
@@ -161,7 +178,9 @@ export const isOverlapping = (secondTrailItem, lastTrailItem) => {
 
   const startTime = lastTrailItem.timeStamp;
   const fuzziness = FUZINESS[lastTrailItem.category] || 1;
-  const endTime = startTime.clone().add(lastTrailItem.minutesUsed + fuzziness, 'minutes');
+  const endTime = startTime
+    .clone()
+    .add(lastTrailItem.minutesUsed + fuzziness, 'minutes');
 
   const secondTrailItemStart = secondTrailItem.timeStamp;
   const result = secondTrailItemStart.isBetween(startTime, endTime, '()');
@@ -170,7 +189,10 @@ export const isOverlapping = (secondTrailItem, lastTrailItem) => {
 };
 
 export const coalesceApps = (accumulator, trailItem) => {
-  const overlappingIndex = lodash.findIndex(accumulator, isOverlapping.bind(undefined, trailItem));
+  const overlappingIndex = lodash.findIndex(
+    accumulator,
+    isOverlapping.bind(undefined, trailItem),
+  );
 
   if (overlappingIndex === -1) {
     return [...accumulator, trailItem];
@@ -190,7 +212,8 @@ export const coalesceApps = (accumulator, trailItem) => {
   ];
 };
 
-const dateComparator = (date1, date2) => date1.toString() < date2.toString() ? -1 : 1;
+const dateComparator = (date1, date2) =>
+  date1.toString() < date2.toString() ? -1 : 1;
 
 const getAppMetadata = data => {
   const appHashKeys = getAppHashKeys(data);
@@ -211,7 +234,8 @@ const getAppMetadata = data => {
         .sort(dateComparator)
         .reduce(coalesceApps, []);
 
-      if (result.length === 0) throw new Error('No trail items with known metadata');
+      if (result.length === 0)
+        throw new Error('No trail items with known metadata');
 
       return result;
     });
@@ -219,14 +243,20 @@ const getAppMetadata = data => {
 
 export const parseReport = data => {
   if (data === null || data.length === 0) {
-    throw new Error(`Invalid data passed to parseReport: ${JSON.stringify(data)}`);
+    throw new Error(
+      `Invalid data passed to parseReport: ${JSON.stringify(data)}`,
+    );
   }
 
-  return lodash.chain(data).reduce(groupByDate, {}).reduce(buildReport, {}).value();
+  return lodash
+    .chain(data)
+    .reduce(groupByDate, {})
+    .reduce(buildReport, {})
+    .value();
 };
 
 const getReportForKid = kid => {
-  const {UUID} = kid;
+  const { UUID } = kid;
   const startDate = moment();
   startDate.subtract(7, 'days');
   const queryRequest = {
@@ -238,8 +268,8 @@ const getReportForKid = kid => {
       '#T': 'StartTime',
     },
     ExpressionAttributeValues: {
-      ':uuid': {S: UUID},
-      ':time': {S: startDate.utc().format('YYYY-MM-DD')},
+      ':uuid': { S: UUID },
+      ':time': { S: startDate.utc().format('YYYY-MM-DD') },
     },
     ProjectionExpression: 'StartTime, MinutesUsed, AppHash',
   };
@@ -249,7 +279,7 @@ const getReportForKid = kid => {
 };
 
 const fetchReports = kid => dispatch => {
-  dispatch({type: 'FETCHING_REPORT'});
+  dispatch({ type: 'FETCHING_REPORT' });
 
   return getReportForKid(kid)
     .then(cleanDynamoDBResponse)
