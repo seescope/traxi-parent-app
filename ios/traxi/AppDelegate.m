@@ -16,6 +16,7 @@
 #import <Analytics/SEGAnalytics.h>
 
 @import Firebase;
+@import Intercom;
 
 @implementation AppDelegate
 
@@ -52,7 +53,20 @@
   // Fabric
   [Fabric with:@[[Crashlytics class]]];
   
+  // Initialize Intercom
+  [Intercom setApiKey:@"ios_sdk-4eb45cee2ce0955571adcd238f912926f206fda5" forAppId:@"bduhw6bc"];
   return YES;
 }
 
+// For Intercom notification
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [Intercom setDeviceToken:deviceToken];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [application registerUserNotificationSettings:
+   [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)
+                                     categories:nil]];
+  [application registerForRemoteNotifications];
+}
 @end

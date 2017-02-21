@@ -1,5 +1,3 @@
-/* eslint global-require: "off" */
-
 import React from 'react';
 import { Dimensions, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -17,7 +15,6 @@ import { logError } from '../Utils';
 const { height } = Dimensions.get('window');
 const handleError = error => {
   logError(`Error logging in: ${error}`);
-  alert('There was an error logging you in. Please try again.');
 };
 
 const logoStyle = {
@@ -39,7 +36,7 @@ const imageStyle = {
   height: height / 2,
 };
 
-const SplashScreen = ({ getStarted }) =>
+const SplashScreen = ({ getStarted }) => (
   <Background style={containerStyle}>
     <Animatable.Image
       useNativeDriver
@@ -62,15 +59,11 @@ const SplashScreen = ({ getStarted }) =>
 
     <Spacing height={32} />
 
-    <Animatable.View
-      useNativeDriver
-      animation="bounceInUp"
-      delay={2000}
-    >
+    <Animatable.View useNativeDriver animation="bounceInUp" delay={2000}>
       <Button onPress={getStarted}>Find out now</Button>
     </Animatable.View>
-  </Background>;
-
+  </Background>
+);
 
 SplashScreen.propTypes = {
   getStarted: React.PropTypes.func.isRequired,
@@ -78,12 +71,12 @@ SplashScreen.propTypes = {
 
 export const mapDispatchToProps = dispatch => ({
   getStarted: () => dispatch(loginWithMethod())
-  .then(profile => {
-    // We'll just let this run whenever, no point holding up the user.
-    saveProfile(profile);
-    return Actions.intro();
-  })
-  .catch(handleError),
+    .then(profile => {
+      // We'll just let this run whenever, no point holding up the user.
+      saveProfile(profile);
+      return Actions.intro();
+    })
+    .catch(handleError),
 });
 
 export default connect(null, mapDispatchToProps)(SplashScreen);

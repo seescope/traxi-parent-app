@@ -40,7 +40,9 @@ export const getTrailColours = (trailSegments, index) => {
   }
 
   if (thisSegment.name === 'Morning') {
-    const startColour = previousSegment ? trailColours[previousSegment.name] : TRAIL_MORNING;
+    const startColour = previousSegment
+      ? trailColours[previousSegment.name]
+      : TRAIL_MORNING;
     return [startColour, TRAIL_MORNING];
   }
 
@@ -50,8 +52,6 @@ export const getTrailColours = (trailSegments, index) => {
     return [startColour, BAD];
   }
 
-
-  console.log('Weird:', thisSegment.name, index);
   const colour = trailColours[thisSegment.name];
   return [colour, colour];
 };

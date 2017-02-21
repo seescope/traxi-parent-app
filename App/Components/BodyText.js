@@ -3,20 +3,20 @@ import { Text } from 'react-native';
 import STYLES from '../Constants/Styles';
 
 const getAlignmentStyle = align => {
-  if (align === 'center') return {
-    textAlign: 'center',
+  if (align === 'center') {
+    return {
+      textAlign: 'center',
+    };
   }
-}
+  return undefined;
+};
 
 const BodyText = ({ children, align }) => (
   <Text style={[STYLES.TEXT, getAlignmentStyle(align)]}>{children}</Text>
 );
 
 BodyText.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   align: PropTypes.string,
 };
 

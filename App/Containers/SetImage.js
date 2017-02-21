@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Dimensions, Text, View, Alert } from 'react-native';
+import { Text, View, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import I18n from 'react-native-i18n';
 
 import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
 import setupKid from '../Actions/SetupKid';
@@ -12,8 +13,6 @@ import Spacing from '../Components/Spacing';
 import KidAvatar from '../Components/KidAvatar';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import { isIOS, logError, firstName } from '../Utils';
-
-const { width } = Dimensions.get('window');
 
 const getSource = response => {
   let source;
@@ -55,7 +54,7 @@ export const selectImage = pickImage => dispatch => {
       if (response.error === 'Photo library permissions not granted') {
         Alert.alert(
           'Unable to access your photos',
-          'Please allow traxi to access your photos to continue.'
+          'Please allow traxi to access your photos to continue.',
         );
       }
 
@@ -74,58 +73,69 @@ export const selectImage = pickImage => dispatch => {
 };
 
 const style = {
+  outerContainer: {
+    flex: 1,
+  },
   container: {
+    flexDirection: 'column',
     alignItems: 'center',
   },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
     color: WHITE,
+    alignItems: 'center',
+    textAlign: 'center',
     backgroundColor: TRANSPARENT,
   },
   buttonContainer: {
-    width: width - 64,
     flexDirection: 'row',
+    alignItems: 'flex-end',
     justifyContent: 'space-between',
   },
 };
 
 const SetImage = ({ parentName, kidName, onPress }) => (
-  <View style={style.container}>
-    <HeaderText>Thanks, {parentName}!</HeaderText>
+  <View style={style.outerContainer}>
+    <View style={style.container}>
+      <HeaderText>{I18n.t('general.thanks')}, {parentName}!</HeaderText>
 
-    <Spacing height={32} />
+      <Spacing height={32} />
 
-    <KidAvatar
-      size={204}
-      avatarURL=""
-    />
+      <KidAvatar size={204} avatarURL="" />
 
-    <Spacing height={32} />
+      <Text style={style.bodyText}>
+        {I18n.t('setImage.setAPictureFor')} {kidName}.
+      </Text>
 
-    <Text style={style.bodyText}>
-      Now, let's set a picture for {kidName}.
-    </Text>
+      <Spacing height={32} />
 
-    <Spacing />
+      <Text style={style.bodyText}>
+        {I18n.t('setImage.dontWorry')}.
+      </Text>
 
-    <Text style={style.bodyText}>
-      Don't worry, only you will be able to see it.
-    </Text>
+      <Spacing />
 
-    <Spacing height={32} />
+      <Text style={style.bodyText}>
+        Don't worry, only you will be able to see it.
+      </Text>
 
-    <View style={style.buttonContainer}>
-      <Button primary={false} onPress={() => onPress(false)}>Not right now</Button>
-      <Button onPress={() => onPress(true)}>Set a picture for {kidName}</Button>
+      <Spacing height={32} />
     </View>
-
+    <View style={style.buttonContainer}>
+      <Button primary={false} onPress={() => onPress(false)}>
+        {I18n.t('setImage.notNow')}
+      </Button>
+      <Button onPress={() => onPress(true)}>
+        {I18n.t('setImage.chooseAPicture')}
+      </Button>
+    </View>
   </View>
 );
 
 SetImage.propTypes = {
   kidName: PropTypes.string.isRequired,
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
   onPress: PropTypes.func.isRequired,
 };
 

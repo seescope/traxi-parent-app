@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Keyboard, Text, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import I18n from 'react-native-i18n';
 
 import { enterKidName, NEXT_STEP } from '../Actions/Actions';
 import Button from '../Components/Button';
@@ -23,7 +23,8 @@ const style = {
   },
 };
 
-export const setKidName = kidName => dispatch => dispatch(enterKidName(kidName));
+export const setKidName = kidName =>
+  dispatch => dispatch(enterKidName(kidName));
 
 export const nextStep = () => dispatch => {
   Keyboard.dismiss();
@@ -32,18 +33,20 @@ export const nextStep = () => dispatch => {
 
 const SetName = ({ onChangeText, onPress }) => (
   <View>
-    <HeaderText>Let's get started!</HeaderText>
+    <HeaderText>{I18n.t('setName.header')}</HeaderText>
 
     <Spacing height={32} />
 
     <Text style={style.bodyText}>
-      What is your kid's name?
+      {I18n.t('setName.kidsName')}
     </Text>
 
     <Spacing height={16} />
 
     <TextInput
-      refFunc={ref => { this.textInput = ref; }}
+      refFunc={ref => {
+        this.textInput = ref;
+      }}
       onChangeText={onChangeText}
       onSubmitEditing={() => onPress()}
     />
@@ -51,7 +54,7 @@ const SetName = ({ onChangeText, onPress }) => (
     <Spacing />
 
     <View style={style.buttonContainer}>
-      <Button onPress={() => onPress()}>Next step</Button>
+      <Button onPress={() => onPress()}>{I18n.t('general.nextStep')}</Button>
     </View>
   </View>
 );

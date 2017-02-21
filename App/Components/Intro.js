@@ -1,20 +1,13 @@
 import React from 'react';
 import Spacing from '../Components/Spacing';
-import { Actions } from 'react-native-router-flux';
-import {
-  Animated,
-  TouchableOpacity,
-  Platform,
-  View,
-  Image,
-  Dimensions,
-  Text,
-} from 'react-native';
+import {Actions} from 'react-native-router-flux';
+import {Animated, TouchableOpacity, Platform, View, Image, Dimensions, Text} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Analytics from 'react-native-analytics';
+import I18n from 'react-native-i18n';
 
 import ProgressTrack from '../Components/ProgressTrack';
-import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import {WHITE, TRANSPARENT} from '../Constants/Colours';
 import Button from '../Components/Button';
 
 const containerStyle = {
@@ -23,7 +16,7 @@ const containerStyle = {
 
 const ANIMATION_DURATION = 500;
 
-const { width, height } = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 const imageStyle = {
   position: 'absolute',
   width,
@@ -77,21 +70,8 @@ const STEP_IMAGES = [
   require('../Images/intro-step-5.png'),
 ];
 
-const HEADER_TEXT = [
-  'First, get your kid\'s device',
-  'Go to mytraxi.com',
-  'Then enter a PIN',
-  'Follow the instructions',
-  'Then you\'re all done!',
-];
-
-const SUBHEADER_TEXT = [
-  'Don\'t worry, you can do this later if you like.',
-  'Use the web browser on your kid’s device',
-  'We\'ll tell you what it is soon',
-  'It only takes a couple of seconds',
-  'Doesn\'t that look easy?',
-];
+const headerText = step => I18n.t(`intro.header${step}`);
+const subheaderText = step => I18n.t(`intro.subheader${step}`);
 
 export const onPress = () => {
   Analytics.track('Finished Intro');
@@ -115,25 +95,24 @@ export default class extends React.Component {
     ];
 
     this.styles = [
-      { opacity: this.animations[0] },
-      { opacity: this.animations[1] },
-      { opacity: this.animations[2] },
-      { opacity: this.animations[3] },
-      { opacity: this.animations[4] },
+      {opacity: this.animations[0]},
+      {opacity: this.animations[1]},
+      {opacity: this.animations[2]},
+      {opacity: this.animations[3]},
+      {opacity: this.animations[4]},
     ];
   }
 
   nextStep() {
-    const { step } = this.state;
+    const {step} = this.state;
     const newStep = step < 4 ? step + 1 : step;
 
-    Animated.timing(
-      this.animations[newStep],
-      {
+    Animated
+      .timing(this.animations[newStep], {
         toValue: 1,
         duration: ANIMATION_DURATION,
-      }
-    ).start();
+      })
+      .start();
 
     this.setState({
       step: newStep,
@@ -141,16 +120,15 @@ export default class extends React.Component {
   }
 
   previousStep() {
-    const { step } = this.state;
+    const {step} = this.state;
     const newStep = step > 0 ? step - 1 : step;
 
-    Animated.timing(
-      this.animations[step],
-      {
+    Animated
+      .timing(this.animations[step], {
         toValue: 0,
         duration: ANIMATION_DURATION,
-      }
-    ).start();
+      })
+      .start();
 
     this.setState({
       step: newStep,
@@ -187,23 +165,18 @@ export default class extends React.Component {
         />
 
         <View style={paddingStyle}>
-          {this.state.step > 0 ? <TouchableOpacity onPress={() => this.previousStep()}>
-            <Image
-              source={require('../Images/left-arrow.png')}
-            />
-          </TouchableOpacity> : <View />}
-          {this.state.step < 4 ? <Animatable.View
-            useNativeDriver
-            animation="bounce"
-            duration={2000}
-            delay={3000}
-          >
-            <TouchableOpacity onPress={() => this.nextStep()}>
-              <Image
-                source={require('../Images/right-arrow.png')}
-              />
-            </TouchableOpacity>
-          </Animatable.View> : <View />}
+          {this.state.step > 0
+            ? <TouchableOpacity onPress={() => this.previousStep()}>
+                <Image source={require('../Images/left-arrow.png')} />
+              </TouchableOpacity>
+            : <View />}
+          {this.state.step < 4
+            ? <Animatable.View useNativeDriver animation="bounce" duration={2000} delay={3000}>
+                <TouchableOpacity onPress={() => this.nextStep()}>
+                  <Image source={require('../Images/right-arrow.png')} />
+                </TouchableOpacity>
+              </Animatable.View>
+            : <View />}
         </View>
 
         <View style={textContainer}>
@@ -213,29 +186,29 @@ export default class extends React.Component {
             duration={1000}
             animation="bounceInLeft"
           >
-            <ProgressTrack
-              stage={this.state.step}
-              width={width - 64}
-            />
+            <ProgressTrack stage={this.state.step} width={width - 64} />
           </Animatable.View>
 
           <Spacing height={32} />
 
-          <Text style={headerStyle}>{HEADER_TEXT[this.state.step]}</Text>
+          <Text style={headerStyle}>{headerText(this.state.step)}</Text>
 
-          <Text style={subHeaderStyle}>{SUBHEADER_TEXT[this.state.step]}</Text>
+          <Text style={subHeaderStyle}>{subheaderText(this.state.step)}</Text>
 
           <Spacing height={16} />
 
-          {this.state.step === 4 && <Animatable.View
-            useNativeDriver
-            delay={1000}
-            duration={1000}
-            easing="ease-in-out"
-            animation="bounceInUp"
-          >
-            <Button onPress={() => onPress()} primary={false}>Got it!</Button>
-          </Animatable.View>}
+          {this.state.step === 4 &&
+            <Animatable.View
+              useNativeDriver
+              delay={1000}
+              duration={1000}
+              easing="ease-in-out"
+              animation="bounceInUp"
+            >
+              <Button onPress={() => onPress()} primary={false}>
+                {I18n.t('intro.button')}
+              </Button>
+            </Animatable.View>}
         </View>
       </View>
     );

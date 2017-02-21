@@ -11,12 +11,13 @@ const headerStyle = {
   marginBottom: 16,
 };
 
-
 const KidReport = () => (
   <Background>
     <HeaderText style={headerStyle}>traxi is now running</HeaderText>
 
-    <BodyText>Your device is being monitored for inappropriate content.</BodyText>
+    <BodyText>
+      Your device is being monitored for inappropriate content.
+    </BodyText>
 
     <Spacing />
 

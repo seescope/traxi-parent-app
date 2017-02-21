@@ -18,14 +18,22 @@ beforeEach(() => {
 
 it('FETCHED_REPORT', () => {
   const state = { reports: {} };
-  const FETCHED_REPORT = { type: 'FETCHED_REPORT', report: TEST_REPORTS, UUID: TEST_UUID };
+  const FETCHED_REPORT = {
+    type: 'FETCHED_REPORT',
+    report: TEST_REPORTS,
+    UUID: TEST_UUID,
+  };
   const newState = parentAppReducer(state, FETCHED_REPORT);
 
   expect(newState).toMatchSnapshot();
 });
 
 it('RESET_STATE', () => {
-  const dirtyState = { kidSuggestions: ['abc123'], selectedKid: 'alice', step: 99 };
+  const dirtyState = {
+    kidSuggestions: ['abc123'],
+    selectedKid: 'alice',
+    step: 99,
+  };
   const newState = parentAppReducer(dirtyState, RESET_STATE);
 
   expect(newState).toMatchSnapshot();
@@ -48,7 +56,10 @@ it('SELECT_KID', () => {
 
 it('SELECT_KID_IMAGE', () => {
   const oldState = { selectedKid: {} };
-  const newState = parentAppReducer(oldState, selectKidImage('file://something'));
+  const newState = parentAppReducer(
+    oldState,
+    selectKidImage('file://something'),
+  );
 
   expect(newState).toMatchSnapshot();
 });
@@ -63,39 +74,49 @@ it('ADD_KID', () => {
 it('DEVICE_UPDATED', () => {
   const oldState = { selectedKid: { UUID: 'nope' }, kids: [], step: 1 };
   const initialDevice = { UUID: 'surprise', deviceType: 'unknown' };
-  const newState = parentAppReducer(
-    oldState, deviceUpdated(initialDevice)
-  );
+  const newState = parentAppReducer(oldState, deviceUpdated(initialDevice));
 
   expect(newState).toMatchSnapshot();
   expect(Analytics.track).toHaveBeenCalledWith('Started Setup', initialDevice);
 
   const updatedDevice = { UUID: 'surprise', deviceType: 'Android' };
-  const anotherState = parentAppReducer(newState,
-    deviceUpdated(updatedDevice)
-  );
+  const anotherState = parentAppReducer(newState, deviceUpdated(updatedDevice));
   expect(anotherState).not.toEqual(newState);
   expect(anotherState).toMatchSnapshot();
-  expect(Analytics.track).toHaveBeenCalledWith('Verified Device', updatedDevice);
+  expect(Analytics.track).toHaveBeenCalledWith(
+    'Verified Device',
+    updatedDevice,
+  );
 });
 
 it('LOGGED_IN', () => {
-  const oldState = { profile: { UUID: 'nope' }, kids: [], step: 1, price: 'one dollar' };
-  const newState = parentAppReducer(oldState, { type: 'LOGGED_IN', profile: {
-    name: 'Jim Bob',
-    kids: ['hey', 'ho'],
-    UUID: 'orange',
-  } });
+  const oldState = {
+    profile: { UUID: 'nope' },
+    kids: [],
+    step: 1,
+    price: 'one dollar',
+  };
+  const newState = parentAppReducer(oldState, {
+    type: 'LOGGED_IN',
+    profile: {
+      name: 'Jim Bob',
+      kids: ['hey', 'ho'],
+      UUID: 'orange',
+    },
+  });
 
   expect(newState).toMatchSnapshot();
-  expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({ userId: 'orange' });
+  expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+    userId: 'orange',
+  });
 });
 
 it('REACT_NATIVE_ROUTER_FLUX_PUSH', () => {
   const oldState = { sceneName: 'something', other: 'remains' };
-  const newState = parentAppReducer(
-    oldState, { type: 'REACT_NATIVE_ROUTER_FLUX_PUSH', key: 'hey' }
-  );
+  const newState = parentAppReducer(oldState, {
+    type: 'REACT_NATIVE_ROUTER_FLUX_PUSH',
+    key: 'hey',
+  });
 
   expect(newState).toMatchSnapshot();
 });
@@ -103,24 +124,18 @@ it('REACT_NATIVE_ROUTER_FLUX_PUSH', () => {
 it('PREVIOUS_STEP', () => {
   const oldState = { step: 1 };
 
-  const newState = parentAppReducer(
-    oldState, { type: 'PREVIOUS_STEP' }
-  );
+  const newState = parentAppReducer(oldState, { type: 'PREVIOUS_STEP' });
 
   expect(newState).toMatchSnapshot();
 
-  const sameState = parentAppReducer(
-    newState, { type: 'PREVIOUS_STEP' }
-  );
+  const sameState = parentAppReducer(newState, { type: 'PREVIOUS_STEP' });
   expect(newState).toEqual(sameState);
   expect(Analytics.track.mock.calls).toMatchSnapshot();
 });
 
 it('NEXT_STEP', () => {
   const oldState = { step: 1 };
-  const newState = parentAppReducer(
-    oldState, { type: 'NEXT_STEP' }
-  );
+  const newState = parentAppReducer(oldState, { type: 'NEXT_STEP' });
 
   expect(newState.step).toEqual(2);
   expect(Analytics.track.mock.calls).toMatchSnapshot();

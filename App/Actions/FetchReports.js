@@ -1,28 +1,21 @@
-/* eslint new-cap: "off" */
-
 import moment from 'moment';
-import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
+import {AWSDynamoDB} from 'aws-sdk-react-native-dynamodb';
 import lodash from 'lodash';
 
-import { logError } from '../Utils';
+import {logError} from '../Utils';
 
 const METADATA_TABLE_NAME = 'AppMetadata';
 const TRAIL_ITEMS_TABLE_NAME = 'TrailItems';
 
-moment.fn.toJSON = function () { return this.format(); };
-
 const isLateNight = r => r.timeStamp.hour() < 4 || r.timeStamp.hour() >= 22;
 
-const getLateNightMinutes = reportData => reportData
-  .filter(isLateNight)
-  .reduce((acc, r) => acc + r.minutesUsed, 0);
+const getLateNightMinutes = reportData =>
+  reportData.filter(isLateNight).reduce((acc, r) => acc + r.minutesUsed, 0);
 
-const getDeviceTime = reportData => reportData
-  .reduce((acc, r) => acc + r.minutesUsed, 0);
+const getDeviceTime = reportData => reportData.reduce((acc, r) => acc + r.minutesUsed, 0);
 
-const getSocialTime = reportData => reportData
-  .filter(r => r.category === 'Social')
-  .reduce((acc, r) => acc + r.minutesUsed, 0);
+const getSocialTime = reportData =>
+  reportData.filter(r => r.category === 'Social').reduce((acc, r) => acc + r.minutesUsed, 0);
 
 const buildCircles = data => {
   const lateNightTimes = getLateNightMinutes(data);
@@ -31,13 +24,19 @@ const buildCircles = data => {
 
   return [
     {
-      name: 'Late Night', status: lateNightTimes > 1 ? 'bad' : 'good', minutesUsed: lateNightTimes,
+      name: 'Late Night',
+      status: lateNightTimes > 1 ? 'bad' : 'good',
+      minutesUsed: lateNightTimes,
     },
     {
-      name: 'Device Time', status: deviceTime > 120 ? 'bad' : 'good', minutesUsed: deviceTime,
+      name: 'Device Time',
+      status: deviceTime > 120 ? 'bad' : 'good',
+      minutesUsed: deviceTime,
     },
     {
-      name: 'Social Time', status: socialTime > 60 ? 'bad' : 'good', minutesUsed: socialTime,
+      name: 'Social Time',
+      status: socialTime > 60 ? 'bad' : 'good',
+      minutesUsed: socialTime,
     },
   ];
 };
@@ -92,7 +91,8 @@ const buildReport = (accumulator, data, date) => ({
   },
 });
 
-const getAppHashKeys = data => lodash.chain(data)
+const getAppHashKeys = data => lodash
+  .chain(data)
   .map('appHash')
   .uniq()
   .map(appHash => ({
@@ -111,7 +111,6 @@ const reduceMetadata = (accumulator, metadataItem) => {
     category: metadataItem.Category.S,
   };
 
-
   return {
     ...accumulator,
     [appHash]: parsedMetadataItem,
@@ -123,7 +122,7 @@ const parseMetadata = metadata => {
   return metadata.Responses[METADATA_TABLE_NAME].reduce(reduceMetadata, {});
 };
 
-const enrichWithMetadata = (parsedMetadata) => (trailItem) => {
+const enrichWithMetadata = parsedMetadata => trailItem => {
   const appMetadata = parsedMetadata[trailItem.appHash];
 
   if (!appMetadata) {
@@ -140,16 +139,12 @@ const enrichWithMetadata = (parsedMetadata) => (trailItem) => {
 };
 
 const getUpdatedMinutesUsed = (lastTrailItem, trailItem) => {
-  const lastTrailItemEnd = lastTrailItem.timeStamp.clone().add(
-    lastTrailItem.minutesUsed, 'minutes'
-  );
-  const trailItemEnd = trailItem.timeStamp.clone().clone().add(
-    trailItem.minutesUsed, 'minutes'
-  );
+  const lastTrailItemEnd = lastTrailItem.timeStamp
+    .clone()
+    .add(lastTrailItem.minutesUsed, 'minutes');
+  const trailItemEnd = trailItem.timeStamp.clone().clone().add(trailItem.minutesUsed, 'minutes');
 
-  const delta = moment.duration(
-    trailItemEnd.diff(lastTrailItemEnd)
-  ).asMinutes();
+  const delta = moment.duration(trailItemEnd.diff(lastTrailItemEnd)).asMinutes();
 
   const normalisedDelta = delta > 0 ? delta : 0;
 
@@ -166,14 +161,10 @@ export const isOverlapping = (secondTrailItem, lastTrailItem) => {
 
   const startTime = lastTrailItem.timeStamp;
   const fuzziness = FUZINESS[lastTrailItem.category] || 1;
-  const endTime = startTime.clone().add(
-    lastTrailItem.minutesUsed + fuzziness, 'minutes'
-  );
+  const endTime = startTime.clone().add(lastTrailItem.minutesUsed + fuzziness, 'minutes');
 
   const secondTrailItemStart = secondTrailItem.timeStamp;
-  const result = secondTrailItemStart.isBetween(
-    startTime, endTime, '()'
-  );
+  const result = secondTrailItemStart.isBetween(startTime, endTime, '()');
 
   return result;
 };
@@ -182,10 +173,7 @@ export const coalesceApps = (accumulator, trailItem) => {
   const overlappingIndex = lodash.findIndex(accumulator, isOverlapping.bind(undefined, trailItem));
 
   if (overlappingIndex === -1) {
-    return [
-      ...accumulator,
-      trailItem,
-    ];
+    return [...accumulator, trailItem];
   }
 
   const overlappingItem = accumulator[overlappingIndex];
@@ -202,45 +190,43 @@ export const coalesceApps = (accumulator, trailItem) => {
   ];
 };
 
-const dateComparator = (date1, date2) => (date1.toString() < date2.toString() ? -1 : 1);
+const dateComparator = (date1, date2) => date1.toString() < date2.toString() ? -1 : 1;
 
 const getAppMetadata = data => {
   const appHashKeys = getAppHashKeys(data);
-  return AWSDynamoDB.BatchGetItem({
-    RequestItems: {
-      [METADATA_TABLE_NAME]: {
-        Keys: appHashKeys,
+  return AWSDynamoDB
+    // eslint-disable-next-line
+    .BatchGetItem({
+      RequestItems: {
+        [METADATA_TABLE_NAME]: {
+          Keys: appHashKeys,
+        },
       },
-    },
-  })
-  .then(response => {
-    const parsedMetadata = parseMetadata(response);
-    const result = data
-      .map(enrichWithMetadata(parsedMetadata))
-      .filter(i => i !== null)
-      .sort(dateComparator)
-			.reduce(coalesceApps, []);
+    })
+    .then(response => {
+      const parsedMetadata = parseMetadata(response);
+      const result = data
+        .map(enrichWithMetadata(parsedMetadata))
+        .filter(i => i !== null)
+        .sort(dateComparator)
+        .reduce(coalesceApps, []);
 
-    if (result.length === 0) throw new Error('No trail items with known metadata');
+      if (result.length === 0) throw new Error('No trail items with known metadata');
 
-    return result;
-  });
+      return result;
+    });
 };
-
 
 export const parseReport = data => {
   if (data === null || data.length === 0) {
     throw new Error(`Invalid data passed to parseReport: ${JSON.stringify(data)}`);
   }
 
-  return lodash.chain(data)
-    .reduce(groupByDate, {})
-    .reduce(buildReport, {})
-    .value();
+  return lodash.chain(data).reduce(groupByDate, {}).reduce(buildReport, {}).value();
 };
 
-const getReportForKid = (kid) => {
-  const { UUID } = kid;
+const getReportForKid = kid => {
+  const {UUID} = kid;
   const startDate = moment();
   startDate.subtract(7, 'days');
   const queryRequest = {
@@ -252,22 +238,20 @@ const getReportForKid = (kid) => {
       '#T': 'StartTime',
     },
     ExpressionAttributeValues: {
-      ':uuid': { S: UUID },
-      ':time': { S: startDate.utc().format('YYYY-MM-DD') },
+      ':uuid': {S: UUID},
+      ':time': {S: startDate.utc().format('YYYY-MM-DD')},
     },
     ProjectionExpression: 'StartTime, MinutesUsed, AppHash',
   };
 
+  // eslint-disable-next-line
   return AWSDynamoDB.Query(queryRequest);
 };
 
-const fetchReports = (kid) =>
-  dispatch => {
-    dispatch({ type: 'FETCHING_REPORT' });
+const fetchReports = kid => dispatch => {
+  dispatch({type: 'FETCHING_REPORT'});
 
-    console.log('Fetching reports!');
-
-    return getReportForKid(kid)
+  return getReportForKid(kid)
     .then(cleanDynamoDBResponse)
     .then(getAppMetadata)
     .then(reportData => {
@@ -286,6 +270,6 @@ const fetchReports = (kid) =>
       });
       logError(`Error fetching reports for ${kid.UUID}: ${e.message}`);
     });
-  };
+};
 
 export default fetchReports;

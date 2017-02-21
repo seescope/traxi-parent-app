@@ -1,8 +1,5 @@
-/* eslint no-native-reassign: "off" */
-
 import { TEST_KID_FIRST_NAME, TEST_KID_NAME } from '../Mocks';
 import {
-  sendPhoneNumberToSlack,
   firstName,
   relativeDate,
   timeRange,
@@ -65,21 +62,5 @@ describe('experimentViewed', () => {
 
     const event = mockAnalytics.track.mock.calls[0];
     expect(event).toMatchSnapshot();
-  });
-});
-
-describe('sendPhoneNumberToSlack', () => {
-  it('sends a phone number to Slack', () => {
-    const phoneNumber = '+61401633346';
-
-    const mockDispatch = jest.fn();
-    fetch = jest.fn(() => Promise.resolve({
-      text: () => Promise.resolve('ok'),
-    }));
-
-    return sendPhoneNumberToSlack(phoneNumber).then(() => {
-      expect(mockDispatch.mock.calls).toMatchSnapshot();
-      expect(fetch.mock.calls).toMatchSnapshot();
-    });
   });
 });

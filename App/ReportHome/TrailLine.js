@@ -18,8 +18,10 @@ const style = StyleSheet.create({
 const TrailLine = ({ index }) => {
   const startIndentation = PILL_INDENTS[index % PILL_INDENTS.length];
   const endIndentation = PILL_INDENTS[(index + 1) % PILL_INDENTS.length];
-  const d = `M${startIndentation + (136 / 2) - 8},0
-             Q${startIndentation + (136 / 2) - 8},60 ${16 + endIndentation + (136 / 2)},60`;
+  const d = `M${startIndentation + 136 / 2 - 8},0
+             Q${startIndentation + 136 / 2 - 8},60 ${16 +
+    endIndentation +
+    136 / 2},60`;
 
   return (
     <Svg width={width} height={72} style={style.trailLine}>

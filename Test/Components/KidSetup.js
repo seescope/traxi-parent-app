@@ -10,12 +10,12 @@ const TEST_KID_NAME = 'TEST';
 // We can't use a real promise here due to timing issues.
 // Instead, we return a pretend promise that simply calls the 'then' callback immediately.
 const TEST_START_VPN = sinon.spy(() => ({
-  then: (f) => {
+  then: f => {
     f();
-    return { 
-      catch: () =>  {},
+    return {
+      catch: () => {},
     };
-  }
+  },
 }));
 
 const TEST_KID_REPORTS = sinon.spy();
@@ -25,7 +25,7 @@ const KidSetup = proxyquire.noCallThru()('../../App/Components/KidSetup', {
     Actions: { kidReports: TEST_KID_REPORTS },
   },
   'react-redux': {
-    connect: () => ( a => a ),
+    connect: () => a => a,
     Provider: View,
   },
   '../Actions/StartVPN': TEST_START_VPN,

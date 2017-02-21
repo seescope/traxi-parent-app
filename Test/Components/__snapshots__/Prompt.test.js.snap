@@ -17,17 +17,11 @@ exports[`test renders 1`] = `
         "fontSize": 30,
         "marginBottom": -2,
         "textAlign": "center",
-        "textShadowColor": "rgba(75, 73, 73, 0.8)",
-        "textShadowOffset": Object {
-          "height": 3,
-          "width": 3,
-        },
-        "textShadowRadius": 20,
       }
     }>
-    Looking good, 
-    Kane
-    !
+    [missing \"en.prompt.header\" translation]
+    , 
+    , Kane
   </Text>
   <View
     style={
@@ -74,9 +68,7 @@ exports[`test renders 1`] = `
         "textAlign": "center",
       }
     }>
-    Do you have 
-    Jeff
-    \'s phone or tablet?
+    [missing \"en.prompt.doYouHave\" translation]
   </Text>
   <View
     style={
@@ -89,6 +81,7 @@ exports[`test renders 1`] = `
       Object {
         "flexDirection": "row",
         "justifyContent": "space-between",
+        "padding": 32,
         "width": 686,
       }
     }>
@@ -126,7 +119,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        No I don\'t
+        [missing \"en.prompt.no\" translation]
          
       </Text>
     </View>
@@ -164,9 +157,7 @@ exports[`test renders 1`] = `
             "fontSize": 20,
           }
         }>
-        I have 
-        Jeff
-        \'s device
+        [missing \"en.prompt.yes\" translation]
          
       </Text>
     </View>

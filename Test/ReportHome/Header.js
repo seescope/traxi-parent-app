@@ -2,10 +2,12 @@ import React from 'react';
 import { View } from 'react-native';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import moment from 'moment';
 import proxyquire from 'proxyquire';
 
-const { HeaderComponent, subHeaderText } = proxyquire.noCallThru()('../../App/ReportHome/Header', {
+const {
+  HeaderComponent,
+  subHeaderText,
+} = proxyquire.noCallThru()('../../App/ReportHome/Header', {
   'react-native-animatable': { View },
   'react-native-router-flux': { Actions: {} },
   '../Components/Button': () => View,

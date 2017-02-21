@@ -11,7 +11,7 @@ import HeaderText from '../Components/HeaderText';
 import BodyText from '../Components/BodyText';
 import { TRAXI_BLUE, WHITE } from '../Constants/Colours';
 
-const firstName = (kid) => kid.name.split(' ')[0];
+const firstName = kid => kid.name.split(' ')[0];
 
 const mapStateToProps = state => ({
   parentName: state.parentName,
@@ -32,13 +32,15 @@ const headerTextStyle = { marginBottom: 16, color: WHITE };
 const congratulationsStyle = {
   backgroundColor: TRAXI_BLUE,
   flex: 1,
-  paddingTop: 64,
-  padding: 32,
+  paddingTop: 10,
+  padding: 28,
   justifyContent: 'flex-start',
   alignItems: 'center',
 };
 
-const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, deviceType }) => (
+const CongratulationsComponent = (
+  { kidName, parentName, onPress, avatarURL, deviceType },
+) => (
   <Background style={congratulationsStyle}>
     <KidAvatar animation="tada" size={210} state="good" avatarURL={avatarURL} />
 
@@ -47,11 +49,19 @@ const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, dev
     </HeaderText>
 
     <BodyText>
-      Great work, {parentName}! {kidName}'s {deviceType} is now being monitored by traxi.
+      Great work,{' '}
+      {parentName}
+      !{' '}
+      {kidName}
+      's{' '}
+      {deviceType}
+      {' '}is now being monitored by traxi.
       You will soon be able to see what they are doing on their {deviceType}.
       {'\n'}
       {'\n'}
-      It will take a couple minutes for {kidName}'s usage to be sent to traxi, so you might
+      It will take a couple minutes for{' '}
+      {kidName}
+      's usage to be sent to traxi, so you might
       want to come back to the app a little later.
     </BodyText>
 
@@ -62,12 +72,14 @@ const CongratulationsComponent = ({ kidName, parentName, onPress, avatarURL, dev
 );
 
 CongratulationsComponent.propTypes = {
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
   kidName: PropTypes.string.isRequired,
   avatarURL: PropTypes.string.isRequired,
   deviceType: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-const Congratulations = connect(mapStateToProps, mapDispatchToProps)(CongratulationsComponent);
+const Congratulations = connect(mapStateToProps, mapDispatchToProps)(
+  CongratulationsComponent,
+);
 export default Congratulations;

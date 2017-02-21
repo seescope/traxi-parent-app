@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Dimensions, ActivityIndicator } from 'react-native';
 import Intercom from 'react-native-intercom';
+import I18n from 'react-native-i18n';
 
 import HeaderText from '../Components/HeaderText';
 import KidAvatar from '../Components/KidAvatar';
@@ -30,33 +31,28 @@ const style = {
 const WaitingForDevice = ({ kidName, avatarURL, deviceType }) => (
   <View style={style.container}>
     <HeaderText>
-      Waiting for traxi to {'\n'}
-      start on {kidName}'s {deviceType}
+      {I18n.t('waitingForDevice.header', { kidName, deviceType })}
     </HeaderText>
 
     <Spacing height={32} />
 
-    <KidAvatar
-      size={166}
-      avatarURL={avatarURL}
-      state="neutral"
-    />
+    <KidAvatar size={166} avatarURL={avatarURL} state="neutral" />
 
     <Spacing height={32} />
 
-    <ActivityIndicator size="large" />
+    <ActivityIndicator size="large" color="white" />
 
     <Spacing height={32} />
 
     <Text style={style.bodyText}>
-      Waiting...
+      {I18n.t('waitingForDevice.waiting')}
     </Text>
 
     <Spacing />
 
     <View style={style.buttonContainer}>
       <Button primary={false} onPress={() => Intercom.displayMessageComposer()}>
-        I need help
+        {I18n.t('general.needHelp')}
       </Button>
     </View>
   </View>

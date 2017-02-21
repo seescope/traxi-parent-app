@@ -38,7 +38,7 @@ const WALKTHROUGH_STYLES = {
   },
   instructionsContainer: {
     flex: 1,
-    paddingTop: 64,
+    paddingTop: 20,
   },
   loadingindicatorContainer: {
     flex: 1,
@@ -109,18 +109,10 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
 
 const Walkthrough = ({ step, kid, nextStep, parentName }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
-    <ProgressTrack
-      stage={STAGE_MAP[step]}
-      width={width - 64}
-    />
+    <ProgressTrack stage={STAGE_MAP[step]} width={width - 64} />
 
     <View style={WALKTHROUGH_STYLES.instructionsContainer}>
-      {getNextComponent(
-        step,
-        nextStep,
-        kid,
-        parentName
-      )}
+      {getNextComponent(step, nextStep, kid, parentName)}
     </View>
   </Background>
 );
@@ -129,7 +121,7 @@ Walkthrough.propTypes = {
   step: PropTypes.number.isRequired,
   kid: PropTypes.object.isRequired,
   nextStep: PropTypes.func.isRequired,
-  parentName: PropTypes.string.isRequired,
+  parentName: PropTypes.string,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Walkthrough);

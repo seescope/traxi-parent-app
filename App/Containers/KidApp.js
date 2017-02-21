@@ -10,17 +10,25 @@ import KidReport from './KidReport';
 const RouterWithRedux = connect()(Router);
 
 const KidApp = ({ isInstalled, UUID }) => {
-  const reducer = (state) => state;
+  const reducer = state => state;
   const initialState = {};
   const store = createStore(reducer, initialState, applyMiddleware(ReduxThunk));
-
-  console.log('Starting KidApp. isInstalled: ', isInstalled);
 
   return (
     <Provider store={store}>
       <RouterWithRedux hideNavBar>
-        <Scene key="setup" initial={!isInstalled} component={KidSetup} UUID={UUID} />
-        <Scene key="kidReports" initial={isInstalled} component={KidReport} UUID={UUID} />
+        <Scene
+          key="setup"
+          initial={!isInstalled}
+          component={KidSetup}
+          UUID={UUID}
+        />
+        <Scene
+          key="kidReports"
+          initial={isInstalled}
+          component={KidReport}
+          UUID={UUID}
+        />
       </RouterWithRedux>
     </Provider>
   );

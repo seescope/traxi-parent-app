@@ -1,5 +1,3 @@
-/* eslint no-unused-vars: ["error", {"args": "none"}] */
-
 import moment from 'moment';
 import { Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
@@ -22,7 +20,6 @@ export const relativeDate = inputDate => {
     return 'Yesterday';
   }
 
-
   return date.format('dddd');
 };
 
@@ -34,7 +31,7 @@ export const timeRange = inputHour => {
   return `${hour.format('hA')} to ${nextHour.format('hA')}`;
 };
 
-export const isIOS = (Platform.OS === 'ios');
+export const isIOS = Platform.OS === 'ios';
 
 export const listOfNumbers = length => {
   const list = [];
@@ -54,12 +51,10 @@ export const getAppNiceName = name => niceNames[name] || name;
 
 export const isToday = date => moment(date).isSame(moment(), 'day');
 
-export const logError = error => {
-  console.error(error);
-  return (isIOS ?
-    Crashlytics.recordError(error.toString()) :
-    Crashlytics.logException(error.toString()));
-};
+export const logError = error =>
+  isIOS
+    ? Crashlytics.recordError(error.toString())
+    : Crashlytics.logException(error.toString());
 
 export const loggingMiddleware = store => next => action => {
   Crashlytics.log(JSON.stringify(action));
@@ -68,6 +63,7 @@ export const loggingMiddleware = store => next => action => {
   return next(action);
 };
 
+/* eslint-disable no-unused-vars */
 export const trackingMiddleware = store => next => action => {
   // If this isn't a screen change, we're not interested.
   if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
@@ -81,33 +77,32 @@ export const trackingMiddleware = store => next => action => {
   return next(action);
 };
 
-export const experimentViewed = (variantName) => {
+export const experimentViewed = variantName => {
   Analytics.identify({
     price: variantName,
   });
 };
 
-export const handleBilling = price => InAppBilling.open()
-  .then(() => InAppBilling.subscribe(price))
-  .then(() => InAppBilling.close());
+export const handleBilling = price =>
+  InAppBilling.open()
+    .then(() => InAppBilling.subscribe(price))
+    .then(() => InAppBilling.close());
 
-export const onSelectPrice = price =>
-  dispatch =>
-    dispatch(selectPrice(price));
+export const onSelectPrice = price => dispatch => dispatch(selectPrice(price));
 
-
-export const sendPhoneNumberToSlack = (phoneNumber) => fetch(
-  'https://hooks.slack.com/services/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',
-  {
-    method: 'POST',
-    body: JSON.stringify({
-      text: `Reminder received! ${phoneNumber}`,
-    }),
-  }
-)
-.then(res => res.text())
-.then(body => {
-  if (body !== 'ok') {
-    throw new Error(`Error posting to Slack: ${body}`);
-  }
-});
+export const sendPhoneNumberToSlack = phoneNumber =>
+  fetch(
+    'https://hooks.slack.com/services/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',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        text: `Reminder received! ${phoneNumber}`,
+      }),
+    },
+  )
+    .then(res => res.text())
+    .then(body => {
+      if (body !== 'ok') {
+        throw new Error(`Error posting to Slack: ${body}`);
+      }
+    });

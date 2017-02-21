@@ -5,9 +5,7 @@ import Intercom from 'react-native-intercom';
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {
     case 'PREVIOUS_STEP': {
-      const previousStep = state.step > 0
-        ? state.step - 1
-        : state.step;
+      const previousStep = state.step > 0 ? state.step - 1 : state.step;
       Analytics.track('Went Back in Walkthrough', {
         value: previousStep,
       });
@@ -94,7 +92,13 @@ const ParentAppReducer = (state = {}, action = {}) => {
     case 'ADD_KID': {
       const { UUID, setupID } = action;
       const { selectedKid } = state;
-      const newKid = { ...selectedKid, UUID, setupID, deviceType: 'unknown', status: 'WAITING' };
+      const newKid = {
+        ...selectedKid,
+        UUID,
+        setupID,
+        deviceType: 'unknown',
+        status: 'WAITING',
+      };
 
       return {
         ...state,
@@ -106,9 +110,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
       const { step } = state;
 
       // Only advance through the walkthrough if we know the deviceType.
-      const newStep = selectedKid.deviceType === 'unknown'
-        ? step
-        : step + 1;
+      const newStep = selectedKid.deviceType === 'unknown' ? step : step + 1;
 
       if (selectedKid.deviceType === 'unknown') {
         Analytics.track('Started Setup', selectedKid);

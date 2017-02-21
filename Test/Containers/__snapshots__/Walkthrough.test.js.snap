@@ -19,7 +19,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -35,15 +35,9 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -64,7 +58,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -136,7 +130,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -167,119 +161,144 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
       style={
         Object {
-          "alignItems": "center",
+          "flex": 1,
         }
       }>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
-            "marginBottom": -2,
-            "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }>
-        Thanks, 
-        Jeff Bezos
-        !
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Image
+          animation={undefined}
+          duration={undefined}
+          iterationCount={undefined}
+          source={1}
+          style={
+            Object {
+              "borderColor": undefined,
+              "borderRadius": 102,
+              "borderWidth": 5.828571428571428,
+              "height": 204,
+              "marginBottom": 20.4,
+              "shadowColor": "rgba(0,0,0,0.5)",
+              "shadowOffset": Object {
+                "height": 2,
+              },
+              "shadowRadius": 5,
+              "width": 204,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.dontWorry\" translation]
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 24,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          Don\'t worry, only you will be able to see it.
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+      </View>
       <View
         style={
           Object {
-            "height": 32,
-          }
-        } />
-      <Image
-        animation={undefined}
-        duration={undefined}
-        iterationCount={undefined}
-        source={1}
-        style={
-          Object {
-            "borderColor": undefined,
-            "borderRadius": 102,
-            "borderWidth": 5.828571428571428,
-            "height": 204,
-            "marginBottom": 20.4,
-            "shadowColor": "rgba(0,0,0,0.5)",
-            "shadowOffset": Object {
-              "height": 2,
-            },
-            "shadowRadius": 5,
-            "width": 204,
-          }
-        } />
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Now, let\'s set a picture for 
-        Brett
-        .
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 24,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Don\'t worry, only you will be able to see it.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <View
-        style={
-          Object {
+            "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "width": 686,
           }
         }>
         <View
@@ -316,7 +335,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -354,8 +373,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontSize": 20,
               }
             }>
-            Set a picture for 
-            Brett
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -386,7 +404,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -407,17 +425,11 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Looking good, 
-        Jeff Bezos
-        !
+        [missing \"en.prompt.header\" translation]
+        , 
+        , Jeff Bezos
       </Text>
       <View
         style={
@@ -468,9 +480,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -483,6 +493,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
           Object {
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "padding": 32,
             "width": 686,
           }
         }>
@@ -520,7 +531,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontSize": 20,
               }
             }>
-            No I don\'t
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -558,9 +569,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontSize": 20,
               }
             }>
-            I have 
-            Brett
-            \'s device
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -591,7 +600,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -622,12 +631,6 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -644,7 +647,6 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -682,7 +684,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -720,7 +722,7 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -768,7 +770,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -784,23 +786,9 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -814,6 +802,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
         ellipsizeMode="tail"
         style={
           Object {
+            "backgroundColor": "transparent",
             "color": "#FFF",
             "fontSize": 64,
             "textAlign": "center",
@@ -846,14 +835,13 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             Array [
               undefined,
               Object {
+                "backgroundColor": "transparent",
                 "color": "#FFF",
                 "textAlign": "center",
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -903,7 +891,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -934,7 +922,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -965,16 +953,9 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Install traxi Child App 
-           on Brett\'s phone
+          [missing \"en.instructions.android0\" translation]
         </Text>
         <View
           style={
@@ -988,7 +969,6 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -1026,7 +1006,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1064,7 +1044,7 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1112,7 +1092,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -1143,16 +1123,9 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Open traxi Child App 
-           on Brett\'s phone
+          [missing \"en.instructions.android1\" translation]
         </Text>
         <View
           style={
@@ -1166,7 +1139,6 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -1204,7 +1176,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1242,7 +1214,7 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1290,7 +1262,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -1321,16 +1293,9 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap \"OK\" on the next 
-           screen.
+          [missing \"en.instructions.android2\" translation]
         </Text>
         <View
           style={
@@ -1344,7 +1309,6 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -1382,7 +1346,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -1420,7 +1384,7 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -1468,7 +1432,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -1489,21 +1453,9 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Waiting for traxi to 
-        
-        
-        start on 
-        Brett
-        \'s 
-        Android
+        [missing \"en.waitingForDevice.header\" translation]
       </Text>
       <View
         style={
@@ -1543,7 +1495,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
         } />
       <ActivityIndicator
         animating={true}
-        color="#999999"
+        color="white"
         hidesWhenStopped={true}
         size="large" />
       <View
@@ -1565,7 +1517,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "textAlign": "center",
           }
         }>
-        Waiting...
+        [missing \"en.waitingForDevice.waiting\" translation]
       </Text>
       <View
         style={
@@ -1614,7 +1566,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -1645,7 +1597,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -1661,15 +1613,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -1690,7 +1636,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -1762,7 +1708,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -1793,119 +1739,144 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
       style={
         Object {
-          "alignItems": "center",
+          "flex": 1,
         }
       }>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
-            "marginBottom": -2,
-            "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }>
-        Thanks, 
-        Jeff Bezos
-        !
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Image
+          animation={undefined}
+          duration={undefined}
+          iterationCount={undefined}
+          source={1}
+          style={
+            Object {
+              "borderColor": undefined,
+              "borderRadius": 102,
+              "borderWidth": 5.828571428571428,
+              "height": 204,
+              "marginBottom": 20.4,
+              "shadowColor": "rgba(0,0,0,0.5)",
+              "shadowOffset": Object {
+                "height": 2,
+              },
+              "shadowRadius": 5,
+              "width": 204,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.dontWorry\" translation]
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 24,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          Don\'t worry, only you will be able to see it.
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+      </View>
       <View
         style={
           Object {
-            "height": 32,
-          }
-        } />
-      <Image
-        animation={undefined}
-        duration={undefined}
-        iterationCount={undefined}
-        source={1}
-        style={
-          Object {
-            "borderColor": undefined,
-            "borderRadius": 102,
-            "borderWidth": 5.828571428571428,
-            "height": 204,
-            "marginBottom": 20.4,
-            "shadowColor": "rgba(0,0,0,0.5)",
-            "shadowOffset": Object {
-              "height": 2,
-            },
-            "shadowRadius": 5,
-            "width": 204,
-          }
-        } />
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Now, let\'s set a picture for 
-        Brett
-        .
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 24,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Don\'t worry, only you will be able to see it.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <View
-        style={
-          Object {
+            "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "width": 686,
           }
         }>
         <View
@@ -1942,7 +1913,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -1980,8 +1951,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontSize": 20,
               }
             }>
-            Set a picture for 
-            Brett
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -2012,7 +1982,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -2033,17 +2003,11 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Looking good, 
-        Jeff Bezos
-        !
+        [missing \"en.prompt.header\" translation]
+        , 
+        , Jeff Bezos
       </Text>
       <View
         style={
@@ -2094,9 +2058,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -2109,6 +2071,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
           Object {
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "padding": 32,
             "width": 686,
           }
         }>
@@ -2146,7 +2109,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontSize": 20,
               }
             }>
-            No I don\'t
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -2184,9 +2147,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontSize": 20,
               }
             }>
-            I have 
-            Brett
-            \'s device
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -2217,7 +2178,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -2248,12 +2209,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -2270,7 +2225,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -2308,7 +2262,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2346,7 +2300,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2394,7 +2348,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -2410,23 +2364,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -2440,6 +2380,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
         ellipsizeMode="tail"
         style={
           Object {
+            "backgroundColor": "transparent",
             "color": "#FFF",
             "fontSize": 64,
             "textAlign": "center",
@@ -2472,14 +2413,13 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             Array [
               undefined,
               Object {
+                "backgroundColor": "transparent",
                 "color": "#FFF",
                 "textAlign": "center",
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -2529,7 +2469,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -2560,7 +2500,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -2591,16 +2531,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap the \"Install\"
-           button in the top right
+          [missing \"en.instructions.ios0\" translation]
         </Text>
         <View
           style={
@@ -2614,7 +2547,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -2652,7 +2584,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2690,7 +2622,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2738,7 +2670,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -2769,16 +2701,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap the \"Install\"
-           button again
+          [missing \"en.instructions.ios1\" translation]
         </Text>
         <View
           style={
@@ -2792,7 +2717,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -2830,7 +2754,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -2868,7 +2792,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -2916,7 +2840,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -2947,15 +2871,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap \"Done\"
+          [missing \"en.instructions.ios2\" translation]
         </Text>
         <View
           style={
@@ -2969,7 +2887,6 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -3007,7 +2924,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -3045,7 +2962,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -3093,7 +3010,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -3109,15 +3026,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Let\'s get started!
+        [missing \"en.setName.header\" translation]
       </Text>
       <View
         style={
@@ -3138,7 +3049,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "textAlign": "left",
           }
         }>
-        What is your kid\'s name?
+        [missing \"en.setName.kidsName\" translation]
       </Text>
       <View
         style={
@@ -3210,7 +3121,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
                 "fontSize": 20,
               }
             }>
-            Next step
+            [missing \"en.general.nextStep\" translation]
              
           </Text>
         </View>
@@ -3241,119 +3152,144 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
       style={
         Object {
-          "alignItems": "center",
+          "flex": 1,
         }
       }>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
-            "marginBottom": -2,
-            "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }>
-        Thanks, 
-        Jeff Bezos
-        !
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 30,
+              "marginBottom": -2,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.general.thanks\" translation]
+          , 
+          Jeff Bezos
+          !
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Image
+          animation={undefined}
+          duration={undefined}
+          iterationCount={undefined}
+          source={1}
+          style={
+            Object {
+              "borderColor": undefined,
+              "borderRadius": 102,
+              "borderWidth": 5.828571428571428,
+              "height": 204,
+              "marginBottom": 20.4,
+              "shadowColor": "rgba(0,0,0,0.5)",
+              "shadowOffset": Object {
+                "height": 2,
+              },
+              "shadowRadius": 5,
+              "width": 204,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.setAPictureFor\" translation]
+           
+          Brett
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          [missing \"en.setImage.dontWorry\" translation]
+          .
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 24,
+            }
+          } />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "color": "#FFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 16,
+              "textAlign": "center",
+            }
+          }>
+          Don\'t worry, only you will be able to see it.
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          } />
+      </View>
       <View
         style={
           Object {
-            "height": 32,
-          }
-        } />
-      <Image
-        animation={undefined}
-        duration={undefined}
-        iterationCount={undefined}
-        source={1}
-        style={
-          Object {
-            "borderColor": undefined,
-            "borderRadius": 102,
-            "borderWidth": 5.828571428571428,
-            "height": 204,
-            "marginBottom": 20.4,
-            "shadowColor": "rgba(0,0,0,0.5)",
-            "shadowOffset": Object {
-              "height": 2,
-            },
-            "shadowRadius": 5,
-            "width": 204,
-          }
-        } />
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Now, let\'s set a picture for 
-        Brett
-        .
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 24,
-          }
-        } />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
-        }>
-        Don\'t worry, only you will be able to see it.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        } />
-      <View
-        style={
-          Object {
+            "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
-            "width": 686,
           }
         }>
         <View
@@ -3390,7 +3326,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontSize": 20,
               }
             }>
-            Not right now
+            [missing \"en.setImage.notNow\" translation]
              
           </Text>
         </View>
@@ -3428,8 +3364,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontSize": 20,
               }
             }>
-            Set a picture for 
-            Brett
+            [missing \"en.setImage.chooseAPicture\" translation]
              
           </Text>
         </View>
@@ -3460,7 +3395,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -3481,17 +3416,11 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Looking good, 
-        Jeff Bezos
-        !
+        [missing \"en.prompt.header\" translation]
+        , 
+        , Jeff Bezos
       </Text>
       <View
         style={
@@ -3542,9 +3471,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -3557,6 +3484,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
           Object {
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "padding": 32,
             "width": 686,
           }
         }>
@@ -3594,7 +3522,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontSize": 20,
               }
             }>
-            No I don\'t
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -3632,9 +3560,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontSize": 20,
               }
             }>
-            I have 
-            Brett
-            \'s device
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>
@@ -3665,7 +3591,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -3696,12 +3622,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
           
@@ -3718,7 +3638,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -3756,7 +3675,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -3794,7 +3713,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -3842,7 +3761,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View>
@@ -3858,23 +3777,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        On 
-        Brett
-        \'s device 
-        
-        
-        go to mytraxi.com 
-        
-        
-        and enter the code:
+        [missing \"en.showPin.header\" translation]
       </Text>
       <View
         style={
@@ -3888,6 +3793,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
         ellipsizeMode="tail"
         style={
           Object {
+            "backgroundColor": "transparent",
             "color": "#FFF",
             "fontSize": 64,
             "textAlign": "center",
@@ -3920,14 +3826,13 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             Array [
               undefined,
               Object {
+                "backgroundColor": "transparent",
                 "color": "#FFF",
                 "textAlign": "center",
               },
             ]
           }>
-          Waiting for 
-          Brett
-          \'s device...
+          [missing \"en.showPin.waiting\" translation]
         </Text>
       </View>
       <View
@@ -3977,7 +3882,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
                 "fontSize": 20,
               }
             }>
-            I need help
+            [missing \"en.general.needHelp\" translation]
              
           </Text>
         </View>
@@ -4008,7 +3913,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -4039,16 +3944,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap the \"Install\"
-           button in the top right
+          [missing \"en.instructions.ios0\" translation]
         </Text>
         <View
           style={
@@ -4062,7 +3960,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -4100,7 +3997,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4138,7 +4035,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4186,7 +4083,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -4217,16 +4114,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap the \"Install\"
-           button again
+          [missing \"en.instructions.ios1\" translation]
         </Text>
         <View
           style={
@@ -4240,7 +4130,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -4278,7 +4167,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4316,7 +4205,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4364,7 +4253,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -4395,15 +4284,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "fontSize": 30,
               "marginBottom": -2,
               "textAlign": "center",
-              "textShadowColor": "rgba(75, 73, 73, 0.8)",
-              "textShadowOffset": Object {
-                "height": 3,
-                "width": 3,
-              },
-              "textShadowRadius": 20,
             }
           }>
-          Tap \"Done\"
+          [missing \"en.instructions.ios2\" translation]
         </Text>
         <View
           style={
@@ -4417,7 +4300,6 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "alignItems": "flex-start",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "paddingHorizontal": 32,
               "width": 686,
             }
           }>
@@ -4455,7 +4337,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontSize": 20,
                 }
               }>
-              I need help
+              [missing \"en.general.needHelp\" translation]
                
             </Text>
           </View>
@@ -4493,7 +4375,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontSize": 20,
                 }
               }>
-              Next step
+              [missing \"en.general.nextStep\" translation]
                
             </Text>
           </View>
@@ -4541,7 +4423,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
     style={
       Object {
         "flex": 1,
-        "paddingTop": 64,
+        "paddingTop": 20,
       }
     }>
     <View
@@ -4562,17 +4444,11 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "fontSize": 30,
             "marginBottom": -2,
             "textAlign": "center",
-            "textShadowColor": "rgba(75, 73, 73, 0.8)",
-            "textShadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "textShadowRadius": 20,
           }
         }>
-        Looking good, 
-        Jeff Bezos
-        !
+        [missing \"en.prompt.header\" translation]
+        , 
+        , Jeff Bezos
       </Text>
       <View
         style={
@@ -4623,9 +4499,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "textAlign": "center",
           }
         }>
-        Do you have 
-        Brett
-        \'s phone or tablet?
+        [missing \"en.prompt.doYouHave\" translation]
       </Text>
       <View
         style={
@@ -4638,6 +4512,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
           Object {
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "padding": 32,
             "width": 686,
           }
         }>
@@ -4675,7 +4550,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontSize": 20,
               }
             }>
-            No I don\'t
+            [missing \"en.prompt.no\" translation]
              
           </Text>
         </View>
@@ -4713,9 +4588,7 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontSize": 20,
               }
             }>
-            I have 
-            Brett
-            \'s device
+            [missing \"en.prompt.yes\" translation]
              
           </Text>
         </View>

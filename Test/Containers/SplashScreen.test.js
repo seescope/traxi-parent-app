@@ -1,5 +1,11 @@
-jest.mock('../../App/Actions/LoginWithMethod', () => jest.fn(() => Promise.resolve()));
-jest.mock('../../App/Actions/SaveProfile', () => jest.fn(() => Promise.resolve()));
+jest.mock(
+  '../../App/Actions/LoginWithMethod',
+  () => jest.fn(() => Promise.resolve()),
+);
+jest.mock(
+  '../../App/Actions/SaveProfile',
+  () => jest.fn(() => Promise.resolve()),
+);
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -8,17 +14,21 @@ import { Provider } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import LoginWithMethod from '../../App/Actions/LoginWithMethod';
 import SaveProfile from '../../App/Actions/SaveProfile';
-import SplashScreen, { mapDispatchToProps } from '../../App/Containers/SplashScreen';
+import SplashScreen, {
+  mapDispatchToProps,
+} from '../../App/Containers/SplashScreen';
 
 const mockStore = configureStore();
 const testStore = mockStore(() => {});
 
 it('renders the <SplashScreen> component', () => {
-  const tree = renderer.create(
-    <Provider store={testStore}>
-      <SplashScreen />
-    </Provider>
-  ).toJSON();
+  const tree = renderer
+    .create(
+      <Provider store={testStore}>
+        <SplashScreen />
+      </Provider>,
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
