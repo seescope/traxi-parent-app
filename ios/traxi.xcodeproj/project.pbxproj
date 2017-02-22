@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -36,13 +37,15 @@
 		4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C97D9BD011B4737BBAFE674 /* libDynamoDB.a */; };
 		554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7505E1BBEE114F4CB23DC267 /* libRNSVG.a */; };
 		5E039ABB1E5BFC6C00B7A0E6 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E039AA01E5BFC1F00B7A0E6 /* libRCTPushNotification.a */; };
-		5E236C071E5BCFD800F23D61 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; };
-		5E236C081E5BCFD800F23D61 /* AWSSNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E7599EF1E5D5023004CCB58 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; };
+		5E7599F01E5D5023004CCB58 /* AWSSNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EE5425F1E5D500100F4F43D /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; };
 		5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; };
 		6458187C95154FA99DD430C6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C14CCAF2644A9895AE9EE7 /* Zocial.ttf */; };
 		69D64F33A7EA40F89C1D5365 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F31334C4B8546E6BA09F52C /* EvilIcons.ttf */; };
 		6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7CC788F4D048DFBD9F0455 /* libRNRandomBytes.a */; };
 		729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF403B07C6664E38AEBA23E7 /* libRNIntercom.a */; };
+		73AE6FFE03354480827793D6 /* libSNS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D01C6C063FA94EC4A62599A6 /* libSNS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8700BCCB4750401AAC679CBA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A52B9E48CA645F587719F3F /* SimpleLineIcons.ttf */; };
 		88A30EFF829845D2967B2730 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40909FC3FB524E80B6DE3B47 /* MaterialCommunityIcons.ttf */; };
@@ -138,6 +141,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
 			remoteInfo = "RCTPushNotification-tvOS";
+		};
+		5EE541F91E5D4F6300F4F43D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6382ED09583748698C132E82 /* SNS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6C7F671D19C51500A4A247;
+			remoteInfo = SNS;
 		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -373,7 +383,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C302EEF41DFF9DDA00A00489 /* AWSDynamoDB.framework in Embed Frameworks */,
-				5E236C081E5BCFD800F23D61 /* AWSSNS.framework in Embed Frameworks */,
+				5E7599F01E5D5023004CCB58 /* AWSSNS.framework in Embed Frameworks */,
 				C302EEB71DFF9A8A00A00489 /* AWSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -418,8 +428,10 @@
 		561FA2165D8B46739DC30A1A /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		59C14CCAF2644A9895AE9EE7 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		5E039A8A1E5BFC1E00B7A0E6 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
-		5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSNS.framework; sourceTree = "<group>"; };
+		5EE5425E1E5D500100F4F43D /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSNS.framework; sourceTree = "<group>"; };
+		5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "/Users/christopherhiste/Desktop/traxi-parent-app/ios/AWSSNS.framework"; sourceTree = "<absolute>"; };
 		5F5435D371DB4E6390966BA4 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
+		6382ED09583748698C132E82 /* SNS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SNS.xcodeproj; path = "../node_modules/aws-sdk-react-native-sns/ios/SNS.xcodeproj"; sourceTree = "<group>"; };
 		67CC55B1355C40F9AF8CE464 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7505E1BBEE114F4CB23DC267 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
@@ -454,6 +466,7 @@
 		C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNIntercom.xcodeproj; path = "../node_modules/react-native-intercom/iOS/RNIntercom.xcodeproj"; sourceTree = "<group>"; };
 		C8740B799E594C499B3996F5 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../App/Fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		CE4C146C18674F00ABF48E77 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTMaterialKit.xcodeproj; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; };
+		D01C6C063FA94EC4A62599A6 /* libSNS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSNS.a; sourceTree = "<group>"; };
 		DAD5517A6CBF41E1AEBBD41A /* libRCTMaterialKit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTMaterialKit.a; sourceTree = "<group>"; };
 		DB7967210B504CCB87D65DC7 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		DC5557B972D24AEC81D4C82D /* RNRandomBytes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNRandomBytes.xcodeproj; path = "../node_modules/react-native-randombytes/RNRandomBytes.xcodeproj"; sourceTree = "<group>"; };
@@ -494,6 +507,7 @@
 				0FF736F74A5A4308AE75BB21 /* libRNImagePicker.a in Frameworks */,
 				6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */,
 				9CED65BFDA6E4FFF994FB073 /* libSMXCrashlytics.a in Frameworks */,
+				5EE5425F1E5D500100F4F43D /* AWSSNS.framework in Frameworks */,
 				C5FF76DC0EBE4282ABF605B6 /* libCore.a in Frameworks */,
 				4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
@@ -502,10 +516,11 @@
 				729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */,
 				5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */,
 				D57ABCB2EABD4F65BA846FF3 /* libReact.a in Frameworks */,
-				5E236C071E5BCFD800F23D61 /* AWSSNS.framework in Frameworks */,
+				5E7599EF1E5D5023004CCB58 /* AWSSNS.framework in Frameworks */,
 				038E071F46A141C5A9119F7F /* libyoga.a in Frameworks */,
 				3C9F6B82BF454E4EB873107B /* libcxxreact.a in Frameworks */,
 				31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */,
+				73AE6FFE03354480827793D6 /* libSNS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +678,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5EE541CC1E5D4F6300F4F43D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EE541FA1E5D4F6300F4F43D /* libSNS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +724,7 @@
 				A0F3C16B708240C0A5972CEF /* RNSegmentIOAnalytics.xcodeproj */,
 				C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */,
 				521B1CD1B352413BB7C39C7E /* RNI18n.xcodeproj */,
+				6382ED09583748698C132E82 /* SNS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -740,7 +764,7 @@
 		875F757D8C9F124ACC2DD612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */,
+				5EE5425E1E5D500100F4F43D /* AWSSNS.framework */,
 				C302EEEF1DFF9DB700A00489 /* AWSDynamoDB.framework */,
 				C302EEB01DFF8C7500A00489 /* AWSCore.framework */,
 				C3FB10911D06A85800F1B2C9 /* libc++.tbd */,
@@ -1035,6 +1059,10 @@
 					ProductGroup = C3D358C21DE30438003857AE /* Products */;
 					ProjectRef = BF07A51AC661458CACD5731D /* SMXCrashlytics.xcodeproj */;
 				},
+				{
+					ProductGroup = 5EE541CC1E5D4F6300F4F43D /* Products */;
+					ProjectRef = 6382ED09583748698C132E82 /* SNS.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1112,6 +1140,13 @@
 			fileType = archive.ar;
 			path = "libRCTPushNotification-tvOS.a";
 			remoteRef = 5E039AA11E5BFC1F00B7A0E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5EE541FA1E5D4F6300F4F43D /* libSNS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSNS.a;
+			remoteRef = 5EE541F91E5D4F6300F4F43D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -1519,12 +1554,14 @@
 					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
+					"$(SRCROOT)/../node_modules/aws-sdk-react-native-sns/ios/SNS/**",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
@@ -1570,12 +1607,14 @@
 					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
+					"$(SRCROOT)/../node_modules/aws-sdk-react-native-sns/ios/SNS/**",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;

@@ -1,6 +1,8 @@
+/* eslint-disable no-console, no-unused-vars, new-cap */
+
 import PushNotification from 'react-native-push-notification';
-import { AWSSNS } from 'aws-sdk-react-native-sns';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
+import { AWSSNS } from 'aws-sdk-react-native-sns';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
@@ -9,14 +11,10 @@ const SNS_REGION = 'ap-southeast-2';
 const PLATFORM_ARN = 'arn:aws:sns:ap-southeast-2:387118107985:app/APNS_SANDBOX/traxi';
 
 const TOKEN = 'ccf44ab68a27caa05603517e4a8a6e1ca884383254321d57b9f6a69fe5632a5e';
+const ARN = 'arn:aws:sns:ap-southeast-2:387118107985:DailyUsage';
+const edp = 'arn:aws:sns:ap-southeast-2:387118107985:endpoint/APNS_SANDBOX/traxi/8cc59243-2a5e-335b-aebb-fbac49e5f44e';
 
 export const configureEndpoint = () => {
-  // AWSSNS.initWithOptions({
-  //   region: SNS_REGION,
-  // });
-
-  console.log(AWSSNS);
-
   Promise
     .resolve(
       AWSCognitoCredentials.initWithOptions({
@@ -26,18 +24,28 @@ export const configureEndpoint = () => {
     )
     .then(() => {
       AWSSNS.initWithOptions({ region: SNS_REGION });
-    });
+
+      const params = {
+        PlatformApplicationArn: PLATFORM_ARN,
+        Token: edp,
+      };
+
+      Promise.resolve(AWSSNS.CreatePlatformEndpoint(params))
+        .then(() => console.log(params))
+        .catch(e => console.log(e));
+    })
+    .catch(e => console.log(e));
 };
 
 PushNotification.configure({
   // (optional) Called when Token is generated (iOS and Android)
   onRegister(token) {
-    //console.log('TOKEN:', token);
+    console.log('TOKEN:', token);
   },
 
   // (required) Called when a remote or local notification is opened or received
   onNotification(notification) {
-    //console.log('NOTIFICATION:', notification);
+    // console.log('NOTIFICATION:', notification);
   },
 
   // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)

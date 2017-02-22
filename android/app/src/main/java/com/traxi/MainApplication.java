@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import com.amazonaws.reactnative.sns.AWSRNSNSPackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.robinpowered.react.Intercom.IntercomPackage;
@@ -68,6 +69,7 @@ public class MainApplication extends Application implements ReactApplication {
         new NotificationManagerPackage(),
         new VPNClientPackage(),
         new MainReactPackage(),
+            new AWSRNSNSPackage(),
             new ReactNativePushNotificationPackage(),
             new ReactNativeI18n(),
             new IntercomPackage(),
