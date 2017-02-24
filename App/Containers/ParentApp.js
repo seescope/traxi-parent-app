@@ -95,12 +95,17 @@ class ParentApp extends React.Component {
       return true;
     } else if (sceneName === 'congratulations') {
       return true;
-    } else if (CLOSING_SCENES[sceneName]) {
+    }
+
+    try {
+      Actions.pop();
+    } catch (error) {
+      // The user is in the root scene - exit the app.
       BackAndroid.exitApp();
       return false;
     }
 
-    Actions.pop();
+    // Default
     return true;
   }
 
