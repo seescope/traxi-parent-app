@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactNative, { View, Dimensions } from 'react-native';
-import { configureEndpoint } from '../../Notifications';
+import { configureNotificationEndpoint } from '../../Notifications';
 
 const style = {
   container: {
@@ -18,7 +18,7 @@ const { width } = Dimensions.get('window');
 class Playground extends React.Component {
   constructor() {
     super();
-    configureEndpoint();
+    configureNotificationEndpoint();
   }
 
   render() {

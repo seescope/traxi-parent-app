@@ -5,6 +5,7 @@ import saveProfile from './SaveProfile';
 import { deviceUpdated } from '../Actions/Actions';
 import { logError } from '../Utils';
 import _ from 'lodash';
+import { configureNotificationEndpoint } from '../../Notifications';
 
 const watchDevice = () => (dispatch, getState) => {
   const { selectedKid } = getState();
@@ -29,6 +30,7 @@ const watchDevice = () => (dispatch, getState) => {
             dispatch({ type: 'LOGGED_IN', profile }); // Mm.. hacky.
             resolve();
             firebase.off('value');
+            configureNotificationEndpoint(profile);
           });
         } else {
           dispatch(deviceUpdated(updatedKid));

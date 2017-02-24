@@ -154,7 +154,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
-          <Scene key="playground" initial={true} component={Playground} />
+          <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>
     );

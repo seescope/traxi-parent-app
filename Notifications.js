@@ -12,12 +12,12 @@ const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
 const SNS_REGION = 'ap-southeast-2';
 const PLATFORM_ARN = 'arn:aws:sns:ap-southeast-2:387118107985:app/APNS_SANDBOX/traxi';
 
-const getEndpointArn = async () => {
+const getData = async name => {
   try {
-    const endpointArn = await AsyncStorage.getItem('endpointArn');
+    const data = await AsyncStorage.getItem(name);
 
-    if (endpointArn !== null) {
-      return endpointArn;
+    if (data !== null) {
+      return data;
     }
   } catch (error) {
     // Error
@@ -25,34 +25,36 @@ const getEndpointArn = async () => {
   return false;
 };
 
-const storeEndpointArn = async endpointArn => {
+const storeData = async (data, name) => {
   try {
-    await AsyncStorage.setItem('endpointArn', endpointArn);
+    await AsyncStorage.setItem(name, data);
   } catch (error) {
     // Error
   }
 };
 
-const createEndpoint = async token => {
+const createEndpoint = async (token, data) => {
   const params = {
     PlatformApplicationArn: PLATFORM_ARN,
     Token: token,
+    CustomUserData: data,
   };
 
   try {
     const response = await AWSSNS.CreatePlatformEndpoint(params);
-    storeEndpointArn(response.EndpointArn);
+    storeData(response.EndpointArn, 'endpointArn');
   } catch (e) {
     // Error
   }
 };
 
-const updateEndpoint = async (endpointArn, token) => {
+const updateEndpoint = async (endpointArn, token, data) => {
   const params = {
     EndpointArn: endpointArn,
     Attributes: {
       Token: token,
       Enabled: 'true',
+      CustomUserData: data,
     },
   };
 
@@ -63,42 +65,114 @@ const updateEndpoint = async (endpointArn, token) => {
   }
 };
 
-export const configureEndpoint = async token => {
-  try {
-    await AWSCognitoCredentials.initWithOptions({
-      region: COGNITO_REGION,
-      identity_pool_id: IDENTITY_POOL_ID,
-    });
-    await AWSSNS.initWithOptions({ region: SNS_REGION });
-    const endpointArn = await getEndpointArn();
+export const configureNotificationEndpoint = async profile => {
+  const token = await getData('notificationToken');
 
-    if (endpointArn) {
-      try {
-        const response = await AWSSNS.GetEndpointAttributes({
-          EndpointArn: endpointArn,
-        });
-        if (
-          response.Attributes.Enabled !== 'true' ||
-          response.Attributes.Token !== token
-        ) {
-          updateEndpoint(endpointArn, token);
+  const { kids } = profile;
+
+  const kidsInformations = kids.map(kid => [kid.name, kid.UUID]);
+
+  const data = {
+    kids: kidsInformations,
+    timezone: 'US',
+  };
+
+  const dataJson = JSON.stringify(data);
+
+  if (token) {
+    try {
+      await AWSCognitoCredentials.initWithOptions({
+        region: COGNITO_REGION,
+        identity_pool_id: IDENTITY_POOL_ID,
+      });
+      await AWSSNS.initWithOptions({ region: SNS_REGION });
+
+      const endpointArn = await getData('endpointArn');
+
+      if (endpointArn) {
+        try {
+          const response = await AWSSNS.GetEndpointAttributes({
+            EndpointArn: endpointArn,
+          });
+
+          if (
+            response.Attributes.Enabled !== 'true' ||
+            response.Attributes.Token !== token ||
+            response.Attributes.CustomUserData !== dataJson
+          ) {
+            updateEndpoint(endpointArn, token, dataJson);
+          }
+        } catch (e) {
+          // endpoint was deleted
+          createEndpoint(token, dataJson);
         }
-      } catch (e) {
-        // endpoint was deleted
-        createEndpoint(token);
+      } else {
+        // endpoint doesn't exist
+        createEndpoint(token, dataJson);
       }
-    } else {
-      // endpoint doesn't exist
-      createEndpoint(token);
+    } catch (e) {
+      // Error
     }
-  } catch (e) {
-    // Error
   }
 };
 
+// const generateRandomString = (len, charSet = 'abcde0123456789') => {
+//   let randomString = '';
+//   for (let i = 0; i < len; i++) {
+//     const randomPoz = Math.floor(Math.random() * charSet.length);
+//     randomString += charSet.substring(randomPoz, randomPoz + 1);
+//   }
+//   return randomString;
+// };
+//
+// const add = async () => {
+//   await AWSCognitoCredentials.initWithOptions({
+//     region: COGNITO_REGION,
+//     identity_pool_id: IDENTITY_POOL_ID,
+//   });
+//   await AWSSNS.initWithOptions({ region: SNS_REGION });
+//
+//   let token;
+//   for (let i = 0; i < 250; i++) {
+//     token = generateRandomString(64);
+//     await createEndpoint(token);
+//   }
+// };
+//
+// add();
+
 PushNotification.configure({
   async onRegister(token) {
-    configureEndpoint(token.token);
+    const storedToken = await getData('notificationToken');
+    if (storedToken !== token.token) {
+      storeData(token.token, 'notificationToken');
+    }
+
+    // configureEndpoint(token.token);
+    //
+    //
+    // AsyncStorage.removeItem('profile');
+    //
+    // AsyncStorage.setItem(
+    //   'profile',
+    //   JSON.stringify({
+    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+    //     Kids: {
+    //       [
+    //         {
+    //           UUID: '1db7fcaf-a48e-4b50-97be-1d7980a4ae21'
+    //         }
+    //       ]
+    //     }
+    //   }),
+    // );
+    //
+    // AsyncStorage.getItem('profile').then(profileJSON => {
+    //   const profile = JSON.parse(profileJSON);
+    //   if (profile !== null && profile.UUID) {
+    //     console.log(profile);
+    //   }
+    // });
   },
 
   // (required) Called when a remote or local notification is opened or received
