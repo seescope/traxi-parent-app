@@ -39,4 +39,9 @@ describe('<ParentApp />', () => {
     expect(initialState.selectedKid).toEqual({});
     expect(initialState.kids).toEqual([]);
   });
+
+  it('returns false when the backButtonHandler is pressed on the root scene', () => {
+    const parentApp = new ParentApp({ profile: {} });
+    expect(parentApp.backButtonHandler()).not.toBeTruthy();
+  });
 });
