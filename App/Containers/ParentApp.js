@@ -32,13 +32,6 @@ const DYNAMODB_REGION = 'ap-southeast-2';
 const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
 const TIMER_NAME = 'refreshReports';
 
-const CLOSING_SCENES = {
-  reports: true,
-  splashScreen: true,
-  thankyou: true,
-};
-
-
 const RouterWithRedux = connect()(Router);
 
 class ParentApp extends React.Component {
