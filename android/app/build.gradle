@@ -194,6 +194,7 @@ dependencies {
     
     // Google Authentication
     compile 'com.google.android.gms:play-services-auth:10.0.1'
+    compile 'com.google.android.gms:play-services-gcm:10.0.1'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])

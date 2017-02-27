@@ -5,7 +5,7 @@ import { AsyncStorage } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import { AWSSNS } from 'aws-sdk-react-native-sns';
-import { isIOS } from '../Utils';
+import { isIOS, logError } from '../Utils';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
@@ -26,7 +26,7 @@ const getData = async name => {
       return data;
     }
   } catch (error) {
-    // Error
+    logError(error);
   }
   return false;
 };
@@ -35,7 +35,7 @@ const storeData = async (data, name) => {
   try {
     await AsyncStorage.setItem(name, data);
   } catch (error) {
-    // Error
+    logError(error);
   }
 };
 
@@ -66,8 +66,9 @@ const updateEndpoint = async (endpointArn, token, data) => {
 
   try {
     await AWSSNS.SetEndpointAttributes(params);
+    console.log('Endpoint updated');
   } catch (e) {
-    // Error
+    logError(e);
   }
 };
 
@@ -88,45 +89,49 @@ export const configureNotificationEndpoint = async profile => {
 
   const dataJson = JSON.stringify(data);
 
-  if (token) {
-    try {
-      await AWSCognitoCredentials.initWithOptions({
-        region: COGNITO_REGION,
-        identity_pool_id: IDENTITY_POOL_ID,
-      });
-      await AWSSNS.initWithOptions({ region: SNS_REGION });
+  if (!token) {
+    logError('[Notifications] Error - No token found');
+    return;
+  }
 
-      const endpointArn = await getData('endpointArn');
+  try {
+    await AWSCognitoCredentials.initWithOptions({
+      region: COGNITO_REGION,
+      identity_pool_id: IDENTITY_POOL_ID,
+    });
+    await AWSSNS.initWithOptions({ region: SNS_REGION });
 
-      if (endpointArn) {
-        try {
-          const response = await AWSSNS.GetEndpointAttributes({
-            EndpointArn: endpointArn,
-          });
+    const endpointArn = await getData('endpointArn');
 
-          if (
-            response.Attributes.Enabled !== 'true' ||
-            response.Attributes.Token !== token ||
-            response.Attributes.CustomUserData !== dataJson
-          ) {
-            updateEndpoint(endpointArn, token, dataJson);
-          }
-        } catch (e) {
-          // endpoint was deleted
-          createEndpoint(token, dataJson);
+    if (endpointArn) {
+      try {
+        const response = await AWSSNS.GetEndpointAttributes({
+          EndpointArn: endpointArn,
+        });
+
+        if (
+          response.Attributes.Enabled !== 'true' ||
+          response.Attributes.Token !== token ||
+          response.Attributes.CustomUserData !== dataJson
+        ) {
+          updateEndpoint(endpointArn, token, dataJson);
         }
-      } else {
-        // endpoint doesn't exist
+      } catch (e) {
+        // endpoint was deleted
         createEndpoint(token, dataJson);
       }
-    } catch (e) {
-      // Error
+    } else {
+      // endpoint doesn't exist
+      createEndpoint(token, dataJson);
     }
+  } catch (e) {
+    logError(e);
   }
 };
 
 PushNotification.configure({
   async onRegister(token) {
+    console.log('[Notifications] onRegister called with', token);
     const storedToken = await getData('notificationToken');
     if (storedToken !== token.token) {
       storeData(token.token, 'notificationToken');
@@ -140,7 +145,7 @@ PushNotification.configure({
   },
 
   // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
-  senderID: 'AIzaSyA7BXoD5KNiGENCIgYLcGetuILuW50IhK0',
+  senderID: '204102393429',
 
   // IOS ONLY (optional): default: all - Permissions to register.
   permissions: {
