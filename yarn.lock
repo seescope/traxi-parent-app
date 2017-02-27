@@ -4102,9 +4102,9 @@ react-native-navbar@malkomalko/react-native-navbar:
   version "1.1.7"
   resolved "https://codeload.github.com/malkomalko/react-native-navbar/tar.gz/fe3d9ed0c717e5304188e22f86ff63f0e029919f"
 
-react-native-push-notification@^2.2.1:
+"react-native-push-notification@https://github.com/zo0r/react-native-push-notification":
   version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-push-notification/-/react-native-push-notification-2.2.1.tgz#9b392cee8f5223a1e1772c9a88c95742549fcfc3"
+  resolved "https://github.com/zo0r/react-native-push-notification#f56f2543d0e7a108143102e70c64717683c3ebf5"
 
 react-native-randombytes@^2.1.0:
   version "2.2.0"

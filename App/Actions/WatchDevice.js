@@ -5,7 +5,7 @@ import saveProfile from './SaveProfile';
 import { deviceUpdated } from '../Actions/Actions';
 import { logError } from '../Utils';
 import _ from 'lodash';
-import { configureNotificationEndpoint } from '../../Notifications';
+import { configureNotificationEndpoint } from '../Utils/Notifications';
 
 const watchDevice = () => (dispatch, getState) => {
   const { selectedKid } = getState();

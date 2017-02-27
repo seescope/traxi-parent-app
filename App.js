@@ -8,7 +8,7 @@ import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
-import { configureNotificationEndpoint } from './Notifications';
+import { configureNotificationEndpoint } from './App/Utils/Notifications';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;

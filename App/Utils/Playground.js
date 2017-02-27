@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactNative, { View, Dimensions } from 'react-native';
-import { configureNotificationEndpoint } from '../../Notifications';
+import { configureNotificationEndpoint } from '../Utils/Notifications';
 
 const style = {
   container: {
