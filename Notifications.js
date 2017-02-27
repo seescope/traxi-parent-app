@@ -5,12 +5,18 @@ import { AsyncStorage } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import { AWSSNS } from 'aws-sdk-react-native-sns';
+import { isIOS } from '../Utils';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
 
 const SNS_REGION = 'ap-southeast-2';
-const PLATFORM_ARN = 'arn:aws:sns:ap-southeast-2:387118107985:app/APNS_SANDBOX/traxi';
+let PLATFORM_ARN;
+if (isIOS) {
+  PLATFORM_ARN = 'arn:aws:sns:ap-southeast-2:387118107985:app/APNS_SANDBOX/traxi';
+} else {
+  PLATFORM_ARN = 'arn:aws:sns:ap-southeast-2:387118107985:app/GCM/traxi-android';
+}
 
 const getData = async name => {
   try {
