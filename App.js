@@ -45,7 +45,7 @@ export default class extends React.Component {
               configureNotificationEndpoint(data.val());
             } else {
               logError(
-                `No profile found for ${profile.UUID}. Continuing as new user.`,
+                `No profile found for ${profile.UUID}. Continuing as new user.`
               );
               this.setState({ loading: false });
             }
@@ -54,7 +54,7 @@ export default class extends React.Component {
             logError(`Error fetching profile: ${error.message}`);
             alert('Error fetching data from traxi.');
             this.setState({ loading: false });
-          },
+          }
         );
       } else {
         this.setState({ loading: false });

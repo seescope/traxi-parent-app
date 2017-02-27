@@ -10,7 +10,7 @@ import { configureNotificationEndpoint } from '../Utils/Notifications';
 const watchDevice = () => (dispatch, getState) => {
   const { selectedKid } = getState();
   const firebase = new Firebase(
-    `https://traxiapp.firebaseio.com/kids/${selectedKid.UUID}`,
+    `https://traxiapp.firebaseio.com/kids/${selectedKid.UUID}`
   );
   const installPromise = new Promise((resolve, reject) => {
     firebase.on(
@@ -38,11 +38,11 @@ const watchDevice = () => (dispatch, getState) => {
       },
       e => {
         const error = new Error(
-          `Error watching device ${selectedKid.UUID}: ${JSON.stringify(e)}`,
+          `Error watching device ${selectedKid.UUID}: ${JSON.stringify(e)}`
         );
         reject(error);
         logError(error);
-      },
+      }
     );
   });
 
