@@ -6,6 +6,7 @@ import PushNotification from 'react-native-push-notification';
 import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 import { AWSSNS } from 'aws-sdk-react-native-sns';
 import { isIOS } from '../Utils';
+import Analytics from 'react-native-analytics';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
@@ -137,6 +138,7 @@ PushNotification.configure({
   onNotification(notification) {
     // TO DO open kid view
     console.log('NOTIFICATION:', notification);
+    Analytics.track('Notification Opened');
   },
 
   // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
