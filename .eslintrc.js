@@ -15,7 +15,7 @@ module.exports = {
   rules: {
     strict: 0,
     'global-require': 0,
-    'no-confusing-arrow': ['error', {allowParens: true}],
+    'no-confusing-arrow': ['error', { allowParens: true }],
     'react-native/no-unused-styles': 2,
     'react-native/split-platform-components': 2,
     'react-native/no-inline-styles': 2,

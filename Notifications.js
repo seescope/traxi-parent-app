@@ -70,7 +70,10 @@ export const configureNotificationEndpoint = async profile => {
 
   const { kids } = profile;
 
-  const kidsInformations = kids.map(kid => [kid.name, kid.UUID]);
+  const kidsInformations = kids.map(kid => ({
+    name: kid.name,
+    uuid: kid.UUID,
+  }));
 
   const data = {
     kids: kidsInformations,
@@ -177,7 +180,8 @@ PushNotification.configure({
 
   // (required) Called when a remote or local notification is opened or received
   onNotification(notification) {
-    // console.log('NOTIFICATION:', notification);
+    // TO DO open kid view
+    console.log('NOTIFICATION:', notification);
   },
 
   // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
