@@ -119,63 +119,12 @@ export const configureNotificationEndpoint = async profile => {
   }
 };
 
-// const generateRandomString = (len, charSet = 'abcde0123456789') => {
-//   let randomString = '';
-//   for (let i = 0; i < len; i++) {
-//     const randomPoz = Math.floor(Math.random() * charSet.length);
-//     randomString += charSet.substring(randomPoz, randomPoz + 1);
-//   }
-//   return randomString;
-// };
-//
-// const add = async () => {
-//   await AWSCognitoCredentials.initWithOptions({
-//     region: COGNITO_REGION,
-//     identity_pool_id: IDENTITY_POOL_ID,
-//   });
-//   await AWSSNS.initWithOptions({ region: SNS_REGION });
-//
-//   let token;
-//   for (let i = 0; i < 250; i++) {
-//     token = generateRandomString(64);
-//     await createEndpoint(token);
-//   }
-// };
-//
-// add();
-
 PushNotification.configure({
   async onRegister(token) {
     const storedToken = await getData('notificationToken');
     if (storedToken !== token.token) {
       storeData(token.token, 'notificationToken');
     }
-
-    // configureEndpoint(token.token);
-    //
-    //
-    // AsyncStorage.removeItem('profile');
-    //
-    // AsyncStorage.setItem(
-    //   'profile',
-    //   JSON.stringify({
-    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-    //     Kids: {
-    //       [
-    //         {
-    //           UUID: '1db7fcaf-a48e-4b50-97be-1d7980a4ae21'
-    //         }
-    //       ]
-    //     }
-    //   }),
-    // );
-    //
-    // AsyncStorage.getItem('profile').then(profileJSON => {
-    //   const profile = JSON.parse(profileJSON);
-    //   if (profile !== null && profile.UUID) {
-    //     console.log(profile);
-    //   }
-    // });
   },
 
   // (required) Called when a remote or local notification is opened or received
