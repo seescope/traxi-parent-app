@@ -48,9 +48,9 @@ const createEndpoint = async (token, data) => {
 
   try {
     const response = await AWSSNS.CreatePlatformEndpoint(params);
-    storeData(response.EndpointArn, 'endpointArn');
-  } catch (e) {
-    // Error
+    await storeData(response.EndpointArn, 'endpointArn');
+  } catch (error) {
+    logError(error);
   }
 };
 
@@ -66,15 +66,12 @@ const updateEndpoint = async (endpointArn, token, data) => {
 
   try {
     await AWSSNS.SetEndpointAttributes(params);
-    console.log('Endpoint updated');
-  } catch (e) {
-    logError(e);
+  } catch (error) {
+    logError(error);
   }
 };
 
-export const configureNotificationEndpoint = async profile => {
-  const token = await getData('notificationToken');
-
+export const createDataJsonFromProfile = profile => {
   const { kids } = profile;
 
   const kidsInformations = kids.map(kid => ({
@@ -89,9 +86,28 @@ export const configureNotificationEndpoint = async profile => {
 
   const dataJson = JSON.stringify(data);
 
+  return dataJson;
+};
+
+export const endpointAttributesAreDifferent = (response, token, dataJson) => {
+  if (
+    response.Attributes.Enabled !== 'true' ||
+    response.Attributes.Token !== token ||
+    response.Attributes.CustomUserData !== dataJson
+  ) {
+    return true;
+  }
+  return false;
+};
+
+export const configureNotificationEndpoint = async profile => {
+  const token = await getData('notificationToken');
+
+  const dataJson = createDataJsonFromProfile(profile);
+
   if (!token) {
     logError('[Notifications] Error - No token found');
-    return;
+    return 'Error - No token found';
   }
 
   try {
@@ -109,24 +125,24 @@ export const configureNotificationEndpoint = async profile => {
           EndpointArn: endpointArn,
         });
 
-        if (
-          response.Attributes.Enabled !== 'true' ||
-          response.Attributes.Token !== token ||
-          response.Attributes.CustomUserData !== dataJson
-        ) {
+        if (endpointAttributesAreDifferent(response, token, dataJson)) {
           updateEndpoint(endpointArn, token, dataJson);
+          return 'Success - Endpoint updated';
         }
       } catch (e) {
         // endpoint was deleted
-        createEndpoint(token, dataJson);
+        await createEndpoint(token, dataJson);
+        return 'Success - Endpoint created after deletion';
       }
     } else {
       // endpoint doesn't exist
-      createEndpoint(token, dataJson);
+      await createEndpoint(token, dataJson);
+      return 'Success - Endpoint created';
     }
-  } catch (e) {
-    logError(e);
+  } catch (error) {
+    logError('[Notifications] Error - Connection failed');
   }
+  return 'Success - Endpoint was up to date';
 };
 
 PushNotification.configure({
