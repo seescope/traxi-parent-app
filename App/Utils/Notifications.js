@@ -71,7 +71,7 @@ const updateEndpoint = async (endpointArn, token, data) => {
   }
 };
 
-export const createDataJsonFromProfile = profile => {
+const createDataJsonFromProfile = profile => {
   const { kids } = profile;
 
   const kidsInformations = kids.map(kid => ({
@@ -89,7 +89,7 @@ export const createDataJsonFromProfile = profile => {
   return dataJson;
 };
 
-export const endpointAttributesAreDifferent = (response, token, dataJson) => {
+const endpointAttributesAreDifferent = (response, token, dataJson) => {
   if (
     response.Attributes.Enabled !== 'true' ||
     response.Attributes.Token !== token ||
@@ -100,49 +100,44 @@ export const endpointAttributesAreDifferent = (response, token, dataJson) => {
   return false;
 };
 
-export const configureNotificationEndpoint = async profile => {
+const configureNotificationEndpoint = async profile => {
   const token = await getData('notificationToken');
 
   const dataJson = createDataJsonFromProfile(profile);
 
   if (!token) {
     logError('[Notifications] Error - No token found');
-    return 'Error - No token found';
-  }
+  } else {
+    try {
+      await AWSCognitoCredentials.initWithOptions({
+        region: COGNITO_REGION,
+        identity_pool_id: IDENTITY_POOL_ID,
+      });
+      await AWSSNS.initWithOptions({ region: SNS_REGION });
 
-  try {
-    await AWSCognitoCredentials.initWithOptions({
-      region: COGNITO_REGION,
-      identity_pool_id: IDENTITY_POOL_ID,
-    });
-    await AWSSNS.initWithOptions({ region: SNS_REGION });
+      const endpointArn = await getData('endpointArn');
 
-    const endpointArn = await getData('endpointArn');
+      if (endpointArn) {
+        try {
+          const response = await AWSSNS.GetEndpointAttributes({
+            EndpointArn: endpointArn,
+          });
 
-    if (endpointArn) {
-      try {
-        const response = await AWSSNS.GetEndpointAttributes({
-          EndpointArn: endpointArn,
-        });
-
-        if (endpointAttributesAreDifferent(response, token, dataJson)) {
-          updateEndpoint(endpointArn, token, dataJson);
-          return 'Success - Endpoint updated';
+          if (endpointAttributesAreDifferent(response, token, dataJson)) {
+            exports.updateEndpoint(endpointArn, token, dataJson);
+          }
+        } catch (e) {
+          // endpoint was deleted
+          exports.createEndpoint(token, dataJson);
         }
-      } catch (e) {
-        // endpoint was deleted
-        await createEndpoint(token, dataJson);
-        return 'Success - Endpoint created after deletion';
+      } else {
+        // endpoint doesn't exist
+        exports.createEndpoint(token, dataJson);
       }
-    } else {
-      // endpoint doesn't exist
-      await createEndpoint(token, dataJson);
-      return 'Success - Endpoint created';
+    } catch (error) {
+      logError('[Notifications] Error - Connection failed');
     }
-  } catch (error) {
-    logError('[Notifications] Error - Connection failed');
   }
-  return 'Success - Endpoint was up to date';
 };
 
 PushNotification.configure({
@@ -181,3 +176,9 @@ PushNotification.configure({
       */
   requestPermissions: true,
 });
+
+exports.configureNotificationEndpoint = configureNotificationEndpoint;
+exports.createEndpoint = createEndpoint;
+exports.updateEndpoint = updateEndpoint;
+exports.createDataJsonFromProfile = createDataJsonFromProfile;
+exports.endpointAttributesAreDifferent = endpointAttributesAreDifferent;

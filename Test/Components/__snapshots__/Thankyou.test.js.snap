@@ -1,4 +1,6 @@
-exports[`test renders the <Thankyou> component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <Thankyou> component 1`] = `
 <Image
   source={1}
   style={
@@ -8,7 +10,8 @@ exports[`test renders the <Thankyou> component 1`] = `
       "paddingTop": 32,
       "width": 750,
     }
-  }>
+  }
+>
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -21,15 +24,17 @@ exports[`test renders the <Thankyou> component 1`] = `
         "fontSize": 26,
         "textAlign": "center",
       }
-    }>
-    [missing \"en.thankyou.header\" translation]
+    }
+  >
+    [missing "en.thankyou.header" translation]
   </Text>
   <View
     style={
       Object {
         "height": 36,
       }
-    } />
+    }
+  />
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -43,8 +48,9 @@ exports[`test renders the <Thankyou> component 1`] = `
         "paddingBottom": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.thankyou.body1\" translation]
+    }
+  >
+    [missing "en.thankyou.body1" translation]
   </Text>
   <Text
     accessible={true}
@@ -59,8 +65,9 @@ exports[`test renders the <Thankyou> component 1`] = `
         "paddingBottom": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.thankyou.body2\" translation]
+    }
+  >
+    [missing "en.thankyou.body2" translation]
   </Text>
 </Image>
 `;

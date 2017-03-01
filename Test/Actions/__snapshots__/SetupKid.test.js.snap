@@ -1,4 +1,6 @@
-exports[`test sets up a Kid 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sets up a Kid 1`] = `
 Array [
   Object {
     "UUID": "non-random-uuid",
@@ -8,26 +10,26 @@ Array [
 ]
 `;
 
-exports[`test sets up a Kid 2`] = `
+exports[`sets up a Kid 2`] = `
 Array [
   "https://traxiapp.firebaseio.com/setupIDs/1234",
 ]
 `;
 
-exports[`test sets up a Kid 3`] = `
+exports[`sets up a Kid 3`] = `
 Array [
   "https://traxiapp.firebaseio.com/kids/non-random-uuid",
 ]
 `;
 
-exports[`test sets up a Kid 4`] = `
+exports[`sets up a Kid 4`] = `
 Array [
   "non-random-uuid",
   [Function],
 ]
 `;
 
-exports[`test sets up a Kid 5`] = `
+exports[`sets up a Kid 5`] = `
 Array [
   Object {
     "UUID": "non-random-uuid",

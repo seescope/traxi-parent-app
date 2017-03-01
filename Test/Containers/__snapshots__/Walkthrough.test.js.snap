@@ -1,4 +1,6 @@
-exports[`test renders the Walkthrough component at each stage for Android 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Walkthrough component at each stage for Android 1`] = `
 <View
   colors={
     Array [
@@ -14,14 +16,16 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -36,15 +40,17 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.setName.header\" translation]
+        }
+      >
+        [missing "en.setName.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -57,15 +63,17 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "fontSize": 16,
             "textAlign": "left",
           }
-        }>
-        [missing \"en.setName.kidsName\" translation]
+        }
+      >
+        [missing "en.setName.kidsName" translation]
       </Text>
       <View
         style={
           Object {
             "height": 16,
           }
-        } />
+        }
+      />
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
@@ -83,19 +91,22 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+        underlineColorAndroid="rgba(255, 255, 255, 1)"
+      />
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -118,7 +129,8 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -129,8 +141,9 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.nextStep\" translation]
+            }
+          >
+            [missing "en.general.nextStep" translation]
              
           </Text>
         </View>
@@ -140,7 +153,7 @@ exports[`test renders the Walkthrough component at each stage for Android 1`] = 
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 2`] = `
+exports[`renders the Walkthrough component at each stage for Android 2`] = `
 <View
   colors={
     Array [
@@ -156,27 +169,31 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "flex": 1,
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -190,8 +207,9 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.general.thanks\" translation]
+          }
+        >
+          [missing "en.general.thanks" translation]
           , 
           Jeff Bezos
           !
@@ -201,7 +219,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Image
           animation={undefined}
           duration={undefined}
@@ -221,7 +240,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "shadowRadius": 5,
               "width": 204,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -235,8 +255,9 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.setAPictureFor\" translation]
+          }
+        >
+          [missing "en.setImage.setAPictureFor" translation]
            
           Brett
           .
@@ -246,7 +267,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -260,8 +282,9 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.dontWorry\" translation]
+          }
+        >
+          [missing "en.setImage.dontWorry" translation]
           .
         </Text>
         <View
@@ -269,7 +292,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             Object {
               "height": 24,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -283,15 +307,17 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          Don\'t worry, only you will be able to see it.
+          }
+        >
+          Don't worry, only you will be able to see it.
         </Text>
         <View
           style={
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
       </View>
       <View
         style={
@@ -300,7 +326,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
             "flexDirection": "row",
             "justifyContent": "space-between",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -323,7 +350,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -334,8 +362,9 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.notNow\" translation]
+            }
+          >
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -361,7 +390,8 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -372,8 +402,9 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.chooseAPicture\" translation]
+            }
+          >
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -383,7 +414,7 @@ exports[`test renders the Walkthrough component at each stage for Android 2`] = 
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 3`] = `
+exports[`renders the Walkthrough component at each stage for Android 3`] = `
 <View
   colors={
     Array [
@@ -399,20 +430,23 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "alignItems": "center",
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -426,8 +460,9 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.header\" translation]
+        }
+      >
+        [missing "en.prompt.header" translation]
         , 
         , Jeff Bezos
       </Text>
@@ -436,7 +471,8 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Image
         animation={undefined}
         duration={undefined}
@@ -460,13 +496,15 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "shadowRadius": 5,
             "width": 204,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -479,15 +517,17 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "fontSize": 16,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.doYouHave\" translation]
+        }
+      >
+        [missing "en.prompt.doYouHave" translation]
       </Text>
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
@@ -496,7 +536,8 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
             "padding": 32,
             "width": 686,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -519,7 +560,8 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -530,8 +572,9 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.no\" translation]
+            }
+          >
+            [missing "en.prompt.no" translation]
              
           </Text>
         </View>
@@ -557,7 +600,8 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -568,8 +612,9 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.yes\" translation]
+            }
+          >
+            [missing "en.prompt.yes" translation]
              
           </Text>
         </View>
@@ -579,7 +624,7 @@ exports[`test renders the Walkthrough component at each stage for Android 3`] = 
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 4`] = `
+exports[`renders the Walkthrough component at each stage for Android 4`] = `
 <View
   colors={
     Array [
@@ -595,14 +640,16 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -610,7 +657,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -618,7 +666,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -632,7 +681,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
+          }
+        >
           
         </Text>
         <View
@@ -640,7 +690,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -649,7 +700,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -672,7 +724,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -683,8 +736,9 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -710,7 +764,8 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -721,8 +776,9 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -742,14 +798,15 @@ exports[`test renders the Walkthrough component at each stage for Android 4`] = 
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 5`] = `
+exports[`renders the Walkthrough component at each stage for Android 5`] = `
 <View
   colors={
     Array [
@@ -765,14 +822,16 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -787,15 +846,17 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.showPin.header\" translation]
+        }
+      >
+        [missing "en.showPin.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -807,7 +868,8 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             "fontSize": 64,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         1234
       </Text>
       <View
@@ -815,7 +877,8 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <View>
         <ActivityIndicator
           animating={true}
@@ -826,7 +889,8 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
             Object {
               "marginBottom": 16,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -840,8 +904,9 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
                 "textAlign": "center",
               },
             ]
-          }>
-          [missing \"en.showPin.waiting\" translation]
+          }
+        >
+          [missing "en.showPin.waiting" translation]
         </Text>
       </View>
       <View
@@ -849,14 +914,16 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -879,7 +946,8 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -890,8 +958,9 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.needHelp\" translation]
+            }
+          >
+            [missing "en.general.needHelp" translation]
              
           </Text>
         </View>
@@ -901,7 +970,7 @@ exports[`test renders the Walkthrough component at each stage for Android 5`] = 
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 6`] = `
+exports[`renders the Walkthrough component at each stage for Android 6`] = `
 <View
   colors={
     Array [
@@ -917,14 +986,16 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -932,7 +1003,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -940,7 +1012,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -954,15 +1027,17 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.android0\" translation]
+          }
+        >
+          [missing "en.instructions.android0" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -971,7 +1046,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -994,7 +1070,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1005,8 +1082,9 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -1032,7 +1110,8 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1043,8 +1122,9 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -1064,14 +1144,15 @@ exports[`test renders the Walkthrough component at each stage for Android 6`] = 
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 7`] = `
+exports[`renders the Walkthrough component at each stage for Android 7`] = `
 <View
   colors={
     Array [
@@ -1087,14 +1168,16 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -1102,7 +1185,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -1110,7 +1194,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1124,15 +1209,17 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.android1\" translation]
+          }
+        >
+          [missing "en.instructions.android1" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -1141,7 +1228,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -1164,7 +1252,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1175,8 +1264,9 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -1202,7 +1292,8 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1213,8 +1304,9 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -1234,14 +1326,15 @@ exports[`test renders the Walkthrough component at each stage for Android 7`] = 
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 8`] = `
+exports[`renders the Walkthrough component at each stage for Android 8`] = `
 <View
   colors={
     Array [
@@ -1257,14 +1350,16 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -1272,7 +1367,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -1280,7 +1376,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1294,15 +1391,17 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.android2\" translation]
+          }
+        >
+          [missing "en.instructions.android2" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -1311,7 +1410,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -1334,7 +1434,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1345,8 +1446,9 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -1372,7 +1474,8 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -1383,8 +1486,9 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -1404,14 +1508,15 @@ exports[`test renders the Walkthrough component at each stage for Android 8`] = 
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for Android 9`] = `
+exports[`renders the Walkthrough component at each stage for Android 9`] = `
 <View
   colors={
     Array [
@@ -1427,20 +1532,23 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "alignItems": "center",
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1454,15 +1562,17 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.waitingForDevice.header\" translation]
+        }
+      >
+        [missing "en.waitingForDevice.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Image
         animation={undefined}
         duration={undefined}
@@ -1486,24 +1596,28 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "shadowRadius": 5,
             "width": 166,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <ActivityIndicator
         animating={true}
         color="white"
         hidesWhenStopped={true}
-        size="large" />
+        size="large"
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1516,22 +1630,25 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
             "fontSize": 16,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.waitingForDevice.waiting\" translation]
+        }
+      >
+        [missing "en.waitingForDevice.waiting" translation]
       </Text>
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
             "width": 686,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1554,7 +1671,8 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1565,8 +1683,9 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.needHelp\" translation]
+            }
+          >
+            [missing "en.general.needHelp" translation]
              
           </Text>
         </View>
@@ -1576,7 +1695,7 @@ exports[`test renders the Walkthrough component at each stage for Android 9`] = 
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
+exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 <View
   colors={
     Array [
@@ -1592,14 +1711,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -1614,15 +1735,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.setName.header\" translation]
+        }
+      >
+        [missing "en.setName.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1635,15 +1758,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "fontSize": 16,
             "textAlign": "left",
           }
-        }>
-        [missing \"en.setName.kidsName\" translation]
+        }
+      >
+        [missing "en.setName.kidsName" translation]
       </Text>
       <View
         style={
           Object {
             "height": 16,
           }
-        } />
+        }
+      />
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
@@ -1661,19 +1786,22 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+        underlineColorAndroid="rgba(255, 255, 255, 1)"
+      />
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1696,7 +1824,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1707,8 +1836,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.nextStep\" translation]
+            }
+          >
+            [missing "en.general.nextStep" translation]
              
           </Text>
         </View>
@@ -1718,7 +1848,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 1`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
+exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 <View
   colors={
     Array [
@@ -1734,27 +1864,31 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "flex": 1,
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1768,8 +1902,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.general.thanks\" translation]
+          }
+        >
+          [missing "en.general.thanks" translation]
           , 
           Jeff Bezos
           !
@@ -1779,7 +1914,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Image
           animation={undefined}
           duration={undefined}
@@ -1799,7 +1935,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "shadowRadius": 5,
               "width": 204,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1813,8 +1950,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.setAPictureFor\" translation]
+          }
+        >
+          [missing "en.setImage.setAPictureFor" translation]
            
           Brett
           .
@@ -1824,7 +1962,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1838,8 +1977,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.dontWorry\" translation]
+          }
+        >
+          [missing "en.setImage.dontWorry" translation]
           .
         </Text>
         <View
@@ -1847,7 +1987,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             Object {
               "height": 24,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1861,15 +2002,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          Don\'t worry, only you will be able to see it.
+          }
+        >
+          Don't worry, only you will be able to see it.
         </Text>
         <View
           style={
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
       </View>
       <View
         style={
@@ -1878,7 +2021,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
             "flexDirection": "row",
             "justifyContent": "space-between",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -1901,7 +2045,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1912,8 +2057,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.notNow\" translation]
+            }
+          >
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -1939,7 +2085,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1950,8 +2097,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.chooseAPicture\" translation]
+            }
+          >
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -1961,7 +2109,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 2`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
+exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 <View
   colors={
     Array [
@@ -1977,20 +2125,23 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "alignItems": "center",
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -2004,8 +2155,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.header\" translation]
+        }
+      >
+        [missing "en.prompt.header" translation]
         , 
         , Jeff Bezos
       </Text>
@@ -2014,7 +2166,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Image
         animation={undefined}
         duration={undefined}
@@ -2038,13 +2191,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "shadowRadius": 5,
             "width": 204,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -2057,15 +2212,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "fontSize": 16,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.doYouHave\" translation]
+        }
+      >
+        [missing "en.prompt.doYouHave" translation]
       </Text>
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
@@ -2074,7 +2231,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
             "padding": 32,
             "width": 686,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -2097,7 +2255,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2108,8 +2267,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.no\" translation]
+            }
+          >
+            [missing "en.prompt.no" translation]
              
           </Text>
         </View>
@@ -2135,7 +2295,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2146,8 +2307,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.yes\" translation]
+            }
+          >
+            [missing "en.prompt.yes" translation]
              
           </Text>
         </View>
@@ -2157,7 +2319,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 3`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
+exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 <View
   colors={
     Array [
@@ -2173,14 +2335,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -2188,7 +2352,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -2196,7 +2361,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -2210,7 +2376,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
+          }
+        >
           
         </Text>
         <View
@@ -2218,7 +2385,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -2227,7 +2395,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2250,7 +2419,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2261,8 +2431,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -2288,7 +2459,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2299,8 +2471,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -2320,14 +2493,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 4`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
+exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 <View
   colors={
     Array [
@@ -2343,14 +2517,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -2365,15 +2541,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.showPin.header\" translation]
+        }
+      >
+        [missing "en.showPin.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -2385,7 +2563,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             "fontSize": 64,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         1234
       </Text>
       <View
@@ -2393,7 +2572,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <View>
         <ActivityIndicator
           animating={true}
@@ -2404,7 +2584,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
             Object {
               "marginBottom": 16,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -2418,8 +2599,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
                 "textAlign": "center",
               },
             ]
-          }>
-          [missing \"en.showPin.waiting\" translation]
+          }
+        >
+          [missing "en.showPin.waiting" translation]
         </Text>
       </View>
       <View
@@ -2427,14 +2609,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -2457,7 +2641,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2468,8 +2653,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.needHelp\" translation]
+            }
+          >
+            [missing "en.general.needHelp" translation]
              
           </Text>
         </View>
@@ -2479,7 +2665,7 @@ exports[`test renders the Walkthrough component at each stage for iPad 5`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
+exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 <View
   colors={
     Array [
@@ -2495,14 +2681,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -2510,7 +2698,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -2518,7 +2707,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -2532,15 +2722,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios0\" translation]
+          }
+        >
+          [missing "en.instructions.ios0" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -2549,7 +2741,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2572,7 +2765,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2583,8 +2777,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -2610,7 +2805,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2621,8 +2817,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -2642,14 +2839,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 6`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
+exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 <View
   colors={
     Array [
@@ -2665,14 +2863,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -2680,7 +2880,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -2688,7 +2889,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -2702,15 +2904,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios1\" translation]
+          }
+        >
+          [missing "en.instructions.ios1" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -2719,7 +2923,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2742,7 +2947,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2753,8 +2959,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -2780,7 +2987,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2791,8 +2999,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -2812,14 +3021,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 7`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
+exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 <View
   colors={
     Array [
@@ -2835,14 +3045,16 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -2850,7 +3062,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -2858,7 +3071,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -2872,15 +3086,17 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios2\" translation]
+          }
+        >
+          [missing "en.instructions.ios2" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -2889,7 +3105,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2912,7 +3129,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2923,8 +3141,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -2950,7 +3169,8 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -2961,8 +3181,9 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -2982,14 +3203,15 @@ exports[`test renders the Walkthrough component at each stage for iPad 8`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 <View
   colors={
     Array [
@@ -3005,14 +3227,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -3027,15 +3251,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.setName.header\" translation]
+        }
+      >
+        [missing "en.setName.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -3048,15 +3274,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "fontSize": 16,
             "textAlign": "left",
           }
-        }>
-        [missing \"en.setName.kidsName\" translation]
+        }
+      >
+        [missing "en.setName.kidsName" translation]
       </Text>
       <View
         style={
           Object {
             "height": 16,
           }
-        } />
+        }
+      />
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
@@ -3074,19 +3302,22 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)" />
+        underlineColorAndroid="rgba(255, 255, 255, 1)"
+      />
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -3109,7 +3340,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3120,8 +3352,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.nextStep\" translation]
+            }
+          >
+            [missing "en.general.nextStep" translation]
              
           </Text>
         </View>
@@ -3131,7 +3364,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 1`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 <View
   colors={
     Array [
@@ -3147,27 +3380,31 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "flex": 1,
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
             "alignItems": "center",
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3181,8 +3418,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.general.thanks\" translation]
+          }
+        >
+          [missing "en.general.thanks" translation]
           , 
           Jeff Bezos
           !
@@ -3192,7 +3430,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Image
           animation={undefined}
           duration={undefined}
@@ -3212,7 +3451,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "shadowRadius": 5,
               "width": 204,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3226,8 +3466,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.setAPictureFor\" translation]
+          }
+        >
+          [missing "en.setImage.setAPictureFor" translation]
            
           Brett
           .
@@ -3237,7 +3478,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3251,8 +3493,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.setImage.dontWorry\" translation]
+          }
+        >
+          [missing "en.setImage.dontWorry" translation]
           .
         </Text>
         <View
@@ -3260,7 +3503,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             Object {
               "height": 24,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3274,15 +3518,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "fontSize": 16,
               "textAlign": "center",
             }
-          }>
-          Don\'t worry, only you will be able to see it.
+          }
+        >
+          Don't worry, only you will be able to see it.
         </Text>
         <View
           style={
             Object {
               "height": 32,
             }
-          } />
+          }
+        />
       </View>
       <View
         style={
@@ -3291,7 +3537,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
             "flexDirection": "row",
             "justifyContent": "space-between",
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -3314,7 +3561,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3325,8 +3573,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.notNow\" translation]
+            }
+          >
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -3352,7 +3601,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3363,8 +3613,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.setImage.chooseAPicture\" translation]
+            }
+          >
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -3374,7 +3625,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 2`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 <View
   colors={
     Array [
@@ -3390,20 +3641,23 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "alignItems": "center",
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -3417,8 +3671,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.header\" translation]
+        }
+      >
+        [missing "en.prompt.header" translation]
         , 
         , Jeff Bezos
       </Text>
@@ -3427,7 +3682,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Image
         animation={undefined}
         duration={undefined}
@@ -3451,13 +3707,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "shadowRadius": 5,
             "width": 204,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -3470,15 +3728,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "fontSize": 16,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.doYouHave\" translation]
+        }
+      >
+        [missing "en.prompt.doYouHave" translation]
       </Text>
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
@@ -3487,7 +3747,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
             "padding": 32,
             "width": 686,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -3510,7 +3771,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3521,8 +3783,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.no\" translation]
+            }
+          >
+            [missing "en.prompt.no" translation]
              
           </Text>
         </View>
@@ -3548,7 +3811,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3559,8 +3823,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.yes\" translation]
+            }
+          >
+            [missing "en.prompt.yes" translation]
              
           </Text>
         </View>
@@ -3570,7 +3835,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 3`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 <View
   colors={
     Array [
@@ -3586,14 +3851,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -3601,7 +3868,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -3609,7 +3877,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3623,7 +3892,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
+          }
+        >
           
         </Text>
         <View
@@ -3631,7 +3901,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -3640,7 +3911,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -3663,7 +3935,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -3674,8 +3947,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -3701,7 +3975,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -3712,8 +3987,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -3733,14 +4009,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 4`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 <View
   colors={
     Array [
@@ -3756,14 +4033,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -3778,15 +4057,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.showPin.header\" translation]
+        }
+      >
+        [missing "en.showPin.header" translation]
       </Text>
       <View
         style={
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -3798,7 +4079,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             "fontSize": 64,
             "textAlign": "center",
           }
-        }>
+        }
+      >
         1234
       </Text>
       <View
@@ -3806,7 +4088,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
           Object {
             "height": 64,
           }
-        } />
+        }
+      />
       <View>
         <ActivityIndicator
           animating={true}
@@ -3817,7 +4100,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
             Object {
               "marginBottom": 16,
             }
-          } />
+          }
+        />
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3831,8 +4115,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
                 "textAlign": "center",
               },
             ]
-          }>
-          [missing \"en.showPin.waiting\" translation]
+          }
+        >
+          [missing "en.showPin.waiting" translation]
         </Text>
       </View>
       <View
@@ -3840,14 +4125,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "alignItems": "center",
             "flex": 1,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -3870,7 +4157,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3881,8 +4169,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.general.needHelp\" translation]
+            }
+          >
+            [missing "en.general.needHelp" translation]
              
           </Text>
         </View>
@@ -3892,7 +4181,7 @@ exports[`test renders the Walkthrough component at each stage for iPhone 5`] = `
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 <View
   colors={
     Array [
@@ -3908,14 +4197,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -3923,7 +4214,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -3931,7 +4223,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -3945,15 +4238,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios0\" translation]
+          }
+        >
+          [missing "en.instructions.ios0" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -3962,7 +4257,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -3985,7 +4281,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -3996,8 +4293,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -4023,7 +4321,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -4034,8 +4333,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -4055,14 +4355,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 6`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 <View
   colors={
     Array [
@@ -4078,14 +4379,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -4093,7 +4396,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -4101,7 +4405,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -4115,15 +4420,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios1\" translation]
+          }
+        >
+          [missing "en.instructions.ios1" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -4132,7 +4439,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -4155,7 +4463,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -4166,8 +4475,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -4193,7 +4503,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -4204,8 +4515,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -4225,14 +4537,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 7`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
+exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 <View
   colors={
     Array [
@@ -4248,14 +4561,16 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -4263,7 +4578,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
           "flex": 1,
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -4271,7 +4587,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
             "flex": 1,
             "justifyContent": "center",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -4285,15 +4602,17 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "marginBottom": -2,
               "textAlign": "center",
             }
-          }>
-          [missing \"en.instructions.ios2\" translation]
+          }
+        >
+          [missing "en.instructions.ios2" translation]
         </Text>
         <View
           style={
             Object {
               "height": 64,
             }
-          } />
+          }
+        />
         <View
           style={
             Object {
@@ -4302,7 +4621,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "justifyContent": "space-between",
               "width": 686,
             }
-          }>
+          }
+        >
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -4325,7 +4645,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -4336,8 +4657,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.needHelp\" translation]
+              }
+            >
+              [missing "en.general.needHelp" translation]
                
             </Text>
           </View>
@@ -4363,7 +4685,8 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                 "opacity": 1,
               }
             }
-            testID={undefined}>
+            testID={undefined}
+          >
             <Text
               accessible={true}
               allowFontScaling={true}
@@ -4374,8 +4697,9 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
                   "fontFamily": "Raleway-Regular",
                   "fontSize": 20,
                 }
-              }>
-              [missing \"en.general.nextStep\" translation]
+              }
+            >
+              [missing "en.general.nextStep" translation]
                
             </Text>
           </View>
@@ -4395,14 +4719,15 @@ exports[`test renders the Walkthrough component at each stage for iPhone 8`] = `
               "top": 667,
               "width": 750,
             }
-          } />
+          }
+        />
       </View>
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders the loading screen when waiting to identify a device 1`] = `
+exports[`renders the loading screen when waiting to identify a device 1`] = `
 <View
   colors={
     Array [
@@ -4418,20 +4743,23 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
       "paddingHorizontal": 20,
       "paddingTop": 16,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flex": 1,
         "paddingTop": 20,
       }
-    }>
+    }
+  >
     <View
       style={
         Object {
           "alignItems": "center",
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -4445,8 +4773,9 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "marginBottom": -2,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.header\" translation]
+        }
+      >
+        [missing "en.prompt.header" translation]
         , 
         , Jeff Bezos
       </Text>
@@ -4455,7 +4784,8 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Image
         animation={undefined}
         duration={undefined}
@@ -4479,13 +4809,15 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "shadowRadius": 5,
             "width": 204,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
             "height": 32,
           }
-        } />
+        }
+      />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -4498,15 +4830,17 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "fontSize": 16,
             "textAlign": "center",
           }
-        }>
-        [missing \"en.prompt.doYouHave\" translation]
+        }
+      >
+        [missing "en.prompt.doYouHave" translation]
       </Text>
       <View
         style={
           Object {
             "height": 24,
           }
-        } />
+        }
+      />
       <View
         style={
           Object {
@@ -4515,7 +4849,8 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
             "padding": 32,
             "width": 686,
           }
-        }>
+        }
+      >
         <View
           accessibilityComponentType={undefined}
           accessibilityLabel={undefined}
@@ -4538,7 +4873,8 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -4549,8 +4885,9 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.no\" translation]
+            }
+          >
+            [missing "en.prompt.no" translation]
              
           </Text>
         </View>
@@ -4576,7 +4913,8 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
               "opacity": 1,
             }
           }
-          testID={undefined}>
+          testID={undefined}
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -4587,8 +4925,9 @@ exports[`test renders the loading screen when waiting to identify a device 1`] =
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
-            }>
-            [missing \"en.prompt.yes\" translation]
+            }
+          >
+            [missing "en.prompt.yes" translation]
              
           </Text>
         </View>

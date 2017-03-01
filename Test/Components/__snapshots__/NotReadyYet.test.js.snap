@@ -1,4 +1,6 @@
-exports[`test renders the <NotReadyYet> component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <NotReadyYet> component 1`] = `
 <View
   style={
     Object {
@@ -7,14 +9,16 @@ exports[`test renders the <NotReadyYet> component 1`] = `
       "paddingHorizontal": 32,
       "paddingTop": 32,
     }
-  }>
+  }
+>
   <View
     style={
       Object {
         "flexDirection": "row",
         "justifyContent": "space-between",
       }
-    }>
+    }
+  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -33,9 +37,11 @@ exports[`test renders the <NotReadyYet> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Image
-        source={1} />
+        source={1}
+      />
     </View>
     <Text
       accessible={true}
@@ -49,8 +55,9 @@ exports[`test renders the <NotReadyYet> component 1`] = `
           "fontSize": 26,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.notReadyYet.header\" translation]
+      }
+    >
+      [missing "en.notReadyYet.header" translation]
     </Text>
     <View />
   </View>
@@ -59,7 +66,8 @@ exports[`test renders the <NotReadyYet> component 1`] = `
       Object {
         "height": 32,
       }
-    } />
+    }
+  />
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -73,8 +81,9 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "paddingBottom": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.notReadyYet.body1\" translation]
+    }
+  >
+    [missing "en.notReadyYet.body1" translation]
   </Text>
   <Text
     accessible={true}
@@ -89,8 +98,9 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "paddingBottom": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.notReadyYet.body2\" translation]
+    }
+  >
+    [missing "en.notReadyYet.body2" translation]
   </Text>
   <Text
     accessible={true}
@@ -105,21 +115,24 @@ exports[`test renders the <NotReadyYet> component 1`] = `
         "paddingBottom": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.notReadyYet.body3\" translation]
+    }
+  >
+    [missing "en.notReadyYet.body3" translation]
   </Text>
   <View
     style={
       Object {
         "height": 16,
       }
-    } />
+    }
+  />
   <View
     style={
       Object {
         "alignItems": "center",
       }
-    }>
+    }
+  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -142,7 +155,8 @@ exports[`test renders the <NotReadyYet> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -153,8 +167,9 @@ exports[`test renders the <NotReadyYet> component 1`] = `
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
-        }>
-        [missing \"en.notReadyYet.button\" translation]
+        }
+      >
+        [missing "en.notReadyYet.button" translation]
          
       </Text>
     </View>

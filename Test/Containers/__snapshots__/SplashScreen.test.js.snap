@@ -1,4 +1,6 @@
-exports[`test handles logins 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles logins 1`] = `
 Array [
   Array [
     Promise {
@@ -11,7 +13,7 @@ Array [
 ]
 `;
 
-exports[`test renders the <SplashScreen> component 1`] = `
+exports[`renders the <SplashScreen> component 1`] = `
 <View
   colors={
     Array [
@@ -25,7 +27,8 @@ exports[`test renders the <SplashScreen> component 1`] = `
       "flex": 1,
       "paddingHorizontal": 32,
     }
-  }>
+  }
+>
   <Image
     animation="bounceInDown"
     resizeMode="contain"
@@ -35,13 +38,15 @@ exports[`test renders the <SplashScreen> component 1`] = `
         "height": 667,
       }
     }
-    useNativeDriver={true} />
+    useNativeDriver={true}
+  />
   <View
     style={
       Object {
         "height": 32,
       }
-    } />
+    }
+  />
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -58,7 +63,8 @@ exports[`test renders the <SplashScreen> component 1`] = `
         "textAlign": "center",
       }
     }
-    useNativeDriver={true}>
+    useNativeDriver={true}
+  >
     What are your children doing online?
   </Text>
   <View
@@ -66,11 +72,13 @@ exports[`test renders the <SplashScreen> component 1`] = `
       Object {
         "height": 32,
       }
-    } />
+    }
+  />
   <View
     animation="bounceInUp"
     delay={2000}
-    useNativeDriver={true}>
+    useNativeDriver={true}
+  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -93,7 +101,8 @@ exports[`test renders the <SplashScreen> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -104,7 +113,8 @@ exports[`test renders the <SplashScreen> component 1`] = `
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
-        }>
+        }
+      >
         Find out now
          
       </Text>

@@ -1,104 +1,145 @@
-exports[`test renders AreYouReady when there is a profile that has a UUID, but no kids in Firebase 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AreYouReady when there is a profile that has a UUID, but no kids in Firebase 1`] = `
 <View>
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={true}
+  />
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;
 
-exports[`test renders Intro when there is no profile 1`] = `
+exports[`renders Intro when there is no profile 1`] = `
 <View>
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={true}
+  />
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;
 
-exports[`test renders ReportHome when there is a profile that has kids in Firebase 1`] = `
+exports[`renders ReportHome when there is a profile that has kids in Firebase 1`] = `
 <View>
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={false}
+  />
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;
