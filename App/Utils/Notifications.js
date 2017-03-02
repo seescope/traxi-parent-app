@@ -151,7 +151,6 @@ PushNotification.configure({
 
   // (required) Called when a remote or local notification is opened or received
   onNotification(notification) {
-    // TO DO open kid view
     console.log('NOTIFICATION:', notification);
   },
 

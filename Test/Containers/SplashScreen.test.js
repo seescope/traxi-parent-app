@@ -37,7 +37,7 @@ it('handles logins', () => {
   const mockDispatch = jest.fn(() => Promise.resolve());
   return mapDispatchToProps(mockDispatch).getStarted().then(() => {
     expect(mockDispatch.mock.calls).toMatchSnapshot();
-    expect(Actions.intro).toHaveBeenCalled();
+    expect(Actions.walkthrough).toHaveBeenCalled();
     expect(LoginWithMethod).toHaveBeenCalled();
     expect(SaveProfile).toHaveBeenCalled();
   });

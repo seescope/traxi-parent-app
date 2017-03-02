@@ -59,7 +59,6 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
   />
   <View
     component={[Function]}
-    initial={false}
   />
   <View
     component={[Function]}
@@ -107,7 +106,6 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
   />
   <View
     component={[Function]}
-    initial={false}
   />
   <View
     component={[Function]}

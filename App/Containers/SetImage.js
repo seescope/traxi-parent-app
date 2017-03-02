@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Text, View, Alert } from 'react-native';
+import { Text, View, Alert, Dimensions } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import I18n from 'react-native-i18n';
 
@@ -13,6 +13,8 @@ import Spacing from '../Components/Spacing';
 import KidAvatar from '../Components/KidAvatar';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
 import { isIOS, logError, firstName } from '../Utils';
+
+const { width } = Dimensions.get('window');
 
 const getSource = response => {
   let source;
@@ -74,7 +76,6 @@ export const selectImage = pickImage => dispatch => {
 
 const style = {
   outerContainer: {
-    flex: 1,
   },
   container: {
     flexDirection: 'column',
@@ -89,6 +90,7 @@ const style = {
     backgroundColor: TRANSPARENT,
   },
   buttonContainer: {
+    width: width - 64,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
@@ -115,10 +117,6 @@ const SetImage = ({ parentName, kidName, onPress }) => (
       </Text>
 
       <Spacing />
-
-      <Text style={style.bodyText}>
-        Don't worry, only you will be able to see it.
-      </Text>
 
       <Spacing height={32} />
     </View>
