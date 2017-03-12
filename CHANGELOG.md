@@ -1,3 +1,9 @@
+## 5.5.1
+- Finally fix the goddamn back button.
+
+## 5.5.0
+- Make signup simpler.
+
 ## 5.4.2
 - Fix initial stage and selectedKid
 

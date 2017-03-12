@@ -20,7 +20,11 @@ const Button = ({ children, onPress, primary }) => {
   };
 
   return (
-    <TouchableOpacity onPress={onPress} style={BUTTON_STYLE.button} activeOpacity={0.6}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={BUTTON_STYLE.button}
+      activeOpacity={0.6}
+    >
       <Text style={BUTTON_STYLE.text}>{children} </Text>
     </TouchableOpacity>
   );

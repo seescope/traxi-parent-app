@@ -1,35 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<ParentApp /> renders the Parent with the AreYouReady component if no kids in the profile 1`] = `
 <View>
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={true}
+  />
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;
 
@@ -37,33 +52,46 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
 <View>
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={false}
+  />
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;
 
@@ -71,32 +99,45 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
 <View>
   <View
     component={[Function]}
-    initial={true} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+    initial={true}
+  />
   <View
     component={[Function]}
-    initial={false} />
-  <View
-    component={[Function]} />
-  <View
-    component={[Function]} />
+  />
   <View
     component={[Function]}
-    initial={false} />
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
 </View>
 `;

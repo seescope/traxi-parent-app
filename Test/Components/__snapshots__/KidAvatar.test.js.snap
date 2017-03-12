@@ -1,4 +1,6 @@
-exports[`test Renders an avatar when an image is supplied 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders an avatar when an image is supplied 1`] = `
 <Image
   animation={undefined}
   duration={undefined}
@@ -22,10 +24,11 @@ exports[`test Renders an avatar when an image is supplied 1`] = `
       "shadowRadius": 5,
       "width": 100,
     }
-  } />
+  }
+/>
 `;
 
-exports[`test Returns a default avatar when none is supplied 1`] = `
+exports[`Returns a default avatar when none is supplied 1`] = `
 <Image
   animation={undefined}
   duration={undefined}
@@ -45,5 +48,6 @@ exports[`test Returns a default avatar when none is supplied 1`] = `
       "shadowRadius": 5,
       "width": 100,
     }
-  } />
+  }
+/>
 `;

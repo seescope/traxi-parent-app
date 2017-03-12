@@ -36,7 +36,7 @@ const headerStyle = {
   fontFamily: 'Raleway-ExtraBold',
 };
 
-export default () =>
+export default () => (
   <Image
     style={containerStyle}
     source={require('../Images/thankyou-background.png')}
@@ -52,4 +52,5 @@ export default () =>
     <Text style={bodyStyle}>
       {I18n.t('thankyou.body2')}
     </Text>
-  </Image>;
+  </Image>
+);

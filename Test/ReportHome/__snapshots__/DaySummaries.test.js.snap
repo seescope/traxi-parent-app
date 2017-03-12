@@ -1,10 +1,13 @@
-exports[`test Renders a list of day summaries 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a list of day summaries 1`] = `
 <ScrollView
   style={
     Object {
       "minHeight": 959,
     }
-  }>
+  }
+>
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -23,7 +26,8 @@ exports[`test Renders a list of day summaries 1`] = `
         "opacity": 1,
       }
     }
-    testID={undefined}>
+    testID={undefined}
+  >
     <View
       style={
         Object {
@@ -33,7 +37,8 @@ exports[`test Renders a list of day summaries 1`] = `
           "padding": 16,
           "width": 750,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -47,7 +52,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "marginBottom": -2,
             "textAlign": "left",
           }
-        }>
+        }
+      >
         Tuesday
       </Text>
       <View
@@ -58,7 +64,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "paddingTop": 6,
             "width": 96,
           }
-        }>
+        }
+      >
         <Image
           source={undefined}
           style={
@@ -73,7 +80,8 @@ exports[`test Renders a list of day summaries 1`] = `
               "width": 84,
               "zIndex": 2,
             }
-          }>
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -85,7 +93,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 23,
                 "fontWeight": "bold",
               }
-            }>
+            }
+          >
             undefinedm
           </Text>
           <Text
@@ -99,7 +108,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 12,
                 "fontWeight": "200",
               }
-            } />
+            }
+          />
         </Image>
         <View />
       </View>
@@ -123,7 +133,8 @@ exports[`test Renders a list of day summaries 1`] = `
         "opacity": 1,
       }
     }
-    testID={undefined}>
+    testID={undefined}
+  >
     <View
       style={
         Object {
@@ -133,7 +144,8 @@ exports[`test Renders a list of day summaries 1`] = `
           "padding": 16,
           "width": 750,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -147,7 +159,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "marginBottom": -2,
             "textAlign": "left",
           }
-        }>
+        }
+      >
         Monday
       </Text>
       <View
@@ -158,7 +171,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "paddingTop": 6,
             "width": 96,
           }
-        }>
+        }
+      >
         <Image
           source={undefined}
           style={
@@ -173,7 +187,8 @@ exports[`test Renders a list of day summaries 1`] = `
               "width": 84,
               "zIndex": 2,
             }
-          }>
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -185,7 +200,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 23,
                 "fontWeight": "bold",
               }
-            }>
+            }
+          >
             undefinedm
           </Text>
           <Text
@@ -199,7 +215,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 12,
                 "fontWeight": "200",
               }
-            } />
+            }
+          />
         </Image>
         <View />
       </View>
@@ -223,7 +240,8 @@ exports[`test Renders a list of day summaries 1`] = `
         "opacity": 1,
       }
     }
-    testID={undefined}>
+    testID={undefined}
+  >
     <View
       style={
         Object {
@@ -233,7 +251,8 @@ exports[`test Renders a list of day summaries 1`] = `
           "padding": 16,
           "width": 750,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -247,7 +266,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "marginBottom": -2,
             "textAlign": "left",
           }
-        }>
+        }
+      >
         Sunday
       </Text>
       <View
@@ -258,7 +278,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "paddingTop": 6,
             "width": 96,
           }
-        }>
+        }
+      >
         <Image
           source={undefined}
           style={
@@ -273,7 +294,8 @@ exports[`test Renders a list of day summaries 1`] = `
               "width": 84,
               "zIndex": 2,
             }
-          }>
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -285,7 +307,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 23,
                 "fontWeight": "bold",
               }
-            }>
+            }
+          >
             undefinedm
           </Text>
           <Text
@@ -299,7 +322,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 12,
                 "fontWeight": "200",
               }
-            } />
+            }
+          />
         </Image>
         <View />
       </View>
@@ -323,7 +347,8 @@ exports[`test Renders a list of day summaries 1`] = `
         "opacity": 1,
       }
     }
-    testID={undefined}>
+    testID={undefined}
+  >
     <View
       style={
         Object {
@@ -333,7 +358,8 @@ exports[`test Renders a list of day summaries 1`] = `
           "padding": 16,
           "width": 750,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -347,7 +373,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "marginBottom": -2,
             "textAlign": "left",
           }
-        }>
+        }
+      >
         Saturday
       </Text>
       <View
@@ -358,7 +385,8 @@ exports[`test Renders a list of day summaries 1`] = `
             "paddingTop": 6,
             "width": 96,
           }
-        }>
+        }
+      >
         <Image
           source={undefined}
           style={
@@ -373,7 +401,8 @@ exports[`test Renders a list of day summaries 1`] = `
               "width": 84,
               "zIndex": 2,
             }
-          }>
+          }
+        >
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -385,7 +414,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 23,
                 "fontWeight": "bold",
               }
-            }>
+            }
+          >
             undefinedm
           </Text>
           <Text
@@ -399,7 +429,8 @@ exports[`test Renders a list of day summaries 1`] = `
                 "fontSize": 12,
                 "fontWeight": "200",
               }
-            } />
+            }
+          />
         </Image>
         <View />
       </View>

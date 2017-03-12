@@ -1,7 +1,4 @@
-import {
-  TEST_KID,
-} from '../Test/Mocks';
-
+import { TEST_KID } from '../Test/Mocks';
 
 const onData = {
   val: () => TEST_KID,

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`fetchReports calls DynamoDB and gets the reports for the given user 1`] = `
 Object {
   "UUID": "a5f1bc36-89f5-4212-98c6-e92797a2a220",

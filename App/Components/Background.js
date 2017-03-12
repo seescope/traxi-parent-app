@@ -14,10 +14,7 @@ const Background = ({ style, children }) => (
 );
 
 Background.propTypes = {
-  style: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.number,
-  ]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   children: PropTypes.node.isRequired,
 };
 

@@ -14,17 +14,13 @@ const SubHeaderStyle = {
   },
 };
 
-
 const SubHeaderText = ({ style, children }) => {
   const textStyle = { ...SubHeaderStyle.text, ...style };
   return <Text style={textStyle}>{children}</Text>;
 };
 
 SubHeaderText.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   style: PropTypes.object,
 };
 

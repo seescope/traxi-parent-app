@@ -10,11 +10,9 @@ export const Actions = {
   intro: jest.fn(),
 };
 
-export const Scene = (props) => <View {...props} />;
+export const Scene = props => <View {...props} />;
 
-export const Router = ({ children }) => (
-  <View>{children}</View>
-);
+export const Router = ({ children }) => <View>{children}</View>;
 
 Router.propTypes = {
   children: PropTypes.array.isRequired,

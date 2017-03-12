@@ -3,7 +3,9 @@ package com.traxi;
 import com.facebook.react.ReactActivity;
 import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import android.os.Bundle;
+import android.content.Intent;
 import com.facebook.appevents.AppEventsLogger;
+import android.util.Log;
 
 // Crashlytics
 import com.crashlytics.android.Crashlytics;
@@ -25,6 +27,13 @@ public class MainActivity extends ReactActivity {
 
       MixpanelAPI mixpanel = MixpanelAPI.getInstance(this, "0c272301fd9218cbab8f7f681989c689");
       Fabric.with(this, new Crashlytics());
+
+      Intent startingIntent = this.getIntent();
+      Bundle isPush = startingIntent.getBundleExtra("push");
+
+      if (isPush != null) {
+        Log.d("traxi", "PUSH, MOTHERFUCKER");
+      }
     }
 
     /**

@@ -1,10 +1,13 @@
-exports[`test renders 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
 <View
   style={
     Object {
       "flex": 1,
     }
-  }>
+  }
+>
   <Image
     resizeMode="cover"
     source={1}
@@ -15,7 +18,8 @@ exports[`test renders 1`] = `
         "position": "absolute",
         "width": 750,
       }
-    } />
+    }
+  />
   <Image
     resizeMode="cover"
     source={1}
@@ -26,7 +30,8 @@ exports[`test renders 1`] = `
         "position": "absolute",
         "width": 750,
       }
-    } />
+    }
+  />
   <Image
     resizeMode="cover"
     source={1}
@@ -37,7 +42,8 @@ exports[`test renders 1`] = `
         "position": "absolute",
         "width": 750,
       }
-    } />
+    }
+  />
   <Image
     resizeMode="cover"
     source={1}
@@ -48,7 +54,8 @@ exports[`test renders 1`] = `
         "position": "absolute",
         "width": 750,
       }
-    } />
+    }
+  />
   <Image
     resizeMode="cover"
     source={1}
@@ -59,7 +66,8 @@ exports[`test renders 1`] = `
         "position": "absolute",
         "width": 750,
       }
-    } />
+    }
+  />
   <View
     style={
       Object {
@@ -69,13 +77,15 @@ exports[`test renders 1`] = `
         "justifyContent": "space-between",
         "paddingHorizontal": 32,
       }
-    }>
+    }
+  >
     <View />
     <View
       animation="bounce"
       delay={3000}
       duration={2000}
-      useNativeDriver={true}>
+      useNativeDriver={true}
+    >
       <View
         accessibilityComponentType={undefined}
         accessibilityLabel={undefined}
@@ -94,9 +104,11 @@ exports[`test renders 1`] = `
             "opacity": 1,
           }
         }
-        testID={undefined}>
+        testID={undefined}
+      >
         <Image
-          source={1} />
+          source={1}
+        />
       </View>
     </View>
   </View>
@@ -106,18 +118,21 @@ exports[`test renders 1`] = `
         "alignItems": "center",
         "flex": 3,
       }
-    }>
+    }
+  >
     <View
       animation="bounceInLeft"
       duration={1000}
       easing="ease-out"
-      useNativeDriver={true} />
+      useNativeDriver={true}
+    />
     <View
       style={
         Object {
           "height": 32,
         }
-      } />
+      }
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -132,8 +147,9 @@ exports[`test renders 1`] = `
           "marginHorizontal": 16,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.intro.header0\" translation]
+      }
+    >
+      [missing "en.intro.header0" translation]
     </Text>
     <Text
       accessible={true}
@@ -149,20 +165,22 @@ exports[`test renders 1`] = `
           "marginHorizontal": 16,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.intro.subheader0\" translation]
+      }
+    >
+      [missing "en.intro.subheader0" translation]
     </Text>
     <View
       style={
         Object {
           "height": 16,
         }
-      } />
+      }
+    />
   </View>
 </View>
 `;
 
-exports[`test sends tracking to Segment that intro was seen 1`] = `
+exports[`sends tracking to Segment that intro was seen 1`] = `
 Array [
   Array [
     "Finished Intro",

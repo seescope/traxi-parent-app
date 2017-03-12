@@ -1,4 +1,6 @@
-exports[`test handles going to the nextStep 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles going to the nextStep 1`] = `
 Array [
   Array [
     Object {
@@ -8,7 +10,7 @@ Array [
 ]
 `;
 
-exports[`test handles setting the kid's name 1`] = `
+exports[`handles setting the kid's name 1`] = `
 Array [
   Array [
     Object {
@@ -19,7 +21,7 @@ Array [
 ]
 `;
 
-exports[`test renders the <SetName> component 1`] = `
+exports[`renders the <SetName> component 1`] = `
 <View>
   <Text
     accessible={true}
@@ -34,15 +36,17 @@ exports[`test renders the <SetName> component 1`] = `
         "marginBottom": -2,
         "textAlign": "center",
       }
-    }>
-    [missing \"en.setName.header\" translation]
+    }
+  >
+    [missing "en.setName.header" translation]
   </Text>
   <View
     style={
       Object {
         "height": 32,
       }
-    } />
+    }
+  />
   <Text
     accessible={true}
     allowFontScaling={true}
@@ -55,15 +59,17 @@ exports[`test renders the <SetName> component 1`] = `
         "fontSize": 16,
         "textAlign": "left",
       }
-    }>
-    [missing \"en.setName.kidsName\" translation]
+    }
+  >
+    [missing "en.setName.kidsName" translation]
   </Text>
   <View
     style={
       Object {
         "height": 16,
       }
-    } />
+    }
+  />
   <TextInput
     autoCapitalize="words"
     autoCorrect={false}
@@ -81,19 +87,22 @@ exports[`test renders the <SetName> component 1`] = `
         "width": 686,
       }
     }
-    underlineColorAndroid="rgba(255, 255, 255, 1)" />
+    underlineColorAndroid="rgba(255, 255, 255, 1)"
+  />
   <View
     style={
       Object {
         "height": 24,
       }
-    } />
+    }
+  />
   <View
     style={
       Object {
         "alignItems": "center",
       }
-    }>
+    }
+  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -116,7 +125,8 @@ exports[`test renders the <SetName> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -127,8 +137,9 @@ exports[`test renders the <SetName> component 1`] = `
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
-        }>
-        [missing \"en.general.nextStep\" translation]
+        }
+      >
+        [missing "en.general.nextStep" translation]
          
       </Text>
     </View>

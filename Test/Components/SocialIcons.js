@@ -5,9 +5,12 @@ import { shallow } from 'enzyme';
 import proxyquire from 'proxyquire';
 import sinon from 'sinon';
 
-const SocialIcons = proxyquire.noCallThru()('../../App/Components/SocialIcons', {
-  'react-native-vector-icons/FontAwesome': View,
-}).default;
+const SocialIcons = proxyquire.noCallThru()(
+  '../../App/Components/SocialIcons',
+  {
+    'react-native-vector-icons/FontAwesome': View,
+  },
+).default;
 
 describe('<SocialIcons />', () => {
   it('triggers onPress with the appropriate params', () => {

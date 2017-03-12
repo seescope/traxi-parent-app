@@ -1,4 +1,6 @@
-exports[`test handles duplicate kids 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles duplicate kids 1`] = `
 Array [
   Array [
     "value",
@@ -18,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`test handles duplicate kids 2`] = `
+exports[`handles duplicate kids 2`] = `
 Array [
   Array [
     Object {
@@ -44,7 +46,7 @@ Array [
 ]
 `;
 
-exports[`test handles duplicate kids 3`] = `
+exports[`handles duplicate kids 3`] = `
 Array [
   Array [
     Object {
@@ -80,7 +82,7 @@ Array [
 ]
 `;
 
-exports[`test handles when the device has been installed 1`] = `
+exports[`handles when the device has been installed 1`] = `
 Array [
   Array [
     "value",
@@ -95,7 +97,7 @@ Array [
 ]
 `;
 
-exports[`test handles when the device has been installed 2`] = `
+exports[`handles when the device has been installed 2`] = `
 Array [
   Array [
     Object {
@@ -116,7 +118,7 @@ Array [
 ]
 `;
 
-exports[`test handles when the device has been installed 3`] = `
+exports[`handles when the device has been installed 3`] = `
 Array [
   Array [
     "Completed Installation",
@@ -130,7 +132,7 @@ Array [
 ]
 `;
 
-exports[`test registers a listener with Firebase that dispatches a DEVICE_UPDATED action 1`] = `
+exports[`registers a listener with Firebase that dispatches a DEVICE_UPDATED action 1`] = `
 Array [
   Array [
     "value",
@@ -140,7 +142,7 @@ Array [
 ]
 `;
 
-exports[`test registers a listener with Firebase that dispatches a DEVICE_UPDATED action 2`] = `
+exports[`registers a listener with Firebase that dispatches a DEVICE_UPDATED action 2`] = `
 Array [
   Array [
     Object {

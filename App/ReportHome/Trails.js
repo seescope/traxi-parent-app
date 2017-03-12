@@ -17,15 +17,19 @@ const Trails = ({ trailSegments, isToday }) => (
       isToday={isToday}
       {...trailSegments[0]}
     />
-    {trailSegments.slice(1).map((trailSegment, i) => [
-      <InterTrailLine lastItem={trailSegments[i].trailItems.length - 1} />,
-      <TrailSegment
-        colours={getTrailColours(trailSegments, i + 1)}
-        isToday={isToday}
-        key={i}
-        {...trailSegment}
-      />,
-    ])}
+    {trailSegments
+      .slice(1)
+      .map((trailSegment, i) => [
+        <InterTrailLine lastItem={trailSegments[i].trailItems.length - 1} />,
+        (
+          <TrailSegment
+            colours={getTrailColours(trailSegments, i + 1)}
+            isToday={isToday}
+            key={i}
+            {...trailSegment}
+          />
+        ),
+      ])}
   </View>
 );
 

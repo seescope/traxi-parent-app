@@ -1,4 +1,6 @@
-exports[`test calls ImagePicker if pickImage is true 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls ImagePicker if pickImage is true 1`] = `
 Array [
   Array [
     Object {
@@ -20,16 +22,18 @@ Array [
 ]
 `;
 
-exports[`test renders the <SetImage> component 1`] = `
+exports[`renders the <SetImage> component 1`] = `
 <View
-  style={Object {}}>
+  style={Object {}}
+>
   <View
     style={
       Object {
         "alignItems": "center",
         "flexDirection": "column",
       }
-    }>
+    }
+  >
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -43,8 +47,9 @@ exports[`test renders the <SetImage> component 1`] = `
           "marginBottom": -2,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.general.thanks\" translation]
+      }
+    >
+      [missing "en.general.thanks" translation]
       , 
       Name
       !
@@ -54,7 +59,8 @@ exports[`test renders the <SetImage> component 1`] = `
         Object {
           "height": 32,
         }
-      } />
+      }
+    />
     <Image
       animation={undefined}
       duration={undefined}
@@ -74,7 +80,8 @@ exports[`test renders the <SetImage> component 1`] = `
           "shadowRadius": 5,
           "width": 204,
         }
-      } />
+      }
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -88,8 +95,9 @@ exports[`test renders the <SetImage> component 1`] = `
           "fontSize": 16,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.setImage.setAPictureFor\" translation]
+      }
+    >
+      [missing "en.setImage.setAPictureFor" translation]
        
       Jeff
       .
@@ -99,7 +107,8 @@ exports[`test renders the <SetImage> component 1`] = `
         Object {
           "height": 32,
         }
-      } />
+      }
+    />
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -113,8 +122,9 @@ exports[`test renders the <SetImage> component 1`] = `
           "fontSize": 16,
           "textAlign": "center",
         }
-      }>
-      [missing \"en.setImage.dontWorry\" translation]
+      }
+    >
+      [missing "en.setImage.dontWorry" translation]
       .
     </Text>
     <View
@@ -122,13 +132,15 @@ exports[`test renders the <SetImage> component 1`] = `
         Object {
           "height": 24,
         }
-      } />
+      }
+    />
     <View
       style={
         Object {
           "height": 32,
         }
-      } />
+      }
+    />
   </View>
   <View
     style={
@@ -138,7 +150,8 @@ exports[`test renders the <SetImage> component 1`] = `
         "justifyContent": "space-between",
         "width": 686,
       }
-    }>
+    }
+  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -161,7 +174,8 @@ exports[`test renders the <SetImage> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -172,8 +186,9 @@ exports[`test renders the <SetImage> component 1`] = `
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
-        }>
-        [missing \"en.setImage.notNow\" translation]
+        }
+      >
+        [missing "en.setImage.notNow" translation]
          
       </Text>
     </View>
@@ -199,7 +214,8 @@ exports[`test renders the <SetImage> component 1`] = `
           "opacity": 1,
         }
       }
-      testID={undefined}>
+      testID={undefined}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -210,8 +226,9 @@ exports[`test renders the <SetImage> component 1`] = `
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
-        }>
-        [missing \"en.setImage.chooseAPicture\" translation]
+        }
+      >
+        [missing "en.setImage.chooseAPicture" translation]
          
       </Text>
     </View>
@@ -219,7 +236,7 @@ exports[`test renders the <SetImage> component 1`] = `
 </View>
 `;
 
-exports[`test uses a default image of pickImage is false 1`] = `
+exports[`uses a default image of pickImage is false 1`] = `
 Array [
   Array [
     Object {

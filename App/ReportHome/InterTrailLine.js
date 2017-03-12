@@ -17,8 +17,8 @@ const style = StyleSheet.create({
 
 const InterTrailLine = ({ lastItem }) => {
   const startIndentation = PILL_INDENTS[lastItem % PILL_INDENTS.length];
-  const d = `M${16 + startIndentation + (136 / 2)},0
-             Q${16 + startIndentation + (136 / 2)},72 ${(width / 2) + (136 / 2)},72`;
+  const d = `M${16 + startIndentation + 136 / 2},0
+             Q${16 + startIndentation + 136 / 2},72 ${width / 2 + 136 / 2},72`;
 
   return (
     <Svg width={width} height={84} style={style.interTrailLine}>

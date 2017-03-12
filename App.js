@@ -8,6 +8,7 @@ import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
+import { configureNotificationEndpoint } from './App/Utils/Notifications';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -33,15 +34,19 @@ export default class extends React.Component {
       if (profile !== null && profile.UUID) {
         const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;
 
-        new Firebase(URI).once('value',
+        new Firebase(URI).once(
+          'value',
           data => {
             if (data.val() !== null) {
               this.setState({
                 profile: data.val(),
                 loading: false,
               });
+              configureNotificationEndpoint(data.val());
             } else {
-              logError(`No profile found for ${profile.UUID}. Continuing as new user.`);
+              logError(
+                `No profile found for ${profile.UUID}. Continuing as new user.`
+              );
               this.setState({ loading: false });
             }
           },
@@ -68,8 +73,6 @@ export default class extends React.Component {
       );
     }
 
-    return (
-      <ParentApp profile={profile} />
-    );
+    return <ParentApp profile={profile} />;
   }
 }

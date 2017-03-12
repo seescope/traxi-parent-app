@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`LoginWithMethod logs the user in, saves the profile in AsyncStorage, then dispatches LOGGED_IN 1`] = `
 Array [
   Array [

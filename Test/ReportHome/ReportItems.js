@@ -6,17 +6,20 @@ chai.use(chaiEnzyme());
 import { shallow } from 'enzyme';
 import proxyquire from 'proxyquire';
 
-const ReportItems = proxyquire.noCallThru()('../../App/ReportHome/ReportItems', {
-  'react-native-vector-icons/FontAwesome': View,
-  'react-native-router-flux': { Actions: {} },
-  'react-native-animatable': { View },
-}).default;
+const ReportItems = proxyquire.noCallThru()(
+  '../../App/ReportHome/ReportItems',
+  {
+    'react-native-vector-icons/FontAwesome': View,
+    'react-native-router-flux': { Actions: {} },
+    'react-native-animatable': { View },
+  },
+).default;
 
 const TEST_REPORTS = [
   {
     type: 'time',
     status: 'good',
-  }
+  },
 ];
 
 const wrapper = shallow(<ReportItems type={'alerts'} report={TEST_REPORTS} />);

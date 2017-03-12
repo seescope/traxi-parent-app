@@ -33,7 +33,8 @@ public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
         if (intercomPushClient.isIntercomPush(message)) {
           intercomPushClient.handlePush(getApplication(), message);
         } else {
-          sendNotification(remoteMessage.getNotification());
+          String plainTextMessage = (String) message.get("default");
+          sendNotification(plainTextMessage);
         }
     }
 
@@ -42,17 +43,23 @@ public class TraxiFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(Notification notification) {
+    private void sendNotification(String plainTextMessage) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+        intent.putExtra("push", true);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_ONE_SHOT
+          );
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_accessibility)
-                .setContentTitle(notification.getTitle())
-                .setContentText(notification.getBody())
+                .setContentTitle("Traxi")
+                .setContentText(plainTextMessage)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);

@@ -1,7 +1,12 @@
 import React, { PropTypes } from 'react';
 import { TextInput as RNTextInput, Dimensions, Platform } from 'react-native';
 
-import { NEUTRAL, LIGHTEST_GREY, WHITE, NEUTRAL_WITH_OPACITY } from '../Constants/Colours';
+import {
+  NEUTRAL,
+  LIGHTEST_GREY,
+  WHITE,
+  NEUTRAL_WITH_OPACITY,
+} from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
 const { width } = Dimensions.get('window');
@@ -28,7 +33,6 @@ const style = Platform.select({
   ios: iosInputStyle,
   android: androidInputStyle,
 });
-
 
 const TextInput = ({ onChangeText, onSubmitEditing, refFunc }) => (
   <RNTextInput

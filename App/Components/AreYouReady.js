@@ -41,7 +41,7 @@ const buttonContainer = {
   justifyContent: 'space-between',
 };
 
-export default () =>
+export default () => (
   <Image
     resizeMode="cover"
     style={containerStyle}
@@ -62,4 +62,5 @@ export default () =>
         </Button>
       </View>
     </View>
-  </Image>;
+  </Image>
+);

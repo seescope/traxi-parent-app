@@ -2,11 +2,7 @@ import React, { PropTypes } from 'react';
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native';
 import { isIOS, getAppNiceName } from '../Utils';
 
-import {
-  TRANSPARENT,
-  WHITE,
-  NEUTRAL,
-} from '../Constants/Colours';
+import { TRANSPARENT, WHITE, NEUTRAL } from '../Constants/Colours';
 
 const { width } = Dimensions.get('window');
 
@@ -51,7 +47,7 @@ const style = StyleSheet.create({
     fontSize: isIOS ? 21 : 18,
     fontWeight: isIOS ? '200' : '500',
     backgroundColor: TRANSPARENT,
-    width: (width / 2) - 32,
+    width: width / 2 - 32,
     marginLeft: 16,
     color: WHITE,
   },
@@ -74,7 +70,10 @@ TrailHeader.propTypes = {
   timeStamp: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
-  segmentName: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+  segmentName: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool,
+  ]).isRequired,
 };
 
 export default TrailHeader;

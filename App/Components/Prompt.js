@@ -30,17 +30,15 @@ const style = {
   },
 };
 
-const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
+const Prompt = ({ parentName, kidName, nextStep, avatarURL }) => (
   <View style={style.container}>
-    <HeaderText>{I18n.t('prompt.header')}, {parentName && `, ${parentName}`}</HeaderText>
+    <HeaderText>
+      {I18n.t('prompt.header')}, {parentName && `, ${parentName}`}
+    </HeaderText>
 
     <Spacing height={32} />
 
-    <KidAvatar
-      size={204}
-      avatarURL={avatarURL}
-      state="neutral"
-    />
+    <KidAvatar size={204} avatarURL={avatarURL} state="neutral" />
 
     <Spacing height={32} />
 
@@ -58,7 +56,8 @@ const Prompt = ({ parentName, kidName, nextStep, avatarURL }) =>
         {I18n.t('prompt.yes')}
       </Button>
     </View>
-  </View>;
+  </View>
+);
 
 Prompt.propTypes = {
   parentName: React.PropTypes.string,

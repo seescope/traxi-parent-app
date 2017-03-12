@@ -98,8 +98,8 @@ android {
       applicationId "com.traxi"
       minSdkVersion 16
       targetSdkVersion 22
-      versionCode 542
-      versionName "5.4.2"
+      versionCode 551
+      versionName "5.5.1"
       ndk {
         abiFilters "armeabi-v7a", "x86"
       }
@@ -169,6 +169,8 @@ android {
 }
 
 dependencies {
+    compile project(':aws-sdk-react-native-sns')
+    compile project(':react-native-push-notification')
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
@@ -192,6 +194,7 @@ dependencies {
     
     // Google Authentication
     compile 'com.google.android.gms:play-services-auth:10.0.1'
+    compile 'com.google.android.gms:play-services-gcm:10.0.1'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])

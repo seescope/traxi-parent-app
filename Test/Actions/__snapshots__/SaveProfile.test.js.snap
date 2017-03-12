@@ -1,8 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`saveProfile saves the profile to AsyncStorage 1`] = `
 Array [
   Array [
     "profile",
-    "{\"UUID\":\"arbostrisand\",\"token\":\"mock-token\"}",
+    "{\\"UUID\\":\\"arbostrisand\\",\\"token\\":\\"mock-token\\"}",
   ],
 ]
 `;
