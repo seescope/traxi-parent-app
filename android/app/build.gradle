@@ -170,7 +170,9 @@ android {
 
 dependencies {
     compile project(':aws-sdk-react-native-sns')
-    compile project(':react-native-push-notification')
+    compile(project(':react-native-push-notification')) {
+      exclude group: 'com.google.android.gms'
+    }
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
@@ -193,8 +195,8 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     
     // Google Authentication
-    compile 'com.google.android.gms:play-services-auth:10.0.1'
-    compile 'com.google.android.gms:play-services-gcm:10.0.1'
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
+    compile 'com.google.android.gms:play-services-gcm:10.2.0'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])
@@ -210,10 +212,10 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 
     // Firebase
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'com.google.firebase:firebase-database:10.0.1'
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
-    compile 'com.google.firebase:firebase-auth:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.2.0'
+    compile 'com.google.firebase:firebase-database:10.2.0'
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
+    compile 'com.google.firebase:firebase-auth:10.2.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;
     }
