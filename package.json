@@ -38,6 +38,7 @@
     "react-native-linear-gradient": "^2.0.0",
     "react-native-locale": "^0.0.14",
     "react-native-material-kit": "^0.4.1",
+    "react-native-onesignal": "^3.0.3",
     "react-native-push-notification": "2.1.1",
     "react-native-randombytes": "^2.1.0",
     "react-native-router-flux": "^3.26.22",

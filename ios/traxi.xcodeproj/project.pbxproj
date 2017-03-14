@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -32,6 +31,7 @@
 		3C9F6B82BF454E4EB873107B /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5435D371DB4E6390966BA4 /* libcxxreact.a */; };
 		48BAEC4D1B99411F80F8555A /* libRNSegmentIOAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEC9B23B5B14B389A017C40 /* libRNSegmentIOAnalytics.a */; };
 		49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 819D939B878B492E9D03D874 /* libz.tbd */; };
+		4BE31E7F351F435296C5706E /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011479102AD5440682E7A8D0 /* libRCTOneSignal.a */; };
 		4C54EFF47E3E4CAB9CF5AE61 /* libRCTContacts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 254F7C75F72A434AB14F3901 /* libRCTContacts.a */; };
 		4C83FEB6C32DE8E9F9E3E729 /* libPods-traxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */; };
 		4E8BE7232DC14CFDAA107542 /* libDynamoDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C97D9BD011B4737BBAFE674 /* libDynamoDB.a */; };
@@ -141,6 +141,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
 			remoteInfo = "RCTPushNotification-tvOS";
+		};
+		5E3D0EB21E77891200256131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3245CDED1BFEE35C00EABF68;
+			remoteInfo = RCTOneSignal;
 		};
 		5EE541F91E5D4F6300F4F43D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -400,6 +407,7 @@
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* traxiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = traxiTests.m; sourceTree = "<group>"; };
+		011479102AD5440682E7A8D0 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
 		099C10755B114FFBBEB46EBA /* libjschelpers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libjschelpers.a; sourceTree = "<group>"; };
 		0A52B9E48CA645F587719F3F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		136968EA03E888B8E0B4BCD3 /* Pods-traxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-traxi/Pods-traxi.release.xcconfig"; sourceTree = "<group>"; };
@@ -431,6 +439,7 @@
 		5EE5425E1E5D500100F4F43D /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSNS.framework; sourceTree = "<group>"; };
 		5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "/Users/christopherhiste/Desktop/traxi-parent-app/ios/AWSSNS.framework"; sourceTree = "<absolute>"; };
 		5F5435D371DB4E6390966BA4 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
+		5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		6382ED09583748698C132E82 /* SNS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SNS.xcodeproj; path = "../node_modules/aws-sdk-react-native-sns/ios/SNS.xcodeproj"; sourceTree = "<group>"; };
 		67CC55B1355C40F9AF8CE464 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -521,6 +530,7 @@
 				3C9F6B82BF454E4EB873107B /* libcxxreact.a in Frameworks */,
 				31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */,
 				73AE6FFE03354480827793D6 /* libSNS.a in Frameworks */,
+				4BE31E7F351F435296C5706E /* libRCTOneSignal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +688,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5E3D0E9F1E77891200256131 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E3D0EB31E77891200256131 /* libRCTOneSignal.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5EE541CC1E5D4F6300F4F43D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +743,7 @@
 				C40FE604FA1F4E4292D04904 /* RNIntercom.xcodeproj */,
 				521B1CD1B352413BB7C39C7E /* RNI18n.xcodeproj */,
 				6382ED09583748698C132E82 /* SNS.xcodeproj */,
+				5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -936,6 +955,9 @@
 						DevelopmentTeam = T2TG9M3MRR;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1002,6 +1024,10 @@
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E3D0E9F1E77891200256131 /* Products */;
+					ProjectRef = 5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */;
 				},
 				{
 					ProductGroup = 5E039A8B1E5BFC1E00B7A0E6 /* Products */;
@@ -1140,6 +1166,13 @@
 			fileType = archive.ar;
 			path = "libRCTPushNotification-tvOS.a";
 			remoteRef = 5E039AA11E5BFC1F00B7A0E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E3D0EB31E77891200256131 /* libRCTOneSignal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTOneSignal.a;
+			remoteRef = 5E3D0EB21E77891200256131 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5EE541FA1E5D4F6300F4F43D /* libSNS.a */ = {
@@ -1555,6 +1588,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-sns/ios/SNS/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1562,11 +1597,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/traxi\"",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
-				PROVISIONING_PROFILE = "ee0b0705-08ed-458d-abb6-991538b4cdc1";
+				PROVISIONING_PROFILE = "af65fffa-6576-47b4-9a45-0a22c9d2f595";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.traxi.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1608,6 +1644,8 @@
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
 					"$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS/**",
 					"$(SRCROOT)/../node_modules/aws-sdk-react-native-sns/ios/SNS/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 				);
 				INFOPLIST_FILE = traxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1615,11 +1653,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/traxi\"",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
-				PROVISIONING_PROFILE = "1021c3c0-ff01-4f99-9fbd-c89c4b4c05d2";
+				PROVISIONING_PROFILE = "09ce3569-912a-44c2-b811-16f9e9ae2d3c";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.traxi.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1683,6 +1722,7 @@
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1742,6 +1782,7 @@
 					"$(SRCROOT)/../node_modules/react-native-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/react-native-intercom/iOS",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

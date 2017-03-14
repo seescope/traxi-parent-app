@@ -89,7 +89,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "24.0.2"
 
-    lintOptions { 
+    lintOptions {
       checkReleaseBuilds false
     }
 
@@ -104,6 +104,9 @@ android {
         abiFilters "armeabi-v7a", "x86"
       }
       multiDexEnabled true
+      manifestPlaceholders = [onesignal_app_id: "d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35",
+                              onesignal_google_project_number: "REMOTE"]
+}
     }
 
     signingConfigs {
@@ -114,7 +117,7 @@ android {
         keyPassword TRAXI_RELEASE_STORE_PASSWORD
       }
     }
-    
+
     splits {
         abi {
             reset()
@@ -169,6 +172,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-onesignal')
     compile project(':aws-sdk-react-native-sns')
     compile project(':react-native-push-notification')
     compile project(':react-native-i18n')
@@ -191,7 +195,7 @@ dependencies {
 
     // Multidex
     compile 'com.android.support:multidex:1.0.1'
-    
+
     // Google Authentication
     compile 'com.google.android.gms:play-services-auth:10.0.1'
     compile 'com.google.android.gms:play-services-gcm:10.0.1'

@@ -20,6 +20,7 @@
 @import Intercom;
 
 @implementation AppDelegate
+@synthesize oneSignal = _oneSignal;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -56,6 +57,10 @@
   
   // Initialize Intercom
   [Intercom setApiKey:@"ios_sdk-4eb45cee2ce0955571adcd238f912926f206fda5" forAppId:@"bduhw6bc"];
+  
+  // OneSignal
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions appId:@"d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35"];
+  
   return YES;
 }
 
@@ -78,11 +83,13 @@
   [RCTPushNotificationManager didRegisterUserNotificationSettings:notificationSettings];
 }
 // Required for the notification event. You must call the completion handler after handling the remote notification.
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-  [RCTPushNotificationManager didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+  [RCTPushNotificationManager didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
+  [RCTOneSignal didReceiveRemoteNotification:notification];
 }
+
 // Required for the registrationError event.
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {

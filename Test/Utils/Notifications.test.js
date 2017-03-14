@@ -26,55 +26,47 @@ const endpointArn = 'endpointArn';
 describe(
   'Check if configureNotificationEndpoint handles all possible scenarios',
   () => {
-    it(
-      'fails if no token is set',
-      () => Notifications.configureNotificationEndpoint(profile).then(() => {
+    it('fails if no token is set', () =>
+      Notifications.configureNotificationEndpoint(profile).then(() => {
         expect(logError).toHaveBeenCalledWith(
           '[Notifications] Error - No token found'
         );
-      })
-    );
+      }));
 
-    it(
-      'creates a new endpoint if there is no endpointArn stored in AsyncStorage',
-      () => {
-        expect.assertions(1);
+    it('creates a new endpoint if there is no endpointArn stored in AsyncStorage', () => {
+      expect.assertions(1);
 
-        AsyncStorage.getItem = itemName => {
-          if (itemName === 'notificationToken') return token;
-          return false;
-        };
+      AsyncStorage.getItem = itemName => {
+        if (itemName === 'notificationToken') return token;
+        return false;
+      };
 
-        Notifications.createEndpoint.mockClear();
+      Notifications.createEndpoint.mockClear();
 
-        return Notifications.configureNotificationEndpoint(profile).then(() => {
-          expect(Notifications.createEndpoint).toHaveBeenCalledWith(
-            token,
-            dataJson
-          );
-        });
-      }
-    );
+      return Notifications.configureNotificationEndpoint(profile).then(() => {
+        expect(Notifications.createEndpoint).toHaveBeenCalledWith(
+          token,
+          dataJson
+        );
+      });
+    });
 
-    it(
-      'creates a new endpoint if there is an endpointArn in AsyncStorage but it was deleted in SNS',
-      () => {
-        AsyncStorage.getItem = itemName => {
-          if (itemName === 'notificationToken') return token;
-          else if (itemName === 'endpointArn') return endpointArn;
-          return false;
-        };
+    it('creates a new endpoint if there is an endpointArn in AsyncStorage but it was deleted in SNS', () => {
+      AsyncStorage.getItem = itemName => {
+        if (itemName === 'notificationToken') return token;
+        else if (itemName === 'endpointArn') return endpointArn;
+        return false;
+      };
 
-        Notifications.createEndpoint.mockClear();
+      Notifications.createEndpoint.mockClear();
 
-        return Notifications.configureNotificationEndpoint(profile).then(() => {
-          expect(Notifications.createEndpoint).toHaveBeenCalledWith(
-            token,
-            dataJson
-          );
-        });
-      }
-    );
+      return Notifications.configureNotificationEndpoint(profile).then(() => {
+        expect(Notifications.createEndpoint).toHaveBeenCalledWith(
+          token,
+          dataJson
+        );
+      });
+    });
 
     it('updates the endpoint if needed', () => {
       AsyncStorage.getItem = itemName => {

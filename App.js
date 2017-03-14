@@ -10,6 +10,8 @@ import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
 import { configureNotificationEndpoint } from './App/Utils/Notifications';
 
+import OneSignal from 'react-native-onesignal';
+
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
@@ -17,15 +19,24 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    // AsyncStorage.removeItem('profile');
-    // AsyncStorage.setItem('profile', JSON.stringify({
-    //   UUID: "YwS0vJ8OE8N6yenxHaV6PdMVLbG3",
-    // }));
+    AsyncStorage.removeItem('profile');
+    AsyncStorage.setItem(
+      'profile',
+      JSON.stringify({
+        UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+      })
+    );
 
     this.state = {
       profile: {},
       loading: true,
     };
+  }
+  componentWillMount() {
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
+    OneSignal.addEventListener('registered', this.onRegistered);
+    OneSignal.addEventListener('ids', this.onIds);
   }
 
   componentDidMount() {
@@ -60,6 +71,35 @@ export default class extends React.Component {
         this.setState({ loading: false });
       }
     });
+  }
+
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener('registered', this.onRegistered);
+    OneSignal.removeEventListener('ids', this.onIds);
+  }
+
+  onReceived(notification) {
+    console.log('Notification received: ', notification);
+  }
+
+  onOpened(openResult) {
+    console.log('Message: ', openResult.notification.payload.body);
+    console.log('Data: ', openResult.notification.payload.additionalData);
+    console.log('isActive: ', openResult.notification.isAppInFocus);
+    console.log('openResult: ', openResult);
+  }
+
+  onRegistered(notifData) {
+    console.log(
+      'Device had been registered for push notifications!',
+      notifData
+    );
+  }
+
+  onIds(device) {
+    console.log('Device info: ', device);
   }
 
   render() {
