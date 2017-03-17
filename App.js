@@ -8,7 +8,8 @@ import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
-import { configureNotificationEndpoint } from './App/Utils/Notifications';
+import Analytics from 'react-native-analytics';
+import OneSignal from 'react-native-onesignal';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -18,14 +19,21 @@ export default class extends React.Component {
     super(props);
 
     // AsyncStorage.removeItem('profile');
-    // AsyncStorage.setItem('profile', JSON.stringify({
-    //   UUID: "YwS0vJ8OE8N6yenxHaV6PdMVLbG3",
-    // }));
+    // AsyncStorage.setItem(
+    //   'profile',
+    //   JSON.stringify({
+    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+    //   }),
+    // );
 
     this.state = {
       profile: {},
       loading: true,
     };
+  }
+  componentWillMount() {
+    OneSignal.addEventListener('received', this.onReceived);
+    OneSignal.addEventListener('opened', this.onOpened);
   }
 
   componentDidMount() {
@@ -42,24 +50,36 @@ export default class extends React.Component {
                 profile: data.val(),
                 loading: false,
               });
-              configureNotificationEndpoint(data.val());
             } else {
               logError(
-                `No profile found for ${profile.UUID}. Continuing as new user.`
+                `No profile found for ${profile.UUID}. Continuing as new user.`,
               );
               this.setState({ loading: false });
             }
           },
           error => {
             logError(`Error fetching profile: ${error.message}`);
-            alert('Error fetching data from traxi.');
+            alert('Error fetching data from traxi.'); // eslint-disable-line
             this.setState({ loading: false });
-          }
+          },
         );
       } else {
         this.setState({ loading: false });
       }
     });
+  }
+
+  componentWillUnmount() {
+    OneSignal.removeEventListener('received', this.onReceived);
+    OneSignal.removeEventListener('opened', this.onOpened);
+  }
+
+  onReceived() {
+    Analytics.track('Notification received');
+  }
+
+  onOpened() {
+    Analytics.track('Notification opened');
   }
 
   render() {
