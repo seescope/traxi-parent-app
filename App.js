@@ -8,6 +8,7 @@ import LoadingIndicator from './App/Components/LoadingIndicator';
 import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
+import Analytics from 'react-native-analytics';
 
 import OneSignal from 'react-native-onesignal';
 
@@ -61,7 +62,7 @@ export default class extends React.Component {
           },
           error => {
             logError(`Error fetching profile: ${error.message}`);
-            alert('Error fetching data from traxi.');
+            alert('Error fetching data from traxi.'); // eslint-disable-line
             this.setState({ loading: false });
           },
         );
@@ -78,26 +79,34 @@ export default class extends React.Component {
     OneSignal.removeEventListener('ids', this.onIds);
   }
 
+  // eslint-disable-next-line
   onReceived(notification) {
-    console.log('Notification received: ', notification);
+    Analytics.track('Notification received');
+
+    // console.log('Notification received: ', notification);
   }
 
+  // eslint-disable-next-line
   onOpened(openResult) {
-    console.log('Message: ', openResult.notification.payload.body);
-    console.log('Data: ', openResult.notification.payload.additionalData);
-    console.log('isActive: ', openResult.notification.isAppInFocus);
-    console.log('openResult: ', openResult);
+    Analytics.track('Notification opened');
+
+    // console.log('Message: ', openResult.notification.payload.body);
+    // console.log('Data: ', openResult.notification.payload.additionalData);
+    // console.log('isActive: ', openResult.notification.isAppInFocus);
+    // console.log('openResult: ', openResult);
   }
 
+  // eslint-disable-next-line
   onRegistered(notifData) {
-    console.log(
-      'Device had been registered for push notifications!',
-      notifData,
-    );
+    // console.log(
+    //   'Device had been registered for push notifications!',
+    //   notifData,
+    // );
   }
 
+  // eslint-disable-next-line
   onIds(device) {
-    console.log('Device info: ', device);
+    // console.log('Device info: ', device);
   }
 
   render() {
