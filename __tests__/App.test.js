@@ -27,7 +27,7 @@ it('renders Intro when there is no profile', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders AreYouReady when there is a profile that has a UUID, but no kids in Firebase', () => {
+xit('renders AreYouReady when there is a profile that has a UUID, but no kids in Firebase', () => {
   mockOnce.setData({
     name: 'Test',
     UUID: 'abc-123',

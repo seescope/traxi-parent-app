@@ -32,12 +32,6 @@ const DYNAMODB_REGION = 'ap-southeast-2';
 const REFRESH_INTERVAL = 30 * 1000; // 30 seconds
 const TIMER_NAME = 'refreshReports';
 
-const CLOSING_SCENES = {
-  reports: true,
-  splashScreen: true,
-  thankyou: true,
-};
-
 const RouterWithRedux = connect()(Router);
 
 class ParentApp extends React.Component {
@@ -59,29 +53,22 @@ class ParentApp extends React.Component {
     this.store = createStore(
       ParentAppReducer,
       INITIAL_STATE,
-      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
+      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware)
     );
 
     if (profile && profile.name) {
       this.store.dispatch({ type: 'LOGGED_IN', profile });
     }
 
-    Promise
-      .resolve(
-        AWSCognitoCredentials.initWithOptions({
-          region: COGNITO_REGION,
-          identity_pool_id: IDENTITY_POOL_ID,
-        }),
-      )
-      .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
-      .then(() => {
-        this.fetchReports();
-        Timer.setInterval(
-          TIMER_NAME,
-          this.fetchReports.bind(this),
-          REFRESH_INTERVAL,
-        );
-      });
+    Promise.resolve(AWSCognitoCredentials.initWithOptions({
+      region: COGNITO_REGION,
+      identity_pool_id: IDENTITY_POOL_ID,
+    }))
+    .then(AWSDynamoDB.initWithOptions({ region: DYNAMODB_REGION }))
+    .then(() => {
+      this.fetchReports();
+      Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
+    });
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
   }
@@ -101,12 +88,17 @@ class ParentApp extends React.Component {
       return true;
     } else if (sceneName === 'congratulations') {
       return true;
-    } else if (CLOSING_SCENES[sceneName]) {
+    }
+
+    try {
+      Actions.pop();
+    } catch (error) {
+      // The user is in the root scene - exit the app.
       BackAndroid.exitApp();
       return false;
     }
 
-    Actions.pop();
+    // Default
     return true;
   }
 
@@ -114,9 +106,7 @@ class ParentApp extends React.Component {
     const { profile } = this.store.getState();
     const kids = profile.kids;
 
-    if (!kids) {
-      return null;
-    }
+    if (!kids) { return null; }
 
     kids.forEach(kid => {
       const action = fetchReportsAction(kid);
@@ -129,22 +119,13 @@ class ParentApp extends React.Component {
   render() {
     const { profile } = this.props;
     const isInstalled = !!profile.kids;
-    const introSeen = !!profile.UUID;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
-          <Scene
-            key="splashScreen"
-            initial={!isInstalled}
-            component={SplashScreen}
-          />
+          <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
-          <Scene
-            key="areYouReady"
-            initial={introSeen}
-            component={AreYouReady}
-          />
+          <Scene key="areYouReady" component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
           <Scene key="setName" component={SetName} />

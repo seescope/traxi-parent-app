@@ -115,7 +115,7 @@ exports[`renders the <SplashScreen> component 1`] = `
           }
         }
       >
-        Find out now
+        Start monitoring
          
       </Text>
     </View>

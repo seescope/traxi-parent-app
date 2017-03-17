@@ -180,11 +180,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
     }
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     >
       <View
         style={
@@ -294,23 +290,6 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          Don't worry, only you will be able to see it.
-        </Text>
         <View
           style={
             Object {
@@ -325,6 +304,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
             "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "width": 686,
           }
         }
       >
@@ -1875,11 +1855,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
     }
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     >
       <View
         style={
@@ -1989,23 +1965,6 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          Don't worry, only you will be able to see it.
-        </Text>
         <View
           style={
             Object {
@@ -2020,6 +1979,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
             "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "width": 686,
           }
         }
       >
@@ -3391,11 +3351,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
     }
   >
     <View
-      style={
-        Object {
-          "flex": 1,
-        }
-      }
+      style={Object {}}
     >
       <View
         style={
@@ -3505,23 +3461,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          Don't worry, only you will be able to see it.
-        </Text>
         <View
           style={
             Object {
@@ -3536,6 +3475,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
             "alignItems": "flex-end",
             "flexDirection": "row",
             "justifyContent": "space-between",
+            "width": 686,
           }
         }
       >

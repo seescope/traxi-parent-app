@@ -9,7 +9,7 @@ export default {
     },
     splashScreen: {
       mainHeader: 'What is your child doing online?',
-      button: 'Find out now',
+      button: 'Start monitoring',
     },
     intro: {
       header0: "First, get your kid's device",
