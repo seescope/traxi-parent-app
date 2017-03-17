@@ -19,13 +19,13 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    AsyncStorage.removeItem('profile');
-    AsyncStorage.setItem(
-      'profile',
-      JSON.stringify({
-        UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-      }),
-    );
+    // AsyncStorage.removeItem('profile');
+    // AsyncStorage.setItem(
+    //   'profile',
+    //   JSON.stringify({
+    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+    //   }),
+    // );
 
     this.state = {
       profile: {},
