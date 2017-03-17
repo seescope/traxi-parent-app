@@ -105,7 +105,7 @@ android {
       }
       multiDexEnabled true
       manifestPlaceholders = [onesignal_app_id: "d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35",
-                              onesignal_google_project_number: "REMOTE"]
+                              onesignal_google_project_number: "204102393429"]
 }
     }
 
@@ -174,7 +174,6 @@ android {
 dependencies {
     compile project(':react-native-onesignal')
     compile project(':aws-sdk-react-native-sns')
-    compile project(':react-native-push-notification')
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')

@@ -9,7 +9,6 @@ import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
 import Analytics from 'react-native-analytics';
-
 import OneSignal from 'react-native-onesignal';
 
 I18n.fallbacks = true;
@@ -35,8 +34,6 @@ export default class extends React.Component {
   componentWillMount() {
     OneSignal.addEventListener('received', this.onReceived);
     OneSignal.addEventListener('opened', this.onOpened);
-    OneSignal.addEventListener('registered', this.onRegistered);
-    OneSignal.addEventListener('ids', this.onIds);
   }
 
   componentDidMount() {
@@ -75,38 +72,14 @@ export default class extends React.Component {
   componentWillUnmount() {
     OneSignal.removeEventListener('received', this.onReceived);
     OneSignal.removeEventListener('opened', this.onOpened);
-    OneSignal.removeEventListener('registered', this.onRegistered);
-    OneSignal.removeEventListener('ids', this.onIds);
   }
 
-  // eslint-disable-next-line
-  onReceived(notification) {
+  onReceived() {
     Analytics.track('Notification received');
-
-    // console.log('Notification received: ', notification);
   }
 
-  // eslint-disable-next-line
-  onOpened(openResult) {
+  onOpened() {
     Analytics.track('Notification opened');
-
-    // console.log('Message: ', openResult.notification.payload.body);
-    // console.log('Data: ', openResult.notification.payload.additionalData);
-    // console.log('isActive: ', openResult.notification.isAppInFocus);
-    // console.log('openResult: ', openResult);
-  }
-
-  // eslint-disable-next-line
-  onRegistered(notifData) {
-    // console.log(
-    //   'Device had been registered for push notifications!',
-    //   notifData,
-    // );
-  }
-
-  // eslint-disable-next-line
-  onIds(device) {
-    // console.log('Device info: ', device);
   }
 
   render() {
