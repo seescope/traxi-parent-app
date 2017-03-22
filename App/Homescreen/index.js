@@ -1,10 +1,10 @@
 import React from 'react';
 import { Dimensions, ScrollView, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Svg, { Circle as SVGCircle } from 'react-native-svg';
 
-import KidAvatar from '../Components/KidAvatar';
 import Spacing from '../Components/Spacing';
-import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
+import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../Constants/Colours';
 
 const { width } = Dimensions.get('window');
 
@@ -54,7 +54,7 @@ const headerUnderlineStyle = {
   height: 1,
   width: 80,
   backgroundColor: LIGHT_GREY,
-  marginBottom: 32,
+  marginBottom: 24,
 };
 
 const LOGOS = {
@@ -126,10 +126,74 @@ const secondBarStyle = {
   borderRadius: 4,
 };
 
+const circleSize = width - 16;
+
+const circleDonut = {
+  transform: [{ rotate: '-90deg' }],
+  zIndex: 1,
+};
+const kidAvatarSize = width - 32;
+
+const usageOverlayStyle = {
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: kidAvatarSize,
+  width: kidAvatarSize,
+  top: -circleSize + 8,
+  marginBottom: -kidAvatarSize + 8,
+  backgroundColor: 'rgba(0, 0, 0, 0.45)',
+  borderRadius: kidAvatarSize / 2,
+};
+
+const kidAvatar = {
+  height: kidAvatarSize,
+  width: kidAvatarSize,
+  borderRadius: kidAvatarSize / 2,
+  top: -circleSize + 8,
+  marginBottom: -kidAvatarSize + 8,
+};
+
+const overlayTextHeaderStyle = {
+  fontSize: 96,
+  backgroundColor: TRANSPARENT,
+  color: WHITE,
+  fontWeight: '100',
+};
+
+const overlayTextSubheaderStyle = {
+  fontSize: 19,
+  backgroundColor: TRANSPARENT,
+  color: WHITE,
+  fontWeight: '200',
+};
+
+
+const circleRadius = circleSize / 2;
+const circleCircumference = Math.PI * (circleRadius * 2);
 
 export default () =>
   <ScrollView contentContainerStyle={containerStyle}>
-    <KidAvatar avatarURL={testKid.avatarURL} size={width - 16} />
+    <Svg width={circleSize + 4} height={circleSize + 4} style={circleDonut}>
+      <SVGCircle
+        r={circleRadius}
+        cx={circleSize / 2}
+        cy={circleSize / 2}
+        strokeWidth={4}
+        fill={TRANSPARENT}
+        stroke={TRAXI_BLUE}
+        strokeDasharray={[circleCircumference]}
+        strokeDashoffset={circleCircumference / 3}
+      />
+    </Svg>
+
+    <Image style={kidAvatar} source={{ uri: testKid.avatarURL }} />
+
+    <View style={usageOverlayStyle}>
+      <Text style={overlayTextHeaderStyle}>1.8</Text>
+      <Text style={overlayTextSubheaderStyle}>hours online today</Text>
+    </View>
+
+    <Spacing height={32} />
 
     <View style={cardStyle}>
       <Text style={cardHeaderStyle}>Top Apps</Text>
@@ -176,16 +240,20 @@ export default () =>
 
       <View style={rowStyle}>
         <Icon style={logoStyle} name="gamepad" size={52} color={GREY} />
-        <View style={innerTextStyle}>
+
+        <View>
           <Text style={innerHeaderTextStyle}>Games</Text>
+          <View style={barStyle} />
           <Text style={innerSubheaderTextStyle}>57 minutes</Text>
         </View>
       </View>
 
       <View style={rowStyle}>
         <Icon style={logoStyle} name="wrench" size={52} color={GREY} />
+
         <View style={innerTextStyle}>
           <Text style={innerHeaderTextStyle}>Tools</Text>
+          <View style={secondBarStyle} />
           <Text style={innerSubheaderTextStyle}>23 minutes</Text>
         </View>
       </View>
