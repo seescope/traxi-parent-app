@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, ScrollView, View, Text, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import KidAvatar from '../Components/KidAvatar';
 import Spacing from '../Components/Spacing';
@@ -10,6 +11,7 @@ const { width } = Dimensions.get('window');
 const VERY_LIGHT_GREY = '#F0F2F7';
 const LIGHT_GREY = '#A6A8AB';
 const GREY = '#545454';
+const LIGHT_BLUE = '#5E99FF';
 // const DARK_GREY = '#16181A';
 
 const containerStyle = {
@@ -61,6 +63,8 @@ const LOGOS = {
 };
 
 const logoStyle = {
+  alignItems: 'center',
+  justifyContent: 'center',
   height: 56,
   width: 56,
   marginRight: 24,
@@ -118,7 +122,7 @@ const barStyle = {
 const secondBarStyle = {
   width: (width - 32 - 96 - 16) / 2, 
   height: 16,
-  backgroundColor: TRAXI_BLUE,
+  backgroundColor: LIGHT_BLUE,
   borderRadius: 4,
 };
 
@@ -126,6 +130,70 @@ const secondBarStyle = {
 export default () =>
   <ScrollView contentContainerStyle={containerStyle}>
     <KidAvatar avatarURL={testKid.avatarURL} size={width - 16} />
+
+    <View style={cardStyle}>
+      <Text style={cardHeaderStyle}>Top Apps</Text>
+      <View style={headerUnderlineStyle} />
+
+      <View style={rowStyle}>
+				<Text style={selectedTimeStyle}>Today</Text>
+				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
+      </View>
+
+      <View style={rowStyle}>
+        <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
+
+        <View>
+          <Text style={innerHeaderTextStyle}>Facebook</Text>
+          <View style={barStyle} />
+          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
+        </View>
+      </View>
+
+      <View style={rowStyle}>
+        <Image source={{ uri: LOGOS.audible }} style={logoStyle} />
+
+        <View>
+          <Text style={innerHeaderTextStyle}>Audible</Text>
+          <View style={secondBarStyle} />
+          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
+        </View>
+      </View>
+
+      <View style={downArrowContainer}>
+        <Image source={require('../Images/down-arrow.png')} />
+      </View>
+    </View>
+
+    <View style={cardStyle}>
+      <Text style={cardHeaderStyle}>Top Categories</Text>
+      <View style={headerUnderlineStyle} />
+
+      <View style={rowStyle}>
+				<Text style={selectedTimeStyle}>Today</Text>
+				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
+      </View>
+
+      <View style={rowStyle}>
+        <Icon style={logoStyle} name="gamepad" size={52} color={GREY} />
+        <View style={innerTextStyle}>
+          <Text style={innerHeaderTextStyle}>Games</Text>
+          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
+        </View>
+      </View>
+
+      <View style={rowStyle}>
+        <Icon style={logoStyle} name="wrench" size={52} color={GREY} />
+        <View style={innerTextStyle}>
+          <Text style={innerHeaderTextStyle}>Tools</Text>
+          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
+        </View>
+      </View>
+
+      <View style={downArrowContainer}>
+        <Image source={require('../Images/down-arrow.png')} />
+      </View>
+    </View>
 
     <View style={cardStyle}>
       <Text style={cardHeaderStyle}>Peak Times</Text>
@@ -139,7 +207,7 @@ export default () =>
       <View style={rowStyle}>
         <View style={timeTextStyle}>
           <Text style={innerHeaderTextStyle}>9AM - 10AM</Text>
-          <Text style={innerSubheaderTextStyle}>57 Minutes</Text>
+          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
         </View>
         <View style={barStyle} />
       </View>
@@ -149,7 +217,7 @@ export default () =>
       <View style={rowStyle}>
         <View style={timeTextStyle}>
           <Text style={innerHeaderTextStyle}>6PM - 7PM</Text>
-          <Text style={innerSubheaderTextStyle}>23 Minutes</Text>
+          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
         </View>
         <View style={secondBarStyle} />
       </View>
@@ -167,7 +235,7 @@ export default () =>
         <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
         <View style={innerTextStyle}>
           <Text style={innerHeaderTextStyle}>Facebook</Text>
-          <Text style={innerSubheaderTextStyle}>57 Minutes</Text>
+          <Text style={innerSubheaderTextStyle}>15 minutes ago</Text>
         </View>
       </View>
 
@@ -175,7 +243,7 @@ export default () =>
         <Image source={{ uri: LOGOS.audible }} style={logoStyle} />
         <View style={innerTextStyle}>
           <Text style={innerHeaderTextStyle}>Audible</Text>
-          <Text style={innerSubheaderTextStyle}>23 Minutes</Text>
+          <Text style={innerSubheaderTextStyle}>23 minutes ago</Text>
         </View>
       </View>
 
@@ -183,8 +251,4 @@ export default () =>
         <Image source={require('../Images/down-arrow.png')} />
       </View>
     </View>
-
-
-    <Text>Top Categories</Text>
-    <Text>Top Apps</Text>
   </ScrollView>
