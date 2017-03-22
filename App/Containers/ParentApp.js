@@ -4,6 +4,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
+import Timer from 'react-native-timer';
+import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
+import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 
 import SplashScreen from './SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
@@ -17,14 +20,13 @@ import Congratulations from './Congratulations';
 import ReportHome from '../ReportHome';
 import WeekView from '../ReportHome/WeekView';
 import DayView from '../ReportHome/DayView';
+import Playground from '../Utils/Playground';
+import Homescreen from '../Homescreen';
+
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Actions/FetchReports';
 import { loggingMiddleware, trackingMiddleware } from '../Utils';
-import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
-import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
-import Timer from 'react-native-timer';
 
-import Playground from '../Utils/Playground';
 
 const COGNITO_REGION = 'ap-southeast-2';
 const IDENTITY_POOL_ID = 'ap-southeast-2:a9998d71-cdf3-474f-a337-9c12289c833c';
@@ -135,6 +137,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
+          <Scene key="homescreen" initial component={Homescreen} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>
