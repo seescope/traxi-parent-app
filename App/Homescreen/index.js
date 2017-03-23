@@ -35,13 +35,17 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const rowStyle = {
+const timePickerStyle = {
   flexDirection: 'row',
   alignItems: 'center',
   marginBottom: 16,
 };
 
-const innerTextStyle = {
+const rowStyle = {
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginBottom: 16,
+  height: 56,
 };
 
 const innerHeaderTextStyle = {
@@ -95,7 +99,7 @@ export default () =>
     <Spacing height={32} />
 
     <Card header="Top Apps">
-      <View style={rowStyle}>
+      <View style={timePickerStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
       </View>
@@ -122,7 +126,7 @@ export default () =>
     </Card>
 
     <Card header="Top Categories">
-      <View style={rowStyle}>
+      <View style={timePickerStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
       </View>
@@ -140,7 +144,7 @@ export default () =>
       <View style={rowStyle}>
         <Icon style={logoStyle} name="wrench" size={52} color={GREY} />
 
-        <View style={innerTextStyle}>
+        <View>
           <Text style={innerHeaderTextStyle}>Tools</Text>
           <View style={secondBarStyle} />
           <Text style={innerSubheaderTextStyle}>23 minutes</Text>
@@ -149,7 +153,7 @@ export default () =>
     </Card>
 
     <Card header="Peak Times">
-      <View style={rowStyle}>
+      <View style={timePickerStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
       </View>
@@ -176,7 +180,7 @@ export default () =>
     <Card header="Recent Apps">
       <View style={rowStyle}>
         <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
-        <View style={innerTextStyle}>
+        <View>
           <Text style={innerHeaderTextStyle}>Facebook</Text>
           <Text style={innerSubheaderTextStyle}>15 minutes ago</Text>
         </View>
@@ -184,7 +188,7 @@ export default () =>
 
       <View style={rowStyle}>
         <Image source={{ uri: LOGOS.audible }} style={logoStyle} />
-        <View style={innerTextStyle}>
+        <View>
           <Text style={innerHeaderTextStyle}>Audible</Text>
           <Text style={innerSubheaderTextStyle}>23 minutes ago</Text>
         </View>
