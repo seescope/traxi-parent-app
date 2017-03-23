@@ -84,7 +84,7 @@ class Card extends React.Component {
   }
 
   render() {
-    const { header, children } = this.props;
+    const { header, Component, data } = this.props;
     return (
       <TouchableOpacity activeOpacity={0.8} style={cardStyle} onPress={() => this.toggleExpand()}>
         <Text style={cardHeaderStyle}>{header}</Text>
@@ -96,7 +96,7 @@ class Card extends React.Component {
         </View>
 
         <View style={getContainerStyle(this.state.expanded)}>
-          {children}
+          {data && data.map((d, i) => <Component key={i}>{JSON.stringify(d)}</Component>)}
         </View>
 
         <View style={downArrowContainer}>
@@ -109,7 +109,8 @@ class Card extends React.Component {
 
 Card.propTypes = {
   header: React.PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired,
+  Component: React.PropTypes.func.isRequired,
+  data: React.PropTypes.array.isRequired,
 };
 
 export default Card;

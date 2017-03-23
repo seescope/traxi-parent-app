@@ -6,6 +6,7 @@ import Spacing from '../Components/Spacing';
 import { GREY, VERY_LIGHT_GREY, LIGHT_BLUE, TRAXI_BLUE } from '../Constants/Colours';
 import KidCircle from './Components/KidCircle';
 import Card from './Components/Card';
+import TopApp from './Components/TopApp';
 
 const { width } = Dimensions.get('window');
 
@@ -70,6 +71,19 @@ const secondBarStyle = {
   borderRadius: 4,
 };
 
+const topApps = [
+  {
+    name: 'Facebook',
+    minutesUsed: 57,
+    logo: LOGOS.facebook,
+  },
+  {
+    name: 'Audible',
+    minutesUsed: 23,
+    logo: LOGOS.audible,
+  },
+];
+
 
 export default () =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
@@ -77,28 +91,7 @@ export default () =>
 
     <Spacing height={32} />
 
-    <Card header="Top Apps">
-
-      <View style={rowStyle}>
-        <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
-
-        <View>
-          <Text style={innerHeaderTextStyle}>Facebook</Text>
-          <View style={barStyle} />
-          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
-        </View>
-      </View>
-
-      <View style={rowStyle}>
-        <Image source={{ uri: LOGOS.audible }} style={logoStyle} />
-
-        <View>
-          <Text style={innerHeaderTextStyle}>Audible</Text>
-          <View style={secondBarStyle} />
-          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
-        </View>
-      </View>
-    </Card>
+    <Card header="Top Apps" Component={TopApp} data={topApps} />
 
     <Card header="Top Categories">
       <View style={rowStyle}>
