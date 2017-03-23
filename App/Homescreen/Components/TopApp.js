@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, View, Text } from 'react-native';
 import Bar from './Bar';
 
-
 const rowStyle = {
   flexDirection: 'row',
   alignItems: 'center',

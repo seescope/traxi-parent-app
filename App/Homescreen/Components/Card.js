@@ -125,23 +125,25 @@ class Card extends React.Component {
   }
 
   render() {
-    const { header, Component } = this.props;
+    const { header, Component, data } = this.props;
     const { rows, timePeriod } = this.state;
     const max = getMax(rows);
+
+    const shouldShowTimeSelector = !Array.isArray(data);
 
     return (
       <View style={cardStyle}>
         <Text style={cardHeaderStyle}>{header}</Text>
         <View style={headerUnderlineStyle} />
 
-        <View style={timePickerStyle}>
+        {shouldShowTimeSelector && <View style={timePickerStyle}>
           <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('today')}>
             <Text style={getTimeStyle('today', timePeriod)}>Today</Text>
           </TouchableOpacity>
           <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('week')}>
             <Text style={getTimeStyle('week', timePeriod)}>Last 7 Days</Text>
           </TouchableOpacity>
-        </View>
+        </View>}
 
         <View>
           {rows.map((d, i) => <Component max={max} key={i} {...d} />)}
