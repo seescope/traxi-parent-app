@@ -3,16 +3,11 @@ import { Dimensions, ScrollView, View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Spacing from '../Components/Spacing';
-import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
+import { GREY, VERY_LIGHT_GREY, LIGHT_BLUE, TRAXI_BLUE } from '../Constants/Colours';
 import KidCircle from './Components/KidCircle';
+import Card from './Components/Card';
 
 const { width } = Dimensions.get('window');
-
-const VERY_LIGHT_GREY = '#F0F2F7';
-const LIGHT_GREY = '#A6A8AB';
-const GREY = '#545454';
-const LIGHT_BLUE = '#5E99FF';
-// const DARK_GREY = '#16181A';
 
 const containerStyle = {
   alignItems: 'center',
@@ -25,34 +20,6 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
-
-const cardStyle = {
-  borderRadius: 4,
-  width: width - 16,
-  backgroundColor: WHITE,
-  padding: 16,
-  marginBottom: 24,
-	shadowColor: "#000000",
-	shadowOpacity: 0.16,
-	shadowRadius: 3,
-	shadowOffset: {
-		height: 3,
-		width: 3,
-	}
-};
-
-const cardHeaderStyle = {
-  color: GREY,
-  fontSize: 19,
-};
-
-const headerUnderlineStyle = {
-  marginTop: 8,
-  height: 1,
-  width: 56,
-  backgroundColor: LIGHT_GREY,
-  marginBottom: 24,
-};
 
 const LOGOS = {
   facebook: 'http://is3.mzstatic.com/image/thumb/Purple111/v4/cc/73/53/cc735371-ee27-d48d-c8cc-51cf6c85290e/source/512x512bb.jpg',
@@ -85,10 +52,6 @@ const innerHeaderTextStyle = {
 const innerSubheaderTextStyle = {
   fontSize: 15,
   fontWeight: '200',
-};
-
-const downArrowContainer = {
-  alignItems: 'flex-end',
 };
 
 const selectedTimeStyle = {
@@ -131,10 +94,7 @@ export default () =>
 
     <Spacing height={32} />
 
-    <View style={cardStyle}>
-      <Text style={cardHeaderStyle}>Top Apps</Text>
-      <View style={headerUnderlineStyle} />
-
+    <Card header="Top Apps">
       <View style={rowStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
@@ -159,16 +119,9 @@ export default () =>
           <Text style={innerSubheaderTextStyle}>23 minutes</Text>
         </View>
       </View>
+    </Card>
 
-      <View style={downArrowContainer}>
-        <Image source={require('../Images/down-arrow.png')} />
-      </View>
-    </View>
-
-    <View style={cardStyle}>
-      <Text style={cardHeaderStyle}>Top Categories</Text>
-      <View style={headerUnderlineStyle} />
-
+    <Card header="Top Categories">
       <View style={rowStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
@@ -193,16 +146,9 @@ export default () =>
           <Text style={innerSubheaderTextStyle}>23 minutes</Text>
         </View>
       </View>
+    </Card>
 
-      <View style={downArrowContainer}>
-        <Image source={require('../Images/down-arrow.png')} />
-      </View>
-    </View>
-
-    <View style={cardStyle}>
-      <Text style={cardHeaderStyle}>Peak Times</Text>
-      <View style={headerUnderlineStyle} />
-
+    <Card header="Peak Times">
       <View style={rowStyle}>
 				<Text style={selectedTimeStyle}>Today</Text>
 				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
@@ -225,16 +171,9 @@ export default () =>
         </View>
         <View style={secondBarStyle} />
       </View>
+    </Card>
 
-      <View style={downArrowContainer}>
-        <Image source={require('../Images/down-arrow.png')} />
-      </View>
-    </View>
-
-    <View style={cardStyle}>
-      <Text style={cardHeaderStyle}>Recent Apps</Text>
-      <View style={headerUnderlineStyle} />
-
+    <Card header="Recent Apps">
       <View style={rowStyle}>
         <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
         <View style={innerTextStyle}>
@@ -251,8 +190,5 @@ export default () =>
         </View>
       </View>
 
-      <View style={downArrowContainer}>
-        <Image source={require('../Images/down-arrow.png')} />
-      </View>
-    </View>
+    </Card>
   </ScrollView>
