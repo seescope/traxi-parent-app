@@ -134,10 +134,10 @@ class ParentApp extends React.Component {
           <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
-          <Scene key="reports" initial={isInstalled} component={ReportHome} />
+          <Scene key="reports" initial={!isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
-          <Scene key="homescreen" initial component={Homescreen} />
+          <Scene key="homescreen" initial={isInstalled} component={Homescreen} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>
