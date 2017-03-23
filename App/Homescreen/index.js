@@ -35,12 +35,6 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const timePickerStyle = {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: 16,
-};
-
 const rowStyle = {
   flexDirection: 'row',
   alignItems: 'center',
@@ -56,21 +50,6 @@ const innerHeaderTextStyle = {
 const innerSubheaderTextStyle = {
   fontSize: 15,
   fontWeight: '200',
-};
-
-const selectedTimeStyle = {
-  fontSize: 15,
-  fontWeight: '200',
-  color: TRAXI_BLUE,
-  textAlign: 'center',
-  flex: 1,
-};
-
-const deselectedTimeStyle = {
-  fontSize: 15,
-  fontWeight: '200',
-  textAlign: 'center',
-  flex: 1,
 };
 
 const timeTextStyle = {
@@ -99,10 +78,6 @@ export default () =>
     <Spacing height={32} />
 
     <Card header="Top Apps">
-      <View style={timePickerStyle}>
-				<Text style={selectedTimeStyle}>Today</Text>
-				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
-      </View>
 
       <View style={rowStyle}>
         <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
@@ -126,11 +101,6 @@ export default () =>
     </Card>
 
     <Card header="Top Categories">
-      <View style={timePickerStyle}>
-				<Text style={selectedTimeStyle}>Today</Text>
-				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
-      </View>
-
       <View style={rowStyle}>
         <Icon style={logoStyle} name="gamepad" size={52} color={GREY} />
 
@@ -153,11 +123,6 @@ export default () =>
     </Card>
 
     <Card header="Peak Times">
-      <View style={timePickerStyle}>
-				<Text style={selectedTimeStyle}>Today</Text>
-				<Text style={deselectedTimeStyle}>Last 7 Days</Text>
-      </View>
-
       <View style={rowStyle}>
         <View style={timeTextStyle}>
           <Text style={innerHeaderTextStyle}>9AM - 10AM</Text>
