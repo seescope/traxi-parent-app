@@ -78,7 +78,7 @@ const recentApps = [
 
 export default () =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle minutesUsed={80} />
+    <KidCircle minutesUsed={130} />
 
     <Spacing height={32} />
 

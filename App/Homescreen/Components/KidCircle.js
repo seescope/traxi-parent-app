@@ -64,23 +64,37 @@ const overlayTextSubheaderStyle = {
   fontWeight: '200',
 };
 
-const MAX_TIME_ALLOWED = 120; // 2 Hours.
-
-export const getStrokeOffset = (minutesUsed, circleCircumference) => {
-  const percentage = minutesUsed / MAX_TIME_ALLOWED;
-  return circleCircumference * percentage;
-};
-
-export const getNiceTimeUsed = (minutesUsed) =>
-  (minutesUsed >= 60
-    ? minutesUsed / 60
-    : minutesUsed);
 
 // Basic maths.
 const circleRadius = circleSize / 2;
 
 // Use this to determine the stroke around the circle. The offset will be used to control how much of the circle is filled in.
 const circleCircumference = Math.PI * (circleRadius * 2);
+
+const MAX_TIME_ALLOWED = 120; // 2 Hours.
+
+export const getStrokeOffset = (minutesUsed) => {
+  if (minutesUsed >= MAX_TIME_ALLOWED) return 0;
+
+  const percentage = minutesUsed / MAX_TIME_ALLOWED;
+
+  // Mother. Fucking. Maths.
+  return ((1 - percentage) / 1) * circleCircumference;
+};
+
+export const getNiceTimeUsed = (minutesUsed) =>
+  (minutesUsed >= 60
+    ? (minutesUsed / 60).toFixed(1)
+    : minutesUsed);
+
+export const getNiceTimeUnit = (minutesUsed) => {
+  if (minutesUsed === 1) return 'minute';
+  else if (minutesUsed < 60) return 'minutes';
+  else if (minutesUsed === 60) return 'hour';
+
+  return 'hours';
+};
+
 
 // NOTE:
 // Because the stroke extends the size of the circle, there's a bit of weirfness here.
@@ -106,7 +120,7 @@ const KidCircle = ({ minutesUsed }) =>
 
     <View style={usageOverlayStyle}>
       <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(minutesUsed)}</Text>
-      <Text style={overlayTextSubheaderStyle}>hours online today</Text>
+      <Text style={overlayTextSubheaderStyle}>{getNiceTimeUnit(minutesUsed)} online today</Text>
     </View>
   </View>
 
