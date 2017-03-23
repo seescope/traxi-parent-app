@@ -35,6 +35,8 @@ const headerUnderlineStyle = {
 };
 
 const downArrowContainer = {
+  flex: 1,
+  height: 16,
   alignItems: 'flex-end',
 };
 
@@ -62,7 +64,7 @@ const deselectedTimeStyle = {
 
 const timeButtonStyle = {
   flex: 1,
-  height: 36,
+  height: 24,
 };
 
 export const getRows = (data = [], expanded, timePeriod) => {
@@ -78,41 +80,58 @@ export const getRows = (data = [], expanded, timePeriod) => {
   return expanded ? selectedData : selectedData.slice(0, 2);
 }
 
+const getTimeStyle = (currentTimePeriod, timePeriod) =>
+  (currentTimePeriod === timePeriod
+    ? selectedTimeStyle
+    : deselectedTimeStyle);
+
+const getArrowStyle = expanded =>
+  expanded && { transform: [{ rotate: '-180deg' }] };
 
 class Card extends React.Component {
   constructor({ data }) {
     super();
 
     this.state = {
+      timePeriod: 'today',
       expanded: false,
-      rows: getRows(data, false),
+      rows: getRows(data, false, 'today'),
     };
   }
 
   toggleExpand() {
     const { data } = this.props;
     const expanded = !this.state.expanded;
+    const timePeriod = this.state.timePeriod;
+
     this.setState({
       expanded,
-      rows: getRows(data, expanded),
+      rows: getRows(data, expanded, timePeriod),
+    });
+  }
+
+  switchTimePeriod(timePeriod) {
+    this.setState({
+      timePeriod,
+      rows: getRows(this.props.data, false, timePeriod),
     });
   }
 
   render() {
     const { header, Component } = this.props;
-    const { rows } = this.state;
+    const { rows, timePeriod } = this.state;
 
     return (
-      <TouchableOpacity activeOpacity={0.8} style={cardStyle} onPress={() => this.toggleExpand()}>
+      <View style={cardStyle}>
         <Text style={cardHeaderStyle}>{header}</Text>
         <View style={headerUnderlineStyle} />
 
         <View style={timePickerStyle}>
-          <TouchableOpacity style={timeButtonStyle}>
-            <Text style={selectedTimeStyle}>Today</Text>
+          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('today')}>
+            <Text style={getTimeStyle('today', timePeriod)}>Today</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={timeButtonStyle}>
-            <Text style={deselectedTimeStyle}>Last 7 Days</Text>
+          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('week')}>
+            <Text style={getTimeStyle('week', timePeriod)}>Last 7 Days</Text>
           </TouchableOpacity>
         </View>
 
@@ -120,10 +139,12 @@ class Card extends React.Component {
           {rows.map((d, i) => <Component key={i} {...d} />)}
         </View>
 
-        <View style={downArrowContainer}>
-          <Image source={require('../../Images/down-arrow.png')} />
-        </View>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.toggleExpand()}>
+          <View style={downArrowContainer}>
+            <Image style={getArrowStyle(this.state.expanded)} source={require('../../Images/down-arrow.png')} />
+          </View>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

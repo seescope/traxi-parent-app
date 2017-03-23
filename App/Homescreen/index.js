@@ -27,18 +27,32 @@ const LOGOS = {
   audible: 'http://is1.mzstatic.com/image/thumb/Purple122/v4/4f/98/93/4f989348-2928-302a-36b5-6df9ccf2592a/source/512x512bb.jpg',
 };
 
-const topApps = [
-  {
-    name: 'Facebook',
-    minutesUsed: 57,
-    logo: LOGOS.facebook,
-  },
-  {
-    name: 'Audible',
-    minutesUsed: 23,
-    logo: LOGOS.audible,
-  },
-];
+const topApps = {
+  'today': [
+    {
+      name: 'Facebook',
+      minutesUsed: 57,
+      logo: LOGOS.facebook,
+    },
+    {
+      name: 'Audible',
+      minutesUsed: 23,
+      logo: LOGOS.audible,
+    },
+  ],
+  'week': [
+    {
+      name: 'Audible',
+      minutesUsed: 23,
+      logo: LOGOS.audible,
+    },
+    {
+      name: 'Facebook',
+      minutesUsed: 57,
+      logo: LOGOS.facebook,
+    },
+  ]
+};
 
 const topCategories = [
   {
