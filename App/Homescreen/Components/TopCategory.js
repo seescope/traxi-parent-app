@@ -3,6 +3,7 @@ import { Dimensions, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { GREY, TRAXI_BLUE } from '../../Constants/Colours';
+import Bar from './Bar';
 const { width } = Dimensions.get('window');
 
 const rowStyle = {
@@ -31,25 +32,19 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const barStyle = {
-  width: width - 32 - 96 - 16, 
-  height: 16,
-  backgroundColor: TRAXI_BLUE,
-  borderRadius: 4,
-};
 
 const ICONS = {
   'Games': 'gamepad',
   'Tools': 'wrench',
 };
 
-const TopApp = ({ name, minutesUsed }) =>
+const TopApp = ({ name, minutesUsed, max }) =>
   <View style={rowStyle}>
     <Icon style={logoStyle} name={ICONS[name]} size={52} color={GREY} />
 
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <View style={barStyle} />
+      <Bar val={minutesUsed} max={max} />
       <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
     </View>
   </View>
@@ -57,6 +52,7 @@ const TopApp = ({ name, minutesUsed }) =>
 TopApp.propTypes = {
   name: React.PropTypes.string.isRequired,
   minutesUsed: React.PropTypes.number.isRequired,
+  max: React.PropTypes.number.isRequired,
 };
 
 export default TopApp;

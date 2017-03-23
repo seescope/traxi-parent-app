@@ -1,8 +1,7 @@
 import React from 'react';
-import { Dimensions, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 
-import { TRAXI_BLUE } from '../../Constants/Colours';
-const { width } = Dimensions.get('window');
+import Bar from './Bar';
 
 const rowStyle = {
   flexDirection: 'row',
@@ -21,30 +20,24 @@ const innerSubheaderTextStyle = {
   fontWeight: '200',
 };
 
-const barStyle = {
-  width: width - 32 - 96 - 16, 
-  height: 16,
-  backgroundColor: TRAXI_BLUE,
-  borderRadius: 4,
-};
-
 const timeTextStyle = {
   width: 80,
 };
 
-const PeakTime = ({ name, minutesUsed }) =>
+const PeakTime = ({ name, minutesUsed, max }) =>
   <View style={rowStyle}>
     <View style={timeTextStyle}>
       <Text style={innerHeaderTextStyle}>{name}</Text>
       <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
     </View>
 
-    <View style={barStyle} />
+    <Bar val={minutesUsed} max={max} />
   </View>
 
 PeakTime.propTypes = {
   name: React.PropTypes.string.isRequired,
   minutesUsed: React.PropTypes.number.isRequired,
+  max: React.PropTypes.number.isRequired,
 };
 
 export default PeakTime;
