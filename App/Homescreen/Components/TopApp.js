@@ -35,7 +35,7 @@ const TopApp = ({ name, logo, minutesUsed, max }) =>
 
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <Bar value={minutesUsed} max={max} />
+      <Bar val={minutesUsed} max={max} />
       <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
     </View>
   </View>

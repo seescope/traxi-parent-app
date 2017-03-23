@@ -3,12 +3,14 @@ import { View, Dimensions } from 'react-native';
 
 import { TRAXI_BLUE } from '../../Constants/Colours';
 
-const { width } = Dimensions.get('window');
+export const getBarWidth = (max, val, maxWidth) =>
+  maxWidth * (val / max);
 
+const { width } = Dimensions.get('window');
 const maxWidth = width - 32 - 96 - 16; 
 
 const getBarStyle = (val, max) => ({
-  width: maxWidth * (max / val),
+  width: getBarWidth(max, val, maxWidth),
   height: 16,
   backgroundColor: TRAXI_BLUE,
   borderRadius: 4,

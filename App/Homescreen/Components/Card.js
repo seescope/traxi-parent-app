@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, View, Text, Image, TouchableOpacity } from 'react-native';
+import lodash from 'lodash';
 
 import { WHITE, LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
 
@@ -80,6 +81,12 @@ export const getRows = (data = [], expanded, timePeriod) => {
   return expanded ? selectedData : selectedData.slice(0, 2);
 }
 
+export const getMax = (data = {}) =>
+  lodash.chain(data)
+    .map(d => d.minutesUsed)
+    .max()
+    .value();
+
 const getTimeStyle = (currentTimePeriod, timePeriod) =>
   (currentTimePeriod === timePeriod
     ? selectedTimeStyle
@@ -120,6 +127,7 @@ class Card extends React.Component {
   render() {
     const { header, Component } = this.props;
     const { rows, timePeriod } = this.state;
+    const max = getMax(rows);
 
     return (
       <View style={cardStyle}>
@@ -136,7 +144,7 @@ class Card extends React.Component {
         </View>
 
         <View>
-          {rows.map((d, i) => <Component key={i} {...d} />)}
+          {rows.map((d, i) => <Component max={max} key={i} {...d} />)}
         </View>
 
         <TouchableOpacity onPress={() => this.toggleExpand()}>
@@ -152,7 +160,10 @@ class Card extends React.Component {
 Card.propTypes = {
   header: React.PropTypes.string.isRequired,
   Component: React.PropTypes.func.isRequired,
-  data: React.PropTypes.array.isRequired,
+  data: React.PropTypes.oneOfType([
+    React.PropTypes.array,
+    React.PropTypes.object,
+  ]).isRequired
 };
 
 export default Card;
