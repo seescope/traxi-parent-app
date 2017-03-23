@@ -1,8 +1,7 @@
 import React from 'react';
-import { Dimensions, Image, View, Text } from 'react-native';
+import { Image, View, Text } from 'react-native';
+import Bar from './Bar';
 
-import { TRAXI_BLUE } from '../../Constants/Colours';
-const { width } = Dimensions.get('window');
 
 const rowStyle = {
   flexDirection: 'row',
@@ -30,20 +29,13 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const barStyle = {
-  width: width - 32 - 96 - 16, 
-  height: 16,
-  backgroundColor: TRAXI_BLUE,
-  borderRadius: 4,
-};
-
-const TopApp = ({ name, logo, minutesUsed }) =>
+const TopApp = ({ name, logo, minutesUsed, max }) =>
   <View style={rowStyle}>
     <Image source={{ uri: logo }} style={logoStyle} />
 
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <View style={barStyle} />
+      <Bar value={minutesUsed} max={max} />
       <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
     </View>
   </View>
@@ -52,6 +44,7 @@ TopApp.propTypes = {
   name: React.PropTypes.string.isRequired,
   logo: React.PropTypes.string.isRequired,
   minutesUsed: React.PropTypes.number.isRequired,
+  max: React.PropTypes.number.isRequired,
 };
 
 export default TopApp;
