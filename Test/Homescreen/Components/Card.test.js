@@ -5,5 +5,5 @@ it('only sets the height property when passed false', () => {
   expect(falseStyle.height).toBeTruthy();
 
   const trueStyle = getContainerStyle(true);
-  expect(trueStyle.height).not.toBeTruthy();
+  expect(trueStyle).not.toBeTruthy();
 });
