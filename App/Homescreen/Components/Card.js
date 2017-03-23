@@ -60,31 +60,33 @@ const deselectedTimeStyle = {
   flex: 1,
 };
 
-export const getContainerStyle = expanded => (
-  !expanded && {
-    height: 72, // rowStyle.height + rowStyle.marginBottom
-    overflow: 'hidden',
-  }
-);
+export const getRows = (data = [], expanded) =>
+  (expanded ? data : data.slice(0, 2));
 
 
 class Card extends React.Component {
-  constructor() {
+  constructor({ data }) {
     super();
 
     this.state = {
-      expanded: false
+      expanded: false,
+      rows: getRows(data, false),
     };
   }
 
   toggleExpand() {
+    const { data } = this.props;
+    const expanded = !this.state.expanded;
     this.setState({
-      expanded: !this.state.expanded
+      expanded,
+      rows: getRows(data, expanded),
     });
   }
 
   render() {
-    const { header, Component, data } = this.props;
+    const { header, Component } = this.props;
+    const { rows } = this.state;
+
     return (
       <TouchableOpacity activeOpacity={0.8} style={cardStyle} onPress={() => this.toggleExpand()}>
         <Text style={cardHeaderStyle}>{header}</Text>
@@ -95,8 +97,8 @@ class Card extends React.Component {
           <Text style={deselectedTimeStyle}>Last 7 Days</Text>
         </View>
 
-        <View style={getContainerStyle(this.state.expanded)}>
-          {data && data.map((d, i) => <Component key={i}>{JSON.stringify(d)}</Component>)}
+        <View>
+          {rows.map((d, i) => <Component key={i} {...d} />)}
         </View>
 
         <View style={downArrowContainer}>

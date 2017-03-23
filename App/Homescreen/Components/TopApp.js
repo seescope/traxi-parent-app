@@ -49,9 +49,9 @@ const TopApp = ({ name, logo, minutesUsed }) =>
   </View>
 
 TopApp.propTypes = {
-  name: React.propTypes.string.isRequired,
-  logo: React.propTypes.string.isRequired,
-  minutesUsed: React.propTypes.number.isRequired,
+  name: React.PropTypes.string.isRequired,
+  logo: React.PropTypes.string.isRequired,
+  minutesUsed: React.PropTypes.number.isRequired,
 };
 
 export default TopApp;
