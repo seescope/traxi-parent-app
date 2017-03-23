@@ -1,10 +1,9 @@
 import React from 'react';
-import { Dimensions, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { GREY, TRAXI_BLUE } from '../../Constants/Colours';
+import { GREY, } from '../../Constants/Colours';
 import Bar from './Bar';
-const { width } = Dimensions.get('window');
 
 const rowStyle = {
   flexDirection: 'row',
@@ -36,6 +35,47 @@ const logoStyle = {
 const ICONS = {
   'Games': 'gamepad',
   'Tools': 'wrench',
+	'Art & Design': 'paint-brush',
+	'Auto & Vehicles': 'car',
+	'Beauty': 'smile-o',
+	'Books & Reference': 'book',
+	'Business': 'briefcase',
+	'Comics': 'book',
+	'Communications': 'phone',
+	'Dating': 'heart',
+	'Education': 'graduation-cap',
+	'Entertainment': 'star',
+	'Events': 'star',
+	'Finance': 'money',
+	'Food & Drink': 'cutlery',
+	'Health & Fitness': 'heart',
+	'House & Home': 'home',
+	'Libraries & Demo': 'magic',
+	'Lifestyle': 'tree',
+	'Maps & Navigation': 'map',
+	'Medical': 'heart',
+	'Music & Audio': 'music',
+	'News & Magazines': 'newspaper-o',
+	'Parenting': 'child',
+	'Personalization': 'user',
+	'Photography': 'camera',
+	'Productivity': 'briefcase',
+	'Shopping': 'shopping-bag',
+	'Social': 'facebook',
+	'Sports': 'futbol-o',
+	'Travel & Local': 'plane',
+	'Video Players & Editors': 'film',
+	'Weather': 'sun-o',
+	'Books': 'book',
+	'Catalogs': 'newspaper-o',
+	'Music': 'music',
+	'Navigation': 'map',
+	'News': 'newspaper-o',
+	'Photo & Video': 'camera',
+	'Reference': 'university',
+	'Social Networking': 'facebook',
+	'Travel': 'plane',
+	'Utilities': 'wrench',
 };
 
 const TopApp = ({ name, minutesUsed, max }) =>
