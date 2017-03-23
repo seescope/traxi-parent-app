@@ -21,6 +21,10 @@ const containerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
+const outerContainerStyle = {
+  backgroundColor: VERY_LIGHT_GREY,
+};
+
 const testKid = {
   "UUID" : "2628211b-0ce1-4593-ac3a-d2df35c10419",
   "avatarURL" : "https://avatars1.githubusercontent.com/u/2022375",
@@ -51,8 +55,9 @@ const cardHeaderStyle = {
 };
 
 const headerUnderlineStyle = {
+  marginTop: 8,
   height: 1,
-  width: 80,
+  width: 56,
   backgroundColor: LIGHT_GREY,
   marginBottom: 24,
 };
@@ -63,6 +68,7 @@ const LOGOS = {
 };
 
 const logoStyle = {
+  borderRadius: 8,
   alignItems: 'center',
   justifyContent: 'center',
   height: 56,
@@ -128,10 +134,12 @@ const secondBarStyle = {
 
 const circleSize = width - 16;
 
-const circleDonut = {
+const circleStyle = {
+  width: circleSize + 8,
+  height: circleSize + 8,
   transform: [{ rotate: '-90deg' }],
-  zIndex: 1,
 };
+
 const kidAvatarSize = width - 32;
 
 const usageOverlayStyle = {
@@ -139,8 +147,9 @@ const usageOverlayStyle = {
   justifyContent: 'center',
   height: kidAvatarSize,
   width: kidAvatarSize,
-  top: -circleSize + 8,
-  marginBottom: -kidAvatarSize + 8,
+  top: -circleSize + 6,
+  left: -2,
+  marginBottom: -circleSize + 8,
   backgroundColor: 'rgba(0, 0, 0, 0.45)',
   borderRadius: kidAvatarSize / 2,
 };
@@ -149,8 +158,9 @@ const kidAvatar = {
   height: kidAvatarSize,
   width: kidAvatarSize,
   borderRadius: kidAvatarSize / 2,
-  top: -circleSize + 8,
-  marginBottom: -kidAvatarSize + 8,
+  top: -circleSize + 6,
+  left: -2,
+  marginBottom: -kidAvatarSize,
 };
 
 const overlayTextHeaderStyle = {
@@ -168,18 +178,26 @@ const overlayTextSubheaderStyle = {
 };
 
 
+// Basic maths.
 const circleRadius = circleSize / 2;
+
+// Use this to determine the stroke around the circle. The offset will be used to control how much of the circle is filled in.
 const circleCircumference = Math.PI * (circleRadius * 2);
 
+// NOTE:
+// Because the stroke extends the size of the circle, there's a bit of weirfness here.
+// The height and width must be extended by 4 to allow room for the stroke.
+// cx and cy are then incremented by 2 because of the change in the bounding box.
+
 export default () =>
-  <ScrollView contentContainerStyle={containerStyle}>
-    <Svg width={circleSize + 4} height={circleSize + 4} style={circleDonut}>
+  <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
+    <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
         r={circleRadius}
-        cx={circleSize / 2}
-        cy={circleSize / 2}
-        strokeWidth={4}
+        cx={circleSize / 2 + 2}
+        cy={circleSize / 2 + 2}
         fill={TRANSPARENT}
+        strokeWidth={4}
         stroke={TRAXI_BLUE}
         strokeDasharray={[circleCircumference]}
         strokeDashoffset={circleCircumference / 3}
@@ -192,6 +210,7 @@ export default () =>
       <Text style={overlayTextHeaderStyle}>1.8</Text>
       <Text style={overlayTextSubheaderStyle}>hours online today</Text>
     </View>
+
 
     <Spacing height={32} />
 
