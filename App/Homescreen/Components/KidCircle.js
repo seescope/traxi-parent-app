@@ -64,6 +64,17 @@ const overlayTextSubheaderStyle = {
   fontWeight: '200',
 };
 
+const MAX_TIME_ALLOWED = 120; // 2 Hours.
+
+export const getStrokeOffset = (minutesUsed, circleCircumference) => {
+  const percentage = minutesUsed / MAX_TIME_ALLOWED;
+  return circleCircumference * percentage;
+};
+
+export const getNiceTimeUsed = (minutesUsed) =>
+  (minutesUsed >= 60
+    ? minutesUsed / 60
+    : minutesUsed);
 
 // Basic maths.
 const circleRadius = circleSize / 2;
@@ -76,7 +87,7 @@ const circleCircumference = Math.PI * (circleRadius * 2);
 // The height and width must be extended by 4 to allow room for the stroke.
 // cx and cy are then incremented by 2 because of the change in the bounding box.
 
-export default () =>
+const KidCircle = ({ minutesUsed }) =>
   <View style={containerStyle}>
     <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
@@ -87,14 +98,20 @@ export default () =>
         strokeWidth={4}
         stroke={TRAXI_BLUE}
         strokeDasharray={[circleCircumference]}
-        strokeDashoffset={circleCircumference / 3}
+        strokeDashoffset={getStrokeOffset(minutesUsed, circleCircumference)}
       />
     </Svg>
 
     <Image style={kidAvatar} source={{ uri: testKid.avatarURL }} />
 
     <View style={usageOverlayStyle}>
-      <Text style={overlayTextHeaderStyle}>1.8</Text>
+      <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(minutesUsed)}</Text>
       <Text style={overlayTextSubheaderStyle}>hours online today</Text>
     </View>
   </View>
+
+KidCircle.propTypes = {
+  minutesUsed: React.PropTypes.number.isRequired,
+};
+
+export default KidCircle;

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Dimensions, ScrollView, View, Text, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { ScrollView, } from 'react-native';
 
 import Spacing from '../Components/Spacing';
-import { GREY, VERY_LIGHT_GREY, LIGHT_BLUE, TRAXI_BLUE } from '../Constants/Colours';
+import { VERY_LIGHT_GREY } from '../Constants/Colours';
 import KidCircle from './Components/KidCircle';
 import Card from './Components/Card';
 import TopApp from './Components/TopApp';
-
-const { width } = Dimensions.get('window');
+import TopCategory from './Components/TopCategory';
+import PeakTime from './Components/PeakTime';
+import RecentApp from './Components/RecentApp';
 
 const containerStyle = {
   alignItems: 'center',
@@ -27,50 +27,6 @@ const LOGOS = {
   audible: 'http://is1.mzstatic.com/image/thumb/Purple122/v4/4f/98/93/4f989348-2928-302a-36b5-6df9ccf2592a/source/512x512bb.jpg',
 };
 
-const logoStyle = {
-  borderRadius: 8,
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: 56,
-  width: 56,
-  marginRight: 24,
-};
-
-const rowStyle = {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: 16,
-  height: 56,
-};
-
-const innerHeaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '400',
-};
-
-const innerSubheaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '200',
-};
-
-const timeTextStyle = {
-  width: 80,
-};
-
-const barStyle = {
-  width: width - 32 - 96 - 16, 
-  height: 16,
-  backgroundColor: TRAXI_BLUE,
-  borderRadius: 4,
-};
-
-const secondBarStyle = {
-  width: (width - 32 - 96 - 16) / 2, 
-  height: 16,
-  backgroundColor: LIGHT_BLUE,
-  borderRadius: 4,
-};
-
 const topApps = [
   {
     name: 'Facebook',
@@ -84,73 +40,53 @@ const topApps = [
   },
 ];
 
+const topCategories = [
+  {
+    name: 'Games',
+    minutesUsed: 57,
+  },
+  {
+    name: 'Tools',
+    minutesUsed: 23,
+  },
+];
+
+const peakTimes = [
+  {
+    name: '9AM - 10AM',
+    minutesUsed: 53,
+  },
+  {
+    name: '4PM - 5PM',
+    minutesUsed: 27,
+  }
+];
+
+const recentApps = [
+  {
+    name: 'Facebook',
+    minutesAgo: 57,
+    logo: LOGOS.facebook,
+  },
+  {
+    name: 'Audible',
+    minutesAgo: 23,
+    logo: LOGOS.audible,
+  }
+];
+
 
 export default () =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle />
+    <KidCircle minutesUsed={80} />
 
     <Spacing height={32} />
 
     <Card header="Top Apps" Component={TopApp} data={topApps} />
 
-    <Card header="Top Categories">
-      <View style={rowStyle}>
-        <Icon style={logoStyle} name="gamepad" size={52} color={GREY} />
+    <Card header="Top Categories" Component={TopCategory} data={topCategories} />
 
-        <View>
-          <Text style={innerHeaderTextStyle}>Games</Text>
-          <View style={barStyle} />
-          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
-        </View>
-      </View>
+    <Card header="Peak Times" Component={PeakTime} data={peakTimes} />
 
-      <View style={rowStyle}>
-        <Icon style={logoStyle} name="wrench" size={52} color={GREY} />
-
-        <View>
-          <Text style={innerHeaderTextStyle}>Tools</Text>
-          <View style={secondBarStyle} />
-          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
-        </View>
-      </View>
-    </Card>
-
-    <Card header="Peak Times">
-      <View style={rowStyle}>
-        <View style={timeTextStyle}>
-          <Text style={innerHeaderTextStyle}>9AM - 10AM</Text>
-          <Text style={innerSubheaderTextStyle}>57 minutes</Text>
-        </View>
-        <View style={barStyle} />
-      </View>
-
-      <Spacing height={16} />
-
-      <View style={rowStyle}>
-        <View style={timeTextStyle}>
-          <Text style={innerHeaderTextStyle}>6PM - 7PM</Text>
-          <Text style={innerSubheaderTextStyle}>23 minutes</Text>
-        </View>
-        <View style={secondBarStyle} />
-      </View>
-    </Card>
-
-    <Card header="Recent Apps">
-      <View style={rowStyle}>
-        <Image source={{ uri: LOGOS.facebook }} style={logoStyle} />
-        <View>
-          <Text style={innerHeaderTextStyle}>Facebook</Text>
-          <Text style={innerSubheaderTextStyle}>15 minutes ago</Text>
-        </View>
-      </View>
-
-      <View style={rowStyle}>
-        <Image source={{ uri: LOGOS.audible }} style={logoStyle} />
-        <View>
-          <Text style={innerHeaderTextStyle}>Audible</Text>
-          <Text style={innerSubheaderTextStyle}>23 minutes ago</Text>
-        </View>
-      </View>
-
-    </Card>
+    <Card header="Recent Apps" Component={RecentApp} data={recentApps} />
   </ScrollView>
