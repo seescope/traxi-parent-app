@@ -1,10 +1,18 @@
 import React from 'react';
 import { View, Dimensions } from 'react-native';
 
-import { TRAXI_BLUE } from '../../Constants/Colours';
 
 export const getBarWidth = (max, val, maxWidth) =>
   maxWidth * (val / max);
+
+const MINIMUM_SATURATION = 50;
+const MAXIMUM_SATURATION = 100;
+
+const getSaturation = (max, val) =>
+  (MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max);
+
+export const getBarColour = (max, val) =>
+  `hsl(218, ${getSaturation(max, val)}%, 63.5%)`;
 
 const { width } = Dimensions.get('window');
 const maxWidth = width - 32 - 96 - 16; 
@@ -12,7 +20,7 @@ const maxWidth = width - 32 - 96 - 16;
 const getBarStyle = (val, max) => ({
   width: getBarWidth(max, val, maxWidth),
   height: 16,
-  backgroundColor: TRAXI_BLUE,
+  backgroundColor: getBarColour(max, val),
   borderRadius: 4,
 });
 
