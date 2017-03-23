@@ -60,8 +60,23 @@ const deselectedTimeStyle = {
   flex: 1,
 };
 
-export const getRows = (data = [], expanded) =>
-  (expanded ? data : data.slice(0, 2));
+const timeButtonStyle = {
+  flex: 1,
+  height: 36,
+};
+
+export const getRows = (data = [], expanded, timePeriod) => {
+  let selectedData;
+
+  // data might be an array, or an object of arrays.
+  if (Array.isArray(data)) {
+    selectedData = data;
+  } else {
+    selectedData = data[timePeriod] || [];
+  }
+
+  return expanded ? selectedData : selectedData.slice(0, 2);
+}
 
 
 class Card extends React.Component {
@@ -93,8 +108,12 @@ class Card extends React.Component {
         <View style={headerUnderlineStyle} />
 
         <View style={timePickerStyle}>
-          <Text style={selectedTimeStyle}>Today</Text>
-          <Text style={deselectedTimeStyle}>Last 7 Days</Text>
+          <TouchableOpacity style={timeButtonStyle}>
+            <Text style={selectedTimeStyle}>Today</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={timeButtonStyle}>
+            <Text style={deselectedTimeStyle}>Last 7 Days</Text>
+          </TouchableOpacity>
         </View>
 
         <View>
