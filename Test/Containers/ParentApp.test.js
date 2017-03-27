@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ParentApp from '../../App/Containers/ParentApp';
+import mockFetchReport from '../../App/Dashboard/Actions/FetchReport';
 
-jest.mock('aws-sdk-react-native-dynamodb');
+jest.mock('../../App/Dashboard/Actions/FetchReport', () => jest.fn());
 
 describe('<ParentApp />', () => {
   it('renders the Parent with the ReportHome component active if installed', () => {
@@ -43,5 +44,17 @@ describe('<ParentApp />', () => {
   it('returns false when the backButtonHandler is pressed on the root scene', () => {
     const parentApp = new ParentApp({ profile: {} });
     expect(parentApp.backButtonHandler()).not.toBeTruthy();
+  });
+
+  it('fetches reports', () => {
+    const parentApp = new ParentApp({ profile: {
+      kids: [
+        { UUID: '123' },
+        { UUID: '456' },
+      ],
+    } });
+
+    expect(mockFetchReport).toHaveBeenCalledWith('123');
+    expect(mockFetchReport).toHaveBeenCalledWith('456');
   });
 });

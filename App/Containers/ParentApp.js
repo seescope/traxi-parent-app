@@ -22,7 +22,7 @@ import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
-import fetchReportsAction from '../Actions/FetchReports';
+import fetchReportsAction from '../Dashboard/Actions/FetchReport';
 import { loggingMiddleware, trackingMiddleware } from '../Utils';
 
 
@@ -97,8 +97,9 @@ class ParentApp extends React.Component {
 
     if (!kids) { return null; }
 
-    const firstKid = kids[0];
-    fetchReportsAction(firstKid);
+    kids.forEach(({ UUID }) => {
+      fetchReportsAction(UUID);
+    });
 
     return null;
   }
