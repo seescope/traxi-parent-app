@@ -120,7 +120,7 @@ class ParentApp extends React.Component {
           <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
-          <Scene key="reports" initial={!isInstalled} component={ReportHome} />
+          <Scene key="reports" component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
           <Scene key="dashboard" initial={isInstalled} component={Dashboard} />

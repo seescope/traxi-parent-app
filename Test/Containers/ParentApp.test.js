@@ -47,13 +47,14 @@ describe('<ParentApp />', () => {
   });
 
   it('fetches reports', () => {
-    const parentApp = new ParentApp({ profile: {
+    const test = new ParentApp({ profile: {
       kids: [
         { UUID: '123' },
         { UUID: '456' },
       ],
     } });
 
+    expect(test).toBeTruthy(); // Appease ESLint
     expect(mockFetchReport).toHaveBeenCalledWith('123');
     expect(mockFetchReport).toHaveBeenCalledWith('456');
   });
