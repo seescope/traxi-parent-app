@@ -1,21 +1,9 @@
-import AWS from 'aws-sdk';
-const FUNCTION_NAME = 'TestFunction';
+import fetch from 'node-fetch';
 
-export default (uuid, callback) => {
-  const lambda = new AWS.Lambda({
-    region: 'ap-southeast-2',
-    accessKeyId: 'AKIAIG3LQD7SGZSJ75WQ',
-    secretAccessKey: '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',
-  });
+const API_GATEWAY_URL = 'https://e98k6hknk5.execute-api.ap-southeast-2.amazonaws.com/dev/dashboard?UUIDs=';
 
-  const params = {
-    FunctionName: FUNCTION_NAME,
-    ClientContext: uuid,
-    InvocationType: 'RequestResponse',
-  };
-
-  lambda.invoke(params, (err, data) => {
-    if (err) { console.log(err, err.stack); }
-    else callback(data);
-  });
+export default (uuid) => {
+  const url = `${API_GATEWAY_URL}${uuid}`;
+  return fetch(url)
+    .then(res => res.json());
 }

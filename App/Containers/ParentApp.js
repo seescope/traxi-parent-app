@@ -5,8 +5,6 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 import Timer from 'react-native-timer';
-import { AWSDynamoDB } from 'aws-sdk-react-native-dynamodb';
-import { AWSCognitoCredentials } from 'aws-sdk-react-native-core';
 
 import SplashScreen from './SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
@@ -21,7 +19,7 @@ import ReportHome from '../ReportHome';
 import WeekView from '../ReportHome/WeekView';
 import DayView from '../ReportHome/DayView';
 import Playground from '../Utils/Playground';
-import Homescreen from '../Homescreen';
+import Dashboard from '../Dashboard';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Actions/FetchReports';
@@ -137,7 +135,7 @@ class ParentApp extends React.Component {
           <Scene key="reports" initial={!isInstalled} component={ReportHome} />
           <Scene key="weekView" component={WeekView} />
           <Scene key="dayView" component={DayView} />
-          <Scene key="homescreen" initial={isInstalled} component={Homescreen} />
+          <Scene key="dashboard" initial={isInstalled} component={Dashboard} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

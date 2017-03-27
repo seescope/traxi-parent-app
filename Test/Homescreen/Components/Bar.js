@@ -1,4 +1,4 @@
-import { getBarWidth } from '../../../App/Homescreen/Components/Bar';
+import { getBarWidth } from '../../../App/Dashboard/Components/Bar';
 
 describe('#getBarWidth', () => {
   it('gets the correct width for a bar', () => {

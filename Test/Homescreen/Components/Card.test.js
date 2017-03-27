@@ -1,4 +1,4 @@
-import { getRows, getMax } from '../../../App/Homescreen/Components/Card';
+import { getRows, getMax } from '../../../App/Dashboard/Components/Card';
 
 describe('#getRows', () => {
   it('only returns two rows if not expanded', () => {

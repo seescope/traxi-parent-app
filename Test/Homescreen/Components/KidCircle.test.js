@@ -1,4 +1,4 @@
-import { getStrokeOffset, getNiceTimeUsed, getNiceTimeUnit } from '../../../App/Homescreen/Components/KidCircle';
+import { getStrokeOffset, getNiceTimeUsed, getNiceTimeUnit } from '../../../App/Dashboard/Components/KidCircle';
 
 it('returns the correct offset for the circle circumference', () => {
   let testminutesUsed = 10;

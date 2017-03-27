@@ -1,18 +1,11 @@
-import fetchReport from '../../../App/Homescreen/Util/FetchReport';
-import base64 from 'base-64';
+import fetchReport from '../../../App/Dashboard/Util/FetchReport';
+
+const TEST_UUID = '2f566920-f598-46d2-8bf2-7bcae115bf0a';
 
 describe('#FetchReport', () => {
-  it('fetches a report', done => {
-    const testContext = { UUID: 'test-uuid' };
-    const callback = data => {
-      expect(data.payload).toEqual(testContext);
-      done();
-    };
-
-    const context = base64.encode(JSON.stringify(testContext));
-
-    console.log(context);
-
-    fetchReport(context, callback);
+  it('fetches a report', () => {
+    fetchReport(TEST_UUID).then(data => {
+      expect(data).toBeTruthy();
+    });
   });
 });
