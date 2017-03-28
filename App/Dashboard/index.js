@@ -24,7 +24,7 @@ const outerContainerStyle = {
 
 const Dashboard = ({ topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle minutesUsed={130} />
+    <KidCircle usage={130} />
 
     <Spacing height={32} />
 
@@ -44,6 +44,6 @@ Dashboard.propTypes = {
   recentApps: React.PropTypes.array.isRequired,
 };
 
-const mapStateToProps = ({ reports, selectedKid }) => (reports || {})[selectedKid.UUID];
+const mapStateToProps = ({ reports, selectedKid }) => (reports || {})[selectedKid.UUID] || {};
 
 export default connect(mapStateToProps)(Dashboard);

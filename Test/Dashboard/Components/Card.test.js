@@ -23,11 +23,11 @@ describe('#getMax', () => {
     const topCategories = [
       {
         name: 'Games',
-        minutesUsed: 57,
+        usage: 57,
       },
       {
         name: 'Tools',
-        minutesUsed: 23,
+        usage: 23,
       },
     ];
 

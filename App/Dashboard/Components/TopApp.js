@@ -28,21 +28,21 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const TopApp = ({ name, logo, minutesUsed, max }) =>
+const TopApp = ({ name, logoURL, usage, max }) =>
   <View style={rowStyle}>
-    <Image source={{ uri: logo }} style={logoStyle} />
+    <Image source={{ uri: logoURL }} style={logoStyle} />
 
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <Bar val={minutesUsed} max={max} />
-      <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
+      <Bar val={usage} max={max} />
+      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
     </View>
   </View>
 
 TopApp.propTypes = {
   name: React.PropTypes.string.isRequired,
-  logo: React.PropTypes.string.isRequired,
-  minutesUsed: React.PropTypes.number.isRequired,
+  logoURL: React.PropTypes.string.isRequired,
+  usage: React.PropTypes.number.isRequired,
   max: React.PropTypes.number.isRequired,
 };
 

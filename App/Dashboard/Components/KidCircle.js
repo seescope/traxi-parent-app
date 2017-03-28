@@ -73,24 +73,24 @@ const circleCircumference = Math.PI * (circleRadius * 2);
 
 const MAX_TIME_ALLOWED = 120; // 2 Hours.
 
-export const getStrokeOffset = (minutesUsed) => {
-  if (minutesUsed >= MAX_TIME_ALLOWED) return 0;
+export const getStrokeOffset = (usage) => {
+  if (usage >= MAX_TIME_ALLOWED) return 0;
 
-  const percentage = minutesUsed / MAX_TIME_ALLOWED;
+  const percentage = usage / MAX_TIME_ALLOWED;
 
   // Mother. Fucking. Maths.
   return ((1 - percentage) / 1) * circleCircumference;
 };
 
-export const getNiceTimeUsed = (minutesUsed) =>
-  (minutesUsed >= 60
-    ? (minutesUsed / 60).toFixed(1)
-    : minutesUsed);
+export const getNiceTimeUsed = (usage) =>
+  (usage >= 60
+    ? (usage / 60).toFixed(1)
+    : usage);
 
-export const getNiceTimeUnit = (minutesUsed) => {
-  if (minutesUsed === 1) return 'minute';
-  else if (minutesUsed < 60) return 'minutes';
-  else if (minutesUsed === 60) return 'hour';
+export const getNiceTimeUnit = (usage) => {
+  if (usage === 1) return 'minute';
+  else if (usage < 60) return 'minutes';
+  else if (usage === 60) return 'hour';
 
   return 'hours';
 };
@@ -101,7 +101,7 @@ export const getNiceTimeUnit = (minutesUsed) => {
 // The height and width must be extended by 4 to allow room for the stroke.
 // cx and cy are then incremented by 2 because of the change in the bounding box.
 
-const KidCircle = ({ minutesUsed }) =>
+const KidCircle = ({ usage }) =>
   <View style={containerStyle}>
     <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
@@ -112,20 +112,20 @@ const KidCircle = ({ minutesUsed }) =>
         strokeWidth={4}
         stroke={TRAXI_BLUE}
         strokeDasharray={[circleCircumference]}
-        strokeDashoffset={getStrokeOffset(minutesUsed, circleCircumference)}
+        strokeDashoffset={getStrokeOffset(usage, circleCircumference)}
       />
     </Svg>
 
     <Image style={kidAvatar} source={{ uri: testKid.avatarURL }} />
 
     <View style={usageOverlayStyle}>
-      <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(minutesUsed)}</Text>
-      <Text style={overlayTextSubheaderStyle}>{getNiceTimeUnit(minutesUsed)} online today</Text>
+      <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(usage)}</Text>
+      <Text style={overlayTextSubheaderStyle}>{getNiceTimeUnit(usage)} online today</Text>
     </View>
   </View>
 
 KidCircle.propTypes = {
-  minutesUsed: React.PropTypes.number.isRequired,
+  usage: React.PropTypes.number.isRequired,
 };
 
 export default KidCircle;

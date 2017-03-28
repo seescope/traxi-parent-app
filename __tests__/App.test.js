@@ -5,7 +5,13 @@ import { mockOnce } from 'firebase';
 
 import App from '../App';
 
-it('renders ReportHome when there is a profile that has kids in Firebase', () => {
+jest.mock('../App/Dashboard/Actions/FetchReport', () => jest.fn(() => dispatch => {
+  dispatch({
+    type: 'FETCHING_REPORT',
+  });
+}));
+
+it('renders Dashboard when there is a profile that has kids in Firebase', () => {
   mockOnce.setData({
     name: 'Test',
     kids: [1, 2, 3],

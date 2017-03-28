@@ -83,7 +83,7 @@ export const getRows = (data = [], expanded, timePeriod) => {
 
 export const getMax = (data = {}) =>
   lodash.chain(data)
-    .map(d => d.minutesUsed)
+    .map(d => d.usage)
     .max()
     .value();
 

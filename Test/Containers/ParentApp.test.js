@@ -3,7 +3,11 @@ import renderer from 'react-test-renderer';
 import ParentApp from '../../App/Containers/ParentApp';
 import mockFetchReport from '../../App/Dashboard/Actions/FetchReport';
 
-jest.mock('../../App/Dashboard/Actions/FetchReport', () => jest.fn());
+jest.mock('../../App/Dashboard/Actions/FetchReport', () => jest.fn(() => dispatch => {
+  dispatch({
+    type: 'FETCHING_REPORT',
+  });
+}));
 
 describe('<ParentApp />', () => {
   it('renders the Parent with the ReportHome component active if installed', () => {

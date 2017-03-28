@@ -40,6 +40,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
     }
     case 'FETCHED_REPORT': {
       const { report, UUID } = action;
+      console.log('Got report:', JSON.stringify(report));
       if (report === null) return { ...state, loading: false };
       const reports = { ...state.reports, [UUID]: report };
 

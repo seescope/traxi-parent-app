@@ -24,19 +24,19 @@ const timeTextStyle = {
   width: 80,
 };
 
-const PeakTime = ({ name, minutesUsed, max }) =>
+const PeakTime = ({ name, usage, max }) =>
   <View style={rowStyle}>
     <View style={timeTextStyle}>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
+      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
     </View>
 
-    <Bar val={minutesUsed} max={max} />
+    <Bar val={usage} max={max} />
   </View>
 
 PeakTime.propTypes = {
   name: React.PropTypes.string.isRequired,
-  minutesUsed: React.PropTypes.number.isRequired,
+  usage: React.PropTypes.number.isRequired,
   max: React.PropTypes.number.isRequired,
 };
 

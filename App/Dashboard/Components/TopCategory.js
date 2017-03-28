@@ -78,20 +78,20 @@ const ICONS = {
 	'Utilities': 'wrench',
 };
 
-const TopApp = ({ name, minutesUsed, max }) =>
+const TopApp = ({ category, usage, max }) =>
   <View style={rowStyle}>
-    <Icon style={logoStyle} name={ICONS[name]} size={52} color={GREY} />
+    <Icon style={logoStyle} name={ICONS[category]} size={52} color={GREY} />
 
     <View>
-      <Text style={innerHeaderTextStyle}>{name}</Text>
-      <Bar val={minutesUsed} max={max} />
-      <Text style={innerSubheaderTextStyle}>{minutesUsed} minutes</Text>
+      <Text style={innerHeaderTextStyle}>{category}</Text>
+      <Bar val={usage} max={max} />
+      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
     </View>
   </View>
 
 TopApp.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  minutesUsed: React.PropTypes.number.isRequired,
+  category: React.PropTypes.string.isRequired,
+  usage: React.PropTypes.number.isRequired,
   max: React.PropTypes.number.isRequired,
 };
 
