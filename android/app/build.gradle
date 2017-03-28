@@ -180,8 +180,6 @@ dependencies {
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')
-    compile project(':aws-sdk-react-native-core')
-    compile project(':aws-sdk-react-native-dynamodb')
     compile project(':react-native-fabric')
     compile project(':react-native-randombytes')
     compile project(':react-native-image-picker')

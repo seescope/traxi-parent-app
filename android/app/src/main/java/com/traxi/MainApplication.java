@@ -11,8 +11,6 @@ import com.robinpowered.react.Intercom.IntercomPackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
 import com.microsoft.codepush.react.CodePush;
-import com.amazonaws.reactnative.core.AWSRNCorePackage;
-import com.amazonaws.reactnative.dynamodb.AWSRNDynamoDBPackage;
 import com.smixx.fabric.FabricPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -76,8 +74,6 @@ public class MainApplication extends Application implements ReactApplication {
             new InAppBillingBridgePackage(),
             new RNSegmentIOAnalyticsPackage("7FVcLGkqV6zCPqN4oiy4ZK8HjWoNafrW"),
             new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),
-            new AWSRNCorePackage(),
-            new AWSRNDynamoDBPackage(),
             new FabricPackage(),
             new RandomBytesPackage(),
             new ImagePickerPackage(),
