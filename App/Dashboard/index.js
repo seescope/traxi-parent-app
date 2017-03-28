@@ -1,4 +1,5 @@
 import React from 'react';
+import lodash from 'lodash';
 import { connect } from 'react-redux';
 import { ScrollView, } from 'react-native';
 
@@ -22,9 +23,13 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
+const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
+    ? (lodash.find(peakTimes.week, { name: 'Today'}) || {}).usage
+    : 0);
+
 const Dashboard = ({ topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle usage={130} />
+    <KidCircle usage={getTodayUsage(peakTimes)} />
 
     <Spacing height={32} />
 

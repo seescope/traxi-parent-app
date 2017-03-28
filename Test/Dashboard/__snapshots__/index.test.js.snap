@@ -70,7 +70,7 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        2.2
+        0
       </Text>
       <Text
         accessible={true}
@@ -85,7 +85,7 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        hours
+        minutes
          online today
       </Text>
     </View>

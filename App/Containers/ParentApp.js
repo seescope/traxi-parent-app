@@ -98,7 +98,6 @@ class ParentApp extends React.Component {
     if (!kids) { return null; }
 
     kids.forEach(({ UUID }) => {
-      console.log(`About to execute fetch report for ${UUID}`);
       const action = fetchReportsAction(UUID);
       this.store.dispatch(action);
     });
