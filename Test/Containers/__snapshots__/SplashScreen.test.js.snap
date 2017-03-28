@@ -17,8 +17,8 @@ exports[`renders the <SplashScreen> component 1`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={

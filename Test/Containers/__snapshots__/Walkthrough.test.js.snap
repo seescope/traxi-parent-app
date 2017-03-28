@@ -4,8 +4,8 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -157,8 +157,8 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -398,8 +398,8 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -608,8 +608,8 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -790,8 +790,8 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -954,8 +954,8 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -1136,8 +1136,8 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -1318,8 +1318,8 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -1500,8 +1500,8 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -1679,8 +1679,8 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -1832,8 +1832,8 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2073,8 +2073,8 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2283,8 +2283,8 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2465,8 +2465,8 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2629,8 +2629,8 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2811,8 +2811,8 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -2993,8 +2993,8 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -3175,8 +3175,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -3328,8 +3328,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -3569,8 +3569,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -3779,8 +3779,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -3961,8 +3961,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -4125,8 +4125,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -4307,8 +4307,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -4489,8 +4489,8 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={
@@ -4671,8 +4671,8 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
 <View
   colors={
     Array [
-      "#448AFF",
       "#90CAF9",
+      "#448AFF",
     ]
   }
   style={

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { ScrollView, } from 'react-native';
 
 import Spacing from '../Components/Spacing';
@@ -21,76 +22,7 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
-
-const LOGOS = {
-  facebook: 'http://is3.mzstatic.com/image/thumb/Purple111/v4/cc/73/53/cc735371-ee27-d48d-c8cc-51cf6c85290e/source/512x512bb.jpg',
-  audible: 'http://is1.mzstatic.com/image/thumb/Purple122/v4/4f/98/93/4f989348-2928-302a-36b5-6df9ccf2592a/source/512x512bb.jpg',
-};
-
-const topApps = {
-  'today': [
-    {
-      name: 'Facebook',
-      minutesUsed: 57,
-      logo: LOGOS.facebook,
-    },
-    {
-      name: 'Audible',
-      minutesUsed: 23,
-      logo: LOGOS.audible,
-    },
-  ],
-  'week': [
-    {
-      name: 'Audible',
-      minutesUsed: 23,
-      logo: LOGOS.audible,
-    },
-    {
-      name: 'Facebook',
-      minutesUsed: 57,
-      logo: LOGOS.facebook,
-    },
-  ]
-};
-
-const topCategories = [
-  {
-    name: 'Games',
-    minutesUsed: 57,
-  },
-  {
-    name: 'Tools',
-    minutesUsed: 23,
-  },
-];
-
-const peakTimes = [
-  {
-    name: '9AM - 10AM',
-    minutesUsed: 53,
-  },
-  {
-    name: '4PM - 5PM',
-    minutesUsed: 27,
-  }
-];
-
-const recentApps = [
-  {
-    name: 'Facebook',
-    minutesAgo: 57,
-    logo: LOGOS.facebook,
-  },
-  {
-    name: 'Audible',
-    minutesAgo: 23,
-    logo: LOGOS.audible,
-  }
-];
-
-
-export default () =>
+const Dashboard = ({ topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
     <KidCircle minutesUsed={130} />
 
@@ -104,3 +36,14 @@ export default () =>
 
     <Card header="Recent Apps" Component={RecentApp} data={recentApps} />
   </ScrollView>
+
+Dashboard.propTypes = {
+  topApps: React.PropTypes.object.isRequired,
+  topCategories: React.PropTypes.object.isRequired,
+  peakTimes: React.PropTypes.object.isRequired,
+  recentApps: React.PropTypes.array.isRequired,
+};
+
+const mapStateToProps = ({ reports, selectedKid }) => (reports || {})[selectedKid.UUID];
+
+export default connect(mapStateToProps)(Dashboard);

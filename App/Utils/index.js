@@ -52,9 +52,9 @@ export const getAppNiceName = name => niceNames[name] || name;
 export const isToday = date => moment(date).isSame(moment(), 'day');
 
 export const logError = error =>
-  isIOS
+  (isIOS
     ? Crashlytics.recordError(error.toString())
-    : Crashlytics.logException(error.toString());
+    : Crashlytics.logException(error.toString()));
 
 export const loggingMiddleware = store => next => action => {
   Crashlytics.log(JSON.stringify(action));
