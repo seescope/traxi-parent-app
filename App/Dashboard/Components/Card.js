@@ -41,6 +41,7 @@ const downArrowContainer = {
   flex: 1,
   height: 32,
   alignItems: 'flex-end',
+  justifyContent: 'flex-end',
 };
 
 const timePickerStyle = {
