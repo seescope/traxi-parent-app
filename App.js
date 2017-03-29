@@ -3,9 +3,8 @@ import Firebase from 'firebase';
 import { AsyncStorage } from 'react-native';
 import I18n from 'react-native-i18n';
 
+import Loading from './App/Components/Loading';
 import ParentApp from './App/Containers/ParentApp';
-import LoadingIndicator from './App/Components/LoadingIndicator';
-import Background from './App/Components/Background';
 import Translation from './App/Constants/Translation';
 import { logError } from './App/Utils';
 import Analytics from 'react-native-analytics';
@@ -86,11 +85,7 @@ export default class extends React.Component {
     const { profile, loading } = this.state;
 
     if (loading) {
-      return (
-        <Background>
-          <LoadingIndicator>Loading...</LoadingIndicator>
-        </Background>
-      );
+      return <Loading />;
     }
 
     return <ParentApp profile={profile} />;

@@ -27,33 +27,35 @@ const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
     ? (lodash.find(peakTimes.week, { name: 'Today'}) || { usage: 0}).usage
     : 0);
 
-const Dashboard = ({ selectedKid, topApps, topCategories, peakTimes, recentApps }) =>
+const Dashboard = ({ loading, selectedKid, topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle kid={selectedKid} usage={getTodayUsage(peakTimes)} />
+    <KidCircle loading={loading} kid={selectedKid} usage={getTodayUsage(peakTimes)} />
 
     <Spacing height={32} />
 
-    <Card header="Top Apps" Component={TopApp} data={topApps} />
+    <Card loading={loading} header="Top Apps" Component={TopApp} data={topApps} />
 
-    <Card header="Top Categories" Component={TopCategory} data={topCategories} />
+    <Card loading={loading} header="Top Categories" Component={TopCategory} data={topCategories} />
 
-    <Card header="Peak Times" Component={PeakTime} data={peakTimes} />
+    <Card loading={loading} header="Peak Times" Component={PeakTime} data={peakTimes} />
 
-    <Card header="Recent Apps" Component={RecentApp} data={recentApps} />
+    <Card loading={loading} header="Recent Apps" Component={RecentApp} data={recentApps} />
   </ScrollView>
 
 Dashboard.propTypes = {
-  topApps: React.PropTypes.object.isRequired,
-  topCategories: React.PropTypes.object.isRequired,
-  peakTimes: React.PropTypes.object.isRequired,
-  selectedKid: React.PropTypes.object.isRequired,
-  recentApps: React.PropTypes.array.isRequired,
+  topApps: React.PropTypes.object,
+  topCategories: React.PropTypes.object,
+  peakTimes: React.PropTypes.object,
+  selectedKid: React.PropTypes.object,
+  recentApps: React.PropTypes.array,
+  loading: React.PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ reports, selectedKid }) => {
+const mapStateToProps = ({ reports, selectedKid, loading }) => {
   const selectedReport = (reports || {})[selectedKid.UUID] || {};
 
   return {
+    loading,
     selectedKid,
     ...selectedReport,
   };

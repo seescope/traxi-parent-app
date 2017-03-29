@@ -1,6 +1,7 @@
 import { firstName } from '../Utils';
 import Analytics from 'react-native-analytics';
 import Intercom from 'react-native-intercom';
+import { Actions } from 'react-native-router-flux';
 
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {

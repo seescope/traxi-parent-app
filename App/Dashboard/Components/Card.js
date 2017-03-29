@@ -4,6 +4,7 @@ import lodash from 'lodash';
 import analytics from 'react-native-analytics';
 
 import { WHITE, LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
+import LoadingIndicator from '../../Components/LoadingIndicator';
 
 const { width } = Dimensions.get('window');
 
@@ -38,10 +39,9 @@ const headerUnderlineStyle = {
 
 const downArrowContainer = {
   flex: 1,
-  height: 16,
+  height: 32,
   alignItems: 'flex-end',
 };
-
 
 const timePickerStyle = {
   flexDirection: 'row',
@@ -128,7 +128,7 @@ class Card extends React.Component {
   }
 
   render() {
-    const { header, Component, data } = this.props;
+    const { header, Component, data, loading } = this.props;
     const { rows, timePeriod } = this.state;
     const max = getMax(rows);
 
@@ -152,9 +152,11 @@ class Card extends React.Component {
         </View>}
 
         <View>
-          {rows.length > 0 
+          {loading && <LoadingIndicator color={GREY}>Loading...</LoadingIndicator>}
+          {!loading && 
+           (rows.length > 0 
             ? rows.map((d, i) => <Component max={max} key={i} {...d} />)
-            : <Text style={deselectedTimeStyle}>No data to display</Text>
+            : <Text style={deselectedTimeStyle}>No data to display</Text>)
           }
         </View>
 
@@ -174,7 +176,8 @@ Card.propTypes = {
   data: React.PropTypes.oneOfType([
     React.PropTypes.array,
     React.PropTypes.object,
-  ]).isRequired
+  ]),
+  loading: React.PropTypes.bool.isRequired,
 };
 
 export default Card;

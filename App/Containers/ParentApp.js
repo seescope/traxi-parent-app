@@ -4,7 +4,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
-import Timer from 'react-native-timer';
 
 import SplashScreen from './SplashScreen';
 import AreYouReady from '../Components/AreYouReady';
@@ -15,9 +14,6 @@ import SetName from './SetName';
 import SetImage from './SetImage';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
-import ReportHome from '../ReportHome';
-import WeekView from '../ReportHome/WeekView';
-import DayView from '../ReportHome/DayView';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 
@@ -25,9 +21,6 @@ import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
 import { loggingMiddleware, trackingMiddleware } from '../Utils';
 
-
-const REFRESH_INTERVAL = 30000; // 30 Seconds
-const TIMER_NAME = 'refreshReports';
 const RouterWithRedux = connect()(Router);
 
 class ParentApp extends React.Component {
@@ -57,13 +50,8 @@ class ParentApp extends React.Component {
     }
 
     this.fetchReports();
-    Timer.setInterval(TIMER_NAME, this.fetchReports.bind(this), REFRESH_INTERVAL);
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
-  }
-
-  componentWillUnmount() {
-    Timer.clearInterval(TIMER_NAME);
   }
 
   backButtonHandler() {
@@ -109,10 +97,13 @@ class ParentApp extends React.Component {
     const { profile } = this.props;
     const isInstalled = !!profile.kids;
 
+    const shouldShowSplashScreen = !isInstalled;
+    const shouldShowDashboard = isInstalled;
+
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
-          <Scene key="splashScreen" initial={!isInstalled} component={SplashScreen} />
+          <Scene key="splashScreen" initial={shouldShowSplashScreen} component={SplashScreen} />
           <Scene key="intro" component={Intro} />
           <Scene key="areYouReady" component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
@@ -121,10 +112,7 @@ class ParentApp extends React.Component {
           <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
-          <Scene key="reports" component={ReportHome} />
-          <Scene key="weekView" component={WeekView} />
-          <Scene key="dayView" component={DayView} />
-          <Scene key="dashboard" initial={isInstalled} component={Dashboard} />
+          <Scene key="dashboard" initial={shouldShowDashboard} component={Dashboard} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

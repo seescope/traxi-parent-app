@@ -7,12 +7,12 @@ const spinnerStyle = {
   marginBottom: 16,
 };
 
-const LoadingIndicator = ({children}) => (
+const LoadingIndicator = ({children, color = WHITE}) => (
   <View>
-    <ActivityIndicator size={'large'} color={WHITE} style={spinnerStyle} />
+    <ActivityIndicator size={'large'} color={color} style={spinnerStyle} />
     <Text
       style={// eslint-disable-next-line
-      [TEXT, {color: WHITE, textAlign: 'center', backgroundColor: 'transparent'}]}
+      [TEXT, {color: color, textAlign: 'center', backgroundColor: 'transparent'}]}
     >
       {children}
     </Text>
@@ -20,6 +20,7 @@ const LoadingIndicator = ({children}) => (
 );
 
 LoadingIndicator.propTypes = {
+  color: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 };
 
