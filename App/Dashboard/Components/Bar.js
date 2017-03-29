@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Dimensions } from 'react-native';
+import { Animated, Dimensions } from 'react-native';
 
 
 export const getBarWidth = (max, val, maxWidth) =>
@@ -17,15 +17,35 @@ export const getBarColour = (max, val) =>
 const { width } = Dimensions.get('window');
 const maxWidth = width - 32 - 96 - 16; 
 
-const getBarStyle = (val, max) => ({
-  width: getBarWidth(max, val, maxWidth),
-  height: 16,
-  backgroundColor: getBarColour(max, val),
-  borderRadius: 4,
-});
 
-const Bar = ({ val, max }) =>
-  <View style={getBarStyle(val, max)} />;
+class Bar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.width = new Animated.Value(0);
+  }
+
+  componentDidMount() {
+    const { max, val } = this.props;
+    const newWidth = getBarWidth(max, val, maxWidth);
+    Animated.spring(this.width, {
+      toValue: newWidth,
+    }).start();
+  }
+
+  render() {
+    const { max, val } = this.props;
+
+    const barStyle = {
+      width: this.width,
+      height: 16,
+      backgroundColor: getBarColour(max, val),
+      borderRadius: 4,
+    }
+
+    return <Animated.View style={barStyle} />;
+  }
+}
 
 Bar.propTypes = {
   val: React.PropTypes.number.isRequired,
