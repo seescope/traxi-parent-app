@@ -223,6 +223,44 @@ exports[`renders correctly 1`] = `
             }
           }
         >
+          Yesterday
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "height": 24,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+              "fontSize": 15,
+              "fontWeight": "200",
+              "textAlign": "center",
+            }
+          }
+        >
           Last 7 Days
         </Text>
       </View>
@@ -390,6 +428,44 @@ exports[`renders correctly 1`] = `
             }
           }
         >
+          Yesterday
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "height": 24,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+              "fontSize": 15,
+              "fontWeight": "200",
+              "textAlign": "center",
+            }
+          }
+        >
           Last 7 Days
         </Text>
       </View>
@@ -520,6 +596,44 @@ exports[`renders correctly 1`] = `
           }
         >
           Today
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "flex": 1,
+            "height": 24,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "flex": 1,
+              "fontSize": 15,
+              "fontWeight": "200",
+              "textAlign": "center",
+            }
+          }
+        >
+          Yesterday
         </Text>
       </View>
       <View

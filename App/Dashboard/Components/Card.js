@@ -140,6 +140,9 @@ class Card extends React.Component {
           <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('today')}>
             <Text style={getTimeStyle('today', timePeriod)}>Today</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('yesterday')}>
+            <Text style={getTimeStyle('yesterday', timePeriod)}>Yesterday</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('week')}>
             <Text style={getTimeStyle('week', timePeriod)}>Last 7 Days</Text>
           </TouchableOpacity>
