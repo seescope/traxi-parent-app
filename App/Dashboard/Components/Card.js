@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions, View, Text, Image, TouchableOpacity } from 'react-native';
 import lodash from 'lodash';
+import analytics from 'react-native-analytics';
 
 import { WHITE, LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
 
@@ -107,6 +108,7 @@ class Card extends React.Component {
   }
 
   toggleExpand() {
+    analytics.track('Card expanded');
     const { data } = this.props;
     const expanded = !this.state.expanded;
     const timePeriod = this.state.timePeriod;
@@ -118,6 +120,7 @@ class Card extends React.Component {
   }
 
   switchTimePeriod(timePeriod) {
+    analytics.track('Switched time period', { timePeriod });
     this.setState({
       timePeriod,
       rows: getRows(this.props.data, false, timePeriod),
@@ -149,7 +152,10 @@ class Card extends React.Component {
         </View>}
 
         <View>
-          {rows.map((d, i) => <Component max={max} key={i} {...d} />)}
+          {rows.length > 0 
+            ? rows.map((d, i) => <Component max={max} key={i} {...d} />)
+            : <Text style={deselectedTimeStyle}>No data to display</Text>
+          }
         </View>
 
         <TouchableOpacity onPress={() => this.toggleExpand()}>

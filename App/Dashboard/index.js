@@ -24,12 +24,12 @@ const outerContainerStyle = {
 };
 
 const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
-    ? (lodash.find(peakTimes.week, { name: 'Today'}) || {}).usage
+    ? (lodash.find(peakTimes.week, { name: 'Today'}) || { usage: 0}).usage
     : 0);
 
-const Dashboard = ({ topApps, topCategories, peakTimes, recentApps }) =>
+const Dashboard = ({ selectedKid, topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle usage={getTodayUsage(peakTimes)} />
+    <KidCircle kid={selectedKid} usage={getTodayUsage(peakTimes)} />
 
     <Spacing height={32} />
 
@@ -46,9 +46,17 @@ Dashboard.propTypes = {
   topApps: React.PropTypes.object.isRequired,
   topCategories: React.PropTypes.object.isRequired,
   peakTimes: React.PropTypes.object.isRequired,
+  selectedKid: React.PropTypes.object.isRequired,
   recentApps: React.PropTypes.array.isRequired,
 };
 
-const mapStateToProps = ({ reports, selectedKid }) => (reports || {})[selectedKid.UUID] || {};
+const mapStateToProps = ({ reports, selectedKid }) => {
+  const selectedReport = (reports || {})[selectedKid.UUID] || {};
+
+  return {
+    selectedKid,
+    ...selectedReport,
+  };
+};
 
 export default connect(mapStateToProps)(Dashboard);

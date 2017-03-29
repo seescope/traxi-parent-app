@@ -265,7 +265,15 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View />
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        No data to display
+      </Text>
+    </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -470,7 +478,15 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View />
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        No data to display
+      </Text>
+    </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -675,7 +691,15 @@ exports[`renders correctly 1`] = `
         </Text>
       </View>
     </View>
-    <View />
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        No data to display
+      </Text>
+    </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -755,7 +779,15 @@ exports[`renders correctly 1`] = `
         }
       }
     />
-    <View />
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        No data to display
+      </Text>
+    </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}

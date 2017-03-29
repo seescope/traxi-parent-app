@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Dimensions, Image } from 'react-native';
 import Svg, { Circle as SVGCircle } from 'react-native-svg';
 
-import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
+import { GREY, WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
 
 const containerStyle = {
   alignItems: 'center',
@@ -10,14 +10,6 @@ const containerStyle = {
 };
 
 const { width } = Dimensions.get('window');
-const testKid = {
-  "UUID" : "2628211b-0ce1-4593-ac3a-d2df35c10419",
-  "avatarURL" : "https://avatars1.githubusercontent.com/u/2022375",
-  "deviceType" : "Android",
-  "name" : "Kane",
-  "setupID" : 5406,
-  "status" : "INSTALLED"
-};
 
 const circleSize = width - 16;
 
@@ -48,6 +40,13 @@ const kidAvatar = {
   top: -circleSize + 6,
   left: -2,
   marginBottom: -kidAvatarSize,
+};
+
+const kidNameStyle = {
+  fontSize: 32,
+  backgroundColor: TRANSPARENT,
+  color: GREY,
+  fontWeight: '200',
 };
 
 const overlayTextHeaderStyle = {
@@ -101,8 +100,10 @@ export const getNiceTimeUnit = (usage) => {
 // The height and width must be extended by 4 to allow room for the stroke.
 // cx and cy are then incremented by 2 because of the change in the bounding box.
 
-const KidCircle = ({ usage }) =>
+const KidCircle = ({ kid, usage }) =>
   <View style={containerStyle}>
+    <Text style={kidNameStyle}>{kid.name}</Text>
+
     <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
         r={circleRadius}
@@ -116,7 +117,7 @@ const KidCircle = ({ usage }) =>
       />
     </Svg>
 
-    <Image style={kidAvatar} source={{ uri: testKid.avatarURL }} />
+    <Image style={kidAvatar} source={{ uri: kid.avatarURL }} />
 
     <View style={usageOverlayStyle}>
       <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(usage)}</Text>
@@ -125,6 +126,7 @@ const KidCircle = ({ usage }) =>
   </View>
 
 KidCircle.propTypes = {
+  kid: React.PropTypes.object.isRequired,
   usage: React.PropTypes.number.isRequired,
 };
 
