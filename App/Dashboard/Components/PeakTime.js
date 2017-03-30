@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import moment from 'moment';
 
 import Bar from './Bar';
 
@@ -24,10 +25,24 @@ const timeTextStyle = {
   width: 80,
 };
 
+export const getNiceName = name => {
+  if (isNaN(parseInt(name, 10))) return name;
+
+  const startTime = moment();
+  startTime.hours(name);
+  const startTimeString = startTime.format('hA');
+
+  const endTime = startTime.clone();
+  endTime.add(1, 'hour');
+  const endTimeString = endTime.format('hA');
+
+  return `${startTimeString} - ${endTimeString}`;
+};
+
 const PeakTime = ({ name, usage, max }) =>
   <View style={rowStyle}>
     <View style={timeTextStyle}>
-      <Text style={innerHeaderTextStyle}>{name}</Text>
+      <Text style={innerHeaderTextStyle}>{getNiceName(name)}</Text>
       <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
     </View>
 
