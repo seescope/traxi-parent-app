@@ -260,7 +260,7 @@ exports[`renders correctly 1`] = `
                         "color": "#448AFF",
                         "flex": 1,
                         "fontSize": 15,
-                        "fontWeight": "200",
+                        "fontWeight": "400",
                         "textAlign": "center",
                       }
                     }
@@ -505,7 +505,7 @@ exports[`renders correctly 1`] = `
                         "color": "#448AFF",
                         "flex": 1,
                         "fontSize": 15,
-                        "fontWeight": "200",
+                        "fontWeight": "400",
                         "textAlign": "center",
                       }
                     }
@@ -750,7 +750,7 @@ exports[`renders correctly 1`] = `
                         "color": "#448AFF",
                         "flex": 1,
                         "fontSize": 15,
-                        "fontWeight": "200",
+                        "fontWeight": "400",
                         "textAlign": "center",
                       }
                     }

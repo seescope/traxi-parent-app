@@ -16,7 +16,7 @@ describe('#getBarColour', () => {
   it('gets the correct colour for a bar', () => {
     const max = 100;
     const val = 50;
-    const expectedColor = 'hsl(218, 25%, 63.5%)';
+    const expectedColor = 'hsl(218, 75%, 63%)';
 
     const color = getBarColour(max, val);
     expect(color).toEqual(expectedColor);

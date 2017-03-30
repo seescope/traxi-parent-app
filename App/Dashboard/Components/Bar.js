@@ -9,10 +9,10 @@ const MINIMUM_SATURATION = 50;
 const MAXIMUM_SATURATION = 100;
 
 const getSaturation = (max, val) =>
-  (MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max);
+  50 + ((MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max));
 
 export const getBarColour = (max, val) =>
-  `hsl(218, ${getSaturation(max, val)}%, 63.5%)`;
+  `hsl(218, ${getSaturation(max, val)}%, 63%)`;
 
 const { width } = Dimensions.get('window');
 const maxWidth = width - 32 - 96 - 16; 

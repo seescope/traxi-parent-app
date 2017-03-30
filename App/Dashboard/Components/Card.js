@@ -52,7 +52,7 @@ const timePickerStyle = {
 
 const selectedTimeStyle = {
   fontSize: 15,
-  fontWeight: '200',
+  fontWeight: '400',
   color: TRAXI_BLUE,
   textAlign: 'center',
   flex: 1,
