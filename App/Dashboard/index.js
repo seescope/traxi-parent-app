@@ -2,6 +2,7 @@ import React from 'react';
 import lodash from 'lodash';
 import { connect } from 'react-redux';
 import { ScrollView, } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY } from '../Constants/Colours';
@@ -29,7 +30,12 @@ const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
 
 const Dashboard = ({ loading, selectedKid, topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <KidCircle loading={loading} kid={selectedKid} usage={getTodayUsage(peakTimes)} />
+    <Animatable.View
+      useNativeDriver
+      animation="bounceIn"
+    >
+      <KidCircle loading={loading} kid={selectedKid} usage={getTodayUsage(peakTimes)} />
+    </Animatable.View>
 
     <Spacing height={32} />
 
