@@ -1,3 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#FetchReport fetches a report 1`] = `undefined`;
+exports[`#FetchReport fetches a report 1`] = `
+Object {
+  "ab033f06-cff9-4025-af12-46419441ac9b": Object {
+    "peakTimes": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "name": "Sunday",
+          "usage": 1,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "recentApps": Array [],
+    "topApps": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "count": 1,
+          "logoURL": "http://lh6.ggpht.com/D-A2Zl3TqK1nMUwefCyIvzIQ02nzgXoSv3Z4F5wniSOUDF0iCCd3PhwwYo1YCg0R2l8=w300",
+          "name": "Plants vs. Zombies FREE",
+          "usage": 1,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "topCategories": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "category": "Strategy",
+          "usage": 1,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "uuid": "ab033f06-cff9-4025-af12-46419441ac9b",
+  },
+  "dd1fed1a-0be8-460c-8fc2-fbe13359fc9d": Object {
+    "peakTimes": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "name": "Wednesday",
+          "usage": 20,
+        },
+        Object {
+          "name": "Sunday",
+          "usage": 1,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "recentApps": Array [],
+    "topApps": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "count": 4,
+          "logoURL": "http://lh3.googleusercontent.com/6e7UuLA7RATt1aXF3t4dYgul0M2K9YjXKJl9tjmySbduH2t3wMcf8uPsQnQR-AVHlkK1=w300",
+          "name": "Family Locator - GPS Tracker",
+          "usage": 14,
+        },
+        Object {
+          "count": 1,
+          "logoURL": "http://lh3.googleusercontent.com/_U-7RFULK-aIX0DDIZSDX7a5Up5Jq8Kf4LKnpZ1gawe9jDXgTLrdY6hKv94GwpJox0I=w300",
+          "name": "icq video calls & chat",
+          "usage": 2,
+        },
+        Object {
+          "count": 1,
+          "logoURL": "http://lh3.googleusercontent.com/nCnvARo9yCTrB9vMSNU80BzhM7PUhGoKPmkvg2oOGgKTZ8VQYYBaz2EArz00Ndv0eg=w300",
+          "name": "Sprint Spot",
+          "usage": 2,
+        },
+        Object {
+          "count": 2,
+          "logoURL": "http://lh3.googleusercontent.com/tm_N1osJGfifuRlMfEip4kZFD5QCtd42CYYEhUsxABzIoEn6Nb9UXjRVmjoeKvMFUCzF=w300",
+          "name": "imo free video calls and chat",
+          "usage": 2,
+        },
+        Object {
+          "count": 1,
+          "logoURL": "http://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300",
+          "name": "Gmail",
+          "usage": 1,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "topCategories": Object {
+      "today": Array [],
+      "week": Array [
+        Object {
+          "category": "Lifestyle",
+          "usage": 14,
+        },
+        Object {
+          "category": "Communication",
+          "usage": 5,
+        },
+        Object {
+          "category": "Entertainment",
+          "usage": 2,
+        },
+      ],
+      "yesterday": Array [],
+    },
+    "uuid": "dd1fed1a-0be8-460c-8fc2-fbe13359fc9d",
+  },
+}
+`;

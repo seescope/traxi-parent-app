@@ -3,12 +3,12 @@
 const API_GATEWAY_URL = 'https://lpqdexxrvj.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=';
 import { logError } from '../../Utils';
 import moment from 'moment';
+import lodash from 'lodash';
 
-// const TEST_REPORT = {"topApps":{"week":[{"name":"YouTube","logoURL":"http://is5.mzstatic.com/image/thumb/Purple71/v4/60/c6/3b/60c63b7a-368b-067c-3e72-928f1170f64e/source/512x512bb.jpg","usage":50,"count":14},{"name":"One Finger Death Punch!","logoURL":"http://is1.mzstatic.com/image/thumb/Purple49/v4/7a/05/24/7a052432-864f-ab26-cc9e-e4defdf01913/source/512x512bb.jpg","usage":1,"count":1}],"yesterday":[],"today":[]},"topCategories":{"week":[{"category":"Entertainment","usage":50},{"category":"Games","usage":1}],"yesterday":[],"today":[]},"peakTimes":{"week":[{"usage":23,"name":"Today"}, {"usage":23,"name":"Sunday"},{"usage":15,"name":"Wednesday"},{"usage":7,"name":"Thursday"},{"usage":6,"name":"Friday"}],"today":[]},"recentApps":[]}; 
-
-export default UUID => dispatch => {
+export default UUIDs => dispatch => {
+  const UUIDString = UUIDs.join(',');
   const offset = moment().utcOffset();
-  const url = `${API_GATEWAY_URL}${UUID}&offset=${offset}`;
+  const url = `${API_GATEWAY_URL}${UUIDString}&offset=${offset}`;
   dispatch({ type: 'FETCHING_REPORT' });
 
   return fetch(url)
@@ -17,10 +17,10 @@ export default UUID => dispatch => {
       return res.json();
     })
     .then(data => {
-      const report = data[0];
-      const reports = {
-        [report.uuid] : report,
-      };
+      const reports = lodash.zipObject(
+        data.map(d => d.uuid),
+        data
+      );
 
       dispatch({
         type: 'FETCHED_REPORT',

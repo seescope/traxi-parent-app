@@ -1,28 +1,26 @@
 /* eslint no-native-reassign: 0 */
 import fetchReport from '../../../App/Dashboard/Actions/FetchReport';
 
-const TEST_UUID = '2f566920-f598-46d2-8bf2-7bcae115bf0a';
+const TEST_UUIDS = ['dd1fed1a-0be8-460c-8fc2-fbe13359fc9d', 'ab033f06-cff9-4025-af12-46419441ac9b'];
 
 global.Promise = require.requireActual('promise');
 
- // const TEST_REPORT = {"2f566920-f598-46d2-8bf2-7bcae115bf0a": {"topApps":{"week":[{"name":"YouTube","logoURL":"http://is5.mzstatic.com/image/thumb/Purple71/v4/60/c6/3b/60c63b7a-368b-067c-3e72-928f1170f64e/source/512x512bb.jpg","usage":50,"count":14},{"name":"One Finger Death Punch!","logoURL":"http://is1.mzstatic.com/image/thumb/Purple49/v4/7a/05/24/7a052432-864f-ab26-cc9e-e4defdf01913/source/512x512bb.jpg","usage":1,"count":1}],"yesterday":[],"today":[]},"topCategories":{"week":[{"category":"Entertainment","usage":50},{"category":"Games","usage":1}],"yesterday":[],"today":[]},"peakTimes":{"week":[],"yesterday":[{"usage":23,"day":"Sunday"},{"usage":15,"day":"Wednesday"},{"usage":7,"day":"Thursday"},{"usage":6,"day":"Friday"}],"today":[]},"recentApps":[]}}; 
-const TEST_REPORT = [{"uuid":"2f566920-f598-46d2-8bf2-7bcae115bf0a","topApps":{"week":[{"name":"YouTube","logoURL":"http://is5.mzstatic.com/image/thumb/Purple71/v4/60/c6/3b/60c63b7a-368b-067c-3e72-928f1170f64e/source/512x512bb.jpg","usage":50,"count":14},{"name":"One Finger Death Punch!","logoURL":"http://is1.mzstatic.com/image/thumb/Purple49/v4/7a/05/24/7a052432-864f-ab26-cc9e-e4defdf01913/source/512x512bb.jpg","usage":1,"count":1}],"yesterday":[],"today":[]},"topCategories":{"week":[{"category":"Entertainment","usage":50},{"category":"Games","usage":1}],"yesterday":[],"today":[]},"peakTimes":{"week":[{"usage":23,"name":"Sunday"},{"usage":15,"name":"Wednesday"},{"usage":7,"name":"Thursday"},{"usage":6,"name":"Friday"}],"yesterday":[],"today":[]},"recentApps":[]}];
+const TEST_REPORTS = [{"uuid":"dd1fed1a-0be8-460c-8fc2-fbe13359fc9d","topApps":{"week":[{"name":"Family Locator - GPS Tracker","logoURL":"http://lh3.googleusercontent.com/6e7UuLA7RATt1aXF3t4dYgul0M2K9YjXKJl9tjmySbduH2t3wMcf8uPsQnQR-AVHlkK1=w300","usage":14,"count":4},{"name":"icq video calls & chat","logoURL":"http://lh3.googleusercontent.com/_U-7RFULK-aIX0DDIZSDX7a5Up5Jq8Kf4LKnpZ1gawe9jDXgTLrdY6hKv94GwpJox0I=w300","usage":2,"count":1},{"name":"Sprint Spot","logoURL":"http://lh3.googleusercontent.com/nCnvARo9yCTrB9vMSNU80BzhM7PUhGoKPmkvg2oOGgKTZ8VQYYBaz2EArz00Ndv0eg=w300","usage":2,"count":1},{"name":"imo free video calls and chat","logoURL":"http://lh3.googleusercontent.com/tm_N1osJGfifuRlMfEip4kZFD5QCtd42CYYEhUsxABzIoEn6Nb9UXjRVmjoeKvMFUCzF=w300","usage":2,"count":2},{"name":"Gmail","logoURL":"http://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300","usage":1,"count":1}],"yesterday":[],"today":[]},"topCategories":{"week":[{"category":"Lifestyle","usage":14},{"category":"Communication","usage":5},{"category":"Entertainment","usage":2}],"yesterday":[],"today":[]},"peakTimes":{"week":[{"usage":20,"name":"Wednesday"},{"usage":1,"name":"Sunday"}],"yesterday":[],"today":[]},"recentApps":[]},{"uuid":"ab033f06-cff9-4025-af12-46419441ac9b","topApps":{"week":[{"name":"Plants vs. Zombies FREE","logoURL":"http://lh6.ggpht.com/D-A2Zl3TqK1nMUwefCyIvzIQ02nzgXoSv3Z4F5wniSOUDF0iCCd3PhwwYo1YCg0R2l8=w300","usage":1,"count":1}],"yesterday":[],"today":[]},"topCategories":{"week":[{"category":"Strategy","usage":1}],"yesterday":[],"today":[]},"peakTimes":{"week":[{"usage":1,"name":"Sunday"}],"yesterday":[],"today":[]},"recentApps":[]}];
 
- fetch = () => Promise.resolve({ 
- 	ok: true,
- 	json: () => Promise.resolve(TEST_REPORT)
- });
-
+fetch = () => Promise.resolve({ 
+  ok: true,
+  json: () => Promise.resolve(TEST_REPORTS)
+});
 
 describe('#FetchReport', () => {
   it('fetches a report', done => {
 
-    const action = fetchReport(TEST_UUID);
-    const dispatch = ({ type, report }) => {
+    const action = fetchReport(TEST_UUIDS);
+    const dispatch = ({ type, reports }) => {
       if (type === 'FETCHING_REPORT') return null;
 
       expect(type).toBeTruthy();
-      expect(report).toMatchSnapshot();
+      expect(reports).toMatchSnapshot();
       done();
 
       return undefined;
