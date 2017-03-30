@@ -47,6 +47,7 @@ const kidNameStyle = {
   backgroundColor: TRANSPARENT,
   color: GREY,
   fontWeight: '200',
+  marginBottom: 16,
 };
 
 const overlayTextHeaderStyle = {
