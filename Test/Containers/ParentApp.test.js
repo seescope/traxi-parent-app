@@ -59,7 +59,6 @@ describe('<ParentApp />', () => {
     } });
 
     expect(test).toBeTruthy(); // Appease ESLint
-    expect(mockFetchReport).toHaveBeenCalledWith('123');
-    expect(mockFetchReport).toHaveBeenCalledWith('456');
+    expect(mockFetchReport).toHaveBeenCalledWith(['123', '456']);
   });
 });

@@ -32,15 +32,6 @@ exports[`renders Dashboard when there is a profile that has kids in Firebase 1`]
   />
   <View
     component={[Function]}
-  />
-  <View
-    component={[Function]}
-  />
-  <View
-    component={[Function]}
-  />
-  <View
-    component={[Function]}
     initial={true}
   />
   <View
@@ -55,15 +46,6 @@ exports[`renders Intro when there is no profile 1`] = `
   <View
     component={[Function]}
     initial={true}
-  />
-  <View
-    component={[Function]}
-  />
-  <View
-    component={[Function]}
-  />
-  <View
-    component={[Function]}
   />
   <View
     component={[Function]}
