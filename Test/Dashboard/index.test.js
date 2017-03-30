@@ -7,9 +7,12 @@ import configureStore from 'redux-mock-store';
 it('renders correctly', () => {
   const mockStore = configureStore();
   const testStore = mockStore({ 
-    selectedKid: {
-      UUID: 'abc-123',
-    },
+    loading: true,
+    kids: [
+      {
+        UUID: 'abc-123',
+      }
+    ],
     reports: {
       'abc-123': {
         topApps: {},

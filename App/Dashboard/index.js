@@ -3,6 +3,7 @@ import lodash from 'lodash';
 import { connect } from 'react-redux';
 import { ScrollView, } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import Swiper from 'react-native-swiper';
 
 import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY } from '../Constants/Colours';
@@ -28,13 +29,13 @@ const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
     ? (lodash.find(peakTimes.week, { name: 'Today'}) || { usage: 0}).usage
     : 0);
 
-const Dashboard = ({ loading, selectedKid, topApps, topCategories, peakTimes, recentApps }) =>
+const DashboardScreen = ({ loading, kid, topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
     <Animatable.View
       useNativeDriver
       animation="bounceIn"
     >
-      <KidCircle loading={loading} kid={selectedKid} usage={getTodayUsage(peakTimes)} />
+      <KidCircle loading={loading} kid={kid} usage={getTodayUsage(peakTimes)} />
     </Animatable.View>
 
     <Spacing height={32} />
@@ -48,23 +49,30 @@ const Dashboard = ({ loading, selectedKid, topApps, topCategories, peakTimes, re
     <Card loading={loading} header="Recent Apps" Component={RecentApp} data={recentApps} />
   </ScrollView>
 
-Dashboard.propTypes = {
+DashboardScreen.propTypes = {
   topApps: React.PropTypes.object,
   topCategories: React.PropTypes.object,
   peakTimes: React.PropTypes.object,
-  selectedKid: React.PropTypes.object,
+  kid: React.PropTypes.object,
   recentApps: React.PropTypes.array,
   loading: React.PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ reports, selectedKid, loading }) => {
-  const selectedReport = (reports || {})[selectedKid.UUID] || {};
+const mapStateToProps = ({ reports, kids, loading }) => ({
+  kids,
+  reports,
+  loading,
+});
 
-  return {
-    loading,
-    selectedKid,
-    ...selectedReport,
-  };
+const Dashboard = ({ reports, kids, loading }) =>
+  <Swiper>
+    {kids.map(kid => <DashboardScreen key={kid.UUID} loading={loading} kid={kid} {...reports[kid.UUID]} />)}
+  </Swiper>
+
+Dashboard.propTypes = {
+  reports: React.PropTypes.object.isRequired,
+  kids: React.PropTypes.array.isRequired,
+  loading: React.PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps)(Dashboard);
