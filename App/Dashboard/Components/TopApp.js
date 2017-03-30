@@ -1,5 +1,7 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
+import { getNiceUsage } from '../../Utils';
+
 import Bar from './Bar';
 
 const rowStyle = {
@@ -35,7 +37,7 @@ const TopApp = ({ name, logoURL, usage, max }) =>
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
       <Bar val={usage} max={max} />
-      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
+      <Text style={innerSubheaderTextStyle}>{getNiceUsage(usage)}</Text>
     </View>
   </View>
 

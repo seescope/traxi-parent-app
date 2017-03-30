@@ -98,6 +98,7 @@ exports[`renders correctly 1`] = `
                       "color": "#545454",
                       "fontSize": 32,
                       "fontWeight": "200",
+                      "marginBottom": 16,
                     }
                   }
                 />
@@ -412,12 +413,7 @@ exports[`renders correctly 1`] = `
                       "justifyContent": "flex-end",
                     }
                   }
-                >
-                  <Image
-                    source={1}
-                    style={false}
-                  />
-                </View>
+                />
               </View>
             </View>
             <View
@@ -657,12 +653,7 @@ exports[`renders correctly 1`] = `
                       "justifyContent": "flex-end",
                     }
                   }
-                >
-                  <Image
-                    source={1}
-                    style={false}
-                  />
-                </View>
+                />
               </View>
             </View>
             <View
@@ -902,12 +893,7 @@ exports[`renders correctly 1`] = `
                       "justifyContent": "flex-end",
                     }
                   }
-                >
-                  <Image
-                    source={1}
-                    style={false}
-                  />
-                </View>
+                />
               </View>
             </View>
             <View
@@ -1016,12 +1002,7 @@ exports[`renders correctly 1`] = `
                       "justifyContent": "flex-end",
                     }
                   }
-                >
-                  <Image
-                    source={1}
-                    style={false}
-                  />
-                </View>
+                />
               </View>
             </View>
           </View>

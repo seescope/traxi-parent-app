@@ -94,43 +94,46 @@ const getTimeStyle = (currentTimePeriod, timePeriod) =>
     ? selectedTimeStyle
     : deselectedTimeStyle);
 
+const arrowStyle = {
+  height: 16,
+  width: 16,
+};
+
 const getArrowStyle = expanded =>
   expanded && { transform: [{ rotate: '-180deg' }] };
 
 class Card extends React.Component {
-  constructor({ data }) {
-    super();
-
+  constructor(props) {
+    super(props);
+    
     this.state = {
       timePeriod: 'today',
       expanded: false,
-      rows: getRows(data, false, 'today'),
     };
   }
 
   toggleExpand() {
     analytics.track('Card expanded');
-    const { data } = this.props;
     const expanded = !this.state.expanded;
-    const timePeriod = this.state.timePeriod;
 
     this.setState({
       expanded,
-      rows: getRows(data, expanded, timePeriod),
     });
   }
 
   switchTimePeriod(timePeriod) {
     analytics.track('Switched time period', { timePeriod });
+    
     this.setState({
       timePeriod,
-      rows: getRows(this.props.data, false, timePeriod),
     });
   }
 
   render() {
     const { header, Component, data, loading } = this.props;
-    const { rows, timePeriod } = this.state;
+    const { timePeriod, expanded } = this.state;
+    const maxRows = getRows(data, true, timePeriod);
+    const rows = getRows(data, expanded, timePeriod);
     const max = getMax(rows);
 
     const shouldShowTimeSelector = !Array.isArray(data);
@@ -163,7 +166,7 @@ class Card extends React.Component {
 
         <TouchableOpacity onPress={() => this.toggleExpand()}>
           <View style={downArrowContainer}>
-            <Image style={getArrowStyle(this.state.expanded)} source={require('../../Images/down-arrow.png')} />
+            {maxRows.length > 2 && <Image style={[arrowStyle, getArrowStyle(this.state.expanded)]} source={require('../../Images/down-arrow.png')} />}
           </View>
         </TouchableOpacity>
       </View>

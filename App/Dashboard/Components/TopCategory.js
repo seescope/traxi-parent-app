@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import { getNiceUsage } from '../../Utils';
 import { GREY, } from '../../Constants/Colours';
 import Bar from './Bar';
 
@@ -85,7 +86,7 @@ const TopApp = ({ category, usage, max }) =>
     <View>
       <Text style={innerHeaderTextStyle}>{category}</Text>
       <Bar val={usage} max={max} />
-      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
+      <Text style={innerSubheaderTextStyle}>{getNiceUsage(usage)}</Text>
     </View>
   </View>
 

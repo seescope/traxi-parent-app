@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
 import InAppBilling from 'react-native-billing';
+
 import { selectPrice } from '../Actions/Actions';
 
 export const firstName = name => name && name.split(' ')[0];
@@ -106,3 +107,6 @@ export const sendPhoneNumberToSlack = phoneNumber =>
         throw new Error(`Error posting to Slack: ${body}`);
       }
     });
+
+export const getNiceUsage = usage =>
+  moment.duration(usage, 'minutes').humanize();

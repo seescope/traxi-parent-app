@@ -1,4 +1,4 @@
-import { getStrokeOffset, getNiceTimeUsed, getNiceTimeUnit } from '../../../App/Dashboard/Components/KidCircle';
+import { getStrokeOffset, getNiceTimeUsed  } from '../../../App/Dashboard/Components/KidCircle';
 
 it('returns the correct offset for the circle circumference', () => {
   let testminutesUsed = 10;
@@ -21,26 +21,4 @@ it('returns a human friendly amount of time used', () => {
   const minutesUsed = getNiceTimeUsed(testLessThanAnhour);
 
   expect(minutesUsed).toEqual(30);
-});
-
-it('returns a human friendly unit of time used', () => {
-  let testminutesUsed = 60;
-  let hoursUsed = getNiceTimeUnit(testminutesUsed);
-
-  expect(hoursUsed).toEqual('hour');
-
-  testminutesUsed = 120;
-  hoursUsed = getNiceTimeUnit(testminutesUsed);
-
-  expect(hoursUsed).toEqual('hours');
-
-  testminutesUsed = 1;
-  hoursUsed = getNiceTimeUnit(testminutesUsed);
-
-  expect(hoursUsed).toEqual('minute');
-
-  testminutesUsed = 2;
-  hoursUsed = getNiceTimeUnit(testminutesUsed);
-
-  expect(hoursUsed).toEqual('minutes');
 });

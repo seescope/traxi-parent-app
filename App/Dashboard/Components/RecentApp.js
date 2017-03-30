@@ -27,19 +27,19 @@ const logoStyle = {
   marginRight: 24,
 };
 
-const RecentApp = ({ name, minutesAgo, logoURL }) =>
+const RecentApp = ({ name, time, logoURL }) =>
   <View style={rowStyle}>
     <Image source={{ uri: logoURL }} style={logoStyle} />
     <View>
       <Text style={innerHeaderTextStyle}>{name}</Text>
-      <Text style={innerSubheaderTextStyle}>{minutesAgo} minutes ago</Text>
+      <Text style={innerSubheaderTextStyle}>{time}</Text>
     </View>
   </View>
 
 RecentApp.propTypes = {
   name: React.PropTypes.string.isRequired,
   logoURL: React.PropTypes.string.isRequired,
-  minutesAgo: React.PropTypes.number.isRequired,
+  time: React.PropTypes.string.isRequired,
 };
 
 export default RecentApp;

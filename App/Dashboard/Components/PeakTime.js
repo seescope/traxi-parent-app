@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import moment from 'moment';
 
+import { getNiceUsage } from '../../Utils';
 import Bar from './Bar';
 
 const rowStyle = {
@@ -43,7 +44,7 @@ const PeakTime = ({ name, usage, max }) =>
   <View style={rowStyle}>
     <View style={timeTextStyle}>
       <Text style={innerHeaderTextStyle}>{getNiceName(name)}</Text>
-      <Text style={innerSubheaderTextStyle}>{usage} minutes</Text>
+      <Text style={innerSubheaderTextStyle}>{getNiceUsage(usage)}</Text>
     </View>
 
     <Bar val={usage} max={max} />

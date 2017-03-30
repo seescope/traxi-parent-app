@@ -9,7 +9,7 @@ const MINIMUM_SATURATION = 50;
 const MAXIMUM_SATURATION = 100;
 
 const getSaturation = (max, val) =>
-  50 + ((MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max));
+  MINIMUM_SATURATION + ((MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max));
 
 export const getBarColour = (max, val) =>
   `hsl(218, ${getSaturation(max, val)}%, 63%)`;
