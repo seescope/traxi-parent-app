@@ -1,7 +1,6 @@
 import Intercom from 'react-native-intercom';
 import Analytics from 'react-native-analytics';
 
-import { TEST_UUID, TEST_REPORTS } from '../Mocks';
 import parentAppReducer from '../../App/Reducers/ParentAppReducer';
 import {
   RESET_STATE,
@@ -20,8 +19,7 @@ it('FETCHED_REPORT', () => {
   const state = { reports: {} };
   const FETCHED_REPORT = {
     type: 'FETCHED_REPORT',
-    report: TEST_REPORTS,
-    UUID: TEST_UUID,
+    reports: { abc: 123 },
   };
   const newState = parentAppReducer(state, FETCHED_REPORT);
 

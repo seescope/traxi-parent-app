@@ -6,6 +6,7 @@ import {
   listOfNumbers,
   isIOS,
   experimentViewed,
+  getNiceUsage,
 } from '../../App/Utils';
 import moment from 'moment';
 import mockAnalytics from 'react-native-analytics';
@@ -63,4 +64,11 @@ describe('experimentViewed', () => {
     const event = mockAnalytics.track.mock.calls[0];
     expect(event).toMatchSnapshot();
   });
+});
+
+describe('getNiceUsage', () => {
+  const testUsage = 124;
+  const niceUsage = getNiceUsage(testUsage);
+
+  expect(niceUsage).toEqual('2 hours');
 });

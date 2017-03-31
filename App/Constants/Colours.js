@@ -16,3 +16,7 @@ export const TRAIL_START = 'rgba(239, 239, 239, 0.3)';
 export const TRAIL_EVENING = 'rgba(75, 73, 73, 0.3)';
 export const TRAIL_AFTERNOON = 'rgba(68, 138, 255, 0.3)';
 export const TRAIL_MORNING = 'rgba(255, 152, 0, 0.3)';
+export const VERY_LIGHT_GREY = '#F0F2F7';
+export const LIGHT_GREY = '#A6A8AB';
+export const GREY = '#545454';
+export const LIGHT_BLUE = '#5E99FF';

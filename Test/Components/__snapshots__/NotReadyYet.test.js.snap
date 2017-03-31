@@ -25,6 +25,7 @@ exports[`renders the <NotReadyYet> component 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       hitSlop={undefined}
+      isTVSelectable={true}
       onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -38,6 +39,7 @@ exports[`renders the <NotReadyYet> component 1`] = `
         }
       }
       testID={undefined}
+      tvParallaxProperties={undefined}
     >
       <Image
         source={1}
@@ -139,6 +141,7 @@ exports[`renders the <NotReadyYet> component 1`] = `
       accessibilityTraits={undefined}
       accessible={true}
       hitSlop={undefined}
+      isTVSelectable={true}
       onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -156,6 +159,7 @@ exports[`renders the <NotReadyYet> component 1`] = `
         }
       }
       testID={undefined}
+      tvParallaxProperties={undefined}
     >
       <Text
         accessible={true}

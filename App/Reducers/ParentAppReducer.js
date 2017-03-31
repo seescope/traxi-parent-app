@@ -1,6 +1,7 @@
 import { firstName } from '../Utils';
 import Analytics from 'react-native-analytics';
 import Intercom from 'react-native-intercom';
+import { Actions } from 'react-native-router-flux';
 
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {
@@ -39,9 +40,8 @@ const ParentAppReducer = (state = {}, action = {}) => {
       return { ...state, loading: true };
     }
     case 'FETCHED_REPORT': {
-      const { report, UUID } = action;
-      if (report === null) return { ...state, loading: false };
-      const reports = { ...state.reports, [UUID]: report };
+      const { reports } = action;
+      if (reports === null) return { ...state, loading: false };
 
       return { ...state, reports, loading: false };
     }

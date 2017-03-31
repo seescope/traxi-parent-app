@@ -5,7 +5,13 @@ import { mockOnce } from 'firebase';
 
 import App from '../App';
 
-it('renders ReportHome when there is a profile that has kids in Firebase', () => {
+jest.mock('../App/Dashboard/Actions/FetchReport', () => jest.fn(() => dispatch => {
+  dispatch({
+    type: 'FETCHING_REPORT',
+  });
+}));
+
+it('renders Dashboard when there is a profile that has kids in Firebase', () => {
   mockOnce.setData({
     name: 'Test',
     kids: [1, 2, 3],
@@ -14,9 +20,13 @@ it('renders ReportHome when there is a profile that has kids in Firebase', () =>
   AsyncStorage.getItem = () => ({
     then: callback => callback(JSON.stringify({ UUID: 'abc-123' })),
   });
+  AsyncStorage.setItem = jest.fn();
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();
   expect(mockOnce).toHaveBeenCalled();
+
+  // Ensure test data wasn't set.
+  expect(AsyncStorage.setItem).not.toHaveBeenCalled();
 });
 
 it('renders Intro when there is no profile', () => {

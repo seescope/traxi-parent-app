@@ -1,6 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { PixelRatio, StyleSheet } from 'react-native';
 import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
 import { isIOS } from '../Utils';
+
+export const SMALL_FONT_SIZE = (isIOS && PixelRatio.get() >= 3) ? 15 : 12;
 
 export default StyleSheet.create({
   CONTAINER: {

@@ -65,6 +65,7 @@ exports[`renders the <AreYouReady> component 1`] = `
         accessibilityTraits={undefined}
         accessible={true}
         hitSlop={undefined}
+        isTVSelectable={true}
         onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -82,6 +83,7 @@ exports[`renders the <AreYouReady> component 1`] = `
           }
         }
         testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <Text
           accessible={true}
@@ -105,6 +107,7 @@ exports[`renders the <AreYouReady> component 1`] = `
         accessibilityTraits={undefined}
         accessible={true}
         hitSlop={undefined}
+        isTVSelectable={true}
         onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -122,6 +125,7 @@ exports[`renders the <AreYouReady> component 1`] = `
           }
         }
         testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <Text
           accessible={true}

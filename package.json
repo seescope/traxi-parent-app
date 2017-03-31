@@ -1,6 +1,6 @@
 {
   "name": "traxi",
-  "version": "5.5.1",
+  "version": "6.0.0",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -13,9 +13,6 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "aws-sdk-react-native-core": "https://github.com/traxicorp/aws-sdk-react-native-core",
-    "aws-sdk-react-native-dynamodb": "https://github.com/traxicorp/aws-sdk-react-native-dynamodb",
-    "aws-sdk-react-native-sns": "https://github.com/traxicorp/aws-sdk-react-native-sns",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "base-64": "^0.1.0",
     "firebase": "^2.4.2",
@@ -24,7 +21,7 @@
     "lodash": "^4.16.6",
     "moment": "^2.13.0",
     "react": "15.4.2",
-    "react-native": "0.40.0",
+    "react-native": "0.42.0",
     "react-native-ab": "https://github.com/traxicorp/react-native-ab",
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
     "react-native-animatable": "^0.6.1",

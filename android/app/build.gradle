@@ -106,7 +106,6 @@ android {
       multiDexEnabled true
       manifestPlaceholders = [onesignal_app_id: "d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35",
                               onesignal_google_project_number: "204102393429"]
-}
     }
 
     signingConfigs {
@@ -172,16 +171,15 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-onesignal')
-    compile project(':aws-sdk-react-native-sns')
+    compile(project(':react-native-onesignal')) {
+      exclude group: 'com.google.android.gms'
+    }
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
     compile project(':react-native-billing')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')
-    compile project(':aws-sdk-react-native-core')
-    compile project(':aws-sdk-react-native-dynamodb')
     compile project(':react-native-fabric')
     compile project(':react-native-randombytes')
     compile project(':react-native-image-picker')
@@ -196,8 +194,8 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
 
     // Google Authentication
-    compile 'com.google.android.gms:play-services-auth:10.0.1'
-    compile 'com.google.android.gms:play-services-gcm:10.0.1'
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
+    compile 'com.google.android.gms:play-services-gcm:10.2.0'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])
@@ -213,16 +211,16 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 
     // Firebase
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'com.google.firebase:firebase-database:10.0.1'
-    compile 'com.google.firebase:firebase-messaging:10.0.1'
-    compile 'com.google.firebase:firebase-auth:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.2.0'
+    compile 'com.google.firebase:firebase-database:10.2.0'
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
+    compile 'com.google.firebase:firebase-auth:10.2.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;
     }
 
     // Intercom Push
-    compile('io.intercom.android:intercom-sdk-fcm:3.+') {
+    compile('io.intercom.android:intercom-sdk-fcm:3.0.+') {
       exclude group: 'io.intercom.android', module: 'intercom-sdk-base'
     }
 }

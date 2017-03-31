@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Background = ({ style, children }) => (
   <LinearGradient
-    colors={[TRAXI_BLUE, TRAXI_LIGHT_BLUE]}
+    colors={[TRAXI_LIGHT_BLUE, TRAXI_BLUE]}
     style={style || STYLES.CONTAINER}
   >
     {children}
