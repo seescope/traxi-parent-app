@@ -20,9 +20,13 @@ it('renders Dashboard when there is a profile that has kids in Firebase', () => 
   AsyncStorage.getItem = () => ({
     then: callback => callback(JSON.stringify({ UUID: 'abc-123' })),
   });
+  AsyncStorage.setItem = jest.fn();
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();
   expect(mockOnce).toHaveBeenCalled();
+
+  // Ensure test data wasn't set.
+  expect(AsyncStorage.setItem).not.toHaveBeenCalled();
 });
 
 it('renders Intro when there is no profile', () => {
