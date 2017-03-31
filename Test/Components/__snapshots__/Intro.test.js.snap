@@ -92,6 +92,7 @@ exports[`renders 1`] = `
         accessibilityTraits={undefined}
         accessible={true}
         hitSlop={undefined}
+        isTVSelectable={true}
         onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -105,6 +106,7 @@ exports[`renders 1`] = `
           }
         }
         testID={undefined}
+        tvParallaxProperties={undefined}
       >
         <Image
           source={1}
