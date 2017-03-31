@@ -22,7 +22,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onPress: () => {
     dispatch(RESET_STATE);
-    Actions.reports();
+    Actions.dashboard();
   },
 });
 
