@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
 
+import { SMALL_FONT_SIZE } from '../../Constants/Styles';
+
 const rowStyle = {
   flexDirection: 'row',
   alignItems: 'center',
@@ -9,12 +11,12 @@ const rowStyle = {
 };
 
 const innerHeaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '400',
+  fontSize: SMALL_FONT_SIZE,
+  fontWeight: 'bold',
 };
 
 const innerSubheaderTextStyle = {
-  fontSize: 15,
+  fontSize: SMALL_FONT_SIZE,
   fontWeight: '200',
 };
 

@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.facebook.react.ReactApplication;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
-import com.amazonaws.reactnative.sns.AWSRNSNSPackage;
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.robinpowered.react.Intercom.IntercomPackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
@@ -68,7 +67,6 @@ public class MainApplication extends Application implements ReactApplication {
         new VPNClientPackage(),
         new MainReactPackage(),
             new ReactNativeOneSignalPackage(),
-            new AWSRNSNSPackage(),
             new ReactNativeI18n(),
             new IntercomPackage(),
             new InAppBillingBridgePackage(),

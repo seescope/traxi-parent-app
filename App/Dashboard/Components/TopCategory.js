@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { getNiceUsage } from '../../Utils';
 import { GREY, } from '../../Constants/Colours';
 import Bar from './Bar';
+import { SMALL_FONT_SIZE } from '../../Constants/Styles';
 
 const rowStyle = {
   flexDirection: 'row',
@@ -14,12 +15,12 @@ const rowStyle = {
 };
 
 const innerHeaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '400',
+  fontSize: SMALL_FONT_SIZE,
+  fontWeight: 'bold',
 };
 
 const innerSubheaderTextStyle = {
-  fontSize: 15,
+  fontSize: SMALL_FONT_SIZE,
   fontWeight: '200',
 };
 
