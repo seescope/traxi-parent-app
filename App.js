@@ -1,6 +1,6 @@
 import React from 'react';
 import Firebase from 'firebase';
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, Linking } from 'react-native';
 import I18n from 'react-native-i18n';
 
 import Loading from './App/Components/Loading';
@@ -36,7 +36,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    AsyncStorage.getItem('profile').then(profileJSON => {
+    AsyncStorage.getItem('profile').then(async profileJSON => {
       const profile = JSON.parse(profileJSON);
       if (profile !== null && profile.UUID) {
         const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;
@@ -63,7 +63,17 @@ export default class extends React.Component {
           },
         );
       } else {
-        this.setState({ loading: false });
+        try {
+          const URL = await Linking.getInitialURL(); // Deeplinks
+          if (!URL) this.setState({ loading: false });
+
+          const link = URL.split('link=')[1];
+          const newUserEmail = link.split('/')[3];
+
+          this.setState({ newUserEmail, loading: false });
+        } catch (error) {
+          this.setState({ loading: false });
+        }
       }
     });
   }
@@ -82,12 +92,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { profile, loading } = this.state;
+    const { profile, newUserEmail, loading } = this.state;
 
     if (loading) {
       return <Loading />;
     }
 
-    return <ParentApp profile={profile} />;
+    return <ParentApp profile={profile} newUserEmail={newUserEmail} />;
   }
 }
