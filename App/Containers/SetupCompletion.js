@@ -16,10 +16,14 @@ const style = {
   buttonContainer: {
     alignItems: 'center',
   },
+  container: {
+    flex: 1,
+    backgroundColor: 'blue',
+  },
 };
 
 const SetupCompletion = () => (
-  <View>
+  <View style={style.container}>
     <Text style={style.bodyText}>
       SetupCompletion
     </Text>

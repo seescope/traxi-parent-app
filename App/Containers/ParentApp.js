@@ -99,22 +99,30 @@ class ParentApp extends React.Component {
     const { profile, newUserEmail } = this.props;
     const isInstalled = !!profile.kids;
 
-    const shouldShowSetupCompletion = !newUserEmail;
+    const test = 'ok';
+    const shouldShowSetupCompletion = !!test;
     const shouldShowSplashScreen = !isInstalled && !shouldShowSetupCompletion;
     const shouldShowDashboard = isInstalled;
+
+    console.log(
+      newUserEmail,
+      shouldShowSetupCompletion,
+      shouldShowSplashScreen,
+      shouldShowDashboard,
+    );
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
           <Scene
-            key="splashScreen"
-            initial={shouldShowSplashScreen}
-            component={SplashScreen}
-          />
-          <Scene
             key="setupCompletion"
             initial={shouldShowSetupCompletion}
             component={SetupCompletion}
+          />
+          <Scene
+            key="splashScreen"
+            initial={shouldShowSplashScreen}
+            component={SplashScreen}
           />
           <Scene key="intro" component={Intro} />
           <Scene key="areYouReady" component={AreYouReady} />
@@ -138,7 +146,7 @@ class ParentApp extends React.Component {
 
 ParentApp.propTypes = {
   profile: PropTypes.object.isRequired,
-  newUserEmail: PropTypes.object.isRequired,
+  newUserEmail: PropTypes.object,
 };
 
 export default ParentApp;

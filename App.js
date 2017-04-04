@@ -98,6 +98,9 @@ export default class extends React.Component {
       return <Loading />;
     }
 
+    console.log('profile', profile);
+    console.log('newUserEmail', newUserEmail);
+
     return <ParentApp profile={profile} newUserEmail={newUserEmail} />;
   }
 }
