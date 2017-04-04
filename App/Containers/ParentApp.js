@@ -16,7 +16,7 @@ import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
-import SetupCompletion from '/SetupCompletion';
+import SetupCompletion from './SetupCompletion';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
