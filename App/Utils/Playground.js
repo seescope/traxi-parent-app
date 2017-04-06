@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 import { View, Linking, AppState } from 'react-native';
 

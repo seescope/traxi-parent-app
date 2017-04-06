@@ -18,10 +18,9 @@ const ParentAppReducer = (state = {}, action = {}) => {
       });
       return { ...state, step: nextStep };
     }
-    case 'NEW_USER_EMAIL': {
-      const { newUserEmail } = action;
-
-      return { ...state, newUserEmail };
+    case 'NEW_USER_FROM_DEEPLINK': {
+      const { newUserFromDeeplink } = action;
+      return { ...state, newUserFromDeeplink };
     }
     case 'LOGGED_IN': {
       const { profile } = action;

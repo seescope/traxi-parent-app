@@ -17,6 +17,7 @@ import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetupCompletion from './SetupCompletion';
+// import Login from './Login';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
@@ -28,13 +29,20 @@ class ParentApp extends React.Component {
   constructor(props) {
     super(props);
 
-    const { profile, newUserEmail } = props;
+    //const { profile, newUserFromDeeplink } = props;
+    const { profile } = props;
     const { kids } = profile;
+
+    //TODO remove
+    const newUserFromDeeplink = {
+      UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+      email: 'mytest@email.com',
+    };
 
     const INITIAL_STATE = {
       loading: false,
       profile,
-      newUserEmail,
+      newUserFromDeeplink,
       step: 0,
       kids: kids || [],
       selectedKid: (kids && kids[0]) || {},
@@ -50,8 +58,11 @@ class ParentApp extends React.Component {
     if (profile && profile.name) {
       this.store.dispatch({ type: 'LOGGED_IN', profile });
       this.fetchReports();
-    } else if (newUserEmail) {
-      this.store.dispatch({ type: 'NEW_USER_EMAIL', newUserEmail });
+    } else if (newUserFromDeeplink) {
+      this.store.dispatch({
+        type: 'NEW_USER_FROM_DEEPLINK',
+        newUserFromDeeplink,
+      });
     }
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
@@ -96,27 +107,25 @@ class ParentApp extends React.Component {
   }
 
   render() {
-    const { profile, newUserEmail } = this.props;
+    const { profile, newUserFromDeeplink } = this.props;
     const isInstalled = !!profile.kids;
 
-    const test = 'ok';
-    const shouldShowSetupCompletion = !!test;
-    const shouldShowSplashScreen = !isInstalled && !shouldShowSetupCompletion;
-    const shouldShowDashboard = isInstalled;
+    // const shouldShowLogin = true;
+    // const shouldShowSetupCompletion = !!newUserFromDeeplink;
+    // const shouldShowSplashScreen = !isInstalled && !shouldShowSetupCompletion;
+    // const shouldShowDashboard = isInstalled;
 
-    console.log(
-      newUserEmail,
-      shouldShowSetupCompletion,
-      shouldShowSplashScreen,
-      shouldShowDashboard,
-    );
+    const shouldShowSetupCompletion = true;
+    const shouldShowSplashScreen = false;
+    const shouldShowDashboard = false;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
+          {/* <Scene key="login" initial={shouldShowLogin} component={Login} /> */}
           <Scene
             key="setupCompletion"
-            initial={shouldShowSetupCompletion}
+            initial={false}
             component={SetupCompletion}
           />
           <Scene
@@ -146,7 +155,7 @@ class ParentApp extends React.Component {
 
 ParentApp.propTypes = {
   profile: PropTypes.object.isRequired,
-  newUserEmail: PropTypes.object,
+  newUserFromDeeplink: PropTypes.object.isRequired,
 };
 
 export default ParentApp;

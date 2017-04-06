@@ -1,5 +1,5 @@
 import React from 'react';
-import Firebase from 'firebase';
+import Firebase from 'firebase-old';
 import { AsyncStorage, Linking } from 'react-native';
 import I18n from 'react-native-i18n';
 
@@ -64,13 +64,22 @@ export default class extends React.Component {
         );
       } else {
         try {
-          const URL = await Linking.getInitialURL(); // Deeplinks
+          //const URL = await Linking.getInitialURL(); // Deeplinks
+          const URL = `https://c7g74.app.goo.gl/?link=http://www.gettraxi.com/?data=YwS0vJ8OE8N6yenxHaV6PdMVLbG3_test@email.com&apn=com.traxi&ibi=com.traxi.app&isi=1195455850'`;
           if (!URL) this.setState({ loading: false });
 
-          const link = URL.split('link=')[1];
-          const newUserEmail = link.split('/')[3];
+          const data = URL.substring(
+            URL.indexOf('data=') + 5,
+            URL.indexOf('&apn=com.traxi'),
+          );
+          const UUID = data.substring(0, data.indexOf('_'));
+          const email = data.substring(data.indexOf('_') + 1);
 
-          this.setState({ newUserEmail, loading: false });
+          const newUserFromDeeplink = {
+            UUID,
+            email,
+          };
+          this.setState({ newUserFromDeeplink, loading: false });
         } catch (error) {
           this.setState({ loading: false });
         }
@@ -92,15 +101,14 @@ export default class extends React.Component {
   }
 
   render() {
-    const { profile, newUserEmail, loading } = this.state;
+    const { profile, newUserFromDeeplink, loading } = this.state;
 
     if (loading) {
       return <Loading />;
     }
 
-    console.log('profile', profile);
-    console.log('newUserEmail', newUserEmail);
-
-    return <ParentApp profile={profile} newUserEmail={newUserEmail} />;
+    return (
+      <ParentApp profile={profile} newUserFromDeeplink={newUserFromDeeplink} />
+    );
   }
 }

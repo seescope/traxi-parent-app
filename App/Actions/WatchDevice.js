@@ -1,4 +1,4 @@
-import Firebase from 'firebase';
+import Firebase from 'firebase-old';
 import Analytics from 'react-native-analytics';
 import { Actions } from 'react-native-router-flux';
 import saveProfile from './SaveProfile';

@@ -1,5 +1,5 @@
 import setupKid from '../../App/Actions/SetupKid';
-import mockFirebase, { mockSet } from 'firebase';
+import mockFirebase, { mockSet } from 'firebase-old';
 
 global.Promise = require.requireActual('promise');
 
