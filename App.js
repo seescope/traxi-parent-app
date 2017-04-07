@@ -58,8 +58,6 @@ export default class extends React.Component {
         }
       }
 
-      UUID = 'ok';
-
       if (UUID) {
         const config = {
           apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
