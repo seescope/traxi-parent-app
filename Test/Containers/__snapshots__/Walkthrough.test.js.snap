@@ -77,9 +77,11 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
+        keyboardType={undefined}
         onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={undefined}
         style={
           Object {
             "backgroundColor": "#EFEFEF",
@@ -92,6 +94,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
           }
         }
         underlineColorAndroid="rgba(255, 255, 255, 1)"
+        value={undefined}
       />
       <View
         style={
@@ -1782,9 +1785,11 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
+        keyboardType={undefined}
         onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={undefined}
         style={
           Object {
             "backgroundColor": "#EFEFEF",
@@ -1797,6 +1802,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
           }
         }
         underlineColorAndroid="rgba(255, 255, 255, 1)"
+        value={undefined}
       />
       <View
         style={
@@ -3306,9 +3312,11 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
       <TextInput
         autoCapitalize="words"
         autoCorrect={false}
+        keyboardType={undefined}
         onChangeText={[Function]}
         onSubmitEditing={[Function]}
         placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={undefined}
         style={
           Object {
             "backgroundColor": "#EFEFEF",
@@ -3321,6 +3329,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
           }
         }
         underlineColorAndroid="rgba(255, 255, 255, 1)"
+        value={undefined}
       />
       <View
         style={

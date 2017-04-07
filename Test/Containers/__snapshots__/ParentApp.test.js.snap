@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ParentApp /> renders the Parent with the AreYouReady component if no kids in the profile 1`] = `
+exports[`<ParentApp /> renders the Parent with the AreYouReady component if no kids in the profile and no deeplink 1`] = `
 <View>
   <View
     component={[Function]}
@@ -11,7 +11,6 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
   />
   <View
     component={[Function]}
-    initial={true}
   />
   <View
     component={[Function]}
@@ -37,9 +36,7 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
   />
   <View
     component={[Function]}
-  />
-  <View
-    component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
@@ -48,7 +45,7 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
 </View>
 `;
 
-exports[`<ParentApp /> renders the Parent with the ReportHome component active if installed 1`] = `
+exports[`<ParentApp /> renders the Parent with the ReportHome component active if installed with no deeplink 1`] = `
 <View>
   <View
     component={[Function]}
@@ -77,6 +74,55 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
   />
   <View
     component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={true}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+</View>
+`;
+
+exports[`<ParentApp /> renders the Parent with the SetupCompletion component if there is a deeplink 1`] = `
+<View>
+  <View
+    component={[Function]}
+    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
@@ -89,7 +135,7 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
 </View>
 `;
 
-exports[`<ParentApp /> renders the Parent with the SplashScreen component active if not installed 1`] = `
+exports[`<ParentApp /> renders the Parent with the SplashScreen component active if not installed and no deeplink 1`] = `
 <View>
   <View
     component={[Function]}
@@ -118,6 +164,10 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
   />
   <View
     component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}

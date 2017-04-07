@@ -17,7 +17,7 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    AsyncStorage.removeItem('profile');
+    // AsyncStorage.removeItem('profile');
     // AsyncStorage.setItem(
     //   'profile',
     //   JSON.stringify({
@@ -30,6 +30,7 @@ export default class extends React.Component {
       loading: true,
     };
   }
+
   componentWillMount() {
     OneSignal.addEventListener('received', this.onReceived);
     OneSignal.addEventListener('opened', this.onOpened);
@@ -56,6 +57,8 @@ export default class extends React.Component {
           this.setStateAsync({ deeplink: true });
         }
       }
+
+      UUID = 'ok';
 
       if (UUID) {
         const config = {

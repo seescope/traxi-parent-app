@@ -40,7 +40,7 @@ const style = {
   },
 };
 
-const KidImageSetup = (
+export const KidImageSetup = (
   { parentName, kidName, kidImage, pickImage, nextStep },
 ) => (
   <View style={style.background}>

@@ -42,7 +42,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
 
       Analytics.identify(profile.UUID, {
         email: profile.email,
-        name: profile.name,
+        name: profile.name | '',
         avatar: profile.picture,
         id: profile.UUID,
       });

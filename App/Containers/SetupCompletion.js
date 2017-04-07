@@ -2,7 +2,7 @@ import * as Firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 import React, { PropTypes } from 'react';
-import { Alert } from 'react-native';
+import { AsyncStorage, Alert } from 'react-native';
 import { connect } from 'react-redux';
 
 import { updateSelectedKid, updateKids } from '../Actions/Actions';
@@ -53,7 +53,7 @@ class SetupCompletion extends React.Component {
   constructor(props) {
     super(props);
 
-    const { email, selectedKid, kids, UUID } = props;
+    const { email, selectedKid, kids, UUID, profile } = props;
 
     this.state = {
       step: 'nameSetup',
@@ -65,6 +65,7 @@ class SetupCompletion extends React.Component {
       selectedKid,
       kids,
       UUID,
+      profile,
     };
   }
 
@@ -146,6 +147,9 @@ class SetupCompletion extends React.Component {
               displayName: name,
             })
             .then(() => {
+              const updatedProfile = this.state.profile;
+              updatedProfile.name = name;
+              AsyncStorage.setItem('profile', JSON.stringify(updatedProfile));
               Actions.dashboard({ type: 'replace' });
             })
             .catch(error => {
@@ -228,6 +232,7 @@ const mapStateToProps = state => ({
   selectedKid: state.selectedKid,
   kids: state.kids,
   UUID: state.profile.UUID,
+  profile: state.profile,
 });
 
 const mapDispatchToProps = {

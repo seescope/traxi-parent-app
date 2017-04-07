@@ -48,8 +48,10 @@ class ParentApp extends React.Component {
       applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
     );
 
-    if (profile && profile.name) {
-      this.store.dispatch({ type: 'LOGGED_IN', profile });
+    if (profile) {
+      if (profile.name) {
+        this.store.dispatch({ type: 'LOGGED_IN', profile });
+      }
       this.fetchReports();
     }
     if (deeplink) {
@@ -112,11 +114,6 @@ class ParentApp extends React.Component {
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
           <Scene
-            key="setupCompletion"
-            initial={false}
-            component={SetupCompletion}
-          />
-          <Scene
             key="splashScreen"
             initial={shouldShowSplashScreen}
             component={SplashScreen}
@@ -133,6 +130,11 @@ class ParentApp extends React.Component {
             key="dashboard"
             initial={shouldShowDashboard}
             component={Dashboard}
+          />
+          <Scene
+            key="setupCompletion"
+            initial={shouldShowSetupCompletion}
+            component={SetupCompletion}
           />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
