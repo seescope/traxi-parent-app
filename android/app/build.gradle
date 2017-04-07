@@ -98,8 +98,8 @@ android {
       applicationId "com.traxi"
       minSdkVersion 16
       targetSdkVersion 22
-      versionCode 551
-      versionName "5.5.1"
+      versionCode 600
+      versionName "6.0.0"
       ndk {
         abiFilters "armeabi-v7a", "x86"
       }
@@ -171,7 +171,7 @@ android {
 }
 
 dependencies {
-    compile project((':react-native-onesignal')) {
+    compile(project(':react-native-onesignal')) {
       exclude group: 'com.google.android.gms'
     }
     compile project(':react-native-i18n')
@@ -220,7 +220,7 @@ dependencies {
     }
 
     // Intercom Push
-    compile('io.intercom.android:intercom-sdk-fcm:3.+') {
+    compile('io.intercom.android:intercom-sdk-fcm:3.0.+') {
       exclude group: 'io.intercom.android', module: 'intercom-sdk-base'
     }
 }

@@ -37,10 +37,6 @@
 		4C83FEB6C32DE8E9F9E3E729 /* libPods-traxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */; };
 		554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7505E1BBEE114F4CB23DC267 /* libRNSVG.a */; };
 		5E039ABB1E5BFC6C00B7A0E6 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E039AA01E5BFC1F00B7A0E6 /* libRCTPushNotification.a */; };
-		5E7599EF1E5D5023004CCB58 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; };
-		5E7599F01E5D5023004CCB58 /* AWSSNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EE5425F1E5D500100F4F43D /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE5425E1E5D500100F4F43D /* AWSSNS.framework */; };
-		5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */; };
 		6458187C95154FA99DD430C6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C14CCAF2644A9895AE9EE7 /* Zocial.ttf */; };
 		69D64F33A7EA40F89C1D5365 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F31334C4B8546E6BA09F52C /* EvilIcons.ttf */; };
 		6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7CC788F4D048DFBD9F0455 /* libRNRandomBytes.a */; };
@@ -56,10 +52,6 @@
 		9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FA2165D8B46739DC30A1A /* libCodePush.a */; };
 		ACFAF011C46E4E1AA02A9BDD /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83E91CF5282B41ADA6566D0E /* Octicons.ttf */; };
 		B514CCC0B4214A388CA13CA3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1862E4468C749E38EFCDEA4 /* FontAwesome.ttf */; };
-		C302EEB11DFF8C7500A00489 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C302EEB01DFF8C7500A00489 /* AWSCore.framework */; };
-		C302EEB71DFF9A8A00A00489 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C302EEB01DFF8C7500A00489 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C302EEF31DFF9DDA00A00489 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C302EEEF1DFF9DB700A00489 /* AWSDynamoDB.framework */; };
-		C302EEF41DFF9DDA00A00489 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C302EEEF1DFF9DB700A00489 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C309AB571DCC538900FDCA63 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C309AB561DCC538900FDCA63 /* NotificationManager.m */; };
 		C32024B91DCC1F5F0084FE8F /* Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = C32024B81DCC1F5F0084FE8F /* Authentication.m */; };
 		C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C336B4411E024EE2005D6F24 /* libRCTAnimation.a */; };
@@ -366,9 +358,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C302EEF41DFF9DDA00A00489 /* AWSDynamoDB.framework in Embed Frameworks */,
-				5E7599F01E5D5023004CCB58 /* AWSSNS.framework in Embed Frameworks */,
-				C302EEB71DFF9A8A00A00489 /* AWSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,8 +401,6 @@
 		561FA2165D8B46739DC30A1A /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		59C14CCAF2644A9895AE9EE7 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		5E039A8A1E5BFC1E00B7A0E6 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
-		5EE5425E1E5D500100F4F43D /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSNS.framework; sourceTree = "<group>"; };
-		5EFCBE371E5BBF9600C99188 /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "/Users/christopherhiste/Desktop/traxi-parent-app/ios/AWSSNS.framework"; sourceTree = "<absolute>"; };
 		5F5435D371DB4E6390966BA4 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
 		5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		67CC55B1355C40F9AF8CE464 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
@@ -435,8 +422,6 @@
 		A866C0450D9CEA988C67FD71 /* Pods-traxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-traxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-traxi/Pods-traxi.debug.xcconfig"; sourceTree = "<group>"; };
 		B1862E4468C749E38EFCDEA4 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		BF07A51AC661458CACD5731D /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
-		C302EEB01DFF8C7500A00489 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
-		C302EEEF1DFF9DB700A00489 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
 		C309AB551DCC536B00FDCA63 /* NotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		C309AB561DCC538900FDCA63 /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
 		C32024A81DCC1F210084FE8F /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
@@ -467,7 +452,6 @@
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */,
 				4C83FEB6C32DE8E9F9E3E729 /* libPods-traxi.a in Frameworks */,
-				C302EEB11DFF8C7500A00489 /* AWSCore.framework in Frameworks */,
 				C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
@@ -482,19 +466,15 @@
 				3C9B93F2A6484E5FB59DEF7A /* libRNVectorIcons.a in Frameworks */,
 				4C54EFF47E3E4CAB9CF5AE61 /* libRCTContacts.a in Frameworks */,
 				9623D2ECA349453CAEF7AD6B /* libRCTMaterialKit.a in Frameworks */,
-				C302EEF31DFF9DDA00A00489 /* AWSDynamoDB.framework in Frameworks */,
 				554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */,
 				0FF736F74A5A4308AE75BB21 /* libRNImagePicker.a in Frameworks */,
 				6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */,
 				9CED65BFDA6E4FFF994FB073 /* libSMXCrashlytics.a in Frameworks */,
-				5EE5425F1E5D500100F4F43D /* AWSSNS.framework in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
 				48BAEC4D1B99411F80F8555A /* libRNSegmentIOAnalytics.a in Frameworks */,
 				729C863A550943EB9E5C384F /* libRNIntercom.a in Frameworks */,
-				5EFCBE381E5BBF9600C99188 /* AWSSNS.framework in Frameworks */,
 				D57ABCB2EABD4F65BA846FF3 /* libReact.a in Frameworks */,
-				5E7599EF1E5D5023004CCB58 /* AWSSNS.framework in Frameworks */,
 				038E071F46A141C5A9119F7F /* libyoga.a in Frameworks */,
 				3C9F6B82BF454E4EB873107B /* libcxxreact.a in Frameworks */,
 				31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */,
@@ -740,9 +720,6 @@
 		875F757D8C9F124ACC2DD612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EE5425E1E5D500100F4F43D /* AWSSNS.framework */,
-				C302EEEF1DFF9DB700A00489 /* AWSDynamoDB.framework */,
-				C302EEB01DFF8C7500A00489 /* AWSCore.framework */,
 				C3FB10911D06A85800F1B2C9 /* libc++.tbd */,
 				6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */,
 				819D939B878B492E9D03D874 /* libz.tbd */,

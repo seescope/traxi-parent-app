@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Dimensions, Image } from 'react-native';
+import { Platform, Text, View, Dimensions, Image } from 'react-native';
 import Svg, { Circle as SVGCircle } from 'react-native-svg';
 
 import { GREY, WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
@@ -27,8 +27,7 @@ const usageOverlayStyle = {
   height: kidAvatarSize,
   width: kidAvatarSize,
   top: -circleSize + 6,
-  left: -2,
-  marginBottom: -circleSize + 8,
+  marginBottom: -circleSize + 16,
   backgroundColor: 'rgba(0, 0, 0, 0.45)',
   borderRadius: kidAvatarSize / 2,
 };
@@ -38,7 +37,6 @@ const kidAvatar = {
   width: kidAvatarSize,
   borderRadius: kidAvatarSize / 2,
   top: -circleSize + 6,
-  left: -2,
   marginBottom: -kidAvatarSize,
 };
 
@@ -130,5 +128,6 @@ KidCircle.propTypes = {
   kid: React.PropTypes.object.isRequired,
   usage: React.PropTypes.number.isRequired,
 };
+
 
 export default KidCircle;

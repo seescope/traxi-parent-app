@@ -32,6 +32,7 @@ const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
 const DashboardScreen = ({ loading, kid, topApps, topCategories, peakTimes, recentApps }) =>
   <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
     <Animatable.View
+      delay={500}
       useNativeDriver
       animation="bounceIn"
     >

@@ -78,6 +78,7 @@ exports[`renders correctly 1`] = `
           <View>
             <View
               animation="bounceIn"
+              delay={500}
               useNativeDriver={true}
             >
               <View
@@ -113,7 +114,6 @@ exports[`renders correctly 1`] = `
                     Object {
                       "borderRadius": 359,
                       "height": 718,
-                      "left": -2,
                       "marginBottom": -718,
                       "top": -728,
                       "width": 718,
@@ -128,8 +128,7 @@ exports[`renders correctly 1`] = `
                       "borderRadius": 359,
                       "height": 718,
                       "justifyContent": "center",
-                      "left": -2,
-                      "marginBottom": -726,
+                      "marginBottom": -718,
                       "top": -728,
                       "width": 718,
                     }

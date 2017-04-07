@@ -20,8 +20,10 @@ module.exports = {
     'react-native/split-platform-components': 2,
     'react-native/no-inline-styles': 2,
     'react-native/no-color-literals': 2,
-    'import/no-unresolved': 0,
-    'react/jsx-indent': 0,
+    'import/no-unresolved': 1,
+    'react/jsx-indent': 1,
+    'jest/no-exclusive-tests': 2,
+    'jest/no-identical-title': 2,
   },
   globals: {
     __DEV__: true,

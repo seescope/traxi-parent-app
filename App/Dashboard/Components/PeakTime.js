@@ -3,7 +3,9 @@ import { View, Text } from 'react-native';
 import moment from 'moment';
 
 import { getNiceUsage } from '../../Utils';
+import { SMALL_FONT_SIZE } from '../../Constants/Styles';
 import Bar from './Bar';
+
 
 const rowStyle = {
   flexDirection: 'row',
@@ -13,12 +15,12 @@ const rowStyle = {
 };
 
 const innerHeaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '400',
+  fontSize: SMALL_FONT_SIZE,
+  fontWeight: 'bold',
 };
 
 const innerSubheaderTextStyle = {
-  fontSize: 15,
+  fontSize: SMALL_FONT_SIZE,
   fontWeight: '200',
 };
 

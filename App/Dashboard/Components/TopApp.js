@@ -1,7 +1,8 @@
 import React from 'react';
 import { Image, View, Text } from 'react-native';
-import { getNiceUsage } from '../../Utils';
 
+import { getNiceUsage } from '../../Utils';
+import { SMALL_FONT_SIZE } from '../../Constants/Styles';
 import Bar from './Bar';
 
 const rowStyle = {
@@ -12,12 +13,12 @@ const rowStyle = {
 };
 
 const innerHeaderTextStyle = {
-  fontSize: 15,
-  fontWeight: '400',
+  fontSize: SMALL_FONT_SIZE,
+  fontWeight: 'bold',
 };
 
 const innerSubheaderTextStyle = {
-  fontSize: 15,
+  fontSize: SMALL_FONT_SIZE,
   fontWeight: '200',
 };
 
