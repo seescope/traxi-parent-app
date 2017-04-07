@@ -54,12 +54,6 @@ class ParentApp extends React.Component {
       }
       this.fetchReports();
     }
-    if (deeplink) {
-      this.store.dispatch({
-        type: 'NEW_USER_FROM_DEEPLINK',
-        deeplink,
-      });
-    }
 
     this.backButtonHandler = this.backButtonHandler.bind(this);
   }

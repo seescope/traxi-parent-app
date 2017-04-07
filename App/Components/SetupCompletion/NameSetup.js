@@ -40,7 +40,7 @@ const NameSetup = ({ nextStep, setName }) => (
 
       <Spacing height={32} />
 
-      <Text style={style.bodyText}>What's your name</Text>
+      <Text style={style.bodyText}>What is your name</Text>
       <Spacing height={10} />
       <TextInput
         refFunc={ref => {

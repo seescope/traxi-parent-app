@@ -139,17 +139,6 @@ it('NEXT_STEP', () => {
   expect(Analytics.track.mock.calls).toMatchSnapshot();
 });
 
-it('NEW_USER_FROM_DEEPLINK', () => {
-  const oldState = {};
-  const deeplink = true;
-  const newState = parentAppReducer(oldState, {
-    type: 'NEW_USER_FROM_DEEPLINK',
-    deeplink,
-  });
-
-  expect(newState.deeplink).toBeTruthy();
-});
-
 it('UPDATE_PROFILE_NAME', () => {
   const oldState = {
     profile: {},

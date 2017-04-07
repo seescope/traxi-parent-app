@@ -39,11 +39,11 @@ const PasswordSetup = (
 ) => (
   <View style={style.background}>
     <View style={style.container}>
-      <HeaderText>Last step {name} !</HeaderText>
+      <HeaderText>Last step, {name} !</HeaderText>
 
       <Spacing height={32} />
 
-      <Text style={style.bodyText}>Your email</Text>
+      <Text style={style.bodyText}>Your email address:</Text>
       <Spacing height={10} />
       <TextInput
         refFunc={ref => {
@@ -55,7 +55,7 @@ const PasswordSetup = (
       />
       <Spacing height={32} />
 
-      <Text style={style.bodyText}>Choose a password</Text>
+      <Text style={style.bodyText}>Choose a password:</Text>
       <Spacing height={10} />
       <TextInput
         refFunc={ref => {
@@ -71,7 +71,7 @@ const PasswordSetup = (
 
     <View style={style.buttonContainer}>
       <Button onPress={() => createUser()}>
-        Go to Dashboard
+        Finished
       </Button>
     </View>
   </View>

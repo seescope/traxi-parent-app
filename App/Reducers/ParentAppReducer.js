@@ -18,10 +18,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
       });
       return { ...state, step: nextStep };
     }
-    case 'NEW_USER_FROM_DEEPLINK': {
-      const { deeplink } = action;
-      return { ...state, deeplink };
-    }
     case 'UPDATE_PROFILE_NAME': {
       const { name } = action;
       const newProfile = state.profile;
@@ -42,7 +38,7 @@ const ParentAppReducer = (state = {}, action = {}) => {
 
       Analytics.identify(profile.UUID, {
         email: profile.email,
-        name: profile.name | '',
+        name: profile.name,
         avatar: profile.picture,
         id: profile.UUID,
       });
