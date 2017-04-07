@@ -19,8 +19,22 @@ const ParentAppReducer = (state = {}, action = {}) => {
       return { ...state, step: nextStep };
     }
     case 'NEW_USER_FROM_DEEPLINK': {
-      const { newUserFromDeeplink } = action;
-      return { ...state, newUserFromDeeplink };
+      const { deeplink } = action;
+      return { ...state, deeplink };
+    }
+    case 'UPDATE_PROFILE_NAME': {
+      const { name } = action;
+      const newProfile = state.profile;
+      newProfile.name = name;
+      return { ...state, profile: newProfile };
+    }
+    case 'UPDATE_SELECTED_KID': {
+      const { selectedKid } = action;
+      return { ...state, selectedKid };
+    }
+    case 'UPDATE_KIDS': {
+      const { kids } = action;
+      return { ...state, kids };
     }
     case 'LOGGED_IN': {
       const { profile } = action;

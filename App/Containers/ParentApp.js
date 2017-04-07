@@ -29,20 +29,13 @@ class ParentApp extends React.Component {
   constructor(props) {
     super(props);
 
-    //const { profile, newUserFromDeeplink } = props;
-    const { profile } = props;
+    const { profile, deeplink } = props;
     const { kids } = profile;
-
-    //TODO remove
-    const newUserFromDeeplink = {
-      UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-      email: 'mytest@email.com',
-    };
 
     const INITIAL_STATE = {
       loading: false,
       profile,
-      newUserFromDeeplink,
+      deeplink,
       step: 0,
       kids: kids || [],
       selectedKid: (kids && kids[0]) || {},
@@ -58,10 +51,11 @@ class ParentApp extends React.Component {
     if (profile && profile.name) {
       this.store.dispatch({ type: 'LOGGED_IN', profile });
       this.fetchReports();
-    } else if (newUserFromDeeplink) {
+    }
+    if (deeplink) {
       this.store.dispatch({
         type: 'NEW_USER_FROM_DEEPLINK',
-        newUserFromDeeplink,
+        deeplink,
       });
     }
 
@@ -107,22 +101,16 @@ class ParentApp extends React.Component {
   }
 
   render() {
-    const { profile, newUserFromDeeplink } = this.props;
+    const { profile, deeplink } = this.props;
     const isInstalled = !!profile.kids;
 
-    // const shouldShowLogin = true;
-    // const shouldShowSetupCompletion = !!newUserFromDeeplink;
-    // const shouldShowSplashScreen = !isInstalled && !shouldShowSetupCompletion;
-    // const shouldShowDashboard = isInstalled;
-
-    const shouldShowSetupCompletion = true;
-    const shouldShowSplashScreen = false;
-    const shouldShowDashboard = false;
+    const shouldShowSetupCompletion = !!deeplink;
+    const shouldShowSplashScreen = !isInstalled && !shouldShowSetupCompletion;
+    const shouldShowDashboard = isInstalled && !deeplink;
 
     return (
       <Provider store={this.store} onExitApp={false}>
         <RouterWithRedux hideNavBar backAndroidHandler={this.backButtonHandler}>
-          {/* <Scene key="login" initial={shouldShowLogin} component={Login} /> */}
           <Scene
             key="setupCompletion"
             initial={false}
@@ -155,7 +143,7 @@ class ParentApp extends React.Component {
 
 ParentApp.propTypes = {
   profile: PropTypes.object.isRequired,
-  newUserFromDeeplink: PropTypes.object.isRequired,
+  deeplink: PropTypes.bool.isRequired,
 };
 
 export default ParentApp;

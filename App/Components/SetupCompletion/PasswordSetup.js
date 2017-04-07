@@ -25,6 +25,13 @@ const style = {
     fontSize: 16,
     color: WHITE,
   },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    paddingBottom: 30,
+    alignSelf: 'center',
+  },
 };
 
 const PasswordSetup = (
@@ -57,15 +64,16 @@ const PasswordSetup = (
         onChangeText={text => setPassword(text)}
         secureTextEntry
       />
+    </View>
+    <Spacing height={50} />
 
-      <Spacing />
+    {loading && <LoadingIndicator children="" />}
 
+    <View style={style.buttonContainer}>
       <Button onPress={() => createUser()}>
         Go to Dashboard
       </Button>
     </View>
-
-    {loading && <LoadingIndicator />}
   </View>
 );
 

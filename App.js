@@ -1,6 +1,6 @@
 import React from 'react';
-import Firebase from 'firebase-old';
-import { AsyncStorage, Linking } from 'react-native';
+import * as Firebase from 'firebase';
+import { AsyncStorage, Linking, Alert } from 'react-native';
 import I18n from 'react-native-i18n';
 
 import Loading from './App/Components/Loading';
@@ -17,7 +17,7 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
 
-    // AsyncStorage.removeItem('profile');
+    AsyncStorage.removeItem('profile');
     // AsyncStorage.setItem(
     //   'profile',
     //   JSON.stringify({
@@ -35,56 +35,63 @@ export default class extends React.Component {
     OneSignal.addEventListener('opened', this.onOpened);
   }
 
-  componentDidMount() {
-    AsyncStorage.getItem('profile').then(async profileJSON => {
-      const profile = JSON.parse(profileJSON);
-      if (profile !== null && profile.UUID) {
-        const URI = `https://traxiapp.firebaseio.com/parents/${profile.UUID}`;
+  async componentDidMount() {
+    try {
+      const profileJSON = await AsyncStorage.getItem('profile');
 
-        new Firebase(URI).once(
-          'value',
-          data => {
-            if (data.val() !== null) {
-              this.setState({
-                profile: data.val(),
-                loading: false,
-              });
-            } else {
-              logError(
-                `No profile found for ${profile.UUID}. Continuing as new user.`,
-              );
-              this.setState({ loading: false });
-            }
-          },
-          error => {
-            logError(`Error fetching profile: ${error.message}`);
-            alert('Error fetching data from traxi.'); // eslint-disable-line
-            this.setState({ loading: false });
-          },
-        );
+      let UUID;
+      if (profileJSON) {
+        const profile = JSON.parse(profileJSON);
+        if (profile !== null && profile.UUID) {
+          UUID = profile.UUID;
+        }
       } else {
-        try {
-          //const URL = await Linking.getInitialURL(); // Deeplinks
-          const URL = `https://c7g74.app.goo.gl/?link=http://www.gettraxi.com/?data=YwS0vJ8OE8N6yenxHaV6PdMVLbG3_test@email.com&apn=com.traxi&ibi=com.traxi.app&isi=1195455850'`;
-          if (!URL) this.setState({ loading: false });
-
-          const data = URL.substring(
+        const URL = await Linking.getInitialURL(); // Deeplinks
+        if (URL) {
+          UUID = URL.substring(
             URL.indexOf('data=') + 5,
             URL.indexOf('&apn=com.traxi'),
           );
-          const UUID = data.substring(0, data.indexOf('_'));
-          const email = data.substring(data.indexOf('_') + 1);
 
-          const newUserFromDeeplink = {
-            UUID,
-            email,
-          };
-          this.setState({ newUserFromDeeplink, loading: false });
-        } catch (error) {
-          this.setState({ loading: false });
+          this.setStateAsync({ deeplink: true });
         }
       }
-    });
+
+      if (UUID) {
+        const config = {
+          apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
+          authDomain: 'traxiapp.firebaseapp.com',
+          databaseURL: 'https://traxiapp.firebaseio.com',
+          projectId: 'project-946779331638130823',
+          storageBucket: 'project-946779331638130823.appspot.com',
+          messagingSenderId: '204102393429',
+        };
+        Firebase.initializeApp(config);
+        const ref = Firebase.database().ref(`parents/${UUID}/`);
+
+        const profile = await ref
+          .once('value')
+          .then(snapshot => snapshot.val());
+
+        Firebase.database().goOffline();
+
+        if (profile) {
+          this.setStateAsync({
+            profile,
+            loading: false,
+          });
+        } else {
+          logError(`No profile found for ${UUID}. Continuing as new user.`);
+          this.setStateAsync({ loading: false, deeplink: false });
+        }
+      } else {
+        this.setStateAsync({ loading: false, deeplink: false });
+      }
+    } catch (error) {
+      Alert.alert('Error fetching data from traxi.');
+      logError(`Error fetching profile: ${error.message}`);
+      this.setStateAsync({ loading: false, deeplink: false });
+    }
   }
 
   componentWillUnmount() {
@@ -100,15 +107,19 @@ export default class extends React.Component {
     Analytics.track('Notification opened');
   }
 
+  setStateAsync(state) {
+    return new Promise(resolve => {
+      this.setState(state, resolve);
+    });
+  }
+
   render() {
-    const { profile, newUserFromDeeplink, loading } = this.state;
+    const { profile, deeplink, loading } = this.state;
 
     if (loading) {
       return <Loading />;
     }
 
-    return (
-      <ParentApp profile={profile} newUserFromDeeplink={newUserFromDeeplink} />
-    );
+    return <ParentApp profile={profile} deeplink={deeplink} />;
   }
 }

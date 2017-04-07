@@ -24,6 +24,13 @@ const style = {
     fontSize: 16,
     color: WHITE,
   },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    paddingBottom: 30,
+    alignSelf: 'center',
+  },
 };
 
 const NameSetup = ({ nextStep, setName }) => (
@@ -43,7 +50,8 @@ const NameSetup = ({ nextStep, setName }) => (
       />
 
       <Spacing />
-
+    </View>
+    <View style={style.buttonContainer}>
       <Button onPress={() => nextStep()}>
         Next Step
       </Button>

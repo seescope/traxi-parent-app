@@ -1,42 +1,71 @@
 import * as Firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
+import ImagePicker from 'react-native-image-picker';
 import React, { PropTypes } from 'react';
 import { Alert } from 'react-native';
 import { connect } from 'react-redux';
 
+import { updateSelectedKid, updateKids } from '../Actions/Actions';
 import PasswordSetup from '../Components/SetupCompletion/PasswordSetup';
 import NameSetup from '../Components/SetupCompletion/NameSetup';
-import fetchReportsAction from '../Dashboard/Actions/FetchReport';
+import KidImageSetup from '../Components/SetupCompletion/KidImageSetup';
+import { isIOS, logError } from '../Utils';
 
-const config = {
-  apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
-  authDomain: 'traxiapp.firebaseapp.com',
-  databaseURL: 'https://traxiapp.firebaseio.com',
-  projectId: 'project-946779331638130823',
-  storageBucket: 'project-946779331638130823.appspot.com',
-  messagingSenderId: '204102393429',
-};
-const app = Firebase.initializeApp(config);
+const updateName = name =>
+  dispatch => {
+    dispatch({ type: 'UPDATE_PROFILE_NAME', name });
+  };
+
+const updateKidImage = (kidImage, selectedKid, kids) =>
+  async dispatch => {
+    let URI;
+    if (!kidImage.uri) URI = 'http://i.imgur.com/52mRwuE.jpg';
+    else URI = kidImage.uri;
+
+    const updatedKid = { ...selectedKid, avatarURL: URI };
+    const kidUUID = updatedKid.UUID;
+
+    const updatedKids = kids.map(kid => {
+      if (kid.UUID !== kidUUID) return kid;
+      const item = kid;
+      item.avatarURL = URI;
+      return item;
+    });
+
+    dispatch(updateKids(updatedKids));
+    dispatch(updateSelectedKid(updatedKid));
+
+    try {
+      await Firebase.database()
+        .ref(`kids/${updatedKid.UUID}`)
+        .update(updatedKid);
+      await Firebase.database()
+        .ref(`parents/${this.state.UUID}/kids`)
+        .update(updatedKids);
+
+      Firebase.database().goOffline();
+    } catch (error) {
+      logError('Error updating kids image');
+    }
+  };
 
 class SetupCompletion extends React.Component {
   constructor(props) {
     super(props);
 
-    const { email, UUID } = props;
+    const { email, selectedKid, kids, UUID } = props;
 
     this.state = {
-      UUID,
-      //step: 'passwordSetup',
       step: 'nameSetup',
-      //name: '',
-      name: 'Chris',
+      name: '',
       email,
-      //password: '',
-      password: 'azertyuiop',
+      password: '',
       loading: false,
+      kidImage: {},
+      selectedKid,
+      kids,
+      UUID,
     };
-
-    this.fetchReports();
   }
 
   setPassword = password => {
@@ -52,26 +81,49 @@ class SetupCompletion extends React.Component {
   };
 
   setName = name => {
+    this.props.updateNameFn(name);
     this.setState({
       name,
     });
   };
 
-  fetchReports = async () => {
-    const ref = Firebase.database().ref(`parents/${this.state.UUID}/`);
+  getSource = response => {
+    let source;
 
-    try {
-      const profile = await ref.once('value').then(snapshot => snapshot.val());
-      Firebase.database().goOffline();
-
-      const kids = profile.kids;
-
-      const UUIDs = kids.map(k => k.UUID);
-      const action = fetchReportsAction(UUIDs);
-      this.store.dispatch(action);
-    } catch (error) {
-      console.log(error); // eslint-disable-line
+    if (response.data) {
+      if (isIOS) {
+        source = { uri: response.uri.replace('file://', ''), isStatic: true };
+      } else {
+        source = { uri: response.uri, isStatic: true };
+      }
     }
+
+    return source;
+  };
+
+  selectImage = () => {
+    const options = {
+      title: 'Select Image',
+      storageOptions: {
+        skipBackup: true,
+      },
+    };
+
+    ImagePicker.launchImageLibrary(options, response => {
+      if (response.error) {
+        if (response.error === 'Photo library permissions not granted') {
+          Alert.alert(
+            'Unable to access your photos',
+            'Please allow traxi to access your photos to continue.',
+          );
+        } else {
+          logError(response.error);
+        }
+      } else {
+        const source = this.getSource(response);
+        this.setState({ kidImage: source });
+      }
+    });
   };
 
   createFirebaseUser = async () => {
@@ -84,8 +136,7 @@ class SetupCompletion extends React.Component {
       });
       Alert.alert('Password should be at least 6 characters');
     } else {
-      app
-        .auth()
+      Firebase.auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
           const user = Firebase.auth().currentUser;
@@ -94,9 +145,11 @@ class SetupCompletion extends React.Component {
             .updateProfile({
               displayName: name,
             })
-            .then(Actions.dashboard({ type: 'replace' }))
+            .then(() => {
+              Actions.dashboard({ type: 'replace' });
+            })
             .catch(error => {
-              console.log(error); // eslint-disable-line
+              logError('Error while creating a new user from deeplink', error);
             });
         })
         .catch(error => {
@@ -109,14 +162,26 @@ class SetupCompletion extends React.Component {
   };
 
   nextStep = () => {
-    const { name } = this.state;
+    const { name, step } = this.state;
 
-    if (name) {
+    if (step === 'nameSetup') {
+      if (name) {
+        this.setState({
+          step: 'kidImageSetup',
+        });
+      } else {
+        Alert.alert('Please enter your name');
+      }
+    } else if (step === 'kidImageSetup') {
+      this.props.updateKidImageFn(
+        this.state.kidImage,
+        this.state.selectedKid,
+        this.state.kids,
+      );
+
       this.setState({
         step: 'passwordSetup',
       });
-    } else {
-      Alert.alert('Please enter your name');
     }
   };
 
@@ -124,6 +189,14 @@ class SetupCompletion extends React.Component {
     let current;
     if (this.state.step === 'nameSetup') {
       current = <NameSetup nextStep={this.nextStep} setName={this.setName} />;
+    } else if (this.state.step === 'kidImageSetup') {
+      current = (
+        <KidImageSetup
+          kidImage={this.state.kidImage}
+          pickImage={this.selectImage}
+          nextStep={this.nextStep}
+        />
+      );
     } else {
       current = (
         <PasswordSetup
@@ -143,12 +216,23 @@ class SetupCompletion extends React.Component {
 
 SetupCompletion.propTypes = {
   email: PropTypes.string.isRequired,
+  selectedKid: PropTypes.object.isRequired,
+  kids: PropTypes.array.isRequired,
   UUID: PropTypes.string.isRequired,
+  updateNameFn: PropTypes.func.isRequired,
+  updateKidImageFn: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  UUID: state.newUserFromDeeplink.UUID,
-  email: state.newUserFromDeeplink.email,
+  email: state.profile.email,
+  selectedKid: state.selectedKid,
+  kids: state.kids,
+  UUID: state.profile.UUID,
 });
 
-export default connect(mapStateToProps)(SetupCompletion);
+const mapDispatchToProps = {
+  updateKidImageFn: updateKidImage,
+  updateNameFn: updateName,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SetupCompletion);
