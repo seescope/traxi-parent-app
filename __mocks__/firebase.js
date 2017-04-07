@@ -1,5 +1,3 @@
-/* @flow */
-
 export const profile = {
   UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
   email: 'enakudesu@gmail.com',
@@ -23,8 +21,8 @@ export const profile = {
   token: 'cjj6guKMTME:APA91bFkM3nynjnD5vqxxeYG42t4P6PThP4N1F7VmhNbRW_W_ReCqGtoiDtwG99K4GmD6_Sh_VuCFCR46GwXH314YfdciS0OTGdwe0OGxYvT2RiYhozwcmlLI2TyHn78z26Kw7SYquCD',
 };
 
-const initializeApp = () => {};
-const database = () => ({
+export const initializeApp = () => {};
+export const database = () => ({
   ref: () => ({
     once: () =>
       Promise.resolve({
@@ -34,9 +32,6 @@ const database = () => ({
   goOffline: () => {},
 });
 
-const firebase = {
-  initializeApp,
-  database,
-};
+const firebase = {};
 
 export default firebase;

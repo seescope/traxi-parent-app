@@ -13,17 +13,73 @@ import OneSignal from 'react-native-onesignal';
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
+export const getUUID = async () => {
+  try {
+    let UUID;
+
+    const profileJSON = await AsyncStorage.getItem('profile'); // Previous user
+
+    if (profileJSON) {
+      const profile = JSON.parse(profileJSON);
+      if (profile !== null && profile.UUID) {
+        UUID = profile.UUID;
+      }
+
+      return { UUID, deeplink: false };
+    }
+
+    const URL = await Linking.getInitialURL(); // New user from deeplink
+    if (URL) {
+      UUID = URL.substring(
+        URL.indexOf('data=') + 5,
+        URL.indexOf('&apn=com.traxi'),
+      );
+      return { UUID, deeplink: true };
+    }
+
+    return null;
+  } catch (error) {
+    logError(`Error while getting the UUID: ${error.message}`);
+    return null;
+  }
+};
+
+export const getProfile = async UUID => {
+  try {
+    const config = {
+      apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
+      authDomain: 'traxiapp.firebaseapp.com',
+      databaseURL: 'https://traxiapp.firebaseio.com',
+      projectId: 'project-946779331638130823',
+      storageBucket: 'project-946779331638130823.appspot.com',
+      messagingSenderId: '204102393429',
+    };
+
+    Firebase.initializeApp(config);
+
+    const ref = Firebase.database().ref(`parents/${UUID}/`);
+    const profile = await ref.once('value').then(snapshot => snapshot.val());
+
+    Firebase.database().goOffline();
+
+    return profile;
+  } catch (error) {
+    logError(`Error while getting the profile from Firebase: ${error.message}`);
+    return null;
+  }
+};
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
 
     // AsyncStorage.removeItem('profile');
-    // AsyncStorage.setItem(
-    //   'profile',
-    //   JSON.stringify({
-    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-    //   }),
-    // );
+    AsyncStorage.setItem(
+      'profile',
+      JSON.stringify({
+        UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+      }),
+    );
 
     this.state = {
       profile: {},
@@ -38,44 +94,13 @@ export default class extends React.Component {
 
   async componentDidMount() {
     try {
-      const profileJSON = await AsyncStorage.getItem('profile');
-
-      let UUID;
-      if (profileJSON) {
-        const profile = JSON.parse(profileJSON);
-        if (profile !== null && profile.UUID) {
-          UUID = profile.UUID;
-        }
-      } else {
-        const URL = await Linking.getInitialURL(); // Deeplinks
-        if (URL) {
-          UUID = URL.substring(
-            URL.indexOf('data=') + 5,
-            URL.indexOf('&apn=com.traxi'),
-          );
-
+      const UUID = await getUUID();
+      if (UUID) {
+        // Previous user or new user with deeplink
+        const { profile, deeplink } = await getProfile();
+        if (deeplink) {
           this.setStateAsync({ deeplink: true });
         }
-      }
-
-      if (UUID) {
-        const config = {
-          apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
-          authDomain: 'traxiapp.firebaseapp.com',
-          databaseURL: 'https://traxiapp.firebaseio.com',
-          projectId: 'project-946779331638130823',
-          storageBucket: 'project-946779331638130823.appspot.com',
-          messagingSenderId: '204102393429',
-        };
-        Firebase.initializeApp(config);
-        const ref = Firebase.database().ref(`parents/${UUID}/`);
-
-        const profile = await ref
-          .once('value')
-          .then(snapshot => snapshot.val());
-
-        Firebase.database().goOffline();
-
         if (profile) {
           this.setStateAsync({
             profile,
@@ -86,6 +111,7 @@ export default class extends React.Component {
           this.setStateAsync({ loading: false, deeplink: false });
         }
       } else {
+        // New user
         this.setStateAsync({ loading: false, deeplink: false });
       }
     } catch (error) {
