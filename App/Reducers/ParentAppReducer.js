@@ -1,7 +1,6 @@
 import { firstName } from '../Utils';
 import Analytics from 'react-native-analytics';
 import Intercom from 'react-native-intercom';
-import { Actions } from 'react-native-router-flux';
 
 const ParentAppReducer = (state = {}, action = {}) => {
   switch (action.type) {
@@ -18,6 +17,20 @@ const ParentAppReducer = (state = {}, action = {}) => {
         value: nextStep,
       });
       return { ...state, step: nextStep };
+    }
+    case 'UPDATE_PROFILE_NAME': {
+      const { name } = action;
+      const newProfile = state.profile;
+      newProfile.name = name;
+      return { ...state, profile: newProfile };
+    }
+    case 'UPDATE_SELECTED_KID': {
+      const { selectedKid } = action;
+      return { ...state, selectedKid };
+    }
+    case 'UPDATE_KIDS': {
+      const { kids } = action;
+      return { ...state, kids };
     }
     case 'LOGGED_IN': {
       const { profile } = action;

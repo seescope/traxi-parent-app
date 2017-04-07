@@ -34,16 +34,28 @@ const style = Platform.select({
   android: androidInputStyle,
 });
 
-const TextInput = ({ onChangeText, onSubmitEditing, refFunc }) => (
+const TextInput = (
+  {
+    onChangeText,
+    onSubmitEditing,
+    refFunc,
+    value,
+    keyboardType,
+    secureTextEntry,
+  },
+) => (
   <RNTextInput
     ref={refFunc}
     autoCorrect={false}
+    value={value}
     onSubmitEditing={onSubmitEditing}
     placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
     underlineColorAndroid="rgba(255, 255, 255, 1)"
     autoCapitalize={'words'}
     style={style}
     onChangeText={onChangeText}
+    keyboardType={keyboardType}
+    secureTextEntry={secureTextEntry}
   />
 );
 
@@ -51,6 +63,9 @@ TextInput.propTypes = {
   refFunc: PropTypes.func,
   onSubmitEditing: PropTypes.func,
   onChangeText: PropTypes.func.isRequired,
+  value: PropTypes.string,
+  keyboardType: PropTypes.string,
+  secureTextEntry: PropTypes.bool,
 };
 
 export default TextInput;

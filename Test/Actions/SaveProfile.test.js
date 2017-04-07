@@ -1,6 +1,6 @@
 import saveProfile from '../../App/Actions/SaveProfile';
 import { NativeModules, AsyncStorage } from 'react-native';
-import { mockSet } from 'firebase';
+import { mockSet } from 'firebase-old';
 
 describe('saveProfile', () => {
   it('saves the profile to AsyncStorage', () => {

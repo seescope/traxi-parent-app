@@ -8,6 +8,7 @@ target 'traxi' do
   # Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/DynamicLinks'
 
   # Fabric
   pod 'Fabric'

@@ -30,53 +30,53 @@ const getSource = response => {
   return source;
 };
 
-export const selectImage = pickImage => dispatch => {
-  const options = {
-    title: 'Select Image',
-    storageOptions: {
-      skipBackup: true,
-    },
-  };
+export const selectImage = pickImage =>
+  dispatch => {
+    const options = {
+      title: 'Select Image',
+      storageOptions: {
+        skipBackup: true,
+      },
+    };
 
-  if (!pickImage) {
-    dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
-    dispatch(NEXT_STEP);
+    if (!pickImage) {
+      dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
+      dispatch(NEXT_STEP);
 
-    return dispatch(setupKid()).then(() => {
-      dispatch(watchDevice());
-    });
-  }
-
-  return ImagePicker.launchImageLibrary(options, response => {
-    if (response.didCancel) {
-      return;
+      return dispatch(setupKid()).then(() => {
+        dispatch(watchDevice());
+      });
     }
 
-    if (response.error) {
-      if (response.error === 'Photo library permissions not granted') {
-        Alert.alert(
-          'Unable to access your photos',
-          'Please allow traxi to access your photos to continue.',
-        );
+    return ImagePicker.launchImageLibrary(options, response => {
+      if (response.didCancel) {
+        return;
       }
 
-      logError(response.error);
-      return;
-    }
+      if (response.error) {
+        if (response.error === 'Photo library permissions not granted') {
+          Alert.alert(
+            'Unable to access your photos',
+            'Please allow traxi to access your photos to continue.',
+          );
+        }
 
-    const source = getSource(response);
-    dispatch(selectKidImage(source.uri));
-    dispatch(NEXT_STEP);
+        logError(response.error);
+        return;
+      }
 
-    dispatch(setupKid()).then(() => {
-      dispatch(watchDevice());
+      const source = getSource(response);
+      dispatch(selectKidImage(source.uri));
+      dispatch(NEXT_STEP);
+
+      dispatch(setupKid()).then(() => {
+        dispatch(watchDevice());
+      });
     });
-  });
-};
+  };
 
 const style = {
-  outerContainer: {
-  },
+  outerContainer: {},
   container: {
     flexDirection: 'column',
     alignItems: 'center',

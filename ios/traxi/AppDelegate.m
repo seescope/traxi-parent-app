@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "CodePush.h"
+#import "RCTLinkingManager.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <Fabric/Fabric.h>
@@ -50,6 +51,7 @@
   [SEGAnalytics setupWithConfiguration:configuration];
   
   // Firebase
+  [FIROptions defaultOptions].deepLinkURLScheme = @"applinks:c7g74.app.goo.gl";
   [FIRApp configure];
   
   // Fabric
@@ -63,6 +65,60 @@
   
   return YES;
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  return [RCTLinkingManager application:application openURL:url
+                      sourceApplication:sourceApplication annotation:annotation];
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+  return [RCTLinkingManager application:application
+                   continueUserActivity:userActivity
+                     restorationHandler:restorationHandler];
+}
+
+
+//- (BOOL)application:(UIApplication *)app
+//            openURL:(NSURL *)url
+//            options:(NSDictionary<NSString *, id> *)options {
+//  return [self application:app openURL:url sourceApplication:nil annotation:@{}];
+//}
+//
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//  FIRDynamicLink *dynamicLink =
+//  [[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
+//  
+//  if (dynamicLink) {
+//    // Handle the deep link. For example, show the deep-linked content or
+//    // apply a promotional offer to the user's account.
+//    // ...
+//    return YES;
+//  }
+//  
+//  return NO;
+//}
+//
+//- (BOOL)application:(UIApplication *)application
+//continueUserActivity:(NSUserActivity *)userActivity
+// restorationHandler:(void (^)(NSArray *))restorationHandler {
+//  
+//  BOOL handled = [[FIRDynamicLinks dynamicLinks]
+//                  handleUniversalLink:userActivity.webpageURL
+//                  completion:^(FIRDynamicLink * _Nullable dynamicLink,
+//                               NSError * _Nullable error) {
+//                    // ...
+//                  }];
+//  
+//  
+//  return handled;
+//}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   [application registerUserNotificationSettings:
