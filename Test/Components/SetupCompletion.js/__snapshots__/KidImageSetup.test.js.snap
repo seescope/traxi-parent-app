@@ -14,7 +14,7 @@ exports[`Renders correctly with image 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
+        "flex": 6,
         "paddingLeft": 30,
         "paddingRight": 30,
         "paddingTop": 50,
@@ -76,14 +76,10 @@ exports[`Renders correctly with image 1`] = `
   <View
     style={
       Object {
-        "alignItems": "flex-end",
+        "alignItems": "center",
         "alignSelf": "center",
         "flex": 1,
         "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingBottom": 30,
-        "paddingLeft": 15,
-        "paddingRight": 15,
       }
     }
   >
@@ -147,7 +143,7 @@ exports[`Renders correctly without image 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
+        "flex": 6,
         "paddingLeft": 30,
         "paddingRight": 30,
         "paddingTop": 50,
@@ -202,59 +198,55 @@ exports[`Renders correctly without image 1`] = `
         }
       }
     />
-    <View>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
         }
-      >
-        [missing "en.setImage.setAPictureFor" translation]
-         
-        kid
-        .
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
+      }
+    >
+      [missing "en.setImage.setAPictureFor" translation]
+       
+      kid
+      .
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 32,
         }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-          }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFF",
+          "fontFamily": "Raleway-Regular",
+          "fontSize": 16,
         }
-      >
-        [missing "en.setImage.dontWorry" translation]
-        .
-      </Text>
-    </View>
+      }
+    >
+      [missing "en.setImage.dontWorry" translation]
+      .
+    </Text>
   </View>
   <View
     style={
       Object {
-        "alignItems": "flex-end",
-        "alignSelf": "center",
+        "alignItems": "center",
         "flex": 1,
         "flexDirection": "row",
         "justifyContent": "space-between",
-        "paddingBottom": 30,
-        "paddingLeft": 15,
-        "paddingRight": 15,
+        "paddingLeft": 20,
+        "paddingRight": 20,
       }
     }
   >

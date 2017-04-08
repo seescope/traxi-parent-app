@@ -1,4 +1,4 @@
-export const profile = {
+const profile = {
   UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
   email: 'enakudesu@gmail.com',
   kids: {
@@ -28,10 +28,13 @@ export const database = () => ({
       Promise.resolve({
         val: () => profile,
       }),
+    update: () => jest.fn(),
   }),
   goOffline: () => {},
 });
-
-const firebase = {};
-
-export default firebase;
+export const auth = () => ({
+  currentUser: {
+    updateProfile: () => jest.fn(),
+  },
+  createUserWithEmailAndPassword: () => jest.fn(() => Promise),
+});

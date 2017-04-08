@@ -17,7 +17,7 @@ const style = {
     backgroundColor: TRAXI_BLUE,
   },
   container: {
-    flex: 1,
+    flex: 6,
     paddingTop: 50,
     paddingLeft: 30,
     paddingRight: 30,
@@ -28,68 +28,84 @@ const style = {
     fontSize: 16,
     color: WHITE,
   },
-  buttonContainer: {
+  oneButtonContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     alignSelf: 'center',
-    paddingBottom: 30,
-    paddingLeft: 15,
-    paddingRight: 15,
+  },
+  twoButtonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
     justifyContent: 'space-between',
   },
 };
 
-export const KidImageSetup = (
-  { parentName, kidName, kidImage, pickImage, nextStep },
+const imageSetView = (parentName, kidImage, nextStep) => (
+  <View style={style.background}>
+    <View style={style.container}>
+      <HeaderText>
+        Looking good {parentName}!
+      </HeaderText>
+
+      <Spacing height={32} />
+
+      <KidAvatar size={204} avatarURL={kidImage.uri} />
+    </View>
+    <View style={style.oneButtonContainer}>
+      <Button style={style.button} onPress={() => nextStep()}>
+        Next Step
+      </Button>
+    </View>
+  </View>
+);
+
+const imageNotSetView = (
+  parentName,
+  kidName,
+  kidImage,
+  pickImage,
+  nextStep,
 ) => (
   <View style={style.background}>
     <View style={style.container}>
-      {!kidImage.uri
-        ? <HeaderText>
-            {I18n.t('general.thanks')}, {parentName}!
-          </HeaderText>
-        : <HeaderText>
-            Looking good {parentName}!
-          </HeaderText>}
+      <HeaderText>
+        {I18n.t('general.thanks')}, {parentName}!
+      </HeaderText>
 
       <Spacing height={32} />
 
       <KidAvatar size={204} avatarURL={kidImage.uri} />
 
-      {!kidImage.uri &&
-        <View>
-          <Text style={style.bodyText}>
-            {I18n.t('setImage.setAPictureFor')} {kidName}.
-          </Text>
-          <Spacing height={32} />
+      <Text style={style.bodyText}>
+        {I18n.t('setImage.setAPictureFor')} {kidName}.
+      </Text>
+      <Spacing height={32} />
 
-          <Text style={style.bodyText}>
-            {I18n.t('setImage.dontWorry')}.
-          </Text>
-        </View>}
+      <Text style={style.bodyText}>
+        {I18n.t('setImage.dontWorry')}.
+      </Text>
     </View>
-    {!kidImage.uri
-      ? <View style={style.buttonContainer}>
-          <Button
-            style={style.button}
-            primary={false}
-            onPress={() => nextStep()}
-          >
-            {I18n.t('setImage.notNow')}
-          </Button>
-          <Button style={style.button} onPress={() => pickImage()}>
-            {I18n.t('setImage.chooseAPicture')}
-          </Button>
-        </View>
-      : <View style={style.buttonContainer}>
-          <Button style={style.button} onPress={() => nextStep()}>
-            Next Step
-          </Button>
-        </View>}
-
+    <View style={style.twoButtonContainer}>
+      <Button style={style.button} primary={false} onPress={() => nextStep()}>
+        {I18n.t('setImage.notNow')}
+      </Button>
+      <Button style={style.button} onPress={() => pickImage()}>
+        {I18n.t('setImage.chooseAPicture')}
+      </Button>
+    </View>
   </View>
 );
+
+export const KidImageSetup = (
+  { parentName, kidName, kidImage, pickImage, nextStep },
+) => {
+  if (kidImage.uri) return imageSetView(parentName, kidImage, nextStep);
+  return imageNotSetView(parentName, kidName, kidImage, pickImage, nextStep);
+};
 
 KidImageSetup.propTypes = {
   kidName: PropTypes.string.isRequired,

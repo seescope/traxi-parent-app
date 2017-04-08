@@ -1,43 +1,45 @@
-import 'react-native';
+import * as Firebase from 'firebase';
+import { Alert } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PasswordSetup
-  from '../../../App/Components/SetupCompletion/PasswordSetup';
+import {
+  PasswordSetup,
+  alertIfPasswordIsTooShort,
+  updateFirebaseProfile,
+  createFirebaseUser,
+} from '../../../App/Components/SetupCompletion/PasswordSetup';
 
-const createUser = jest.fn();
-const setEmail = jest.fn();
-const setPassword = jest.fn();
-const name = 'Name';
-const email = 'test@email.com';
+Alert.alert = jest.fn();
 
-it('Renders with loading', () => {
-  const loading = true;
+describe('NameSetup', () => {
+  it('Renders correctly', () => {
+    const setEmailFn = jest.fn();
+    const name = 'Chris';
+    const email = 'test@email.com';
 
-  const tree = renderer.create(
-    <PasswordSetup
-      name={name}
-      email={email}
-      loading={loading}
-      createUser={createUser}
-      setEmail={setEmail}
-      setPassword={setPassword}
-    />,
-  );
-  expect(tree.toJSON()).toMatchSnapshot();
-});
+    const tree = renderer.create(
+      <PasswordSetup name={name} email={email} setEmailFn={setEmailFn} />,
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
 
-it('Renders without loading', () => {
-  const loading = false;
+  it('alertIfPasswordIsTooShort()', () => {
+    expect(alertIfPasswordIsTooShort('password')).toBeFalsy();
+    expect(Alert.alert).not.toHaveBeenCalled();
+    expect(alertIfPasswordIsTooShort('short')).toBeTruthy();
+    expect(Alert.alert).toHaveBeenCalledWith(
+      'Password should be at least 6 characters',
+    );
+  });
 
-  const tree = renderer.create(
-    <PasswordSetup
-      name={name}
-      email={email}
-      loading={loading}
-      createUser={createUser}
-      setEmail={setEmail}
-      setPassword={setPassword}
-    />,
-  );
-  expect(tree.toJSON()).toMatchSnapshot();
+  it('updateFirebaseProfile()', () => {
+    //updateFirebaseProfile('Chris');
+    // expect(Firebase.auth().currentUser.updateProfile).toHaveBeenCalled();
+  });
+  it('saveProfileToAsyncStorage()', () => {});
+  it('createFirebaseUser()', () => {
+    createFirebaseUser('test@email.com', 'password');
+    expect(Firebase.auth().createUserWithEmailAndPassword).toHaveBeenCalled();
+  });
+  it('goToDashboard()', () => {});
 });

@@ -14,6 +14,31 @@ I18n.fallbacks = true;
 I18n.translations = Translation;
 
 export const getUUID = async () => {
+  // let UUID;
+  // AsyncStorage.getItem('profile')
+  //   .then(profileJSON => {
+  //     if (!profileJSON) {
+  //       Linking.getInitialURL().then(URL => {
+  //         if (!URL) return null;
+  //         UUID = URL.substring(
+  //           URL.indexOf('data=') + 5,
+  //           URL.indexOf('&apn=com.traxi'),
+  //         );
+  //         return { UUID, deeplink: true };
+  //       });
+  //     }
+  //
+  //     const profile = JSON.parse(profileJSON);
+  //     if (!profile.UUID) return null;
+  //
+  //     UUID = profile.UUID;
+  //
+  //     return { UUID, deeplink: false };
+  //   })
+  //   .catch(error => {
+  //     logError(`Error while getting the UUID: ${error.message}`);
+  //   });
+
   try {
     let UUID;
 
@@ -58,7 +83,8 @@ export const getProfile = async UUID => {
     Firebase.initializeApp(config);
 
     const ref = Firebase.database().ref(`parents/${UUID}/`);
-    const profile = await ref.once('value').then(snapshot => snapshot.val());
+
+    //const profile = await ref.once('value').then(snapshot => snapshot.val());
 
     Firebase.database().goOffline();
 
@@ -98,6 +124,7 @@ export default class extends React.Component {
       if (UUID) {
         // Previous user or new user with deeplink
         const { profile, deeplink } = await getProfile();
+
         if (deeplink) {
           this.setStateAsync({ deeplink: true });
         }
@@ -107,7 +134,7 @@ export default class extends React.Component {
             loading: false,
           });
         } else {
-          logError(`No profile found for ${UUID}. Continuing as new user.`);
+          //logError(`No profile found for ${UUID}. Continuing as new user.`);
           this.setStateAsync({ loading: false, deeplink: false });
         }
       } else {
@@ -115,8 +142,8 @@ export default class extends React.Component {
         this.setStateAsync({ loading: false, deeplink: false });
       }
     } catch (error) {
-      Alert.alert('Error fetching data from traxi.');
-      logError(`Error fetching profile: ${error.message}`);
+      //Alert.alert('Error fetching data from traxi.');
+      //logError(`Error fetching profile: ${error.message}`);
       this.setStateAsync({ loading: false, deeplink: false });
     }
   }
@@ -147,6 +174,6 @@ export default class extends React.Component {
       return <Loading />;
     }
 
-    return <ParentApp profile={profile} deeplink={deeplink} />;
+    return <ParentApp profile={profile} deeplink={true} />;
   }
 }

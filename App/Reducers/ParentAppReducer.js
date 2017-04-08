@@ -18,20 +18,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
       });
       return { ...state, step: nextStep };
     }
-    case 'UPDATE_PROFILE_NAME': {
-      const { name } = action;
-      const newProfile = state.profile;
-      newProfile.name = name;
-      return { ...state, profile: newProfile };
-    }
-    case 'UPDATE_SELECTED_KID': {
-      const { selectedKid } = action;
-      return { ...state, selectedKid };
-    }
-    case 'UPDATE_KIDS': {
-      const { kids } = action;
-      return { ...state, kids };
-    }
     case 'LOGGED_IN': {
       const { profile } = action;
       const parentName = firstName(profile.name);
@@ -145,6 +131,26 @@ const ParentAppReducer = (state = {}, action = {}) => {
         ...state,
         sceneName: scene.name,
       };
+    }
+    case 'UPDATE_PROFILE_NAME': {
+      const { name } = action;
+      const newProfile = state.profile;
+      newProfile.name = name;
+      return { ...state, profile: newProfile };
+    }
+    case 'UPDATE_PROFILE_EMAIL': {
+      const { email } = action;
+      const newProfile = state.profile;
+      newProfile.email = email;
+      return { ...state, profile: newProfile };
+    }
+    case 'UPDATE_SELECTED_KID': {
+      const { selectedKid } = action;
+      return { ...state, selectedKid };
+    }
+    case 'UPDATE_KIDS': {
+      const { kids } = action;
+      return { ...state, kids };
     }
     default: {
       return state;

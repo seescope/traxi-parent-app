@@ -9,16 +9,21 @@ jest.mock('Linking', () => ({
 import { getUUID, getProfile } from '../App';
 
 describe('App.js', () => {
-  it('getUUID() works with previous user having a profile in AsyncStorage', async () => {
-    AsyncStorage.getItem = () =>
-      Promise.resolve(JSON.stringify({ UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3' }));
+  it.only(
+    'getUUID() works with previous user having a profile in AsyncStorage',
+    async () => {
+      AsyncStorage.getItem = () =>
+        Promise.resolve(
+          JSON.stringify({ UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3' }),
+        );
 
-    const result = await getUUID();
-    expect(result).toEqual({
-      UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-      deeplink: false,
-    });
-  });
+      const result = await getUUID();
+      expect(result).toEqual({
+        UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
+        deeplink: false,
+      });
+    },
+  );
 
   it('getUUID() works with new user coming from a deeplink', async () => {
     AsyncStorage.getItem = () => Promise.resolve();

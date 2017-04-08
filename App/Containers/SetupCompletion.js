@@ -16,7 +16,7 @@ const updateName = name =>
     dispatch({ type: 'UPDATE_PROFILE_NAME', name });
   };
 
-const updateKidImage = (kidImage, selectedKid, kids) =>
+export const updateKidImage = (kidImage, selectedKid, kids) =>
   async dispatch => {
     let URI;
     if (!kidImage.uri) URI = 'http://i.imgur.com/52mRwuE.jpg';
@@ -36,12 +36,12 @@ const updateKidImage = (kidImage, selectedKid, kids) =>
     dispatch(updateSelectedKid(updatedKid));
 
     try {
-      await Firebase.database()
-        .ref(`kids/${updatedKid.UUID}`)
-        .update(updatedKid);
-      await Firebase.database()
-        .ref(`parents/${this.state.UUID}/kids`)
-        .update(updatedKids);
+      await Promise.all([
+        Firebase.database().ref(`kids/${updatedKid.UUID}`).update(updatedKid),
+        Firebase.database()
+          .ref(`parents/${this.props.UUID}/kids`)
+          .update(updatedKids),
+      ]);
 
       Firebase.database().goOffline();
     } catch (error) {
@@ -53,24 +53,22 @@ class SetupCompletion extends React.Component {
   constructor(props) {
     super(props);
 
-    const { email, selectedKid, kids, UUID } = props;
+    const { email } = props;
 
     this.state = {
-      step: 'nameSetup',
+      step: 'kidImageSetup',
       name: '',
       email,
       password: '',
       loading: false,
       kidImage: {},
-      selectedKid,
-      kids,
-      UUID,
     };
   }
 
-  setPassword = password => {
+  setName = name => {
+    this.props.updateNameFn(name);
     this.setState({
-      password,
+      name,
     });
   };
 
@@ -80,10 +78,9 @@ class SetupCompletion extends React.Component {
     });
   };
 
-  setName = name => {
-    this.props.updateNameFn(name);
+  setPassword = password => {
     this.setState({
-      name,
+      password,
     });
   };
 
@@ -136,6 +133,33 @@ class SetupCompletion extends React.Component {
       });
       Alert.alert('Password should be at least 6 characters');
     } else {
+      // try {
+      //   await Firebase.auth().createUserWithEmailAndPassword(email, password);
+      //
+      //   const user = Firebase.auth().currentUser;
+      //
+      //   try {
+      //     await user.updateProfile({
+      //       displayName: name,
+      //     });
+      //
+      //     await AsyncStorage.setItem(
+      //       'profile',
+      //       JSON.stringify({
+      //         UUID: this.props.UUID,
+      //       }),
+      //     );
+      //     Actions.dashboard({ type: 'replace' });
+      //   } catch (error) {
+      //     logError('Error while creating a new user from deeplink', error);
+      //   }
+      // } catch (error) {
+      //   this.setState({
+      //     loading: false,
+      //   });
+      //   Alert.alert(error.message);
+      // }
+
       Firebase.auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
@@ -149,7 +173,7 @@ class SetupCompletion extends React.Component {
               AsyncStorage.setItem(
                 'profile',
                 JSON.stringify({
-                  UUID: this.state.UUID,
+                  UUID: this.props.UUID,
                 }),
               );
               Actions.dashboard({ type: 'replace' });
@@ -181,8 +205,8 @@ class SetupCompletion extends React.Component {
     } else if (step === 'kidImageSetup') {
       this.props.updateKidImageFn(
         this.state.kidImage,
-        this.state.selectedKid,
-        this.state.kids,
+        this.props.selectedKid,
+        this.props.kids,
       );
 
       this.setState({
@@ -194,7 +218,7 @@ class SetupCompletion extends React.Component {
   render() {
     let current;
     if (this.state.step === 'nameSetup') {
-      current = <NameSetup nextStep={this.nextStep} setName={this.setName} />;
+      current = <NameSetup setName={this.setName} nextStep={this.nextStep} />;
     } else if (this.state.step === 'kidImageSetup') {
       current = (
         <KidImageSetup
@@ -209,9 +233,9 @@ class SetupCompletion extends React.Component {
           name={this.state.name}
           email={this.state.email}
           loading={this.state.loading}
-          createUser={this.createFirebaseUser}
           setPassword={this.setPassword}
           setEmail={this.setEmail}
+          createUser={this.createFirebaseUser}
         />
       );
     }
