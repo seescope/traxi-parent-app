@@ -9,19 +9,59 @@ import ImagePicker from 'react-native-image-picker';
 import SetImage, { selectImage } from '../../App/Containers/SetImage';
 
 const mockStore = configureStore([thunk]);
-const testStore = mockStore({
+const testStoreWithoutDeeplink = mockStore({
   parentName: 'Name',
-  selectedKid: { name: 'Jeff Goldstein' },
+  selectedKid: {
+    UUID: 'Kid-UUID',
+    name: 'Jeff Goldstein',
+  },
+  deeplink: false,
+  kids: [
+    {
+      UUID: 'Kid-UUID',
+    },
+  ],
+  profile: {
+    UUID: 'Parent-UUID',
+  },
 });
 
-const SetImageComponent = () => (
-  <Provider store={testStore}>
+const testStoreWithDeeplink = mockStore({
+  parentName: 'Name',
+  selectedKid: {
+    UUID: 'Kid-UUID',
+    name: 'Jeff Goldstein',
+  },
+  deeplink: true,
+  kids: [
+    {
+      UUID: 'Kid-UUID',
+    },
+  ],
+  profile: {
+    UUID: 'Parent-UUID',
+  },
+});
+
+const SetImageComponentWithDeeplink = () => (
+  <Provider store={testStoreWithDeeplink}>
     <SetImage />
   </Provider>
 );
 
-it('renders the <SetImage> component', () => {
-  const tree = renderer.create(<SetImageComponent />).toJSON();
+const SetImageComponentWithoutDeeplink = () => (
+  <Provider store={testStoreWithoutDeeplink}>
+    <SetImage />
+  </Provider>
+);
+
+it('renders the <SetImage> component correctly without deeplink', () => {
+  const tree = renderer.create(<SetImageComponentWithoutDeeplink />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders the <SetImage> component correctly with deeplink', () => {
+  const tree = renderer.create(<SetImageComponentWithDeeplink />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 

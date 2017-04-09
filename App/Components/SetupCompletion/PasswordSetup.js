@@ -10,7 +10,6 @@ import TextInput from '../../Components/TextInput';
 import Spacing from '../../Components/Spacing';
 import LoadingIndicator from '../../Components/LoadingIndicator';
 import { WHITE, TRAXI_BLUE } from '../../Constants/Colours';
-import { logError } from '../../Utils';
 
 const style = {
   background: {
@@ -81,7 +80,7 @@ export const createFirebaseUser = (email, password) => {
     });
 };
 
-const goToDashboard = () => {
+export const goToDashboard = () => {
   Actions.dashboard({ type: 'replace' });
 };
 

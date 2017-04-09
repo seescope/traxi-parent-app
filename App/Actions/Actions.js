@@ -19,13 +19,3 @@ export const deviceUpdated = selectedKid => ({
 export const NEXT_STEP = { type: 'NEXT_STEP' };
 
 export const RESET_STATE = { type: 'RESET_STATE' };
-
-export const updateKids = kids => ({
-  type: 'UPDATE_KIDS',
-  kids,
-});
-
-export const updateSelectedKid = selectedKid => ({
-  type: 'UPDATE_SELECTED_KID',
-  selectedKid,
-});

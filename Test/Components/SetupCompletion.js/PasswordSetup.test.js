@@ -1,5 +1,6 @@
 import * as Firebase from 'firebase';
-import { Alert } from 'react-native';
+import { Alert, AsyncStorage } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {
@@ -7,9 +8,13 @@ import {
   alertIfPasswordIsTooShort,
   updateFirebaseProfile,
   createFirebaseUser,
+  saveProfileToAsyncStorage,
+  goToDashboard,
 } from '../../../App/Components/SetupCompletion/PasswordSetup';
 
 Alert.alert = jest.fn();
+Actions.dashboard = jest.fn();
+AsyncStorage.setItem = jest.fn();
 
 describe('NameSetup', () => {
   it('Renders correctly', () => {
@@ -33,13 +38,25 @@ describe('NameSetup', () => {
   });
 
   it('updateFirebaseProfile()', () => {
-    //updateFirebaseProfile('Chris');
-    // expect(Firebase.auth().currentUser.updateProfile).toHaveBeenCalled();
+    //TODO
   });
-  it('saveProfileToAsyncStorage()', () => {});
+
+  it('saveProfileToAsyncStorage()', () => {
+    saveProfileToAsyncStorage('UUID');
+    expect(AsyncStorage.setItem).toHaveBeenCalledWith(
+      'profile',
+      JSON.stringify({
+        UUID: 'UUID',
+      }),
+    );
+  });
+
   it('createFirebaseUser()', () => {
-    createFirebaseUser('test@email.com', 'password');
-    expect(Firebase.auth().createUserWithEmailAndPassword).toHaveBeenCalled();
+    //TODO
   });
-  it('goToDashboard()', () => {});
+
+  it('goToDashboard()', () => {
+    goToDashboard();
+    expect(Actions.dashboard).toHaveBeenCalled();
+  });
 });

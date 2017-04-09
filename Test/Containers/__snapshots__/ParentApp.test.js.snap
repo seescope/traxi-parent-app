@@ -20,6 +20,7 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
   />
   <View
     component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
@@ -36,7 +37,12 @@ exports[`<ParentApp /> renders the Parent with the AreYouReady component if no k
   />
   <View
     component={[Function]}
-    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
   />
   <View
     component={[Function]}
@@ -65,6 +71,7 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
   />
   <View
     component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
@@ -81,7 +88,12 @@ exports[`<ParentApp /> renders the Parent with the ReportHome component active i
   />
   <View
     component={[Function]}
-    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
   />
   <View
     component={[Function]}
@@ -110,6 +122,7 @@ exports[`<ParentApp /> renders the Parent with the SetupCompletion component if 
   />
   <View
     component={[Function]}
+    initial={true}
   />
   <View
     component={[Function]}
@@ -126,7 +139,12 @@ exports[`<ParentApp /> renders the Parent with the SetupCompletion component if 
   />
   <View
     component={[Function]}
-    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
   />
   <View
     component={[Function]}
@@ -155,6 +173,7 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
   />
   <View
     component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
@@ -171,7 +190,12 @@ exports[`<ParentApp /> renders the Parent with the SplashScreen component active
   />
   <View
     component={[Function]}
-    initial={false}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
   />
   <View
     component={[Function]}

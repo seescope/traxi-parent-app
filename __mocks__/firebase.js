@@ -36,5 +36,5 @@ export const auth = () => ({
   currentUser: {
     updateProfile: () => jest.fn(),
   },
-  createUserWithEmailAndPassword: () => jest.fn(() => Promise),
+  createUserWithEmailAndPassword: () => Promise.resolve('ok'),
 });

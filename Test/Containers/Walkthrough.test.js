@@ -18,7 +18,12 @@ const TEST_STATE = {
   parentName: 'Jeff Bezos',
   selectedKid: TEST_KID,
   step: 1,
-  profile: { user_id: 1 },
+  profile: {
+    UUID: 'Parent-UUID',
+    user_id: 1,
+  },
+  deeplink: false,
+  kids: [TEST_KID],
   nextStep: () => {},
 };
 

@@ -9,7 +9,7 @@ import {
 } from '../../../App/Components/SetupCompletion/NameSetup';
 
 Alert.alert = jest.fn();
-Actions.kidImageSetup = jest.fn();
+Actions.setImage = jest.fn();
 
 describe('NameSetup', () => {
   it('Renders correctly', () => {
@@ -28,6 +28,6 @@ describe('NameSetup', () => {
 
   it('nextStep() goes to kidImageSetup when there is a name ', () => {
     nextStep('Chris');
-    expect(Actions.kidImageSetup).toHaveBeenCalled();
+    expect(Actions.setImage).toHaveBeenCalled();
   });
 });

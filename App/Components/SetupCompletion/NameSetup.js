@@ -35,9 +35,11 @@ const style = {
 };
 
 export const nextStep = name => {
-  //if (name) Actions.kidImageSetup({ type: 'replace' });
-  if (name) Actions.passwordSetup({ type: 'replace' });
-  else Alert.alert('Please enter your name');
+  if (name) {
+    Actions.setImage({ type: 'replace' });
+  } else {
+    Alert.alert('Please enter your name');
+  }
 };
 
 const setName = name =>
@@ -69,13 +71,18 @@ export const NameSetup = ({ name, setNameFn }) => (
 );
 
 NameSetup.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   setNameFn: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  name: state.profile.name,
-});
+const mapStateToProps = state => {
+  console.log(state);
+
+  return {};
+  // return {
+  //   name: state.profile.name,
+  // };
+};
 
 const mapDispatchToProps = {
   setNameFn: setName,

@@ -13,63 +13,45 @@ import OneSignal from 'react-native-onesignal';
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
-export const getUUID = async () => {
-  // let UUID;
-  // AsyncStorage.getItem('profile')
-  //   .then(profileJSON => {
-  //     if (!profileJSON) {
-  //       Linking.getInitialURL().then(URL => {
-  //         if (!URL) return null;
-  //         UUID = URL.substring(
-  //           URL.indexOf('data=') + 5,
-  //           URL.indexOf('&apn=com.traxi'),
-  //         );
-  //         return { UUID, deeplink: true };
-  //       });
-  //     }
-  //
-  //     const profile = JSON.parse(profileJSON);
-  //     if (!profile.UUID) return null;
-  //
-  //     UUID = profile.UUID;
-  //
-  //     return { UUID, deeplink: false };
-  //   })
-  //   .catch(error => {
-  //     logError(`Error while getting the UUID: ${error.message}`);
-  //   });
+const getUUIDFromProfile = profileJSON => {
+  if (!profileJSON) return null;
 
-  try {
-    let UUID;
+  const profile = JSON.parse(profileJSON);
+  if (!profile || !profile.UUID) return null;
+  const { UUID } = profile;
 
-    const profileJSON = await AsyncStorage.getItem('profile'); // Previous user
-
-    if (profileJSON) {
-      const profile = JSON.parse(profileJSON);
-      if (profile !== null && profile.UUID) {
-        UUID = profile.UUID;
-      }
-
-      return { UUID, deeplink: false };
-    }
-
-    const URL = await Linking.getInitialURL(); // New user from deeplink
-    if (URL) {
-      UUID = URL.substring(
-        URL.indexOf('data=') + 5,
-        URL.indexOf('&apn=com.traxi'),
-      );
-      return { UUID, deeplink: true };
-    }
-
-    return null;
-  } catch (error) {
-    logError(`Error while getting the UUID: ${error.message}`);
-    return null;
-  }
+  return { UUID, deeplink: false };
 };
 
-export const getProfile = async UUID => {
+const parseURL = URL => {
+  if (!URL) return null;
+  const UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/;
+  const match = URL.match(UUID_REGEX);
+
+  if (!match) return null;
+
+  return match[0];
+};
+
+const getUUIDFromDeeplink = () =>
+  Linking.getInitialURL().then(URL => {
+    const UUID = parseURL(URL);
+    if (!UUID) return null;
+
+    return { UUID, deeplink: true };
+  });
+
+export const getUUID = () =>
+  AsyncStorage.getItem('profile').then(profileJSON => {
+    const UUIDFromProfile = getUUIDFromProfile(profileJSON);
+
+    if (UUIDFromProfile) {
+      return UUIDFromProfile;
+    }
+    return getUUIDFromDeeplink();
+  });
+
+const getProfile = UUID => {
   try {
     const config = {
       apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
@@ -84,11 +66,11 @@ export const getProfile = async UUID => {
 
     const ref = Firebase.database().ref(`parents/${UUID}/`);
 
-    //const profile = await ref.once('value').then(snapshot => snapshot.val());
-
-    Firebase.database().goOffline();
-
-    return profile;
+    return ref.once('value').then(snapshot => {
+      Firebase.database().goOffline();
+      const profile = snapshot.val();
+      return profile;
+    });
   } catch (error) {
     logError(`Error while getting the profile from Firebase: ${error.message}`);
     return null;
@@ -120,10 +102,10 @@ export default class extends React.Component {
 
   async componentDidMount() {
     try {
-      const UUID = await getUUID();
+      const UUID = getUUID();
       if (UUID) {
         // Previous user or new user with deeplink
-        const { profile, deeplink } = await getProfile();
+        const { profile, deeplink } = getProfile();
 
         if (deeplink) {
           this.setStateAsync({ deeplink: true });
@@ -134,7 +116,7 @@ export default class extends React.Component {
             loading: false,
           });
         } else {
-          //logError(`No profile found for ${UUID}. Continuing as new user.`);
+          logError(`No profile found for ${UUID}. Continuing as new user.`);
           this.setStateAsync({ loading: false, deeplink: false });
         }
       } else {
@@ -142,8 +124,8 @@ export default class extends React.Component {
         this.setStateAsync({ loading: false, deeplink: false });
       }
     } catch (error) {
-      //Alert.alert('Error fetching data from traxi.');
-      //logError(`Error fetching profile: ${error.message}`);
+      Alert.alert('Error fetching data from traxi.');
+      logError(`Error fetching profile: ${error.message}`);
       this.setStateAsync({ loading: false, deeplink: false });
     }
   }
@@ -174,6 +156,6 @@ export default class extends React.Component {
       return <Loading />;
     }
 
-    return <ParentApp profile={profile} deeplink={true} />;
+    return <ParentApp profile={profile} deeplink={deeplink} />;
   }
 }

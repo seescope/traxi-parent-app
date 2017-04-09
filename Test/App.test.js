@@ -1,54 +1,68 @@
-import { AsyncStorage, Linking } from 'react-native';
-jest.mock('Linking', () => ({
-  getInitialURL: jest.fn(),
-  addEventListener: jest.fn(),
-  removeEventListener: jest.fn(),
-  openURL: jest.fn(),
-  canOpenURL: jest.fn(),
-}));
-import { getUUID, getProfile } from '../App';
+import { AsyncStorage, Linking, NativeModules } from 'react-native';
+import { getUUID } from '../App.js';
 
-describe('App.js', () => {
-  it.only(
-    'getUUID() works with previous user having a profile in AsyncStorage',
-    async () => {
-      AsyncStorage.getItem = () =>
-        Promise.resolve(
-          JSON.stringify({ UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3' }),
-        );
+const TEST_UUID = 'af398e76-0de9-4980-b5ca-2f254be164fd';
+const TEST_PROFILE_JSON = JSON.stringify({ UUID: TEST_UUID });
+const TEST_URL = `https://c7g74.app.goo.gl/?link=http://www.gettraxi.com/?data=${TEST_UUID}&apn=com.traxi&ibi=com.traxi.app&isi=1195455850`;
 
-      const result = await getUUID();
-      expect(result).toEqual({
-        UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-        deeplink: false,
-      });
-    },
-  );
+describe('App', () => {
+  it('getUUID() finds the UUID when it is available from AsyncStorage', done => {
+    AsyncStorage.getItem = () => Promise.resolve(TEST_PROFILE_JSON);
 
-  it('getUUID() works with new user coming from a deeplink', async () => {
-    AsyncStorage.getItem = () => Promise.resolve();
-    Linking.getInitialURL = () =>
-      Promise.resolve(
-        'https://c7g74.app.goo.gl/?link=http://www.gettraxi.com/?data=YwS0vJ8OE8N6yenxHaV6PdMVLbG3&apn=com.traxi&ibi=com.traxi.app&isi=1195455850',
-      );
-
-    const result = await getUUID();
-    expect(result).toEqual({
-      UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-      deeplink: true,
-    });
+    getUUID()
+      .then(result => {
+        expect(result).toEqual({ UUID: TEST_UUID, deeplink: false });
+        done();
+      })
+      .catch(done.fail);
   });
 
-  it('getUUID() send back null for new users', async () => {
+  it('getUUID() finds the UUID from deeplink when it is not present in AsyncStorage', done => {
     AsyncStorage.getItem = () => Promise.resolve();
+
+    // This module is initialised strangely.
+    NativeModules.LinkingManager = {
+      getInitialURL: () => Promise.resolve(TEST_URL),
+    };
+    Linking.getInitialURL = () => Promise.resolve(TEST_URL);
+
+    getUUID()
+      .then(result => {
+        expect(result).toEqual({ UUID: TEST_UUID, deeplink: true });
+        done();
+      })
+      .catch(done.fail);
+  });
+
+  it('getUUID() returns null if there is no profile in AsyncStorage and the deeplink is invalid', done => {
+    AsyncStorage.getItem = () => Promise.resolve();
+
+    // This module is initialised strangely.
+    NativeModules.LinkingManager = {
+      getInitialURL: () => Promise.resolve('nonsenseurl'),
+    };
+    Linking.getInitialURL = () => Promise.resolve('nonsenseurl');
+
+    getUUID()
+      .then(result => {
+        expect(result).toEqual(null);
+        done();
+      })
+      .catch(done.fail);
+  });
+
+  it('getUUID() returns null if there is no profile in AsyncStorage and there is no deeplink', done => {
+    AsyncStorage.getItem = () => Promise.resolve();
+
+    // This module is initialised strangely.
+    NativeModules.LinkingManager = { getInitialURL: () => Promise.resolve() };
     Linking.getInitialURL = () => Promise.resolve();
 
-    const result = await getUUID();
-    expect(result).toBe(null);
-  });
-
-  it('getProfile()', async () => {
-    const profile = await getProfile('UUID');
-    expect(profile).toMatchSnapshot();
+    getUUID()
+      .then(result => {
+        expect(result).toEqual(null);
+        done();
+      })
+      .catch(done.fail);
   });
 });
