@@ -138,12 +138,6 @@ const ParentAppReducer = (state = {}, action = {}) => {
       newProfile.name = name;
       return { ...state, profile: newProfile };
     }
-    case 'UPDATE_PROFILE_EMAIL': {
-      const { email } = action;
-      const newProfile = state.profile;
-      newProfile.email = email;
-      return { ...state, profile: newProfile };
-    }
     default: {
       return state;
     }

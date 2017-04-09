@@ -36,11 +36,6 @@ const style = {
   },
 };
 
-const setEmail = email =>
-  dispatch => {
-    dispatch({ type: 'UPDATE_PROFILE_EMAIL', email });
-  };
-
 export const alertIfPasswordIsTooShort = password => {
   if (password.length < 6) {
     Alert.alert('Password should be at least 6 characters');
@@ -50,11 +45,9 @@ export const alertIfPasswordIsTooShort = password => {
 };
 
 export const updateFirebaseProfile = name => {
-  Firebase.auth()
-    .currentUser.updateProfile({
-      displayName: name,
-    })
-    .then(() => {});
+  Firebase.auth().currentUser.updateProfile({
+    displayName: name,
+  });
 };
 
 export const saveProfileToAsyncStorage = UUID => {
@@ -66,32 +59,31 @@ export const saveProfileToAsyncStorage = UUID => {
   );
 };
 
+export const goToDashboard = () => {
+  Actions.dashboard({ type: 'replace' });
+};
+
 export const createFirebaseUser = (email, password) => {
   Firebase.auth()
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
       updateFirebaseProfile();
       saveProfileToAsyncStorage();
-      return true;
+      goToDashboard();
     })
     .catch(error => {
       Alert.alert(error.message); // Useful to show password problems
-      return false;
     });
-};
-
-export const goToDashboard = () => {
-  Actions.dashboard({ type: 'replace' });
 };
 
 export class PasswordSetup extends React.Component {
   constructor(props) {
     super(props);
 
-    const { name } = props;
+    const { email } = props;
 
     this.state = {
-      name,
+      email,
       password: '',
       isLoading: false,
     };
@@ -100,6 +92,12 @@ export class PasswordSetup extends React.Component {
   setPassword = password => {
     this.setState({
       password,
+    });
+  };
+
+  setEmail = email => {
+    this.setState({
+      email,
     });
   };
 
@@ -113,29 +111,20 @@ export class PasswordSetup extends React.Component {
 
   createUser = () => {
     this.startLoadingIndicator();
-    const alerted = alertIfPasswordIsTooShort();
+    const alerted = alertIfPasswordIsTooShort(this.state.password);
     if (alerted) {
       this.stopLoadingIndicator();
       return;
     }
-    const userCreated = createFirebaseUser(
-      this.props.email,
-      this.state.password,
-      this.state.name,
-    );
-    if (!userCreated) {
-      this.stopLoadingIndicator();
-      return;
-    }
-    this.stopLoadingIndicator();
-    goToDashboard();
+
+    createFirebaseUser(this.state.email, this.state.password, this.props.name);
   };
 
   render() {
     return (
       <View style={style.background}>
         <View style={style.container}>
-          <HeaderText>Last step, {this.state.name} !</HeaderText>
+          <HeaderText>Last step, {this.props.name} !</HeaderText>
           <Spacing height={32} />
           <Text style={style.bodyText}>Your email address:</Text>
           <Spacing height={10} />
@@ -145,7 +134,7 @@ export class PasswordSetup extends React.Component {
             }}
             value={this.state.email}
             keyboardType="email-address"
-            onChangeText={text => setEmail(text)}
+            onChangeText={text => this.setEmail(text)}
           />
           <Spacing height={32} />
           <Text style={style.bodyText}>Choose a password:</Text>
@@ -182,8 +171,4 @@ const mapStateToProps = state => ({
   email: state.profile.email,
 });
 
-const mapDispatchToProps = {
-  setEmailFn: setEmail,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PasswordSetup);
+export default connect(mapStateToProps)(PasswordSetup);

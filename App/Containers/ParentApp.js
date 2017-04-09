@@ -117,12 +117,12 @@ class ParentApp extends React.Component {
           <Scene key="areYouReady" component={AreYouReady} />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
+          <Scene key="setName" component={SetName} />
           <Scene
-            key="setName"
+            key="setImage"
             initial={shouldShowSetupCompletion}
-            component={SetName}
+            component={SetImage}
           />
-          <Scene key="setImage" component={SetImage} />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene

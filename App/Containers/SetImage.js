@@ -111,7 +111,7 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
           source.uri,
         );
         const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
-        updateFirebaseKid(UUID, updatedKids, updatedSelectedKid);
+        updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
         Actions.kidImageSet({ type: 'replace' });
       }
     });
