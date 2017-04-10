@@ -56,7 +56,7 @@ exports[`Renders correctly 1`] = `
         }
       }
     >
-      What's your name
+      What is your name
     </Text>
     <View
       style={
