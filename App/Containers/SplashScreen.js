@@ -14,6 +14,7 @@ import { logError } from '../Utils';
 
 const { height } = Dimensions.get('window');
 const handleError = error => {
+  console.error('Error logging in or saving profile', error);
   logError(`Error logging in: ${error}`);
 };
 

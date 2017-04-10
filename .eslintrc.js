@@ -6,7 +6,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'react-native', 'jest'],
+  plugins: ['react', 'react-native', 'jest', 'prettier'],
   extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   env: {
     es6: true,
@@ -22,7 +22,7 @@ module.exports = {
     'react-native/no-color-literals': 2,
     'import/no-unresolved': 1,
     'react/jsx-indent': 1,
-    'jest/no-exclusive-tests': 2,
+    'jest/no-focused-tests': 2,
     'jest/no-identical-title': 2,
   },
   globals: {

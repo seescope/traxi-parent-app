@@ -25,9 +25,7 @@ describe('LoginWithMethod', () => {
 
           done();
         })
-        .catch(e => {
-          done.fail(e);
-        });
+        .catch(done.fail);
     },
   );
 });
