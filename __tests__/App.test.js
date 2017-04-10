@@ -29,14 +29,6 @@ it('renders Dashboard when there is a profile that has kids in Firebase', () => 
   expect(AsyncStorage.setItem).not.toHaveBeenCalled();
 });
 
-it('renders Intro when there is no profile', () => {
-  AsyncStorage.getItem = () => ({
-    then: callback => callback(null),
-  });
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 xit('renders AreYouReady when there is a profile that has a UUID, but no kids in Firebase', () => {
   mockOnce.setData({
     name: 'Test',

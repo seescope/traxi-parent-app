@@ -7,7 +7,7 @@ module.exports = {
     },
   },
   extends: ['airbnb', 'prettier'],
-  plugins: ['react', 'react-native'],
+  plugins: ['react', 'react-native', 'jest'],
   env: {
     es6: true,
     jest: true,

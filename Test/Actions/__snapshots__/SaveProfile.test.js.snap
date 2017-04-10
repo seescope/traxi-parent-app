@@ -4,7 +4,7 @@ exports[`saveProfile saves the profile to AsyncStorage 1`] = `
 Array [
   Array [
     "profile",
-    "{\\"UUID\\":\\"arbostrisand\\",\\"token\\":\\"mock-token\\"}",
+    "{\\"UUID\\":\\"arbostrisand\\"}",
   ],
 ]
 `;
@@ -14,7 +14,6 @@ Array [
   Array [
     Object {
       "UUID": "arbostrisand",
-      "token": "mock-token",
     },
     [Function],
   ],
