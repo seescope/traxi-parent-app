@@ -4165,13 +4165,13 @@ react-native-i18n@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-1.0.0.tgz#0c407d9ebb846aae1aa5e05de6503008553f02fd"
 
-"react-native-image-picker@https://github.com/traxicorp/react-native-image-picker":
-  version "0.24.1"
-  resolved "https://github.com/traxicorp/react-native-image-picker#e4dc969bf69ada0dca73630de9fc379bdb3c3466"
+react-native-image-picker@^0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.2.tgz#1280627d61438027284c97d0a8892b7d3777f2e3"
 
-react-native-intercom@^5.0.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/react-native-intercom/-/react-native-intercom-5.6.0.tgz#2654306c82ae103441b3ee4b25db7d32ef086b8f"
+react-native-intercom@5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-intercom/-/react-native-intercom-5.8.0.tgz#32382b5da3372f2d99c3160fd165791d10683073"
 
 react-native-linear-gradient@^2.0.0:
   version "2.0.0"
