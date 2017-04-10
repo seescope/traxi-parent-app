@@ -21,7 +21,10 @@ const profile = {
   token: 'cjj6guKMTME:APA91bFkM3nynjnD5vqxxeYG42t4P6PThP4N1F7VmhNbRW_W_ReCqGtoiDtwG99K4GmD6_Sh_VuCFCR46GwXH314YfdciS0OTGdwe0OGxYvT2RiYhozwcmlLI2TyHn78z26Kw7SYquCD',
 };
 
+export const mockSet = jest.fn();
+
 export const initializeApp = () => {};
+
 export const database = () => ({
   ref: () => ({
     once: () =>
@@ -29,9 +32,11 @@ export const database = () => ({
         val: () => profile,
       }),
     update: () => jest.fn(),
+    set: mockSet,
   }),
   goOffline: () => {},
 });
+
 export const auth = () => ({
   currentUser: {
     updateProfile: () => jest.fn(),

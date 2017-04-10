@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`saveProfile saves the profile to AsyncStorage 1`] = `
+exports[`saveProfile saves the profile to AsyncStorage and Firebase 1`] = `
 Array [
   Array [
     "profile",
@@ -9,13 +9,12 @@ Array [
 ]
 `;
 
-exports[`saveProfile saves the profile to AsyncStorage 2`] = `
+exports[`saveProfile saves the profile to AsyncStorage and Firebase 2`] = `
 Array [
   Array [
     Object {
       "UUID": "arbostrisand",
     },
-    [Function],
   ],
 ]
 `;
