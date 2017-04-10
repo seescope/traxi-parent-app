@@ -63,8 +63,6 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new NotificationManagerPackage(),
-        new VPNClientPackage(),
         new MainReactPackage(),
             new ReactNativeOneSignalPackage(),
             new ReactNativeI18n(),
@@ -77,7 +75,6 @@ public class MainApplication extends Application implements ReactApplication {
             new ImagePickerPackage(),
             new SvgPackage(),
             new ReactMaterialKitPackage(),
-        new ReactNativeContacts(),
         new VectorIconsPackage(),
         new LinearGradientPackage(),
         new AuthenticationPackage()

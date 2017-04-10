@@ -34,20 +34,6 @@
 
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
-      <service
-        android:name=".TraxiFirebaseMessagingService">
-        <intent-filter>
-          <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-        </intent-filter>
-      </service>
-
-      <service
-        android:name=".TraxiFirebaseInstanceIDService">
-        <intent-filter>
-          <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-        </intent-filter>
-      </service>
-
       <meta-data
         android:name="io.fabric.ApiKey"
         android:value="f404ee355a5e1e71ad21fee38c1e5f00877eef07"
