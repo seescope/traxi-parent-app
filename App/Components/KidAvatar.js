@@ -10,22 +10,23 @@ const stateColours = {
   neutral: WHITE,
 };
 
-const getKidAvatarStyle = (size, state) => StyleSheet.create({
-  image: {
-    height: size,
-    width: size,
-    borderRadius: size / 2,
-    shadowColor: SHADOW_COLOR,
-    shadowOffset: { height: 2 },
-    shadowRadius: 5,
-    marginBottom: size / 10,
-    borderColor: stateColours[state],
-    borderWidth: size / 35,
-  },
-});
+const getKidAvatarStyle = (size, state) =>
+  StyleSheet.create({
+    image: {
+      height: size,
+      width: size,
+      borderRadius: size / 2,
+      shadowColor: SHADOW_COLOR,
+      shadowOffset: { height: 2 },
+      shadowRadius: 5,
+      marginBottom: size / 10,
+      borderColor: stateColours[state],
+      borderWidth: size / 35,
+    },
+  });
 
 const getAvatarURL = avatarURL => {
-  if (avatarURL !== '') return { uri: avatarURL };
+  if (avatarURL !== '' && avatarURL !== undefined) return { uri: avatarURL };
   return require('../Images/placeholder_avatar.png');
 };
 

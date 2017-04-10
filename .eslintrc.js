@@ -6,11 +6,11 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ['airbnb', 'prettier'],
-  plugins: ['react', 'react-native', 'jest'],
+  plugins: ['react', 'react-native', 'jest', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   env: {
     es6: true,
-    jest: true,
+    'jest/globals': true,
   },
   rules: {
     strict: 0,

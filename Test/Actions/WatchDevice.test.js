@@ -1,29 +1,24 @@
-jest.mock(
-  '../../App/Actions/SaveProfile',
-  () => jest.fn(() => Promise.resolve()),
-);
+jest.mock('../../App/Actions/SaveProfile', () =>
+  jest.fn(() => Promise.resolve()));
 global.Promise = require.requireActual('promise');
 
-import { mockOn } from 'firebase';
+import { mockOn } from 'firebase-old';
 import { TEST_KID } from '../Mocks';
 import Analytics from 'react-native-analytics';
 import watchDevice from '../../App/Actions/WatchDevice';
 import saveProfile from '../../App/Actions/SaveProfile';
 
-it(
-  'registers a listener with Firebase that dispatches a DEVICE_UPDATED action',
-  () => {
-    const mockGetState = () => ({ selectedKid: TEST_KID });
-    const mockDispatch = jest.fn();
+it('registers a listener with Firebase that dispatches a DEVICE_UPDATED action', () => {
+  const mockGetState = () => ({ selectedKid: TEST_KID });
+  const mockDispatch = jest.fn();
 
-    // Exercise
-    watchDevice()(mockDispatch, mockGetState);
+  // Exercise
+  watchDevice()(mockDispatch, mockGetState);
 
-    // Assert
-    expect(mockOn.mock.calls).toMatchSnapshot();
-    expect(mockDispatch.mock.calls).toMatchSnapshot();
-  },
-);
+  // Assert
+  expect(mockOn.mock.calls).toMatchSnapshot();
+  expect(mockDispatch.mock.calls).toMatchSnapshot();
+});
 
 it('handles when the device has been installed', () => {
   const mockGetState = () => ({
