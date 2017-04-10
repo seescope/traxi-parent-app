@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import Firebase from 'firebase';
+import Firebase from 'firebase-old';
 
 const saveProfileToFirebase = newProfile => new Promise((resolve, reject) => {
   const firebase = new Firebase(
