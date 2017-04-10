@@ -87,7 +87,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "23.0.2"
 
     lintOptions {
       checkReleaseBuilds false
@@ -185,7 +185,6 @@ dependencies {
     compile project(':react-native-image-picker')
     compile project(':react-native-svg')
     compile project(':react-native-material-kit')
-    compile 'com.android.support:appcompat-v7:23.2.0'
     compile project(':react-native-contacts')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
@@ -200,6 +199,7 @@ dependencies {
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.facebook.react:react-native:+"  // From node_modules
+    compile 'com.android.support:appcompat-v7:23.2.0'
 
     // Mixpanel
     compile 'com.segment.analytics.android.integrations:mixpanel:+'

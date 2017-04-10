@@ -13,17 +13,6 @@ import OneSignal from 'react-native-onesignal';
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
-const checkResult = result => {
-  // A UUID was found, but no profile was in Firebase. This is very odd, so we'll just continue as a new user.
-  if (!result.profile) {
-    logError(`No profile found for ${result.UUID}. Continuing as new user.`);
-    return null;
-  }
-
-  return result;
-};
-
-
 export const getInitialState = () => getUUID()
   .then((result) => {
     // No UUID found. This is a new user.
@@ -32,15 +21,14 @@ export const getInitialState = () => getUUID()
     const { UUID, deeplink } = result;
 
     // Get the user's profile and return it.
-    return getProfile(result.UUID).then(profile => ({
+    return getProfile(UUID).then(profile => ({
       profile,
       UUID,
       deeplink,
     }))
-    .then(checkResult) 
   })
   .catch(error => {
-    Alert.alert('Error fetching data from traxi.');
+    // It's senseless to show an error to the user here. Just continue.
     logError(`Error fetching profile: ${error.message}`);
     return null;
   });
@@ -81,11 +69,11 @@ export default class extends React.Component {
 
   componentDidMount() {
     getInitialState()
-      .then(initialState => this.setState({
+      .then(initialState => {
+        this.setState({
         ...initialState,
         loading: false,
-      }))
-      .then(Firebase.database().goOffline());
+      })});
   }
 
   componentWillUnmount() {

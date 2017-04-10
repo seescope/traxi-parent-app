@@ -1,21 +1,13 @@
 import { AsyncStorage } from 'react-native';
-import Firebase from 'firebase-old';
+import * as Firebase from 'firebase';
 
-const saveProfileToFirebase = newProfile => new Promise((resolve, reject) => {
-  const firebase = new Firebase(
-    `https://traxiapp.firebaseio.com/parents/${newProfile.UUID}`,
-  );
-  firebase.set(newProfile, error => {
-    if (error) {
-      reject(error);
-    } else {
-      resolve();
-    }
-  });
-});
+const saveProfileToFirebase = newProfile => Firebase
+  .database()
+  .ref(`parents/${newProfile.UUID}`)
+  .set(newProfile);
 
-const saveProfileToStorage = profile =>
-  AsyncStorage.setItem('profile', JSON.stringify(profile));
+const saveProfileToStorage = profile => AsyncStorage
+  .setItem('profile', JSON.stringify(profile));
 
 const saveProfile = profile => 
     Promise.all([

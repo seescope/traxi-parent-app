@@ -11,6 +11,7 @@ describe('App', () => {
 
     return getInitialState().then(initialState => {
       expect(initialState.UUID).toEqual(TEST_UUID);
+      expect(initialState.profile).toBeDefined();
       expect(initialState.profile).toMatchSnapshot();
       expect(initialState.deeplink).toBe(false);
     });
@@ -28,6 +29,7 @@ describe('App', () => {
     return getInitialState().then(initialState => {
       expect(initialState.UUID).toEqual(TEST_UUID);
       expect(initialState.deeplink).toBe(true);
+      expect(initialState.profile).toBeDefined();
       expect(initialState.profile).toMatchSnapshot();
     });
   });
