@@ -136,7 +136,7 @@ class ParentApp extends React.Component {
 
 ParentApp.propTypes = {
   profile: PropTypes.object.isRequired,
-  deeplink: PropTypes.bool.isRequired,
+  deeplink: PropTypes.bool,
 };
 
 export default ParentApp;
