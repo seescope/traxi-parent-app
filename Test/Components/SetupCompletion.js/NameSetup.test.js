@@ -1,14 +1,33 @@
-import 'react-native';
+import { Alert } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import NameSetup from '../../../App/Components/SetupCompletion/NameSetup';
+import { Actions } from 'react-native-router-flux';
 
-it('Renders correctly', () => {
-  const nextStep = jest.fn();
-  const setName = jest.fn();
+import {
+  NameSetup,
+  nextStep,
+} from '../../../App/Components/SetupCompletion/NameSetup';
 
-  const tree = renderer.create(
-    <NameSetup nextStep={nextStep} setName={setName} />,
-  );
-  expect(tree.toJSON()).toMatchSnapshot();
+Alert.alert = jest.fn();
+Actions.setImage = jest.fn();
+
+describe('NameSetup', () => {
+  it('Renders correctly', () => {
+    const setName = jest.fn();
+
+    const tree = renderer.create(
+      <NameSetup name={'Chris'} setNameFn={setName} />,
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('nextStep() alerts when no name was entered', () => {
+    nextStep();
+    expect(Alert.alert).toHaveBeenCalledWith('Please enter your name');
+  });
+
+  it('nextStep() goes to kidImageSetup when there is a name ', () => {
+    nextStep('Chris');
+    expect(Actions.setImage).toHaveBeenCalled();
+  });
 });

@@ -1,5 +1,6 @@
 import moment from 'moment';
-import { Platform } from 'react-native';
+import * as Firebase from 'firebase';
+import { Linking, AsyncStorage, Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
 import InAppBilling from 'react-native-billing';
@@ -116,3 +117,42 @@ export const sendPhoneNumberToSlack = phoneNumber =>
 
 export const getNiceUsage = usage =>
   moment.duration(usage, 'minutes').humanize();
+
+const getUUIDFromProfile = profileJSON => {
+  if (!profileJSON) return null;
+
+  const profile = JSON.parse(profileJSON);
+  if (!profile || !profile.UUID) return null;
+  const { UUID } = profile;
+
+  return { UUID, deeplink: false };
+};
+
+const parseURL = URL => {
+  if (!URL) return null;
+  const UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/;
+  const match = URL.match(UUID_REGEX);
+
+  return match && match[0];
+};
+
+const getUUIDFromDeeplink = () =>
+  Linking.getInitialURL().then(URL => {
+    const UUID = parseURL(URL);
+
+    return UUID && { UUID, deeplink: true };
+  });
+
+export const getUUID = () =>
+  AsyncStorage.getItem('profile').then(profileJSON => {
+    const UUIDFromProfile = getUUIDFromProfile(profileJSON);
+
+    return UUIDFromProfile || getUUIDFromDeeplink();
+  });
+
+export const getProfile = UUID => Firebase
+    .database()
+    .ref(`parents/${UUID}/`)
+    .once('value')
+    .then(snapshot => snapshot.val());
+

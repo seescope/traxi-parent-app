@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders correctly 1`] = `
+exports[`NameSetup Renders correctly 1`] = `
 <View
   style={
     Object {
@@ -13,7 +13,7 @@ exports[`Renders correctly 1`] = `
   <View
     style={
       Object {
-        "flex": 1,
+        "flex": 6,
         "paddingLeft": 30,
         "paddingRight": 30,
         "paddingTop": 50,
@@ -98,11 +98,10 @@ exports[`Renders correctly 1`] = `
   <View
     style={
       Object {
-        "alignItems": "flex-end",
+        "alignItems": "center",
         "alignSelf": "center",
         "flex": 1,
         "flexDirection": "row",
-        "paddingBottom": 30,
       }
     }
   >

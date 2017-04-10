@@ -1,73 +1,49 @@
 import React from 'react';
 import * as Firebase from 'firebase';
-import { AsyncStorage, Linking, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import I18n from 'react-native-i18n';
 
 import Loading from './App/Components/Loading';
 import ParentApp from './App/Containers/ParentApp';
 import Translation from './App/Constants/Translation';
-import { logError } from './App/Utils';
+import { logError, getUUID, getProfile } from './App/Utils';
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
-export const getUUID = async () => {
-  try {
-    let UUID;
-
-    const profileJSON = await AsyncStorage.getItem('profile'); // Previous user
-
-    if (profileJSON) {
-      const profile = JSON.parse(profileJSON);
-      if (profile !== null && profile.UUID) {
-        UUID = profile.UUID;
-      }
-
-      return { UUID, deeplink: false };
-    }
-
-    const URL = await Linking.getInitialURL(); // New user from deeplink
-    if (URL) {
-      UUID = URL.substring(
-        URL.indexOf('data=') + 5,
-        URL.indexOf('&apn=com.traxi'),
-      );
-      return { UUID, deeplink: true };
-    }
-
-    return null;
-  } catch (error) {
-    logError(`Error while getting the UUID: ${error.message}`);
+const checkResult = result => {
+  // A UUID was found, but no profile was in Firebase. This is very odd, so we'll just continue as a new user.
+  if (!result.profile) {
+    logError(`No profile found for ${result.UUID}. Continuing as new user.`);
     return null;
   }
+
+  return result;
 };
 
-export const getProfile = async UUID => {
-  try {
-    const config = {
-      apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
-      authDomain: 'traxiapp.firebaseapp.com',
-      databaseURL: 'https://traxiapp.firebaseio.com',
-      projectId: 'project-946779331638130823',
-      storageBucket: 'project-946779331638130823.appspot.com',
-      messagingSenderId: '204102393429',
-    };
 
-    Firebase.initializeApp(config);
+export const getInitialState = () => getUUID()
+  .then((result) => {
+    // No UUID found. This is a new user.
+    if (!result) return null;
 
-    const ref = Firebase.database().ref(`parents/${UUID}/`);
-    const profile = await ref.once('value').then(snapshot => snapshot.val());
+    const { UUID, deeplink } = result;
 
-    Firebase.database().goOffline();
-
-    return profile;
-  } catch (error) {
-    logError(`Error while getting the profile from Firebase: ${error.message}`);
+    // Get the user's profile and return it.
+    return getProfile(result.UUID).then(profile => ({
+      profile,
+      UUID,
+      deeplink,
+    }))
+    .then(checkResult) 
+  })
+  .catch(error => {
+    Alert.alert('Error fetching data from traxi.');
+    logError(`Error fetching profile: ${error.message}`);
     return null;
-  }
-};
+  });
 
 export default class extends React.Component {
   constructor(props) {
@@ -85,6 +61,17 @@ export default class extends React.Component {
       profile: {},
       loading: true,
     };
+
+    const config = {
+      apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
+      authDomain: 'traxiapp.firebaseapp.com',
+      databaseURL: 'https://traxiapp.firebaseio.com',
+      projectId: 'project-946779331638130823',
+      storageBucket: 'project-946779331638130823.appspot.com',
+      messagingSenderId: '204102393429',
+    };
+
+    Firebase.initializeApp(config);
   }
 
   componentWillMount() {
@@ -92,33 +79,13 @@ export default class extends React.Component {
     OneSignal.addEventListener('opened', this.onOpened);
   }
 
-  async componentDidMount() {
-    try {
-      const UUID = await getUUID();
-      if (UUID) {
-        // Previous user or new user with deeplink
-        const { profile, deeplink } = await getProfile();
-        if (deeplink) {
-          this.setStateAsync({ deeplink: true });
-        }
-        if (profile) {
-          this.setStateAsync({
-            profile,
-            loading: false,
-          });
-        } else {
-          logError(`No profile found for ${UUID}. Continuing as new user.`);
-          this.setStateAsync({ loading: false, deeplink: false });
-        }
-      } else {
-        // New user
-        this.setStateAsync({ loading: false, deeplink: false });
-      }
-    } catch (error) {
-      Alert.alert('Error fetching data from traxi.');
-      logError(`Error fetching profile: ${error.message}`);
-      this.setStateAsync({ loading: false, deeplink: false });
-    }
+  componentDidMount() {
+    getInitialState()
+      .then(initialState => this.setState({
+        ...initialState,
+        loading: false,
+      }))
+      .then(Firebase.database().goOffline());
   }
 
   componentWillUnmount() {

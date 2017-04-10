@@ -1,5 +1,8 @@
+import * as Firebase from 'firebase';
 import React, { PropTypes } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Alert, AsyncStorage } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 
 import Button from '../../Components/Button';
 import HeaderText from '../../Components/HeaderText';
@@ -15,7 +18,7 @@ const style = {
     backgroundColor: TRAXI_BLUE,
   },
   container: {
-    flex: 1,
+    flex: 6,
     paddingTop: 50,
     paddingLeft: 30,
     paddingRight: 30,
@@ -28,62 +31,144 @@ const style = {
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    paddingBottom: 30,
+    alignItems: 'center',
     alignSelf: 'center',
   },
 };
 
-const PasswordSetup = (
-  { name, email, loading, createUser, setEmail, setPassword },
-) => (
-  <View style={style.background}>
-    <View style={style.container}>
-      <HeaderText>Last step, {name} !</HeaderText>
+export const alertIfPasswordIsTooShort = password => {
+  if (password.length < 6) {
+    Alert.alert('Password should be at least 6 characters');
+    return true;
+  }
+  return false;
+};
 
-      <Spacing height={32} />
+export const updateFirebaseProfile = name => {
+  Firebase.auth().currentUser.updateProfile({
+    displayName: name,
+  });
+};
 
-      <Text style={style.bodyText}>Your email address:</Text>
-      <Spacing height={10} />
-      <TextInput
-        refFunc={ref => {
-          this.textInput = ref;
-        }}
-        value={email}
-        keyboardType="email-address"
-        onChangeText={text => setEmail(text)}
-      />
-      <Spacing height={32} />
+export const saveProfileToAsyncStorage = UUID => {
+  AsyncStorage.setItem(
+    'profile',
+    JSON.stringify({
+      UUID,
+    }),
+  );
+};
 
-      <Text style={style.bodyText}>Choose a password:</Text>
-      <Spacing height={10} />
-      <TextInput
-        refFunc={ref => {
-          this.textInput = ref;
-        }}
-        onChangeText={text => setPassword(text)}
-        secureTextEntry
-      />
-    </View>
-    <Spacing height={50} />
+export const goToDashboard = () => {
+  Actions.dashboard({ type: 'replace' });
+};
 
-    {loading && <LoadingIndicator children="" />}
+export const createFirebaseUser = (email, password) => {
+  Firebase.auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      updateFirebaseProfile();
+      saveProfileToAsyncStorage();
+      goToDashboard();
+    })
+    .catch(error => {
+      Alert.alert(error.message); // Useful to show password problems
+    });
+};
 
-    <View style={style.buttonContainer}>
-      <Button onPress={() => createUser()}>
-        Finished
-      </Button>
-    </View>
-  </View>
-);
+export class PasswordSetup extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const { email } = props;
+
+    this.state = {
+      email,
+      password: '',
+      isLoading: false,
+    };
+  }
+
+  setPassword = password => {
+    this.setState({
+      password,
+    });
+  };
+
+  setEmail = email => {
+    this.setState({
+      email,
+    });
+  };
+
+  startLoadingIndicator() {
+    this.setState({ isLoading: true });
+  }
+
+  stopLoadingIndicator() {
+    this.setState({ isLoading: false });
+  }
+
+  createUser = () => {
+    this.startLoadingIndicator();
+    const alerted = alertIfPasswordIsTooShort(this.state.password);
+    if (alerted) {
+      this.stopLoadingIndicator();
+      return;
+    }
+
+    createFirebaseUser(this.state.email, this.state.password, this.props.name);
+  };
+
+  render() {
+    return (
+      <View style={style.background}>
+        <View style={style.container}>
+          <HeaderText>Last step, {this.props.name} !</HeaderText>
+          <Spacing height={32} />
+          <Text style={style.bodyText}>Your email address:</Text>
+          <Spacing height={10} />
+          <TextInput
+            refFunc={ref => {
+              this.textInput = ref;
+            }}
+            value={this.state.email}
+            keyboardType="email-address"
+            onChangeText={text => this.setEmail(text)}
+          />
+          <Spacing height={32} />
+          <Text style={style.bodyText}>Choose a password:</Text>
+          <Spacing height={10} />
+          <TextInput
+            refFunc={ref => {
+              this.textInput = ref;
+            }}
+            onChangeText={text => this.setPassword(text)}
+            secureTextEntry
+          />
+          <Spacing height={40} />
+          {this.state.isLoading && <LoadingIndicator children="" />}
+        </View>
+        <Spacing height={50} />
+        <View style={style.buttonContainer}>
+          <Button onPress={() => this.createUser()}>
+            Finished
+          </Button>
+        </View>
+      </View>
+    );
+  }
+}
 
 PasswordSetup.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-  createUser: PropTypes.func.isRequired,
-  setEmail: PropTypes.func.isRequired,
-  setPassword: PropTypes.func.isRequired,
+  setEmailFn: PropTypes.func.isRequired,
 };
 
-export default PasswordSetup;
+const mapStateToProps = state => ({
+  name: state.profile.name,
+  email: state.profile.email,
+});
+
+export default connect(mapStateToProps)(PasswordSetup);
