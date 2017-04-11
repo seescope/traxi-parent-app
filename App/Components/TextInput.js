@@ -36,6 +36,13 @@ const style = Platform.select({
   android: androidInputStyle,
 });
 
+// Don't capitalise emails.
+const shouldBeCapitalised = secureTextEntry => (
+  secureTextEntry
+    ? 'none'
+    : 'words'
+);
+
 const TextInput = (
   {
     onChangeText,
@@ -53,7 +60,7 @@ const TextInput = (
     onSubmitEditing={onSubmitEditing}
     placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
     underlineColorAndroid={TRAXI_BLUE}
-    autoCapitalize={'words'}
+    autoCapitalize={shouldBeCapitalised(secureTextEntry)}
     style={style}
     onChangeText={onChangeText}
     keyboardType={keyboardType}

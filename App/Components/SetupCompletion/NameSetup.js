@@ -3,6 +3,7 @@ import { Text, View, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
+import { firstName } from '../../Utils';
 import Button from '../../Components/Button';
 import HeaderText from '../../Components/HeaderText';
 import TextInput from '../../Components/TextInput';
@@ -23,7 +24,6 @@ const style = {
   },
   labelText: {
     fontFamily: 'Raleway-Regular',
-    fontWeight: '400',
     fontSize: 14,
     color: GREY,
   },
@@ -45,30 +45,39 @@ export const nextStep = name => {
   }
 };
 
-const setName = name =>
+export const updateProfile = (field, value) =>
   dispatch => {
-    dispatch({ type: 'UPDATE_PROFILE_NAME', name });
+    dispatch({
+      type: 'UPDATE_PROFILE',
+      field,
+      value,
+    });
   };
 
-export const NameSetup = ({ name, onNameChanged, kidName }) => (
+export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, kidName, email }) => (
   <View style={style.background}>
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
       <Spacing height={16} />
 
-      <View style={STYLES.CARD}>
+      <View style={STYLES.CARD} elevation={6}>
         <Text style={style.labelText}>Your email address:</Text>
-
-        <TextInput />
-
-        <Text style={style.labelText}>Your name:</Text>
-
         <TextInput
+          value={email}
+          onChangeText={onEmailChanged}
           keyboardType="email-address"
         />
 
+        <Text style={style.labelText}>Your name:</Text>
+        <TextInput
+          onChangeText={onNameChanged}
+        />
+
         <Text style={style.labelText}>Choose a password:</Text>
-        <TextInput secureTextEntry />
+        <TextInput
+          secureTextEntry
+          onChangeText={onPasswordChanged}
+        />
       </View>
     </View>
     <View style={style.buttonContainer}>
@@ -80,13 +89,22 @@ export const NameSetup = ({ name, onNameChanged, kidName }) => (
 );
 
 NameSetup.propTypes = {
-  name: PropTypes.string,
-  kidName: PropTypes.string,
-  onNameChanged: PropTypes.func,
+  kidName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  onNameChanged: PropTypes.func.isRequired,
+  onPasswordChanged: PropTypes.func.isRequired,
+  onEmailChanged: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  onNameChanged: setName,
+  onNameChanged: name => updateProfile('name', name),
+  onPasswordChanged: password => updateProfile('password', password),
+  onEmailChanged: email => updateProfile('email', email),
 };
 
-export default connect(null, mapDispatchToProps)(NameSetup);
+const mapStateToProps = ({ profile, selectedKid }) => ({
+  email: profile.email,
+  kidName: firstName(selectedKid.name),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);

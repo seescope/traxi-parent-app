@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux';
 import {
   NameSetup,
   nextStep,
+  updateProfile,
 } from '../../../App/Components/SetupCompletion/NameSetup';
 
 Alert.alert = jest.fn();
@@ -29,5 +30,24 @@ describe('NameSetup', () => {
   it('nextStep() goes to kidImageSetup when there is a name ', () => {
     nextStep('Chris');
     expect(Actions.setImage).toHaveBeenCalled();
+  });
+
+  describe('updateProfile', () => {
+    it('calls dispatch when a field has been updated', done => {
+      const TEST_NAME = 'test name';
+      const TEST_FIELD = 'test field';
+      const EXPECTED_ACTION = {
+        field: TEST_FIELD,
+        value: TEST_NAME,
+        type: 'UPDATE_PROFILE',
+      };
+
+      const mockDispatch = action => {
+        expect(action).toEqual(EXPECTED_ACTION);
+        done();
+      };
+
+      updateProfile(TEST_FIELD, TEST_NAME)(mockDispatch);
+    });
   });
 });
