@@ -1,28 +1,11 @@
 import React from 'react';
-import { Dimensions, View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import lodash from 'lodash';
 import analytics from 'react-native-analytics';
 
-import { WHITE, LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
+import { LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
+import STYLES from '../../Constants/Styles';
 import LoadingIndicator from '../../Components/LoadingIndicator';
-
-const { width } = Dimensions.get('window');
-
-const cardStyle = {
-  borderRadius: 4,
-  width: width - 16,
-  backgroundColor: WHITE,
-  padding: 16,
-  marginBottom: 24,
-	shadowColor: "#000000",
-	shadowOpacity: 0.16,
-	shadowRadius: 3,
-	shadowOffset: {
-		height: 3,
-		width: 3,
-	},
-  flex: 1,
-};
 
 const cardHeaderStyle = {
   color: GREY,
@@ -139,7 +122,7 @@ class Card extends React.Component {
     const shouldShowTimeSelector = !Array.isArray(data);
 
     return (
-      <View style={cardStyle}>
+      <View style={STYLES.CARD}>
         <Text style={cardHeaderStyle}>{header}</Text>
         <View style={headerUnderlineStyle} />
 

@@ -3,9 +3,11 @@ import { TextInput as RNTextInput, Dimensions, Platform } from 'react-native';
 
 import {
   NEUTRAL,
+  GREY,
   LIGHTEST_GREY,
   WHITE,
   NEUTRAL_WITH_OPACITY,
+  TRAXI_BLUE,
 } from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
@@ -13,7 +15,7 @@ const { width } = Dimensions.get('window');
 
 const androidInputStyle = {
   fontFamily: 'Raleway-Regular',
-  color: WHITE,
+  color: GREY,
   height: 42,
   fontSize: 16,
   width: width - 64,
@@ -50,7 +52,7 @@ const TextInput = (
     value={value}
     onSubmitEditing={onSubmitEditing}
     placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
-    underlineColorAndroid="rgba(255, 255, 255, 1)"
+    underlineColorAndroid={TRAXI_BLUE}
     autoCapitalize={'words'}
     style={style}
     onChangeText={onChangeText}

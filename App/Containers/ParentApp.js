@@ -112,11 +112,6 @@ class ParentApp extends React.Component {
           />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene
-            key="setImage"
-            initial={shouldShowSetupCompletion}
-            component={SetImage}
-          />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
@@ -124,7 +119,12 @@ class ParentApp extends React.Component {
             initial={shouldShowDashboard}
             component={Dashboard}
           />
-          <Scene key="nameSetup" component={NameSetup} />
+          <Scene
+            key="nameSetup"
+            initial={true}
+            component={NameSetup}
+          />
+          <Scene key="setImage" component={SetImage} />
           <Scene key="kidImageSet" component={KidImageSet} />
           <Scene key="passwordSetup" component={PasswordSetup} />
           <Scene key="playground" initial={false} component={Playground} />

@@ -7,31 +7,34 @@ import Button from '../../Components/Button';
 import HeaderText from '../../Components/HeaderText';
 import TextInput from '../../Components/TextInput';
 import Spacing from '../../Components/Spacing';
-import { WHITE, TRAXI_BLUE } from '../../Constants/Colours';
+import { VERY_LIGHT_GREY, GREY } from '../../Constants/Colours';
+import STYLES from '../../Constants/Styles';
 
 const style = {
   background: {
     flex: 1,
-    alignSelf: 'stretch',
-    backgroundColor: TRAXI_BLUE,
+    alignItems: 'center',
+    backgroundColor: VERY_LIGHT_GREY,
   },
   container: {
-    flex: 6,
-    paddingTop: 50,
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingTop: 16,
+    paddingLeft: 24,
+    paddingRight: 24,
   },
-  bodyText: {
+  labelText: {
     fontFamily: 'Raleway-Regular',
-    fontSize: 16,
-    color: WHITE,
+    fontWeight: '400',
+    fontSize: 14,
+    color: GREY,
   },
   buttonContainer: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
   },
+  headerText: {
+    color: GREY,
+  }
 };
 
 export const nextStep = name => {
@@ -47,24 +50,30 @@ const setName = name =>
     dispatch({ type: 'UPDATE_PROFILE_NAME', name });
   };
 
-export const NameSetup = ({ name, setNameFn }) => (
+export const NameSetup = ({ name, onNameChanged, kidName }) => (
   <View style={style.background}>
     <View style={style.container}>
-      <HeaderText>Welcome !</HeaderText>
-      <Spacing height={32} />
-      <Text style={style.bodyText}>What is your name</Text>
-      <Spacing height={10} />
-      <TextInput
-        refFunc={ref => {
-          this.textInput = ref;
-        }}
-        onChangeText={text => setNameFn(text)}
-      />
-      <Spacing />
+      <HeaderText style={style.headerText}>Last step!</HeaderText>
+      <Spacing height={16} />
+
+      <View style={STYLES.CARD}>
+        <Text style={style.labelText}>Your email address:</Text>
+
+        <TextInput />
+
+        <Text style={style.labelText}>Your name:</Text>
+
+        <TextInput
+          keyboardType="email-address"
+        />
+
+        <Text style={style.labelText}>Choose a password:</Text>
+        <TextInput secureTextEntry />
+      </View>
     </View>
     <View style={style.buttonContainer}>
       <Button onPress={() => nextStep(name)}>
-        Next Step
+        See {kidName}'s usage
       </Button>
     </View>
   </View>
@@ -72,20 +81,12 @@ export const NameSetup = ({ name, setNameFn }) => (
 
 NameSetup.propTypes = {
   name: PropTypes.string,
-  setNameFn: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = state => {
-  console.log(state);
-
-  return {};
-  // return {
-  //   name: state.profile.name,
-  // };
+  kidName: PropTypes.string,
+  onNameChanged: PropTypes.func,
 };
 
 const mapDispatchToProps = {
-  setNameFn: setName,
+  onNameChanged: setName,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);
+export default connect(null, mapDispatchToProps)(NameSetup);
