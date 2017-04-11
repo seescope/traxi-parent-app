@@ -22,6 +22,8 @@ const profile = {
 };
 
 export const mockSet = jest.fn();
+export const mockCreateUser = jest.fn(() => Promise.resolve());
+export const mockUpdateProfile = jest.fn(() => Promise.resolve());
 
 export const initializeApp = () => {};
 
@@ -39,7 +41,7 @@ export const database = () => ({
 
 export const auth = () => ({
   currentUser: {
-    updateProfile: () => jest.fn(),
+    updateProfile: mockUpdateProfile,
   },
-  createUserWithEmailAndPassword: () => Promise.resolve('ok'),
+  createUserWithEmailAndPassword: mockCreateUser,
 });

@@ -8,6 +8,7 @@ export const Actions = {
   thankyou: jest.fn(),
   areYouReady: jest.fn(),
   intro: jest.fn(),
+  dashboard: jest.fn(),
 };
 
 export const Scene = props => <View {...props} />;

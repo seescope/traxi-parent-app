@@ -1,23 +1,39 @@
-import { Alert } from 'react-native';
+import { Alert, AsyncStorage } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Actions } from 'react-native-router-flux';
+import { mockSet, mockCreateUser, mockUpdateProfile } from 'firebase';
 
 import {
   NameSetup,
   nextStep,
   updateProfile,
+  finishSetup,
 } from '../../../App/Components/SetupCompletion/NameSetup';
 
 Alert.alert = jest.fn();
 Actions.setImage = jest.fn();
+AsyncStorage.setItem = jest.fn(() => Promise.resolve());
+
+const TEST_PROFILE = {
+  UUID: 'Test UUID',
+  name: 'Test Name',
+  email: 'Test Email',
+  password: 'Test Password',
+};
 
 describe('NameSetup', () => {
-  it('Renders correctly', () => {
-    const setName = jest.fn();
 
+  it('Renders correctly', () => {
     const tree = renderer.create(
-      <NameSetup name={'Chris'} setNameFn={setName} />,
+      <NameSetup
+        kidName="Chris"
+        email="test@test.com"
+        onNameChanged={() => {}}
+        onEmailChanged={() => {}}
+        onPasswordChanged={() => {}}
+        onPress={() => {}}
+      />,
     );
     expect(tree.toJSON()).toMatchSnapshot();
   });
@@ -49,5 +65,38 @@ describe('NameSetup', () => {
 
       updateProfile(TEST_FIELD, TEST_NAME)(mockDispatch);
     });
+  });
+
+  describe('finishSetup()', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('saves the UUID to AsyncStorage', () => {
+      finishSetup(TEST_PROFILE);
+      expect(AsyncStorage.setItem).toHaveBeenCalledWith(
+        'profile',
+        JSON.stringify({
+          UUID: TEST_PROFILE.UUID,
+        }),
+      );
+    });
+
+    it('creates the user in Firebase', () => finishSetup(TEST_PROFILE).then(() => {
+      expect(mockCreateUser).toHaveBeenCalledWith(
+        TEST_PROFILE.email,
+        TEST_PROFILE.password,
+      );
+      expect(mockUpdateProfile).toHaveBeenCalledWith({
+        displayName: TEST_PROFILE.name,
+      });
+      expect(mockSet).toHaveBeenCalledWith(
+        TEST_PROFILE,
+      );
+    }));
+
+    it('navigates to the Dashboard', () => finishSetup(TEST_PROFILE).then(() => {
+      expect(Actions.dashboard).toHaveBeenCalled();
+    }));
   });
 });

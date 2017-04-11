@@ -14,9 +14,9 @@ import {
 
 Alert.alert = jest.fn();
 Actions.dashboard = jest.fn();
-AsyncStorage.setItem = jest.fn();
 
 describe('NameSetup', () => {
+
   it('Renders correctly', () => {
     const setEmailFn = jest.fn();
     const name = 'Chris';

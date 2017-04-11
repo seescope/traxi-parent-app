@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import { Text, View, Alert } from 'react-native';
+import { AsyncStorage, Text, View, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+import * as Firebase from 'firebase';
 
 import { firstName } from '../../Utils';
 import Button from '../../Components/Button';
@@ -54,7 +55,41 @@ export const updateProfile = (field, value) =>
     });
   };
 
-export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, kidName, email }) => (
+const saveProfileToAsyncStorage = ({ UUID }) =>
+  AsyncStorage.setItem(
+    'profile',
+    JSON.stringify({
+      UUID,
+    }),
+  );
+
+const createUser = ({ email, password }) => Firebase
+  .auth()
+  .createUserWithEmailAndPassword(email, password);
+
+const updateFirebaseProfile = profile => Firebase
+  .auth()
+  .currentUser
+  .updateProfile({ displayName: profile.name });
+
+const updateParentInDatabase = profile => Firebase
+  .database()
+  .ref(`parents/${profile.UUID}`)
+  .set(profile);
+
+const createParentInFirebase = profile => 
+  createUser(profile)
+  .then(updateFirebaseProfile.bind(undefined, profile))
+  .then(updateParentInDatabase.bind(undefined, profile));
+
+const goToDashboard = () => Actions.dashboard();
+
+export const finishSetup = profile =>
+  saveProfileToAsyncStorage(profile)
+    .then(createParentInFirebase.bind(undefined, profile))
+    .then(goToDashboard);
+
+export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, kidName, email, onPress }) => (
   <View style={style.background}>
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
@@ -81,7 +116,7 @@ export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, ki
       </View>
     </View>
     <View style={style.buttonContainer}>
-      <Button onPress={() => nextStep(name)}>
+      <Button onPress={onPress}>
         See {kidName}'s usage
       </Button>
     </View>
@@ -94,6 +129,7 @@ NameSetup.propTypes = {
   onNameChanged: PropTypes.func.isRequired,
   onPasswordChanged: PropTypes.func.isRequired,
   onEmailChanged: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
@@ -105,6 +141,7 @@ const mapDispatchToProps = {
 const mapStateToProps = ({ profile, selectedKid }) => ({
   email: profile.email,
   kidName: firstName(selectedKid.name),
+  onPress: finishSetup.bind(undefined, profile),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);

@@ -4,8 +4,8 @@ exports[`NameSetup Renders correctly 1`] = `
 <View
   style={
     Object {
-      "alignSelf": "stretch",
-      "backgroundColor": "#448AFF",
+      "alignItems": "center",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
     }
   }
@@ -13,10 +13,9 @@ exports[`NameSetup Renders correctly 1`] = `
   <View
     style={
       Object {
-        "flex": 6,
-        "paddingLeft": 30,
-        "paddingRight": 30,
-        "paddingTop": 50,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
       }
     }
   >
@@ -27,7 +26,7 @@ exports[`NameSetup Renders correctly 1`] = `
       style={
         Object {
           "backgroundColor": "transparent",
-          "color": "#FFF",
+          "color": "#545454",
           "fontFamily": "Raleway-ExtraBold",
           "fontSize": 30,
           "marginBottom": -2,
@@ -35,72 +34,149 @@ exports[`NameSetup Renders correctly 1`] = `
         }
       }
     >
-      Welcome !
+      Last step!
     </Text>
     <View
       style={
         Object {
-          "height": 32,
+          "height": 16,
         }
       }
     />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
+      elevation={6}
       style={
         Object {
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
+          "backgroundColor": "#FFF",
+          "borderRadius": 4,
+          "marginBottom": 24,
+          "padding": 16,
+          "shadowColor": "#000000",
+          "shadowOffset": Object {
+            "height": 3,
+            "width": 3,
+          },
+          "shadowOpacity": 0.16,
+          "shadowRadius": 3,
+          "width": 734,
         }
       }
     >
-      What is your name
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 10,
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
         }
-      }
-    />
-    <TextInput
-      autoCapitalize="words"
-      autoCorrect={false}
-      keyboardType={undefined}
-      onChangeText={[Function]}
-      onSubmitEditing={undefined}
-      placeholderTextColor="rgba(75, 73, 73, 0.8)"
-      secureTextEntry={undefined}
-      style={
-        Object {
-          "backgroundColor": "#EFEFEF",
-          "borderRadius": 4,
-          "color": "rgba(75, 73, 73, 1)",
-          "fontFamily": "Raleway-Regular",
-          "height": 32,
-          "paddingHorizontal": 8,
-          "width": 686,
+      >
+        Your email address:
+      </Text>
+      <TextInput
+        autoCapitalize="words"
+        autoCorrect={false}
+        keyboardType="email-address"
+        onChangeText={[Function]}
+        onSubmitEditing={undefined}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={undefined}
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
         }
-      }
-      underlineColorAndroid="rgba(255, 255, 255, 1)"
-      value={undefined}
-    />
-    <View
-      style={
-        Object {
-          "height": 24,
+        underlineColorAndroid="#448AFF"
+        value="test@test.com"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
         }
-      }
-    />
+      >
+        Your name:
+      </Text>
+      <TextInput
+        autoCapitalize="words"
+        autoCorrect={false}
+        keyboardType={undefined}
+        onChangeText={[Function]}
+        onSubmitEditing={undefined}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={undefined}
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
+        }
+        underlineColorAndroid="#448AFF"
+        value={undefined}
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        Choose a password:
+      </Text>
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        keyboardType={undefined}
+        onChangeText={[Function]}
+        onSubmitEditing={undefined}
+        placeholderTextColor="rgba(75, 73, 73, 0.8)"
+        secureTextEntry={true}
+        style={
+          Object {
+            "backgroundColor": "#EFEFEF",
+            "borderRadius": 4,
+            "color": "rgba(75, 73, 73, 1)",
+            "fontFamily": "Raleway-Regular",
+            "height": 32,
+            "paddingHorizontal": 8,
+            "width": 686,
+          }
+        }
+        underlineColorAndroid="#448AFF"
+        value={undefined}
+      />
+    </View>
   </View>
   <View
     style={
       Object {
         "alignItems": "center",
         "alignSelf": "center",
-        "flex": 1,
         "flexDirection": "row",
       }
     }
@@ -143,7 +219,9 @@ exports[`NameSetup Renders correctly 1`] = `
           }
         }
       >
-        Next Step
+        See 
+        Chris
+        's usage
          
       </Text>
     </View>
