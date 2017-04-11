@@ -9,7 +9,7 @@ import {
   nextStep,
   updateProfile,
   finishSetup,
-} from '../../../App/Components/SetupCompletion/NameSetup';
+} from '../../App/Containers/SetupCompletion';
 
 Alert.alert = jest.fn();
 Actions.setImage = jest.fn();

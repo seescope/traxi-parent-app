@@ -13,9 +13,7 @@ import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
-import NameSetup from '../Components/SetupCompletion/NameSetup';
-import KidImageSet from '../Components/SetupCompletion/KidImageSet';
-import PasswordSetup from '../Components/SetupCompletion/PasswordSetup';
+import SetupCompletion from './SetupCompletion';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
@@ -119,14 +117,11 @@ class ParentApp extends React.Component {
             initial={shouldShowDashboard}
             component={Dashboard}
           />
+          <Scene key="setImage" initial={shouldShowSetupCompletion} component={SetImage} />
           <Scene
-            key="nameSetup"
-            initial={true}
-            component={NameSetup}
+            key="setupCompletion"
+            component={SetupCompletion}
           />
-          <Scene key="setImage" component={SetImage} />
-          <Scene key="kidImageSet" component={KidImageSet} />
-          <Scene key="passwordSetup" component={PasswordSetup} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

@@ -4,13 +4,13 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import * as Firebase from 'firebase';
 
-import { firstName } from '../../Utils';
-import Button from '../../Components/Button';
-import HeaderText from '../../Components/HeaderText';
-import TextInput from '../../Components/TextInput';
-import Spacing from '../../Components/Spacing';
-import { VERY_LIGHT_GREY, GREY } from '../../Constants/Colours';
-import STYLES from '../../Constants/Styles';
+import { firstName } from '../Utils';
+import Button from '../Components/Button';
+import HeaderText from '../Components/HeaderText';
+import TextInput from '../Components/TextInput';
+import Spacing from '../Components/Spacing';
+import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
+import STYLES from '../Constants/Styles';
 
 const style = {
   background: {
