@@ -60,6 +60,11 @@ export const updateFirebaseKid = (UUID, selectedKid, kids) => {
 
 export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
   dispatch => {
+    if (!pickImage) {
+      Actions.setupCompletion();
+      return null;
+    }
+
     const options = {
       title: 'Select Image',
       storageOptions: {
@@ -67,17 +72,6 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       },
     };
 
-    if (!pickImage && !deeplink) {
-      dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
-      dispatch(NEXT_STEP);
-
-      return dispatch(setupKid()).then(() => {
-        dispatch(watchDevice());
-      });
-    } else if (!pickImage && deeplink) {
-      Actions.passwordSetup({ type: 'replace' });
-      return null;
-    }
 
     return ImagePicker.launchImageLibrary(options, response => {
       if (response.didCancel) {
@@ -99,21 +93,13 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       const source = getSource(response);
       dispatch(selectKidImage(source.uri));
 
-      if (!deeplink) {
-        dispatch(NEXT_STEP);
-
-        dispatch(setupKid()).then(() => {
-          dispatch(watchDevice());
-        });
-      } else if (deeplink) {
-        const updatedSelectedKid = getUpdatedSelectedKid(
-          selectedKid,
-          source.uri,
-        );
-        const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
-        updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
-        Actions.setupCompletion();
-      }
+      const updatedSelectedKid = getUpdatedSelectedKid(
+        selectedKid,
+        source.uri,
+      );
+      const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
+      updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
+      Actions.setupCompletion();
     });
   };
 
@@ -127,6 +113,11 @@ const STYLE = {
   container: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  innerContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
   },
   bodyText: {
     textAlign: 'center',
@@ -156,7 +147,7 @@ const SetImage = (
 
       <Spacing height={32} />
 
-      <View style={[STYLES.CARD, STYLE.container]} elevation={6}>
+      <View style={[STYLES.CARD, STYLE.innerContainer]} elevation={6}>
         <Image
           source={require('../Images/placeholder_avatar.png')}
           style={STYLE.avatarStyle}

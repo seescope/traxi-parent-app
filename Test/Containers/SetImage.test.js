@@ -5,22 +5,21 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ImagePicker from 'react-native-image-picker';
+import { Actions } from 'react-native-router-flux';
 
 import SetImage, { selectImage } from '../../App/Containers/SetImage';
 
+const TEST_KID = {
+  UUID: 'Test UUID',
+  name: 'Emanuel Goldstein',
+};
+const TEST_KIDS = [ TEST_KID ];
 const mockStore = configureStore([thunk]);
 const testStoreWithoutDeeplink = mockStore({
   parentName: 'Name',
-  selectedKid: {
-    UUID: 'Kid-UUID',
-    name: 'Jeff Goldstein',
-  },
+  selectedKid: TEST_KID,
   deeplink: false,
-  kids: [
-    {
-      UUID: 'Kid-UUID',
-    },
-  ],
+  kids: TEST_KIDS,
   profile: {
     UUID: 'Parent-UUID',
   },
@@ -28,16 +27,9 @@ const testStoreWithoutDeeplink = mockStore({
 
 const testStoreWithDeeplink = mockStore({
   parentName: 'Name',
-  selectedKid: {
-    UUID: 'Kid-UUID',
-    name: 'Jeff Goldstein',
-  },
+  selectedKid: TEST_KID,
   deeplink: true,
-  kids: [
-    {
-      UUID: 'Kid-UUID',
-    },
-  ],
+  kids: TEST_KIDS,
   profile: {
     UUID: 'Parent-UUID',
   },
@@ -67,12 +59,12 @@ it('renders the <SetImage> component correctly with deeplink', () => {
 
 it('calls ImagePicker if pickImage is true', () => {
   const dispatch = jest.fn(() => Promise.resolve());
-  selectImage(true)(dispatch);
+  selectImage(true, true, TEST_KID, TEST_KIDS)(dispatch);
 
   // Run our assertions on the next tick. Probably more elegant ways of doing this.
   return Promise.resolve().then(() => {
     expect(ImagePicker.launchImageLibrary).toHaveBeenCalled();
-    expect(dispatch.mock.calls).toMatchSnapshot();
+    expect(Actions.setupCompletion).toHaveBeenCalled();
   });
 });
 

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { AsyncStorage, Text, View, Alert } from 'react-native';
+import { AsyncStorage, ScrollView, Text, View, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import * as Firebase from 'firebase';
@@ -14,14 +14,16 @@ import STYLES from '../Constants/Styles';
 
 const style = {
   background: {
+    backgroundColor: VERY_LIGHT_GREY,
+  },
+  outerContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: VERY_LIGHT_GREY,
   },
   container: {
+    alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 16,
   },
   labelText: {
     fontFamily: 'Raleway-Regular',
@@ -35,7 +37,11 @@ const style = {
   },
   headerText: {
     color: GREY,
-  }
+  },
+  innerContainer: {
+    marginVertical: 16,
+    alignItems: 'flex-start',
+  },
 };
 
 export const nextStep = name => {
@@ -90,37 +96,39 @@ export const finishSetup = profile =>
     .then(goToDashboard);
 
 export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, kidName, email, onPress }) => (
-  <View style={style.background}>
+  <ScrollView style={style.background} contentContainerStyle={style.outerContainer}>
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
       <Spacing height={16} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
-        <Text style={style.labelText}>Your email address:</Text>
-        <TextInput
-          value={email}
-          onChangeText={onEmailChanged}
-          keyboardType="email-address"
-        />
+        <View style={style.innerContainer}>
+          <Text style={style.labelText}>Your email address:</Text>
+          <TextInput
+            value={email}
+            onChangeText={onEmailChanged}
+            keyboardType="email-address"
+          />
 
-        <Text style={style.labelText}>Your name:</Text>
-        <TextInput
-          onChangeText={onNameChanged}
-        />
+          <Text style={style.labelText}>Your name:</Text>
+          <TextInput
+            onChangeText={onNameChanged}
+          />
 
-        <Text style={style.labelText}>Choose a password:</Text>
-        <TextInput
-          secureTextEntry
-          onChangeText={onPasswordChanged}
-        />
+          <Text style={style.labelText}>Choose a password:</Text>
+          <TextInput
+            secureTextEntry
+            onChangeText={onPasswordChanged}
+          />
+        </View>
       </View>
     </View>
     <View style={style.buttonContainer}>
-      <Button onPress={onPress}>
+      <Button primary onPress={onPress}>
         See {kidName}'s usage
       </Button>
     </View>
-  </View>
+  </ScrollView>
 );
 
 NameSetup.propTypes = {

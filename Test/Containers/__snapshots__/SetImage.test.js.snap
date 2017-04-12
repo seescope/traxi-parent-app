@@ -1,34 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`calls ImagePicker if pickImage is true 1`] = `
-Array [
-  Array [
-    Object {
-      "avatarURL": "heythere",
-      "type": "SELECT_KID_IMAGE",
-    },
-  ],
-  Array [
-    Object {
-      "type": "NEXT_STEP",
-    },
-  ],
-  Array [
-    [Function],
-  ],
-  Array [
-    [Function],
-  ],
-]
-`;
-
 exports[`renders the <SetImage> component correctly with deeplink 1`] = `
 <View
   style={
     Object {
-      "alignSelf": "stretch",
-      "backgroundColor": "#448AFF",
+      "alignItems": "center",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
+      "justifyContent": "center",
     }
   }
 >
@@ -36,10 +15,7 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flex": 6,
-        "paddingLeft": 30,
-        "paddingRight": 30,
-        "paddingTop": 50,
+        "justifyContent": "center",
       }
     }
   >
@@ -50,18 +26,16 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
       style={
         Object {
           "backgroundColor": "transparent",
-          "color": "#FFF",
+          "color": "#545454",
           "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 30,
+          "fontSize": 26,
           "marginBottom": -2,
           "textAlign": "center",
         }
       }
     >
-      [missing "en.general.thanks" translation]
-      , 
-      Name
-      !
+      Choose a picture for 
+      Emanuel
     </Text>
     <View
       style={
@@ -70,90 +44,89 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
         }
       }
     />
-    <Image
-      animation={undefined}
-      duration={undefined}
-      iterationCount={undefined}
-      source={1}
+    <View
+      elevation={6}
       style={
-        Object {
-          "borderColor": undefined,
-          "borderRadius": 102,
-          "borderWidth": 5.828571428571428,
-          "height": 204,
-          "marginBottom": 20.4,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
+        Array [
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
           },
-          "shadowRadius": 5,
-          "width": 204,
-        }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-        }
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      [missing "en.setImage.setAPictureFor" translation]
-       
-      Jeff
-      .
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 32,
+      <Image
+        source={1}
+        style={undefined}
+      />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
         }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
         }
-      }
-    >
-      [missing "en.setImage.dontWorry" translation]
-      .
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 24,
+      >
+        Traxi shows a picture of 
+        Emanuel
+         with their usage.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
         }
-      }
-    />
-    <View
-      style={
-        Object {
-          "height": 32,
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
         }
-      }
-    />
+      >
+        Don't worry though, only you can see it.
+      </Text>
+    </View>
   </View>
   <View
     style={
       Object {
         "alignItems": "center",
-        "flex": 1,
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingLeft": 20,
-        "paddingRight": 20,
+        "flexDirection": "column",
       }
     }
   >
@@ -177,6 +150,7 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
           "backgroundColor": "transparent",
           "flexDirection": "row",
           "justifyContent": "center",
+          "marginTop": 16,
           "opacity": 1,
         }
       }
@@ -189,13 +163,13 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#FFF",
+            "color": "#448AFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
         }
       >
-        [missing "en.setImage.notNow" translation]
+        [missing "en.setImage.chooseAPicture" translation]
          
       </Text>
     </View>
@@ -219,6 +193,7 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
           "backgroundColor": "transparent",
           "flexDirection": "row",
           "justifyContent": "center",
+          "marginTop": 16,
           "opacity": 1,
         }
       }
@@ -231,13 +206,13 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#FFF",
+            "color": "#448AFF",
             "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
+            "fontSize": 14,
           }
         }
       >
-        [missing "en.setImage.chooseAPicture" translation]
+        [missing "en.setImage.notNow" translation]
          
       </Text>
     </View>
@@ -247,8 +222,126 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
 
 exports[`renders the <SetImage> component correctly without deeplink 1`] = `
 <View
-  style={Object {}}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
 >
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#545454",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "marginBottom": -2,
+          "textAlign": "center",
+        }
+      }
+    >
+      Choose a picture for 
+      Emanuel
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    />
+    <View
+      elevation={6}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
+          },
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={undefined}
+      />
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }
+      >
+        Traxi shows a picture of 
+        Emanuel
+         with their usage.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 32,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }
+      >
+        Don't worry though, only you can see it.
+      </Text>
+    </View>
+  </View>
   <View
     style={
       Object {
@@ -257,124 +350,6 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
       }
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 30,
-          "marginBottom": -2,
-          "textAlign": "center",
-        }
-      }
-    >
-      [missing "en.general.thanks" translation]
-      , 
-      Name
-      !
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 32,
-        }
-      }
-    />
-    <Image
-      animation={undefined}
-      duration={undefined}
-      iterationCount={undefined}
-      source={1}
-      style={
-        Object {
-          "borderColor": undefined,
-          "borderRadius": 102,
-          "borderWidth": 5.828571428571428,
-          "height": 204,
-          "marginBottom": 20.4,
-          "shadowColor": "rgba(0,0,0,0.5)",
-          "shadowOffset": Object {
-            "height": 2,
-          },
-          "shadowRadius": 5,
-          "width": 204,
-        }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "center",
-        }
-      }
-    >
-      [missing "en.setImage.setAPictureFor" translation]
-       
-      Jeff
-      .
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 32,
-        }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "color": "#FFF",
-          "fontFamily": "Raleway-Regular",
-          "fontSize": 16,
-          "textAlign": "center",
-        }
-      }
-    >
-      [missing "en.setImage.dontWorry" translation]
-      .
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 24,
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "height": 32,
-        }
-      }
-    />
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "flex-end",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "width": 686,
-      }
-    }
-  >
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -395,6 +370,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
           "backgroundColor": "transparent",
           "flexDirection": "row",
           "justifyContent": "center",
+          "marginTop": 16,
           "opacity": 1,
         }
       }
@@ -407,49 +383,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#FFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
-          }
-        }
-      >
-        [missing "en.setImage.notNow" translation]
-         
-      </Text>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#FFF",
+            "color": "#448AFF",
             "fontFamily": "Raleway-Regular",
             "fontSize": 20,
           }
@@ -459,28 +393,51 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
          
       </Text>
     </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginTop": 16,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#448AFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        [missing "en.setImage.notNow" translation]
+         
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
-exports[`uses a default image of pickImage is false 1`] = `
-Array [
-  Array [
-    Object {
-      "avatarURL": "http://i.imgur.com/ZrwsRFD.png",
-      "type": "SELECT_KID_IMAGE",
-    },
-  ],
-  Array [
-    Object {
-      "type": "NEXT_STEP",
-    },
-  ],
-  Array [
-    [Function],
-  ],
-  Array [
-    [Function],
-  ],
-]
-`;
+exports[`uses a default image of pickImage is false 1`] = `Array []`;
