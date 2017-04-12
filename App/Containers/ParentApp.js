@@ -5,9 +5,8 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
-import SplashScreen from './SplashScreen';
-import NotReadyYet from '../Components/NotReadyYet';
-import Thankyou from '../Components/Thankyou';
+import SplashScreen from '../Components/SplashScreen';
+import SetName from './SetName';
 import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
@@ -108,8 +107,10 @@ class ParentApp extends React.Component {
             initial={shouldShowSplashScreen}
             component={SplashScreen}
           />
-          <Scene key="notReadyYet" component={NotReadyYet} />
-          <Scene key="thankyou" component={Thankyou} />
+          <Scene
+            key="setName"
+            component={SetName}
+          />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
