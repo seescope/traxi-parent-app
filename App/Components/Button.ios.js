@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { WHITE, NEUTRAL } from '../Constants/Colours';
+import { TRAXI_BLUE } from '../Constants/Colours';
 
 const Button = ({ children, onPress, primary }) => {
-  const colour = primary ? NEUTRAL : WHITE;
+  const fontSize = primary ? 20 : 14;
 
   const BUTTON_STYLE = {
     button: {
+      marginTop: 16,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
@@ -14,8 +15,8 @@ const Button = ({ children, onPress, primary }) => {
     },
     text: {
       fontFamily: 'Raleway-Regular',
-      fontSize: 20,
-      color: colour,
+      fontSize,
+      color: TRAXI_BLUE,
     },
   };
 

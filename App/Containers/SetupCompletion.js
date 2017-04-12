@@ -16,12 +16,12 @@ const style = {
   background: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: VERY_LIGHT_GREY,
   },
   container: {
+    justifyContent: 'center',
     paddingTop: 16,
-    paddingLeft: 24,
-    paddingRight: 24,
   },
   labelText: {
     fontFamily: 'Raleway-Regular',
@@ -95,7 +95,7 @@ export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, ki
       <HeaderText style={style.headerText}>Last step!</HeaderText>
       <Spacing height={16} />
 
-      <View style={STYLES.CARD} elevation={6}>
+      <View style={[STYLES.CARD, style.container]} elevation={6}>
         <Text style={style.labelText}>Your email address:</Text>
         <TextInput
           value={email}

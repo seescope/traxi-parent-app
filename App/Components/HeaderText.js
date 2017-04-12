@@ -8,7 +8,7 @@ const headerStyle = style => {
     fontFamily: 'Raleway-ExtraBold',
     color: WHITE,
     textAlign: 'center',
-    fontSize: isIOS ? 30 : 24,
+    fontSize: isIOS ? 26 : 24,
     marginBottom: -2,
     backgroundColor: 'transparent',
   };

@@ -29,6 +29,8 @@ const iosInputStyle = {
   width: width - 64,
   backgroundColor: LIGHTEST_GREY,
   borderRadius: 4,
+  marginTop: 4,
+  marginBottom: 16,
 };
 
 const style = Platform.select({
