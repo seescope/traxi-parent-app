@@ -79,6 +79,7 @@ exports[`renders the <AreYouReady> component 1`] = `
             "backgroundColor": "transparent",
             "flexDirection": "row",
             "justifyContent": "center",
+            "marginTop": 16,
             "opacity": 1,
           }
         }
@@ -91,9 +92,9 @@ exports[`renders the <AreYouReady> component 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "#FFF",
+              "color": "#448AFF",
               "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
+              "fontSize": 14,
             }
           }
         >
@@ -121,6 +122,7 @@ exports[`renders the <AreYouReady> component 1`] = `
             "backgroundColor": "transparent",
             "flexDirection": "row",
             "justifyContent": "center",
+            "marginTop": 16,
             "opacity": 1,
           }
         }
@@ -133,9 +135,9 @@ exports[`renders the <AreYouReady> component 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "color": "#FFF",
+              "color": "#448AFF",
               "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
+              "fontSize": 14,
             }
           }
         >

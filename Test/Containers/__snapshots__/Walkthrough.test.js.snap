@@ -2,19 +2,10 @@
 
 exports[`renders the Walkthrough component at each stage for Android 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -36,7 +27,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -89,11 +80,13 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
             "color": "rgba(75, 73, 73, 1)",
             "fontFamily": "Raleway-Regular",
             "height": 32,
+            "marginBottom": 16,
+            "marginTop": 4,
             "paddingHorizontal": 8,
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)"
+        underlineColorAndroid="#448AFF"
         value={undefined}
       />
       <View
@@ -130,6 +123,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -142,9 +136,9 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -160,19 +154,10 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -185,13 +170,20 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
     }
   >
     <View
-      style={Object {}}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F0F2F7",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
     >
       <View
         style={
           Object {
             "alignItems": "center",
-            "flexDirection": "column",
+            "justifyContent": "center",
           }
         }
       >
@@ -202,66 +194,16 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
           }
         >
-          [missing "en.general.thanks" translation]
-          , 
-          Jeff Bezos
-          !
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 32,
-            }
-          }
-        />
-        <Image
-          animation={undefined}
-          duration={undefined}
-          iterationCount={undefined}
-          source={1}
-          style={
-            Object {
-              "borderColor": undefined,
-              "borderRadius": 102,
-              "borderWidth": 5.828571428571428,
-              "height": 204,
-              "marginBottom": 20.4,
-              "shadowColor": "rgba(0,0,0,0.5)",
-              "shadowOffset": Object {
-                "height": 2,
-              },
-              "shadowRadius": 5,
-              "width": 204,
-            }
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          [missing "en.setImage.setAPictureFor" translation]
-           
+          Choose a picture for 
           Brett
-          .
         </Text>
         <View
           style={
@@ -270,46 +212,90 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
+          elevation={6}
           style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": 4,
+                "margin": 8,
+                "marginBottom": 24,
+                "padding": 8,
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 3,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.16,
+                "shadowRadius": 3,
+                "width": 734,
+              },
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "padding": 16,
+              },
+            ]
           }
         >
-          [missing "en.setImage.dontWorry" translation]
-          .
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 24,
+          <Image
+            source={1}
+            style={undefined}
+          />
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
             }
-          }
-        />
-        <View
-          style={
-            Object {
-              "height": 32,
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
             }
-          }
-        />
+          >
+            Traxi shows a picture of 
+            Brett
+             with their usage.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
+            }
+          >
+            Don't worry though, only you can see it.
+          </Text>
+        </View>
       </View>
       <View
         style={
           Object {
-            "alignItems": "flex-end",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "width": 686,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }
       >
@@ -333,6 +319,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -345,13 +332,13 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
             }
           >
-            [missing "en.setImage.notNow" translation]
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -375,6 +362,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -387,13 +375,13 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
-            [missing "en.setImage.chooseAPicture" translation]
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -405,19 +393,10 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -445,7 +424,7 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -547,6 +526,7 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -559,9 +539,9 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -589,6 +569,7 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -601,9 +582,9 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -619,19 +600,10 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -670,7 +642,7 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -715,6 +687,7 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -727,9 +700,9 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -757,6 +730,7 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -769,9 +743,9 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -805,19 +779,10 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -839,7 +804,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -879,7 +844,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -897,7 +862,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -941,6 +906,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -953,9 +919,9 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -971,19 +937,10 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1022,7 +979,7 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1067,6 +1024,7 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1079,9 +1037,9 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1109,6 +1067,7 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1121,9 +1080,9 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1157,19 +1116,10 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1208,7 +1158,7 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1253,6 +1203,7 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1265,9 +1216,9 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1295,6 +1246,7 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1307,9 +1259,9 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1343,19 +1295,10 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1394,7 +1337,7 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -1439,6 +1382,7 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1451,9 +1395,9 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1481,6 +1425,7 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -1493,9 +1438,9 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -1529,19 +1474,10 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 9`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1569,7 +1505,7 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -1680,6 +1616,7 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -1692,9 +1629,9 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -1710,19 +1647,10 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1744,7 +1672,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -1797,11 +1725,13 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
             "color": "rgba(75, 73, 73, 1)",
             "fontFamily": "Raleway-Regular",
             "height": 32,
+            "marginBottom": 16,
+            "marginTop": 4,
             "paddingHorizontal": 8,
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)"
+        underlineColorAndroid="#448AFF"
         value={undefined}
       />
       <View
@@ -1838,6 +1768,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -1850,9 +1781,9 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -1868,19 +1799,10 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1893,13 +1815,20 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
     }
   >
     <View
-      style={Object {}}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F0F2F7",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
     >
       <View
         style={
           Object {
             "alignItems": "center",
-            "flexDirection": "column",
+            "justifyContent": "center",
           }
         }
       >
@@ -1910,66 +1839,16 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
           }
         >
-          [missing "en.general.thanks" translation]
-          , 
-          Jeff Bezos
-          !
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 32,
-            }
-          }
-        />
-        <Image
-          animation={undefined}
-          duration={undefined}
-          iterationCount={undefined}
-          source={1}
-          style={
-            Object {
-              "borderColor": undefined,
-              "borderRadius": 102,
-              "borderWidth": 5.828571428571428,
-              "height": 204,
-              "marginBottom": 20.4,
-              "shadowColor": "rgba(0,0,0,0.5)",
-              "shadowOffset": Object {
-                "height": 2,
-              },
-              "shadowRadius": 5,
-              "width": 204,
-            }
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          [missing "en.setImage.setAPictureFor" translation]
-           
+          Choose a picture for 
           Brett
-          .
         </Text>
         <View
           style={
@@ -1978,46 +1857,90 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
+          elevation={6}
           style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": 4,
+                "margin": 8,
+                "marginBottom": 24,
+                "padding": 8,
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 3,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.16,
+                "shadowRadius": 3,
+                "width": 734,
+              },
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "padding": 16,
+              },
+            ]
           }
         >
-          [missing "en.setImage.dontWorry" translation]
-          .
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 24,
+          <Image
+            source={1}
+            style={undefined}
+          />
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
             }
-          }
-        />
-        <View
-          style={
-            Object {
-              "height": 32,
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
             }
-          }
-        />
+          >
+            Traxi shows a picture of 
+            Brett
+             with their usage.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
+            }
+          >
+            Don't worry though, only you can see it.
+          </Text>
+        </View>
       </View>
       <View
         style={
           Object {
-            "alignItems": "flex-end",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "width": 686,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }
       >
@@ -2041,6 +1964,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -2053,13 +1977,13 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
             }
           >
-            [missing "en.setImage.notNow" translation]
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -2083,6 +2007,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -2095,13 +2020,13 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
-            [missing "en.setImage.chooseAPicture" translation]
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -2113,19 +2038,10 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2153,7 +2069,7 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -2255,6 +2171,7 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -2267,9 +2184,9 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -2297,6 +2214,7 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -2309,9 +2227,9 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -2327,19 +2245,10 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2378,7 +2287,7 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2423,6 +2332,7 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -2435,9 +2345,9 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -2465,6 +2375,7 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -2477,9 +2388,9 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -2513,19 +2424,10 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2547,7 +2449,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -2587,7 +2489,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -2605,7 +2507,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -2649,6 +2551,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -2661,9 +2564,9 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -2679,19 +2582,10 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2730,7 +2624,7 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2775,6 +2669,7 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -2787,9 +2682,9 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -2817,6 +2712,7 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -2829,9 +2725,9 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -2865,19 +2761,10 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2916,7 +2803,7 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -2961,6 +2848,7 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -2973,9 +2861,9 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -3003,6 +2891,7 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -3015,9 +2904,9 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -3051,19 +2940,10 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3102,7 +2982,7 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3147,6 +3027,7 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -3159,9 +3040,9 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -3189,6 +3070,7 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -3201,9 +3083,9 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -3237,19 +3119,10 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3271,7 +3144,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -3324,11 +3197,13 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
             "color": "rgba(75, 73, 73, 1)",
             "fontFamily": "Raleway-Regular",
             "height": 32,
+            "marginBottom": 16,
+            "marginTop": 4,
             "paddingHorizontal": 8,
             "width": 686,
           }
         }
-        underlineColorAndroid="rgba(255, 255, 255, 1)"
+        underlineColorAndroid="#448AFF"
         value={undefined}
       />
       <View
@@ -3365,6 +3240,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -3377,9 +3253,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -3395,19 +3271,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3420,13 +3287,20 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
     }
   >
     <View
-      style={Object {}}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#F0F2F7",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
     >
       <View
         style={
           Object {
             "alignItems": "center",
-            "flexDirection": "column",
+            "justifyContent": "center",
           }
         }
       >
@@ -3437,66 +3311,16 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
           }
         >
-          [missing "en.general.thanks" translation]
-          , 
-          Jeff Bezos
-          !
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 32,
-            }
-          }
-        />
-        <Image
-          animation={undefined}
-          duration={undefined}
-          iterationCount={undefined}
-          source={1}
-          style={
-            Object {
-              "borderColor": undefined,
-              "borderRadius": 102,
-              "borderWidth": 5.828571428571428,
-              "height": 204,
-              "marginBottom": 20.4,
-              "shadowColor": "rgba(0,0,0,0.5)",
-              "shadowOffset": Object {
-                "height": 2,
-              },
-              "shadowRadius": 5,
-              "width": 204,
-            }
-          }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
-          }
-        >
-          [missing "en.setImage.setAPictureFor" translation]
-           
+          Choose a picture for 
           Brett
-          .
         </Text>
         <View
           style={
@@ -3505,46 +3329,90 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
             }
           }
         />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
+          elevation={6}
           style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "color": "#FFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 16,
-              "textAlign": "center",
-            }
+            Array [
+              Object {
+                "backgroundColor": "#FFF",
+                "borderRadius": 4,
+                "margin": 8,
+                "marginBottom": 24,
+                "padding": 8,
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 3,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.16,
+                "shadowRadius": 3,
+                "width": 734,
+              },
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "padding": 16,
+              },
+            ]
           }
         >
-          [missing "en.setImage.dontWorry" translation]
-          .
-        </Text>
-        <View
-          style={
-            Object {
-              "height": 24,
+          <Image
+            source={1}
+            style={undefined}
+          />
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
             }
-          }
-        />
-        <View
-          style={
-            Object {
-              "height": 32,
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
             }
-          }
-        />
+          >
+            Traxi shows a picture of 
+            Brett
+             with their usage.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-Regular",
+                "fontSize": 16,
+                "textAlign": "center",
+              }
+            }
+          >
+            Don't worry though, only you can see it.
+          </Text>
+        </View>
       </View>
       <View
         style={
           Object {
-            "alignItems": "flex-end",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "width": 686,
+            "alignItems": "center",
+            "flexDirection": "column",
           }
         }
       >
@@ -3568,6 +3436,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -3580,13 +3449,13 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
                 "fontSize": 20,
               }
             }
           >
-            [missing "en.setImage.notNow" translation]
+            [missing "en.setImage.chooseAPicture" translation]
              
           </Text>
         </View>
@@ -3610,6 +3479,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -3622,13 +3492,13 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
-            [missing "en.setImage.chooseAPicture" translation]
+            [missing "en.setImage.notNow" translation]
              
           </Text>
         </View>
@@ -3640,19 +3510,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3680,7 +3541,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -3782,6 +3643,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -3794,9 +3656,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -3824,6 +3686,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -3836,9 +3699,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -3854,19 +3717,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3905,7 +3759,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -3950,6 +3804,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -3962,9 +3817,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -3992,6 +3847,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4004,9 +3860,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4040,19 +3896,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4074,7 +3921,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -4114,7 +3961,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -4132,7 +3979,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -4176,6 +4023,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -4188,9 +4036,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -4206,19 +4054,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4257,7 +4096,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -4302,6 +4141,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4314,9 +4154,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4344,6 +4184,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4356,9 +4197,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4392,19 +4233,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4443,7 +4275,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -4488,6 +4320,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4500,9 +4333,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4530,6 +4363,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4542,9 +4376,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4578,19 +4412,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4629,7 +4454,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "center",
             }
@@ -4674,6 +4499,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4686,9 +4512,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4716,6 +4542,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
                 "backgroundColor": "transparent",
                 "flexDirection": "row",
                 "justifyContent": "center",
+                "marginTop": 16,
                 "opacity": 1,
               }
             }
@@ -4728,9 +4555,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#FFF",
+                  "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 20,
+                  "fontSize": 14,
                 }
               }
             >
@@ -4764,19 +4591,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 
 exports[`renders the loading screen when waiting to identify a device 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4804,7 +4622,7 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
             "backgroundColor": "transparent",
             "color": "#FFF",
             "fontFamily": "Raleway-ExtraBold",
-            "fontSize": 30,
+            "fontSize": 26,
             "marginBottom": -2,
             "textAlign": "center",
           }
@@ -4906,6 +4724,7 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -4918,9 +4737,9 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >
@@ -4948,6 +4767,7 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "center",
+              "marginTop": 16,
               "opacity": 1,
             }
           }
@@ -4960,9 +4780,9 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#FFF",
+                "color": "#448AFF",
                 "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
+                "fontSize": 14,
               }
             }
           >

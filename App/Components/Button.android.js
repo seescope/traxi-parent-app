@@ -3,7 +3,9 @@ import { NEUTRAL, WHITE, TRAXI_BLUE } from '../Constants/Colours';
 import { MKButton } from 'react-native-material-kit';
 import { View } from 'react-native';
 
-const Button = ({ children, onPress, primary = true }) => {
+const buttonStyle = { marginHorizontal: 16 };
+
+const Button = ({ children, onPress, primary }) => {
   const BACKGROUND_COLOUR = primary ? TRAXI_BLUE : NEUTRAL;
   const TEXT_COLOUR = WHITE;
 
@@ -18,7 +20,7 @@ const Button = ({ children, onPress, primary = true }) => {
     .build();
 
   return (
-    <View>
+    <View style={buttonStyle}>
       <AndroidButton />
     </View>
   );

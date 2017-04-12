@@ -180,9 +180,9 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
-                  "flex": 1,
+                  "margin": 8,
                   "marginBottom": 24,
-                  "padding": 16,
+                  "padding": 8,
                   "shadowColor": "#000000",
                   "shadowOffset": Object {
                     "height": 3,
@@ -353,7 +353,7 @@ exports[`renders correctly 1`] = `
                 <View>
                   <ActivityIndicator
                     animating={true}
-                    color="#545454"
+                    color="#448AFF"
                     hidesWhenStopped={true}
                     size="large"
                     style={
@@ -420,9 +420,9 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
-                  "flex": 1,
+                  "margin": 8,
                   "marginBottom": 24,
-                  "padding": 16,
+                  "padding": 8,
                   "shadowColor": "#000000",
                   "shadowOffset": Object {
                     "height": 3,
@@ -593,7 +593,7 @@ exports[`renders correctly 1`] = `
                 <View>
                   <ActivityIndicator
                     animating={true}
-                    color="#545454"
+                    color="#448AFF"
                     hidesWhenStopped={true}
                     size="large"
                     style={
@@ -660,9 +660,9 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
-                  "flex": 1,
+                  "margin": 8,
                   "marginBottom": 24,
-                  "padding": 16,
+                  "padding": 8,
                   "shadowColor": "#000000",
                   "shadowOffset": Object {
                     "height": 3,
@@ -833,7 +833,7 @@ exports[`renders correctly 1`] = `
                 <View>
                   <ActivityIndicator
                     animating={true}
-                    color="#545454"
+                    color="#448AFF"
                     hidesWhenStopped={true}
                     size="large"
                     style={
@@ -900,9 +900,9 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
-                  "flex": 1,
+                  "margin": 8,
                   "marginBottom": 24,
-                  "padding": 16,
+                  "padding": 8,
                   "shadowColor": "#000000",
                   "shadowOffset": Object {
                     "height": 3,
@@ -942,7 +942,7 @@ exports[`renders correctly 1`] = `
                 <View>
                   <ActivityIndicator
                     animating={true}
-                    color="#545454"
+                    color="#448AFF"
                     hidesWhenStopped={true}
                     size="large"
                     style={

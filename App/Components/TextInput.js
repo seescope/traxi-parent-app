@@ -3,9 +3,11 @@ import { TextInput as RNTextInput, Dimensions, Platform } from 'react-native';
 
 import {
   NEUTRAL,
+  GREY,
   LIGHTEST_GREY,
   WHITE,
   NEUTRAL_WITH_OPACITY,
+  TRAXI_BLUE,
 } from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
@@ -13,7 +15,7 @@ const { width } = Dimensions.get('window');
 
 const androidInputStyle = {
   fontFamily: 'Raleway-Regular',
-  color: WHITE,
+  color: GREY,
   height: 42,
   fontSize: 16,
   width: width - 64,
@@ -27,12 +29,21 @@ const iosInputStyle = {
   width: width - 64,
   backgroundColor: LIGHTEST_GREY,
   borderRadius: 4,
+  marginTop: 4,
+  marginBottom: 16,
 };
 
 const style = Platform.select({
   ios: iosInputStyle,
   android: androidInputStyle,
 });
+
+// Don't capitalise emails.
+const shouldBeCapitalised = secureTextEntry => (
+  secureTextEntry
+    ? 'none'
+    : 'words'
+);
 
 const TextInput = (
   {
@@ -50,8 +61,8 @@ const TextInput = (
     value={value}
     onSubmitEditing={onSubmitEditing}
     placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
-    underlineColorAndroid="rgba(255, 255, 255, 1)"
-    autoCapitalize={'words'}
+    underlineColorAndroid={TRAXI_BLUE}
+    autoCapitalize={shouldBeCapitalised(secureTextEntry)}
     style={style}
     onChangeText={onChangeText}
     keyboardType={keyboardType}

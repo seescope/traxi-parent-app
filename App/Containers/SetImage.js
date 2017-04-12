@@ -1,7 +1,7 @@
 import * as Firebase from 'firebase';
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Text, View, Alert, Dimensions } from 'react-native';
+import { Image, Text, View, Alert, Dimensions } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import I18n from 'react-native-i18n';
 import { Actions } from 'react-native-router-flux';
@@ -12,8 +12,8 @@ import watchDevice from '../Actions/WatchDevice';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import KidAvatar from '../Components/KidAvatar';
-import { WHITE, TRANSPARENT, TRAXI_BLUE } from '../Constants/Colours';
+import STYLES from '../Constants/Styles';
+import { WHITE, TRANSPARENT, VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import { isIOS, logError, firstName } from '../Utils';
 
 const { width } = Dimensions.get('window');
@@ -60,6 +60,11 @@ export const updateFirebaseKid = (UUID, selectedKid, kids) => {
 
 export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
   dispatch => {
+    if (!pickImage) {
+      Actions.setupCompletion();
+      return null;
+    }
+
     const options = {
       title: 'Select Image',
       storageOptions: {
@@ -67,17 +72,6 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       },
     };
 
-    if (!pickImage && !deeplink) {
-      dispatch(selectKidImage('http://i.imgur.com/ZrwsRFD.png'));
-      dispatch(NEXT_STEP);
-
-      return dispatch(setupKid()).then(() => {
-        dispatch(watchDevice());
-      });
-    } else if (!pickImage && deeplink) {
-      Actions.passwordSetup({ type: 'replace' });
-      return null;
-    }
 
     return ImagePicker.launchImageLibrary(options, response => {
       if (response.didCancel) {
@@ -99,112 +93,89 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       const source = getSource(response);
       dispatch(selectKidImage(source.uri));
 
-      if (!deeplink) {
-        dispatch(NEXT_STEP);
-
-        dispatch(setupKid()).then(() => {
-          dispatch(watchDevice());
-        });
-      } else if (deeplink) {
-        const updatedSelectedKid = getUpdatedSelectedKid(
-          selectedKid,
-          source.uri,
-        );
-        const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
-        updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
-        Actions.kidImageSet({ type: 'replace' });
-      }
+      const updatedSelectedKid = getUpdatedSelectedKid(
+        selectedKid,
+        source.uri,
+      );
+      const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
+      updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
+      Actions.setupCompletion();
     });
   };
 
-const getStyle = deeplink => {
-  if (deeplink) {
-    return {
-      outerContainer: {
-        flex: 1,
-        alignSelf: 'stretch',
-        backgroundColor: TRAXI_BLUE,
-      },
-      container: {
-        flex: 6,
-        paddingTop: 50,
-        paddingLeft: 30,
-        paddingRight: 30,
-        alignItems: 'center',
-      },
-      bodyText: {
-        fontFamily: 'Raleway-Regular',
-        fontSize: 16,
-        color: WHITE,
-      },
-      buttonContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingLeft: 20,
-        paddingRight: 20,
-        justifyContent: 'space-between',
-      },
-    };
-  }
-
-  return {
-    outerContainer: {},
-    container: {
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    bodyText: {
-      fontFamily: 'Raleway-Regular',
-      fontSize: 16,
-      color: WHITE,
-      alignItems: 'center',
-      textAlign: 'center',
-      backgroundColor: TRANSPARENT,
-    },
-    buttonContainer: {
-      width: width - 64,
-      flexDirection: 'row',
-      alignItems: 'flex-end',
-      justifyContent: 'space-between',
-    },
-  };
+const STYLE = {
+  outerContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VERY_LIGHT_GREY,
+  },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  innerContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  bodyText: {
+    textAlign: 'center',
+    fontFamily: 'Raleway-Regular',
+    fontSize: 16,
+    color: GREY,
+  },
+  buttonContainer: {
+    flexDirection: isIOS ? 'column' : 'row',
+    alignItems: 'center',
+  },
+  headerText: {
+    color: GREY,
+  },
+  imageStyle: {
+    width: 160,
+    height: 180,
+  },
 };
 
 const SetImage = (
-  { parentName, kidName, onPress, deeplink, selectedKid, kids, UUID },
+  { kidName, onPress, deeplink, selectedKid, kids, UUID },
 ) => (
-  <View style={getStyle(deeplink).outerContainer}>
-    <View style={getStyle(deeplink).container}>
-      <HeaderText>{I18n.t('general.thanks')}, {parentName}!</HeaderText>
+  <View style={STYLE.outerContainer}>
+    <View style={STYLE.container}>
+      <HeaderText style={STYLE.headerText}>Choose a picture for {kidName}</HeaderText>
 
       <Spacing height={32} />
 
-      <KidAvatar size={204} avatarURL="" />
+      <View style={[STYLES.CARD, STYLE.innerContainer]} elevation={6}>
+        <Image
+          source={require('../Images/placeholder_avatar.png')}
+          style={STYLE.avatarStyle}
+        />
 
-      <Text style={getStyle(deeplink).bodyText}>
-        {I18n.t('setImage.setAPictureFor')} {kidName}.
-      </Text>
+        <Spacing height={32} />
 
-      <Spacing height={32} />
+        <Text style={STYLE.bodyText}>
+          Traxi shows a picture of {kidName} with their usage.
+        </Text>
 
-      <Text style={getStyle(deeplink).bodyText}>
-        {I18n.t('setImage.dontWorry')}.
-      </Text>
+        <Spacing height={32} />
 
-      <Spacing />
+        <Text style={STYLE.bodyText}>
+          Don't worry though, only you can see it.
+        </Text>
+      </View>
 
-      <Spacing height={32} />
     </View>
-    <View style={getStyle(deeplink).buttonContainer}>
+    <View style={STYLE.buttonContainer}>
+      <Button primary onPress={() => onPress(true, deeplink, selectedKid, kids, UUID)}>
+        {I18n.t('setImage.chooseAPicture')}
+      </Button>
       <Button
         primary={false}
         onPress={() => onPress(false, deeplink, selectedKid, kids, UUID)}
       >
         {I18n.t('setImage.notNow')}
-      </Button>
-      <Button onPress={() => onPress(true, deeplink, selectedKid, kids, UUID)}>
-        {I18n.t('setImage.chooseAPicture')}
       </Button>
     </View>
   </View>

@@ -1,20 +1,21 @@
 import React, { PropTypes } from 'react';
-import STYLES from '../Constants/Styles';
-import { TRAXI_BLUE, TRAXI_LIGHT_BLUE } from '../Constants/Colours';
-// eslint-disable-next-line
-import LinearGradient from 'react-native-linear-gradient';
+import { View } from 'react-native';
+import { VERY_LIGHT_GREY } from '../Constants/Colours';
 
-const Background = ({ style, children }) => (
-  <LinearGradient
-    colors={[TRAXI_LIGHT_BLUE, TRAXI_BLUE]}
-    style={style || STYLES.CONTAINER}
+const backgroundStyle = {
+  flex: 1,
+  backgroundColor: VERY_LIGHT_GREY,
+};
+
+const Background = ({ children }) => (
+  <View
+    style={backgroundStyle}
   >
     {children}
-  </LinearGradient>
+  </View>
 );
 
 Background.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   children: PropTypes.node.isRequired,
 };
 

@@ -1,26 +1,28 @@
 import React, {PropTypes} from 'react';
 import {Text, View, ActivityIndicator} from 'react-native';
-import {WHITE} from '../Constants/Colours';
-import {TEXT} from '../Constants/Styles';
+import { TRAXI_BLUE, GREY } from '../Constants/Colours';
+import { TEXT } from '../Constants/Styles';
 
 const spinnerStyle = {
   marginBottom: 16,
 };
 
-const LoadingIndicator = ({children, color = WHITE}) => (
+const spinnerTextStyle = {
+  color: GREY,
+  textAlign: 'center',
+  backgroundColor: 'transparent'
+};
+
+const LoadingIndicator = ({ children }) => (
   <View>
-    <ActivityIndicator size={'large'} color={color} style={spinnerStyle} />
-    <Text
-      style={// eslint-disable-next-line
-      [TEXT, {color: color, textAlign: 'center', backgroundColor: 'transparent'}]}
-    >
+    <ActivityIndicator size={'large'} color={TRAXI_BLUE} style={spinnerStyle} />
+    <Text style={[TEXT, spinnerTextStyle]}>
       {children}
     </Text>
   </View>
 );
 
 LoadingIndicator.propTypes = {
-  color: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 };
 

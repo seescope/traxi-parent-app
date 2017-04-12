@@ -13,9 +13,7 @@ import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
-import NameSetup from '../Components/SetupCompletion/NameSetup';
-import KidImageSet from '../Components/SetupCompletion/KidImageSet';
-import PasswordSetup from '../Components/SetupCompletion/PasswordSetup';
+import SetupCompletion from './SetupCompletion';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
@@ -112,11 +110,6 @@ class ParentApp extends React.Component {
           />
           <Scene key="notReadyYet" component={NotReadyYet} />
           <Scene key="thankyou" component={Thankyou} />
-          <Scene
-            key="setImage"
-            initial={shouldShowSetupCompletion}
-            component={SetImage}
-          />
           <Scene key="walkthrough" component={Walkthrough} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
@@ -124,9 +117,11 @@ class ParentApp extends React.Component {
             initial={shouldShowDashboard}
             component={Dashboard}
           />
-          <Scene key="nameSetup" component={NameSetup} />
-          <Scene key="kidImageSet" component={KidImageSet} />
-          <Scene key="passwordSetup" component={PasswordSetup} />
+          <Scene key="setImage" initial={shouldShowSetupCompletion} component={SetImage} />
+          <Scene
+            key="setupCompletion"
+            component={SetupCompletion}
+          />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

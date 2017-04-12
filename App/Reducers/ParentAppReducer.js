@@ -132,10 +132,15 @@ const ParentAppReducer = (state = {}, action = {}) => {
         sceneName: scene.name,
       };
     }
-    case 'UPDATE_PROFILE_NAME': {
-      const { name } = action;
-      const newProfile = state.profile;
-      newProfile.name = name;
+    case 'UPDATE_PROFILE': {
+      const { field, value } = action;
+      const { profile } = state;
+
+      const newProfile = {
+        ...profile,
+        [field]: value,
+      };
+
       return { ...state, profile: newProfile };
     }
     default: {

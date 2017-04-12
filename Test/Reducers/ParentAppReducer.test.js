@@ -139,14 +139,16 @@ it('NEXT_STEP', () => {
   expect(Analytics.track.mock.calls).toMatchSnapshot();
 });
 
-it('UPDATE_PROFILE_NAME', () => {
+it('UPDATE_PROFILE', () => {
   const oldState = {
     profile: {},
   };
+
   const name = 'name';
   const newState = parentAppReducer(oldState, {
-    type: 'UPDATE_PROFILE_NAME',
-    name,
+    type: 'UPDATE_PROFILE',
+    field: 'name',
+    value: name,
   });
 
   expect(newState.profile.name).toBe('name');
