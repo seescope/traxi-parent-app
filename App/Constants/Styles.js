@@ -9,7 +9,6 @@ export const SMALL_FONT_SIZE = (isIOS && PixelRatio.get() >= 3) ? 15 : 12;
 export default StyleSheet.create({
   CONTAINER: {
     flex: 1,
-    backgroundColor: TRAXI_BLUE,
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
