@@ -32,7 +32,7 @@ exports[`renders the <SetName> component 1`] = `
         "backgroundColor": "transparent",
         "color": "#FFF",
         "fontFamily": "Raleway-ExtraBold",
-        "fontSize": 30,
+        "fontSize": 26,
         "marginBottom": -2,
         "textAlign": "center",
       }
@@ -85,11 +85,13 @@ exports[`renders the <SetName> component 1`] = `
         "color": "rgba(75, 73, 73, 1)",
         "fontFamily": "Raleway-Regular",
         "height": 32,
+        "marginBottom": 16,
+        "marginTop": 4,
         "paddingHorizontal": 8,
         "width": 686,
       }
     }
-    underlineColorAndroid="rgba(255, 255, 255, 1)"
+    underlineColorAndroid="#448AFF"
     value={undefined}
   />
   <View
@@ -126,6 +128,7 @@ exports[`renders the <SetName> component 1`] = `
           "backgroundColor": "transparent",
           "flexDirection": "row",
           "justifyContent": "center",
+          "marginTop": 16,
           "opacity": 1,
         }
       }
@@ -138,9 +141,9 @@ exports[`renders the <SetName> component 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#FFF",
+            "color": "#448AFF",
             "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
+            "fontSize": 14,
           }
         }
       >

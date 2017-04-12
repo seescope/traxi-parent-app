@@ -1,6 +1,6 @@
 import React from 'react';
+// import { AsyncStorage } from 'react-native';
 import * as Firebase from 'firebase';
-import { Alert } from 'react-native';
 import I18n from 'react-native-i18n';
 
 import Loading from './App/Components/Loading';
@@ -12,6 +12,17 @@ import OneSignal from 'react-native-onesignal';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
+
+const config = {
+  apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
+  authDomain: 'traxiapp.firebaseapp.com',
+  databaseURL: 'https://traxiapp.firebaseio.com',
+  projectId: 'project-946779331638130823',
+  storageBucket: 'project-946779331638130823.appspot.com',
+  messagingSenderId: '204102393429',
+};
+
+Firebase.initializeApp(config);
 
 export const getInitialState = () => getUUID()
   .then((result) => {
@@ -50,16 +61,6 @@ export default class extends React.Component {
       loading: true,
     };
 
-    const config = {
-      apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
-      authDomain: 'traxiapp.firebaseapp.com',
-      databaseURL: 'https://traxiapp.firebaseio.com',
-      projectId: 'project-946779331638130823',
-      storageBucket: 'project-946779331638130823.appspot.com',
-      messagingSenderId: '204102393429',
-    };
-
-    Firebase.initializeApp(config);
   }
 
   componentWillMount() {

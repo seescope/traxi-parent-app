@@ -2,19 +2,10 @@
 
 exports[`renders the Walkthrough component at each stage for Android 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -163,19 +154,10 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -252,6 +234,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
               Object {
                 "alignItems": "center",
                 "justifyContent": "center",
+                "padding": 16,
               },
             ]
           }
@@ -410,19 +393,10 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -626,19 +600,10 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -814,19 +779,10 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -888,7 +844,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -906,7 +862,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -981,19 +937,10 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1169,19 +1116,10 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1357,19 +1295,10 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1545,19 +1474,10 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
 
 exports[`renders the Walkthrough component at each stage for Android 9`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1727,19 +1647,10 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1888,19 +1799,10 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -1977,6 +1879,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
               Object {
                 "alignItems": "center",
                 "justifyContent": "center",
+                "padding": 16,
               },
             ]
           }
@@ -2135,19 +2038,10 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2351,19 +2245,10 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2539,19 +2424,10 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2613,7 +2489,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -2631,7 +2507,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -2706,19 +2582,10 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -2894,19 +2761,10 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3082,19 +2940,10 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
 
 exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3270,19 +3119,10 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3431,19 +3271,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3520,6 +3351,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
               Object {
                 "alignItems": "center",
                 "justifyContent": "center",
+                "padding": 16,
               },
             ]
           }
@@ -3678,19 +3510,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -3894,19 +3717,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4082,19 +3896,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4156,7 +3961,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
       <View>
         <ActivityIndicator
           animating={true}
-          color="#FFF"
+          color="#448AFF"
           hidesWhenStopped={true}
           size="large"
           style={
@@ -4174,7 +3979,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
               undefined,
               Object {
                 "backgroundColor": "transparent",
-                "color": "#FFF",
+                "color": "#545454",
                 "textAlign": "center",
               },
             ]
@@ -4249,19 +4054,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4437,19 +4233,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4625,19 +4412,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
 
 exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >
@@ -4813,19 +4591,10 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
 
 exports[`renders the loading screen when waiting to identify a device 1`] = `
 <View
-  colors={
-    Array [
-      "#90CAF9",
-      "#448AFF",
-    ]
-  }
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#448AFF",
+      "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "paddingHorizontal": 20,
-      "paddingTop": 16,
     }
   }
 >

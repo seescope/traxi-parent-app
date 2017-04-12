@@ -66,6 +66,7 @@ exports[`renders the <SetImage> component correctly with deeplink 1`] = `
           Object {
             "alignItems": "center",
             "justifyContent": "center",
+            "padding": 16,
           },
         ]
       }
@@ -286,6 +287,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
           Object {
             "alignItems": "center",
             "justifyContent": "center",
+            "padding": 16,
           },
         ]
       }

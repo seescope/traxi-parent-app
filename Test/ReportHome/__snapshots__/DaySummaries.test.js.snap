@@ -51,7 +51,7 @@ exports[`Renders a list of day summaries 1`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "left",
             }
@@ -160,7 +160,7 @@ exports[`Renders a list of day summaries 1`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "left",
             }
@@ -269,7 +269,7 @@ exports[`Renders a list of day summaries 1`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "left",
             }
@@ -378,7 +378,7 @@ exports[`Renders a list of day summaries 1`] = `
               "backgroundColor": "transparent",
               "color": "#FFF",
               "fontFamily": "Raleway-ExtraBold",
-              "fontSize": 30,
+              "fontSize": 26,
               "marginBottom": -2,
               "textAlign": "left",
             }
