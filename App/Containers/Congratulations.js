@@ -11,21 +11,6 @@ import HeaderText from '../Components/HeaderText';
 import BodyText from '../Components/BodyText';
 import { TRAXI_BLUE, WHITE } from '../Constants/Colours';
 
-const firstName = kid => kid.name.split(' ')[0];
-
-const mapStateToProps = state => ({
-  parentName: state.parentName,
-  kidName: firstName(state.selectedKid),
-  deviceType: state.selectedKid.deviceType,
-  avatarURL: state.selectedKid.avatarURL,
-});
-const mapDispatchToProps = dispatch => ({
-  onPress: () => {
-    dispatch(RESET_STATE);
-    Actions.dashboard();
-  },
-});
-
 // TODO: Extract
 const headerTextStyle = { marginBottom: 16, color: WHITE };
 
@@ -78,6 +63,21 @@ CongratulationsComponent.propTypes = {
   deviceType: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
+
+const firstName = kid => kid.name.split(' ')[0];
+
+const mapStateToProps = state => ({
+  parentName: state.parentName,
+  kidName: firstName(state.selectedKid),
+  deviceType: state.selectedKid.deviceType,
+  avatarURL: state.selectedKid.avatarURL,
+});
+const mapDispatchToProps = dispatch => ({
+  onPress: () => {
+    dispatch(RESET_STATE);
+    Actions.dashboard();
+  },
+});
 
 const Congratulations = connect(mapStateToProps, mapDispatchToProps)(
   CongratulationsComponent,

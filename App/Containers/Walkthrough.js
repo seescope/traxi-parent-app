@@ -38,7 +38,8 @@ const WALKTHROUGH_STYLES = {
   },
   instructionsContainer: {
     flex: 1,
-    paddingTop: 20,
+    alignItems: 'center',
+    paddingTop: 40,
   },
   loadingindicatorContainer: {
     flex: 1,
@@ -68,7 +69,16 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
   }
 
   if (step === 1) {
-    return <SetImage />;
+    return (
+      <Instructions
+        deviceType={deviceType}
+        step={step}
+        kidName={kidName}
+        nextStep={nextStep}
+        setupID={setupID}
+      />
+    );
+    //return <SetImage />;
   }
 
   if (step === 2) {
@@ -109,9 +119,10 @@ const getNextComponent = (step, nextStep, kid, parentName) => {
 
 const Walkthrough = ({ step, kid, nextStep, parentName }) => (
   <Background style={WALKTHROUGH_STYLES.container}>
-    <ProgressTrack stage={STAGE_MAP[step]} width={width - 64} />
 
     <View style={WALKTHROUGH_STYLES.instructionsContainer}>
+      <ProgressTrack stage={STAGE_MAP[step]} width={width - 64} />
+
       {getNextComponent(step, nextStep, kid, parentName)}
     </View>
   </Background>

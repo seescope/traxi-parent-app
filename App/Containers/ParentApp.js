@@ -7,12 +7,12 @@ import ReduxThunk from 'redux-thunk';
 
 import SplashScreen from '../Components/SplashScreen';
 import SetName from './SetName';
-import Walkthrough from './Walkthrough';
 import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
 import SetupCompletion from './SetupCompletion';
+import DeviceSetup from './DeviceSetup';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
@@ -107,22 +107,20 @@ class ParentApp extends React.Component {
             initial={shouldShowSplashScreen}
             component={SplashScreen}
           />
-          <Scene
-            key="setName"
-            component={SetName}
-          />
-          <Scene key="walkthrough" component={Walkthrough} />
+          <Scene key="setName" component={SetName} />
+          <Scene key="deviceSetup" initial component={DeviceSetup} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
             key="dashboard"
             initial={shouldShowDashboard}
             component={Dashboard}
           />
-          <Scene key="setImage" initial={shouldShowSetupCompletion} component={SetImage} />
           <Scene
-            key="setupCompletion"
-            component={SetupCompletion}
+            key="setImage"
+            initial={shouldShowSetupCompletion}
+            component={SetImage}
           />
+          <Scene key="setupCompletion" component={SetupCompletion} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

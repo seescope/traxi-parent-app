@@ -9,8 +9,8 @@ const headerStyle = style => {
     color: GREY,
     textAlign: 'center',
     fontSize: isIOS ? 26 : 24,
-    marginBottom: -2,
     backgroundColor: 'transparent',
+    paddingHorizontal: 65,
   };
 
   return { ...defaultStyle, ...style };

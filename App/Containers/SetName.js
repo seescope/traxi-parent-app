@@ -1,28 +1,35 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Keyboard, Text, View } from 'react-native';
+import { Text, View, Alert } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import I18n from 'react-native-i18n';
 
-import { enterKidName, NEXT_STEP } from '../Actions/Actions';
+import { enterKidName } from '../Actions/Actions';
 import Button from '../Components/Button';
 import Background from '../Components/Background';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import { TRANSPARENT, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
 
 const style = {
   container: {
     marginTop: 32,
+    paddingTop: 18,
     alignItems: 'center',
   },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
-    color: WHITE,
+    color: 'red',
     backgroundColor: TRANSPARENT,
     textAlign: 'left',
+  },
+  labelText: {
+    fontFamily: 'Raleway-Regular',
+    fontSize: 14,
+    color: GREY,
   },
   buttonContainer: {
     alignItems: 'center',
@@ -32,54 +39,70 @@ const style = {
 export const setKidName = kidName =>
   dispatch => dispatch(enterKidName(kidName));
 
-export const nextStep = () => dispatch => {
-  Keyboard.dismiss();
-  dispatch(NEXT_STEP);
+export const nextStep = kidName => {
+  if (kidName) {
+    Actions.deviceSetup({ type: 'replace' });
+  } else {
+    Alert.alert("Please enter your kid's name");
+  }
 };
 
-const SetName = ({ onChangeText, onPress }) => (
-  <Background>
-    <View style={style.container}>
-      <HeaderText>{I18n.t('setName.header')}</HeaderText>
+class SetName extends React.Component {
+  constructor(props) {
+    super(props);
 
-      <Spacing height={16} />
+    this.state = {
+      kidName: '',
+    };
+  }
 
-      <View style={[STYLES.CARD, style.container]} elevation={6}>
-        <View style={style.innerContainer}>
-          <Text style={style.bodyText}>
-            {I18n.t('setName.kidsName')}
-          </Text>
+  onChangeText(kidName) {
+    this.setState({ kidName });
+    this.props.setKidNameFn(kidName);
+  }
 
-          <TextInput
-            refFunc={ref => {
-              this.textInput = ref;
-            }}
-            onChangeText={onChangeText}
-            onSubmitEditing={() => onPress()}
-          />
+  render() {
+    return (
+      <Background>
+        <View style={style.container}>
+          <HeaderText>{I18n.t('setName.header')}</HeaderText>
+
+          <Spacing height={16} />
+
+          <View style={[STYLES.CARD, style.container]} elevation={6}>
+            <View style={style.innerContainer}>
+              <Text style={style.labelText}>
+                {I18n.t('setName.kidsName')}
+              </Text>
+
+              <TextInput
+                refFunc={ref => {
+                  this.textInput = ref;
+                }}
+                onChangeText={text => this.onChangeText(text)}
+                onSubmitEditing={() => nextStep(this.state.kidName)}
+              />
+            </View>
+          </View>
+
+          <View style={style.buttonContainer}>
+            <Button primary onPress={() => nextStep(this.state.kidName)}>
+              {I18n.t('general.nextStep')}
+            </Button>
+          </View>
         </View>
-      </View>
-
-
-      <View style={style.buttonContainer}>
-        <Button onPress={() => onPress()}>{I18n.t('general.nextStep')}</Button>
-      </View>
-    </View>
-  </Background>
-);
+      </Background>
+    );
+  }
+}
 
 SetName.propTypes = {
-  onChangeText: PropTypes.func.isRequired,
-  onPress: PropTypes.func.isRequired,
+  setKidNameFn: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  parentName: state.parentName,
-});
-
 const mapDispatchToProps = {
-  onChangeText: setKidName,
+  setKidNameFn: setKidName,
   onPress: nextStep,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetName);
+export default connect(null, mapDispatchToProps)(SetName);

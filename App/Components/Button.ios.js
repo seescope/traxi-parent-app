@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 import { TRAXI_BLUE } from '../Constants/Colours';
 
-const Button = ({ children, onPress, primary }) => {
+const Button = ({ children, onPress, primary = false }) => {
   const fontSize = primary ? 20 : 14;
 
   const BUTTON_STYLE = {

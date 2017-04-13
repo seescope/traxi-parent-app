@@ -7,7 +7,6 @@ import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { GREY, TRANSPARENT } from '../Constants/Colours';
-import STYLES from '../Constants/Styles';
 
 const { height } = Dimensions.get('window');
 
@@ -30,7 +29,7 @@ const imageStyle = {
   height: height / 2,
 };
 
-export default () =>
+export default () => (
   <Background>
     <View style={containerStyle}>
       <Animatable.Image
@@ -54,12 +53,9 @@ export default () =>
 
       <Spacing height={32} />
 
-      <Animatable.View
-        useNativeDriver
-        animation="bounceInUp"
-        delay={2000}
-      >
+      <Animatable.View useNativeDriver animation="bounceInUp" delay={2000}>
         <Button primary onPress={() => Actions.setName()}>Find out now</Button>
       </Animatable.View>
     </View>
-  </Background>;
+  </Background>
+);
