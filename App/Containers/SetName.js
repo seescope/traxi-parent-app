@@ -5,12 +5,18 @@ import I18n from 'react-native-i18n';
 
 import { enterKidName, NEXT_STEP } from '../Actions/Actions';
 import Button from '../Components/Button';
+import Background from '../Components/Background';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { WHITE, TRANSPARENT } from '../Constants/Colours';
+import STYLES from '../Constants/Styles';
 
 const style = {
+  container: {
+    marginTop: 32,
+    alignItems: 'center',
+  },
   bodyText: {
     fontFamily: 'Raleway-Regular',
     fontSize: 16,
@@ -32,31 +38,34 @@ export const nextStep = () => dispatch => {
 };
 
 const SetName = ({ onChangeText, onPress }) => (
-  <View>
-    <HeaderText>{I18n.t('setName.header')}</HeaderText>
+  <Background>
+    <View style={style.container}>
+      <HeaderText>{I18n.t('setName.header')}</HeaderText>
 
-    <Spacing height={32} />
+      <Spacing height={16} />
 
-    <Text style={style.bodyText}>
-      {I18n.t('setName.kidsName')}
-    </Text>
+      <View style={[STYLES.CARD, style.container]} elevation={6}>
+        <View style={style.innerContainer}>
+          <Text style={style.bodyText}>
+            {I18n.t('setName.kidsName')}
+          </Text>
 
-    <Spacing height={16} />
+          <TextInput
+            refFunc={ref => {
+              this.textInput = ref;
+            }}
+            onChangeText={onChangeText}
+            onSubmitEditing={() => onPress()}
+          />
+        </View>
+      </View>
 
-    <TextInput
-      refFunc={ref => {
-        this.textInput = ref;
-      }}
-      onChangeText={onChangeText}
-      onSubmitEditing={() => onPress()}
-    />
 
-    <Spacing />
-
-    <View style={style.buttonContainer}>
-      <Button onPress={() => onPress()}>{I18n.t('general.nextStep')}</Button>
+      <View style={style.buttonContainer}>
+        <Button onPress={() => onPress()}>{I18n.t('general.nextStep')}</Button>
+      </View>
     </View>
-  </View>
+  </Background>
 );
 
 SetName.propTypes = {

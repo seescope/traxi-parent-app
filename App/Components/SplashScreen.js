@@ -7,6 +7,7 @@ import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import { GREY, TRANSPARENT } from '../Constants/Colours';
+import STYLES from '../Constants/Styles';
 
 const { height } = Dimensions.get('window');
 

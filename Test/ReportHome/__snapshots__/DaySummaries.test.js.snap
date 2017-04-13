@@ -49,7 +49,7 @@ exports[`Renders a list of day summaries 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
               "marginBottom": -2,
@@ -158,7 +158,7 @@ exports[`Renders a list of day summaries 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
               "marginBottom": -2,
@@ -267,7 +267,7 @@ exports[`Renders a list of day summaries 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
               "marginBottom": -2,
@@ -376,7 +376,7 @@ exports[`Renders a list of day summaries 1`] = `
           style={
             Object {
               "backgroundColor": "transparent",
-              "color": "#FFF",
+              "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
               "marginBottom": -2,
