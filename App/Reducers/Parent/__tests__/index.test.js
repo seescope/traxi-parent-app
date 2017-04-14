@@ -19,8 +19,45 @@ describe("Parent reducer", () => {
         name: undefined,
         UUID: action.parentUUID,
         kids: [action.kidUUID],
-        email: undefined
+        email: undefined,
+        password: undefined
       });
+    });
+  });
+
+  describe("SET_NAME", () => {
+    it("sets the parent's name", () => {
+      const action = {
+        type: "SET_NAME",
+        name: "Parent Name"
+      };
+
+      const { name } = reducer(undefined, action);
+      expect(name).toEqual(action.name);
+    });
+  });
+
+  describe("SET_PASSWORD", () => {
+    it("sets the parent's password", () => {
+      const action = {
+        type: "SET_PASSWORD",
+        password: "Password"
+      };
+
+      const { password } = reducer(undefined, action);
+      expect(password).toEqual(action.password);
+    });
+  });
+
+  describe("SET_EMAIL", () => {
+    it("sets the parent's password", () => {
+      const action = {
+        type: "SET_EMAIL",
+        email: "Parent Email"
+      };
+
+      const { email } = reducer(undefined, action);
+      expect(email).toEqual(action.email);
     });
   });
 });
