@@ -2,19 +2,22 @@
 
 export type SetupState = {
   step: number,
-  kidUUID: ?string
+  kidUUID: ?string,
+  setupID: ?number
 };
 
 export type SetupAction =
   | {
       type: "BEGIN_SETUP",
-      kidUUID: string
+      kidUUID: string,
+      setupID: number
     }
   | { type: "NEXT_STEP" };
 
 const INITIAL_STATE = {
   step: 0,
-  kidUUID: undefined
+  kidUUID: undefined,
+  setupID: undefined
 };
 
 export default (
@@ -23,9 +26,10 @@ export default (
 ): SetupState => {
   switch (action.type) {
     case "BEGIN_SETUP": {
-      const { kidUUID } = action;
+      const { kidUUID, setupID } = action;
       return {
         ...state,
+        setupID,
         kidUUID
       };
     }

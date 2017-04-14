@@ -6,7 +6,8 @@ export function beginSetup(): ParentAction {
   return {
     type: "BEGIN_SETUP",
     parentUUID: uuid.v4(),
-    kidUUID: uuid.v4()
+    kidUUID: uuid.v4(),
+    setupID: Math.round(Math.random() * 10000) // 4 digit number
   };
 }
 

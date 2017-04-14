@@ -8,9 +8,11 @@ describe("Setup Reducer", () => {
   describe("BEGIN_SETUP", () => {
     it("Sets up", () => {
       const action = beginSetup();
-      const { step, kidUUID } = reducer(undefined, action);
+      const { step, kidUUID, setupID } = reducer(undefined, action);
       expect(step).toEqual(0);
       expect(kidUUID).toEqual(TEST_UUID);
+      expect(setupID).toBeLessThan(10000);
+      expect(setupID).toBeGreaterThan(0);
     });
   });
 
