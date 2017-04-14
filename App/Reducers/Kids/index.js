@@ -7,12 +7,17 @@ export type Kid = {
   installed: boolean
 };
 
-export type KidsState = Map<string, Kid>;
-export type KidsAction = {
-  type: "BEGIN_SETUP",
-  kidUUID: string,
-  parentUUID: string
+export type KidsState = {
+  [string]: Kid
 };
+
+export type KidsAction =
+  | {
+      type: "BEGIN_SETUP",
+      kidUUID: string,
+      parentUUID: string
+    }
+  | { type: "SET_KID_NAME", name: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
   name: undefined,
@@ -28,6 +33,22 @@ export default (state: KidsState, action: KidsAction) => {
       return {
         ...state,
         [kidUUID]: createNewKid(kidUUID)
+      };
+    }
+    case "SET_KID_NAME": {
+      const { name, UUID } = action;
+      const kid = state[UUID];
+
+      if (!kid) return state;
+
+      const updatedKid = {
+        ...kid,
+        name
+      };
+
+      return {
+        ...state,
+        [UUID]: updatedKid
       };
     }
     default:
