@@ -3,12 +3,15 @@ type ParentState = {
   name: ?string,
   UUID: ?string,
   email: ?string,
-  kids: Array<string>
+  kids: Array<string>,
+  password: ?string
 };
 
 export type ParentAction =
   | { type: "SET_NAME", name: string }
-  | { type: "BEGIN_SETUP", parentUUID: string, kidUUID: string };
+  | { type: "BEGIN_SETUP", parentUUID: string, kidUUID: string }
+  | { type: "SET_EMAIL", email: string }
+  | { type: "SET_PASSWORD", password: string };
 
 export const INITIAL_STATE = {
   name: undefined,

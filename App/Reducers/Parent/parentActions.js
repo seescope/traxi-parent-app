@@ -16,3 +16,17 @@ export function setName(name: string): ParentAction {
     name
   };
 }
+
+export function setPassword(password: string): ParentAction {
+  return {
+    type: "SET_PASSWORD",
+    password
+  };
+}
+
+export function setEmail(email: string): ParentAction {
+  return {
+    type: "SET_EMAIL",
+    email
+  };
+}

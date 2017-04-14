@@ -15,8 +15,8 @@ describe("Parent reducer", () => {
       const action = Actions.beginSetup();
 
       const { UUID, kids } = reducer(undefined, action);
-      expect(kids[0]).toMatch(MOCK_UUID);
-      expect(UUID).toMatch(MOCK_UUID);
+      expect(kids[0]).toEqual(MOCK_UUID);
+      expect(UUID).toEqual(MOCK_UUID);
     });
   });
 
@@ -32,25 +32,21 @@ describe("Parent reducer", () => {
 
   describe("SET_PASSWORD", () => {
     it("sets the parent's password", () => {
-      const action = {
-        type: "SET_PASSWORD",
-        password: "Password"
-      };
+      const TEST_PASSWORD = "test";
+      const action = Actions.setPassword(TEST_PASSWORD);
 
       const { password } = reducer(undefined, action);
-      expect(password).toEqual(action.password);
+      expect(password).toEqual(TEST_PASSWORD);
     });
   });
 
   describe("SET_EMAIL", () => {
     it("sets the parent's password", () => {
-      const action = {
-        type: "SET_EMAIL",
-        email: "Parent Email"
-      };
+      const TEST_EMAIL = "Test Email";
+      const action = Actions.setEmail(TEST_EMAIL);
 
       const { email } = reducer(undefined, action);
-      expect(email).toEqual(action.email);
+      expect(email).toEqual(TEST_EMAIL);
     });
   });
 });
