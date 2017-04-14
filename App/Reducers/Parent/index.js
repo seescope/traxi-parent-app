@@ -8,7 +8,7 @@ type ParentState = {
 };
 
 export type ParentAction =
-  | { type: "SET_NAME", name: string }
+  | { type: "SET_PARENT_NAME", name: string }
   | { type: "BEGIN_SETUP", parentUUID: string, kidUUID: string }
   | { type: "SET_EMAIL", email: string }
   | { type: "SET_PASSWORD", password: string };
@@ -34,7 +34,7 @@ export default function parent(
         kids: [kidUUID]
       };
     }
-    case "SET_NAME": {
+    case "SET_PARENT_NAME": {
       const { name } = action;
       return {
         ...state,

@@ -20,7 +20,7 @@ describe("Parent reducer", () => {
     });
   });
 
-  describe("SET_NAME", () => {
+  describe("SET_PARENT_NAME", () => {
     it("sets the parent's name", () => {
       const TEST_NAME = "Test Name";
       const action = Actions.setName(TEST_NAME);

@@ -12,7 +12,7 @@ export function beginSetup(): ParentAction {
 
 export function setName(name: string): ParentAction {
   return {
-    type: "SET_NAME",
+    type: "SET_PARENT_NAME",
     name
   };
 }
