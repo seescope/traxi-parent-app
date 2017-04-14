@@ -1,14 +1,14 @@
 // @flow
 type ParentState = {
-  name: ?String,
-  UUID: ?String,
-  email: ?String,
-  kids: Array<String>
+  name: ?string,
+  UUID: ?string,
+  email: ?string,
+  kids: Array<string>
 };
 
-type ParentAction =
-  | { type: "SET_NAME", name: String }
-  | { type: "BEGIN_SETUP", parentUUID: String, kidUUID: String };
+export type ParentAction =
+  | { type: "SET_NAME", name: string }
+  | { type: "BEGIN_SETUP", parentUUID: string, kidUUID: string };
 
 export const INITIAL_STATE = {
   name: undefined,

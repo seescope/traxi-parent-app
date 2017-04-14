@@ -1,4 +1,7 @@
 import reducer, { INITIAL_STATE } from "../index.js";
+import * as Actions from "../parentActions";
+
+const MOCK_UUID = "non-random-uuid";
 
 describe("Parent reducer", () => {
   describe("default", () => {
@@ -9,31 +12,21 @@ describe("Parent reducer", () => {
 
   describe("BEGIN_SETUP", () => {
     it("starts setting up the app", () => {
-      const action = {
-        type: "BEGIN_SETUP",
-        parentUUID: "Parent UUID",
-        kidUUID: "Kid UUID"
-      };
+      const action = Actions.beginSetup();
 
-      expect(reducer(undefined, action)).toEqual({
-        name: undefined,
-        UUID: action.parentUUID,
-        kids: [action.kidUUID],
-        email: undefined,
-        password: undefined
-      });
+      const { UUID, kids } = reducer(undefined, action);
+      expect(kids[0]).toMatch(MOCK_UUID);
+      expect(UUID).toMatch(MOCK_UUID);
     });
   });
 
   describe("SET_NAME", () => {
     it("sets the parent's name", () => {
-      const action = {
-        type: "SET_NAME",
-        name: "Parent Name"
-      };
+      const TEST_NAME = "Test Name";
+      const action = Actions.setName(TEST_NAME);
 
       const { name } = reducer(undefined, action);
-      expect(name).toEqual(action.name);
+      expect(name).toEqual(TEST_NAME);
     });
   });
 
