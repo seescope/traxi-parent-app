@@ -10,7 +10,7 @@ import Background from '../Components/Background';
 import TextInput from '../Components/TextInput';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
-import { TRANSPARENT, GREY } from '../Constants/Colours';
+import { GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
 
 const style = {
@@ -18,13 +18,6 @@ const style = {
     marginTop: 32,
     paddingTop: 18,
     alignItems: 'center',
-  },
-  bodyText: {
-    fontFamily: 'Raleway-Regular',
-    fontSize: 16,
-    color: 'red',
-    backgroundColor: TRANSPARENT,
-    textAlign: 'left',
   },
   labelText: {
     fontFamily: 'Raleway-Regular',

@@ -18,7 +18,7 @@ exports[`renders 1`] = `
         "color": "#545454",
         "fontFamily": "Raleway-ExtraBold",
         "fontSize": 26,
-        "marginBottom": -2,
+        "paddingHorizontal": 55,
         "textAlign": "center",
       }
     }

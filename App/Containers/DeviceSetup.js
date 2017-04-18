@@ -2,16 +2,6 @@ import React, { PropTypes } from 'react';
 import { View, Dimensions, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-// OLD IMPORTS
-import SetImage from './SetImage';
-import Prompt from '../Components/Prompt';
-import ShowPIN from '../Components/ShowPIN';
-import WaitingForDevice from '../Components/WaitingForDevice';
-import Instructions from '../Components/Instructions';
-import { NEXT_STEP } from '../Actions/Actions';
-import Background from '../Components/Background';
-// OLD IMPORTS
-
 import Intercom from 'react-native-intercom';
 import I18n from 'react-native-i18n';
 import * as Animatable from 'react-native-animatable';
@@ -25,7 +15,7 @@ const { height, width } = Dimensions.get('window');
 
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
-    `Go to mytraxi.com on ${kidName}’s device and enter the code ${setupID}`,
+    `Go to mytraxi.com on ${kidName}’s device & enter the code ${setupID}`,
     `Waiting for ${kidName}'s device..`,
     '',
     '',
@@ -68,7 +58,7 @@ const ANDROID_IMAGES = [
 const instructionText = (step, kidName, deviceType, setupID) => {
   switch (deviceType) {
     case 'iPhone':
-      return iosInstructions(step);
+      return iosInstructions(step, kidName);
     case 'Android':
       return androidInstructions(step, kidName, setupID);
     case 'iPad':
@@ -101,7 +91,7 @@ const styles = StyleSheet.create({
   image: {
     width,
     height,
-    marginTop: -(height / 2) + 32,
+    marginTop: -(height / 2) + 15,
     top: height / 2,
   },
   progressTrackContainer: {
@@ -109,6 +99,14 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
+  },
+  instructionsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  buttonsContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
   imageContainer: {
     flex: 2,
@@ -118,7 +116,6 @@ const DeviceSetup = (
   {
     step,
     nextStep,
-    previousStep, // FIXME It's never used tell Kane
     kidName,
     deviceType,
     setupID,
@@ -130,30 +127,34 @@ const DeviceSetup = (
     </View>
 
     <View style={styles.contentContainer}>
-      <HeaderText className="InstructionHeader">
-        {instructionText(step, kidName, deviceType, setupID)}
-      </HeaderText>
+      <View style={styles.instructionsContainer}>
+        <HeaderText className="InstructionHeader">
+          {instructionText(step, kidName, deviceType, setupID)}
+        </HeaderText>
+      </View>
 
-      {!isWaitingForDevice(step, deviceType) &&
-        <View>
-          <Spacing height={10} />
-          <Button primary onPress={nextStep}>
-            {I18n.t('general.nextStep')}
-          </Button>
-        </View>}
+      <View style={styles.buttonsContainer}>
+        {!isWaitingForDevice(step, deviceType) &&
+          <View>
+            <Spacing height={10} />
+            <Button primary onPress={nextStep}>
+              {I18n.t('general.nextStep')}
+            </Button>
+          </View>}
 
-      {isWaitingForDevice(step, deviceType) &&
-        <View>
-          <Spacing height={20} />
-          <LoadingIndicator />
-        </View>}
+        {isWaitingForDevice(step, deviceType) &&
+          <View>
+            <Spacing height={20} />
+            <LoadingIndicator />
+          </View>}
+
+        <Button onPress={() => Intercom.displayMessageComposer()}>
+          {I18n.t('general.needHelp')}
+        </Button>
+      </View>
     </View>
 
     <View style={styles.imageContainer}>
-      <Button onPress={() => Intercom.displayMessageComposer()}>
-        {I18n.t('general.needHelp')}
-      </Button>
-
       <Animatable.Image
         resizeMode="contain"
         animation="bounceInUp"
@@ -171,12 +172,16 @@ DeviceSetup.propTypes = {
   deviceType: PropTypes.string.isRequired,
   setupID: PropTypes.number.isRequired,
 };
-const mapStateToProps = ({ step, kidName, deviceType, setupID }) => ({
-  deviceType: 'unknown',
-  kidName: 'Chris',
-  step,
-  setupID: 1111,
-});
+const mapStateToProps = ({ step, kidName, deviceType, setupID }) => {
+  let type = deviceType;
+  if (!type) type = 'unknown';
+  return {
+    deviceType: type,
+    kidName,
+    step,
+    setupID,
+  };
+};
 const mapDispatchToProps = dispatch => ({
   nextStep: () => dispatch({ type: 'NEXT_STEP' }),
   previousStep: () => dispatch({ type: 'PREVIOUS_STEP' }),

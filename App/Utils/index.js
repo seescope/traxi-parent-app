@@ -55,35 +55,39 @@ export const isToday = date => moment(date).isSame(moment(), 'day');
 
 export const logError = error => {
   const errorString = error.toString();
-  console.error(errorString);
+  console.error(errorString); // eslint-disable-line
 
   if (isIOS) {
     Crashlytics.recordError(errorString);
   } else {
     Crashlytics.logException(errorString);
   }
-}
-
-export const loggingMiddleware = store => next => action => {
-  Crashlytics.log(JSON.stringify(action));
-  Crashlytics.log(JSON.stringify(store));
-
-  return next(action);
 };
+
+export const loggingMiddleware = store =>
+  next =>
+    action => {
+      Crashlytics.log(JSON.stringify(action));
+      Crashlytics.log(JSON.stringify(store));
+
+      return next(action);
+    };
 
 /* eslint-disable no-unused-vars */
-export const trackingMiddleware = store => next => action => {
-  // If this isn't a screen change, we're not interested.
-  if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
-    return next(action);
-  }
+export const trackingMiddleware = store =>
+  next =>
+    action => {
+      // If this isn't a screen change, we're not interested.
+      if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
+        return next(action);
+      }
 
-  // Grab the name of the screen from the flux action.
-  const { scene } = action;
-  Analytics.screen(scene.name);
+      // Grab the name of the screen from the flux action.
+      const { scene } = action;
+      Analytics.screen(scene.name);
 
-  return next(action);
-};
+      return next(action);
+    };
 
 export const experimentViewed = variantName => {
   Analytics.identify({
@@ -150,9 +154,8 @@ export const getUUID = () =>
     return UUIDFromProfile || getUUIDFromDeeplink();
   });
 
-export const getProfile = UUID => Firebase
-    .database()
+export const getProfile = UUID =>
+  Firebase.database()
     .ref(`parents/${UUID}/`)
     .once('value')
     .then(snapshot => snapshot.val());
-

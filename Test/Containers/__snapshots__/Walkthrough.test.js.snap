@@ -12,8 +12,9 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -30,6 +31,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
           Object {
             "alignItems": "center",
             "marginTop": 32,
+            "paddingTop": 18,
           }
         }
       >
@@ -43,7 +45,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -79,6 +81,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
               Object {
                 "alignItems": "center",
                 "marginTop": 32,
+                "paddingTop": 18,
               },
             ]
           }
@@ -92,40 +95,48 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#FFF",
+                  "color": "#545454",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 16,
-                  "textAlign": "left",
+                  "fontSize": 14,
                 }
               }
             >
               [missing "en.setName.kidsName" translation]
             </Text>
-            <TextInput
-              autoCapitalize="words"
-              autoCorrect={false}
-              keyboardType={undefined}
-              onChangeText={[Function]}
-              onSubmitEditing={[Function]}
-              placeholderTextColor="rgba(75, 73, 73, 0.8)"
-              secureTextEntry={undefined}
-              style={
-                Object {
-                  "backgroundColor": "#EFEFEF",
-                  "borderRadius": 4,
-                  "color": "rgba(75, 73, 73, 1)",
-                  "fontFamily": "Raleway-Regular",
-                  "height": 32,
-                  "marginBottom": 16,
-                  "marginTop": 4,
-                  "paddingHorizontal": 8,
-                  "width": 686,
+            <View>
+              <TextInput
+                autoCapitalize="words"
+                autoCorrect={false}
+                keyboardType={undefined}
+                onChangeText={[Function]}
+                onSubmitEditing={[Function]}
+                placeholderTextColor="rgba(75, 73, 73, 0.8)"
+                secureTextEntry={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 4,
+                    "color": "rgba(75, 73, 73, 1)",
+                    "fontFamily": "Raleway-Regular",
+                    "height": 32,
+                    "marginTop": 4,
+                    "paddingHorizontal": 8,
+                    "width": 686,
+                  }
                 }
-              }
-              underlineColorAndroid="#448AFF"
-              value={undefined}
-            />
+                underlineColorAndroid="#448AFF"
+                value={undefined}
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#448AFF",
+                    "height": 2,
+                    "marginBottom": 16,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
@@ -170,7 +181,7 @@ exports[`renders the Walkthrough component at each stage for Android 1`] = `
                 Object {
                   "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "fontSize": 20,
                 }
               }
             >
@@ -197,8 +208,9 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -206,7 +218,6 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#F0F2F7",
           "flex": 1,
           "justifyContent": "center",
         }
@@ -216,6 +227,7 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "justifyContent": "center",
           }
         }
@@ -230,194 +242,130 @@ exports[`renders the Walkthrough component at each stage for Android 2`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
         >
-          Choose a picture for 
-          Brett
+          
         </Text>
         <View
           style={
             Object {
-              "height": 32,
+              "height": 25,
             }
           }
         />
         <View
-          elevation={6}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#FFF",
-                "borderRadius": 4,
-                "margin": 8,
-                "marginBottom": 24,
-                "padding": 8,
-                "shadowColor": "#000000",
-                "shadowOffset": Object {
-                  "height": 3,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.16,
-                "shadowRadius": 3,
-                "width": 734,
-              },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
                 "justifyContent": "center",
-                "padding": 16,
-              },
-            ]
-          }
-        >
-          <Image
-            source={1}
-            style={undefined}
-          />
-          <View
-            style={
-              Object {
-                "height": 32,
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
-              }
-            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Traxi shows a picture of 
-            Brett
-             with their usage.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
-            style={
-              Object {
-                "height": 32,
-              }
-            }
-          />
-          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Don't worry though, only you can see it.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-          }
-        }
-      >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
+              "height": 1334,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }
-          >
-            [missing "en.setImage.chooseAPicture" translation]
-             
-          </Text>
-        </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 14,
-              }
-            }
-          >
-            [missing "en.setImage.notNow" translation]
-             
-          </Text>
-        </View>
+        />
       </View>
     </View>
   </View>
@@ -436,8 +384,9 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -458,7 +407,7 @@ exports[`renders the Walkthrough component at each stage for Android 3`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -643,8 +592,9 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -676,7 +626,7 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -686,20 +636,61 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -743,49 +734,6 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -795,9 +743,7 @@ exports[`renders the Walkthrough component at each stage for Android 4`] = `
           source={Object {}}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -822,8 +768,9 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -838,7 +785,7 @@ exports[`renders the Walkthrough component at each stage for Android 5`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -980,8 +927,9 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1013,7 +961,7 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -1023,20 +971,61 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -1080,49 +1069,6 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -1132,9 +1078,7 @@ exports[`renders the Walkthrough component at each stage for Android 6`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -1159,8 +1103,9 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1192,7 +1137,7 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -1202,20 +1147,61 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -1259,49 +1245,6 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -1311,9 +1254,7 @@ exports[`renders the Walkthrough component at each stage for Android 7`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -1338,8 +1279,9 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1371,7 +1313,7 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -1381,20 +1323,61 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -1438,49 +1421,6 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -1490,9 +1430,7 @@ exports[`renders the Walkthrough component at each stage for Android 8`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -1517,8 +1455,9 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1539,7 +1478,7 @@ exports[`renders the Walkthrough component at each stage for Android 9`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -1690,8 +1629,9 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1708,6 +1648,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
           Object {
             "alignItems": "center",
             "marginTop": 32,
+            "paddingTop": 18,
           }
         }
       >
@@ -1721,7 +1662,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -1757,6 +1698,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
               Object {
                 "alignItems": "center",
                 "marginTop": 32,
+                "paddingTop": 18,
               },
             ]
           }
@@ -1770,40 +1712,48 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#FFF",
+                  "color": "#545454",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 16,
-                  "textAlign": "left",
+                  "fontSize": 14,
                 }
               }
             >
               [missing "en.setName.kidsName" translation]
             </Text>
-            <TextInput
-              autoCapitalize="words"
-              autoCorrect={false}
-              keyboardType={undefined}
-              onChangeText={[Function]}
-              onSubmitEditing={[Function]}
-              placeholderTextColor="rgba(75, 73, 73, 0.8)"
-              secureTextEntry={undefined}
-              style={
-                Object {
-                  "backgroundColor": "#EFEFEF",
-                  "borderRadius": 4,
-                  "color": "rgba(75, 73, 73, 1)",
-                  "fontFamily": "Raleway-Regular",
-                  "height": 32,
-                  "marginBottom": 16,
-                  "marginTop": 4,
-                  "paddingHorizontal": 8,
-                  "width": 686,
+            <View>
+              <TextInput
+                autoCapitalize="words"
+                autoCorrect={false}
+                keyboardType={undefined}
+                onChangeText={[Function]}
+                onSubmitEditing={[Function]}
+                placeholderTextColor="rgba(75, 73, 73, 0.8)"
+                secureTextEntry={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 4,
+                    "color": "rgba(75, 73, 73, 1)",
+                    "fontFamily": "Raleway-Regular",
+                    "height": 32,
+                    "marginTop": 4,
+                    "paddingHorizontal": 8,
+                    "width": 686,
+                  }
                 }
-              }
-              underlineColorAndroid="#448AFF"
-              value={undefined}
-            />
+                underlineColorAndroid="#448AFF"
+                value={undefined}
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#448AFF",
+                    "height": 2,
+                    "marginBottom": 16,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
@@ -1848,7 +1798,7 @@ exports[`renders the Walkthrough component at each stage for iPad 1`] = `
                 Object {
                   "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "fontSize": 20,
                 }
               }
             >
@@ -1875,8 +1825,9 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -1884,7 +1835,6 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#F0F2F7",
           "flex": 1,
           "justifyContent": "center",
         }
@@ -1894,6 +1844,7 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "justifyContent": "center",
           }
         }
@@ -1908,194 +1859,130 @@ exports[`renders the Walkthrough component at each stage for iPad 2`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
         >
-          Choose a picture for 
-          Brett
+          
         </Text>
         <View
           style={
             Object {
-              "height": 32,
+              "height": 25,
             }
           }
         />
         <View
-          elevation={6}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#FFF",
-                "borderRadius": 4,
-                "margin": 8,
-                "marginBottom": 24,
-                "padding": 8,
-                "shadowColor": "#000000",
-                "shadowOffset": Object {
-                  "height": 3,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.16,
-                "shadowRadius": 3,
-                "width": 734,
-              },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
                 "justifyContent": "center",
-                "padding": 16,
-              },
-            ]
-          }
-        >
-          <Image
-            source={1}
-            style={undefined}
-          />
-          <View
-            style={
-              Object {
-                "height": 32,
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
-              }
-            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Traxi shows a picture of 
-            Brett
-             with their usage.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
-            style={
-              Object {
-                "height": 32,
-              }
-            }
-          />
-          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Don't worry though, only you can see it.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-          }
-        }
-      >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
+              "height": 1334,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }
-          >
-            [missing "en.setImage.chooseAPicture" translation]
-             
-          </Text>
-        </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 14,
-              }
-            }
-          >
-            [missing "en.setImage.notNow" translation]
-             
-          </Text>
-        </View>
+        />
       </View>
     </View>
   </View>
@@ -2114,8 +2001,9 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -2136,7 +2024,7 @@ exports[`renders the Walkthrough component at each stage for iPad 3`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -2321,8 +2209,9 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -2354,7 +2243,7 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -2364,20 +2253,61 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2421,49 +2351,6 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -2473,9 +2360,7 @@ exports[`renders the Walkthrough component at each stage for iPad 4`] = `
           source={Object {}}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -2500,8 +2385,9 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -2516,7 +2402,7 @@ exports[`renders the Walkthrough component at each stage for iPad 5`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -2658,8 +2544,9 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -2691,7 +2578,7 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -2701,20 +2588,61 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2758,49 +2686,6 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -2810,9 +2695,7 @@ exports[`renders the Walkthrough component at each stage for iPad 6`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -2837,8 +2720,9 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -2870,7 +2754,7 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -2880,20 +2764,61 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -2937,49 +2862,6 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -2989,9 +2871,7 @@ exports[`renders the Walkthrough component at each stage for iPad 7`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -3016,8 +2896,9 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -3049,7 +2930,7 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -3059,20 +2940,61 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -3116,49 +3038,6 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -3168,9 +3047,7 @@ exports[`renders the Walkthrough component at each stage for iPad 8`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -3195,8 +3072,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -3213,6 +3091,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
           Object {
             "alignItems": "center",
             "marginTop": 32,
+            "paddingTop": 18,
           }
         }
       >
@@ -3226,7 +3105,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -3262,6 +3141,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
               Object {
                 "alignItems": "center",
                 "marginTop": 32,
+                "paddingTop": 18,
               },
             ]
           }
@@ -3275,40 +3155,48 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "backgroundColor": "transparent",
-                  "color": "#FFF",
+                  "color": "#545454",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 16,
-                  "textAlign": "left",
+                  "fontSize": 14,
                 }
               }
             >
               [missing "en.setName.kidsName" translation]
             </Text>
-            <TextInput
-              autoCapitalize="words"
-              autoCorrect={false}
-              keyboardType={undefined}
-              onChangeText={[Function]}
-              onSubmitEditing={[Function]}
-              placeholderTextColor="rgba(75, 73, 73, 0.8)"
-              secureTextEntry={undefined}
-              style={
-                Object {
-                  "backgroundColor": "#EFEFEF",
-                  "borderRadius": 4,
-                  "color": "rgba(75, 73, 73, 1)",
-                  "fontFamily": "Raleway-Regular",
-                  "height": 32,
-                  "marginBottom": 16,
-                  "marginTop": 4,
-                  "paddingHorizontal": 8,
-                  "width": 686,
+            <View>
+              <TextInput
+                autoCapitalize="words"
+                autoCorrect={false}
+                keyboardType={undefined}
+                onChangeText={[Function]}
+                onSubmitEditing={[Function]}
+                placeholderTextColor="rgba(75, 73, 73, 0.8)"
+                secureTextEntry={undefined}
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "borderRadius": 4,
+                    "color": "rgba(75, 73, 73, 1)",
+                    "fontFamily": "Raleway-Regular",
+                    "height": 32,
+                    "marginTop": 4,
+                    "paddingHorizontal": 8,
+                    "width": 686,
+                  }
                 }
-              }
-              underlineColorAndroid="#448AFF"
-              value={undefined}
-            />
+                underlineColorAndroid="#448AFF"
+                value={undefined}
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#448AFF",
+                    "height": 2,
+                    "marginBottom": 16,
+                  }
+                }
+              />
+            </View>
           </View>
         </View>
         <View
@@ -3353,7 +3241,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 1`] = `
                 Object {
                   "color": "#448AFF",
                   "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "fontSize": 20,
                 }
               }
             >
@@ -3380,8 +3268,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -3389,7 +3278,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#F0F2F7",
           "flex": 1,
           "justifyContent": "center",
         }
@@ -3399,6 +3287,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
         style={
           Object {
             "alignItems": "center",
+            "flex": 1,
             "justifyContent": "center",
           }
         }
@@ -3413,194 +3302,130 @@ exports[`renders the Walkthrough component at each stage for iPhone 2`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
         >
-          Choose a picture for 
-          Brett
+          
         </Text>
         <View
           style={
             Object {
-              "height": 32,
+              "height": 25,
             }
           }
         />
         <View
-          elevation={6}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#FFF",
-                "borderRadius": 4,
-                "margin": 8,
-                "marginBottom": 24,
-                "padding": 8,
-                "shadowColor": "#000000",
-                "shadowOffset": Object {
-                  "height": 3,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.16,
-                "shadowRadius": 3,
-                "width": 734,
-              },
+            Object {
+              "alignItems": "center",
+              "flexDirection": "column",
+            }
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
               Object {
                 "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
                 "justifyContent": "center",
-                "padding": 16,
-              },
-            ]
-          }
-        >
-          <Image
-            source={1}
-            style={undefined}
-          />
-          <View
-            style={
-              Object {
-                "height": 32,
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
-          />
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
-              }
-            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Traxi shows a picture of 
-            Brett
-             with their usage.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
-            style={
-              Object {
-                "height": 32,
-              }
-            }
-          />
-          <Text
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 16,
-                "textAlign": "center",
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
               }
             }
+            testID={undefined}
+            tvParallaxProperties={undefined}
           >
-            Don't worry though, only you can see it.
-          </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
-      <View
-        style={
-          Object {
-            "alignItems": "center",
-            "flexDirection": "column",
-          }
-        }
-      >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+      <View>
+        <Image
+          animation="bounceInUp"
+          resizeMode="contain"
+          source={Object {}}
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
+              "height": 1334,
+              "marginTop": -635,
+              "top": 667,
+              "width": 750,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 20,
-              }
-            }
-          >
-            [missing "en.setImage.chooseAPicture" translation]
-             
-          </Text>
-        </View>
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "transparent",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginTop": 16,
-              "opacity": 1,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#448AFF",
-                "fontFamily": "Raleway-Regular",
-                "fontSize": 14,
-              }
-            }
-          >
-            [missing "en.setImage.notNow" translation]
-             
-          </Text>
-        </View>
+        />
       </View>
     </View>
   </View>
@@ -3619,8 +3444,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -3641,7 +3467,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 3`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -3826,8 +3652,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -3859,7 +3686,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -3869,20 +3696,61 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -3926,49 +3794,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -3978,9 +3803,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 4`] = `
           source={Object {}}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -4005,8 +3828,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -4021,7 +3845,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 5`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -4163,8 +3987,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -4196,7 +4021,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -4206,20 +4031,61 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -4263,49 +4129,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -4315,9 +4138,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 6`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -4342,8 +4163,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -4375,7 +4197,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -4385,20 +4207,61 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -4442,49 +4305,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -4494,9 +4314,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 7`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -4521,8 +4339,9 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -4554,7 +4373,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
               "color": "#545454",
               "fontFamily": "Raleway-ExtraBold",
               "fontSize": 26,
-              "marginBottom": -2,
+              "paddingHorizontal": 55,
               "textAlign": "center",
             }
           }
@@ -4564,20 +4383,61 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
         <View
           style={
             Object {
-              "height": 64,
+              "height": 25,
             }
           }
         />
         <View
           style={
             Object {
-              "alignItems": "flex-start",
-              "flexDirection": "row",
-              "justifyContent": "space-between",
-              "width": 686,
+              "alignItems": "center",
+              "flexDirection": "column",
             }
           }
         >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 20,
+                }
+              }
+            >
+              [missing "en.general.nextStep" translation]
+               
+            </Text>
+          </View>
           <View
             accessibilityComponentType={undefined}
             accessibilityLabel={undefined}
@@ -4621,49 +4481,6 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
                
             </Text>
           </View>
-          <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
-                "marginTop": 16,
-                "opacity": 1,
-              }
-            }
-            testID={undefined}
-            tvParallaxProperties={undefined}
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
-                }
-              }
-            >
-              [missing "en.general.nextStep" translation]
-               
-            </Text>
-          </View>
         </View>
       </View>
       <View>
@@ -4673,9 +4490,7 @@ exports[`renders the Walkthrough component at each stage for iPhone 8`] = `
           source={1}
           style={
             Object {
-              "alignItems": "center",
               "height": 1334,
-              "left": -16,
               "marginTop": -635,
               "top": 667,
               "width": 750,
@@ -4700,8 +4515,9 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
   <View
     style={
       Object {
+        "alignItems": "center",
         "flex": 1,
-        "paddingTop": 20,
+        "paddingTop": 40,
       }
     }
   >
@@ -4722,7 +4538,7 @@ exports[`renders the loading screen when waiting to identify a device 1`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }

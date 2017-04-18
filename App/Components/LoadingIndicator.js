@@ -5,7 +5,7 @@ import { TEXT } from '../Constants/Styles';
 
 const spinnerStyle = children => {
   if (children) return { marginBottom: 16 };
-  return;
+  return null;
 };
 
 const spinnerTextStyle = {
@@ -25,7 +25,6 @@ const LoadingIndicator = ({ children }) => (
       <Text style={[TEXT, spinnerTextStyle]}>
         {children}
       </Text>}
-
   </View>
 );
 

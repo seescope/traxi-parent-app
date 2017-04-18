@@ -1,11 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Animated } from 'react-native';
-import {
-  WHITE,
-  TRAXI_BLUE,
-  LIGHT_GREY,
-  TRANSPARENT,
-} from '../Constants/Colours';
+import { WHITE, LIGHT_GREY, TRANSPARENT } from '../Constants/Colours';
 
 const TRACK_COLOUR = LIGHT_GREY;
 const TRACK_THICKNESS = 4;

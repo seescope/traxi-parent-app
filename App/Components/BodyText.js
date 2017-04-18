@@ -12,7 +12,7 @@ const getAlignmentStyle = align => {
 };
 
 const BodyText = ({ children, align }) => (
-  <Text style={[STYLES.TEXT, getAlignmentStyle(align)]}>{children}</Text>
+  <Text style={[STYLES.BODY_TEXT, getAlignmentStyle(align)]}>{children}</Text>
 );
 
 BodyText.propTypes = {

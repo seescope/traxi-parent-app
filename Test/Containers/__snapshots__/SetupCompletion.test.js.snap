@@ -34,7 +34,7 @@ exports[`NameSetup Renders correctly 1`] = `
             "color": "#545454",
             "fontFamily": "Raleway-ExtraBold",
             "fontSize": 26,
-            "marginBottom": -2,
+            "paddingHorizontal": 55,
             "textAlign": "center",
           }
         }
@@ -96,30 +96,40 @@ exports[`NameSetup Renders correctly 1`] = `
           >
             Your email address:
           </Text>
-          <TextInput
-            autoCapitalize="words"
-            autoCorrect={false}
-            keyboardType="email-address"
-            onChangeText={[Function]}
-            onSubmitEditing={undefined}
-            placeholderTextColor="rgba(75, 73, 73, 0.8)"
-            secureTextEntry={undefined}
-            style={
-              Object {
-                "backgroundColor": "#EFEFEF",
-                "borderRadius": 4,
-                "color": "rgba(75, 73, 73, 1)",
-                "fontFamily": "Raleway-Regular",
-                "height": 32,
-                "marginBottom": 16,
-                "marginTop": 4,
-                "paddingHorizontal": 8,
-                "width": 686,
+          <View>
+            <TextInput
+              autoCapitalize="words"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={[Function]}
+              onSubmitEditing={undefined}
+              placeholderTextColor="rgba(75, 73, 73, 0.8)"
+              secureTextEntry={undefined}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 4,
+                  "color": "rgba(75, 73, 73, 1)",
+                  "fontFamily": "Raleway-Regular",
+                  "height": 32,
+                  "marginTop": 4,
+                  "paddingHorizontal": 8,
+                  "width": 686,
+                }
               }
-            }
-            underlineColorAndroid="#448AFF"
-            value="test@test.com"
-          />
+              underlineColorAndroid="#448AFF"
+              value="test@test.com"
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#448AFF",
+                  "height": 2,
+                  "marginBottom": 16,
+                }
+              }
+            />
+          </View>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -134,30 +144,40 @@ exports[`NameSetup Renders correctly 1`] = `
           >
             Your name:
           </Text>
-          <TextInput
-            autoCapitalize="words"
-            autoCorrect={false}
-            keyboardType={undefined}
-            onChangeText={[Function]}
-            onSubmitEditing={undefined}
-            placeholderTextColor="rgba(75, 73, 73, 0.8)"
-            secureTextEntry={undefined}
-            style={
-              Object {
-                "backgroundColor": "#EFEFEF",
-                "borderRadius": 4,
-                "color": "rgba(75, 73, 73, 1)",
-                "fontFamily": "Raleway-Regular",
-                "height": 32,
-                "marginBottom": 16,
-                "marginTop": 4,
-                "paddingHorizontal": 8,
-                "width": 686,
+          <View>
+            <TextInput
+              autoCapitalize="words"
+              autoCorrect={false}
+              keyboardType={undefined}
+              onChangeText={[Function]}
+              onSubmitEditing={undefined}
+              placeholderTextColor="rgba(75, 73, 73, 0.8)"
+              secureTextEntry={undefined}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 4,
+                  "color": "rgba(75, 73, 73, 1)",
+                  "fontFamily": "Raleway-Regular",
+                  "height": 32,
+                  "marginTop": 4,
+                  "paddingHorizontal": 8,
+                  "width": 686,
+                }
               }
-            }
-            underlineColorAndroid="#448AFF"
-            value={undefined}
-          />
+              underlineColorAndroid="#448AFF"
+              value={undefined}
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#448AFF",
+                  "height": 2,
+                  "marginBottom": 16,
+                }
+              }
+            />
+          </View>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -172,30 +192,40 @@ exports[`NameSetup Renders correctly 1`] = `
           >
             Choose a password:
           </Text>
-          <TextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType={undefined}
-            onChangeText={[Function]}
-            onSubmitEditing={undefined}
-            placeholderTextColor="rgba(75, 73, 73, 0.8)"
-            secureTextEntry={true}
-            style={
-              Object {
-                "backgroundColor": "#EFEFEF",
-                "borderRadius": 4,
-                "color": "rgba(75, 73, 73, 1)",
-                "fontFamily": "Raleway-Regular",
-                "height": 32,
-                "marginBottom": 16,
-                "marginTop": 4,
-                "paddingHorizontal": 8,
-                "width": 686,
+          <View>
+            <TextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType={undefined}
+              onChangeText={[Function]}
+              onSubmitEditing={undefined}
+              placeholderTextColor="rgba(75, 73, 73, 0.8)"
+              secureTextEntry={true}
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderRadius": 4,
+                  "color": "rgba(75, 73, 73, 1)",
+                  "fontFamily": "Raleway-Regular",
+                  "height": 32,
+                  "marginTop": 4,
+                  "paddingHorizontal": 8,
+                  "width": 686,
+                }
               }
-            }
-            underlineColorAndroid="#448AFF"
-            value={undefined}
-          />
+              underlineColorAndroid="#448AFF"
+              value={undefined}
+            />
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#448AFF",
+                  "height": 2,
+                  "marginBottom": 16,
+                }
+              }
+            />
+          </View>
         </View>
       </View>
     </View>
