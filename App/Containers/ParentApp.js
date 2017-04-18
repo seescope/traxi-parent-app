@@ -1,22 +1,22 @@
-import React, { PropTypes } from 'react';
-import { BackAndroid } from 'react-native';
-import { createStore, applyMiddleware } from 'redux';
-import { connect, Provider } from 'react-redux';
-import { Scene, Router, Actions } from 'react-native-router-flux';
-import ReduxThunk from 'redux-thunk';
+import React, { PropTypes } from "react";
+import { BackAndroid } from "react-native";
+import { createStore, applyMiddleware } from "redux";
+import { connect, Provider } from "react-redux";
+import { Scene, Router, Actions } from "react-native-router-flux";
+import ReduxThunk from "redux-thunk";
 
-import SplashScreen from '../Components/SplashScreen';
-import SetName from './SetName';
-import Congratulations from './Congratulations';
-import Playground from '../Utils/Playground';
-import Dashboard from '../Dashboard';
-import SetImage from './SetImage';
-import SetupCompletion from './SetupCompletion';
-import DeviceSetup from './DeviceSetup';
+import SplashScreen from "../Components/SplashScreen";
+import SetName from "./SetName";
+import Congratulations from "./Congratulations";
+import Playground from "../Utils/Playground";
+import Dashboard from "../Dashboard";
+import SetImage from "./SetImage";
+import SetupCompletion from "./SetupCompletion";
+import DeviceSetup from "./DeviceSetup";
 
-import ParentAppReducer from '../Reducers/ParentAppReducer';
-import fetchReportsAction from '../Dashboard/Actions/FetchReport';
-import { loggingMiddleware, trackingMiddleware } from '../Utils';
+import ParentAppReducer from "../Reducers/ParentAppReducer";
+import fetchReportsAction from "../Dashboard/Actions/FetchReport";
+import { loggingMiddleware, trackingMiddleware } from "../Utils";
 
 const RouterWithRedux = connect()(Router);
 
@@ -34,18 +34,18 @@ class ParentApp extends React.Component {
       step: 0,
       kids: kids || [],
       selectedKid: (kids && kids[0]) || {},
-      reports: {},
+      reports: {}
     };
 
     this.store = createStore(
       ParentAppReducer,
       INITIAL_STATE,
-      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
+      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware)
     );
 
     if (profile) {
       if (profile.name) {
-        this.store.dispatch({ type: 'LOGGED_IN', profile });
+        this.store.dispatch({ type: "LOGGED_IN", profile });
       }
       this.fetchReports();
     }
@@ -57,12 +57,12 @@ class ParentApp extends React.Component {
     const store = this.store;
     const { sceneName, step } = store.getState();
 
-    if (sceneName === 'walkthrough') {
+    if (sceneName === "walkthrough") {
       if (step === 0) Actions.pop();
-      else store.dispatch({ type: 'PREVIOUS_STEP' });
+      else store.dispatch({ type: "PREVIOUS_STEP" });
 
       return true;
-    } else if (sceneName === 'congratulations') {
+    } else if (sceneName === "congratulations") {
       return true;
     }
 
@@ -107,7 +107,7 @@ class ParentApp extends React.Component {
             initial={shouldShowSplashScreen}
             component={SplashScreen}
           />
-          <Scene key="setName" initial component={SetName} />
+          <Scene key="setName" component={SetName} />
           <Scene key="deviceSetup" component={DeviceSetup} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
@@ -130,7 +130,7 @@ class ParentApp extends React.Component {
 
 ParentApp.propTypes = {
   profile: PropTypes.object.isRequired,
-  deeplink: PropTypes.bool,
+  deeplink: PropTypes.bool
 };
 
 export default ParentApp;
