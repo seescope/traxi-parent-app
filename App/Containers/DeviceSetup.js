@@ -105,9 +105,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  loader: {
+    marginHorizontal: 38,
+  },
   buttonsContainer: {
     flex: 1,
-    justifyContent: 'flex-end',
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: isIOS ? 'flex-end' : 'center',
     flexDirection: isIOS ? 'column' : 'row',
   },
   imageContainer: {
@@ -136,17 +141,16 @@ const DeviceSetup = (
       </View>
 
       <View style={styles.buttonsContainer}>
+        <Spacing height={10} />
+
         {!isWaitingForDevice(step, deviceType) &&
-          <View>
-            <Spacing height={10} />
-            <Button primary onPress={nextStep}>
-              {I18n.t('general.nextStep')}
-            </Button>
-          </View>}
+          <Button primary onPress={nextStep}>
+            {I18n.t('general.nextStep')}
+          </Button>}
 
         {isWaitingForDevice(step, deviceType) &&
-          <View>
-            <Spacing height={20} />
+          <View style={styles.loader}>
+            <Spacing height={10} />
             <LoadingIndicator />
           </View>}
 
