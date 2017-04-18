@@ -1,5 +1,5 @@
 // @flow
-type ParentState = {
+export type ParentState = {
   name: ?string,
   UUID: ?string,
   email: ?string,
