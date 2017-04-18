@@ -1,5 +1,5 @@
 import { beginSetup } from "../../Parent/parentActions";
-import { setKidName } from "../kidsActions";
+import { setKidName, kidUpdated } from "../kidsActions";
 import reducer from "../index.js";
 
 const TEST_UUID = "non-random-uuid";
@@ -23,6 +23,20 @@ describe("Kids reducer", () => {
       const updatedState = reducer(stateWithKid, action);
       const kid = updatedState[TEST_UUID];
       expect(kid.name).toEqual(TEST_NAME);
+    });
+  });
+
+  describe("KID_UPDATED", () => {
+    test("It updates the kid in the store", () => {
+      const TEST_KID = {
+        UUID: "abc-123",
+        name: "Jeff"
+      };
+
+      const action = kidUpdated(TEST_KID, TEST_KID.UUID);
+      const updatedState = reducer(undefined, action);
+      const kid = updatedState[TEST_KID.UUID];
+      expect(kid.name).toEqual(TEST_KID.name);
     });
   });
 });

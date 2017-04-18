@@ -16,7 +16,8 @@ export type KidsAction =
       type: "BEGIN_SETUP",
       kidUUID: string
     }
-  | { type: "SET_KID_NAME", name: string, UUID: string };
+  | { type: "SET_KID_NAME", name: string, UUID: string }
+  | { type: "KID_UPDATED", kid: Kid, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
   name: undefined,
@@ -24,7 +25,6 @@ const createNewKid = (UUID: string): Kid => ({
   deviceType: "unknown",
   installed: false
 });
-
 export default (state: KidsState, action: KidsAction) => {
   switch (action.type) {
     case "BEGIN_SETUP": {
@@ -48,6 +48,13 @@ export default (state: KidsState, action: KidsAction) => {
       return {
         ...state,
         [UUID]: updatedKid
+      };
+    }
+    case "KID_UPDATED": {
+      const { kid, UUID } = action;
+      return {
+        ...state,
+        [UUID]: kid
       };
     }
     default:
