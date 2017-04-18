@@ -50,6 +50,7 @@ const style = Platform.select({
 });
 
 // Don't capitalise emails.
+// eslint-disable-next-line
 const shouldBeCapitalised = secureTextEntry =>
   secureTextEntry ? 'none' : 'words';
 
@@ -77,7 +78,7 @@ const TextInput = (
       keyboardType={keyboardType}
       secureTextEntry={secureTextEntry}
     />
-    <View style={bottomBorder} />
+    {isIOS && <View style={bottomBorder} />}
   </View>
 );
 

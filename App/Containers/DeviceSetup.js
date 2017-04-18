@@ -10,6 +10,7 @@ import Button from '../Components/Button';
 import ProgressTrack from '../Components/ProgressTrack';
 import Spacing from '../Components/Spacing';
 import LoadingIndicator from '../Components/LoadingIndicator';
+import { isIOS } from '../Utils';
 
 const { height, width } = Dimensions.get('window');
 
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flex: 1,
     justifyContent: 'flex-end',
+    flexDirection: isIOS ? 'column' : 'row',
   },
   imageContainer: {
     flex: 2,

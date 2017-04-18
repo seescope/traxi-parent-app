@@ -34,7 +34,7 @@ export const setKidName = kidName =>
 
 export const nextStep = kidName => {
   if (kidName) {
-    Actions.deviceSetup({ type: 'replace' });
+    Actions.deviceSetup();
   } else {
     Alert.alert("Please enter your kid's name");
   }

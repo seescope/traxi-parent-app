@@ -107,7 +107,7 @@ class ParentApp extends React.Component {
             initial={shouldShowSplashScreen}
             component={SplashScreen}
           />
-          <Scene key="setName" component={SetName} />
+          <Scene key="setName" initial component={SetName} />
           <Scene key="deviceSetup" component={DeviceSetup} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
