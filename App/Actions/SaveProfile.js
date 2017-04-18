@@ -1,5 +1,3 @@
-// @flow
-
 import { AsyncStorage } from "react-native";
 import * as Firebase from "firebase";
 
