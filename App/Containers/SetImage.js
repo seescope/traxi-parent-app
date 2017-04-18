@@ -13,7 +13,12 @@ import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import STYLES from '../Constants/Styles';
-import { WHITE, TRANSPARENT, VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
+import {
+  WHITE,
+  TRANSPARENT,
+  VERY_LIGHT_GREY,
+  GREY,
+} from '../Constants/Colours';
 import { isIOS, logError, firstName } from '../Utils';
 
 const { width } = Dimensions.get('window');
@@ -72,7 +77,6 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       },
     };
 
-
     return ImagePicker.launchImageLibrary(options, response => {
       if (response.didCancel) {
         return;
@@ -93,10 +97,7 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       const source = getSource(response);
       dispatch(selectKidImage(source.uri));
 
-      const updatedSelectedKid = getUpdatedSelectedKid(
-        selectedKid,
-        source.uri,
-      );
+      const updatedSelectedKid = getUpdatedSelectedKid(selectedKid, source.uri);
       const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
       updateFirebaseKid(UUID, updatedSelectedKid, updatedKids);
       Actions.setupCompletion();
@@ -138,12 +139,12 @@ const STYLE = {
   },
 };
 
-const SetImage = (
-  { kidName, onPress, deeplink, selectedKid, kids, UUID },
-) => (
+const SetImage = ({ kidName, onPress, deeplink, selectedKid, kids, UUID }) => (
   <View style={STYLE.outerContainer}>
     <View style={STYLE.container}>
-      <HeaderText style={STYLE.headerText}>Choose a picture for {kidName}</HeaderText>
+      <HeaderText style={STYLE.headerText}>
+        Choose a picture for {kidName}
+      </HeaderText>
 
       <Spacing height={32} />
 
@@ -168,13 +169,13 @@ const SetImage = (
 
     </View>
     <View style={STYLE.buttonContainer}>
-      <Button primary onPress={() => onPress(true, deeplink, selectedKid, kids, UUID)}>
+      <Button
+        primary
+        onPress={() => onPress(true, deeplink, selectedKid, kids, UUID)}
+      >
         {I18n.t('setImage.chooseAPicture')}
       </Button>
-      <Button
-        primary={false}
-        onPress={() => onPress(false, deeplink, selectedKid, kids, UUID)}
-      >
+      <Button onPress={() => onPress(false, deeplink, selectedKid, kids, UUID)}>
         {I18n.t('setImage.notNow')}
       </Button>
     </View>

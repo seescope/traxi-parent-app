@@ -22,134 +22,177 @@ Array [
 `;
 
 exports[`renders the <SetName> component 1`] = `
-<View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontFamily": "Raleway-ExtraBold",
-        "fontSize": 26,
-        "marginBottom": -2,
-        "textAlign": "center",
-      }
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
     }
-  >
-    [missing "en.setName.header" translation]
-  </Text>
-  <View
-    style={
-      Object {
-        "height": 32,
-      }
-    }
-  />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "backgroundColor": "transparent",
-        "color": "#FFF",
-        "fontFamily": "Raleway-Regular",
-        "fontSize": 16,
-        "textAlign": "left",
-      }
-    }
-  >
-    [missing "en.setName.kidsName" translation]
-  </Text>
-  <View
-    style={
-      Object {
-        "height": 16,
-      }
-    }
-  />
-  <TextInput
-    autoCapitalize="words"
-    autoCorrect={false}
-    keyboardType={undefined}
-    onChangeText={[Function]}
-    onSubmitEditing={[Function]}
-    placeholderTextColor="rgba(75, 73, 73, 0.8)"
-    secureTextEntry={undefined}
-    style={
-      Object {
-        "backgroundColor": "#EFEFEF",
-        "borderRadius": 4,
-        "color": "rgba(75, 73, 73, 1)",
-        "fontFamily": "Raleway-Regular",
-        "height": 32,
-        "marginBottom": 16,
-        "marginTop": 4,
-        "paddingHorizontal": 8,
-        "width": 686,
-      }
-    }
-    underlineColorAndroid="#448AFF"
-    value={undefined}
-  />
-  <View
-    style={
-      Object {
-        "height": 24,
-      }
-    }
-  />
+  }
+>
   <View
     style={
       Object {
         "alignItems": "center",
+        "marginTop": 32,
+        "paddingTop": 18,
       }
     }
   >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
+    <Text
       accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#545454",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "paddingHorizontal": 55,
+          "textAlign": "center",
+        }
+      }
+    >
+      [missing "en.setName.header" translation]
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 16,
+        }
+      }
+    />
+    <View
+      elevation={6}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
+          },
+          Object {
+            "alignItems": "center",
+            "marginTop": 32,
+            "paddingTop": 18,
+          },
+        ]
+      }
+    >
+      <View
+        style={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#545454",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 14,
+            }
+          }
+        >
+          [missing "en.setName.kidsName" translation]
+        </Text>
+        <View>
+          <TextInput
+            autoCapitalize="words"
+            autoCorrect={false}
+            keyboardType={undefined}
+            onChangeText={[Function]}
+            onSubmitEditing={[Function]}
+            placeholderTextColor="rgba(75, 73, 73, 0.8)"
+            secureTextEntry={undefined}
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderRadius": 4,
+                "color": "rgba(75, 73, 73, 1)",
+                "fontFamily": "Raleway-Regular",
+                "height": 32,
+                "marginTop": 4,
+                "paddingHorizontal": 8,
+                "width": 686,
+              }
+            }
+            underlineColorAndroid="#448AFF"
+            value={undefined}
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "#448AFF",
+                "height": 2,
+                "marginBottom": 16,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginTop": 16,
-          "opacity": 1,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
-      <Text
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
         accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "color": "#448AFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 14,
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 16,
+            "opacity": 1,
           }
         }
+        testID={undefined}
+        tvParallaxProperties={undefined}
       >
-        [missing "en.general.nextStep" translation]
-         
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#448AFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }
+        >
+          [missing "en.general.nextStep" translation]
+           
+        </Text>
+      </View>
     </View>
   </View>
 </View>

@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Animated } from 'react-native';
-import { WHITE, TRAXI_BLUE } from '../Constants/Colours';
+import { WHITE, LIGHT_GREY, TRANSPARENT } from '../Constants/Colours';
 
-const TRACK_COLOUR = WHITE;
+const TRACK_COLOUR = LIGHT_GREY;
 const TRACK_THICKNESS = 4;
 const STAGES = [0, 1, 2, 3, 4];
 
@@ -30,13 +30,14 @@ const circleStyle = {
   height: 14,
   width: 14,
   borderRadius: 7,
-  backgroundColor: WHITE,
+  backgroundColor: LIGHT_GREY,
 };
 
 const textStyle = {
   fontWeight: 'bold',
   fontSize: 10, // Will be doubled by scaling
-  color: TRAXI_BLUE,
+  backgroundColor: TRANSPARENT,
+  color: WHITE,
 };
 
 class ProgressTrack extends React.Component {
@@ -72,13 +73,11 @@ class ProgressTrack extends React.Component {
   animateCircles() {
     const { stage } = this.props;
 
-    Animated
-      .spring(this.animatedValues[stage], {
-        toValue: 1,
-        friction: 3,
-        tension: 40,
-      })
-      .start();
+    Animated.spring(this.animatedValues[stage], {
+      toValue: 1,
+      friction: 3,
+      tension: 40,
+    }).start();
   }
 
   render() {

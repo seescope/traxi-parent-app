@@ -9,10 +9,10 @@ exports[`renders 1`] = `
     style={
       Object {
         "backgroundColor": "transparent",
-        "color": "#FFF",
+        "color": "#545454",
         "fontFamily": "Raleway-ExtraBold",
         "fontSize": 26,
-        "marginBottom": -2,
+        "paddingHorizontal": 55,
         "textAlign": "center",
       }
     }

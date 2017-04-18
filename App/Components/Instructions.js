@@ -7,15 +7,8 @@ import I18n from 'react-native-i18n';
 import Spacing from './Spacing';
 import HeaderText from './HeaderText';
 import Button from './Button';
-
+import { isIOS } from '../Utils';
 const { height, width } = Dimensions.get('window');
-
-const buttonContainer = {
-  width: width - 64,
-  flexDirection: 'row',
-  alignItems: 'flex-start',
-  justifyContent: 'space-between',
-};
 
 const iosInstructions = step => {
   const instructions = [
@@ -106,40 +99,39 @@ const imagePath = (step, deviceType) => {
   }
 };
 
-const INSTRUCTION_STYLES = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   image: {
-    alignItems: 'center',
     width,
     height,
-    left: -16,
     marginTop: -(height / 2) + 32,
     top: height / 2,
+  },
+  buttonContainer: {
+    flexDirection: isIOS ? 'column' : 'row',
+    alignItems: 'center',
   },
 });
 
 const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
-  <View style={INSTRUCTION_STYLES.container}>
-    <View style={INSTRUCTION_STYLES.container}>
+  <View style={styles.container}>
+    <View style={styles.container}>
       <HeaderText>
         {instructionText(step, kidName, deviceType, setupID)}
       </HeaderText>
 
-      <Spacing height={64} />
+      <Spacing height={25} />
 
-      <View style={buttonContainer}>
-        <Button
-          onPress={() => Intercom.displayMessageComposer()}
-          primary={false}
-        >
-          {I18n.t('general.needHelp')}
-        </Button>
-        <Button onPress={nextStep}>
+      <View style={styles.buttonContainer}>
+        <Button primary onPress={nextStep}>
           {I18n.t('general.nextStep')}
+        </Button>
+        <Button onPress={() => Intercom.displayMessageComposer()}>
+          {I18n.t('general.needHelp')}
         </Button>
       </View>
     </View>
@@ -147,7 +139,7 @@ const Instructions = ({ step, kidName, nextStep, deviceType, setupID }) => (
       <Animatable.Image
         resizeMode="contain"
         animation="bounceInUp"
-        style={INSTRUCTION_STYLES.image}
+        style={styles.image}
         source={imagePath(step, deviceType)}
       />
     </View>

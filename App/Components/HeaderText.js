@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
-import { WHITE } from '../Constants/Colours';
+import { GREY } from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
 const headerStyle = style => {
   const defaultStyle = {
     fontFamily: 'Raleway-ExtraBold',
-    color: WHITE,
+    color: GREY,
     textAlign: 'center',
     fontSize: isIOS ? 26 : 24,
-    marginBottom: -2,
     backgroundColor: 'transparent',
+    paddingHorizontal: 55,
   };
 
   return { ...defaultStyle, ...style };

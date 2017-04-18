@@ -5,15 +5,14 @@ import { connect, Provider } from 'react-redux';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import ReduxThunk from 'redux-thunk';
 
-import SplashScreen from './SplashScreen';
-import NotReadyYet from '../Components/NotReadyYet';
-import Thankyou from '../Components/Thankyou';
-import Walkthrough from './Walkthrough';
+import SplashScreen from '../Components/SplashScreen';
+import SetName from './SetName';
 import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
 import SetupCompletion from './SetupCompletion';
+import DeviceSetup from './DeviceSetup';
 
 import ParentAppReducer from '../Reducers/ParentAppReducer';
 import fetchReportsAction from '../Dashboard/Actions/FetchReport';
@@ -108,20 +107,20 @@ class ParentApp extends React.Component {
             initial={shouldShowSplashScreen}
             component={SplashScreen}
           />
-          <Scene key="notReadyYet" component={NotReadyYet} />
-          <Scene key="thankyou" component={Thankyou} />
-          <Scene key="walkthrough" component={Walkthrough} />
+          <Scene key="setName" component={SetName} />
+          <Scene key="deviceSetup" component={DeviceSetup} />
           <Scene key="congratulations" component={Congratulations} />
           <Scene
             key="dashboard"
             initial={shouldShowDashboard}
             component={Dashboard}
           />
-          <Scene key="setImage" initial={shouldShowSetupCompletion} component={SetImage} />
           <Scene
-            key="setupCompletion"
-            component={SetupCompletion}
+            key="setImage"
+            initial={shouldShowSetupCompletion}
+            component={SetImage}
           />
+          <Scene key="setupCompletion" component={SetupCompletion} />
           <Scene key="playground" initial={false} component={Playground} />
         </RouterWithRedux>
       </Provider>

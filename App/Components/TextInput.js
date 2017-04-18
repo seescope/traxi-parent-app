@@ -1,13 +1,18 @@
 import React, { PropTypes } from 'react';
-import { TextInput as RNTextInput, Dimensions, Platform } from 'react-native';
+import {
+  TextInput as RNTextInput,
+  Dimensions,
+  Platform,
+  View,
+} from 'react-native';
 
 import {
   NEUTRAL,
   GREY,
-  LIGHTEST_GREY,
   WHITE,
   NEUTRAL_WITH_OPACITY,
   TRAXI_BLUE,
+  TRANSPARENT,
 } from '../Constants/Colours';
 import { isIOS } from '../Utils';
 
@@ -25,11 +30,17 @@ const iosInputStyle = {
   fontFamily: 'Raleway-Regular',
   color: NEUTRAL,
   paddingHorizontal: 8,
+  backgroundColor: TRANSPARENT,
   height: 32,
   width: width - 64,
-  backgroundColor: LIGHTEST_GREY,
   borderRadius: 4,
   marginTop: 4,
+};
+
+// Border don't work on TextInput
+const bottomBorder = {
+  height: 2,
+  backgroundColor: TRAXI_BLUE,
   marginBottom: 16,
 };
 
@@ -39,11 +50,9 @@ const style = Platform.select({
 });
 
 // Don't capitalise emails.
-const shouldBeCapitalised = secureTextEntry => (
-  secureTextEntry
-    ? 'none'
-    : 'words'
-);
+// eslint-disable-next-line
+const shouldBeCapitalised = secureTextEntry =>
+  secureTextEntry ? 'none' : 'words';
 
 const TextInput = (
   {
@@ -55,19 +64,22 @@ const TextInput = (
     secureTextEntry,
   },
 ) => (
-  <RNTextInput
-    ref={refFunc}
-    autoCorrect={false}
-    value={value}
-    onSubmitEditing={onSubmitEditing}
-    placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
-    underlineColorAndroid={TRAXI_BLUE}
-    autoCapitalize={shouldBeCapitalised(secureTextEntry)}
-    style={style}
-    onChangeText={onChangeText}
-    keyboardType={keyboardType}
-    secureTextEntry={secureTextEntry}
-  />
+  <View>
+    <RNTextInput
+      ref={refFunc}
+      autoCorrect={false}
+      value={value}
+      onSubmitEditing={onSubmitEditing}
+      placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
+      underlineColorAndroid={TRAXI_BLUE}
+      autoCapitalize={shouldBeCapitalised(secureTextEntry)}
+      style={style}
+      onChangeText={onChangeText}
+      keyboardType={keyboardType}
+      secureTextEntry={secureTextEntry}
+    />
+    {isIOS && <View style={bottomBorder} />}
+  </View>
 );
 
 TextInput.propTypes = {
