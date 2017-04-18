@@ -1,38 +1,39 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { Text, View, Alert } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import I18n from 'react-native-i18n';
+import React, { PropTypes } from "react";
+import { connect } from "react-redux";
+import { Text, View, Alert, Keyboard } from "react-native";
+import { Actions } from "react-native-router-flux";
+import I18n from "react-native-i18n";
 
-import { enterKidName } from '../Actions/Actions';
-import Button from '../Components/Button';
-import Background from '../Components/Background';
-import TextInput from '../Components/TextInput';
-import HeaderText from '../Components/HeaderText';
-import Spacing from '../Components/Spacing';
-import { GREY } from '../Constants/Colours';
-import STYLES from '../Constants/Styles';
+import { enterKidName } from "../Actions/Actions";
+import Button from "../Components/Button";
+import Background from "../Components/Background";
+import TextInput from "../Components/TextInput";
+import HeaderText from "../Components/HeaderText";
+import Spacing from "../Components/Spacing";
+import { GREY } from "../Constants/Colours";
+import STYLES from "../Constants/Styles";
 
 const style = {
   container: {
     marginTop: 32,
     paddingTop: 18,
-    alignItems: 'center',
+    alignItems: "center"
   },
   labelText: {
-    fontFamily: 'Raleway-Regular',
+    fontFamily: "Raleway-Regular",
     fontSize: 14,
-    color: GREY,
+    color: GREY
   },
   buttonContainer: {
-    alignItems: 'center',
-  },
+    alignItems: "center"
+  }
 };
 
 export const setKidName = kidName =>
   dispatch => dispatch(enterKidName(kidName));
 
 export const nextStep = kidName => {
+  Keyboard.dismiss();
   if (kidName) {
     Actions.deviceSetup();
   } else {
@@ -45,7 +46,7 @@ class SetName extends React.Component {
     super(props);
 
     this.state = {
-      kidName: '',
+      kidName: ""
     };
   }
 
@@ -58,14 +59,14 @@ class SetName extends React.Component {
     return (
       <Background>
         <View style={style.container}>
-          <HeaderText>{I18n.t('setName.header')}</HeaderText>
+          <HeaderText>{I18n.t("setName.header")}</HeaderText>
 
           <Spacing height={16} />
 
           <View style={[STYLES.CARD, style.container]} elevation={6}>
             <View style={style.innerContainer}>
               <Text style={style.labelText}>
-                {I18n.t('setName.kidsName')}
+                {I18n.t("setName.kidsName")}
               </Text>
 
               <TextInput
@@ -80,7 +81,7 @@ class SetName extends React.Component {
 
           <View style={style.buttonContainer}>
             <Button primary onPress={() => nextStep(this.state.kidName)}>
-              {I18n.t('general.nextStep')}
+              {I18n.t("general.nextStep")}
             </Button>
           </View>
         </View>
@@ -90,12 +91,12 @@ class SetName extends React.Component {
 }
 
 SetName.propTypes = {
-  setKidNameFn: PropTypes.func.isRequired,
+  setKidNameFn: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = {
   setKidNameFn: setKidName,
-  onPress: nextStep,
+  onPress: nextStep
 };
 
 export default connect(null, mapDispatchToProps)(SetName);
