@@ -6,10 +6,19 @@ import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
-import SetName, { setKidName, nextStep } from "../../App/Containers/SetName";
+import SetName, { mergeProps, nextStep } from "../../App/Containers/SetName";
 
 const mockStore = configureStore([thunk]);
-const testStore = mockStore({ parentName: "Name" });
+const testStore = mockStore({
+  kidState: {
+    "abc-123": {
+      name: "John Bobson"
+    }
+  },
+  setupState: {
+    kidUUID: "abc-123"
+  }
+});
 
 const SetNameComponent = () => (
   <Provider store={testStore}>
@@ -24,8 +33,17 @@ it("renders the <SetName> component", () => {
 
 it("handles setting the kid's name", () => {
   const mockDispatch = jest.fn();
-  setKidName("Test")(mockDispatch);
-  expect(mockDispatch.mock.calls).toMatchSnapshot();
+
+  const { onNameChanged } = mergeProps(
+    { kidUUID: "abc-123" },
+    { dispatch: mockDispatch }
+  );
+  onNameChanged("TEST_NAME");
+  expect(mockDispatch).toHaveBeenCalledWith({
+    name: "TEST_NAME",
+    UUID: "abc-123",
+    type: "SET_KID_NAME"
+  });
 });
 
 it("handles going to the nextStep", () => {

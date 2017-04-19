@@ -1,34 +1,35 @@
-import * as Firebase from 'firebase';
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { Image, Text, View, Alert, Dimensions } from 'react-native';
-import ImagePicker from 'react-native-image-picker';
-import I18n from 'react-native-i18n';
-import { Actions } from 'react-native-router-flux';
+import * as Firebase from "firebase";
+import React, { PropTypes } from "react";
+import { connect } from "react-redux";
+import { Image, Text, View, Alert, Dimensions } from "react-native";
+import ImagePicker from "react-native-image-picker";
+import I18n from "react-native-i18n";
+import { Actions } from "react-native-router-flux";
 
-import { selectKidImage, NEXT_STEP } from '../Actions/Actions';
-import setupKid from '../Actions/SetupKid';
-import watchDevice from '../Actions/WatchDevice';
-import Button from '../Components/Button';
-import HeaderText from '../Components/HeaderText';
-import Spacing from '../Components/Spacing';
-import STYLES from '../Constants/Styles';
+import { selectKidImage } from "../Actions/Actions";
+import { setKidName } from "../Reducers/Kids/kidsActions";
+import setupKid from "../Actions/SetupKid";
+import watchDevice from "../Actions/WatchDevice";
+import Button from "../Components/Button";
+import HeaderText from "../Components/HeaderText";
+import Spacing from "../Components/Spacing";
+import STYLES from "../Constants/Styles";
 import {
   WHITE,
   TRANSPARENT,
   VERY_LIGHT_GREY,
-  GREY,
-} from '../Constants/Colours';
-import { isIOS, logError, firstName } from '../Utils';
+  GREY
+} from "../Constants/Colours";
+import { isIOS, logError, firstName } from "../Utils";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const getSource = response => {
   let source;
 
   if (response.data) {
     if (isIOS) {
-      source = { uri: response.uri.replace('file://', ''), isStatic: true };
+      source = { uri: response.uri.replace("file://", ""), isStatic: true };
     } else {
       source = { uri: response.uri, isStatic: true };
     }
@@ -39,7 +40,7 @@ const getSource = response => {
 
 export const getUpdatedSelectedKid = (selectedKid, URI) => ({
   ...selectedKid,
-  avatarURL: URI,
+  avatarURL: URI
 });
 
 export const getUpdatedKids = (kids, kidUUID, URI) =>
@@ -53,13 +54,13 @@ export const getUpdatedKids = (kids, kidUUID, URI) =>
 export const updateFirebaseKid = (UUID, selectedKid, kids) => {
   Promise.all([
     Firebase.database().ref(`kids/${selectedKid.UUID}`).update(selectedKid),
-    Firebase.database().ref(`parents/${UUID}/kids`).update(kids),
+    Firebase.database().ref(`parents/${UUID}/kids`).update(kids)
   ])
     .then(() => {
       Firebase.database().goOffline();
     })
     .catch(error => {
-      logError('Error updating kids image', error);
+      logError("Error updating kids image", error);
     });
 };
 
@@ -71,10 +72,10 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
     }
 
     const options = {
-      title: 'Select Image',
+      title: "Select Image",
       storageOptions: {
-        skipBackup: true,
-      },
+        skipBackup: true
+      }
     };
 
     return ImagePicker.launchImageLibrary(options, response => {
@@ -83,10 +84,10 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       }
 
       if (response.error) {
-        if (response.error === 'Photo library permissions not granted') {
+        if (response.error === "Photo library permissions not granted") {
           Alert.alert(
-            'Unable to access your photos',
-            'Please allow traxi to access your photos to continue.',
+            "Unable to access your photos",
+            "Please allow traxi to access your photos to continue."
           );
         }
 
@@ -107,36 +108,36 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
 const STYLE = {
   outerContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: VERY_LIGHT_GREY,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: VERY_LIGHT_GREY
   },
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   },
   innerContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16
   },
   bodyText: {
-    textAlign: 'center',
-    fontFamily: 'Raleway-Regular',
+    textAlign: "center",
+    fontFamily: "Raleway-Regular",
     fontSize: 16,
-    color: GREY,
+    color: GREY
   },
   buttonContainer: {
-    flexDirection: isIOS ? 'column' : 'row',
-    alignItems: 'center',
+    flexDirection: isIOS ? "column" : "row",
+    alignItems: "center"
   },
   headerText: {
-    color: GREY,
+    color: GREY
   },
   imageStyle: {
     width: 160,
-    height: 180,
-  },
+    height: 180
+  }
 };
 
 const SetImage = ({ kidName, onPress, deeplink, selectedKid, kids, UUID }) => (
@@ -150,7 +151,7 @@ const SetImage = ({ kidName, onPress, deeplink, selectedKid, kids, UUID }) => (
 
       <View style={[STYLES.CARD, STYLE.innerContainer]} elevation={6}>
         <Image
-          source={require('../Images/placeholder_avatar.png')}
+          source={require("../Images/placeholder_avatar.png")}
           style={STYLE.avatarStyle}
         />
 
@@ -173,10 +174,10 @@ const SetImage = ({ kidName, onPress, deeplink, selectedKid, kids, UUID }) => (
         primary
         onPress={() => onPress(true, deeplink, selectedKid, kids, UUID)}
       >
-        {I18n.t('setImage.chooseAPicture')}
+        {I18n.t("setImage.chooseAPicture")}
       </Button>
       <Button onPress={() => onPress(false, deeplink, selectedKid, kids, UUID)}>
-        {I18n.t('setImage.notNow')}
+        {I18n.t("setImage.notNow")}
       </Button>
     </View>
   </View>
@@ -189,7 +190,7 @@ SetImage.propTypes = {
   deeplink: PropTypes.bool.isRequired,
   selectedKid: PropTypes.object.isRequired,
   kids: PropTypes.array.isRequired,
-  UUID: PropTypes.string.isRequired,
+  UUID: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -198,11 +199,11 @@ const mapStateToProps = state => ({
   deeplink: state.deeplink,
   selectedKid: state.selectedKid,
   kids: state.kids,
-  UUID: state.profile.UUID,
+  UUID: state.profile.UUID
 });
 
 const mapDispatchToProps = {
-  onPress: selectImage,
+  onPress: selectImage
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetImage);

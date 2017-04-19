@@ -1,5 +1,5 @@
 import { beginSetup } from "../../Parent/parentActions";
-import { setKidName, kidUpdated } from "../kidsActions";
+import { setKidName, kidUpdated, setKidImage } from "../kidsActions";
 import reducer from "../index.js";
 
 const TEST_UUID = "non-random-uuid";
@@ -37,6 +37,21 @@ describe("Kids reducer", () => {
       const updatedState = reducer(undefined, action);
       const kid = updatedState[TEST_KID.UUID];
       expect(kid.name).toEqual(TEST_KID.name);
+    });
+  });
+
+  describe("SET_KID_IMAGE", () => {
+    test("It updates the kid's image in the store", () => {
+      const TEST_STATE = {
+        "abc-123": {
+          name: "Jim Bob"
+        }
+      };
+
+      const action = setKidImage("some URL", "abc-123");
+      const updatedState = reducer(TEST_STATE, action);
+      const kid = updatedState["abc-123"];
+      expect(kid.avatarURL).toEqual("some URL");
     });
   });
 });

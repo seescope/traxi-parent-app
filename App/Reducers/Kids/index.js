@@ -4,7 +4,8 @@ export type Kid = {
   name: ?string,
   UUID: ?string,
   deviceType: DeviceType,
-  installed: boolean
+  installed: boolean,
+  avatarURL: ?string
 };
 
 export type KidsState = {
@@ -17,13 +18,15 @@ export type KidsAction =
       kidUUID: string
     }
   | { type: "SET_KID_NAME", name: string, UUID: string }
-  | { type: "KID_UPDATED", kid: Kid, UUID: string };
+  | { type: "KID_UPDATED", kid: Kid, UUID: string }
+  | { type: "SET_KID_IMAGE", avatarURL: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
   name: undefined,
   UUID,
   deviceType: "unknown",
-  installed: false
+  installed: false,
+  avatarURL: undefined
 });
 export default (state: KidsState, action: KidsAction) => {
   switch (action.type) {
@@ -55,6 +58,22 @@ export default (state: KidsState, action: KidsAction) => {
       return {
         ...state,
         [UUID]: kid
+      };
+    }
+    case "SET_KID_IMAGE": {
+      const { avatarURL, UUID } = action;
+      const kid = state[UUID];
+
+      if (!kid) return state;
+
+      const updatedKid = {
+        ...kid,
+        avatarURL
+      };
+
+      return {
+        ...state,
+        [UUID]: updatedKid
       };
     }
     default:
