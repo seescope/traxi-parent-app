@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handles setting the kid's name 1`] = `
-Array [
-  Array [
-    Object {
-      "kidName": "Test",
-      "type": "ENTER_KID_NAME",
-    },
-  ],
-]
-`;
-
 exports[`renders the <SetName> component 1`] = `
 <View
   style={
