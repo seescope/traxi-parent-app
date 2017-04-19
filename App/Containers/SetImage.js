@@ -1,28 +1,18 @@
 import * as Firebase from "firebase";
 import React, { PropTypes } from "react";
 import { connect } from "react-redux";
-import { Image, Text, View, Alert, Dimensions } from "react-native";
+import { Image, Text, View, Alert } from "react-native";
 import ImagePicker from "react-native-image-picker";
 import I18n from "react-native-i18n";
 import { Actions } from "react-native-router-flux";
 
-import { selectKidImage } from "../Actions/Actions";
-import { setKidName } from "../Reducers/Kids/kidsActions";
-import setupKid from "../Actions/SetupKid";
-import watchDevice from "../Actions/WatchDevice";
+import { setKidImage } from "../Reducers/Kids/kidsActions";
 import Button from "../Components/Button";
 import HeaderText from "../Components/HeaderText";
 import Spacing from "../Components/Spacing";
 import STYLES from "../Constants/Styles";
-import {
-  WHITE,
-  TRANSPARENT,
-  VERY_LIGHT_GREY,
-  GREY
-} from "../Constants/Colours";
+import { VERY_LIGHT_GREY, GREY } from "../Constants/Colours";
 import { isIOS, logError, firstName } from "../Utils";
-
-const { width } = Dimensions.get("window");
 
 const getSource = response => {
   let source;
@@ -96,7 +86,8 @@ export const selectImage = (pickImage, deeplink, selectedKid, kids, UUID) =>
       }
 
       const source = getSource(response);
-      dispatch(selectKidImage(source.uri));
+      const kidUUID = "CHANGEME";
+      dispatch(setKidImage(source.uri, kidUUID));
 
       const updatedSelectedKid = getUpdatedSelectedKid(selectedKid, source.uri);
       const updatedKids = getUpdatedKids(kids, selectedKid.UUID, source.uri);
@@ -195,15 +186,11 @@ SetImage.propTypes = {
 
 const mapStateToProps = state => ({
   kidName: firstName(state.selectedKid.name),
-  parentName: state.parentName,
-  deeplink: state.deeplink,
-  selectedKid: state.selectedKid,
   kids: state.kids,
-  UUID: state.profile.UUID
+  UUID: state.profile.UUID,
+  onPress: () => {},
+  selectedKid: {},
+  deeplink: false
 });
 
-const mapDispatchToProps = {
-  onPress: selectImage
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SetImage);
+export default connect(mapStateToProps, null)(SetImage);
