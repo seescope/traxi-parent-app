@@ -1,13 +1,9 @@
 // @flow
 import * as Firebase from "firebase";
-import type { KidsState } from "../Reducers/Kids";
-import type { SetupState } from "../Reducers/Setup";
+import type { RootState } from "../Reducers";
 
 type Dispatch = () => void;
-type GetState = () => {
-  kidState: KidsState,
-  setupState: SetupState
-};
+type GetState = () => RootState;
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {

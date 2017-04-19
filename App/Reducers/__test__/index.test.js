@@ -1,0 +1,1 @@
+import rootReducer from "../index";

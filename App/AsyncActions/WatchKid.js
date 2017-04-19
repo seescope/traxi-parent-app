@@ -2,10 +2,10 @@
 import * as Firebase from "firebase";
 import { kidUpdated } from "../Reducers/Kids/kidsActions";
 import type { Kid, KidsAction } from "../Reducers/Kids/index";
-import type { SetupState } from "../Reducers/Setup/index";
+import type { RootState } from "../Reducers";
 
 type Dispatch = (action: KidsAction) => void;
-type GetState = () => { setupState: SetupState }; // TODO: Add a root state type
+type GetState = () => RootState;
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
