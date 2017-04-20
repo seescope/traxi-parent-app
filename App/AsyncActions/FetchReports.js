@@ -1,39 +1,44 @@
 /* eslint no-underscore-dangle: off */
+// @flow
+const API_GATEWAY_URL = "https://lpqdexxrvj.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=";
+import { logError } from "../Utils";
+import moment from "moment";
+import lodash from "lodash";
+import type { RootState } from "../Reducers";
+import type { ReportsAction } from "../Reducers/Reports";
 
-const API_GATEWAY_URL = 'https://lpqdexxrvj.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=';
-import { logError } from '../../Utils';
-import moment from 'moment';
-import lodash from 'lodash';
+type Dispatch = (action: ReportsAction) => void;
+type GetState = () => RootState;
 
-export default UUIDs => dispatch => {
-  const UUIDString = UUIDs.join(',');
-  const offset = moment().utcOffset();
-  const url = `${API_GATEWAY_URL}${UUIDString}&offset=${offset}`;
-  dispatch({ type: 'FETCHING_REPORT' });
+export default () =>
+  (dispatch: Dispatch, getState: GetState) => {
+    const { kidsState } = getState();
+    const UUIDs = Object.keys(kidsState);
+    const UUIDString = UUIDs.join(",");
+    const offset = moment().utcOffset();
+    const url = `${API_GATEWAY_URL}${UUIDString}&offset=${offset}`;
 
-  return fetch(url)
-    .then(res => {
-      if (!res.ok) throw new Error(`Error fetching report: ${res._bodyInit}`);
-      return res.json();
-    })
-    .then(data => {
-      const reports = lodash.zipObject(
-        data.map(d => d.uuid),
-        data
-      );
+    return fetch(url)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Error fetching report: ${JSON.stringify(res)}`);
+        }
+        return res.json();
+      })
+      .then(data => {
+        const reports = lodash.zipObject(data.map(d => d.uuid), data);
 
-      dispatch({
-        type: 'FETCHED_REPORT',
-        reports,
+        dispatch({
+          type: "FETCHED_REPORTS",
+          reports
+        });
+      })
+      .catch(error => {
+        logError(error);
+
+        dispatch({
+          type: "FETCHED_REPORTS",
+          reports: null
+        });
       });
-    })
-    .catch(error => {
-      console.log(error);
-      logError(error);
-
-      dispatch({
-        type: 'FETCHED_REPORT',
-        reports: null,
-      });
-    });
-}
+  };
