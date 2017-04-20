@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle: off */
 // @flow
 const API_GATEWAY_URL = "https://lpqdexxrvj.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=";
 import { logError } from "../Utils";
@@ -6,6 +5,7 @@ import moment from "moment";
 import lodash from "lodash";
 import type { RootState } from "../Reducers";
 import type { ReportsAction } from "../Reducers/Reports";
+import { fetchedReports } from "../Reducers/Reports/reportsActions";
 
 type Dispatch = (action: ReportsAction) => void;
 type GetState = () => RootState;
@@ -27,18 +27,10 @@ export default () =>
       })
       .then(data => {
         const reports = lodash.zipObject(data.map(d => d.uuid), data);
-
-        dispatch({
-          type: "FETCHED_REPORTS",
-          reports
-        });
+        dispatch(fetchedReports(reports));
       })
       .catch(error => {
         logError(error);
-
-        dispatch({
-          type: "FETCHED_REPORTS",
-          reports: null
-        });
+        dispatch(fetchedReports(null));
       });
   };
