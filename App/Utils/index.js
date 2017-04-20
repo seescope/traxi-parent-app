@@ -138,12 +138,7 @@ const parseURL = URL => {
   return match && match[0];
 };
 
-const getUUIDFromDeeplink = () =>
-  Linking.getInitialURL().then(URL => {
-    const UUID = parseURL(URL);
-
-    return UUID && { UUID, deeplink: true };
-  });
+export const getUUIDFromDeeplink = () => Linking.getInitialURL().then(parseURL);
 
 export const getUUID = () =>
   AsyncStorage.getItem("profile").then(profileJSON => {

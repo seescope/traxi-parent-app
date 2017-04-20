@@ -11,7 +11,8 @@ export const Actions = {
   dashboard: jest.fn(),
   setupCompletion: jest.fn(),
   setName: jest.fn(),
-  deviceSetup: jest.fn()
+  deviceSetup: jest.fn(),
+  splashScreen: jest.fn()
 };
 
 export const Scene = props => <View {...props} />;
