@@ -19,6 +19,7 @@ export type KidsAction =
     }
   | { type: "SET_KID_NAME", name: string, UUID: string }
   | { type: "KID_UPDATED", kid: Kid, UUID: string }
+  | { type: "BEGIN_DEEPLINK_SETUP", kid: Kid }
   | { type: "SET_KID_IMAGE", avatarURL: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
@@ -36,6 +37,9 @@ export default (state: KidsState, action: KidsAction) => {
         ...state,
         [kidUUID]: createNewKid(kidUUID)
       };
+    }
+    case "BEGIN_DEEPLINK_SETUP": {
+      return action.kid;
     }
     case "SET_KID_NAME": {
       const { name, UUID } = action;

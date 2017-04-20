@@ -1,4 +1,4 @@
-import { beginSetup } from "../../Parent/parentActions";
+import { beginSetup, beginDeeplinkSetup } from "../../Parent/parentActions";
 import { setKidName, kidUpdated, setKidImage } from "../kidsActions";
 import reducer from "../index.js";
 
@@ -10,6 +10,18 @@ describe("Kids reducer", () => {
       const action = beginSetup();
       const kids = reducer(undefined, action);
       expect(kids[TEST_UUID]).toBeDefined();
+    });
+  });
+
+  describe("BEGIN_DEEPLINK_SETUP", () => {
+    it("starts setting up the app from a deeplink", () => {
+      const TEST_KID = {
+        email: "Something",
+        kids: ["abc-123"]
+      };
+
+      const action = beginDeeplinkSetup(null, TEST_KID);
+      expect(reducer(undefined, action)).toEqual(TEST_KID);
     });
   });
 
