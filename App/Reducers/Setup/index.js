@@ -1,5 +1,5 @@
 // @flow
-
+import type { Kid } from "../Kids";
 export type SetupState = {
   step: number,
   kidUUID: ?string,
@@ -12,6 +12,7 @@ export type SetupAction =
       kidUUID: string,
       setupID: number
     }
+  | { type: "BEGIN_DEEPLINK_SETUP", kid: Kid }
   | { type: "NEXT_STEP" };
 
 const INITIAL_STATE = {
@@ -31,6 +32,13 @@ export default (
         ...state,
         setupID,
         kidUUID
+      };
+    }
+    case "BEGIN_DEEPLINK_SETUP": {
+      const { kid } = action;
+      return {
+        ...state,
+        kidUUID: kid.UUID
       };
     }
     case "NEXT_STEP": {
