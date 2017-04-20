@@ -1,9 +1,11 @@
 // @flow
 import type { Kid } from "../Kids";
+type DeviceType = "Android" | "iPhone" | "iPad" | "unknown";
 export type SetupState = {
   step: number,
   kidUUID: ?string,
-  setupID: ?number
+  setupID: ?number,
+  deviceType: DeviceType
 };
 
 export type SetupAction =
@@ -18,7 +20,8 @@ export type SetupAction =
 const INITIAL_STATE = {
   step: 0,
   kidUUID: undefined,
-  setupID: undefined
+  setupID: undefined,
+  deviceType: "unknown"
 };
 
 export default (
