@@ -160,12 +160,10 @@ export const getProfile = UUID =>
 export const backButtonHandler = store => {
   const { sceneName, step } = store.getState();
 
-  if (sceneName === "walkthrough") {
+  if (sceneName === "deviceSetup") {
     if (step === 0) Actions.pop();
     else store.dispatch({ type: "PREVIOUS_STEP" });
 
-    return true;
-  } else if (sceneName === "congratulations") {
     return true;
   }
 

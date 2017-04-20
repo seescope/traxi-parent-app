@@ -24,13 +24,14 @@ describe("CheckDeeplink", () => {
     });
   });
 
-  test("If there is no initialURL, navigate to Splash Screen", () => {
+  test("If there is no initialURL, dispatch BEGIN_SETUP and navigate to Splash Screen", () => {
     mockUUID = null;
 
     const mockStore = configureMockStore([thunk]);
     const store = mockStore(undefined);
 
     return store.dispatch(checkDeeplink()).then(() => {
+      expect(store.getActions()[0].type).toEqual("BEGIN_SETUP");
       expect(Actions.splashScreen).toHaveBeenCalled();
     });
   });

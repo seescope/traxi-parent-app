@@ -77,11 +77,11 @@ SetName.propTypes = {
 
 const mapStateToProps = state => {
   const { kidUUID } = state.setupState;
-  const { name } = state.kidState[kidUUID];
+  const { name } = state.kidsState[kidUUID] || {};
 
   return {
     kidUUID,
-    kidName: name
+    kidName: name || ""
   };
 };
 

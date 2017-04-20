@@ -10,7 +10,7 @@ import SetName, { mergeProps, nextStep } from "../../App/Containers/SetName";
 
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({
-  kidState: {
+  kidsState: {
     "abc-123": {
       name: "John Bobson"
     }
