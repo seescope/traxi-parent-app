@@ -10,5 +10,5 @@ export default () =>
     getUUIDFromDeeplink().then(UUID => {
       if (!UUID) return Actions.splashScreen();
 
-      return dispatch(beginDeeplinkSetup());
+      return dispatch(beginDeeplinkSetup(UUID));
     });

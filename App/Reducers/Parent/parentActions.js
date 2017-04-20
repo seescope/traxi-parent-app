@@ -1,5 +1,6 @@
 // @flow
-import type { ParentAction } from "./index";
+import type { ParentAction, ParentState } from "./index";
+import type { Kid } from "../Kids";
 import uuid from "uuid";
 
 export function beginSetup(): ParentAction {
@@ -8,6 +9,14 @@ export function beginSetup(): ParentAction {
     parentUUID: uuid.v4(),
     kidUUID: uuid.v4(),
     setupID: Math.round(Math.random() * 10000) // 4 digit number
+  };
+}
+
+export function beginDeeplinkSetup(parent: ParentState, kid: Kid) {
+  return {
+    type: "BEGIN_DEEPLINK_SETUP",
+    parent,
+    kid
   };
 }
 

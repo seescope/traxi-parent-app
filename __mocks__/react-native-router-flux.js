@@ -12,7 +12,8 @@ export const Actions = {
   setupCompletion: jest.fn(),
   setName: jest.fn(),
   deviceSetup: jest.fn(),
-  splashScreen: jest.fn()
+  splashScreen: jest.fn(),
+  setKidImage: jest.fn()
 };
 
 export const Scene = props => <View {...props} />;
