@@ -29,7 +29,10 @@ const createNewKid = (UUID: string): Kid => ({
   installed: false,
   avatarURL: undefined
 });
-export default (state: KidsState, action: KidsAction) => {
+
+const INITIAL_STATE = {};
+
+export default (state: KidsState = INITIAL_STATE, action: KidsAction) => {
   switch (action.type) {
     case "BEGIN_SETUP": {
       const { kidUUID } = action;

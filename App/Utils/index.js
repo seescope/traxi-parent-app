@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
+
 import moment from "moment";
 import * as Firebase from "firebase";
 import { BackAndroid, Linking, AsyncStorage, Platform } from "react-native";
@@ -66,13 +69,15 @@ export const logError = error => {
 export const loggingMiddleware = store =>
   next =>
     action => {
+      if (!isIOS) {
+        console.log(JSON.stringify(action));
+      }
       Crashlytics.log(JSON.stringify(action));
       Crashlytics.log(JSON.stringify(store));
 
       return next(action);
     };
 
-/* eslint-disable no-unused-vars */
 export const trackingMiddleware = store =>
   next =>
     action => {

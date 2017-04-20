@@ -16,7 +16,7 @@ export default () =>
     const { kidsState } = getState();
 
     if (hasKids(kidsState)) {
-      Actions.dashboard();
+      Actions.dashboard({ type: "replace" });
       return dispatch(fetchReports());
     }
 

@@ -20,5 +20,5 @@ export default (parentUUID: string) =>
     const kid = await fetchKid(kidUUID);
 
     dispatch(beginDeeplinkSetup(parent, kid));
-    Actions.setKidImage();
+    Actions.setKidImage({ type: "replace" });
   };

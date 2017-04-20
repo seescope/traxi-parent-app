@@ -1,5 +1,5 @@
 import React from "react";
-// import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from "react-native";
 import * as Firebase from "firebase";
 import I18n from "react-native-i18n";
 
@@ -7,12 +7,16 @@ import ParentApp from "./App/Containers/ParentApp";
 import Translation from "./App/Constants/Translation";
 import Analytics from "react-native-analytics";
 import OneSignal from "react-native-onesignal";
-import { createStore, applyMiddleware } from "redux";
+import { compose, createStore, applyMiddleware } from "redux";
+import { persistStore, autoRehydrate } from "redux-persist";
 import ReduxThunk from "redux-thunk";
 import RootReducer from "./App/Reducers";
-import { loggingMiddleware, trackingMiddleware } from "./App/Utils";
-import { BackAndroid } from "react-native";
-import { Actions } from "react-native-router-flux";
+import {
+  backButtonHandler,
+  loggingMiddleware,
+  trackingMiddleware
+} from "./App/Utils";
+import bootApp from "./App/AsyncActions/BootApp";
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -34,8 +38,13 @@ export default class extends React.Component {
     this.store = createStore(
       RootReducer,
       undefined,
-      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware)
+      compose(
+        applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
+        autoRehydrate()
+      )
     );
+    persistStore(this.store, { storage: AsyncStorage }, () =>
+      this.store.dispatch(bootApp()));
   }
 
   componentWillMount() {
@@ -56,36 +65,11 @@ export default class extends React.Component {
     Analytics.track("Notification opened");
   }
 
-  backButtonHandler() {
-    const store = this.store;
-    const { sceneName, step } = store.getState();
-
-    if (sceneName === "walkthrough") {
-      if (step === 0) Actions.pop();
-      else store.dispatch({ type: "PREVIOUS_STEP" });
-
-      return true;
-    } else if (sceneName === "congratulations") {
-      return true;
-    }
-
-    try {
-      Actions.pop();
-    } catch (error) {
-      // The user is in the root scene - exit the app.
-      BackAndroid.exitApp();
-      return false;
-    }
-
-    // Default
-    return true;
-  }
-
   render() {
     return (
       <ParentApp
         store={this.store}
-        backButtonHandler={() => this.backButtonHandler()}
+        backButtonHandler={() => backButtonHandler(this.store)}
       />
     );
   }
