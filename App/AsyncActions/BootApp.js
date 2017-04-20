@@ -1,4 +1,6 @@
 // @flow
+import { Actions } from "react-native-router-flux";
+
 import type { RootState } from "../Reducers";
 import type { KidsState } from "../Reducers/Kids";
 import fetchReports from "./FetchReports";
@@ -14,6 +16,7 @@ export default () =>
     const { kidsState } = getState();
 
     if (hasKids(kidsState)) {
+      Actions.dashboard();
       return dispatch(fetchReports());
     }
 
