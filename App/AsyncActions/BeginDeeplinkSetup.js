@@ -8,10 +8,10 @@ import type { Kid } from "../Reducers/Kids";
 type Dispatch = () => void;
 
 const fetchParent = (UUID: string): Promise<ParentState> =>
-  database().ref(`parents/${UUID}`).once().then(data => data.val());
+  database().ref(`parents/${UUID}`).once("value").then(data => data.val());
 
 const fetchKid = (UUID: string): Promise<Kid> =>
-  database().ref(`kids/${UUID}`).once().then(data => data.val());
+  database().ref(`kids/${UUID}`).once("value").then(data => data.val());
 
 export default (parentUUID: string) =>
   async (dispatch: Dispatch): Promise<any> => {

@@ -12,6 +12,7 @@ export default () =>
       if (!UUID) {
         dispatch(beginSetup());
         Actions.splashScreen();
+        return null;
       }
 
       return dispatch(beginDeeplinkSetup(UUID));
