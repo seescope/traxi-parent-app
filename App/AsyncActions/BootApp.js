@@ -1,5 +1,6 @@
 // @flow
 import { Actions } from "react-native-router-flux";
+import lodash from "lodash";
 
 import type { RootState } from "../Reducers";
 import type { KidsState } from "../Reducers/Kids";
@@ -9,13 +10,20 @@ import checkDeeplink from "./CheckDeeplink";
 type Dispatch = () => void;
 type GetState = () => RootState;
 
-const hasKids = (kidState: KidsState) => Object.keys(kidState || {}).length > 0;
+const hasInstalledKids = (kidsState: KidsState) => {
+  const installed = lodash
+    .chain(kidsState)
+    .mapValues("installed")
+    .values()
+    .value();
+  return installed.includes(true);
+};
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
     const { kidsState } = getState();
 
-    if (hasKids(kidsState)) {
+    if (hasInstalledKids(kidsState)) {
       Actions.dashboard({ type: "replace" });
       return dispatch(fetchReports());
     }

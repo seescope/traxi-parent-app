@@ -8,10 +8,12 @@ import thunk from "redux-thunk";
 import { Actions } from "react-native-router-flux";
 
 describe("Boot App", () => {
-  test("If there are kids in kidState, fetchReports and navigate to Dashboard", () => {
+  test("If there are installed kids in kidState, fetchReports and navigate to Dashboard", () => {
     const STATE_WITH_KIDS = {
       kidsState: {
-        "123-abc": "A kid"
+        "123-abc": {
+          installed: true
+        }
       }
     };
 
@@ -25,9 +27,13 @@ describe("Boot App", () => {
     });
   });
 
-  test("If there are no kids in kidState, checkDeeplink", () => {
+  test("If there are no installed kids in kidState, checkDeeplink", () => {
     const STATE_WITH_NO_KIDS = {
-      kidsState: {}
+      kidsState: {
+        "123-abc": {
+          installed: false
+        }
+      }
     };
 
     const mockStore = configureMockStore([thunk]);
