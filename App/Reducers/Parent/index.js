@@ -10,6 +10,7 @@ export type ParentState = {
 export type ParentAction =
   | { type: "SET_PARENT_NAME", name: string }
   | { type: "BEGIN_SETUP", parentUUID: string, kidUUID: string }
+  | { type: "BEGIN_DEEPLINK_SETUP", parent: ParentState }
   | { type: "SET_EMAIL", email: string }
   | { type: "SET_PASSWORD", password: string };
 
@@ -54,6 +55,9 @@ export default function parent(
         ...state,
         password
       };
+    }
+    case "BEGIN_DEEPLINK_SETUP": {
+      return action.parent;
     }
     default:
       return state;

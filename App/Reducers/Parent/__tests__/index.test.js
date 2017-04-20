@@ -20,6 +20,18 @@ describe("Parent reducer", () => {
     });
   });
 
+  describe("BEGIN_DEEPLINK_SETUP", () => {
+    it("starts setting up the app from a deeplink", () => {
+      const TEST_PARENT = {
+        email: "Something",
+        kids: ["abc-123"]
+      };
+
+      const action = Actions.beginDeeplinkSetup(TEST_PARENT);
+      expect(reducer(undefined, action)).toEqual(TEST_PARENT);
+    });
+  });
+
   describe("SET_PARENT_NAME", () => {
     it("sets the parent's name", () => {
       const TEST_NAME = "Test Name";

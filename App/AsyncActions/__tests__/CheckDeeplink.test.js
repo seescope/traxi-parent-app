@@ -1,3 +1,4 @@
+let mockUUID = undefined;
 jest.mock("../BeginDeeplinkSetup", () =>
   () =>
     dispatch =>
@@ -8,10 +9,7 @@ jest.mock("../../Utils", () => ({
 import { Actions } from "react-native-router-flux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import mockUtils from "../../Utils";
 import checkDeeplink from "../CheckDeeplink";
-
-let mockUUID = undefined;
 
 describe("CheckDeeplink", () => {
   test("If there is an initialURL, beginDeeplinkSetup", () => {

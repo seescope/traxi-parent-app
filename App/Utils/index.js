@@ -98,8 +98,6 @@ export const handleBilling = price =>
     .then(() => InAppBilling.subscribe(price))
     .then(() => InAppBilling.close());
 
-export const onSelectPrice = price => dispatch => dispatch(selectPrice(price));
-
 export const sendPhoneNumberToSlack = phoneNumber =>
   fetch(
     "https://hooks.slack.com/services/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",

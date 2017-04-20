@@ -11,7 +11,7 @@ describe("Setup Reducer", () => {
       const { step, kidUUID, setupID } = reducer(undefined, action);
       expect(step).toEqual(0);
       expect(kidUUID).toEqual(TEST_UUID);
-      expect(setupID).toBeLessThan(10000);
+      expect(setupID).toBeLessThan(10001);
       expect(setupID).toBeGreaterThan(0);
     });
   });
