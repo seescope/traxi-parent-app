@@ -1,108 +1,92 @@
-import React from 'react';
+import React from "react";
 // import { AsyncStorage } from 'react-native';
-import * as Firebase from 'firebase';
-import I18n from 'react-native-i18n';
+import * as Firebase from "firebase";
+import I18n from "react-native-i18n";
 
-import Loading from './App/Components/Loading';
-import ParentApp from './App/Containers/ParentApp';
-import Translation from './App/Constants/Translation';
-import { logError, getUUID, getProfile } from './App/Utils';
-import Analytics from 'react-native-analytics';
-import OneSignal from 'react-native-onesignal';
+import ParentApp from "./App/Containers/ParentApp";
+import Translation from "./App/Constants/Translation";
+import Analytics from "react-native-analytics";
+import OneSignal from "react-native-onesignal";
+import { createStore, applyMiddleware } from "redux";
+import ReduxThunk from "redux-thunk";
+import RootReducer from "./App/Reducers";
+import { loggingMiddleware, trackingMiddleware } from "./App/Utils";
+import { BackAndroid } from "react-native";
+import { Actions } from "react-native-router-flux";
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
 
 const config = {
-  apiKey: 'AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU',
-  authDomain: 'traxiapp.firebaseapp.com',
-  databaseURL: 'https://traxiapp.firebaseio.com',
-  projectId: 'project-946779331638130823',
-  storageBucket: 'project-946779331638130823.appspot.com',
-  messagingSenderId: '204102393429',
+  apiKey: "AIzaSyDEq9qfwendZJ6yiyDgtjGCjWSS9PSYWLU",
+  authDomain: "traxiapp.firebaseapp.com",
+  databaseURL: "https://traxiapp.firebaseio.com",
+  projectId: "project-946779331638130823",
+  storageBucket: "project-946779331638130823.appspot.com",
+  messagingSenderId: "204102393429"
 };
 
 Firebase.initializeApp(config);
 
-export const getInitialState = () => getUUID()
-  .then((result) => {
-    // No UUID found. This is a new user.
-    if (!result) return null;
-
-    const { UUID, deeplink } = result;
-
-    // Get the user's profile and return it.
-    return getProfile(UUID).then(profile => ({
-      profile,
-      UUID,
-      deeplink,
-    }))
-  })
-  .catch(error => {
-    // It's senseless to show an error to the user here. Just continue.
-    logError(`Error fetching profile: ${error.message}`);
-    return null;
-  });
-
 export default class extends React.Component {
   constructor(props) {
     super(props);
-
-    // AsyncStorage.removeItem('profile');
-    // AsyncStorage.setItem(
-    //   'profile',
-    //   JSON.stringify({
-    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-    //   }),
-    // );
-
-    this.state = {
-      profile: {},
-      loading: true,
-    };
-
+    this.store = createStore(
+      RootReducer,
+      undefined,
+      applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware)
+    );
   }
 
   componentWillMount() {
-    OneSignal.addEventListener('received', this.onReceived);
-    OneSignal.addEventListener('opened', this.onOpened);
-  }
-
-  componentDidMount() {
-    getInitialState()
-      .then(initialState => {
-        this.setState({
-        ...initialState,
-        loading: false,
-      })});
+    OneSignal.addEventListener("received", this.onReceived);
+    OneSignal.addEventListener("opened", this.onOpened);
   }
 
   componentWillUnmount() {
-    OneSignal.removeEventListener('received', this.onReceived);
-    OneSignal.removeEventListener('opened', this.onOpened);
+    OneSignal.removeEventListener("received", this.onReceived);
+    OneSignal.removeEventListener("opened", this.onOpened);
   }
 
   onReceived() {
-    Analytics.track('Notification received');
+    Analytics.track("Notification received");
   }
 
   onOpened() {
-    Analytics.track('Notification opened');
+    Analytics.track("Notification opened");
   }
 
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
+  backButtonHandler() {
+    const store = this.store;
+    const { sceneName, step } = store.getState();
+
+    if (sceneName === "walkthrough") {
+      if (step === 0) Actions.pop();
+      else store.dispatch({ type: "PREVIOUS_STEP" });
+
+      return true;
+    } else if (sceneName === "congratulations") {
+      return true;
+    }
+
+    try {
+      Actions.pop();
+    } catch (error) {
+      // The user is in the root scene - exit the app.
+      BackAndroid.exitApp();
+      return false;
+    }
+
+    // Default
+    return true;
   }
 
   render() {
-    const { profile, deeplink, loading } = this.state;
-
-    if (loading) {
-      return <Loading />;
-    }
-
-    return <ParentApp profile={profile} deeplink={deeplink} />;
+    return (
+      <ParentApp
+        store={this.store}
+        backButtonHandler={() => this.backButtonHandler()}
+      />
+    );
   }
 }

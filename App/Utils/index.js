@@ -1,9 +1,10 @@
 import moment from "moment";
 import * as Firebase from "firebase";
-import { Linking, AsyncStorage, Platform } from "react-native";
+import { BackAndroid, Linking, AsyncStorage, Platform } from "react-native";
 import { Crashlytics } from "react-native-fabric";
 import Analytics from "react-native-analytics";
 import InAppBilling from "react-native-billing";
+import { Actions } from "react-native-router-flux";
 
 export const firstName = name => name && name.split(" ")[0];
 
@@ -150,3 +151,27 @@ export const getProfile = UUID =>
     .ref(`parents/${UUID}/`)
     .once("value")
     .then(snapshot => snapshot.val());
+
+export const backButtonHandler = store => {
+  const { sceneName, step } = store.getState();
+
+  if (sceneName === "walkthrough") {
+    if (step === 0) Actions.pop();
+    else store.dispatch({ type: "PREVIOUS_STEP" });
+
+    return true;
+  } else if (sceneName === "congratulations") {
+    return true;
+  }
+
+  try {
+    Actions.pop();
+  } catch (error) {
+    // The user is in the root scene - exit the app.
+    BackAndroid.exitApp();
+    return false;
+  }
+
+  // Default
+  return true;
+};
