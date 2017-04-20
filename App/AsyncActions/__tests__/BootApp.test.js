@@ -24,4 +24,18 @@ describe("Boot App", () => {
       expect(Actions.dashboard).toHaveBeenCalled();
     });
   });
+
+  test("If there are no kids in kidState, checkDeeplink", () => {
+    const STATE_WITH_NO_KIDS = {
+      kidsState: {}
+    };
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(STATE_WITH_NO_KIDS);
+
+    return store.dispatch(bootApp()).then(() => {
+      const action = store.getActions()[0];
+      expect(action.type).toEqual("TEST_CHECK_DEEPLINK");
+    });
+  });
 });
