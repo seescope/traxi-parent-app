@@ -37,7 +37,6 @@ export default (state: KidsState = INITIAL_STATE, action: KidsAction) => {
     case "BEGIN_SETUP": {
       const { kidUUID } = action;
       return {
-        ...state,
         [kidUUID]: createNewKid(kidUUID)
       };
     }

@@ -3,6 +3,11 @@ jest.mock("../BeginDeeplinkSetup", () =>
   () =>
     dispatch =>
       Promise.resolve(dispatch({ type: "TEST_BEGIN_DEEPLINK_SETUP" })));
+jest.mock("../PersistSetupID", () =>
+  () =>
+    dispatch => Promise.resolve(dispatch({ type: "TEST_PERSIST_SETUP_ID" })));
+jest.mock("../PersistKid", () =>
+  () => dispatch => Promise.resolve(dispatch({ type: "TEST_PERSIST_KID" })));
 jest.mock("../../Utils", () => ({
   getUUIDFromDeeplink: () => Promise.resolve(mockUUID)
 }));
@@ -28,10 +33,17 @@ describe("CheckDeeplink", () => {
     mockUUID = null;
 
     const mockStore = configureMockStore([thunk]);
-    const store = mockStore(undefined);
+    const store = mockStore({
+      setupState: {
+        setupID: 1234,
+        kidUUID: "abc-123"
+      }
+    });
 
     return store.dispatch(checkDeeplink()).then(() => {
       expect(store.getActions()[0].type).toEqual("BEGIN_SETUP");
+      expect(store.getActions()[1].type).toEqual("TEST_PERSIST_SETUP_ID");
+      expect(store.getActions()[2].type).toEqual("TEST_PERSIST_KID");
       expect(Actions.splashScreen).toHaveBeenCalled();
     });
   });

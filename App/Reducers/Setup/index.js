@@ -32,7 +32,7 @@ export default (
     case "BEGIN_SETUP": {
       const { kidUUID, setupID } = action;
       return {
-        ...state,
+        ...INITIAL_STATE,
         setupID,
         kidUUID
       };
@@ -40,7 +40,7 @@ export default (
     case "BEGIN_DEEPLINK_SETUP": {
       const { kid } = action;
       return {
-        ...state,
+        ...INITIAL_STATE,
         kidUUID: kid.UUID
       };
     }

@@ -17,7 +17,7 @@ const { height, width } = Dimensions.get("window");
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
     `Go to mytraxi.com on ${kidName}’s device & enter the code ${setupID}`,
-    `Waiting for ${kidName}'s device..`,
+    `Waiting for ${kidName} to enter ${setupID}...`,
     "",
     "",
     ""

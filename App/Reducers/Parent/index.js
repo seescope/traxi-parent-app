@@ -30,7 +30,7 @@ export default function parent(
     case "BEGIN_SETUP": {
       const { parentUUID, kidUUID } = action;
       return {
-        ...state,
+        ...INITIAL_STATE,
         UUID: parentUUID,
         kids: [kidUUID]
       };
