@@ -7,11 +7,11 @@ type GetState = () => RootState;
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
-    const { kidState, setupState } = getState();
+    const { kidsState, setupState } = getState();
     const { kidUUID } = setupState;
     if (!kidUUID) return Promise.reject();
 
-    const kid = kidState[kidUUID];
+    const kid = kidsState[kidUUID];
 
     return Firebase.database().ref(`kids/${kidUUID}`).set(kid);
   };
