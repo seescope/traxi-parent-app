@@ -66,25 +66,9 @@ exports[`<Congratulations /> renders the Congratulations component 1`] = `
       John
        
       is being monitored by Traxi. You will soon be able to see what they are doing on their device.
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-            "color": "#545454",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-            "paddingHorizontal": 22,
-            "textAlign": "left",
-          },
-          undefined,
-        ]
-      }
-    >
+      
+      
+      
       While we collect data from
        
       John
@@ -132,7 +116,7 @@ exports[`<Congratulations /> renders the Congratulations component 1`] = `
           Object {
             "color": "#448AFF",
             "fontFamily": "Raleway-Regular",
-            "fontSize": 14,
+            "fontSize": 20,
           }
         }
       >
