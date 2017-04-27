@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Congratulations /> renders the Congratulations component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "paddingTop": 40,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#545454",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "paddingHorizontal": 55,
+          "textAlign": "center",
+        }
+      }
+    >
+      John
+       is being monitored!
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "paddingHorizontal": 22,
+            "textAlign": "left",
+          },
+          undefined,
+        ]
+      }
+    >
+      Congratulations,
+       
+      John
+       
+      is being monitored by Traxi. You will soon be able to see what they are doing on their device.
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 16,
+            "paddingHorizontal": 22,
+            "textAlign": "left",
+          },
+          undefined,
+        ]
+      }
+    >
+      While we collect data from
+       
+      John
+      's device, there's just two more things we need to do.
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    />
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginTop": 16,
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#448AFF",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        Next step
+         
+      </Text>
+    </View>
+  </View>
+</View>
+`;
