@@ -6,8 +6,11 @@ import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 jest.mock("../../App/AsyncActions/PersistKid", () =>
-  () => Promise.resolve({ type: "Hey" }));
+  jest.fn(() => Promise.resolve({ type: "Hey" })));
+jest.mock("../../App/AsyncActions/WatchKid", () =>
+  jest.fn(() => Promise.resolve({ type: "Hey" })));
 import mockPersistKid from "../../App/AsyncActions/PersistKid";
+import mockWatchKid from "../../App/AsyncActions/WatchKid";
 
 import SetName, { mergeProps, verifyName } from "../../App/Containers/SetName";
 
@@ -75,8 +78,9 @@ it("persists the kid and navigates to the next screen onPress", () => {
     { dispatch: mockDispatch }
   );
 
-  onPress(TEST_KID_NAME).then(() => {
+  return onPress(TEST_KID_NAME).then(() => {
     expect(Actions.deviceSetup).toHaveBeenCalled();
     expect(mockPersistKid).toHaveBeenCalled();
+    expect(mockWatchKid).toHaveBeenCalled();
   });
 });

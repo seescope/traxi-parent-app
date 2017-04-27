@@ -181,9 +181,10 @@ DeviceSetup.propTypes = {
 
 const mapStateToProps = ({ setupState, kidsState }) => {
   const { kidUUID } = setupState;
-  const { name } = kidsState[kidUUID];
+  const { name, deviceType } = kidsState[kidUUID];
   return {
     ...setupState,
+    deviceType,
     kidName: name
   };
 };

@@ -6,6 +6,7 @@ import I18n from "react-native-i18n";
 
 import { setKidName } from "../Reducers/Kids/kidsActions";
 import persistKid from "../AsyncActions/PersistKid";
+import watchKid from "../AsyncActions/WatchKid";
 import Button from "../Components/Button";
 import Background from "../Components/Background";
 import TextInput from "../Components/TextInput";
@@ -95,7 +96,7 @@ export const mergeProps = ({ kidName, kidUUID }, { dispatch }) => ({
     if (!verifyName(kidName)) return null;
 
     Actions.deviceSetup();
-    return dispatch(persistKid());
+    return dispatch(persistKid()).then(() => dispatch(watchKid()));
   },
   onNameChanged: name => dispatch(setKidName(name, kidUUID))
 });

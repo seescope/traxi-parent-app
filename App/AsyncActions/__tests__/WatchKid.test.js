@@ -1,7 +1,9 @@
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import watchKid from "../WatchKid";
+import { Actions } from "react-native-router-flux";
 import { mockData } from "firebase";
+
+import watchKid from "../WatchKid";
 
 const TEST_SETUP_STATE = {
   setupID: 1234,
@@ -14,16 +16,29 @@ describe("WatchKid", () => {
     const store = mockStore({
       setupState: TEST_SETUP_STATE
     });
-    const TEST_KID = {
-      UUID: TEST_SETUP_STATE.kidUUID
+    const KID_IN_FIREBASE = {
+      name: "Some Name",
+      deviceType: "Android",
+      avatarURL: "",
+      UUID: TEST_SETUP_STATE.kidUUID,
+      status: "INSTALLED"
     };
 
-    mockData.data = TEST_KID;
+    mockData.data = KID_IN_FIREBASE;
+
+    const EXPECTED_KID = {
+      name: KID_IN_FIREBASE.name,
+      deviceType: "Android",
+      avatarURL: "",
+      UUID: TEST_SETUP_STATE.kidUUID,
+      installed: true
+    };
 
     return store.dispatch(watchKid()).then(() => {
       const action = store.getActions()[0];
       expect(action.type).toEqual("KID_UPDATED");
-      expect(action.kid).toEqual(TEST_KID);
+      expect(action.kid).toEqual(EXPECTED_KID);
+      expect(Actions.congratulations).toHaveBeenCalled();
     });
   });
 });
