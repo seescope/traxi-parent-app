@@ -1,18 +1,17 @@
-import * as Firebase from 'firebase';
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {Image, Text, View, Alert} from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { Image, Text, View } from 'react-native';
 import I18n from 'react-native-i18n';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
 import selectImage from '../AsyncActions/SelectImage';
+import persistKid from '../AsyncActions/PersistKid';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import STYLES from '../Constants/Styles';
-import {VERY_LIGHT_GREY, GREY} from '../Constants/Colours';
-import {isIOS, logError, firstName} from '../Utils';
+import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
+import { isIOS, firstName } from '../Utils';
 
 const STYLE = {
   outerContainer: {
@@ -49,7 +48,7 @@ const STYLE = {
   },
 };
 
-const SetImage = ({kidName, onPress}) => (
+const SetImage = ({ kidName, onPress }) => (
   <View style={STYLE.outerContainer}>
     <View style={STYLE.container}>
       <HeaderText style={STYLE.headerText}>
@@ -95,8 +94,8 @@ SetImage.propTypes = {
 };
 
 const mapStateToProps = state => {
-  const {kidUUID} = state.setupState;
-  const {name} = state.kidsState[kidUUID] || {};
+  const { kidUUID } = state.setupState;
+  const { name } = state.kidsState[kidUUID] || {};
 
   return {
     kidName: firstName(name),
@@ -105,8 +104,11 @@ const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => ({
   onPress: didSelectImage => {
-    dispatch(selectImage(didSelectImage));
-    Actions.setupCompletion();
+    dispatch(selectImage(didSelectImage))
+      .then(dispatch(persistKid()))
+      .then(() => {
+        Actions.setupCompletion();
+      });
   },
 });
 

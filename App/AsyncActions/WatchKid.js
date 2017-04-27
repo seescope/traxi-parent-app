@@ -1,19 +1,19 @@
 // @flow
-import * as Firebase from "firebase";
-import { Actions } from "react-native-router-flux";
+import * as Firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 
-import { kidUpdated } from "../Reducers/Kids/kidsActions";
-import type { Kid, KidsAction } from "../Reducers/Kids/index";
-import type { RootState } from "../Reducers";
+import { kidUpdated } from '../Reducers/Kids/kidsActions';
+import type { Kid, KidsAction } from '../Reducers/Kids/index';
+import type { RootState } from '../Reducers';
 
 type Dispatch = (action: KidsAction) => void;
 type GetState = () => RootState;
 type FirebaseKid = {
   UUID: string,
   status: string,
-  deviceType: "iPhone" | "iPad" | "Android",
+  deviceType: 'iPhone' | 'iPad' | 'Android',
   name: string,
-  avatarURL: string
+  avatarURL: string,
 };
 
 // HACK: This is awful, and ugly. Necessary because Traxi updates the
@@ -22,8 +22,8 @@ const convertKid = (firebaseKid: FirebaseKid): Kid => ({
   name: firebaseKid.name,
   deviceType: firebaseKid.deviceType,
   UUID: firebaseKid.UUID,
-  installed: firebaseKid.status === "INSTALLED",
-  avatarURL: firebaseKid.avatarURL
+  installed: firebaseKid.status === 'INSTALLED',
+  avatarURL: firebaseKid.avatarURL,
 });
 
 export default () =>
@@ -54,5 +54,5 @@ export default () =>
     // parent through the setup process.
     return Firebase.database()
       .ref(`kids/${kidUUID}`)
-      .on("value", deviceUpdated);
+      .on('value', deviceUpdated);
   };

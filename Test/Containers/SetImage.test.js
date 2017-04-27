@@ -1,15 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import ImagePicker from 'react-native-image-picker';
-import {Actions} from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 
 jest.mock('../../App/AsyncActions/SelectImage', () =>
   () =>
     dispatch => {
-      type: ('TEST_IMAGE_SELECTED');
+      dispatch('TEST_IMAGE_SELECTED');
     });
 
 import SetImageComponent, {
@@ -39,9 +38,9 @@ it('renders the <SetImage> component correctly without deeplink', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it.only('calls Select Image then navigates to SetupCompletion', () => {
-  const mockDispatch = jest.fn();
-  const {onPress} = mapDispatchToProps(mockDispatch);
+it('calls Select Image then navigates to SetupCompletion', () => {
+  const mockDispatch = jest.fn(() => Promise.resolve());
+  const { onPress } = mapDispatchToProps(mockDispatch);
   onPress(true);
 
   expect(Actions.setupCompletion).toHaveBeenCalled();

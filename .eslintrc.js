@@ -13,13 +13,11 @@ module.exports = {
     'jest/globals': true,
   },
   rules: {
-    quotes: {
-      single: true,
-    },
+    quotes: ['error', 'single'],
     strict: 0,
-    'comma-dangle': 'always-multiline',
+    'comma-dangle': ['error', 'always-multiline'],
     'global-require': 0,
-    'no-confusing-arrow': ['error', {allowParens: true}],
+    'no-confusing-arrow': ['error', { allowParens: true }],
     'react-native/no-unused-styles': 2,
     'react-native/split-platform-components': 2,
     'react-native/no-inline-styles': 2,
