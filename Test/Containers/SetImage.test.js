@@ -41,7 +41,7 @@ it('renders the <SetImage> component correctly without deeplink', () => {
 it('calls Select Image then navigates to SetupCompletion', () => {
   const mockDispatch = jest.fn(() => Promise.resolve());
   const { onPress } = mapDispatchToProps(mockDispatch);
-  onPress(true);
-
-  expect(Actions.setupCompletion).toHaveBeenCalled();
+  return onPress(true).then(() => {
+    expect(Actions.setupCompletion).toHaveBeenCalled();
+  });
 });
