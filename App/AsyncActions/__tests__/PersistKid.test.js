@@ -16,7 +16,7 @@ describe("PersistKid", () => {
   test("Fetches the SetupID and Kid from the store and persists it in Firebase", () => {
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
-      kidState: {
+      kidsState: {
         [TEST_KID.UUID]: TEST_KID
       },
       setupState: TEST_SETUP_STATE
