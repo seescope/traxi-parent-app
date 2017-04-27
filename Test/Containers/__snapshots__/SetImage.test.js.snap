@@ -1,226 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the <SetImage> component correctly with deeplink 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#F0F2F7",
-      "flex": 1,
-      "justifyContent": "center",
-    }
-  }
->
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "justifyContent": "center",
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#545454",
-          "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 26,
-          "paddingHorizontal": 55,
-          "textAlign": "center",
-        }
-      }
-    >
-      Choose a picture for 
-      Emanuel
-    </Text>
-    <View
-      style={
-        Object {
-          "height": 32,
-        }
-      }
-    />
-    <View
-      elevation={6}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#FFF",
-            "borderRadius": 4,
-            "margin": 8,
-            "marginBottom": 24,
-            "padding": 8,
-            "shadowColor": "#000000",
-            "shadowOffset": Object {
-              "height": 3,
-              "width": 3,
-            },
-            "shadowOpacity": 0.16,
-            "shadowRadius": 3,
-            "width": 734,
-          },
-          Object {
-            "alignItems": "center",
-            "justifyContent": "center",
-            "padding": 16,
-          },
-        ]
-      }
-    >
-      <Image
-        source={1}
-        style={undefined}
-      />
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#545454",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-            "textAlign": "center",
-          }
-        }
-      >
-        Traxi shows a picture of 
-        Emanuel
-         with their usage.
-      </Text>
-      <View
-        style={
-          Object {
-            "height": 32,
-          }
-        }
-      />
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#545454",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 16,
-            "textAlign": "center",
-          }
-        }
-      >
-        Don't worry though, only you can see it.
-      </Text>
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "column",
-      }
-    }
-  >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginTop": 16,
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#448AFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
-          }
-        }
-      >
-        [missing "en.setImage.chooseAPicture" translation]
-         
-      </Text>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginTop": 16,
-          "opacity": 1,
-        }
-      }
-      testID={undefined}
-      tvParallaxProperties={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "#448AFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 14,
-          }
-        }
-      >
-        [missing "en.setImage.notNow" translation]
-         
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
 exports[`renders the <SetImage> component correctly without deeplink 1`] = `
 <View
   style={
@@ -256,7 +35,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
       }
     >
       Choose a picture for 
-      Emanuel
+      John
     </Text>
     <View
       style={
@@ -317,7 +96,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
         }
       >
         Traxi shows a picture of 
-        Emanuel
+        John
          with their usage.
       </Text>
       <View
@@ -441,5 +220,3 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
   </View>
 </View>
 `;
-
-exports[`uses a default image of pickImage is false 1`] = `Array []`;
