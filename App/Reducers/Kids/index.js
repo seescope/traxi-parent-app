@@ -27,7 +27,7 @@ const createNewKid = (UUID: string): Kid => ({
   UUID,
   deviceType: "unknown",
   installed: false,
-  avatarURL: undefined
+  avatarURL: ""
 });
 
 const INITIAL_STATE = {};

@@ -5,6 +5,7 @@ import { Actions } from "react-native-router-flux";
 import I18n from "react-native-i18n";
 
 import { setKidName } from "../Reducers/Kids/kidsActions";
+import persistKid from "../AsyncActions/PersistKid";
 import Button from "../Components/Button";
 import Background from "../Components/Background";
 import TextInput from "../Components/TextInput";
@@ -29,16 +30,20 @@ const style = {
   }
 };
 
-export const nextStep = kidName => {
+// More than one character, excluding spaces.
+const isValid = kidName => kidName.replace(" ", "").length > 1;
+
+export const verifyName = kidName => {
   Keyboard.dismiss();
-  if (kidName) {
-    Actions.deviceSetup();
-  } else {
-    Alert.alert("Please enter your kid's name");
+  if (isValid(kidName)) {
+    return true;
   }
+
+  Alert.alert("Please enter your child's name");
+  return false;
 };
 
-const SetName = ({ kidName, onNameChanged }) => (
+const SetName = ({ onPress, onNameChanged }) => (
   <Background>
     <View style={style.container}>
       <HeaderText>{I18n.t("setName.header")}</HeaderText>
@@ -56,13 +61,13 @@ const SetName = ({ kidName, onNameChanged }) => (
               this.textInput = ref;
             }}
             onChangeText={text => onNameChanged(text)}
-            onSubmitEditing={() => nextStep(kidName)}
+            onSubmitEditing={() => onPress()}
           />
         </View>
       </View>
 
       <View style={style.buttonContainer}>
-        <Button primary onPress={() => nextStep(kidName)}>
+        <Button primary onPress={() => onPress()}>
           {I18n.t("general.nextStep")}
         </Button>
       </View>
@@ -72,7 +77,7 @@ const SetName = ({ kidName, onNameChanged }) => (
 
 SetName.propTypes = {
   onNameChanged: PropTypes.func.isRequired,
-  kidName: PropTypes.string.isRequired
+  onPress: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -86,7 +91,12 @@ const mapStateToProps = state => {
 };
 
 export const mergeProps = ({ kidName, kidUUID }, { dispatch }) => ({
-  kidName,
+  onPress: () => {
+    if (!verifyName(kidName)) return null;
+
+    Actions.deviceSetup();
+    return dispatch(persistKid());
+  },
   onNameChanged: name => dispatch(setKidName(name, kidUUID))
 });
 

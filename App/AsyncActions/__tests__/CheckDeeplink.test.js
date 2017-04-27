@@ -43,7 +43,6 @@ describe("CheckDeeplink", () => {
     return store.dispatch(checkDeeplink()).then(() => {
       expect(store.getActions()[0].type).toEqual("BEGIN_SETUP");
       expect(store.getActions()[1].type).toEqual("TEST_PERSIST_SETUP_ID");
-      expect(store.getActions()[2].type).toEqual("TEST_PERSIST_KID");
       expect(Actions.splashScreen).toHaveBeenCalled();
     });
   });

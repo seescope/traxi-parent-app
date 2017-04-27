@@ -1,12 +1,15 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { Keyboard } from "react-native";
+import { Keyboard, Alert } from "react-native";
 import { Actions } from "react-native-router-flux";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
+jest.mock("../../App/AsyncActions/PersistKid", () =>
+  () => Promise.resolve({ type: "Hey" }));
+import mockPersistKid from "../../App/AsyncActions/PersistKid";
 
-import SetName, { mergeProps, nextStep } from "../../App/Containers/SetName";
+import SetName, { mergeProps, verifyName } from "../../App/Containers/SetName";
 
 const mockStore = configureStore([thunk]);
 const testStore = mockStore({
@@ -46,11 +49,34 @@ it("handles setting the kid's name", () => {
   });
 });
 
-it("handles going to the nextStep", () => {
+it("verifies the kid's name was input correctly", () => {
   Keyboard.dismiss = jest.fn();
+  Alert.alert = jest.fn();
 
-  nextStep("hey");
+  verifyName("hey");
+  expect(Keyboard.dismiss).toHaveBeenCalled();
+  expect(Alert.alert).not.toHaveBeenCalled();
+
+  Keyboard.dismiss.mockClear();
+  Alert.alert.mockClear();
+
+  verifyName(" ");
 
   expect(Keyboard.dismiss).toHaveBeenCalled();
-  expect(Actions.deviceSetup).toHaveBeenCalled();
+  expect(Alert.alert).toHaveBeenCalled();
+});
+
+it("persists the kid and navigates to the next screen onPress", () => {
+  const mockDispatch = jest.fn(v => v);
+  const TEST_KID_NAME = "Jim";
+
+  const { onPress } = mergeProps(
+    { kidName: TEST_KID_NAME },
+    { dispatch: mockDispatch }
+  );
+
+  onPress(TEST_KID_NAME).then(() => {
+    expect(Actions.deviceSetup).toHaveBeenCalled();
+    expect(mockPersistKid).toHaveBeenCalled();
+  });
 });
