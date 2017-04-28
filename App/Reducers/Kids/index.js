@@ -30,13 +30,13 @@ const createNewKid = (UUID: string): Kid => ({
   avatarURL: '',
 });
 
-// const INITIAL_STATE = {};
-const INITIAL_STATE = {
-  'abc-123': {
-    ...createNewKid('abc-123'),
-    name: 'Test Kid',
-  },
-};
+const INITIAL_STATE = {};
+// const INITIAL_STATE = {
+//   'abc-123': {
+//     ...createNewKid('abc-123'),
+//     name: 'Test Kid',
+//   },
+// };
 
 export default (state: KidsState = INITIAL_STATE, action: KidsAction) => {
   switch (action.type) {

@@ -23,7 +23,7 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="congratulations" component={Congratulations} />
       <Scene key="setImage" component={SetImage} />
       <Scene key="setupCompletion" component={SetupCompletion} />
-      <Scene key="dashboard" initial component={Dashboard} />
+      <Scene key="dashboard" component={Dashboard} />
       <Scene key="playground" initial={false} component={Playground} />
     </RouterWithRedux>
   </Provider>
