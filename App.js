@@ -42,8 +42,8 @@ export default class extends React.Component {
         autoRehydrate(),
       ),
     );
-    persistStore(this.store, { storage: AsyncStorage }, () =>
-      this.store.dispatch(bootApp()));
+    // persistStore(this.store, { storage: AsyncStorage }, () =>
+    //   this.store.dispatch(bootApp()));
   }
 
   componentWillMount() {

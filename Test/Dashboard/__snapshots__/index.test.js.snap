@@ -102,7 +102,9 @@ exports[`renders correctly 1`] = `
                       "marginBottom": 16,
                     }
                   }
-                />
+                >
+                  Jim Bob
+                </Text>
                 <View />
                 <Image
                   source={

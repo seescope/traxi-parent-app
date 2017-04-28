@@ -6,14 +6,14 @@ import configureStore from 'redux-mock-store';
 
 it('renders correctly', () => {
   const mockStore = configureStore();
-  const testStore = mockStore({ 
-    loading: true,
-    kids: [
-      {
-        UUID: 'abc-123',
+  const testStore = mockStore({
+    kidsState: {
+      'abc-123': {
+        name: 'Jim Bob',
       },
-    ],
-    reports: {
+    },
+    reportsState: {
+      loading: true,
       'abc-123': {
         topApps: {},
         topCategories: {},
@@ -23,6 +23,8 @@ it('renders correctly', () => {
     },
   });
 
-  const tree = renderer.create(<Provider store={testStore}><Dashboard /></Provider>);
+  const tree = renderer.create(
+    <Provider store={testStore}><Dashboard /></Provider>,
+  );
   expect(tree.toJSON()).toMatchSnapshot();
 });

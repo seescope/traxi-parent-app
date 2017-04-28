@@ -64,18 +64,13 @@ export const getRows = (data = [], expanded, timePeriod) => {
   }
 
   return expanded ? selectedData : selectedData.slice(0, 2);
-}
+};
 
 export const getMax = (data = {}) =>
-  lodash.chain(data)
-    .map(d => d.usage)
-    .max()
-    .value();
+  lodash.chain(data).map(d => d.usage).max().value();
 
 const getTimeStyle = (currentTimePeriod, timePeriod) =>
-  (currentTimePeriod === timePeriod
-    ? selectedTimeStyle
-    : deselectedTimeStyle);
+  currentTimePeriod === timePeriod ? selectedTimeStyle : deselectedTimeStyle;
 
 const arrowStyle = {
   height: 16,
@@ -88,7 +83,7 @@ const getArrowStyle = expanded =>
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       timePeriod: 'today',
       expanded: false,
@@ -106,7 +101,7 @@ class Card extends React.Component {
 
   switchTimePeriod(timePeriod) {
     analytics.track('Switched time period', { timePeriod });
-    
+
     this.setState({
       timePeriod,
     });
@@ -126,30 +121,46 @@ class Card extends React.Component {
         <Text style={cardHeaderStyle}>{header}</Text>
         <View style={headerUnderlineStyle} />
 
-        {shouldShowTimeSelector && <View style={timePickerStyle}>
-          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('today')}>
-            <Text style={getTimeStyle('today', timePeriod)}>Today</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('yesterday')}>
-            <Text style={getTimeStyle('yesterday', timePeriod)}>Yesterday</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={timeButtonStyle} onPress={() => this.switchTimePeriod('week')}>
-            <Text style={getTimeStyle('week', timePeriod)}>Last 7 Days</Text>
-          </TouchableOpacity>
-        </View>}
+        {shouldShowTimeSelector &&
+          <View style={timePickerStyle}>
+            <TouchableOpacity
+              style={timeButtonStyle}
+              onPress={() => this.switchTimePeriod('today')}
+            >
+              <Text style={getTimeStyle('today', timePeriod)}>Today</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={timeButtonStyle}
+              onPress={() => this.switchTimePeriod('yesterday')}
+            >
+              <Text style={getTimeStyle('yesterday', timePeriod)}>
+                Yesterday
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={timeButtonStyle}
+              onPress={() => this.switchTimePeriod('week')}
+            >
+              <Text style={getTimeStyle('week', timePeriod)}>Last 7 Days</Text>
+            </TouchableOpacity>
+          </View>}
 
         <View>
-          {loading && <LoadingIndicator color={GREY}>Loading...</LoadingIndicator>}
-          {!loading && 
-           (rows.length > 0 
-            ? rows.map((d, i) => <Component max={max} key={i} {...d} />)
-            : <Text style={deselectedTimeStyle}>No data to display</Text>)
-          }
+          {loading &&
+            <LoadingIndicator color={GREY}>Loading...</LoadingIndicator>}
+          {!loading &&
+            (rows.length > 0
+              ? rows.map((d, i) => <Component max={max} key={i} {...d} />)
+              : <Text style={deselectedTimeStyle}>No data to display</Text>)}
         </View>
 
         <TouchableOpacity onPress={() => this.toggleExpand()}>
           <View style={downArrowContainer}>
-            {maxRows.length > 2 && <Image style={[arrowStyle, getArrowStyle(this.state.expanded)]} source={require('../../Images/down-arrow.png')} />}
+            {maxRows.length > 2 &&
+              <Image
+                style={[arrowStyle, getArrowStyle(this.state.expanded)]}
+                source={require('../../Images/down-arrow.png')}
+              />}
           </View>
         </TouchableOpacity>
       </View>

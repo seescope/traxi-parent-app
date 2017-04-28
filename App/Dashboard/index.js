@@ -10,13 +10,20 @@ import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY } from '../Constants/Colours';
 import KidCircle from './Components/KidCircle';
 import Card from './Components/Card';
-import TopApp from './Components/TopApp';
-import TopCategory from './Components/TopCategory';
-import PeakTime from './Components/PeakTime';
-import RecentApp from './Components/RecentApp';
+import TopAppComponent from './Components/TopApp';
+import TopCategoryComponent from './Components/TopCategory';
+import PeakTimeComponent from './Components/PeakTime';
+import RecentAppComponent from './Components/RecentApp';
 
 import type { KidsState, Kid } from '../Reducers/Kids';
-import type { ReportsState } from '../Reducers/Reports';
+import type {
+  ReportsState,
+  TopApp,
+  TopCategory,
+  PeakTime,
+  RecentApp,
+  CardWithDate,
+} from '../Reducers/Reports';
 
 type RootState = {
   kidsState: KidsState,
@@ -25,8 +32,17 @@ type RootState = {
 
 type DashboardProps = {
   reports: ReportsState,
-  kids: Array<Kid>,
+  kids: KidsState,
   loading: boolean,
+};
+
+type DashboardScreenProps = {
+  loading: boolean,
+  kid: Kid,
+  topApps: CardWithDate<TopApp>,
+  topCategories: CardWithDate<TopCategory>,
+  peakTimes: CardWithDate<PeakTime>,
+  recentApps: Array<RecentApp>,
 };
 
 const containerStyle = {
@@ -40,13 +56,20 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
-const getTodayUsage = peakTimes =>
+const getTodayUsage = (peakTimes: CardWithDate<PeakTime>) =>
   peakTimes && peakTimes.week
     ? (lodash.find(peakTimes.week, { name: 'Today' }) || { usage: 0 }).usage
     : 0;
 
 const DashboardScreen = (
-  { loading, kid, topApps, topCategories, peakTimes, recentApps },
+  {
+    loading,
+    kid,
+    topApps,
+    topCategories,
+    peakTimes,
+    recentApps,
+  }: DashboardScreenProps,
 ) => (
   <ScrollView
     style={outerContainerStyle}
@@ -61,58 +84,49 @@ const DashboardScreen = (
     <Card
       loading={loading}
       header="Top Apps"
-      Component={TopApp}
+      Component={TopAppComponent}
       data={topApps}
     />
 
     <Card
       loading={loading}
       header="Top Categories"
-      Component={TopCategory}
+      Component={TopCategoryComponent}
       data={topCategories}
     />
 
     <Card
       loading={loading}
       header="Peak Times"
-      Component={PeakTime}
+      Component={PeakTimeComponent}
       data={peakTimes}
     />
 
     <Card
       loading={loading}
       header="Recent Apps"
-      Component={RecentApp}
+      Component={RecentAppComponent}
       data={recentApps}
     />
   </ScrollView>
 );
 
-DashboardScreen.propTypes = {
-  topApps: React.PropTypes.object,
-  topCategories: React.PropTypes.object,
-  peakTimes: React.PropTypes.object,
-  kid: React.PropTypes.object,
-  recentApps: React.PropTypes.array,
-  loading: React.PropTypes.bool.isRequired,
-};
-
 const mapStateToProps = (
   { reportsState, kidsState }: RootState,
 ): DashboardProps => ({
-  kids: lodash.values(kidsState),
+  kids: kidsState,
   reports: reportsState,
   loading: reportsState.loading,
 });
 
 const Dashboard = ({ reports, kids, loading }: DashboardProps) => (
   <Swiper>
-    {kids.map(kid => (
+    {Object.keys(kids).map(UUID => (
       <DashboardScreen
-        key={kid.UUID}
+        key={UUID}
         loading={loading}
-        kid={kid}
-        {...reports[kid.UUID || '']}
+        kid={kids[UUID]}
+        {...reports[UUID]}
       />
     ))}
   </Swiper>

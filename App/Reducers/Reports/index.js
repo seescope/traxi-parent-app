@@ -1,6 +1,44 @@
 // @flow
+export type TopApp = {
+  name: string,
+  logoURL: string,
+  usage: number,
+  max: number,
+};
+
+export type TopCategory = {
+  category: string,
+  usage: number,
+  max: number,
+};
+
+export type PeakTime = {
+  name: string,
+  usage: number,
+  max: number,
+};
+
+export type RecentApp = {
+  name: string,
+  logoURL: string,
+  time: string,
+};
+
+export type CardWithDate<R> = {
+  week: Array<R>,
+  yesterday: Array<R>,
+  today: Array<R>,
+};
+
+export type Report = {
+  topApps: CardWithDate<TopApp>,
+  topCategories: CardWithDate<TopCategory>,
+  peakTimes: CardWithDate<PeakTime>,
+  recentApps: Array<RecentApp>,
+};
+
 export type ReportsState = {
-  [string]: any,
+  [string]: Report,
   loading: boolean,
 };
 export type ReportsAction =
