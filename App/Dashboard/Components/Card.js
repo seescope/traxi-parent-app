@@ -15,7 +15,7 @@ type TimePeriod = 'today' | 'week' | 'yesterday';
 type Props = {
   header: string,
   Component: () => any,
-  data: CardData,
+  data: ?CardData,
   loading: boolean,
 };
 
@@ -28,12 +28,13 @@ type State = {
 const DOWN_ARROW = require('../../Images/down-arrow.png');
 
 const cardHeaderStyle = {
+  padding: 8,
   color: GREY,
   fontSize: 19,
 };
 
 const headerUnderlineStyle = {
-  marginTop: 8,
+  marginHorizontal: 4,
   height: 1,
   width: 56,
   backgroundColor: LIGHT_GREY,
@@ -74,11 +75,13 @@ const timeButtonStyle = {
 };
 
 export const getRows = (
-  data: CardData,
+  data: ?CardData,
   expanded: boolean,
   timePeriod: TimePeriod,
-) => {
+): Array<ReportItem> => {
   let selectedData;
+
+  if (!data) return [];
 
   // data might be an array, or an object of arrays.
   if (Array.isArray(data)) {
@@ -93,7 +96,10 @@ export const getRows = (
 export const getMax = (data: Array<ReportItem>): number =>
   lodash.chain(data).map(d => d.usage).max().value();
 
-const getTimeStyle = (currentTimePeriod, timePeriod) =>
+const getTimeStyle = (
+  currentTimePeriod: TimePeriod,
+  timePeriod: TimePeriod,
+): Object =>
   currentTimePeriod === timePeriod ? selectedTimeStyle : deselectedTimeStyle;
 
 const arrowStyle = {
@@ -101,7 +107,7 @@ const arrowStyle = {
   width: 16,
 };
 
-const getArrowStyle = expanded =>
+const getArrowStyle = (expanded: boolean) =>
   expanded && { transform: [{ rotate: '-180deg' }] };
 
 class Card extends React.Component {
@@ -134,7 +140,7 @@ class Card extends React.Component {
   }
 
   render() {
-    const { header, Component, data, loading } = this.props;
+    const { header, Component, data, loading }: Props = this.props;
     const { timePeriod, expanded } = this.state;
     const maxRows = getRows(data, true, timePeriod);
     const rows = getRows(data, expanded, timePeriod);
@@ -177,7 +183,7 @@ class Card extends React.Component {
           {!loading &&
             (rows.length > 0
               ? rows.map((d, i) => <Component max={max} key={i} {...d} />)
-              : <Text style={deselectedTimeStyle}>No data to display</Text>)}
+              : <Text style={deselectedTimeStyle}>No data here yet!</Text>)}
         </View>
 
         <TouchableOpacity onPress={() => this.toggleExpand()}>

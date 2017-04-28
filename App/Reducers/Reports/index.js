@@ -33,7 +33,7 @@ export type CardWithDate<R> = {
   today: ?Array<R>,
 };
 
-export type CardData = CardWithDate<ReportItem> | Array<RecentApp>;
+export type CardData = CardWithDate<ReportItem> | Array<ReportItem>;
 
 export type Report = {
   topApps: CardWithDate<TopApp>,
