@@ -28,6 +28,8 @@ export default () =>
   (dispatch: Dispatch, getState: GetState): Promise<any> => {
     const { kidsState, parentState } = getState();
 
+    console.log('Booted! Initial state:', kidsState, parentState);
+
     const isInstalled = hasInstalledKids(kidsState);
     const completedSetup = finishedSetup(parentState);
 

@@ -6,7 +6,7 @@ import type { SetupState } from '../Reducers/Setup';
 // NOTE: Importing RootState from '../Reducers' does not seem to work?
 type RootState = {
   kidsState: KidsState,
-  setupState: SetupState
+  setupState: SetupState,
 };
 
 type Dispatch = () => void;
@@ -17,7 +17,7 @@ export default () =>
     const { setupState, kidsState } = getState();
 
     const { kidUUID } = setupState;
-    if (!kidUUID) return Promise.reject();
+    if (!kidUUID) return Promise.reject('No kid UUID!');
 
     const kid = kidsState[kidUUID];
 

@@ -15,7 +15,7 @@ export default () =>
         dispatch(beginSetup());
         dispatch(persistSetupID());
 
-        Actions.splashScreen();
+        Actions.splashScreen({ type: 'replace' });
 
         return null;
       }

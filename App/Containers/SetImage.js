@@ -105,7 +105,7 @@ const mapStateToProps = state => {
 export const mapDispatchToProps = dispatch => ({
   onPress: didSelectImage =>
     dispatch(selectImage(didSelectImage))
-      .then(dispatch(persistKid()))
+      .then(() => dispatch(persistKid()))
       .then(() => {
         Actions.setupCompletion();
       }),

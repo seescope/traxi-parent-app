@@ -6,10 +6,8 @@ import thunk from 'redux-thunk';
 import { Actions } from 'react-native-router-flux';
 
 jest.mock('../../App/AsyncActions/SelectImage', () =>
-  () =>
-    dispatch => {
-      dispatch('TEST_IMAGE_SELECTED');
-    });
+  () => 'TEST_SELECT_IMAGE');
+jest.mock('../../App/AsyncActions/PersistKid', () => () => 'TEST_PERSIST_KID');
 
 import SetImageComponent, {
   mapDispatchToProps,
@@ -41,7 +39,10 @@ it('renders the <SetImage> component correctly without deeplink', () => {
 it('calls Select Image then navigates to SetupCompletion', () => {
   const mockDispatch = jest.fn(() => Promise.resolve());
   const { onPress } = mapDispatchToProps(mockDispatch);
+
   return onPress(true).then(() => {
+    expect(mockDispatch).toHaveBeenCalledWith('TEST_SELECT_IMAGE');
+    expect(mockDispatch).toHaveBeenCalledWith('TEST_PERSIST_KID');
     expect(Actions.setupCompletion).toHaveBeenCalled();
   });
 });

@@ -14,6 +14,7 @@ type FirebaseKid = {
   deviceType: 'iPhone' | 'iPad' | 'Android',
   name: string,
   avatarURL: string,
+  installed: boolean,
 };
 
 // HACK: This is awful, and ugly. Necessary because Traxi updates the
@@ -22,7 +23,7 @@ const convertKid = (firebaseKid: FirebaseKid): Kid => ({
   name: firebaseKid.name,
   deviceType: firebaseKid.deviceType,
   UUID: firebaseKid.UUID,
-  installed: firebaseKid.status === 'INSTALLED',
+  installed: firebaseKid.installed || firebaseKid.status === 'INSTALLED',
   avatarURL: firebaseKid.avatarURL,
 });
 
@@ -46,6 +47,7 @@ export default () =>
 
       if (installed) {
         Actions.congratulations();
+        Firebase.database().ref(`kids/${kidUUID}`).off();
       }
     };
 

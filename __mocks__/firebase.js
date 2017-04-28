@@ -43,6 +43,7 @@ export const database = () => ({
     update: () => jest.fn(),
     set: mockSet,
     on: mockOn,
+    off: jest.fn(),
   }),
   goOffline: () => {},
 });
