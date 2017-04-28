@@ -11,6 +11,7 @@ import HeaderText from '../Components/HeaderText';
 import TextInput from '../Components/TextInput';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+import LoadingIndicator from '../Components/LoadingIndicator';
 
 import { startedLoading, stoppedLoading } from '../Reducers/Setup/setupActions';
 import * as ParentActions from '../Reducers/Parent/parentActions';
@@ -37,6 +38,7 @@ type Props = {
   onPasswordChanged: () => {},
   onEmailChanged: () => {},
   onPress: () => {},
+  loading: boolean,
 };
 
 type Fields = {
@@ -95,6 +97,7 @@ export const SetupCompletion = (
     kidName,
     email,
     onPress,
+    loading,
   }: Props,
 ) => (
   <ScrollView
@@ -123,22 +126,25 @@ export const SetupCompletion = (
       </View>
     </View>
     <View style={style.buttonContainer}>
-      <Button primary onPress={onPress}>
-        See {kidName}'s usage
-      </Button>
+      {loading
+        ? <LoadingIndicator />
+        : <Button primary onPress={onPress}>
+            See {kidName}'s usage
+          </Button>}
     </View>
   </ScrollView>
 );
 
 const mapStateToProps = (rootState: RootState): Object => {
   const { parentState, setupState, kidsState } = rootState;
-  const { kidUUID } = setupState;
+  const { kidUUID, loading } = setupState;
 
   if (!kidUUID) throw new Error('No kidUUID!');
 
   const selectedKid = kidsState[kidUUID];
 
   return {
+    loading,
     email: parentState.email,
     kidName: firstName(selectedKid.name),
   };

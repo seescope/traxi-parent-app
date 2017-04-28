@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NameSetup Renders correctly 1`] = `
+exports[`SetupCompletion Renders correctly 1`] = `
 <RCTScrollView
   contentContainerStyle={
     Object {
       "alignItems": "center",
       "flex": 1,
-      "justifyContent": "center",
+      "paddingTop": 64,
     }
   }
   style={
@@ -41,13 +41,6 @@ exports[`NameSetup Renders correctly 1`] = `
       >
         Last step!
       </Text>
-      <View
-        style={
-          Object {
-            "height": 16,
-          }
-        }
-      />
       <View
         elevation={6}
         style={
@@ -98,7 +91,7 @@ exports[`NameSetup Renders correctly 1`] = `
           </Text>
           <View>
             <TextInput
-              autoCapitalize="words"
+              autoCapitalize="none"
               autoCorrect={false}
               keyboardType="email-address"
               onChangeText={[Function]}
@@ -118,7 +111,7 @@ exports[`NameSetup Renders correctly 1`] = `
                 }
               }
               underlineColorAndroid="#448AFF"
-              value="test@test.com"
+              value={undefined}
             />
             <View
               style={
@@ -278,7 +271,7 @@ exports[`NameSetup Renders correctly 1`] = `
           }
         >
           See 
-          Chris
+          John
           's usage
            
         </Text>

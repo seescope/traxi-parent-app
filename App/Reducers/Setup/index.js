@@ -20,22 +20,21 @@ export type SetupAction =
   | { type: 'STARTED_LOADING' }
   | { type: 'STOPPED_LOADING' };
 
-// const INITIAL_STATE = {
-//   step: 0,
-//   kidUUID: undefined,
-//   setupID: undefined,
-//   deviceType: 'unknown',
-// };
-
-const TEST_INITIAL_STATE = {
+const INITIAL_STATE = {
   step: 0,
-  kidUUID: 'abc-123',
+  kidUUID: undefined,
   setupID: undefined,
   deviceType: 'unknown',
   loading: false,
 };
 
-const INITIAL_STATE = TEST_INITIAL_STATE;
+// const INITIAL_STATE = {
+//   step: 0,
+//   kidUUID: 'abc-123',
+//   setupID: undefined,
+//   deviceType: 'unknown',
+//   loading: false,
+// };
 
 export default (
   state: SetupState = INITIAL_STATE,
