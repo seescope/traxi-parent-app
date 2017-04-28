@@ -11,7 +11,7 @@ it('renders correctly', () => {
     kids: [
       {
         UUID: 'abc-123',
-      }
+      },
     ],
     reports: {
       'abc-123': {
@@ -20,7 +20,7 @@ it('renders correctly', () => {
         peakTimes: {},
         recentApps: [],
       },
-    }
+    },
   });
 
   const tree = renderer.create(<Provider store={testStore}><Dashboard /></Provider>);
