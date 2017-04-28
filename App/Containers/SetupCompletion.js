@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { AsyncStorage, ScrollView, Text, View, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -13,6 +13,7 @@ import TextInput from '../Components/TextInput';
 import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+import * as ParentActions from '../Reducers/Parent/parentActions';
 
 import type { ParentState } from '../Reducers/Parent';
 import type { KidsState } from '../Reducers/Kids';
@@ -22,6 +23,15 @@ type RootState = {
   parentState: ParentState,
   kidsState: KidsState,
   setupState: SetupState,
+};
+
+type Props = {
+  kidName: string,
+  email: ?string,
+  onNameChanged: () => {},
+  onPasswordChanged: () => {},
+  onEmailChanged: () => {},
+  onPress: () => {},
 };
 
 const style = {
@@ -64,15 +74,6 @@ export const nextStep = (name: string) => {
   }
 };
 
-export const updateProfile = (field, value) =>
-  dispatch => {
-    dispatch({
-      type: 'UPDATE_PROFILE',
-      field,
-      value,
-    });
-  };
-
 const saveProfileToAsyncStorage = ({ UUID }) =>
   AsyncStorage.setItem(
     'profile',
@@ -103,7 +104,14 @@ export const finishSetup = profile =>
     .then(goToDashboard);
 
 export const NameSetup = (
-  { onNameChanged, onPasswordChanged, onEmailChanged, kidName, email, onPress },
+  {
+    onNameChanged,
+    onPasswordChanged,
+    onEmailChanged,
+    kidName,
+    email,
+    onPress,
+  }: Props,
 ) => (
   <ScrollView
     style={style.background}
@@ -119,6 +127,7 @@ export const NameSetup = (
           <TextInput
             value={email}
             onChangeText={onEmailChanged}
+            autoCapitalize="none"
             keyboardType="email-address"
           />
 
@@ -138,21 +147,6 @@ export const NameSetup = (
   </ScrollView>
 );
 
-NameSetup.propTypes = {
-  kidName: PropTypes.string.isRequired,
-  email: PropTypes.string,
-  onNameChanged: PropTypes.func.isRequired,
-  onPasswordChanged: PropTypes.func.isRequired,
-  onEmailChanged: PropTypes.func.isRequired,
-  onPress: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = {
-  onNameChanged: name => updateProfile('name', name),
-  onPasswordChanged: password => updateProfile('password', password),
-  onEmailChanged: email => updateProfile('email', email),
-};
-
 const mapStateToProps = (rootState: RootState) => {
   const { parentState, setupState, kidsState } = rootState;
   const { kidUUID } = setupState;
@@ -167,4 +161,11 @@ const mapStateToProps = (rootState: RootState) => {
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  onNameChanged: name => dispatch(ParentActions.setName(name)),
+  onEmailChanged: email => dispatch(ParentActions.setEmail(email)),
+  onPasswordChanged: password => dispatch(ParentActions.setPassword(password)),
+});
+
+// $FlowFixMe: The type signature for connect is insane.
 export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);
