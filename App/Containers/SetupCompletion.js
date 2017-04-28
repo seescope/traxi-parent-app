@@ -1,3 +1,5 @@
+// @flow
+
 import React, { PropTypes } from 'react';
 import { AsyncStorage, ScrollView, Text, View, Alert } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -11,6 +13,16 @@ import TextInput from '../Components/TextInput';
 import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+
+import type { ParentState } from '../Reducers/Parent';
+import type { KidsState } from '../Reducers/Kids';
+import type { SetupState } from '../Reducers/Setup';
+
+type RootState = {
+  parentState: ParentState,
+  kidsState: KidsState,
+  setupState: SetupState,
+};
 
 const style = {
   background: {
@@ -44,7 +56,7 @@ const style = {
   },
 };
 
-export const nextStep = name => {
+export const nextStep = (name: string) => {
   if (name) {
     Actions.setImage({ type: 'replace' });
   } else {
@@ -69,24 +81,19 @@ const saveProfileToAsyncStorage = ({ UUID }) =>
     }),
   );
 
-const createUser = ({ email, password }) => Firebase
-  .auth()
-  .createUserWithEmailAndPassword(email, password);
+const createUser = ({ email, password }) =>
+  Firebase.auth().createUserWithEmailAndPassword(email, password);
 
-const updateFirebaseProfile = profile => Firebase
-  .auth()
-  .currentUser
-  .updateProfile({ displayName: profile.name });
+const updateFirebaseProfile = profile =>
+  Firebase.auth().currentUser.updateProfile({ displayName: profile.name });
 
-const updateParentInDatabase = profile => Firebase
-  .database()
-  .ref(`parents/${profile.UUID}`)
-  .set(profile);
+const updateParentInDatabase = profile =>
+  Firebase.database().ref(`parents/${profile.UUID}`).set(profile);
 
-const createParentInFirebase = profile => 
+const createParentInFirebase = profile =>
   createUser(profile)
-  .then(updateFirebaseProfile.bind(undefined, profile))
-  .then(updateParentInDatabase.bind(undefined, profile));
+    .then(updateFirebaseProfile.bind(undefined, profile))
+    .then(updateParentInDatabase.bind(undefined, profile));
 
 const goToDashboard = () => Actions.dashboard();
 
@@ -95,8 +102,13 @@ export const finishSetup = profile =>
     .then(createParentInFirebase.bind(undefined, profile))
     .then(goToDashboard);
 
-export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, kidName, email, onPress }) => (
-  <ScrollView style={style.background} contentContainerStyle={style.outerContainer}>
+export const NameSetup = (
+  { onNameChanged, onPasswordChanged, onEmailChanged, kidName, email, onPress },
+) => (
+  <ScrollView
+    style={style.background}
+    contentContainerStyle={style.outerContainer}
+  >
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
       <Spacing height={16} />
@@ -111,15 +123,10 @@ export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, ki
           />
 
           <Text style={style.labelText}>Your name:</Text>
-          <TextInput
-            onChangeText={onNameChanged}
-          />
+          <TextInput onChangeText={onNameChanged} />
 
           <Text style={style.labelText}>Choose a password:</Text>
-          <TextInput
-            secureTextEntry
-            onChangeText={onPasswordChanged}
-          />
+          <TextInput secureTextEntry onChangeText={onPasswordChanged} />
         </View>
       </View>
     </View>
@@ -133,7 +140,7 @@ export const NameSetup = ({ onNameChanged, onPasswordChanged, onEmailChanged, ki
 
 NameSetup.propTypes = {
   kidName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
+  email: PropTypes.string,
   onNameChanged: PropTypes.func.isRequired,
   onPasswordChanged: PropTypes.func.isRequired,
   onEmailChanged: PropTypes.func.isRequired,
@@ -146,10 +153,18 @@ const mapDispatchToProps = {
   onEmailChanged: email => updateProfile('email', email),
 };
 
-const mapStateToProps = ({ profile, selectedKid }) => ({
-  email: profile.email,
-  kidName: firstName(selectedKid.name),
-  onPress: finishSetup.bind(undefined, profile),
-});
+const mapStateToProps = (rootState: RootState) => {
+  const { parentState, setupState, kidsState } = rootState;
+  const { kidUUID } = setupState;
+
+  if (!kidUUID) throw new Error('No kidUUID!');
+
+  const selectedKid = kidsState[kidUUID];
+
+  return {
+    email: parentState.email,
+    kidName: firstName(selectedKid.name),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);

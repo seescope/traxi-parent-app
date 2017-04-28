@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Text, View, Dimensions, Image } from 'react-native';
+import { Text, View, Dimensions, Image } from 'react-native';
 import Svg, { Circle as SVGCircle } from 'react-native-svg';
 
 import { GREY, WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
@@ -62,7 +62,6 @@ const overlayTextSubheaderStyle = {
   fontWeight: '200',
 };
 
-
 // Basic maths.
 const circleRadius = circleSize / 2;
 
@@ -71,21 +70,19 @@ const circleCircumference = Math.PI * (circleRadius * 2);
 
 const MAX_TIME_ALLOWED = 120; // 2 Hours.
 
-export const getStrokeOffset = (usage) => {
+export const getStrokeOffset = usage => {
   if (usage >= MAX_TIME_ALLOWED) return 0;
 
   const percentage = usage / MAX_TIME_ALLOWED;
 
   // Mother. Fucking. Maths.
-  return ((1 - percentage) / 1) * circleCircumference;
+  return (1 - percentage) / 1 * circleCircumference;
 };
 
-export const getNiceTimeUsed = (usage) =>
-  (usage >= 60
-    ? (usage / 60).toFixed(1)
-    : usage);
+export const getNiceTimeUsed = usage =>
+  usage >= 60 ? (usage / 60).toFixed(1) : usage;
 
-export const getNiceTimeUnit = (usage) => {
+export const getNiceTimeUnit = usage => {
   if (usage === 1) return 'minute';
   else if (usage < 60) return 'minutes';
   else if (usage === 60) return 'hour';
@@ -93,13 +90,12 @@ export const getNiceTimeUnit = (usage) => {
   return 'hours';
 };
 
-
 // NOTE:
 // Because the stroke extends the size of the circle, there's a bit of weirfness here.
 // The height and width must be extended by 4 to allow room for the stroke.
 // cx and cy are then incremented by 2 because of the change in the bounding box.
 
-const KidCircle = ({ kid, usage }) =>
+const KidCircle = ({ kid, usage }) => (
   <View style={containerStyle}>
     <Text style={kidNameStyle}>{kid.name}</Text>
 
@@ -120,14 +116,16 @@ const KidCircle = ({ kid, usage }) =>
 
     <View style={usageOverlayStyle}>
       <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(usage)}</Text>
-      <Text style={overlayTextSubheaderStyle}>{getNiceTimeUnit(usage)} online today</Text>
+      <Text style={overlayTextSubheaderStyle}>
+        {getNiceTimeUnit(usage)} online today
+      </Text>
     </View>
   </View>
+);
 
 KidCircle.propTypes = {
   kid: React.PropTypes.object.isRequired,
   usage: React.PropTypes.number.isRequired,
 };
-
 
 export default KidCircle;
