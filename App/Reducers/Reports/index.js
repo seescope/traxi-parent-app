@@ -11,7 +11,7 @@ export default (
   action: ReportsAction
 ): ReportsState => {
   switch (action.type) {
-    case "FETCHED_REPORTS": {
+    case 'FETCHED_REPORTS': {
       return action.reports || {};
     }
     default:

@@ -1,6 +1,6 @@
 // @flow
-import * as Firebase from "firebase";
-import type { RootState } from "../Reducers";
+import * as Firebase from 'firebase';
+import type { RootState } from '../Reducers';
 
 type Dispatch = () => void;
 type GetState = () => RootState;

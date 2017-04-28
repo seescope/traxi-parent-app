@@ -17,7 +17,7 @@ module.exports = {
     strict: 0,
     'comma-dangle': ['error', 'always-multiline'],
     'global-require': 0,
-    'no-confusing-arrow': ['error', { allowParens: true }],
+    'no-confusing-arrow': 0,
     'react-native/no-unused-styles': 2,
     'react-native/split-platform-components': 2,
     'react-native/no-inline-styles': 2,

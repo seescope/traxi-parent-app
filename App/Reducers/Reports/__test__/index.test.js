@@ -1,10 +1,10 @@
-import reducer from "../index.js";
-import { fetchedReports } from "../reportsActions";
+import reducer from '../index.js';
+import { fetchedReports } from '../reportsActions';
 
-describe("Reports reducer", () => {
-  test("FETCHED_REPORTS", () => {
+describe('Reports reducer', () => {
+  test('FETCHED_REPORTS', () => {
     const TEST_REPORTS = {
-      "abc-123": {}
+      'abc-123': {},
     };
 
     const action = fetchedReports(TEST_REPORTS);

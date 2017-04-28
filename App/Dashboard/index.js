@@ -1,7 +1,7 @@
 import React from 'react';
 import lodash from 'lodash';
 import { connect } from 'react-redux';
-import { ScrollView, } from 'react-native';
+import { ScrollView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Swiper from 'react-native-swiper';
 

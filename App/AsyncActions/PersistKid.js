@@ -1,7 +1,7 @@
 // @flow
-import * as Firebase from "firebase";
-import type { KidsState } from "../Reducers/Kids";
-import type { SetupState } from "../Reducers/Setup";
+import * as Firebase from 'firebase';
+import type { KidsState } from '../Reducers/Kids';
+import type { SetupState } from '../Reducers/Setup';
 
 // NOTE: Importing RootState from '../Reducers' does not seem to work?
 type RootState = {

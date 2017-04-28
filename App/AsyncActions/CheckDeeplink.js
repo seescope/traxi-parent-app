@@ -1,10 +1,10 @@
 // @flow
-import { Actions } from "react-native-router-flux";
+import { Actions } from 'react-native-router-flux';
 
-import beginDeeplinkSetup from "./BeginDeeplinkSetup";
-import { getUUIDFromDeeplink } from "../Utils";
-import { beginSetup } from "../Reducers/Parent/parentActions";
-import persistSetupID from "./PersistSetupID";
+import beginDeeplinkSetup from './BeginDeeplinkSetup';
+import { getUUIDFromDeeplink } from '../Utils';
+import { beginSetup } from '../Reducers/Parent/parentActions';
+import persistSetupID from './PersistSetupID';
 
 type Dispatch = () => void;
 

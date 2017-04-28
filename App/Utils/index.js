@@ -1,41 +1,41 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
-import moment from "moment";
-import * as Firebase from "firebase";
-import { BackAndroid, Linking, AsyncStorage, Platform } from "react-native";
-import { Crashlytics } from "react-native-fabric";
-import Analytics from "react-native-analytics";
-import InAppBilling from "react-native-billing";
-import { Actions } from "react-native-router-flux";
+import moment from 'moment';
+import * as Firebase from 'firebase';
+import { BackAndroid, Linking, AsyncStorage, Platform } from 'react-native';
+import { Crashlytics } from 'react-native-fabric';
+import Analytics from 'react-native-analytics';
+import InAppBilling from 'react-native-billing';
+import { Actions } from 'react-native-router-flux';
 
-export const firstName = name => name && name.split(" ")[0];
+export const firstName = name => name && name.split(' ')[0];
 
 export const relativeDate = inputDate => {
   const date = moment(inputDate);
 
-  if (date.isSame(moment(), "day")) {
-    return "Today";
+  if (date.isSame(moment(), 'day')) {
+    return 'Today';
   }
 
-  const lastNight = moment().subtract(1, "days");
+  const lastNight = moment().subtract(1, 'days');
 
-  if (date.isSame(lastNight, "day")) {
-    return "Yesterday";
+  if (date.isSame(lastNight, 'day')) {
+    return 'Yesterday';
   }
 
-  return date.format("dddd");
+  return date.format('dddd');
 };
 
 export const timeRange = inputHour => {
-  const hour = moment(inputHour, "hhA");
+  const hour = moment(inputHour, 'hhA');
   const nextHour = hour.clone();
-  nextHour.add(1, "hour");
+  nextHour.add(1, 'hour');
 
-  return `${hour.format("hA")} to ${nextHour.format("hA")}`;
+  return `${hour.format('hA')} to ${nextHour.format('hA')}`;
 };
 
-export const isIOS = Platform.OS === "ios";
+export const isIOS = Platform.OS === 'ios';
 
 export const listOfNumbers = length => {
   const list = [];
@@ -47,13 +47,13 @@ export const listOfNumbers = length => {
 };
 
 const niceNames = {
-  "Maps - Navigation & Transit": "Google Maps",
-  "Chrome Browser - Google": "Chrome"
+  'Maps - Navigation & Transit': 'Google Maps',
+  'Chrome Browser - Google': 'Chrome',
 };
 
 export const getAppNiceName = name => niceNames[name] || name;
 
-export const isToday = date => moment(date).isSame(moment(), "day");
+export const isToday = date => moment(date).isSame(moment(), 'day');
 
 export const logError = error => {
   const errorString = error.toString();
@@ -82,7 +82,7 @@ export const trackingMiddleware = store =>
   next =>
     action => {
       // If this isn't a screen change, we're not interested.
-      if (action.type !== "REACT_NATIVE_ROUTER_FLUX_FOCUS") {
+      if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
         return next(action);
       }
 
@@ -95,7 +95,7 @@ export const trackingMiddleware = store =>
 
 export const experimentViewed = variantName => {
   Analytics.identify({
-    price: variantName
+    price: variantName,
   });
 };
 
@@ -106,23 +106,23 @@ export const handleBilling = price =>
 
 export const sendPhoneNumberToSlack = phoneNumber =>
   fetch(
-    "https://hooks.slack.com/services/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",
+    'https://hooks.slack.com/services/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',
     {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
-        text: `Reminder received! ${phoneNumber}`
-      })
+        text: `Reminder received! ${phoneNumber}`,
+      }),
     }
   )
     .then(res => res.text())
     .then(body => {
-      if (body !== "ok") {
+      if (body !== 'ok') {
         throw new Error(`Error posting to Slack: ${body}`);
       }
     });
 
 export const getNiceUsage = usage =>
-  moment.duration(usage, "minutes").humanize();
+  moment.duration(usage, 'minutes').humanize();
 
 const getUUIDFromProfile = profileJSON => {
   if (!profileJSON) return null;
@@ -145,7 +145,7 @@ const parseURL = URL => {
 export const getUUIDFromDeeplink = () => Linking.getInitialURL().then(parseURL);
 
 export const getUUID = () =>
-  AsyncStorage.getItem("profile").then(profileJSON => {
+  AsyncStorage.getItem('profile').then(profileJSON => {
     const UUIDFromProfile = getUUIDFromProfile(profileJSON);
 
     return UUIDFromProfile || getUUIDFromDeeplink();
@@ -154,15 +154,15 @@ export const getUUID = () =>
 export const getProfile = UUID =>
   Firebase.database()
     .ref(`parents/${UUID}/`)
-    .once("value")
+    .once('value')
     .then(snapshot => snapshot.val());
 
 export const backButtonHandler = store => {
   const { sceneName, step } = store.getState();
 
-  if (sceneName === "deviceSetup") {
+  if (sceneName === 'deviceSetup') {
     if (step === 0) Actions.pop();
-    else store.dispatch({ type: "PREVIOUS_STEP" });
+    else store.dispatch({ type: 'PREVIOUS_STEP' });
 
     return true;
   }
