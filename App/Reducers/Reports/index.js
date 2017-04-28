@@ -1,4 +1,5 @@
 // @flow
+
 export type TopApp = {
   name: string,
   logoURL: string,
@@ -24,11 +25,15 @@ export type RecentApp = {
   time: string,
 };
 
+export type ReportItem = TopApp | TopCategory | PeakTime | RecentApp;
+
 export type CardWithDate<R> = {
-  week: Array<R>,
-  yesterday: Array<R>,
-  today: Array<R>,
+  week: ?Array<R>,
+  yesterday: ?Array<R>,
+  today: ?Array<R>,
 };
+
+export type CardData = CardWithDate<ReportItem> | Array<RecentApp>;
 
 export type Report = {
   topApps: CardWithDate<TopApp>,
@@ -37,12 +42,16 @@ export type Report = {
   recentApps: Array<RecentApp>,
 };
 
+export type Reports = {
+  [string]: Report,
+};
+
 export type ReportsState = {
   [string]: Report,
   loading: boolean,
 };
 export type ReportsAction =
-  | { type: 'FETCHED_REPORTS', reports: ?ReportsState }
+  | { type: 'FETCHED_REPORTS', reports: Reports }
   | { type: 'FETCHING_REPORTS' };
 
 const INITIAL_STATE = {

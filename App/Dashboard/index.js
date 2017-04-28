@@ -39,10 +39,10 @@ type DashboardProps = {
 type DashboardScreenProps = {
   loading: boolean,
   kid: Kid,
-  topApps: CardWithDate<TopApp>,
-  topCategories: CardWithDate<TopCategory>,
-  peakTimes: CardWithDate<PeakTime>,
-  recentApps: Array<RecentApp>,
+  topApps: ?CardWithDate<TopApp>,
+  topCategories: ?CardWithDate<TopCategory>,
+  peakTimes: ?CardWithDate<PeakTime>,
+  recentApps: ?Array<RecentApp>,
 };
 
 const containerStyle = {
@@ -56,7 +56,7 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
-const getTodayUsage = (peakTimes: CardWithDate<PeakTime>) =>
+const getTodayUsage = (peakTimes: ?CardWithDate<PeakTime>) =>
   peakTimes && peakTimes.week
     ? (lodash.find(peakTimes.week, { name: 'Today' }) || { usage: 0 }).usage
     : 0;

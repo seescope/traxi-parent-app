@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import lodash from 'lodash';
@@ -6,6 +7,25 @@ import analytics from 'react-native-analytics';
 import { LIGHT_GREY, GREY, TRAXI_BLUE } from '../../Constants/Colours';
 import STYLES from '../../Constants/Styles';
 import LoadingIndicator from '../../Components/LoadingIndicator';
+
+import type { CardData, ReportItem } from '../../Reducers/Reports';
+
+type TimePeriod = 'today' | 'week' | 'yesterday';
+
+type Props = {
+  header: string,
+  Component: () => any,
+  data: CardData,
+  loading: boolean,
+};
+
+type State = {
+  timePeriod: TimePeriod,
+  expanded: boolean,
+};
+
+// $FlowFixMe
+const DOWN_ARROW = require('../../Images/down-arrow.png');
 
 const cardHeaderStyle = {
   color: GREY,
@@ -53,7 +73,11 @@ const timeButtonStyle = {
   height: 24,
 };
 
-export const getRows = (data = [], expanded, timePeriod) => {
+export const getRows = (
+  data: CardData,
+  expanded: boolean,
+  timePeriod: TimePeriod,
+) => {
   let selectedData;
 
   // data might be an array, or an object of arrays.
@@ -66,7 +90,7 @@ export const getRows = (data = [], expanded, timePeriod) => {
   return expanded ? selectedData : selectedData.slice(0, 2);
 };
 
-export const getMax = (data = {}) =>
+export const getMax = (data: Array<ReportItem>): number =>
   lodash.chain(data).map(d => d.usage).max().value();
 
 const getTimeStyle = (currentTimePeriod, timePeriod) =>
@@ -81,7 +105,7 @@ const getArrowStyle = expanded =>
   expanded && { transform: [{ rotate: '-180deg' }] };
 
 class Card extends React.Component {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -89,6 +113,8 @@ class Card extends React.Component {
       expanded: false,
     };
   }
+
+  state: State;
 
   toggleExpand() {
     analytics.track('Card expanded');
@@ -99,7 +125,7 @@ class Card extends React.Component {
     });
   }
 
-  switchTimePeriod(timePeriod) {
+  switchTimePeriod(timePeriod: TimePeriod) {
     analytics.track('Switched time period', { timePeriod });
 
     this.setState({
@@ -159,7 +185,7 @@ class Card extends React.Component {
             {maxRows.length > 2 &&
               <Image
                 style={[arrowStyle, getArrowStyle(this.state.expanded)]}
-                source={require('../../Images/down-arrow.png')}
+                source={DOWN_ARROW}
               />}
           </View>
         </TouchableOpacity>
@@ -167,15 +193,5 @@ class Card extends React.Component {
     );
   }
 }
-
-Card.propTypes = {
-  header: React.PropTypes.string.isRequired,
-  Component: React.PropTypes.func.isRequired,
-  data: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.object,
-  ]),
-  loading: React.PropTypes.bool.isRequired,
-};
 
 export default Card;

@@ -4,11 +4,13 @@ import { logError } from '../Utils';
 import moment from 'moment';
 import lodash from 'lodash';
 import type { RootState } from '../Reducers';
-import type { ReportsAction } from '../Reducers/Reports';
+import type { Reports, ReportsAction } from '../Reducers/Reports';
 import { fetchedReports } from '../Reducers/Reports/reportsActions';
 
 type Dispatch = (action: ReportsAction) => void;
 type GetState = () => RootState;
+
+const EMPTY_REPORTS: Reports = {};
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
@@ -26,11 +28,11 @@ export default () =>
         return res.json();
       })
       .then(data => {
-        const reports = lodash.zipObject(data.map(d => d.uuid), data);
+        const reports: Reports = lodash.zipObject(data.map(d => d.uuid), data);
         dispatch(fetchedReports(reports));
       })
       .catch(error => {
         logError(error);
-        dispatch(fetchedReports(null));
+        dispatch(fetchedReports(EMPTY_REPORTS));
       });
   };

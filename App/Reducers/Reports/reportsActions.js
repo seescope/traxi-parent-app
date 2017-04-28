@@ -1,6 +1,5 @@
 // @flow
-type Reports = any; // FIXME: Get a real type.
-import type { ReportsAction } from './index';
+import type { Reports, ReportsAction } from './index';
 
 export function fetchedReports(reports: Reports): ReportsAction {
   return {
