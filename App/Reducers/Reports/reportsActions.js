@@ -8,3 +8,9 @@ export function fetchedReports(reports: Reports): ReportsAction {
     reports,
   };
 }
+
+export function fetchingReports(): ReportsAction {
+  return {
+    type: 'FETCHING_REPORTS',
+  };
+}

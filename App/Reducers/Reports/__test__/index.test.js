@@ -1,5 +1,5 @@
 import reducer from '../index.js';
-import { fetchedReports } from '../reportsActions';
+import { fetchedReports, fetchingReports } from '../reportsActions';
 
 describe('Reports reducer', () => {
   test('FETCHED_REPORTS', () => {
@@ -8,6 +8,15 @@ describe('Reports reducer', () => {
     };
 
     const action = fetchedReports(TEST_REPORTS);
-    expect(reducer(undefined, action)).toEqual(TEST_REPORTS);
+    const { loading, ...reports } = reducer(undefined, action);
+
+    expect(reports).toEqual(TEST_REPORTS);
+    expect(loading).toEqual(false);
+  });
+
+  test('FETCHING_REPORTS', () => {
+    const action = fetchingReports();
+    const { loading } = reducer(undefined, action);
+    expect(loading).toEqual(true);
   });
 });
