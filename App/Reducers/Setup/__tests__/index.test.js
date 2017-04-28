@@ -1,12 +1,12 @@
-import reducer from "../index";
-import { nextStep } from "../setupActions";
-import { beginSetup, beginDeeplinkSetup } from "../../Parent/parentActions";
+import reducer from '../index';
+import { nextStep, startedLoading, stoppedLoading } from '../setupActions';
+import { beginSetup, beginDeeplinkSetup } from '../../Parent/parentActions';
 
-const TEST_UUID = "non-random-uuid";
+const TEST_UUID = 'non-random-uuid';
 
-describe("Setup Reducer", () => {
-  describe("BEGIN_SETUP", () => {
-    it("Sets up", () => {
+describe('Setup Reducer', () => {
+  describe('BEGIN_SETUP', () => {
+    it('Sets up', () => {
       const action = beginSetup();
       const { step, kidUUID, setupID } = reducer(undefined, action);
       expect(step).toEqual(0);
@@ -16,11 +16,11 @@ describe("Setup Reducer", () => {
     });
   });
 
-  describe("BEGIN_DEEPLINK_SETUP", () => {
-    it("starts setting up the app from a deeplink", () => {
+  describe('BEGIN_DEEPLINK_SETUP', () => {
+    it('starts setting up the app from a deeplink', () => {
       const TEST_KID = {
-        email: "Something",
-        UUID: "abc-123"
+        email: 'Something',
+        UUID: 'abc-123',
       };
 
       const action = beginDeeplinkSetup(null, TEST_KID);
@@ -29,10 +29,24 @@ describe("Setup Reducer", () => {
     });
   });
 
-  describe("NEXT_STEP", () => {
-    it("Increments the step", () => {
+  describe('NEXT_STEP', () => {
+    it('Increments the step', () => {
       const { step } = reducer(undefined, nextStep());
       expect(step).toEqual(1);
+    });
+  });
+
+  describe('STARTED_LOADING', () => {
+    it('Sets loading to true', () => {
+      const { loading } = reducer(undefined, startedLoading());
+      expect(loading).toEqual(true);
+    });
+  });
+
+  describe('STOPPED_LOADING', () => {
+    it('Sets loading to false', () => {
+      const { loading } = reducer(undefined, stoppedLoading());
+      expect(loading).toEqual(false);
     });
   });
 });
