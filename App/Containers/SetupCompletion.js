@@ -1,19 +1,23 @@
 // @flow
 
 import React from 'react';
-import { AsyncStorage, ScrollView, Text, View, Alert } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import * as Firebase from 'firebase';
 
-import { firstName } from '../Utils';
+import { logError, firstName } from '../Utils';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import TextInput from '../Components/TextInput';
-import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+
 import * as ParentActions from '../Reducers/Parent/parentActions';
+
+import persistParent from '../AsyncActions/PersistParent';
+import fetchReports from '../AsyncActions/FetchReports';
+import createParentAuthentication
+  from '../AsyncActions/CreateParentAuthentication';
 
 import type { ParentState } from '../Reducers/Parent';
 import type { KidsState } from '../Reducers/Kids';
@@ -34,6 +38,14 @@ type Props = {
   onPress: () => {},
 };
 
+type Fields = {
+  name: string,
+  email: string,
+  password: string,
+};
+
+type Dispatch = () => Promise<any>;
+
 const style = {
   background: {
     backgroundColor: VERY_LIGHT_GREY,
@@ -41,7 +53,7 @@ const style = {
   outerContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 64,
   },
   container: {
     alignItems: 'center',
@@ -66,44 +78,15 @@ const style = {
   },
 };
 
-export const nextStep = (name: string) => {
-  if (name) {
-    Actions.setImage({ type: 'replace' });
-  } else {
-    Alert.alert('Please enter your name');
-  }
-};
+export const validateFields = ({ name, email, password }: Fields): boolean =>
+  !!name &&
+  !!email &&
+  !!password &&
+  name.length > 1 &&
+  email.length > 1 &&
+  password.length > 1;
 
-const saveProfileToAsyncStorage = ({ UUID }) =>
-  AsyncStorage.setItem(
-    'profile',
-    JSON.stringify({
-      UUID,
-    }),
-  );
-
-const createUser = ({ email, password }) =>
-  Firebase.auth().createUserWithEmailAndPassword(email, password);
-
-const updateFirebaseProfile = profile =>
-  Firebase.auth().currentUser.updateProfile({ displayName: profile.name });
-
-const updateParentInDatabase = profile =>
-  Firebase.database().ref(`parents/${profile.UUID}`).set(profile);
-
-const createParentInFirebase = profile =>
-  createUser(profile)
-    .then(updateFirebaseProfile.bind(undefined, profile))
-    .then(updateParentInDatabase.bind(undefined, profile));
-
-const goToDashboard = () => Actions.dashboard();
-
-export const finishSetup = profile =>
-  saveProfileToAsyncStorage(profile)
-    .then(createParentInFirebase.bind(undefined, profile))
-    .then(goToDashboard);
-
-export const NameSetup = (
+export const SetupCompletion = (
   {
     onNameChanged,
     onPasswordChanged,
@@ -119,7 +102,6 @@ export const NameSetup = (
   >
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
-      <Spacing height={16} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
         <View style={style.innerContainer}>
@@ -147,7 +129,7 @@ export const NameSetup = (
   </ScrollView>
 );
 
-const mapStateToProps = (rootState: RootState) => {
+const mapStateToProps = (rootState: RootState): Object => {
   const { parentState, setupState, kidsState } = rootState;
   const { kidUUID } = setupState;
 
@@ -161,11 +143,20 @@ const mapStateToProps = (rootState: RootState) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  onNameChanged: name => dispatch(ParentActions.setName(name)),
-  onEmailChanged: email => dispatch(ParentActions.setEmail(email)),
-  onPasswordChanged: password => dispatch(ParentActions.setPassword(password)),
+export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
+  onNameChanged: (name: string) => dispatch(ParentActions.setName(name)),
+  onEmailChanged: (email: string) => dispatch(ParentActions.setEmail(email)),
+  onPasswordChanged: (password: string) =>
+    dispatch(ParentActions.setPassword(password)),
+  onPress: () =>
+    dispatch(createParentAuthentication())
+      .then(() => dispatch(persistParent()))
+      .then(() => dispatch(fetchReports()))
+      .then(() => Actions.dashboard())
+      .catch(e => {
+        logError(e);
+        Alert.alert(e.message);
+      }),
 });
 
-// $FlowFixMe: The type signature for connect is insane.
-export default connect(mapStateToProps, mapDispatchToProps)(NameSetup);
+export default connect(mapStateToProps, mapDispatchToProps)(SetupCompletion);
