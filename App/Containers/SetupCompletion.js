@@ -12,6 +12,7 @@ import TextInput from '../Components/TextInput';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
 
+import { startedLoading, stoppedLoading } from '../Reducers/Setup/setupActions';
 import * as ParentActions from '../Reducers/Parent/parentActions';
 
 import persistParent from '../AsyncActions/PersistParent';
@@ -148,15 +149,19 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
   onEmailChanged: (email: string) => dispatch(ParentActions.setEmail(email)),
   onPasswordChanged: (password: string) =>
     dispatch(ParentActions.setPassword(password)),
-  onPress: () =>
-    dispatch(createParentAuthentication())
+  onPress: () => {
+    dispatch(startedLoading());
+    return dispatch(createParentAuthentication())
       .then(() => dispatch(persistParent()))
       .then(() => dispatch(fetchReports()))
+      .then(() => dispatch(stoppedLoading()))
       .then(() => Actions.dashboard())
       .catch(e => {
+        dispatch(stoppedLoading());
         logError(e);
         Alert.alert(e.message);
-      }),
+      });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetupCompletion);
