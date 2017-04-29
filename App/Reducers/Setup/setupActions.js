@@ -7,6 +7,12 @@ export function nextStep(): SetupAction {
   };
 }
 
+export function previousStep(): SetupAction {
+  return {
+    type: 'PREVIOUS_STEP',
+  };
+}
+
 export function startedLoading(): SetupAction {
   return {
     type: 'STARTED_LOADING',

@@ -1,5 +1,10 @@
 import reducer from '../index';
-import { nextStep, startedLoading, stoppedLoading } from '../setupActions';
+import {
+  nextStep,
+  previousStep,
+  startedLoading,
+  stoppedLoading,
+} from '../setupActions';
 import { beginSetup, beginDeeplinkSetup } from '../../Parent/parentActions';
 
 const TEST_UUID = 'non-random-uuid';
@@ -33,6 +38,13 @@ describe('Setup Reducer', () => {
     it('Increments the step', () => {
       const { step } = reducer(undefined, nextStep());
       expect(step).toEqual(1);
+    });
+  });
+
+  describe('PREVIOUS_STEP', () => {
+    it('Decrements the step', () => {
+      const { step } = reducer({ step: 1 }, previousStep());
+      expect(step).toEqual(0);
     });
   });
 

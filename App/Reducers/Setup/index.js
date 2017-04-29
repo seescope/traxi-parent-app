@@ -17,6 +17,7 @@ export type SetupAction =
     }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'NEXT_STEP' }
+  | { type: 'PREVIOUS_STEP' }
   | { type: 'STARTED_LOADING' }
   | { type: 'STOPPED_LOADING' };
 
@@ -61,6 +62,13 @@ export default (
       return {
         ...state,
         step: step + 1,
+      };
+    }
+    case 'PREVIOUS_STEP': {
+      const { step } = state;
+      return {
+        ...state,
+        step: step > 0 ? step - 1 : step,
       };
     }
     case 'STARTED_LOADING': {

@@ -112,7 +112,7 @@ export const sendPhoneNumberToSlack = phoneNumber =>
       body: JSON.stringify({
         text: `Reminder received! ${phoneNumber}`,
       }),
-    }
+    },
   )
     .then(res => res.text())
     .then(body => {
@@ -158,7 +158,8 @@ export const getProfile = UUID =>
     .then(snapshot => snapshot.val());
 
 export const backButtonHandler = store => {
-  const { sceneName, step } = store.getState();
+  const { setupState } = store.getState();
+  const { sceneName, step } = setupState;
 
   if (sceneName === 'deviceSetup') {
     if (step === 0) Actions.pop();
