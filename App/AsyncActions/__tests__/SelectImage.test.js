@@ -34,7 +34,7 @@ describe('SelectImage', () => {
       setupState: TEST_SETUP_STATE,
     });
 
-    const DEFAULT_IMAGE = 'http://i.imgur.com/lQVXriC.png';
+    const DEFAULT_IMAGE = 'http://i.imgur.com/PnREspe.png';
 
     return store.dispatch(selectImage(false)).then(() => {
       const actions = store.getActions();

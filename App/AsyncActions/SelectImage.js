@@ -14,7 +14,7 @@ const getURI = (response): string => {
   return response.uri;
 };
 
-const DEFAULT_IMAGE = 'http://i.imgur.com/lQVXriC.png';
+const DEFAULT_IMAGE = 'http://i.imgur.com/PnREspe.png';
 
 type Dispatch = (action: KidsAction) => KidsAction;
 type RootState = () => {
