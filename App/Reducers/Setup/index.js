@@ -7,6 +7,7 @@ export type SetupState = {
   setupID: ?number,
   deviceType: DeviceType,
   loading: boolean,
+  sceneName: string,
 };
 
 export type SetupAction =
@@ -27,6 +28,7 @@ const INITIAL_STATE = {
   setupID: undefined,
   deviceType: 'unknown',
   loading: false,
+  sceneName: 'loading',
 };
 
 // const INITIAL_STATE = {
@@ -81,6 +83,13 @@ export default (
       return {
         ...state,
         loading: false,
+      };
+    }
+    case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {
+      const sceneName = action.scene && action.scene.name;
+      return {
+        ...state,
+        sceneName,
       };
     }
     default:

@@ -160,6 +160,7 @@ export const getProfile = UUID =>
 export const backButtonHandler = store => {
   const { setupState } = store.getState();
   const { sceneName, step } = setupState;
+  console.log('Back button handler called!', sceneName, step);
 
   if (sceneName === 'deviceSetup') {
     if (step === 0) Actions.pop();

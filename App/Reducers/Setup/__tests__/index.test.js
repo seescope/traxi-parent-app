@@ -61,4 +61,19 @@ describe('Setup Reducer', () => {
       expect(loading).toEqual(false);
     });
   });
+
+  describe('REACT_NATIVE_ROUTER_FLUX_FOCUS', () => {
+    it('Sets the current sceneName', () => {
+      const TEST_SCENE_NAME = 'testscene';
+      const action = {
+        type: 'REACT_NATIVE_ROUTER_FLUX_FOCUS',
+        scene: {
+          name: TEST_SCENE_NAME,
+        },
+      };
+
+      const { sceneName } = reducer(undefined, action);
+      expect(sceneName).toEqual(TEST_SCENE_NAME);
+    });
+  });
 });
