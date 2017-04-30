@@ -17,7 +17,7 @@ const { height, width } = Dimensions.get('window');
 const unknownInstructions = (step, kidName, setupID) => {
   const instructions = [
     `Go to mytraxi.com on ${kidName}’s device & enter the code ${setupID}`,
-    `Waiting for ${kidName}'s device..`,
+    `Waiting for ${kidName} to enter ${setupID}...`,
     '',
     '',
     '',
@@ -178,14 +178,14 @@ DeviceSetup.propTypes = {
   deviceType: PropTypes.string.isRequired,
   setupID: PropTypes.number.isRequired,
 };
-const mapStateToProps = ({ step, kidName, deviceType, setupID }) => {
-  let type = deviceType;
-  if (!type) type = 'unknown';
+
+const mapStateToProps = ({ setupState, kidsState }) => {
+  const { kidUUID } = setupState;
+  const { name, deviceType } = kidsState[kidUUID];
   return {
-    deviceType: type,
-    kidName,
-    step,
-    setupID,
+    ...setupState,
+    deviceType,
+    kidName: name,
   };
 };
 const mapDispatchToProps = dispatch => ({

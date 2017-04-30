@@ -102,7 +102,9 @@ exports[`renders correctly 1`] = `
                       "marginBottom": 16,
                     }
                   }
-                />
+                >
+                  Jim Bob
+                </Text>
                 <View />
                 <Image
                   source={
@@ -202,6 +204,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#545454",
                     "fontSize": 19,
+                    "padding": 8,
                   }
                 }
               >
@@ -213,7 +216,7 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "#A6A8AB",
                     "height": 1,
                     "marginBottom": 24,
-                    "marginTop": 8,
+                    "marginHorizontal": 4,
                     "width": 56,
                   }
                 }
@@ -442,6 +445,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#545454",
                     "fontSize": 19,
+                    "padding": 8,
                   }
                 }
               >
@@ -453,7 +457,7 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "#A6A8AB",
                     "height": 1,
                     "marginBottom": 24,
-                    "marginTop": 8,
+                    "marginHorizontal": 4,
                     "width": 56,
                   }
                 }
@@ -682,6 +686,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#545454",
                     "fontSize": 19,
+                    "padding": 8,
                   }
                 }
               >
@@ -693,7 +698,7 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "#A6A8AB",
                     "height": 1,
                     "marginBottom": 24,
-                    "marginTop": 8,
+                    "marginHorizontal": 4,
                     "width": 56,
                   }
                 }
@@ -922,6 +927,7 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#545454",
                     "fontSize": 19,
+                    "padding": 8,
                   }
                 }
               >
@@ -933,7 +939,7 @@ exports[`renders correctly 1`] = `
                     "backgroundColor": "#A6A8AB",
                     "height": 1,
                     "marginBottom": 24,
-                    "marginTop": 8,
+                    "marginHorizontal": 4,
                     "width": 56,
                   }
                 }

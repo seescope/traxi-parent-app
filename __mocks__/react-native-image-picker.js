@@ -4,5 +4,8 @@ const mockResponse = {
 };
 
 export default {
-  launchImageLibrary: jest.fn((_, callback) => callback(mockResponse)),
+  launchImageLibrary: jest.fn((_, callback) => {
+    console.log('Mock image library called');
+    callback(mockResponse);
+  }),
 };

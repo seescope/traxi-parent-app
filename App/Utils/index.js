@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
+
 import moment from 'moment';
 import * as Firebase from 'firebase';
-import { Linking, AsyncStorage, Platform } from 'react-native';
+import { BackAndroid, Linking, AsyncStorage, Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
 import InAppBilling from 'react-native-billing';
-
-import { selectPrice } from '../Actions/Actions';
+import { Actions } from 'react-native-router-flux';
 
 export const firstName = name => name && name.split(' ')[0];
 
@@ -67,25 +69,42 @@ export const logError = error => {
 export const loggingMiddleware = store =>
   next =>
     action => {
+      if (!isIOS) {
+        console.log(JSON.stringify(action));
+      }
       Crashlytics.log(JSON.stringify(action));
       Crashlytics.log(JSON.stringify(store));
 
       return next(action);
     };
 
-/* eslint-disable no-unused-vars */
 export const trackingMiddleware = store =>
   next =>
     action => {
       // If this isn't a screen change, we're not interested.
-      if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
+      if (action.type === 'NEXT_STEP') {
+        const { setupState } = store.getState();
+        const { step } = setupState;
+        Analytics.track('Went forward in walkthrough', { currentStep: step });
         return next(action);
       }
 
-      // Grab the name of the screen from the flux action.
-      const { scene } = action;
-      Analytics.screen(scene.name);
+      if (action.type === 'PREVIOUS_STEP') {
+        const { setupState } = store.getState();
+        const { step } = setupState;
+        Analytics.track('Went backwards in walkthrough', { currentStep: step });
+        return next(action);
+      }
 
+      // Log screen changes in Segment
+      if (action.type === 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
+        const { scene } = action;
+        Analytics.screen(scene.name);
+
+        return next(action);
+      }
+
+      // Fall through
       return next(action);
     };
 
@@ -99,8 +118,6 @@ export const handleBilling = price =>
   InAppBilling.open()
     .then(() => InAppBilling.subscribe(price))
     .then(() => InAppBilling.close());
-
-export const onSelectPrice = price => dispatch => dispatch(selectPrice(price));
 
 export const sendPhoneNumberToSlack = phoneNumber =>
   fetch(
@@ -140,12 +157,7 @@ const parseURL = URL => {
   return match && match[0];
 };
 
-const getUUIDFromDeeplink = () =>
-  Linking.getInitialURL().then(URL => {
-    const UUID = parseURL(URL);
-
-    return UUID && { UUID, deeplink: true };
-  });
+export const getUUIDFromDeeplink = () => Linking.getInitialURL().then(parseURL);
 
 export const getUUID = () =>
   AsyncStorage.getItem('profile').then(profileJSON => {
@@ -159,3 +171,27 @@ export const getProfile = UUID =>
     .ref(`parents/${UUID}/`)
     .once('value')
     .then(snapshot => snapshot.val());
+
+export const backButtonHandler = store => {
+  const { setupState } = store.getState();
+  const { sceneName, step } = setupState;
+  console.log('Back button handler called!', sceneName, step);
+
+  if (sceneName === 'deviceSetup') {
+    if (step === 0) Actions.pop();
+    else store.dispatch({ type: 'PREVIOUS_STEP' });
+
+    return true;
+  }
+
+  try {
+    Actions.pop();
+  } catch (error) {
+    // The user is in the root scene - exit the app.
+    BackAndroid.exitApp();
+    return false;
+  }
+
+  // Default
+  return true;
+};

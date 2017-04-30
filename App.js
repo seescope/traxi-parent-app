@@ -1,14 +1,22 @@
 import React from 'react';
-// import { AsyncStorage } from 'react-native';
+import { AsyncStorage } from 'react-native';
 import * as Firebase from 'firebase';
 import I18n from 'react-native-i18n';
 
-import Loading from './App/Components/Loading';
 import ParentApp from './App/Containers/ParentApp';
 import Translation from './App/Constants/Translation';
-import { logError, getUUID, getProfile } from './App/Utils';
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
+import { compose, createStore, applyMiddleware } from 'redux';
+import { persistStore, autoRehydrate } from 'redux-persist';
+import ReduxThunk from 'redux-thunk';
+import RootReducer from './App/Reducers';
+import {
+  backButtonHandler,
+  loggingMiddleware,
+  trackingMiddleware,
+} from './App/Utils';
+import bootApp from './App/AsyncActions/BootApp';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -23,58 +31,24 @@ const config = {
 };
 
 Firebase.initializeApp(config);
-
-export const getInitialState = () => getUUID()
-  .then((result) => {
-    // No UUID found. This is a new user.
-    if (!result) return null;
-
-    const { UUID, deeplink } = result;
-
-    // Get the user's profile and return it.
-    return getProfile(UUID).then(profile => ({
-      profile,
-      UUID,
-      deeplink,
-    }))
-  })
-  .catch(error => {
-    // It's senseless to show an error to the user here. Just continue.
-    logError(`Error fetching profile: ${error.message}`);
-    return null;
-  });
-
 export default class extends React.Component {
   constructor(props) {
     super(props);
-
-    // AsyncStorage.removeItem('profile');
-    // AsyncStorage.setItem(
-    //   'profile',
-    //   JSON.stringify({
-    //     UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
-    //   }),
-    // );
-
-    this.state = {
-      profile: {},
-      loading: true,
-    };
-
+    this.store = createStore(
+      RootReducer,
+      undefined,
+      compose(
+        applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
+        autoRehydrate(),
+      ),
+    );
+    persistStore(this.store, { storage: AsyncStorage }, () =>
+      this.store.dispatch(bootApp()));
   }
 
   componentWillMount() {
     OneSignal.addEventListener('received', this.onReceived);
     OneSignal.addEventListener('opened', this.onOpened);
-  }
-
-  componentDidMount() {
-    getInitialState()
-      .then(initialState => {
-        this.setState({
-        ...initialState,
-        loading: false,
-      })});
   }
 
   componentWillUnmount() {
@@ -90,19 +64,12 @@ export default class extends React.Component {
     Analytics.track('Notification opened');
   }
 
-  setStateAsync(state) {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
-  }
-
   render() {
-    const { profile, deeplink, loading } = this.state;
-
-    if (loading) {
-      return <Loading />;
-    }
-
-    return <ParentApp profile={profile} deeplink={deeplink} />;
+    return (
+      <ParentApp
+        store={this.store}
+        backButtonHandler={() => backButtonHandler(this.store)}
+      />
+    );
   }
 }

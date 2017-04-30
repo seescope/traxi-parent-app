@@ -51,8 +51,8 @@ const style = Platform.select({
 
 // Don't capitalise emails.
 // eslint-disable-next-line
-const shouldBeCapitalised = secureTextEntry =>
-  secureTextEntry ? 'none' : 'words';
+const shouldBeCapitalised = (secureTextEntry, autoCapitalize) =>
+  autoCapitalize || secureTextEntry ? 'none' : 'words';
 
 const TextInput = (
   {
@@ -62,6 +62,7 @@ const TextInput = (
     value,
     keyboardType,
     secureTextEntry,
+    autoCapitalize,
   },
 ) => (
   <View>
@@ -72,7 +73,7 @@ const TextInput = (
       onSubmitEditing={onSubmitEditing}
       placeholderTextColor={isIOS ? NEUTRAL_WITH_OPACITY : WHITE}
       underlineColorAndroid={TRAXI_BLUE}
-      autoCapitalize={shouldBeCapitalised(secureTextEntry)}
+      autoCapitalize={shouldBeCapitalised(secureTextEntry, autoCapitalize)}
       style={style}
       onChangeText={onChangeText}
       keyboardType={keyboardType}
@@ -88,6 +89,7 @@ TextInput.propTypes = {
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string,
   keyboardType: PropTypes.string,
+  autoCapitalize: PropTypes.string,
   secureTextEntry: PropTypes.bool,
 };
 

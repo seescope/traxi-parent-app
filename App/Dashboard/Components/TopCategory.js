@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { getNiceUsage } from '../../Utils';
-import { GREY, } from '../../Constants/Colours';
+import { GREY } from '../../Constants/Colours';
 import Bar from './Bar';
 import { SMALL_FONT_SIZE } from '../../Constants/Styles';
 

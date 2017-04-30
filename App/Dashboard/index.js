@@ -1,7 +1,8 @@
+// @flow
 import React from 'react';
 import lodash from 'lodash';
 import { connect } from 'react-redux';
-import { ScrollView, } from 'react-native';
+import { ScrollView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Swiper from 'react-native-swiper';
 
@@ -9,10 +10,40 @@ import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY } from '../Constants/Colours';
 import KidCircle from './Components/KidCircle';
 import Card from './Components/Card';
-import TopApp from './Components/TopApp';
-import TopCategory from './Components/TopCategory';
-import PeakTime from './Components/PeakTime';
-import RecentApp from './Components/RecentApp';
+import TopAppComponent from './Components/TopApp';
+import TopCategoryComponent from './Components/TopCategory';
+import PeakTimeComponent from './Components/PeakTime';
+import RecentAppComponent from './Components/RecentApp';
+
+import type { KidsState, Kid } from '../Reducers/Kids';
+import type {
+  ReportsState,
+  TopApp,
+  TopCategory,
+  PeakTime,
+  RecentApp,
+  CardWithDate,
+} from '../Reducers/Reports';
+
+type RootState = {
+  kidsState: KidsState,
+  reportsState: ReportsState,
+};
+
+type DashboardProps = {
+  reports: ReportsState,
+  kids: KidsState,
+  loading: boolean,
+};
+
+type DashboardScreenProps = {
+  loading: boolean,
+  kid: Kid,
+  topApps: ?CardWithDate<TopApp>,
+  topCategories: ?CardWithDate<TopCategory>,
+  peakTimes: ?CardWithDate<PeakTime>,
+  recentApps: ?Array<RecentApp>,
+};
 
 const containerStyle = {
   alignItems: 'center',
@@ -25,55 +56,80 @@ const outerContainerStyle = {
   backgroundColor: VERY_LIGHT_GREY,
 };
 
-const getTodayUsage = peakTimes => ((peakTimes && peakTimes.week)
-    ? (lodash.find(peakTimes.week, { name: 'Today'}) || { usage: 0}).usage
-    : 0);
+const getTodayUsage = (peakTimes: ?CardWithDate<PeakTime>) =>
+  peakTimes && peakTimes.week
+    ? (lodash.find(peakTimes.week, { name: 'Today' }) || { usage: 0 }).usage
+    : 0;
 
-const DashboardScreen = ({ loading, kid, topApps, topCategories, peakTimes, recentApps }) =>
-  <ScrollView style={outerContainerStyle} contentContainerStyle={containerStyle}>
-    <Animatable.View
-      delay={500}
-      useNativeDriver
-      animation="bounceIn"
-    >
+const DashboardScreen = (
+  {
+    loading,
+    kid,
+    topApps,
+    topCategories,
+    peakTimes,
+    recentApps,
+  }: DashboardScreenProps,
+) => (
+  <ScrollView
+    style={outerContainerStyle}
+    contentContainerStyle={containerStyle}
+  >
+    <Animatable.View delay={500} useNativeDriver animation="bounceIn">
       <KidCircle loading={loading} kid={kid} usage={getTodayUsage(peakTimes)} />
     </Animatable.View>
 
     <Spacing height={32} />
 
-    <Card loading={loading} header="Top Apps" Component={TopApp} data={topApps} />
+    <Card
+      loading={loading}
+      header="Top Apps"
+      Component={TopAppComponent}
+      data={topApps}
+    />
 
-    <Card loading={loading} header="Top Categories" Component={TopCategory} data={topCategories} />
+    <Card
+      loading={loading}
+      header="Top Categories"
+      Component={TopCategoryComponent}
+      data={topCategories}
+    />
 
-    <Card loading={loading} header="Peak Times" Component={PeakTime} data={peakTimes} />
+    <Card
+      loading={loading}
+      header="Peak Times"
+      Component={PeakTimeComponent}
+      data={peakTimes}
+    />
 
-    <Card loading={loading} header="Recent Apps" Component={RecentApp} data={recentApps} />
+    <Card
+      loading={loading}
+      header="Recent Apps"
+      Component={RecentAppComponent}
+      data={recentApps}
+    />
   </ScrollView>
+);
 
-DashboardScreen.propTypes = {
-  topApps: React.PropTypes.object,
-  topCategories: React.PropTypes.object,
-  peakTimes: React.PropTypes.object,
-  kid: React.PropTypes.object,
-  recentApps: React.PropTypes.array,
-  loading: React.PropTypes.bool.isRequired,
-};
-
-const mapStateToProps = ({ reports, kids, loading }) => ({
-  kids,
-  reports,
-  loading,
+const mapStateToProps = (
+  { reportsState, kidsState }: RootState,
+): DashboardProps => ({
+  kids: kidsState,
+  reports: reportsState,
+  loading: reportsState.loading,
 });
 
-const Dashboard = ({ reports, kids, loading }) =>
+const Dashboard = ({ reports, kids, loading }: DashboardProps) => (
   <Swiper>
-    {kids.map(kid => <DashboardScreen key={kid.UUID} loading={loading} kid={kid} {...reports[kid.UUID]} />)}
+    {Object.keys(kids).map(UUID => (
+      <DashboardScreen
+        key={UUID}
+        loading={loading}
+        kid={kids[UUID]}
+        {...reports[UUID]}
+      />
+    ))}
   </Swiper>
-
-Dashboard.propTypes = {
-  reports: React.PropTypes.object.isRequired,
-  kids: React.PropTypes.array.isRequired,
-  loading: React.PropTypes.bool.isRequired,
-};
+);
 
 export default connect(mapStateToProps)(Dashboard);

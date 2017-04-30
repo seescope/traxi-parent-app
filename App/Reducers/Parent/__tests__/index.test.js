@@ -1,17 +1,17 @@
-import reducer, { INITIAL_STATE } from "../index.js";
-import * as Actions from "../parentActions";
+import reducer, { INITIAL_STATE } from '../index.js';
+import * as Actions from '../parentActions';
 
-const MOCK_UUID = "non-random-uuid";
+const MOCK_UUID = 'non-random-uuid';
 
-describe("Parent reducer", () => {
-  describe("default", () => {
-    it("returns the default state", () => {
+describe('Parent reducer', () => {
+  describe('default', () => {
+    it('returns the default state', () => {
       expect(reducer(undefined, {})).toEqual(INITIAL_STATE);
     });
   });
 
-  describe("BEGIN_SETUP", () => {
-    it("starts setting up the app", () => {
+  describe('BEGIN_SETUP', () => {
+    it('starts setting up the app', () => {
       const action = Actions.beginSetup();
 
       const { UUID, kids } = reducer(undefined, action);
@@ -20,9 +20,21 @@ describe("Parent reducer", () => {
     });
   });
 
-  describe("SET_PARENT_NAME", () => {
-    it("sets the parent's name", () => {
-      const TEST_NAME = "Test Name";
+  describe('BEGIN_DEEPLINK_SETUP', () => {
+    it('starts setting up the app from a deeplink', () => {
+      const TEST_PARENT = {
+        email: 'Something',
+        kids: ['abc-123'],
+      };
+
+      const action = Actions.beginDeeplinkSetup(TEST_PARENT);
+      expect(reducer(undefined, action)).toEqual(TEST_PARENT);
+    });
+  });
+
+  describe('SET_PARENT_NAME', () => {
+    it('sets the parent\'s name', () => {
+      const TEST_NAME = 'Test Name';
       const action = Actions.setName(TEST_NAME);
 
       const { name } = reducer(undefined, action);
@@ -30,9 +42,9 @@ describe("Parent reducer", () => {
     });
   });
 
-  describe("SET_PASSWORD", () => {
-    it("sets the parent's password", () => {
-      const TEST_PASSWORD = "test";
+  describe('SET_PASSWORD', () => {
+    it('sets the parent\'s password', () => {
+      const TEST_PASSWORD = 'test';
       const action = Actions.setPassword(TEST_PASSWORD);
 
       const { password } = reducer(undefined, action);
@@ -40,9 +52,9 @@ describe("Parent reducer", () => {
     });
   });
 
-  describe("SET_EMAIL", () => {
-    it("sets the parent's password", () => {
-      const TEST_EMAIL = "Test Email";
+  describe('SET_EMAIL', () => {
+    it('sets the parent\'s password', () => {
+      const TEST_EMAIL = 'Test Email';
       const action = Actions.setEmail(TEST_EMAIL);
 
       const { email } = reducer(undefined, action);

@@ -1,102 +1,73 @@
-import { Alert, AsyncStorage } from 'react-native';
+import { Alert } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Actions } from 'react-native-router-flux';
-import { mockSet, mockCreateUser, mockUpdateProfile } from 'firebase';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+jest.mock('../../App/AsyncActions/PersistParent', () => jest.fn());
+jest.mock('../../App/AsyncActions/FetchReports', () => jest.fn());
+jest.mock('../../App/AsyncActions/CreateParentAuthentication', () => jest.fn());
+import mockPersistParent from '../../App/AsyncActions/PersistParent';
+import mockFetchReports from '../../App/AsyncActions/FetchReports';
+import mockCreateParentAuthentication
+  from '../../App/AsyncActions/CreateParentAuthentication';
 
-import {
-  NameSetup,
-  nextStep,
-  updateProfile,
-  finishSetup,
+import SetupCompletionComponent, {
+  mapDispatchToProps,
 } from '../../App/Containers/SetupCompletion';
 
 Alert.alert = jest.fn();
-Actions.setImage = jest.fn();
-AsyncStorage.setItem = jest.fn(() => Promise.resolve());
 
-const TEST_PROFILE = {
-  UUID: 'Test UUID',
-  name: 'Test Name',
-  email: 'Test Email',
-  password: 'Test Password',
-};
+const mockStore = configureStore([thunk]);
+const testStore = mockStore({
+  kidsState: {
+    'abc-123': {
+      name: 'John Bobson',
+    },
+  },
+  setupState: {
+    kidUUID: 'abc-123',
+  },
+  parentState: {},
+});
 
-describe('NameSetup', () => {
+const SetupCompletion = () => (
+  <Provider store={testStore}>
+    <SetupCompletionComponent />
+  </Provider>
+);
 
+describe('SetupCompletion', () => {
   it('Renders correctly', () => {
-    const tree = renderer.create(
-      <NameSetup
-        kidName="Chris"
-        email="test@test.com"
-        onNameChanged={() => {}}
-        onEmailChanged={() => {}}
-        onPasswordChanged={() => {}}
-        onPress={() => {}}
-      />,
-    );
+    const tree = renderer.create(<SetupCompletion />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
+});
 
-  it('nextStep() alerts when no name was entered', () => {
-    nextStep();
-    expect(Alert.alert).toHaveBeenCalledWith('Please enter your name');
-  });
-
-  it('nextStep() goes to kidImageSetup when there is a name ', () => {
-    nextStep('Chris');
-    expect(Actions.setImage).toHaveBeenCalled();
-  });
-
-  describe('updateProfile', () => {
-    it('calls dispatch when a field has been updated', done => {
-      const TEST_NAME = 'test name';
-      const TEST_FIELD = 'test field';
-      const EXPECTED_ACTION = {
-        field: TEST_FIELD,
-        value: TEST_NAME,
-        type: 'UPDATE_PROFILE',
-      };
-
-      const mockDispatch = action => {
-        expect(action).toEqual(EXPECTED_ACTION);
-        done();
-      };
-
-      updateProfile(TEST_FIELD, TEST_NAME)(mockDispatch);
-    });
-  });
-
-  describe('finishSetup()', () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
-
-    it('saves the UUID to AsyncStorage', () => {
-      finishSetup(TEST_PROFILE);
-      expect(AsyncStorage.setItem).toHaveBeenCalledWith(
-        'profile',
-        JSON.stringify({
-          UUID: TEST_PROFILE.UUID,
-        }),
-      );
-    });
-
-    it('creates the user in Firebase', () => finishSetup(TEST_PROFILE).then(() => {
-      expect(mockCreateUser).toHaveBeenCalledWith(
-        TEST_PROFILE.email,
-        TEST_PROFILE.password,
-      );
-      expect(mockUpdateProfile).toHaveBeenCalledWith({
-        displayName: TEST_PROFILE.name,
-      });
-      expect(mockSet).toHaveBeenCalledWith(
-        TEST_PROFILE,
-      );
-    }));
-
-    it('navigates to the Dashboard', () => finishSetup(TEST_PROFILE).then(() => {
+describe('mapDispatchToProps', () => {
+  it('onPress handles loading calls createParentAuthentication and persistParent, then goes to dashboard', () => {
+    const mockDispatch = jest.fn(() => Promise.resolve());
+    const { onPress } = mapDispatchToProps(mockDispatch);
+    return onPress().then(() => {
+      expect(mockDispatch).toHaveBeenCalledWith({ type: 'STARTED_LOADING' });
+      expect(mockDispatch).toHaveBeenCalledWith({ type: 'STOPPED_LOADING' });
+      expect(mockCreateParentAuthentication).toHaveBeenCalled();
+      expect(mockPersistParent).toHaveBeenCalled();
+      expect(mockFetchReports).toHaveBeenCalled();
       expect(Actions.dashboard).toHaveBeenCalled();
-    }));
+    });
+  });
+
+  it('calls Alert when there is an error', () => {
+    const testErrorMessage = 'Intentional test error - ignore!';
+    const mockDispatch = jest.fn(() =>
+      Promise.reject(new Error(testErrorMessage)));
+    const { onPress } = mapDispatchToProps(mockDispatch);
+    return onPress().then(() => {
+      expect(mockDispatch).toHaveBeenCalledWith({ type: 'STARTED_LOADING' });
+      expect(mockDispatch).toHaveBeenCalledWith({ type: 'STOPPED_LOADING' });
+      expect(Alert.alert).toHaveBeenCalledWith(testErrorMessage);
+    });
   });
 });
