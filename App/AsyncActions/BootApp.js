@@ -47,7 +47,11 @@ export default () =>
 
     // The parent has configured at least one kid but not completed setup
     if (isInstalled && !completedSetup) {
-      Actions.congratulations();
+      Actions.congratulations({ type: 'replace' });
+
+      const { UUID } = parentState;
+      Analytics.identify(UUID);
+
       return Promise.resolve();
     }
 

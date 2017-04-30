@@ -9,6 +9,10 @@ import { Actions } from 'react-native-router-flux';
 import Analytics from 'react-native-analytics';
 
 describe('Boot App', () => {
+  beforeEach(() => {
+    Analytics.identify.mockClear();
+  });
+
   test('If there are installed kids in kidState, and parent name/email is set fetchReports and navigate to Dashboard', () => {
     const STATE_WITH_KIDS = {
       kidsState: {
@@ -63,7 +67,9 @@ describe('Boot App', () => {
           installed: true,
         },
       },
-      parentState: {},
+      parentState: {
+        UUID: 'abc-123',
+      },
     };
 
     const mockStore = configureMockStore([thunk]);
@@ -71,6 +77,7 @@ describe('Boot App', () => {
 
     return store.dispatch(bootApp()).then(() => {
       expect(Actions.congratulations).toHaveBeenCalled();
+      expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
     });
   });
 });
