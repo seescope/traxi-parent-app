@@ -1,5 +1,7 @@
 // @flow
 import * as Firebase from 'firebase';
+import Analytics from 'react-native-analytics';
+
 import type { ParentState } from '../Reducers/Parent';
 
 type Dispatch = () => void;
@@ -16,7 +18,7 @@ const setName = (name: string): Promise<any> =>
 export default () =>
   (dispatch: Dispatch, getState: GetState): Promise<any> => {
     const { parentState } = getState();
-    const { name, email, password } = parentState;
+    const { UUID, name, email, password } = parentState;
 
     if (!email) {
       return Promise.reject(new Error('Please enter your email'));
@@ -29,6 +31,11 @@ export default () =>
     if (!password) {
       return Promise.reject(new Error('Please enter a password'));
     }
+
+    Analytics.identify(UUID, {
+      name,
+      email,
+    });
 
     return createUser(email, password).then(() => setName(name));
   };
