@@ -82,14 +82,29 @@ export const trackingMiddleware = store =>
   next =>
     action => {
       // If this isn't a screen change, we're not interested.
-      if (action.type !== 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
+      if (action.type === 'NEXT_STEP') {
+        const { setupState } = store.getState();
+        const { step } = setupState;
+        Analytics.track('Went forward in walkthrough', { currentStep: step });
         return next(action);
       }
 
-      // Grab the name of the screen from the flux action.
-      const { scene } = action;
-      Analytics.screen(scene.name);
+      if (action.type === 'PREVIOUS_STEP') {
+        const { setupState } = store.getState();
+        const { step } = setupState;
+        Analytics.track('Went backwards in walkthrough', { currentStep: step });
+        return next(action);
+      }
 
+      // Log screen changes in Segment
+      if (action.type === 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
+        const { scene } = action;
+        Analytics.screen(scene.name);
+
+        return next(action);
+      }
+
+      // Fall through
       return next(action);
     };
 
