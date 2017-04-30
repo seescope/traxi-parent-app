@@ -7,6 +7,7 @@ import type { KidsState } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
+import Analytics from 'react-native-analytics';
 
 type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
@@ -36,6 +37,11 @@ export default () =>
     // The parent has configured at least one kid and completed setup
     if (isInstalled && completedSetup) {
       Actions.dashboard({ type: 'replace' });
+      const { UUID, name, email } = parentState;
+      Analytics.identify(UUID, {
+        name,
+        email,
+      });
       return dispatch(fetchReports());
     }
 
