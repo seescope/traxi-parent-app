@@ -16,8 +16,14 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import checkDeeplink from '../CheckDeeplink';
 import Analytics from 'react-native-analytics';
+import Intercom from 'react-native-intercom';
 
 describe('CheckDeeplink', () => {
+  beforeEach(() => {
+    Analytics.identify.mockClear();
+    Intercom.registerIdentifiedUser.mockClear();
+  });
+
   test('If there is an initialURL, beginDeeplinkSetup', () => {
     mockUUID = 'abc-123';
 
@@ -26,6 +32,9 @@ describe('CheckDeeplink', () => {
 
     return store.dispatch(checkDeeplink()).then(() => {
       expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
+      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+        userId: 'abc-123',
+      });
       const action = store.getActions()[0];
       expect(action.type).toEqual('TEST_BEGIN_DEEPLINK_SETUP');
     });
@@ -46,6 +55,9 @@ describe('CheckDeeplink', () => {
     });
 
     return store.dispatch(checkDeeplink()).then(() => {
+      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+        userId: 'abc-123',
+      });
       expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
       expect(store.getActions()[0].type).toEqual('BEGIN_SETUP');
       expect(store.getActions()[1].type).toEqual('TEST_PERSIST_SETUP_ID');

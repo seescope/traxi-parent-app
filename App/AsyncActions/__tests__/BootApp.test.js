@@ -7,10 +7,12 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Actions } from 'react-native-router-flux';
 import Analytics from 'react-native-analytics';
+import Intercom from 'react-native-intercom';
 
 describe('Boot App', () => {
   beforeEach(() => {
     Analytics.identify.mockClear();
+    Intercom.registerIdentifiedUser.mockClear();
   });
 
   test('If there are installed kids in kidState, and parent name/email is set fetchReports and navigate to Dashboard', () => {
@@ -36,6 +38,10 @@ describe('Boot App', () => {
         name: 'Jeff',
         email: 'test@email.com',
       });
+      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+        userId: 'abc-123',
+      });
+
       expect(action.type).toEqual('TEST_FETCH_REPORTS');
       expect(Actions.dashboard).toHaveBeenCalled();
     });
@@ -77,6 +83,9 @@ describe('Boot App', () => {
 
     return store.dispatch(bootApp()).then(() => {
       expect(Actions.congratulations).toHaveBeenCalled();
+      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+        userId: 'abc-123',
+      });
       expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
     });
   });

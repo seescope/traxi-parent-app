@@ -8,6 +8,7 @@ import type { ParentState } from '../Reducers/Parent';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
 import Analytics from 'react-native-analytics';
+import Intercom from 'react-native-intercom';
 
 type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
@@ -38,10 +39,15 @@ export default () =>
     if (isInstalled && completedSetup) {
       Actions.dashboard({ type: 'replace' });
       const { UUID, name, email } = parentState;
+
       Analytics.identify(UUID, {
         name,
         email,
       });
+      Intercom.registerIdentifiedUser({
+        userId: UUID,
+      });
+
       return dispatch(fetchReports());
     }
 
@@ -51,6 +57,9 @@ export default () =>
 
       const { UUID } = parentState;
       Analytics.identify(UUID);
+      Intercom.registerIdentifiedUser({
+        userId: UUID,
+      });
 
       return Promise.resolve();
     }
