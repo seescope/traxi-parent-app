@@ -6,22 +6,32 @@ import beginDeeplinkSetup from './BeginDeeplinkSetup';
 import { getUUIDFromDeeplink } from '../Utils';
 import { beginSetup } from '../Reducers/Parent/parentActions';
 import persistSetupID from './PersistSetupID';
+import type { ParentState } from '../Reducers/Parent';
+
+type RootState = {
+  parentState: ParentState,
+};
 
 type Dispatch = () => void;
+type GetState = () => RootState;
 
 export default () =>
-  (dispatch: Dispatch) =>
-    getUUIDFromDeeplink().then(UUID => {
-      if (!UUID) {
+  (dispatch: Dispatch, getState: GetState) =>
+    getUUIDFromDeeplink().then(UUIDFromDeeplink => {
+      if (!UUIDFromDeeplink) {
         dispatch(beginSetup());
         dispatch(persistSetupID());
 
+        const { parentState } = getState();
+        const { UUID } = parentState;
+
+        Analytics.identify(UUID);
         Actions.splashScreen({ type: 'replace' });
 
         return null;
       }
 
-      Analytics.identify(UUID);
+      Analytics.identify(UUIDFromDeeplink);
 
-      return dispatch(beginDeeplinkSetup(UUID));
+      return dispatch(beginDeeplinkSetup(UUIDFromDeeplink));
     });

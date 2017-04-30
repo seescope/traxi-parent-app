@@ -36,6 +36,9 @@ describe('CheckDeeplink', () => {
 
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
+      parentState: {
+        UUID: 'abc-123',
+      },
       setupState: {
         setupID: 1234,
         kidUUID: 'abc-123',
@@ -43,6 +46,7 @@ describe('CheckDeeplink', () => {
     });
 
     return store.dispatch(checkDeeplink()).then(() => {
+      expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
       expect(store.getActions()[0].type).toEqual('BEGIN_SETUP');
       expect(store.getActions()[1].type).toEqual('TEST_PERSIST_SETUP_ID');
       expect(Actions.splashScreen).toHaveBeenCalled();
