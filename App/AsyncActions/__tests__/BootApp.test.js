@@ -19,7 +19,8 @@ describe('Boot App', () => {
     const STATE_WITH_KIDS = {
       kidsState: {
         '123-abc': {
-          installed: true,
+          installed: false,
+          status: 'INSTALLED',
         },
       },
       parentState: {

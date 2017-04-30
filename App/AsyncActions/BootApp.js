@@ -23,7 +23,15 @@ const hasInstalledKids = (kidsState: KidsState): boolean => {
     .values()
     .value();
 
-  return installed.includes(true);
+  // LEGACY:
+  // Old versions of Traxi set this parameter instead of "installed".
+  const statusProp = lodash
+    .chain(kidsState)
+    .mapValues('status')
+    .values()
+    .value();
+
+  return installed.includes(true) || statusProp.includes('INSTALLED');
 };
 
 export default () =>
