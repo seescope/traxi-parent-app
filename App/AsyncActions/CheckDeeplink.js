@@ -1,5 +1,6 @@
 // @flow
 import { Actions } from 'react-native-router-flux';
+import Analytics from 'react-native-analytics';
 
 import beginDeeplinkSetup from './BeginDeeplinkSetup';
 import { getUUIDFromDeeplink } from '../Utils';
@@ -19,6 +20,8 @@ export default () =>
 
         return null;
       }
+
+      Analytics.identify(UUID);
 
       return dispatch(beginDeeplinkSetup(UUID));
     });

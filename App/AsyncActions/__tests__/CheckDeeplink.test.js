@@ -15,6 +15,7 @@ import { Actions } from 'react-native-router-flux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import checkDeeplink from '../CheckDeeplink';
+import Analytics from 'react-native-analytics';
 
 describe('CheckDeeplink', () => {
   test('If there is an initialURL, beginDeeplinkSetup', () => {
@@ -24,6 +25,7 @@ describe('CheckDeeplink', () => {
     const store = mockStore(undefined);
 
     return store.dispatch(checkDeeplink()).then(() => {
+      expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
       const action = store.getActions()[0];
       expect(action.type).toEqual('TEST_BEGIN_DEEPLINK_SETUP');
     });
