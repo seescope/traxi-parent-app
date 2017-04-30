@@ -43,7 +43,7 @@ const CongratulationsComponent = ({kidName}) => (
 
       <Spacing height={32} />
 
-      <Button primary onPress={() => Actions.setImage({type: 'replace'})}>
+      <Button primary onPress={() => Actions.setKidImage({type: 'replace'})}>
         Next step
       </Button>
 

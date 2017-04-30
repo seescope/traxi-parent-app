@@ -16,12 +16,17 @@ describe('Kids reducer', () => {
   describe('BEGIN_DEEPLINK_SETUP', () => {
     it('starts setting up the app from a deeplink', () => {
       const TEST_KID = {
+        UUID: 'abc-123',
+        name: 'Test Kid',
         email: 'Something',
-        kids: ['abc-123'],
+      };
+
+      const EXPECTED_STATE = {
+        'abc-123': TEST_KID,
       };
 
       const action = beginDeeplinkSetup(null, TEST_KID);
-      expect(reducer(undefined, action)).toEqual(TEST_KID);
+      expect(reducer(undefined, action)).toEqual(EXPECTED_STATE);
     });
   });
 

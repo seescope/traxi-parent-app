@@ -33,7 +33,7 @@ export default {
       header: 'Let\'s get started!',
       kidsName: 'What is your kid\'s name?',
     },
-    setImage: {
+    setKidImage: {
       setAPictureFor: 'Now, let\'s set a picture for',
       chooseAPicture: 'Choose a picture',
       dontWorry: 'Don\'t worry, only you can see it',
@@ -107,7 +107,7 @@ export default {
       header: 'Mari mulakan!',
       kidsName: 'Apakah nama anak anda?',
     },
-    setImage: {
+    setKidImage: {
       setAPictureFor: 'Pilih gambar untuk',
       chooseAPicture: 'Pilih gambar',
       dontWorry: 'Hanya anda boleh melihatnya',

@@ -170,7 +170,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
           }
         }
       >
-        [missing "en.setImage.chooseAPicture" translation]
+        [missing "en.setKidImage.chooseAPicture" translation]
          
       </Text>
     </View>
@@ -213,7 +213,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
           }
         }
       >
-        [missing "en.setImage.notNow" translation]
+        [missing "en.setKidImage.notNow" translation]
          
       </Text>
     </View>

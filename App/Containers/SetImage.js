@@ -79,10 +79,10 @@ const SetImage = ({ kidName, onPress }) => (
     </View>
     <View style={STYLE.buttonContainer}>
       <Button primary onPress={() => onPress(true)}>
-        {I18n.t('setImage.chooseAPicture')}
+        {I18n.t('setKidImage.chooseAPicture')}
       </Button>
       <Button onPress={() => onPress(false)}>
-        {I18n.t('setImage.notNow')}
+        {I18n.t('setKidImage.notNow')}
       </Button>
     </View>
   </View>

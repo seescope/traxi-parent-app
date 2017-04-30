@@ -38,7 +38,10 @@ const INITIAL_STATE = {};
 //   },
 // };
 
-export default (state: KidsState = INITIAL_STATE, action: KidsAction) => {
+export default (
+  state: KidsState = INITIAL_STATE,
+  action: KidsAction,
+): KidsState => {
   switch (action.type) {
     case 'BEGIN_SETUP': {
       const { kidUUID } = action;
@@ -47,7 +50,14 @@ export default (state: KidsState = INITIAL_STATE, action: KidsAction) => {
       };
     }
     case 'BEGIN_DEEPLINK_SETUP': {
-      return action.kid;
+      const { kid } = action;
+      const { UUID } = kid;
+
+      if (!UUID) return state;
+
+      return {
+        [UUID]: kid,
+      };
     }
     case 'SET_KID_NAME': {
       const { name, UUID } = action;
