@@ -7,6 +7,7 @@ import type { ParentState } from '../Reducers/Parent';
 import { profileMigrated } from '../Reducers/Parent/parentActions';
 import persistKid from './PersistKid';
 import persistParent from './PersistParent';
+import Analytics from 'react-native-analytics';
 
 type Dispatch = () => Promise<any>;
 
@@ -86,6 +87,8 @@ export default (profile: ProfileFromAsyncStorage) =>
 
     Promise.all(lodash.values(kids).map(kid => dispatch(persistKid(kid))));
 
-    return dispatch(persistParent()).then(() =>
-      AsyncStorage.removeItem('profile'));
+    return dispatch(persistParent()).then(() => {
+      AsyncStorage.removeItem('profile');
+      Analytics.track('Migrated parent', { UUID });
+    });
   };

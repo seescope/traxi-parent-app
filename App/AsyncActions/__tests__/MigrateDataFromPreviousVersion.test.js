@@ -6,6 +6,7 @@ import configureMockStore from 'redux-mock-store';
 import { AsyncStorage } from 'react-native';
 import thunk from 'redux-thunk';
 import migrateDataFromPreviousVersion from '../MigrateDataFromPreviousVersion';
+import Analytics from 'react-native-analytics';
 
 const EXPECTED_PARENT = {
   UUID: 'YwS0vJ8OE8N6yenxHaV6PdMVLbG3',
@@ -70,6 +71,9 @@ describe('MigrateDataFromPreviousVersion', () => {
         expect(persistedAction3.type).toEqual('PARENT_PERSISTED');
 
         expect(AsyncStorage.removeItem).toHaveBeenCalledWith('profile');
+        expect(Analytics.track).toHaveBeenCalledWith('Migrated parent', {
+          UUID: 'abc-123',
+        });
       });
   });
 });
