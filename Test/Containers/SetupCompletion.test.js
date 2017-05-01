@@ -1,3 +1,8 @@
+jest.mock('../../App/AsyncActions/PersistParent', () => jest.fn());
+jest.mock('../../App/AsyncActions/FetchReports', () => jest.fn());
+jest.mock('../../App/AsyncActions/CreateParentAuthentication', () => jest.fn());
+
+import OneSignal from 'react-native-onesignal';
 import { Alert } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -5,9 +10,6 @@ import { Actions } from 'react-native-router-flux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-jest.mock('../../App/AsyncActions/PersistParent', () => jest.fn());
-jest.mock('../../App/AsyncActions/FetchReports', () => jest.fn());
-jest.mock('../../App/AsyncActions/CreateParentAuthentication', () => jest.fn());
 import mockPersistParent from '../../App/AsyncActions/PersistParent';
 import mockFetchReports from '../../App/AsyncActions/FetchReports';
 import mockCreateParentAuthentication
@@ -56,6 +58,7 @@ describe('mapDispatchToProps', () => {
       expect(mockPersistParent).toHaveBeenCalled();
       expect(mockFetchReports).toHaveBeenCalled();
       expect(Actions.dashboard).toHaveBeenCalled();
+      expect(OneSignal.registerForPushNotifications).toHaveBeenCalled();
     });
   });
 

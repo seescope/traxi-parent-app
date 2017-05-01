@@ -27,7 +27,7 @@
 {
   NSURL *jsCodeLocation;
 
-  
+
 #ifdef DEBUG
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 #else
@@ -45,24 +45,24 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  
+
   SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"OrHTwtpRdZV1ZUDnYUSg3LsE8qKeJ6g9"];
   configuration.trackApplicationLifecycleEvents = YES;
   [SEGAnalytics setupWithConfiguration:configuration];
-  
+
   // Firebase
   [FIROptions defaultOptions].deepLinkURLScheme = @"applinks:c7g74.app.goo.gl";
   [FIRApp configure];
-  
+
   // Fabric
   [Fabric with:@[[Crashlytics class]]];
-  
+
   // Initialize Intercom
   [Intercom setApiKey:@"ios_sdk-4eb45cee2ce0955571adcd238f912926f206fda5" forAppId:@"bduhw6bc"];
-  
+
   // OneSignal
-  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions appId:@"d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35"];
-  
+  self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions appId:@"d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35" settings:@{kOSSettingsKeyAutoPrompt: @false}];
+
   return YES;
 }
 
@@ -81,79 +81,14 @@
                      restorationHandler:restorationHandler];
 }
 
-
-//- (BOOL)application:(UIApplication *)app
-//            openURL:(NSURL *)url
-//            options:(NSDictionary<NSString *, id> *)options {
-//  return [self application:app openURL:url sourceApplication:nil annotation:@{}];
-//}
-//
-//- (BOOL)application:(UIApplication *)application
-//            openURL:(NSURL *)url
-//  sourceApplication:(NSString *)sourceApplication
-//         annotation:(id)annotation {
-//  FIRDynamicLink *dynamicLink =
-//  [[FIRDynamicLinks dynamicLinks] dynamicLinkFromCustomSchemeURL:url];
-//  
-//  if (dynamicLink) {
-//    // Handle the deep link. For example, show the deep-linked content or
-//    // apply a promotional offer to the user's account.
-//    // ...
-//    return YES;
-//  }
-//  
-//  return NO;
-//}
-//
-//- (BOOL)application:(UIApplication *)application
-//continueUserActivity:(NSUserActivity *)userActivity
-// restorationHandler:(void (^)(NSArray *))restorationHandler {
-//  
-//  BOOL handled = [[FIRDynamicLinks dynamicLinks]
-//                  handleUniversalLink:userActivity.webpageURL
-//                  completion:^(FIRDynamicLink * _Nullable dynamicLink,
-//                               NSError * _Nullable error) {
-//                    // ...
-//                  }];
-//  
-//  
-//  return handled;
-//}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-  [application registerUserNotificationSettings:
-   [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)
-                                     categories:nil]];
-  [application registerForRemoteNotifications];
-}
-
 // Required for the register event.
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
   [Intercom setDeviceToken:deviceToken]; // For Intercom notification
-  [RCTPushNotificationManager didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
-// Required to register for notifications
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-  [RCTPushNotificationManager didRegisterUserNotificationSettings:notificationSettings];
-}
-// Required for the notification event. You must call the completion handler after handling the remote notification.
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification
-fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-  [RCTPushNotificationManager didReceiveRemoteNotification:notification fetchCompletionHandler:completionHandler];
+// Required for the notification event.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [RCTOneSignal didReceiveRemoteNotification:notification];
 }
 
-// Required for the registrationError event.
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-  [RCTPushNotificationManager didFailToRegisterForRemoteNotificationsWithError:error];
-}
-// Required for the localNotification event.
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-  [RCTPushNotificationManager didReceiveLocalNotification:notification];
-}
 @end

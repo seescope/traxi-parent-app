@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import OneSignal from 'react-native-onesignal';
 import { Alert, ScrollView, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -161,7 +162,10 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
       .then(() => dispatch(persistParent()))
       .then(() => dispatch(fetchReports()))
       .then(() => dispatch(stoppedLoading()))
-      .then(() => Actions.dashboard())
+      .then(() => {
+        OneSignal.registerForPushNotifications();
+        Actions.dashboard();
+      })
       .catch(e => {
         dispatch(stoppedLoading());
         logError(e);
