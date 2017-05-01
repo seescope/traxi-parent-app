@@ -2,6 +2,7 @@ import React from 'react';
 import { AsyncStorage } from 'react-native';
 import * as Firebase from 'firebase';
 import I18n from 'react-native-i18n';
+import codePush from 'react-native-code-push';
 
 import ParentApp from './App/Containers/ParentApp';
 import Translation from './App/Constants/Translation';
@@ -62,6 +63,24 @@ export default class extends React.Component {
 
   onOpened() {
     Analytics.track('Notification opened');
+  }
+
+  async codePushStatusDidChange(status) {
+    switch (status) {
+      case codePush.SyncStatus.UPDATE_INSTALLED: {
+        const updateMetadata = await codePush.getUpdateMetadata();
+        if (updateMetadata) {
+          Analytics.track('CodePush update installed', {
+            label: updateMetadata.label,
+          });
+        }
+        break;
+      }
+      default: {
+        const updateMetadata = await codePush.getUpdateMetadata();
+        console.log('CodePush status changed', updateMetadata);
+      }
+    }
   }
 
   render() {
