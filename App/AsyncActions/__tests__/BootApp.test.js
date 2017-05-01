@@ -2,6 +2,13 @@ jest.mock('../CheckDeeplink', () =>
   () => dispatch => Promise.resolve(dispatch({ type: 'TEST_CHECK_DEEPLINK' })));
 jest.mock('../FetchReports', () =>
   () => dispatch => Promise.resolve(dispatch({ type: 'TEST_FETCH_REPORTS' })));
+jest.mock('../MigrateDataFromPreviousVersion', () =>
+  profile =>
+    dispatch =>
+      Promise.resolve(
+        dispatch({ type: 'TEST_MIGRATE_DATA_FROM_PREVIOUS_VERSION', profile }),
+      ));
+import { AsyncStorage } from 'react-native';
 import bootApp from '../BootApp';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -13,6 +20,44 @@ describe('Boot App', () => {
   beforeEach(() => {
     Analytics.identify.mockClear();
     Intercom.registerIdentifiedUser.mockClear();
+    AsyncStorage.getItem = () => Promise.resolve();
+  });
+
+  test('If an old profile exists in AsyncStorage, migrate the user, fetchReports and navigate to Dashboard', () => {
+    const EMPTY_STATE = {
+      kidsState: {},
+      parentState: {},
+    };
+
+    const LEGACY_PROFILE = {
+      name: 'Something',
+    };
+
+    AsyncStorage.getItem = () =>
+      Promise.resolve(JSON.stringify(LEGACY_PROFILE));
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(EMPTY_STATE);
+
+    return store.dispatch(bootApp()).then(() => {
+      const action = store.getActions()[0];
+      expect(action.type).toEqual('TEST_MIGRATE_DATA_FROM_PREVIOUS_VERSION');
+      expect(action.profile).toEqual(LEGACY_PROFILE);
+
+      const secondAction = store.getActions()[1];
+      expect(secondAction.type).toEqual('TEST_FETCH_REPORTS');
+
+      // These must be undefined since our action can't mutate the state of the store
+      expect(Analytics.identify).toHaveBeenCalledWith(undefined, {
+        name: undefined,
+        email: undefined,
+      });
+      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
+        userId: undefined,
+      });
+
+      expect(Actions.dashboard).toHaveBeenCalled();
+    });
   });
 
   test('If there are installed kids in kidState, and parent name/email is set fetchReports and navigate to Dashboard', () => {
@@ -67,7 +112,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there installed kids, but the parent is not configured, show Congratulations', () => {
+  test('If there are installed kids, but the parent is not configured, show Congratulations', () => {
     const STATE_WITH_INCOMPLETE_SETUP = {
       kidsState: {
         '123-abc': {
@@ -87,7 +132,10 @@ describe('Boot App', () => {
       expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
         userId: 'abc-123',
       });
-      expect(Analytics.identify).toHaveBeenCalledWith('abc-123');
+      expect(Analytics.identify).toHaveBeenCalledWith('abc-123', {
+        name: undefined,
+        email: undefined,
+      });
     });
   });
 });
