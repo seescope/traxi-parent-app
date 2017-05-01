@@ -1,4 +1,5 @@
 // @flow
+import { AsyncStorage } from 'react-native';
 import * as Firebase from 'firebase';
 import lodash from 'lodash';
 import type { Kid, KidsState, DeviceType } from '../Reducers/Kids';
@@ -7,7 +8,7 @@ import { profileMigrated } from '../Reducers/Parent/parentActions';
 import persistKid from './PersistKid';
 import persistParent from './PersistParent';
 
-type Dispatch = () => void;
+type Dispatch = () => Promise<any>;
 
 type ProfileFromAsyncStorage = {
   UUID: string,
@@ -84,5 +85,7 @@ export default (profile: ProfileFromAsyncStorage) =>
     dispatch(profileMigrated(parent, kids));
 
     Promise.all(lodash.values(kids).map(kid => dispatch(persistKid(kid))));
-    return dispatch(persistParent());
+
+    return dispatch(persistParent()).then(() =>
+      AsyncStorage.removeItem('profile'));
   };

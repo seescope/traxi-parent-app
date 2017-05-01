@@ -16,7 +16,7 @@ type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
 
 const finishedSetup = ({ name, email }: ParentState): boolean =>
-  !lodash.isSet(name) && !lodash.isSet(email);
+  !lodash.isNil(name) && !lodash.isNil(email);
 
 const hasInstalledKids = (kidsState: KidsState): boolean => {
   const installed = lodash
