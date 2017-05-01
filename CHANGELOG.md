@@ -1,3 +1,9 @@
+## 6.1.0
+Refactor app, re-implement setup process, support deep-links better, change persistence model
+
+## 6.0.0
+Add Dashboard
+
 ## 5.5.1
 - Finally fix the goddamn back button.
 
