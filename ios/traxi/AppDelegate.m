@@ -86,10 +86,8 @@
   [Intercom setDeviceToken:deviceToken]; // For Intercom notification
 }
 
-// Required for the notification event. You must call the completion handler after handling the remote notification.
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification
-fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
+// Required for the notification event.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [RCTOneSignal didReceiveRemoteNotification:notification];
 }
 
