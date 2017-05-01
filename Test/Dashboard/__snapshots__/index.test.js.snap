@@ -69,12 +69,19 @@ exports[`renders correctly 1`] = `
               "paddingVertical": 36,
             }
           }
+          refreshControl={
+            <RefreshControlMock
+              onRefresh={[Function]}
+              refreshing={false}
+            />
+          }
           style={
             Object {
               "backgroundColor": "#F0F2F7",
             }
           }
         >
+          <RCTRefreshControl />
           <View>
             <View
               animation="bounceIn"

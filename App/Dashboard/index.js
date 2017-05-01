@@ -2,7 +2,7 @@
 import React from 'react';
 import lodash from 'lodash';
 import { connect } from 'react-redux';
-import { ScrollView } from 'react-native';
+import { ScrollView, RefreshControl } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Swiper from 'react-native-swiper';
 
@@ -14,6 +14,7 @@ import TopAppComponent from './Components/TopApp';
 import TopCategoryComponent from './Components/TopCategory';
 import PeakTimeComponent from './Components/PeakTime';
 import RecentAppComponent from './Components/RecentApp';
+import fetchReportsAction from '../AsyncActions/FetchReports';
 
 import type { KidsState, Kid } from '../Reducers/Kids';
 import type {
@@ -34,6 +35,7 @@ type DashboardProps = {
   reports: ReportsState,
   kids: KidsState,
   loading: boolean,
+  fetchReports: () => Promise<any>,
 };
 
 type DashboardScreenProps = {
@@ -43,6 +45,7 @@ type DashboardScreenProps = {
   topCategories: ?CardWithDate<TopCategory>,
   peakTimes: ?CardWithDate<PeakTime>,
   recentApps: ?Array<RecentApp>,
+  fetchReports: () => Promise<any>,
 };
 
 const containerStyle = {
@@ -61,75 +64,105 @@ const getTodayUsage = (peakTimes: ?CardWithDate<PeakTime>) =>
     ? (lodash.find(peakTimes.week, { name: 'Today' }) || { usage: 0 }).usage
     : 0;
 
-const DashboardScreen = (
-  {
-    loading,
-    kid,
-    topApps,
-    topCategories,
-    peakTimes,
-    recentApps,
-  }: DashboardScreenProps,
-) => (
-  <ScrollView
-    style={outerContainerStyle}
-    contentContainerStyle={containerStyle}
-  >
-    <Animatable.View delay={500} useNativeDriver animation="bounceIn">
-      <KidCircle loading={loading} kid={kid} usage={getTodayUsage(peakTimes)} />
-    </Animatable.View>
+class DashboardScreen extends React.Component {
+  state = {
+    refreshing: false,
+  };
+  props: DashboardScreenProps;
 
-    <Spacing height={32} />
+  refreshData() {
+    this.setState({ refreshing: true });
+    this.props.fetchReports().then(() => this.setState({ refreshing: false }));
+  }
 
-    <Card
-      loading={loading}
-      header="Top Apps"
-      Component={TopAppComponent}
-      data={topApps}
-    />
+  render() {
+    const { refreshing } = this.state;
+    const {
+      loading,
+      kid,
+      topApps,
+      topCategories,
+      peakTimes,
+      recentApps,
+    } = this.props;
+    return (
+      <ScrollView
+        style={outerContainerStyle}
+        contentContainerStyle={containerStyle}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => this.refreshData()}
+          />
+        }
+      >
+        <Animatable.View delay={500} useNativeDriver animation="bounceIn">
+          <KidCircle
+            loading={loading}
+            kid={kid}
+            usage={getTodayUsage(peakTimes)}
+          />
+        </Animatable.View>
 
-    <Card
-      loading={loading}
-      header="Top Categories"
-      Component={TopCategoryComponent}
-      data={topCategories}
-    />
+        <Spacing height={32} />
 
-    <Card
-      loading={loading}
-      header="Peak Times"
-      Component={PeakTimeComponent}
-      data={peakTimes}
-    />
+        <Card
+          loading={loading}
+          header="Top Apps"
+          Component={TopAppComponent}
+          data={topApps}
+        />
 
-    <Card
-      loading={loading}
-      header="Recent Apps"
-      Component={RecentAppComponent}
-      data={recentApps}
-    />
-  </ScrollView>
-);
+        <Card
+          loading={loading}
+          header="Top Categories"
+          Component={TopCategoryComponent}
+          data={topCategories}
+        />
 
-const mapStateToProps = (
-  { reportsState, kidsState }: RootState,
-): DashboardProps => ({
+        <Card
+          loading={loading}
+          header="Peak Times"
+          Component={PeakTimeComponent}
+          data={peakTimes}
+        />
+
+        <Card
+          loading={loading}
+          header="Recent Apps"
+          Component={RecentAppComponent}
+          data={recentApps}
+        />
+      </ScrollView>
+    );
+  }
+}
+
+const mapStateToProps = ({ reportsState, kidsState }: RootState) => ({
   kids: kidsState,
   reports: reportsState,
   loading: reportsState.loading,
 });
 
-const Dashboard = ({ reports, kids, loading }: DashboardProps) => (
+const mapDispatchToProps = dispatch => ({
+  fetchReports: () => dispatch(fetchReportsAction()),
+});
+
+const Dashboard = (
+  { reports, kids, loading, fetchReports }: DashboardProps,
+) => (
   <Swiper>
     {Object.keys(kids).map(UUID => (
       <DashboardScreen
         key={UUID}
         loading={loading}
         kid={kids[UUID]}
+        fetchReports={fetchReports}
         {...reports[UUID]}
       />
     ))}
   </Swiper>
 );
 
-export default connect(mapStateToProps)(Dashboard);
+// $FlowFixMe
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
