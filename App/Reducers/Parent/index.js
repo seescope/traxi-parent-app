@@ -69,6 +69,9 @@ export default function parent(
     case 'BEGIN_DEEPLINK_SETUP': {
       return action.parent;
     }
+    case 'PROFILE_MIGRATED': {
+      return action.parent;
+    }
     default:
       return state;
   }

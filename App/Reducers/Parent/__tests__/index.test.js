@@ -61,4 +61,14 @@ describe('Parent reducer', () => {
       expect(email).toEqual(TEST_EMAIL);
     });
   });
+
+  describe('PROFILE_MIGRATED', () => {
+    it('updates the parent state', () => {
+      const TEST_PARENT = { name: 'Something' };
+      const action = Actions.profileMigrated(TEST_PARENT);
+
+      const { name } = reducer(undefined, action);
+      expect(name).toEqual(TEST_PARENT.name);
+    });
+  });
 });
