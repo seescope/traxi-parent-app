@@ -13,7 +13,7 @@ const TEST_SETUP_STATE = {
 };
 
 describe('PersistKid', () => {
-  test('Fetches the SetupID and Kid from the store and persists it in Firebase', () => {
+  test('If no kid specified, it fetches the SetupID and Kid from the store and persists it in Firebase', () => {
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       kidsState: {
@@ -23,6 +23,15 @@ describe('PersistKid', () => {
     });
 
     return store.dispatch(persistKid()).then(() => {
+      expect(mockSet).toHaveBeenCalledWith(TEST_KID);
+    });
+  });
+
+  test('Persists a kid if one is specified', () => {
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore({});
+
+    return store.dispatch(persistKid(TEST_KID)).then(() => {
       expect(mockSet).toHaveBeenCalledWith(TEST_KID);
     });
   });

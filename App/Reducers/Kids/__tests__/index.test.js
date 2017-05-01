@@ -1,4 +1,8 @@
-import { beginSetup, beginDeeplinkSetup } from '../../Parent/parentActions';
+import {
+  beginSetup,
+  beginDeeplinkSetup,
+  profileMigrated,
+} from '../../Parent/parentActions';
 import { setKidName, kidUpdated, setKidImage } from '../kidsActions';
 import reducer from '../index.js';
 
@@ -69,6 +73,16 @@ describe('Kids reducer', () => {
       const updatedState = reducer(TEST_STATE, action);
       const kid = updatedState['abc-123'];
       expect(kid.avatarURL).toEqual('some URL');
+    });
+  });
+
+  describe('PROFILE_MIGRATED', () => {
+    it('updates the kids state', () => {
+      const TEST_KIDS = { 'abc-123': { name: 'Something' } };
+      const action = profileMigrated(undefined, TEST_KIDS);
+
+      const { name } = reducer(undefined, action)['abc-123'];
+      expect(name).toEqual('Something');
     });
   });
 });

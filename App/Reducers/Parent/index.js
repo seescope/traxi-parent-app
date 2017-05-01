@@ -1,4 +1,6 @@
 // @flow
+import type { KidsState } from '../Kids';
+
 export type ParentState = {
   name: ?string,
   UUID: ?string,
@@ -12,6 +14,7 @@ export type ParentAction =
   | { type: 'BEGIN_SETUP', parentUUID: string, kidUUID: string }
   | { type: 'BEGIN_DEEPLINK_SETUP', parent: ParentState }
   | { type: 'SET_EMAIL', email: string }
+  | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
   | { type: 'SET_PASSWORD', password: string };
 
 export const INITIAL_STATE = {
@@ -64,6 +67,9 @@ export default function parent(
       };
     }
     case 'BEGIN_DEEPLINK_SETUP': {
+      return action.parent;
+    }
+    case 'PROFILE_MIGRATED': {
       return action.parent;
     }
     default:

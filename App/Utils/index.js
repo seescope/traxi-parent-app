@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
+import lodash from 'lodash';
 import moment from 'moment';
 import * as Firebase from 'firebase';
 import { BackAndroid, Linking, AsyncStorage, Platform } from 'react-native';
@@ -195,3 +196,6 @@ export const backButtonHandler = store => {
   // Default
   return true;
 };
+
+export const cleanObjectForFirebase = object =>
+  lodash.omitBy(object, lodash.isNil);

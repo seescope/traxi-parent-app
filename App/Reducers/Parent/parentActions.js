@@ -1,6 +1,6 @@
 // @flow
 import type { ParentAction, ParentState } from './index';
-import type { Kid } from '../Kids';
+import type { Kid, KidsState } from '../Kids';
 import uuid from 'uuid';
 
 export function beginSetup(): ParentAction {
@@ -38,5 +38,16 @@ export function setEmail(email: string): ParentAction {
   return {
     type: 'SET_EMAIL',
     email,
+  };
+}
+
+export function profileMigrated(
+  parent: ParentState,
+  kids: KidsState,
+): ParentAction {
+  return {
+    type: 'PROFILE_MIGRATED',
+    parent,
+    kids,
   };
 }

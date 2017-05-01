@@ -1,7 +1,8 @@
 // @flow
 import * as Firebase from 'firebase';
-import type { KidsState } from '../Reducers/Kids';
+import type { KidsState, Kid } from '../Reducers/Kids';
 import type { SetupState } from '../Reducers/Setup';
+import { cleanObjectForFirebase } from '../Utils';
 
 // NOTE: Importing RootState from '../Reducers' does not seem to work?
 type RootState = {
@@ -12,14 +13,19 @@ type RootState = {
 type Dispatch = () => void;
 type GetState = () => RootState;
 
-export default () =>
-  (dispatch: Dispatch, getState: GetState) => {
-    const { setupState, kidsState } = getState();
+const saveKidInFirebase = (kid: Kid): Promise<any> =>
+  Firebase.database().ref(`kids/${kid.UUID}`).set(cleanObjectForFirebase(kid));
 
+export default (kid: ?Kid) =>
+  (dispatch: Dispatch, getState: GetState) => {
+    if (kid) {
+      return saveKidInFirebase(kid);
+    }
+
+    const { setupState, kidsState } = getState();
     const { kidUUID } = setupState;
     if (!kidUUID) return Promise.reject('No kid UUID!');
 
-    const kid = kidsState[kidUUID];
-
-    return Firebase.database().ref(`kids/${kidUUID}`).set(kid);
+    const kidFromState = kidsState[kidUUID];
+    return saveKidInFirebase(kidFromState);
   };
