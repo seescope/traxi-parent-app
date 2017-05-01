@@ -4,6 +4,8 @@ import lodash from 'lodash';
 import type { Kid, KidsState, DeviceType } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import { profileMigrated } from '../Reducers/Parent/ParentActions';
+import persistKid from './PersistKid';
+import persistParent from './PersistParent';
 
 type Dispatch = () => void;
 
@@ -79,5 +81,8 @@ export default (profile: ProfileFromAsyncStorage) =>
     const profileFromFirebase: ProfileFromFirebase = firebaseResult.val();
     const { parent, kids } = convertProfile(profileFromFirebase);
 
-    return dispatch(profileMigrated(parent, kids));
+    dispatch(profileMigrated(parent, kids));
+
+    Promise.all(lodash.values(kids).map(kid => dispatch(persistKid(kid))));
+    return dispatch(persistParent());
   };

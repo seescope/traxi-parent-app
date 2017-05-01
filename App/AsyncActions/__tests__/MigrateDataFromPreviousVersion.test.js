@@ -1,5 +1,7 @@
 jest.mock('../PersistKid', () =>
   kid => dispatch => Promise.resolve(dispatch({ type: 'KID_PERSISTED', kid })));
+jest.mock('../PersistParent', () =>
+  () => dispatch => Promise.resolve(dispatch({ type: 'PARENT_PERSISTED' })));
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import migrateDataFromPreviousVersion from '../MigrateDataFromPreviousVersion';
@@ -44,16 +46,25 @@ describe('MigrateDataFromPreviousVersion', () => {
     return store
       .dispatch(migrateDataFromPreviousVersion(TEST_PROFILE))
       .then(() => {
-        const persistedAction = store.getActions()[0];
+        const migratedAction = store.getActions()[0];
+        expect(migratedAction.type).toEqual('PROFILE_MIGRATED');
+        expect(migratedAction.parent).toEqual(EXPECTED_PARENT);
+        expect(migratedAction.kids).toEqual(EXPECTED_KIDS);
+
+        const persistedAction = store.getActions()[1];
         expect(persistedAction.type).toEqual('KID_PERSISTED');
         expect(persistedAction.kid).toEqual(
           EXPECTED_KIDS['2f566920-f598-46d2-8bf2-7bcae115bf0a'],
         );
 
-        const migratedAction = store.getActions()[1];
-        expect(migratedAction.type).toEqual('PROFILE_MIGRATED');
-        expect(migratedAction.parent).toEqual(EXPECTED_PARENT);
-        expect(migratedAction.kids).toEqual(EXPECTED_KIDS);
+        const persistedAction2 = store.getActions()[2];
+        expect(persistedAction2.type).toEqual('KID_PERSISTED');
+        expect(persistedAction2.kid).toEqual(
+          EXPECTED_KIDS['886b79ea-3572-4b4a-9c25-59b14639ac3d'],
+        );
+
+        const persistedAction3 = store.getActions()[3];
+        expect(persistedAction3.type).toEqual('PARENT_PERSISTED');
       });
   });
 });
