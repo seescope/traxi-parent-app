@@ -3,7 +3,7 @@ import * as Firebase from 'firebase';
 import lodash from 'lodash';
 import type { Kid, KidsState, DeviceType } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
-import { profileMigrated } from '../Reducers/Parent/ParentActions';
+import { profileMigrated } from '../Reducers/Parent/parentActions';
 import persistKid from './PersistKid';
 import persistParent from './PersistParent';
 
@@ -26,7 +26,7 @@ type ProfileFromFirebase = {
   name: string,
   kids: FirebaseKids,
   UUID: string,
-  email: string,
+  email: ?string,
 };
 
 type ConvertedProfile = {
@@ -40,7 +40,7 @@ const getKidUUIDs = (kids: FirebaseKids): Array<string> =>
 const convertParent = (profile: ProfileFromFirebase): ParentState => ({
   UUID: profile.UUID,
   name: profile.name,
-  email: profile.email,
+  email: profile.email || '',
   kids: getKidUUIDs(profile.kids),
   password: undefined,
 });
@@ -76,7 +76,7 @@ export default (profile: ProfileFromAsyncStorage) =>
     const { UUID } = profile;
     const firebaseResult = await Firebase.database()
       .ref(`parents/${UUID}`)
-      .once('val');
+      .once('value');
 
     const profileFromFirebase: ProfileFromFirebase = firebaseResult.val();
     const { parent, kids } = convertProfile(profileFromFirebase);

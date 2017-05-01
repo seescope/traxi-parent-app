@@ -1,6 +1,7 @@
 // @flow
 import * as Firebase from 'firebase';
 import type { RootState } from '../Reducers';
+import { cleanObjectForFirebase } from '../Utils';
 
 type Dispatch = () => void;
 type GetState = () => RootState;
@@ -12,5 +13,6 @@ export default () =>
 
     if (!UUID) return Promise.reject(new Error('No UUID set for parent'));
 
-    return Firebase.database().ref(`parents/${UUID}`).set(parentState);
+    const safeParentState = cleanObjectForFirebase(parentState);
+    return Firebase.database().ref(`parents/${UUID}`).set(safeParentState);
   };

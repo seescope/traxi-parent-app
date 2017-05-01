@@ -20,6 +20,7 @@ export type KidsAction =
   | { type: 'SET_KID_NAME', name: string, UUID: string }
   | { type: 'KID_UPDATED', kid: Kid, UUID: string }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
+  | { type: 'PROFILE_MIGRATED', kids: KidsState }
   | { type: 'SET_KID_IMAGE', avatarURL: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
@@ -97,6 +98,9 @@ export default (
         ...state,
         [UUID]: updatedKid,
       };
+    }
+    case 'PROFILE_MIGRATED': {
+      return action.kids;
     }
     default:
       return state;

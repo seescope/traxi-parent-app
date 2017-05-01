@@ -8,6 +8,7 @@ import {
   experimentViewed,
   getNiceUsage,
   backButtonHandler,
+  cleanObjectForFirebase,
 } from '../../App/Utils';
 import moment from 'moment';
 import mockAnalytics from 'react-native-analytics';
@@ -121,5 +122,18 @@ describe('backButtonHandler', () => {
     backButtonHandler(testStore);
     expect(Actions.pop).not.toHaveBeenCalled();
     expect(MOCK_DISPATCH).toHaveBeenCalledWith({ type: 'PREVIOUS_STEP' });
+  });
+});
+
+describe('cleanObjectForFirebase', () => {
+  it('removes undefined or null keys', () => {
+    const object = {
+      something: undefined,
+      somethingElse: 'defined',
+    };
+
+    expect(cleanObjectForFirebase(object)).toEqual({
+      somethingElse: 'defined',
+    });
   });
 });
