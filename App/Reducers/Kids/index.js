@@ -2,7 +2,7 @@
 export type DeviceType = 'iPhone' | 'Android' | 'iPad' | 'unknown';
 export type Kid = {
   name: ?string,
-  UUID: ?string,
+  UUID: string,
   deviceType: DeviceType,
   installed: boolean,
   avatarURL: ?string,
