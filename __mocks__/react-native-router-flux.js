@@ -14,6 +14,7 @@ export const Actions = {
   deviceSetup: jest.fn(),
   splashScreen: jest.fn(),
   setKidImage: jest.fn(),
+  checkForDevice: jest.fn(),
   pop: jest.fn(),
 };
 

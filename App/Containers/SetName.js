@@ -44,7 +44,7 @@ export const verifyName = kidName => {
   return false;
 };
 
-const SetName = ({ onPress, onNameChanged }) => (
+const SetName = ({ kidName, onPress, onNameChanged }) => (
   <Background>
     <View style={style.container}>
       <HeaderText>{I18n.t('setName.header')}</HeaderText>
@@ -58,6 +58,7 @@ const SetName = ({ onPress, onNameChanged }) => (
           </Text>
 
           <TextInput
+            value={kidName}
             refFunc={ref => {
               this.textInput = ref;
             }}
@@ -79,6 +80,7 @@ const SetName = ({ onPress, onNameChanged }) => (
 SetName.propTypes = {
   onNameChanged: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
+  kidName: PropTypes.string,
 };
 
 const mapStateToProps = state => {
@@ -95,7 +97,7 @@ export const mergeProps = ({ kidName, kidUUID }, { dispatch }) => ({
   onPress: () => {
     if (!verifyName(kidName)) return null;
 
-    Actions.deviceSetup();
+    Actions.checkForDevice();
     return dispatch(persistKid()).then(() => dispatch(watchKid()));
   },
   onNameChanged: name => dispatch(setKidName(name, kidUUID)),

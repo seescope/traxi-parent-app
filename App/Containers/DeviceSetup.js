@@ -162,6 +162,7 @@ const DeviceSetup = (
 
     <View style={styles.imageContainer}>
       <Animatable.Image
+        useNativeDriver
         resizeMode="contain"
         animation="bounceInUp"
         style={styles.image}
