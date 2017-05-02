@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Image, Text, View, Alert, Keyboard } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Actions } from 'react-native-router-flux';
 
@@ -34,19 +34,6 @@ const style = {
   deviceImage: {
     margin: 16,
   },
-};
-
-// More than one character, excluding spaces.
-const isValid = kidName => kidName.replace(' ', '').length > 1;
-
-export const verifyName = kidName => {
-  Keyboard.dismiss();
-  if (isValid(kidName)) {
-    return true;
-  }
-
-  Alert.alert('Please enter your child\'s name');
-  return false;
 };
 
 const CheckForDevice = ({ kidName }) => (
