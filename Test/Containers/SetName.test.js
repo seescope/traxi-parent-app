@@ -79,7 +79,7 @@ it('persists the kid and navigates to the next screen onPress', () => {
   );
 
   return onPress(TEST_KID_NAME).then(() => {
-    expect(Actions.deviceSetup).toHaveBeenCalled();
+    expect(Actions.checkForDevice).toHaveBeenCalled();
     expect(mockPersistKid).toHaveBeenCalled();
     expect(mockWatchKid).toHaveBeenCalled();
   });

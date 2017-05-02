@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <SendReminder> component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "marginTop": 32,
+        "paddingTop": 18,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#545454",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "paddingHorizontal": 55,
+          "textAlign": "center",
+        }
+      }
+    >
+      Get a reminder
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 16,
+        }
+      }
+    />
+    <View
+      elevation={6}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
+          },
+          Object {
+            "alignItems": "center",
+            "marginTop": 32,
+            "paddingTop": 18,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        Not ready yet? Enter your email address below and we’ll send you reminder for you to finish setting up
+         
+        John
+        ’s device tomorrow.
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        }
+      />
+      <View>
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          keyboardType="email-address"
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholderTextColor="rgba(75, 73, 73, 0.8)"
+          secureTextEntry={undefined}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "borderRadius": 4,
+              "color": "rgba(75, 73, 73, 1)",
+              "fontFamily": "Raleway-Regular",
+              "height": 32,
+              "marginTop": 4,
+              "paddingHorizontal": 8,
+              "width": 686,
+            }
+          }
+          underlineColorAndroid="#448AFF"
+          value={undefined}
+        />
+        <View
+          style={
+            Object {
+              "backgroundColor": "#448AFF",
+              "height": 2,
+              "marginBottom": 16,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": 32,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 16,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#448AFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }
+        >
+          Remind me tomorrow
+           
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

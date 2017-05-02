@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <SetName> component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "marginTop": 32,
+        "paddingTop": 18,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#545454",
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 26,
+          "paddingHorizontal": 55,
+          "textAlign": "center",
+        }
+      }
+    >
+      Get 
+      John Bobson
+      's device now
+    </Text>
+    <Image
+      animation="bounceInLeft"
+      source={1}
+      style={
+        Object {
+          "margin": 16,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 16,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        To start monitoring
+         
+        John Bobson
+        's Internet activity you're going to need to get their smartphone or tablet now.
+         
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+          }
+        }
+      >
+        If you don't have it now, we can send you an email tomorrow to remind you to come back and start monitoring
+         
+        John Bobson
+        's device.
+      </Text>
+    </View>
+    <View
+      animation="bounceIn"
+      delay={500}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+          "justifyContent": "flex-end",
+          "marginTop": 32,
+        }
+      }
+      useNativeDriver={true}
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 16,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#448AFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 20,
+            }
+          }
+        >
+          I'm ready
+           
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 16,
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#448AFF",
+              "fontFamily": "Raleway-Regular",
+              "fontSize": 14,
+            }
+          }
+        >
+          Not ready yet
+           
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

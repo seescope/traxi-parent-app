@@ -28,7 +28,7 @@
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
     "react-native-animatable": "^0.6.1",
     "react-native-billing": "https://github.com/traxicorp/react-native-billing",
-    "react-native-code-push": "latest",
+    "react-native-code-push": "^2.0.2-beta",
     "react-native-contacts": "latest",
     "react-native-fabric": "^0.4.1",
     "react-native-i18n": "^1.0.0",
@@ -52,7 +52,8 @@
     "redux-persist": "^4.6.0",
     "redux-segment": "^1.5.0",
     "redux-thunk": "^2.1.0",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "validator": "^7.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
