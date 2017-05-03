@@ -85,7 +85,7 @@ export const trackingMiddleware = store =>
       if (action.type === 'NEXT_STEP') {
         const { setupState } = store.getState();
         const { step } = setupState;
-        Analytics.track('Went forward in walkthrough', { currentStep: step });
+        Analytics.track('Advanced Through Walkthrough', { currentStep: step });
         return next(action);
       }
 
@@ -93,30 +93,30 @@ export const trackingMiddleware = store =>
         const { kid } = action;
         const { deviceType, installed } = kid;
         if (deviceType !== 'unknown' && !installed) {
-          Analytics.track('Verified device', kid);
+          Analytics.track('Verified Device', kid);
         }
         if (deviceType !== 'unknown' && installed) {
-          Analytics.track('Completed setup', kid);
+          Analytics.track('Completed Setup', kid);
         }
         return next(action);
       }
 
       if (action.type === 'BEGIN_SETUP') {
         const { kidUUID, setupID } = action;
-        Analytics.track('Started setup', { kidUUID, setupID });
+        Analytics.track('Started Setup', { kidUUID, setupID });
         return next(action);
       }
 
       if (action.type === 'BEGIN_DEEPLINK_SETUP') {
         const { parent, kid } = store.getState();
-        Analytics.track('Started deeplink setup', { parent, kid });
+        Analytics.track('Started Deeplink Setup', { parent, kid });
         return next(action);
       }
 
       if (action.type === 'PREVIOUS_STEP') {
         const { setupState } = store.getState();
         const { step } = setupState;
-        Analytics.track('Went backwards in walkthrough', { currentStep: step });
+        Analytics.track('Went Back in Walkthrough', { currentStep: step });
         return next(action);
       }
 
