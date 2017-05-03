@@ -23,7 +23,7 @@
     "moment": "^2.13.0",
     "react": "16.0.0-alpha.6",
     "react-addons-pure-render-mixin": "^15.5.2",
-    "react-native": "^0.43.4",
+    "react-native": "^0.44.0",
     "react-native-ab": "https://github.com/traxicorp/react-native-ab",
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
     "react-native-animatable": "^0.6.1",
