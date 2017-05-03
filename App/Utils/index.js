@@ -7,7 +7,6 @@ import * as Firebase from 'firebase';
 import { BackAndroid, Linking, AsyncStorage, Platform } from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
-import InAppBilling from 'react-native-billing';
 import { Actions } from 'react-native-router-flux';
 
 export const firstName = name => name && name.split(' ')[0];
@@ -136,11 +135,6 @@ export const experimentViewed = variantName => {
     price: variantName,
   });
 };
-
-export const handleBilling = price =>
-  InAppBilling.open()
-    .then(() => InAppBilling.subscribe(price))
-    .then(() => InAppBilling.close());
 
 export const sendPhoneNumberToSlack = phoneNumber =>
   fetch(

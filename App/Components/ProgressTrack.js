@@ -4,7 +4,7 @@ import { WHITE, LIGHT_GREY, TRANSPARENT } from '../Constants/Colours';
 
 const TRACK_COLOUR = LIGHT_GREY;
 const TRACK_THICKNESS = 4;
-const STAGES = [0, 1, 2, 3, 4];
+const STAGES = [0, 1, 2, 3];
 
 const containerStyle = {
   height: 32,

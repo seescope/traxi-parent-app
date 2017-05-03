@@ -20,13 +20,11 @@ const unknownInstructions = (step, kidName, setupID) => {
     `Waiting for ${kidName} to enter ${setupID}...`,
     '',
     '',
-    '',
   ];
   return instructions[step];
 };
 const iosInstructions = (step, kidName) => {
   const instructions = [
-    '',
     'Tap the "Install"\n button in the top right',
     'Tap the "Install"\n button again',
     'Tap "Done"',
@@ -36,22 +34,19 @@ const iosInstructions = (step, kidName) => {
 };
 const androidInstructions = (step, kidName, setupID) => {
   const instructions = [
-    '',
-    `Install traxi Child App \n on ${kidName}'s Android device`,
-    `Open traxi Child App \n on ${kidName}'s Android device`,
+    'Tap the "Next step" button and install traxi Child App',
+    `Open traxi Child App on ${kidName}'s Android device`,
     `Insert the code ${setupID} if needed, then tap "OK"`,
     `Waiting for ${kidName}'s Android device..`,
   ];
   return instructions[step];
 };
 const IOS_IMAGES = [
-  {},
   require('../Images/iphone-step-1.png'),
   require('../Images/iphone-step-2.png'),
   require('../Images/iphone-step-3.png'),
 ];
 const ANDROID_IMAGES = [
-  {},
   require('../Images/android-step-1.png'),
   require('../Images/android-step-2.png'),
   require('../Images/android-step-3.png'),
@@ -81,7 +76,7 @@ const imagePath = (step, deviceType) => {
   }
 };
 const isWaitingForDevice = (step, deviceType) =>
-  (step === 1 && deviceType === 'unknown') || step === 4;
+  (step === 0 && deviceType === 'unknown') || step === 2;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
