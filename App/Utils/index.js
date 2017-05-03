@@ -82,11 +82,34 @@ export const loggingMiddleware = store =>
 export const trackingMiddleware = store =>
   next =>
     action => {
-      // If this isn't a screen change, we're not interested.
       if (action.type === 'NEXT_STEP') {
         const { setupState } = store.getState();
         const { step } = setupState;
         Analytics.track('Went forward in walkthrough', { currentStep: step });
+        return next(action);
+      }
+
+      if (action.type === 'KID_UPDATED') {
+        const { kid } = action;
+        const { deviceType, installed } = kid;
+        if (deviceType !== 'unknown' && !installed) {
+          Analytics.track('Verified device', kid);
+        }
+        if (deviceType !== 'unknown' && installed) {
+          Analytics.track('Completed setup', kid);
+        }
+        return next(action);
+      }
+
+      if (action.type === 'BEGIN_SETUP') {
+        const { kidUUID, setupID } = action;
+        Analytics.track('Started setup', { kidUUID, setupID });
+        return next(action);
+      }
+
+      if (action.type === 'BEGIN_DEEPLINK_SETUP') {
+        const { parent, kid } = store.getState();
+        Analytics.track('Started deeplink setup', { parent, kid });
         return next(action);
       }
 
@@ -101,7 +124,6 @@ export const trackingMiddleware = store =>
       if (action.type === 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
         const { scene } = action;
         Analytics.screen(scene.name);
-
         return next(action);
       }
 
