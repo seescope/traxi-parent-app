@@ -177,7 +177,6 @@ dependencies {
     compile project(':react-native-i18n')
     compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
-    compile project(':react-native-billing')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')
     compile project(':react-native-fabric')
@@ -185,7 +184,6 @@ dependencies {
     compile project(':react-native-image-picker')
     compile project(':react-native-svg')
     compile project(':react-native-material-kit')
-    compile project(':react-native-contacts')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
 

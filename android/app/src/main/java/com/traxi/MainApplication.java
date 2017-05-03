@@ -7,7 +7,6 @@ import com.facebook.react.ReactApplication;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.robinpowered.react.Intercom.IntercomPackage;
-import com.idehub.Billing.InAppBillingBridgePackage;
 import com.smore.RNSegmentIOAnalytics.RNSegmentIOAnalyticsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.smixx.fabric.FabricPackage;
@@ -29,7 +28,6 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 // Custom packages.
-import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactPackage;
@@ -67,7 +65,6 @@ public class MainApplication extends Application implements ReactApplication {
             new ReactNativeOneSignalPackage(),
             new ReactNativeI18n(),
             new IntercomPackage(),
-            new InAppBillingBridgePackage(),
             new RNSegmentIOAnalyticsPackage("7FVcLGkqV6zCPqN4oiy4ZK8HjWoNafrW"),
             new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG),
             new FabricPackage(),
