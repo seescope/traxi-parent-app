@@ -15,7 +15,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Analytics/SEGAnalytics.h>
-#import <React/RCTPushNotificationManager.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @import Firebase;
 @import Intercom;
@@ -62,16 +62,30 @@
 
   // OneSignal
   self.oneSignal = [[RCTOneSignal alloc] initWithLaunchOptions:launchOptions appId:@"d5fdb2cf-81c7-4dca-a33b-70dd9ab9fa35" settings:@{kOSSettingsKeyAutoPrompt: @false}];
+  
+  // Facebook SDK
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+                           didFinishLaunchingWithOptions:launchOptions];
 
   return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-  return [RCTLinkingManager application:application openURL:url
-                      sourceApplication:sourceApplication annotation:annotation];
-}
+  {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation]
+    || [RCTLinkingManager application:application
+                              openURL:url
+                    sourceApplication:sourceApplication
+                           annotation:annotation];
+  }
+  
+  - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+  }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
@@ -90,5 +104,8 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification {
   [RCTOneSignal didReceiveRemoteNotification:notification];
 }
+  
+
+
 
 @end

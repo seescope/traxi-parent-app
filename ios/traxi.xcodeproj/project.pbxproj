@@ -54,6 +54,8 @@
 		C309AB571DCC538900FDCA63 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C309AB561DCC538900FDCA63 /* NotificationManager.m */; };
 		C32024B91DCC1F5F0084FE8F /* Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = C32024B81DCC1F5F0084FE8F /* Authentication.m */; };
 		C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C336B4411E024EE2005D6F24 /* libRCTAnimation.a */; };
+		C34C75091EC2B23C0073E3BD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C75071EC2B23C0073E3BD /* Bolts.framework */; };
+		C34C750A1EC2B23C0073E3BD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C75081EC2B23C0073E3BD /* FBSDKCoreKit.framework */; };
 		C3DCDCCA1DCC8DF1009091E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3DCDCC91DCC8DF1009091E8 /* GoogleService-Info.plist */; };
 		C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FB10911D06A85800F1B2C9 /* libc++.tbd */; };
 		D57ABCB2EABD4F65BA846FF3 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 814D063510A34701B6717B73 /* libReact.a */; };
@@ -418,6 +420,8 @@
 		C32024A81DCC1F210084FE8F /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		C32024B81DCC1F5F0084FE8F /* Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authentication.m; sourceTree = "<group>"; };
 		C336B4371E024EE2005D6F24 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		C34C75071EC2B23C0073E3BD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C34C75081EC2B23C0073E3BD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C39534A51DE05607008E97F0 /* traxi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = traxi.entitlements; path = traxi/traxi.entitlements; sourceTree = "<group>"; };
 		C3DCDCC91DCC8DF1009091E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3FB10911D06A85800F1B2C9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -441,6 +445,7 @@
 				5E039ABB1E5BFC6C00B7A0E6 /* libRCTPushNotification.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */,
+				C34C75091EC2B23C0073E3BD /* Bolts.framework in Frameworks */,
 				4C83FEB6C32DE8E9F9E3E729 /* libPods-traxi.a in Frameworks */,
 				C3FB10921D06A85800F1B2C9 /* libc++.tbd in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -450,6 +455,7 @@
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
+				C34C750A1EC2B23C0073E3BD /* FBSDKCoreKit.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				3464D6CD68154D93924EF9C9 /* libBVLinearGradient.a in Frameworks */,
@@ -708,6 +714,8 @@
 		875F757D8C9F124ACC2DD612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C34C75071EC2B23C0073E3BD /* Bolts.framework */,
+				C34C75081EC2B23C0073E3BD /* FBSDKCoreKit.framework */,
 				C3FB10911D06A85800F1B2C9 /* libc++.tbd */,
 				6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */,
 				819D939B878B492E9D03D874 /* libz.tbd */,
