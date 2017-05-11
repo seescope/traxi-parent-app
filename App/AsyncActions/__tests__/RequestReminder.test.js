@@ -26,10 +26,10 @@ describe('Request Reminder', () => {
 
     return store.dispatch(requestReminder()).then(() => {
       expect(Analytics.track).toHaveBeenCalledWith('Reminder requested', {
-        email: 'enakudesu@gmail.com',
         kidName: 'Test Kid',
       });
       expect(Analytics.identify).toHaveBeenCalledWith('abc-123', {
+        email: 'enakudesu@gmail.com',
         kidName: 'Test Kid',
       });
     });

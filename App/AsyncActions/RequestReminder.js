@@ -8,7 +8,7 @@ type Dispatch = () => void;
 type RootState = {
   kidsState: KidsState,
   parentState: ParentState,
-  setupState: SetupState,
+  setupState: SetupState
 };
 type GetState = () => RootState;
 
@@ -24,10 +24,9 @@ export default () =>
     const { name } = kidsState[kidUUID];
 
     Analytics.track('Reminder requested', {
-      email,
       kidName: name,
     });
-    Analytics.identify(UUID, { kidName: name });
+    Analytics.identify(UUID, { kidName: name, email });
 
     return Promise.resolve({
       type: 'REMINDER_REQUESTED',
