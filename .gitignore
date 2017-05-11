@@ -63,3 +63,6 @@ ios/Pods/Headers/
 ios/Pods/Target Support Files
 
 ios/AppStore_com.traxi.app.mobileprovision
+
+# JUnit
+junit.xml
