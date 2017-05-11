@@ -10,7 +10,8 @@
     "lint": "eslint App Test"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testResultsProcessor": "./node_modules/jest-junit"
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -75,6 +76,7 @@
     "flow-bin": "^0.44.0",
     "form-data": "^2.1.2",
     "jest": "^19.0.2",
+    "jest-junit": "^1.5.1",
     "node-fetch": "^1.6.3",
     "prettier": "^0.22.0",
     "react-dom": "15.0.2",
