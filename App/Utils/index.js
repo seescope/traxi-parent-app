@@ -4,7 +4,13 @@
 import lodash from 'lodash';
 import moment from 'moment';
 import * as Firebase from 'firebase';
-import { BackAndroid, Linking, AsyncStorage, Platform } from 'react-native';
+import {
+  Dimensions,
+  BackAndroid,
+  Linking,
+  AsyncStorage,
+  Platform,
+} from 'react-native';
 import { Crashlytics } from 'react-native-fabric';
 import Analytics from 'react-native-analytics';
 import { Actions } from 'react-native-router-flux';
@@ -81,6 +87,9 @@ export const loggingMiddleware = store =>
 export const trackingMiddleware = store =>
   next =>
     action => {
+      // Don't track in debug.
+      if (__DEV__) return next(action);
+
       if (action.type === 'NEXT_STEP') {
         const { setupState } = store.getState();
         const { step } = setupState;
@@ -144,7 +153,7 @@ export const sendPhoneNumberToSlack = phoneNumber =>
       body: JSON.stringify({
         text: `Reminder received! ${phoneNumber}`,
       }),
-    },
+    }
   )
     .then(res => res.text())
     .then(body => {
@@ -215,3 +224,6 @@ export const backButtonHandler = store => {
 
 export const cleanObjectForFirebase = object =>
   lodash.omitBy(object, lodash.isNil);
+
+const { height } = Dimensions.get('window');
+export const isSmallScreen = height < 481;

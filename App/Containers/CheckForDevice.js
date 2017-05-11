@@ -9,11 +9,10 @@ import Background from '../Components/Background';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { GREY } from '../Constants/Colours';
-import { isIOS } from '../Utils';
+import { isIOS, isSmallScreen } from '../Utils';
 
 const style = {
   container: {
-    marginTop: 32,
     paddingTop: 18,
     alignItems: 'center',
   },
@@ -22,22 +21,22 @@ const style = {
   },
   labelText: {
     fontFamily: 'Raleway-Regular',
-    fontSize: 14,
+    fontSize: isSmallScreen ? 12 : 14,
     color: GREY,
   },
   buttonsContainer: {
-    marginTop: 32,
     alignItems: 'center',
     justifyContent: isIOS ? 'flex-end' : 'center',
     flexDirection: isIOS ? 'column' : 'row',
   },
   deviceImage: {
-    margin: 16,
+    margin: isSmallScreen ? 8 : 16,
   },
 };
 
 const CheckForDevice = ({ kidName }) => (
   <Background>
+    <Spacing height={16} />
     <View style={style.container}>
       <HeaderText>Get {kidName}'s device now</HeaderText>
 
@@ -65,6 +64,8 @@ const CheckForDevice = ({ kidName }) => (
           's device.
         </Text>
       </View>
+
+      <Spacing height={16} />
 
       <Animatable.View
         useNativeDriver

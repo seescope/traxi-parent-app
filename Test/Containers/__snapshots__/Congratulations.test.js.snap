@@ -28,7 +28,6 @@ exports[`<Congratulations /> renders the Congratulations component 1`] = `
           "color": "#545454",
           "fontFamily": "Raleway-ExtraBold",
           "fontSize": 26,
-          "paddingHorizontal": 55,
           "textAlign": "center",
         }
       }
