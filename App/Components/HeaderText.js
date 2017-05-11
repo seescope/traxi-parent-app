@@ -1,16 +1,22 @@
 import React, { PropTypes } from 'react';
 import { Text } from 'react-native';
 import { GREY } from '../Constants/Colours';
-import { isIOS } from '../Utils';
+import { isIOS, isSmallScreen } from '../Utils';
+
+const fontSize = (() => {
+  if (isIOS && !isSmallScreen) return 26;
+  if (!isIOS && !isSmallScreen) return 24;
+
+  return 20;
+})();
 
 const headerStyle = style => {
   const defaultStyle = {
     fontFamily: 'Raleway-ExtraBold',
     color: GREY,
     textAlign: 'center',
-    fontSize: isIOS ? 26 : 24,
+    fontSize,
     backgroundColor: 'transparent',
-    paddingHorizontal: 55,
   };
 
   return { ...defaultStyle, ...style };

@@ -53,6 +53,7 @@ export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<any> => {
     const { kidsState, parentState } = getState();
 
+    // eslint-disable-next-line
     console.log('Booted! Initial state:', kidsState, parentState);
 
     const isInstalled = hasInstalledKids(kidsState);

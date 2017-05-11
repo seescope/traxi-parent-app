@@ -1,6 +1,6 @@
 import { Dimensions, PixelRatio, StyleSheet } from 'react-native';
 import { WHITE, TRANSPARENT, GREY } from '../Constants/Colours';
-import { isIOS } from '../Utils';
+import { isIOS, isSmallScreen } from '../Utils';
 
 const { width } = Dimensions.get('window');
 
@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   BODY_TEXT: {
     fontFamily: 'Raleway-Regular',
-    fontSize: 16,
+    fontSize: isSmallScreen ? 12 : 16,
     color: GREY,
     backgroundColor: TRANSPARENT,
     textAlign: 'left',

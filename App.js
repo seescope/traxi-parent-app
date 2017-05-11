@@ -40,8 +40,8 @@ export default class extends React.Component {
       undefined,
       compose(
         applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
-        autoRehydrate(),
-      ),
+        autoRehydrate()
+      )
     );
     persistStore(this.store, { storage: AsyncStorage }, () =>
       this.store.dispatch(bootApp()));
