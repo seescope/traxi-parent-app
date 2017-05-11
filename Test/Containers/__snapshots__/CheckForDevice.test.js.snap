@@ -12,8 +12,14 @@ exports[`renders the <SetName> component 1`] = `
   <View
     style={
       Object {
+        "height": 16,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
         "alignItems": "center",
-        "marginTop": 32,
         "paddingTop": 18,
       }
     }
@@ -28,7 +34,6 @@ exports[`renders the <SetName> component 1`] = `
           "color": "#545454",
           "fontFamily": "Raleway-ExtraBold",
           "fontSize": 26,
-          "paddingHorizontal": 55,
           "textAlign": "center",
         }
       }
@@ -97,6 +102,13 @@ exports[`renders the <SetName> component 1`] = `
       </Text>
     </View>
     <View
+      style={
+        Object {
+          "height": 16,
+        }
+      }
+    />
+    <View
       animation="bounceIn"
       delay={500}
       style={
@@ -104,7 +116,6 @@ exports[`renders the <SetName> component 1`] = `
           "alignItems": "center",
           "flexDirection": "column",
           "justifyContent": "flex-end",
-          "marginTop": 32,
         }
       }
       useNativeDriver={true}
