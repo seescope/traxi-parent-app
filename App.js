@@ -18,6 +18,7 @@ import {
   trackingMiddleware,
 } from './App/Utils';
 import bootApp from './App/AsyncActions/BootApp';
+// import impersonateParent from './App/AsyncActions/ImpersonateParent';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -43,8 +44,14 @@ export default class extends React.Component {
         autoRehydrate()
       )
     );
+
+    // Boot normally. Comment this out if testing.
     persistStore(this.store, { storage: AsyncStorage }, () =>
       this.store.dispatch(bootApp()));
+
+    // Uncomment to impersonate a parent for testing.
+    // this.store.dispatch(impersonateParent('64a8c2d9-7959-4a93-aa6c-89d7231d04c2'));
+    // console.warn('Impersonating parent 64a8c2d9-7959-4a93-aa6c-89d7231d04c2')
   }
 
   componentWillMount() {

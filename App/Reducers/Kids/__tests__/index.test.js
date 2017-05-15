@@ -2,6 +2,7 @@ import {
   beginSetup,
   beginDeeplinkSetup,
   profileMigrated,
+  impersonatedParent,
 } from '../../Parent/parentActions';
 import { setKidName, kidUpdated, setKidImage } from '../kidsActions';
 import reducer from '../index.js';
@@ -82,6 +83,16 @@ describe('Kids reducer', () => {
       const action = profileMigrated(undefined, TEST_KIDS);
 
       const { name } = reducer(undefined, action)['abc-123'];
+      expect(name).toEqual('Something');
+    });
+  });
+
+  describe('IMPERSONATED_PARENT', () => {
+    it('updates the kids state', () => {
+      const TEST_KIDS = { 'abc-123': { name: 'Something' } };
+      const action = impersonatedParent(undefined, TEST_KIDS);
+
+      const {name} = reducer(undefined, action)['abc-123'];
       expect(name).toEqual('Something');
     });
   });

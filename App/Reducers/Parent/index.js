@@ -15,6 +15,7 @@ export type ParentAction =
   | { type: 'BEGIN_DEEPLINK_SETUP', parent: ParentState }
   | { type: 'SET_EMAIL', email: string }
   | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
+  | { type: 'IMPERSONATED_PARENT', kids: KidsState, parent: ParentState }
   | { type: 'SET_PASSWORD', password: string };
 
 export const INITIAL_STATE = {
@@ -70,6 +71,9 @@ export default function parent(
       return action.parent;
     }
     case 'PROFILE_MIGRATED': {
+      return action.parent;
+    }
+    case 'IMPERSONATED_PARENT': {
       return action.parent;
     }
     default:
