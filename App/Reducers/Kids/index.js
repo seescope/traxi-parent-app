@@ -102,6 +102,9 @@ export default (
     case 'PROFILE_MIGRATED': {
       return action.kids;
     }
+    case 'IMPERSONATED_PARENT': {
+      return action.kids;
+    }
     default:
       return state;
   }

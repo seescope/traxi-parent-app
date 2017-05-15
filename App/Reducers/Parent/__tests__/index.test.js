@@ -67,8 +67,19 @@ describe('Parent reducer', () => {
       const TEST_PARENT = { name: 'Something' };
       const action = Actions.profileMigrated(TEST_PARENT);
 
+      const result = reducer(undefined, action);
       const { name } = reducer(undefined, action);
       expect(name).toEqual(TEST_PARENT.name);
     });
   });
+
+  describe('IMPERSONATED_PARENT', () => {
+    it('updates the parent state', () => {
+      const TEST_PARENT = { name: 'Something' };
+      const action = Actions.impersonatedParent(TEST_PARENT);
+
+      const parent = reducer(undefined, action);
+      expect(parent).toEqual(TEST_PARENT);
+    });
+  })
 });

@@ -1,5 +1,7 @@
 // @flow
-const API_GATEWAY_URL = 'https://23pzi40s6b.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=';
+const DEV_API_GATEWAY_URL = 'https://nvf4alj6hl.execute-api.ap-southeast-2.amazonaws.com/dev?UUIDs=';
+const PROD_API_GATEWAY_URL = 'https://23pzi40s6b.execute-api.ap-southeast-2.amazonaws.com/prod?UUIDs=';
+const API_GATEWAY_URL = __DEV__ ? DEV_API_GATEWAY_URL : PROD_API_GATEWAY_URL;
 import { logError } from '../Utils';
 import moment from 'moment';
 import lodash from 'lodash';

@@ -51,3 +51,11 @@ export function profileMigrated(
     kids,
   };
 }
+
+export function impersonatedParent(parent: ParentState, kids: KidsState) {
+  return {
+    type: 'IMPERSONATED_PARENT',
+    parent,
+    kids,
+  };
+}
