@@ -61,7 +61,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Hit OK to find your kids in your Address Book</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Hit "OK" to find a photo</string>
 	<key>UIAppFonts</key>
@@ -75,7 +75,6 @@
 		<string>MaterialIcons.ttf</string>
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
-		<string>Raleway-Bold.ttf</string>
 		<string>Raleway-ExtraBold.ttf</string>
 		<string>Raleway-Light.ttf</string>
 		<string>Raleway-Regular.ttf</string>

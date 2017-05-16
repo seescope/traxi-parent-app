@@ -171,28 +171,21 @@ android {
 }
 
 dependencies {
-    compile(project(':react-native-onesignal')) {
-      exclude group: 'com.google.android.gms'
-    }
+    compile project(':react-native-svg')
+    compile project(':react-native-onesignal')
     compile project(':react-native-i18n')
-    compile project(':react-native-sms-android')
     compile project(':react-native-intercom')
     compile project(':react-native-analytics')
     compile project(':react-native-code-push')
     compile project(':react-native-fabric')
     compile project(':react-native-randombytes')
     compile project(':react-native-image-picker')
-    compile project(':react-native-svg')
     compile project(':react-native-material-kit')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
 
     // Multidex
     compile 'com.android.support:multidex:1.0.1'
-
-    // Google
-    compile 'com.google.android.gms:play-services-auth:10.2.1'
-    compile 'com.google.android.gms:play-services-gcm:10.2.1'
 
     // React Native
     compile fileTree(dir: "libs", include: ["*.jar"])
@@ -207,19 +200,17 @@ dependencies {
     // Facebook
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 
-    // Firebase
-    compile 'com.google.firebase:firebase-core:10.2.1'
-    compile 'com.google.firebase:firebase-auth:10.2.1'
-
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;
     }
 
     // Intercom Push
-    compile('io.intercom.android:intercom-sdk-fcm:3.0.+') {
-      exclude group: 'io.intercom.android', module: 'intercom-sdk-base'
-      exclude group: 'com.google.android.gms'
-    }
+    // DISABLED! OneSignal interferes with Intercom. :- (
+    // compile('io.intercom.android:intercom-sdk-gcm:3.0.+') {
+    //   exclude group: 'io.intercom.android', module: 'intercom-sdk-base'
+    //   exclude group: 'com.google.android.gms'
+    //   exclude group: 'com.google.firebase'
+    // }
 }
 
 
@@ -229,6 +220,3 @@ task copyDownloadableDepsToLibs(type: Copy) {
   from configurations.compile
   into 'libs'
 }
-
-// Firebase
-apply plugin: 'com.google.gms.google-services'

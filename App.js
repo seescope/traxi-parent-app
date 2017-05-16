@@ -18,7 +18,7 @@ import {
   trackingMiddleware,
 } from './App/Utils';
 import bootApp from './App/AsyncActions/BootApp';
-// import impersonateParent from './App/AsyncActions/ImpersonateParent';
+import impersonateParent from './App/AsyncActions/ImpersonateParent';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -46,12 +46,13 @@ export default class extends React.Component {
     );
 
     // Boot normally. Comment this out if testing.
-    persistStore(this.store, { storage: AsyncStorage }, () =>
-      this.store.dispatch(bootApp()));
+    // persistStore(this.store, { storage: AsyncStorage }, () =>
+    //   this.store.dispatch(bootApp()));
 
     // Uncomment to impersonate a parent for testing.
-    // this.store.dispatch(impersonateParent('64a8c2d9-7959-4a93-aa6c-89d7231d04c2'));
-    // console.warn('Impersonating parent 64a8c2d9-7959-4a93-aa6c-89d7231d04c2')
+    const PARENT_UUID = '4276efa9-cdfe-4569-bc7d-705bcf7ad14b';
+    this.store.dispatch(impersonateParent(PARENT_UUID));
+    console.warn(PARENT_UUID);
   }
 
   componentWillMount() {
