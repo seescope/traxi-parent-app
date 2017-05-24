@@ -1,5 +1,7 @@
 // @flow
 import Analytics from 'react-native-analytics';
+import OneSignal from 'react-native-onesignal';
+
 import type { SetupState } from '../Reducers/Setup';
 import type { KidsState } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
@@ -27,6 +29,11 @@ export default () =>
       kidName: name,
     });
     Analytics.identify(UUID, { kidName: name, email });
+    OneSignal.sendTags({
+      UUID,
+      kidName: name,
+      email,
+    });
 
     return Promise.resolve({
       type: 'REMINDER_REQUESTED',

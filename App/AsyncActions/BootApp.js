@@ -7,10 +7,9 @@ import type { RootState } from '../Reducers';
 import type { KidsState } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import migrateDataFromPreviousVersion from './MigrateDataFromPreviousVersion';
+import userLoggedIn from './UserLoggedIn';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
-import Analytics from 'react-native-analytics';
-import Intercom from 'react-native-intercom';
 
 type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
@@ -36,19 +35,6 @@ const hasInstalledKids = (kidsState: KidsState): boolean => {
   return installed.includes(true) || statusProp.includes('INSTALLED');
 };
 
-const userLoggedIn = (getState: GetState): void => {
-  const { parentState } = getState();
-  const { UUID, name, email } = parentState;
-
-  Analytics.identify(UUID, {
-    name,
-    email,
-  });
-  Intercom.registerIdentifiedUser({
-    userId: UUID,
-  });
-};
-
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<any> => {
     const { kidsState, parentState } = getState();
@@ -62,14 +48,14 @@ export default () =>
     // The parent has configured at least one kid and completed setup
     if (isInstalled && completedSetup) {
       Actions.dashboard({ type: 'replace' });
-      userLoggedIn(getState);
+      dispatch(userLoggedIn());
       return dispatch(fetchReports());
     }
 
     // The parent has configured at least one kid but not completed setup
     if (isInstalled && !completedSetup) {
       Actions.congratulations({ type: 'replace' });
-      userLoggedIn(getState);
+      dispatch(userLoggedIn());
       return Promise.resolve();
     }
 
@@ -81,7 +67,7 @@ export default () =>
 
       return dispatch(migrateDataFromPreviousVersion(profile)).then(() => {
         dispatch(fetchReports());
-        userLoggedIn(getState);
+        dispatch(userLoggedIn());
         Actions.dashboard();
       });
     }

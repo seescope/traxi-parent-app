@@ -2,24 +2,22 @@ jest.mock('../CheckDeeplink', () =>
   () => dispatch => Promise.resolve(dispatch({ type: 'TEST_CHECK_DEEPLINK' })));
 jest.mock('../FetchReports', () =>
   () => dispatch => Promise.resolve(dispatch({ type: 'TEST_FETCH_REPORTS' })));
+jest.mock('../UserLoggedIn', () =>
+  () => dispatch => Promise.resolve(dispatch({ type: 'TEST_USER_LOGGED_IN' })));
 jest.mock('../MigrateDataFromPreviousVersion', () =>
   profile =>
     dispatch =>
       Promise.resolve(
-        dispatch({ type: 'TEST_MIGRATE_DATA_FROM_PREVIOUS_VERSION', profile }),
+        dispatch({ type: 'TEST_MIGRATE_DATA_FROM_PREVIOUS_VERSION', profile })
       ));
 import { AsyncStorage } from 'react-native';
 import bootApp from '../BootApp';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Actions } from 'react-native-router-flux';
-import Analytics from 'react-native-analytics';
-import Intercom from 'react-native-intercom';
 
 describe('Boot App', () => {
   beforeEach(() => {
-    Analytics.identify.mockClear();
-    Intercom.registerIdentifiedUser.mockClear();
     AsyncStorage.getItem = () => Promise.resolve();
   });
 
@@ -47,14 +45,8 @@ describe('Boot App', () => {
       const secondAction = store.getActions()[1];
       expect(secondAction.type).toEqual('TEST_FETCH_REPORTS');
 
-      // These must be undefined since our action can't mutate the state of the store
-      expect(Analytics.identify).toHaveBeenCalledWith(undefined, {
-        name: undefined,
-        email: undefined,
-      });
-      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
-        userId: undefined,
-      });
+      const thirdAction = store.getActions()[2];
+      expect(thirdAction.type).toEqual('TEST_USER_LOGGED_IN');
 
       expect(Actions.dashboard).toHaveBeenCalled();
     });
@@ -80,15 +72,11 @@ describe('Boot App', () => {
 
     return store.dispatch(bootApp()).then(() => {
       const action = store.getActions()[0];
-      expect(Analytics.identify).toHaveBeenCalledWith('abc-123', {
-        name: 'Jeff',
-        email: 'test@email.com',
-      });
-      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
-        userId: 'abc-123',
-      });
+      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
 
-      expect(action.type).toEqual('TEST_FETCH_REPORTS');
+      const secondAction = store.getActions()[1];
+      expect(secondAction.type).toEqual('TEST_FETCH_REPORTS');
+
       expect(Actions.dashboard).toHaveBeenCalled();
     });
   });
@@ -129,13 +117,8 @@ describe('Boot App', () => {
 
     return store.dispatch(bootApp()).then(() => {
       expect(Actions.congratulations).toHaveBeenCalled();
-      expect(Intercom.registerIdentifiedUser).toHaveBeenCalledWith({
-        userId: 'abc-123',
-      });
-      expect(Analytics.identify).toHaveBeenCalledWith('abc-123', {
-        name: undefined,
-        email: undefined,
-      });
+      const action = store.getActions()[0];
+      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
     });
   });
 });
