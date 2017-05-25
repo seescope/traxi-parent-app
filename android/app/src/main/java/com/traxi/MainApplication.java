@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import com.horcrux.svg.SvgPackage;
 import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.robinpowered.react.Intercom.IntercomPackage;
@@ -12,7 +13,6 @@ import com.microsoft.codepush.react.CodePush;
 import com.smixx.fabric.FabricPackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.horcrux.svg.SvgPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -62,6 +62,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new SvgPackage(),
             new ReactNativeOneSignalPackage(),
             new ReactNativeI18n(),
             new IntercomPackage(),
@@ -70,11 +71,9 @@ public class MainApplication extends Application implements ReactApplication {
             new FabricPackage(),
             new RandomBytesPackage(),
             new ImagePickerPackage(),
-            new SvgPackage(),
             new ReactMaterialKitPackage(),
-        new VectorIconsPackage(),
-        new LinearGradientPackage(),
-        new AuthenticationPackage()
+		        new VectorIconsPackage(),
+		        new LinearGradientPackage()
       );
     }
   };

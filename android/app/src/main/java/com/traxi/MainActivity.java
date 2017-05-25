@@ -1,7 +1,6 @@
 package com.traxi;
 
 import com.facebook.react.ReactActivity;
-import com.rhaker.reactnativesmsandroid.RNSmsAndroidPackage;
 import android.os.Bundle;
 import android.content.Intent;
 import com.facebook.appevents.AppEventsLogger;
@@ -12,13 +11,13 @@ import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 
 // Mixpanel
-import com.mixpanel.android.mpmetrics.MixpanelAPI; 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 public class MainActivity extends ReactActivity {
     @Override
-    protected void onResume() { 
-      super.onResume(); 
-      AppEventsLogger.activateApp(this); 
+    protected void onResume() {
+      super.onResume();
+      AppEventsLogger.activateApp(this);
     }
 
     @Override
@@ -29,11 +28,6 @@ public class MainActivity extends ReactActivity {
       Fabric.with(this, new Crashlytics());
 
       Intent startingIntent = this.getIntent();
-      Bundle isPush = startingIntent.getBundleExtra("push");
-
-      if (isPush != null) {
-        Log.d("traxi", "PUSH, MOTHERFUCKER");
-      }
     }
 
     /**

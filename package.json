@@ -40,7 +40,6 @@
     "react-native-randombytes": "^2.1.0",
     "react-native-router-flux": "3.38.0",
     "react-native-router-redux": "^0.2.2",
-    "react-native-sms-android": "^0.4.1",
     "react-native-svg": "^5.1.8",
     "react-native-swiper": "^1.4.6",
     "react-native-timer": "^1.1.3",
