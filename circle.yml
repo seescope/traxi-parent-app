@@ -8,6 +8,8 @@ dependencies:
 
 test:
   override:
+    - yarn flow
+    - yarn eslint App
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
     - yarn test -- --runInBand
     - cp junit.xml $CIRCLE_TEST_REPORTS/junit/
