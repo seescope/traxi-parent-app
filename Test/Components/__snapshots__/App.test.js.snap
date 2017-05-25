@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the root compontent correctly 1`] = `
+<View>
+  <View
+    component={[Function]}
+    initial={true}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+  />
+  <View
+    component={[Function]}
+    initial={false}
+  />
+</View>
+`;

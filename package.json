@@ -29,6 +29,7 @@
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
     "react-native-animatable": "^0.6.1",
     "react-native-code-push": "^2.0.2-beta",
+    "react-native-device-info": "^0.10.2",
     "react-native-fabric": "^0.4.1",
     "react-native-i18n": "^1.0.0",
     "react-native-image-picker": "^0.26.2",
