@@ -3,10 +3,10 @@ import type { ParentAction, ParentState } from './index';
 import type { Kid, KidsState } from '../Kids';
 import uuid from 'uuid';
 
-export function beginSetup(): ParentAction {
+export function beginSetup(UUID: ?string): ParentAction {
   return {
     type: 'BEGIN_SETUP',
-    parentUUID: uuid.v4(),
+    parentUUID: UUID || uuid.v4(),
     kidUUID: uuid.v4(),
     setupID: Math.round(Math.random() * 10000), // 4 digit number
   };
@@ -43,7 +43,7 @@ export function setEmail(email: string): ParentAction {
 
 export function profileMigrated(
   parent: ParentState,
-  kids: KidsState,
+  kids: KidsState
 ): ParentAction {
   return {
     type: 'PROFILE_MIGRATED',
