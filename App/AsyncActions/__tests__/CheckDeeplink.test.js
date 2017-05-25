@@ -35,7 +35,7 @@ describe('CheckDeeplink', () => {
     });
   });
 
-  test('If there is no initialURL, dispatch BEGIN_SETUP and navigate to Splash Screen', () => {
+  test('If there is no initialURL, dispatch BEGIN_SETUP and navigate to Splash Screen using a Parent UUID if there is one', () => {
     mockUUID = null;
 
     const mockStore = configureMockStore([thunk]);
@@ -51,6 +51,7 @@ describe('CheckDeeplink', () => {
 
     return store.dispatch(checkDeeplink()).then(() => {
       expect(store.getActions()[0].type).toEqual('BEGIN_SETUP');
+      expect(store.getActions()[0].parentUUID).toEqual('abc-123');
       expect(store.getActions()[1].type).toEqual('TEST_PERSIST_SETUP_ID');
       expect(store.getActions()[2].type).toEqual('TEST_USER_LOGGED_IN');
       expect(Actions.splashScreen).toHaveBeenCalled();

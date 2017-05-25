@@ -11,12 +11,21 @@ describe('Parent reducer', () => {
   });
 
   describe('BEGIN_SETUP', () => {
-    it('starts setting up the app', () => {
+    it('starts setting up the app with a randomly generated UUID', () => {
       const action = Actions.beginSetup();
 
       const { UUID, kids } = reducer(undefined, action);
       expect(kids[0]).toEqual(MOCK_UUID);
       expect(UUID).toEqual(MOCK_UUID);
+    });
+
+    it('starts setting up the app with a specified UUID', () => {
+      const SPECIFIC_UUID = 'this is a very specific UUID';
+      const action = Actions.beginSetup(SPECIFIC_UUID);
+
+      const { UUID, kids } = reducer(undefined, action);
+      expect(kids[0]).toEqual(MOCK_UUID);
+      expect(UUID).toEqual(SPECIFIC_UUID);
     });
   });
 

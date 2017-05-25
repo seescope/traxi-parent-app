@@ -6,12 +6,17 @@ export type ParentState = {
   UUID: ?string,
   email: ?string,
   kids: Array<string>,
-  password: ?string,
+  password: ?string
 };
 
 export type ParentAction =
   | { type: 'SET_PARENT_NAME', name: string }
-  | { type: 'BEGIN_SETUP', parentUUID: string, kidUUID: string }
+  | {
+      type: 'BEGIN_SETUP',
+      parentUUID: string,
+      kidUUID: string,
+      setupID: number
+    }
   | { type: 'BEGIN_DEEPLINK_SETUP', parent: ParentState }
   | { type: 'SET_EMAIL', email: string }
   | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
@@ -35,7 +40,7 @@ export const INITIAL_STATE = {
 
 export default function parent(
   state: ParentState = INITIAL_STATE,
-  action: ParentAction,
+  action: ParentAction
 ): ParentState {
   switch (action.type) {
     case 'BEGIN_SETUP': {

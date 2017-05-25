@@ -7,13 +7,21 @@ import { beginSetup } from '../Reducers/Parent/parentActions';
 import persistSetupID from './PersistSetupID';
 import userLoggedIn from './UserLoggedIn';
 
+import type { ParentState } from '../Reducers/Parent';
+
 type Dispatch = () => void;
+type GetState = () => {
+  parentState: ParentState
+};
 
 export default () =>
-  (dispatch: Dispatch) =>
+  (dispatch: Dispatch, getState: GetState) =>
     getUUIDFromDeeplink().then((UUIDFromDeeplink: string) => {
       if (!UUIDFromDeeplink) {
-        dispatch(beginSetup());
+        const { parentState } = getState();
+        const { UUID } = parentState;
+
+        dispatch(beginSetup(UUID));
         dispatch(persistSetupID());
         dispatch(userLoggedIn());
 
