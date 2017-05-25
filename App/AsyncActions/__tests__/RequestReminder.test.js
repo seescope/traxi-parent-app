@@ -2,6 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import requestReminder from '../RequestReminder';
 import Analytics from 'react-native-analytics';
+import OneSignal from 'react-native-onesignal';
 
 const TEST_STATE = {
   parentState: {
@@ -9,13 +10,13 @@ const TEST_STATE = {
     email: 'enakudesu@gmail.com',
   },
   kidsState: {
-    'abc-123': {
+    'abc-456': {
       name: 'Test Kid',
     },
   },
   setupState: {
     setupID: 1234,
-    kidUUID: 'abc-123',
+    kidUUID: 'abc-456',
   },
 };
 
@@ -29,6 +30,11 @@ describe('Request Reminder', () => {
         kidName: 'Test Kid',
       });
       expect(Analytics.identify).toHaveBeenCalledWith('abc-123', {
+        email: 'enakudesu@gmail.com',
+        kidName: 'Test Kid',
+      });
+      expect(OneSignal.sendTags).toHaveBeenCalledWith({
+        UUID: 'abc-123',
         email: 'enakudesu@gmail.com',
         kidName: 'Test Kid',
       });
