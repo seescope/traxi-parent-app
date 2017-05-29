@@ -55,7 +55,6 @@ describe('Begin Deeplink Setup', () => {
     mockParent = undefined;
 
     return store.dispatch(beginDeeplinkSetup('abc-123')).then(() => {
-      const action = store.getActions()[0];
       expect(store.getActions()[0].type).toEqual('BEGIN_SETUP');
       expect(store.getActions()[0].parentUUID).toEqual('abc-123');
       expect(store.getActions()[1].type).toEqual('TEST_PERSIST_SETUP_ID');
