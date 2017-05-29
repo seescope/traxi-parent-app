@@ -29,6 +29,5 @@ export default () =>
         return null;
       }
 
-      dispatch(userLoggedIn());
       return dispatch(beginDeeplinkSetup(UUIDFromDeeplink));
     });

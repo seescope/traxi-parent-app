@@ -27,10 +27,7 @@ describe('CheckDeeplink', () => {
     const store = mockStore(undefined);
 
     return store.dispatch(checkDeeplink()).then(() => {
-      const action = store.getActions()[0];
-      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
-
-      const secondAction = store.getActions()[1];
+      const secondAction = store.getActions()[0];
       expect(secondAction.type).toEqual('TEST_BEGIN_DEEPLINK_SETUP');
     });
   });
