@@ -29,7 +29,7 @@ import type { SetupState } from '../Reducers/Setup';
 type RootState = {
   parentState: ParentState,
   kidsState: KidsState,
-  setupState: SetupState,
+  setupState: SetupState
 };
 
 type Props = {
@@ -39,13 +39,13 @@ type Props = {
   onPasswordChanged: () => {},
   onEmailChanged: () => {},
   onPress: () => {},
-  loading: boolean,
+  loading: boolean
 };
 
 type Fields = {
   name: string,
   email: string,
-  password: string,
+  password: string
 };
 
 type Dispatch = () => Promise<any>;
@@ -90,15 +90,17 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export const SetupCompletion = ({
-  onNameChanged,
-  onPasswordChanged,
-  onEmailChanged,
-  kidName,
-  email,
-  onPress,
-  loading,
-}: Props) => (
+export const SetupCompletion = (
+  {
+    onNameChanged,
+    onPasswordChanged,
+    onEmailChanged,
+    kidName,
+    email,
+    onPress,
+    loading,
+  }: Props
+) => (
   <ScrollView
     style={style.background}
     contentContainerStyle={style.outerContainer}
@@ -162,7 +164,7 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
       .then(() => dispatch(stoppedLoading()))
       .then(() => {
         OneSignal.registerForPushNotifications();
-        Actions.dashboard({ type: 'replace' });
+        Actions.dashboard({ type: 'reset' });
       })
       .catch(e => {
         dispatch(stoppedLoading());

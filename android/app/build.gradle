@@ -199,7 +199,7 @@ dependencies {
     compile 'com.mixpanel.android:mixpanel-android:4.+'
 
     // Facebook
-    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.facebook.android:facebook-android-sdk:4.22.1'
 
     compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
       transitive = true;
