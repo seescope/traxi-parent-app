@@ -90,17 +90,15 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export const SetupCompletion = (
-  {
-    onNameChanged,
-    onPasswordChanged,
-    onEmailChanged,
-    kidName,
-    email,
-    onPress,
-    loading,
-  }: Props,
-) => (
+export const SetupCompletion = ({
+  onNameChanged,
+  onPasswordChanged,
+  onEmailChanged,
+  kidName,
+  email,
+  onPress,
+  loading,
+}: Props) => (
   <ScrollView
     style={style.background}
     contentContainerStyle={style.outerContainer}
@@ -164,7 +162,7 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
       .then(() => dispatch(stoppedLoading()))
       .then(() => {
         OneSignal.registerForPushNotifications();
-        Actions.dashboard();
+        Actions.dashboard({ type: 'replace' });
       })
       .catch(e => {
         dispatch(stoppedLoading());
