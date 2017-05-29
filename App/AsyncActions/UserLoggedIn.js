@@ -18,7 +18,10 @@ export default () =>
     const { parentState } = getState();
     const { UUID, name, email } = parentState;
 
-    console.log(parentState);
+    // This should not happen.
+    if (!UUID) {
+      throw new Error('Error logging user in - UUID not found!');
+    }
 
     // No Analytics in __DEV__
     if (__DEV__) {
