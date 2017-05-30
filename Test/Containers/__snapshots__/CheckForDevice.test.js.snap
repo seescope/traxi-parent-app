@@ -44,10 +44,11 @@ exports[`renders the <SetName> component 1`] = `
     </Text>
     <Image
       animation="bounceInLeft"
+      resizeMode="contain"
       source={1}
       style={
         Object {
-          "margin": 16,
+          "height": 250,
         }
       }
     />

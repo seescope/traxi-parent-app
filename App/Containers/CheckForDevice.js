@@ -30,7 +30,7 @@ const style = {
     flexDirection: isIOS ? 'column' : 'row',
   },
   deviceImage: {
-    margin: isSmallScreen ? 8 : 16,
+    height: 250,
   },
 };
 
@@ -42,6 +42,7 @@ const CheckForDevice = ({ kidName }) => (
 
       <Animatable.Image
         animation="bounceInLeft"
+        resizeMode="contain"
         style={style.deviceImage}
         source={require('../Images/device_image.png')}
       />
