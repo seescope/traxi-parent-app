@@ -50,7 +50,7 @@ export default class extends React.Component {
       this.store.dispatch(bootApp()));
 
     // Uncomment to impersonate a parent for testing.
-    // const PARENT_UUID = '5ebc6300-a959-448b-b272-685b17bee7e5';
+    // const PARENT_UUID = 'c1e5153d-32cd-4c21-bfb7-5fc4bf32720a';
     // this.store.dispatch(impersonateParent(PARENT_UUID));
     // console.warn('Impersonating parent', PARENT_UUID);
   }

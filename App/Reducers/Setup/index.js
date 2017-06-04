@@ -7,14 +7,14 @@ export type SetupState = {
   setupID: ?number,
   deviceType: DeviceType,
   loading: boolean,
-  sceneName: string,
+  sceneName: string
 };
 
 export type SetupAction =
   | {
       type: 'BEGIN_SETUP',
       kidUUID: string,
-      setupID: number,
+      setupID: number
     }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'NEXT_STEP' }
@@ -34,14 +34,15 @@ const INITIAL_STATE = {
 // const INITIAL_STATE = {
 //   step: 0,
 //   kidUUID: 'abc-123',
-//   setupID: undefined,
-//   deviceType: 'unknown',
+//   setupID: 1234,
+//   deviceType: 'iPhone',
 //   loading: false,
+//   sceneName: 'loading',
 // };
 
 export default (
   state: SetupState = INITIAL_STATE,
-  action: SetupAction,
+  action: SetupAction
 ): SetupState => {
   switch (action.type) {
     case 'BEGIN_SETUP': {
