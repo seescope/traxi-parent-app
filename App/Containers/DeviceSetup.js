@@ -81,10 +81,10 @@ const getInstructionImage = (step, deviceType) => {
 };
 
 const getBackground = deviceType => {
-  if (deviceType === 'iPad' || deviceType === 'iPhone')
-    return require('../Images/iphone-background.png');
+  if (deviceType === 'Android')
+    return require('../Images/android-background.png');
 
-  return require('../Images/android-background.png');
+  return require('../Images/iphone-background.png');
 };
 
 // iphone background: 289 x 588
@@ -106,8 +106,8 @@ const imageDimensions = {
     width: androidWidth,
   },
   unknown: {
-    height: androidHeight,
-    width: androidWidth,
+    height: iPhoneHeight,
+    width: iPhoneWidth,
   },
   iPhone: {
     height: iPhoneHeight,
@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
   },
   instructionsContainer: {
     justifyContent: 'center',
+    paddingBottom: 16,
   },
   loader: {
     marginHorizontal: 38,
@@ -190,7 +191,7 @@ const DeviceSetup = (
 
       <View style={styles.contentContainer}>
         <View style={styles.instructionsContainer}>
-          <HeaderText className="InstructionHeader">
+          <HeaderText>
             {instructionText(step, kidName, deviceType, setupID)}
           </HeaderText>
         </View>
