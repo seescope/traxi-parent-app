@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { View, Dimensions, StyleSheet } from 'react-native';
+import { Image, View, Dimensions, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import Intercom from 'react-native-intercom';
@@ -23,21 +23,21 @@ const unknownInstructions = (step, kidName, setupID) => {
   ];
   return instructions[step];
 };
-const iosInstructions = (step, kidName) => {
+const iosInstructions = (step, kidName, deviceType) => {
   const instructions = [
     'Tap the "Install"\n button in the top right',
     'Tap the "Install"\n button again',
     'Tap "Done"',
-    `Waiting for ${kidName}'s device..`,
+    `Connecting to ${kidName}'s ${deviceType}..`,
   ];
   return instructions[step];
 };
 const androidInstructions = (step, kidName, setupID) => {
   const instructions = [
-    'Tap the "Next step" button and install traxi Child App',
-    `Open traxi Child App on ${kidName}'s Android device`,
-    `Insert the code ${setupID} if needed, then tap "OK"`,
-    `Waiting for ${kidName}'s Android device..`,
+    'Tap the "Next step" button',
+    'Tap the "Install" button',
+    'Tap the "Open" button',
+    `Enter ${setupID}, then tap "OK"`,
   ];
   return instructions[step];
 };
@@ -45,25 +45,29 @@ const IOS_IMAGES = [
   require('../Images/iphone-step-1.png'),
   require('../Images/iphone-step-2.png'),
   require('../Images/iphone-step-3.png'),
+  require('../Images/iphone-step-4.png'),
 ];
 const ANDROID_IMAGES = [
   require('../Images/android-step-1.png'),
   require('../Images/android-step-2.png'),
   require('../Images/android-step-3.png'),
+  require('../Images/android-step-4.png'),
 ];
 const instructionText = (step, kidName, deviceType, setupID) => {
   switch (deviceType) {
     case 'iPhone':
-      return iosInstructions(step, kidName);
+      return iosInstructions(step, kidName, deviceType);
     case 'Android':
       return androidInstructions(step, kidName, setupID);
     case 'iPad':
-      return iosInstructions(step);
+      return iosInstructions(step, kidName, deviceType);
     default:
       return unknownInstructions(step, kidName, setupID);
   }
-}; // ReactNative forces us to be explicit about image locations.
-const imagePath = (step, deviceType) => {
+};
+
+// ReactNative forces us to be explicit about image locations.
+const getInstructionImage = (step, deviceType) => {
   switch (deviceType) {
     case 'iPhone':
       return IOS_IMAGES[step];
@@ -75,43 +79,98 @@ const imagePath = (step, deviceType) => {
       return require('../Images/web-step.png');
   }
 };
+
+const getBackground = deviceType => {
+  if (deviceType === 'iPad' || deviceType === 'iPhone')
+    return require('../Images/iphone-background.png');
+
+  return require('../Images/android-background.png');
+};
+
+// iphone background: 289 x 588
+// iphone image: 250 x 445
+// scaling = (250/289)
+
+// android background: 360 x 588
+// android image: 320 x 570
+
+const iPhoneHeight = height * (588 / height);
+const iPhoneWidth = width * (289 / width);
+
+const androidHeight = height * (588 / height);
+const androidWidth = width * (286 / width);
+
+const imageDimensions = {
+  Android: {
+    height: androidHeight,
+    width: androidWidth,
+  },
+  unknown: {
+    height: androidHeight,
+    width: androidWidth,
+  },
+  iPhone: {
+    height: iPhoneHeight,
+    width: iPhoneWidth,
+  },
+  iPad: {
+    height: iPhoneHeight,
+    width: iPhoneWidth,
+  },
+};
+
 const isWaitingForDevice = (step, deviceType) =>
-  (step === 0 && deviceType === 'unknown') || step === 2;
+  (step === 0 && deviceType === 'unknown') || step === 3;
+
+const getOuterImageStyle = deviceType => {
+  const { width: deviceWidth, height: deviceHeight } = imageDimensions[
+    deviceType
+  ];
+
+  return {
+    width: deviceWidth,
+    height: deviceHeight,
+    marginTop: -(deviceHeight * (1 / 3)),
+    top: deviceHeight * (1 / 3),
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 40,
+    justifyContent: 'space-between',
+    paddingTop: 32,
   },
-  image: {
-    width,
-    height,
-    marginTop: -(height / 2) + 15,
-    top: height / 2,
+  innerContainer: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  innerImage: {
+    left: -4 * (250 / width),
+    width: width * (254 / width),
+    height: height * (457 / height),
   },
   progressTrackContainer: {
     paddingBottom: 25,
   },
   contentContainer: {
-    flex: 1,
+    padding: 16,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   instructionsContainer: {
-    flex: 1,
     justifyContent: 'center',
   },
   loader: {
     marginHorizontal: 38,
   },
   buttonsContainer: {
-    flex: 1,
     alignItems: 'center',
-    alignSelf: 'center',
     justifyContent: isIOS ? 'flex-end' : 'center',
     flexDirection: isIOS ? 'column' : 'row',
-  },
-  imageContainer: {
-    flex: 2,
   },
 });
 const DeviceSetup = (
@@ -121,49 +180,54 @@ const DeviceSetup = (
     kidName,
     deviceType,
     setupID,
-  },
+  }
 ) => (
   <View style={styles.container}>
-    <View style={styles.progressTrackContainer}>
-      <ProgressTrack stage={step} width={width - 64} />
-    </View>
-
-    <View style={styles.contentContainer}>
-      <View style={styles.instructionsContainer}>
-        <HeaderText className="InstructionHeader">
-          {instructionText(step, kidName, deviceType, setupID)}
-        </HeaderText>
+    <View style={styles.innerContainer}>
+      <View style={styles.progressTrackContainer}>
+        <ProgressTrack stage={step} width={width - 64} />
       </View>
 
-      <View style={styles.buttonsContainer}>
-        <Spacing height={10} />
+      <View style={styles.contentContainer}>
+        <View style={styles.instructionsContainer}>
+          <HeaderText className="InstructionHeader">
+            {instructionText(step, kidName, deviceType, setupID)}
+          </HeaderText>
+        </View>
 
-        {!isWaitingForDevice(step, deviceType) &&
-          <Button primary onPress={nextStep}>
-            {I18n.t('general.nextStep')}
-          </Button>}
+        <View style={styles.buttonsContainer}>
+          <Spacing height={10} />
 
-        {isWaitingForDevice(step, deviceType) &&
-          <View style={styles.loader}>
-            <Spacing height={10} />
-            <LoadingIndicator />
-          </View>}
+          {!isWaitingForDevice(step, deviceType) &&
+            <Button primary onPress={nextStep}>
+              {I18n.t('general.nextStep')}
+            </Button>}
 
-        <Button onPress={() => Intercom.displayMessageComposer()}>
-          {I18n.t('general.needHelp')}
-        </Button>
+          {isWaitingForDevice(step, deviceType) &&
+            <View style={styles.loader}>
+              <Spacing height={10} />
+              <LoadingIndicator />
+            </View>}
+
+          <Button onPress={() => Intercom.displayMessageComposer()}>
+            {I18n.t('general.needHelp')}
+          </Button>
+        </View>
       </View>
     </View>
 
-    <View style={styles.imageContainer}>
-      <Animatable.Image
-        useNativeDriver
-        resizeMode="contain"
-        animation="bounceInUp"
-        style={styles.image}
-        source={imagePath(step, deviceType)}
+    <Animatable.Image
+      key={step}
+      useNativeDriver
+      animation="pulse"
+      style={getOuterImageStyle(deviceType)}
+      source={getBackground(deviceType)}
+    >
+      <Image
+        style={styles.innerImage}
+        source={getInstructionImage(step, deviceType)}
       />
-    </View>
+    </Animatable.Image>
   </View>
 );
 DeviceSetup.propTypes = {

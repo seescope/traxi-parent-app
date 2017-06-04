@@ -5,17 +5,17 @@ export type Kid = {
   UUID: string,
   deviceType: DeviceType,
   installed: boolean,
-  avatarURL: ?string,
+  avatarURL: ?string
 };
 
 export type KidsState = {
-  [string]: Kid,
+  [string]: Kid
 };
 
 export type KidsAction =
   | {
       type: 'BEGIN_SETUP',
-      kidUUID: string,
+      kidUUID: string
     }
   | { type: 'SET_KID_NAME', name: string, UUID: string }
   | { type: 'KID_UPDATED', kid: Kid, UUID: string }
@@ -35,13 +35,14 @@ const INITIAL_STATE = {};
 // const INITIAL_STATE = {
 //   'abc-123': {
 //     ...createNewKid('abc-123'),
+//     deviceType: 'Android',
 //     name: 'Test Kid',
 //   },
 // };
 
 export default (
   state: KidsState = INITIAL_STATE,
-  action: KidsAction,
+  action: KidsAction
 ): KidsState => {
   switch (action.type) {
     case 'BEGIN_SETUP': {
