@@ -1,3 +1,7 @@
+## 7.3.0
+- Chagnge instruction text to explain MDM setup on iOS.
+## 7.0.0
+- More things, I guess.
 ## 6.1.0
 Refactor app, re-implement setup process, support deep-links better, change persistence model
 
