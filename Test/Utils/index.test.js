@@ -5,13 +5,11 @@ import {
   timeRange,
   listOfNumbers,
   isIOS,
-  experimentViewed,
   getNiceUsage,
   backButtonHandler,
   cleanObjectForFirebase,
 } from '../../App/Utils';
 import moment from 'moment';
-import mockAnalytics from 'react-native-analytics';
 import { Actions } from 'react-native-router-flux';
 
 describe('firstName', () => {
@@ -57,15 +55,6 @@ describe('listOfNumbers', () => {
     const expected = [0, 1, 2, 3];
     const actual = listOfNumbers(expected.length);
     expect(actual).toEqual(expected);
-  });
-});
-
-describe('experimentViewed', () => {
-  it('sends an Experiment Viewed tracking event to Segment', () => {
-    experimentViewed('test-experiment', 'test-variant');
-
-    const event = mockAnalytics.track.mock.calls[0];
-    expect(event).toMatchSnapshot();
   });
 });
 

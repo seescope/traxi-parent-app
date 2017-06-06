@@ -15,7 +15,8 @@ export type KidsState = {
 export type KidsAction =
   | {
       type: 'BEGIN_SETUP',
-      kidUUID: string
+      kidUUID: string,
+      setupID: number
     }
   | { type: 'SET_KID_NAME', name: string, UUID: string }
   | { type: 'KID_UPDATED', kid: Kid, UUID: string }
