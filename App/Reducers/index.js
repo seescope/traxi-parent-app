@@ -1,3 +1,4 @@
+// @flow
 /* eslint no-duplicate-imports: 0 */
 
 import { combineReducers } from 'redux';
@@ -18,7 +19,7 @@ export type RootState = {
   reportsState: ReportsState
 };
 
-const rootState: RootState = {
+const rootState = {
   parentState: parent,
   kidsState: kids,
   setupState: setup,

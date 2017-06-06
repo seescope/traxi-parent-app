@@ -84,67 +84,6 @@ export const loggingMiddleware = store =>
       return next(action);
     };
 
-export const trackingMiddleware = store =>
-  next =>
-    action => {
-      // Don't track in debug.
-      if (__DEV__) return next(action);
-
-      if (action.type === 'NEXT_STEP') {
-        const { setupState } = store.getState();
-        const { step } = setupState;
-        Analytics.track('Advanced Through Walkthrough', { currentStep: step });
-        return next(action);
-      }
-
-      if (action.type === 'KID_UPDATED') {
-        const { kid } = action;
-        const { deviceType, installed } = kid;
-        if (deviceType !== 'unknown' && !installed) {
-          Analytics.track('Verified Device', kid);
-        }
-        if (deviceType !== 'unknown' && installed) {
-          Analytics.track('Completed Setup', kid);
-        }
-        return next(action);
-      }
-
-      if (action.type === 'BEGIN_SETUP') {
-        const { kidUUID, setupID } = action;
-        Analytics.track('Started Setup', { kidUUID, setupID });
-        return next(action);
-      }
-
-      if (action.type === 'BEGIN_DEEPLINK_SETUP') {
-        const { parent, kid } = store.getState();
-        Analytics.track('Started Deeplink Setup', { parent, kid });
-        return next(action);
-      }
-
-      if (action.type === 'PREVIOUS_STEP') {
-        const { setupState } = store.getState();
-        const { step } = setupState;
-        Analytics.track('Went Back in Walkthrough', { currentStep: step });
-        return next(action);
-      }
-
-      // Log screen changes in Segment
-      if (action.type === 'REACT_NATIVE_ROUTER_FLUX_FOCUS') {
-        const { scene } = action;
-        Analytics.screen(scene.name);
-        return next(action);
-      }
-
-      // Fall through
-      return next(action);
-    };
-
-export const experimentViewed = variantName => {
-  Analytics.identify({
-    price: variantName,
-  });
-};
-
 export const sendPhoneNumberToSlack = phoneNumber =>
   fetch(
     'https://hooks.slack.com/services/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',

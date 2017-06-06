@@ -12,12 +12,9 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { persistStore, autoRehydrate } from 'redux-persist';
 import ReduxThunk from 'redux-thunk';
 import RootReducer from './App/Reducers';
-import {
-  backButtonHandler,
-  loggingMiddleware,
-  trackingMiddleware,
-} from './App/Utils';
+import { backButtonHandler, loggingMiddleware } from './App/Utils';
 import bootApp from './App/AsyncActions/BootApp';
+import trackingMiddleware from './App/Middleware/Tracking';
 // import impersonateParent from './App/AsyncActions/ImpersonateParent';
 
 I18n.fallbacks = true;
