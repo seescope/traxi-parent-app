@@ -1,26 +1,36 @@
 // @flow
 import type { Kid } from '../Kids';
 type DeviceType = 'Android' | 'iPhone' | 'iPad' | 'unknown';
+
+export type AppMetadata = {
+  Name: string,
+  Logo: string,
+  Category: string,
+  TimeUsed: number,
+};
+
 export type SetupState = {
   step: number,
   kidUUID: ?string,
   setupID: ?number,
   deviceType: DeviceType,
   loading: boolean,
-  sceneName: string
+  sceneName: string,
+  apps: ?(AppMetadata[]),
 };
 
 export type SetupAction =
   | {
       type: 'BEGIN_SETUP',
       kidUUID: string,
-      setupID: number
+      setupID: number,
     }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'NEXT_STEP' }
   | { type: 'PREVIOUS_STEP' }
   | { type: 'STARTED_LOADING' }
-  | { type: 'STOPPED_LOADING' };
+  | { type: 'STOPPED_LOADING' }
+  | { type: 'FETCHED_APPS', apps: AppMetadata[] };
 
 const INITIAL_STATE = {
   step: 0,
@@ -29,6 +39,7 @@ const INITIAL_STATE = {
   deviceType: 'unknown',
   loading: false,
   sceneName: 'loading',
+  apps: [],
 };
 
 // const INITIAL_STATE = {
@@ -42,7 +53,7 @@ const INITIAL_STATE = {
 
 export default (
   state: SetupState = INITIAL_STATE,
-  action: SetupAction
+  action: SetupAction,
 ): SetupState => {
   switch (action.type) {
     case 'BEGIN_SETUP': {
@@ -84,6 +95,12 @@ export default (
       return {
         ...state,
         loading: false,
+      };
+    }
+    case 'FETCHED_APPS': {
+      return {
+        ...state,
+        apps: action.apps,
       };
     }
     case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {
