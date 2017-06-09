@@ -15,8 +15,10 @@ type GetState = () => RootState;
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
-    const { UUID } = getState();
+    const state = getState();
+    const UUID = state.parentState.UUID;
 
+    if (!UUID) throw new Error('No UUID for parent while getting InitialUsage');
     const url = `${API_GATEWAY_URL}${UUID}`;
 
     return fetch(url)
