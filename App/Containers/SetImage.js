@@ -107,7 +107,7 @@ export const mapDispatchToProps = dispatch => ({
     dispatch(selectImage(didSelectImage))
       .then(() => dispatch(persistKid()))
       .then(() => {
-        Actions.setupCompletion();
+        Actions.initialUsage();
       }),
 });
 

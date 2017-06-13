@@ -2,6 +2,7 @@
 
 import { logError } from '../Utils';
 import { fetchedApps } from '../Reducers/Setup/setupActions';
+import _ from 'lodash';
 
 import type { RootState } from '../Reducers';
 import type { SetupAction } from '../Reducers/Setup';
@@ -15,24 +16,27 @@ type GetState = () => RootState;
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
+    // console.log(getState());
     const state = getState();
-    const UUID = state.parentState.UUID;
+    const UUID = state.parentState.kids[0];
 
     if (!UUID) throw new Error('No UUID for parent while getting InitialUsage');
+
     const url = `${API_GATEWAY_URL}${UUID}`;
 
     return fetch(url)
-      .then(response => {
-        if (response.statusCode !== 200) {
+      .then(response => response.json())
+      .then(json => {
+        if (json.statusCode !== 200) {
           throw new Error(
             'Error fetching onboarding data',
-            JSON.stringify(response),
+            JSON.stringify(json),
           );
         }
-        return response.json();
+        return JSON.parse(json.body);
       })
-      .then(data => {
-        dispatch(fetchedApps(data));
+      .then(apps => {
+        dispatch(fetchedApps(apps));
       })
       .catch(error => {
         logError(error);

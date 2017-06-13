@@ -84,7 +84,7 @@ const AppRow = (
 ) => (
   <View style={styles.container}>
     <View style={styles.logoPlaceholder}>
-      <Image style={styles.logo} source={{ uri: logo }} />
+      {logo != null && <Image style={styles.logo} source={{ uri: logo }} />}
     </View>
 
     <View style={styles.informationContainer}>

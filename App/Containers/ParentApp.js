@@ -19,14 +19,14 @@ const RouterWithRedux = connect()(Router);
 const ParentApp = ({ store, backButtonHandler }) => (
   <Provider store={store} onExitApp={false}>
     <RouterWithRedux hideNavBar backAndroidHandler={backButtonHandler}>
-      <Scene key="initialUsage" initial component={InitialUsage} />
       {/* <Scene key="loading" initial={false} component={Loading} />
       <Scene key="splashScreen" component={SplashScreen} />
       <Scene key="setName" component={SetName} />
       <Scene key="checkForDevice" component={CheckForDevice} />
       <Scene key="sendReminder" component={SendReminder} />
-      <Scene key="deviceSetup" component={DeviceSetup} />
-      <Scene key="congratulations" component={Congratulations} />
+      <Scene key="deviceSetup" component={DeviceSetup} /> */}
+      <Scene key="initialUsage" initial component={InitialUsage} />
+      {/* <Scene key="congratulations" component={Congratulations} />
       <Scene key="setKidImage" component={SetImage} />
       <Scene key="setupCompletion" component={SetupCompletion} />
       <Scene key="dashboard" component={Dashboard} />
