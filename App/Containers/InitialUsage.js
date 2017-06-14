@@ -59,8 +59,9 @@ const styles = StyleSheet.create({
 
 console.disableYellowBox = true;
 
-const getHeaderLabel = count => {
-  if (count === 1) return `${count} app found`;
+const getHeaderLabel = (count, usageIsNotComplete) => {
+  if (!usageIsNotComplete) return 'Completed';
+  else if (count === 1) return `${count} app found`;
   else if (count > 1) return `${count} apps found`;
   return 'Searching for apps...';
 };
@@ -91,10 +92,16 @@ type App = {
   name: string,
   logo: string,
   progress: number,
-  getApps: () => void,
 };
 
 class InitialUsageComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      usageIsComplete: true,
+    };
+  }
   componentDidMount() {
     this.updateUsage();
   }
@@ -102,17 +109,22 @@ class InitialUsageComponent extends React.Component {
   props: {
     kidName: string,
     apps: App[],
+    getApps: () => void,
   };
 
-  async updateUsage() {
-    await sleep(1000);
-    const usageIsComplete = checkIfUsageIsComplete(this.props.apps);
-    if (!usageIsComplete) {
-      // this.props.getApps();
-      // this.updateUsage();
-    } else {
-      Actions.setupCompletion();
-    }
+  updateUsage() {
+    sleep(2000).then(() => {
+      const usageIsComplete = checkIfUsageIsComplete(this.props.apps);
+      if (!usageIsComplete) {
+        this.props.getApps();
+        this.updateUsage();
+      } else {
+        sleep(1500).then(() => {
+          Actions.setupCompletion();
+          this.setState({ usageIsNotComplete: false });
+        });
+      }
+    });
   }
 
   render() {
@@ -140,9 +152,12 @@ class InitialUsageComponent extends React.Component {
             <View style={styles.cardContainer}>
               <View style={styles.headerContainer}>
                 <Text style={styles.cardHeaderStyle}>
-                  {getHeaderLabel(this.props.apps.length)}
+                  {getHeaderLabel(
+                    this.props.apps.length,
+                    this.state.usageIsNotComplete,
+                  )}
                 </Text>
-                <LoadingIndicator />
+                {this.state.usageIsNotComplete && <LoadingIndicator />}
               </View>
               <View style={styles.headerUnderlineStyle} />
               <View style={styles.cardBody}>
@@ -170,76 +185,76 @@ const getAppsInformations = apps =>
   }));
 
 const mapStateToProps = state => {
-  // const { apps } = state.setupState;
+  const { apps } = state.setupState;
 
-  const apps = [
-    {
-      Name: 'SoundCloud - Music & Audio',
-      Logo: 'http://is1.mzstatic.com/image/thumb/Purple117/v4/40/6d/d1/406dd182-5713-9565-368e-67e2c769dfd2/source/512x512bb.jpg',
-      Category: 'Music',
-      TimeUsed: 72.672,
-    },
-    {
-      Name: 'Bitmoji - Your Personal Emoji',
-      Logo: 'http://is3.mzstatic.com/image/thumb/Purple122/v4/f3/e5/dd/f3e5dd33-840b-0d55-f10c-ba1852d4f9cf/source/512x512bb.jpg',
-      Category: 'Utilities',
-      TimeUsed: 4.347,
-    },
-    {
-      Name: 'Instagram',
-      Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
-      Category: 'Photo & Video',
-      TimeUsed: 18.832,
-    },
-    {
-      Name: 'Citymapper - the Ultimate Transit App',
-      Logo: 'http://is4.mzstatic.com/image/thumb/Purple117/v4/d9/f0/f2/d9f0f280-d379-e8a1-1f39-f1f28477cf77/source/512x512bb.jpg',
-      Category: 'Navigation',
-      TimeUsed: 3.291,
-    },
-    {
-      Name: 'SoundCloud - Music & Audio',
-      Logo: 'http://is1.mzstatic.com/image/thumb/Purple117/v4/40/6d/d1/406dd182-5713-9565-368e-67e2c769dfd2/source/512x512bb.jpg',
-      Category: 'Music',
-      TimeUsed: 71.362,
-    },
-    {
-      Name: 'SwiftKey Keyboard',
-      Logo: 'http://is3.mzstatic.com/image/thumb/Purple127/v4/b4/2c/9c/b42c9cc9-45c3-a6f7-7813-97ed1e42f983/source/512x512bb.jpg',
-      Category: 'Utilities',
-      TimeUsed: 58.952,
-    },
-    {
-      Name: 'Safari',
-      Logo: 'http://i.imgur.com/sE9S6oZ.png',
-      Category: 'Tools',
-      TimeUsed: 11.108,
-    },
-    {
-      Name: 'Instagram',
-      Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
-      Category: 'Photo & Video',
-      TimeUsed: 171.345,
-    },
-    {
-      Name: 'FRAMED',
-      Logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/6e/15/40/6e154016-5dbd-c837-30df-f0b326bb4e57/source/512x512bb.jpg',
-      Category: 'Games',
-      TimeUsed: 0,
-    },
-    {
-      Name: 'FRAMED',
-      Logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/6e/15/40/6e154016-5dbd-c837-30df-f0b326bb4e57/source/512x512bb.jpg',
-      Category: 'Games',
-      TimeUsed: 34.192,
-    },
-    {
-      Name: 'Instagram',
-      Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
-      Category: 'Photo & Video',
-      TimeUsed: 0.026,
-    },
-  ];
+  // const apps = [
+  //   {
+  //     Name: 'SoundCloud - Music & Audio',
+  //     Logo: 'http://is1.mzstatic.com/image/thumb/Purple117/v4/40/6d/d1/406dd182-5713-9565-368e-67e2c769dfd2/source/512x512bb.jpg',
+  //     Category: 'Music',
+  //     TimeUsed: 72.672,
+  //   },
+  //   {
+  //     Name: 'Bitmoji - Your Personal Emoji',
+  //     Logo: 'http://is3.mzstatic.com/image/thumb/Purple122/v4/f3/e5/dd/f3e5dd33-840b-0d55-f10c-ba1852d4f9cf/source/512x512bb.jpg',
+  //     Category: 'Utilities',
+  //     TimeUsed: 4.347,
+  //   },
+  //   {
+  //     Name: 'Instagram',
+  //     Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
+  //     Category: 'Photo & Video',
+  //     TimeUsed: 18.832,
+  //   },
+  //   {
+  //     Name: 'Citymapper - the Ultimate Transit App',
+  //     Logo: 'http://is4.mzstatic.com/image/thumb/Purple117/v4/d9/f0/f2/d9f0f280-d379-e8a1-1f39-f1f28477cf77/source/512x512bb.jpg',
+  //     Category: 'Navigation',
+  //     TimeUsed: 3.291,
+  //   },
+  //   {
+  //     Name: 'SoundCloud - Music & Audio',
+  //     Logo: 'http://is1.mzstatic.com/image/thumb/Purple117/v4/40/6d/d1/406dd182-5713-9565-368e-67e2c769dfd2/source/512x512bb.jpg',
+  //     Category: 'Music',
+  //     TimeUsed: 71.362,
+  //   },
+  //   {
+  //     Name: 'SwiftKey Keyboard',
+  //     Logo: 'http://is3.mzstatic.com/image/thumb/Purple127/v4/b4/2c/9c/b42c9cc9-45c3-a6f7-7813-97ed1e42f983/source/512x512bb.jpg',
+  //     Category: 'Utilities',
+  //     TimeUsed: 58.952,
+  //   },
+  //   {
+  //     Name: 'Safari',
+  //     Logo: 'http://i.imgur.com/sE9S6oZ.png',
+  //     Category: 'Tools',
+  //     TimeUsed: 11.108,
+  //   },
+  //   {
+  //     Name: 'Instagram',
+  //     Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
+  //     Category: 'Photo & Video',
+  //     TimeUsed: 171.345,
+  //   },
+  //   {
+  //     Name: 'FRAMED',
+  //     Logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/6e/15/40/6e154016-5dbd-c837-30df-f0b326bb4e57/source/512x512bb.jpg',
+  //     Category: 'Games',
+  //     TimeUsed: 0,
+  //   },
+  //   {
+  //     Name: 'FRAMED',
+  //     Logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/6e/15/40/6e154016-5dbd-c837-30df-f0b326bb4e57/source/512x512bb.jpg',
+  //     Category: 'Games',
+  //     TimeUsed: 34.192,
+  //   },
+  //   {
+  //     Name: 'Instagram',
+  //     Logo: 'http://is4.mzstatic.com/image/thumb/Purple127/v4/66/ea/f4/66eaf42f-79aa-d6c1-0b8e-accab7d4f7f5/source/512x512bb.jpg',
+  //     Category: 'Photo & Video',
+  //     TimeUsed: 0.026,
+  //   },
+  // ];
 
   let appsInformation;
 
