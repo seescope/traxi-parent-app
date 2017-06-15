@@ -31,3 +31,10 @@ export function fetchedApps(apps: AppMetadata[]): SetupAction {
     apps,
   };
 }
+
+export function fetchingApps(isFetchingApps: boolean): SetupAction {
+  return {
+    type: 'FETCHED_APPS_STATUS',
+    isFetchingApps,
+  };
+}

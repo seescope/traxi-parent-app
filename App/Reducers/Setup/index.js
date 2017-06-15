@@ -17,6 +17,7 @@ export type SetupState = {
   loading: boolean,
   sceneName: string,
   apps: ?(AppMetadata[]),
+  isFetchingApps: boolean,
 };
 
 export type SetupAction =
@@ -30,7 +31,8 @@ export type SetupAction =
   | { type: 'PREVIOUS_STEP' }
   | { type: 'STARTED_LOADING' }
   | { type: 'STOPPED_LOADING' }
-  | { type: 'FETCHED_APPS', apps: AppMetadata[] };
+  | { type: 'FETCHED_APPS', apps: AppMetadata[] }
+  | { type: 'FETCHED_APPS_STATUS', isFetchingApps: boolean };
 
 const INITIAL_STATE = {
   step: 0,
@@ -40,6 +42,7 @@ const INITIAL_STATE = {
   loading: false,
   sceneName: 'loading',
   apps: [],
+  isFetchingApps: false,
 };
 
 // const INITIAL_STATE = {
@@ -101,6 +104,12 @@ export default (
       return {
         ...state,
         apps: action.apps,
+      };
+    }
+    case 'FETCHED_APPS_STATUS': {
+      return {
+        ...state,
+        isFetchingApps: action.isFetchingApps,
       };
     }
     case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {

@@ -16,7 +16,7 @@ import InitialUsage from './InitialUsage';
 import SendReminder from './SendReminder';
 const RouterWithRedux = connect()(Router);
 
-const ParentApp = ({ store, backButtonHandler }) => (
+const ParentApp = ({ store, backButtonHandler }) =>
   <Provider store={store} onExitApp={false}>
     <RouterWithRedux hideNavBar backAndroidHandler={backButtonHandler}>
       <Scene key="loading" initial component={Loading} />
@@ -26,14 +26,13 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="sendReminder" component={SendReminder} />
       <Scene key="deviceSetup" component={DeviceSetup} />
       <Scene key="congratulations" component={Congratulations} />
-      <Scene key="initialUsage" component={InitialUsage} />
       <Scene key="setKidImage" component={SetImage} />
       <Scene key="setupCompletion" component={SetupCompletion} />
       <Scene key="dashboard" component={Dashboard} />
       <Scene key="playground" initial={false} component={Playground} />
+      <Scene key="initialUsage" component={InitialUsage} />
     </RouterWithRedux>
-  </Provider>
-);
+  </Provider>;
 
 ParentApp.propTypes = {
   store: PropTypes.any.isRequired,

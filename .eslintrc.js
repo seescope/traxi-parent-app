@@ -1,3 +1,9 @@
+'use strict';
+
+const OFF = 0;
+const WARNING = 1;
+const ERROR = 2;
+
 module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
@@ -14,18 +20,18 @@ module.exports = {
   },
   rules: {
     quotes: ['error', 'single'],
-    strict: 0,
+    strict: OFF,
     'comma-dangle': ['error', 'always-multiline'],
-    'global-require': 0,
-    'no-confusing-arrow': 0,
-    'react-native/no-unused-styles': 2,
-    'react-native/split-platform-components': 2,
-    'react-native/no-inline-styles': 2,
-    'react-native/no-color-literals': 2,
-    'import/no-unresolved': 1,
-    'react/jsx-indent': 1,
-    'jest/no-focused-tests': 2,
-    'jest/no-identical-title': 2,
+    'global-require': OFF,
+    'no-confusing-arrow': OFF,
+    'react-native/no-unused-styles': ERROR,
+    'react-native/split-platform-components': ERROR,
+    'react-native/no-inline-styles': ERROR,
+    'react-native/no-color-literals': ERROR,
+    'import/no-unresolved': WARNING,
+    'react/jsx-indent': WARNING,
+    'jest/no-focused-tests': ERROR,
+    'jest/no-identical-title': ERROR,
   },
   globals: {
     __DEV__: true,

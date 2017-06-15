@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { Animated, Text, StyleSheet, View, Image } from 'react-native';
 
 import {
   LIGHT_GREY,
@@ -62,43 +62,73 @@ const styles = StyleSheet.create({
   },
 });
 
-const progressBarWidth = value => {
-  const style = {
-    width: `${value}%`,
-  };
+const getProgressBarStyle = value => {
   if (value === 100) {
     return {
-      ...style,
       borderRadius: 4,
     };
   }
   return {
-    ...style,
     borderBottomLeftRadius: 4,
     borderTopLeftRadius: 4,
   };
 };
 
-const AppRow = (
-  { name, progress, logo }: { name: string, progress: number, logo: string },
-) => (
-  <View style={styles.container}>
-    <View style={styles.logoPlaceholder}>
-      {logo != null && <Image style={styles.logo} source={{ uri: logo }} />}
-    </View>
+class AppRow extends React.Component {
+  state = { progressBarWidth: new Animated.Value(this.props.previousProgress) };
 
-    <View style={styles.informationContainer}>
-      <Text style={styles.name} ellipsizeMode="tail" numberOfLines={1}>
-        {name}
-      </Text>
-      <View style={styles.progressContainer}>
-        <Text style={styles.progressValue}>{progress} %</Text>
-        <View style={styles.progressBarPlaceholder}>
-          <View style={[styles.progressBar, progressBarWidth(progress)]} />
+  componentDidMount() {
+    Animated.timing(this.state.progressBarWidth, {
+      toValue: this.props.progress,
+      duration: 500,
+    }).start();
+  }
+
+  props: {
+    name: string,
+    progress: number,
+    previousProgress: number,
+    logo: string,
+  };
+
+  render() {
+    const { progress } = this.props;
+    const { progressBarWidth } = this.state;
+
+    const percentageWidth = progressBarWidth.interpolate({
+      inputRange: [0, 100],
+      outputRange: ['0%', '100%'],
+    });
+
+    return (
+      <View style={styles.container}>
+        <View style={styles.logoPlaceholder}>
+          {this.props.logo !== '' &&
+            <Image style={styles.logo} source={{ uri: this.props.logo }} />}
+        </View>
+
+        <View style={styles.informationContainer}>
+          <Text style={styles.name} ellipsizeMode="tail" numberOfLines={1}>
+            {this.props.name}
+          </Text>
+          <View style={styles.progressContainer}>
+            <Text style={styles.progressValue}>{progress} %</Text>
+            <View style={styles.progressBarPlaceholder}>
+              <Animated.View
+                style={[
+                  styles.progressBar,
+                  getProgressBarStyle(progress),
+                  {
+                    width: percentageWidth,
+                  },
+                ]}
+              />
+            </View>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
-);
+    );
+  }
+}
 
 export default AppRow;
