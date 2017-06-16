@@ -81,17 +81,17 @@ class AppRow extends React.Component {
     progressBarWidth: new Animated.Value(0),
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
+  componentDidMount() {
+    this.animateProgressBar();
+  }
+
+  shouldComponentUpdate(nextProps) {
     const oldProgress = this.props.progress;
     const newProgress = nextProps.progress;
 
     if (oldProgress === newProgress) return false;
 
     return true;
-  }
-
-  componentDidMount() {
-    this.animateProgressBar();
   }
 
   componentDidUpdate() {

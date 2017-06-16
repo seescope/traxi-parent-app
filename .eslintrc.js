@@ -1,9 +1,3 @@
-'use strict';
-
-const OFF = 0;
-const WARNING = 1;
-const ERROR = 2;
-
 module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
@@ -13,25 +7,25 @@ module.exports = {
     },
   },
   plugins: ['react', 'react-native', 'jest', 'prettier'],
-  extends: ['airbnb', 'plugin:jest/recommended'],
+  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   env: {
     es6: true,
     'jest/globals': true,
   },
   rules: {
     quotes: ['error', 'single'],
-    strict: OFF,
+    strict: 0,
     'comma-dangle': ['error', 'always-multiline'],
-    'global-require': OFF,
-    'no-confusing-arrow': OFF,
-    'react-native/no-unused-styles': ERROR,
-    'react-native/split-platform-components': ERROR,
-    'react-native/no-inline-styles': ERROR,
-    'react-native/no-color-literals': ERROR,
-    'import/no-unresolved': WARNING,
-    'react/jsx-indent': WARNING,
-    'jest/no-focused-tests': ERROR,
-    'jest/no-identical-title': ERROR,
+    'global-require': 0,
+    'no-confusing-arrow': 0,
+    'react-native/no-unused-styles': 2,
+    'react-native/split-platform-components': 2,
+    'react-native/no-inline-styles': 2,
+    'react-native/no-color-literals': 2,
+    'import/no-unresolved': 1,
+    'react/jsx-indent': 1,
+    'jest/no-focused-tests': 2,
+    'jest/no-identical-title': 2,
   },
   globals: {
     __DEV__: true,

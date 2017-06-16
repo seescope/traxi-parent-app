@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
-import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import md5 from 'md5';
@@ -15,7 +14,6 @@ import { firstName } from '../../Utils';
 import AppRow from './AppRow';
 import LoadingIndicator from '../../Components/LoadingIndicator';
 import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../../Constants/Colours';
-import { fetchingApps } from '../../Reducers/Setup/setupActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -192,11 +190,9 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getApps: () => dispatch(getInitialUsage()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getApps: () => dispatch(getInitialUsage()),
+});
 
 const InitialUsage = connect(mapStateToProps, mapDispatchToProps)(
   InitialUsageComponent,

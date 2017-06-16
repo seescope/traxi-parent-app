@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable react/jsx-indent */
+
 import React from 'react';
 import OneSignal from 'react-native-onesignal';
 import { Alert, ScrollView, Text, View } from 'react-native';
@@ -19,7 +21,8 @@ import * as ParentActions from '../Reducers/Parent/parentActions';
 
 import persistParent from '../AsyncActions/PersistParent';
 import fetchReports from '../AsyncActions/FetchReports';
-import createParentAuthentication from '../AsyncActions/CreateParentAuthentication';
+import createParentAuthentication
+  from '../AsyncActions/CreateParentAuthentication';
 
 import type { ParentState } from '../Reducers/Parent';
 import type { KidsState } from '../Reducers/Kids';
@@ -89,15 +92,17 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export const SetupCompletion = ({
-  onNameChanged,
-  onPasswordChanged,
-  onEmailChanged,
-  kidName,
-  email,
-  onPress,
-  loading,
-}: Props) =>
+export const SetupCompletion = (
+  {
+    onNameChanged,
+    onPasswordChanged,
+    onEmailChanged,
+    kidName,
+    email,
+    onPress,
+    loading,
+  }: Props,
+) => (
   <ScrollView
     style={style.background}
     contentContainerStyle={style.outerContainer}
@@ -130,7 +135,8 @@ export const SetupCompletion = ({
             See {kidName}'s usage
           </Button>}
     </View>
-  </ScrollView>;
+  </ScrollView>
+);
 
 const mapStateToProps = (rootState: RootState): Object => {
   const { parentState, setupState, kidsState } = rootState;
