@@ -6,6 +6,7 @@ import {
   GREY,
   TRAXI_BLUE,
   TRANSPARENT,
+  GOOD,
 } from '../../Constants/Colours';
 
 const styles = StyleSheet.create({
@@ -66,6 +67,7 @@ const getProgressBarStyle = value => {
   if (value === 100) {
     return {
       borderRadius: 4,
+      backgroundColor: GOOD,
     };
   }
   return {
@@ -75,9 +77,28 @@ const getProgressBarStyle = value => {
 };
 
 class AppRow extends React.Component {
-  state = { progressBarWidth: new Animated.Value(this.props.previousProgress) };
+  state = {
+    progressBarWidth: new Animated.Value(0),
+  };
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const oldProgress = this.props.progress;
+    const newProgress = nextProps.progress;
+
+    if (oldProgress === newProgress) return false;
+
+    return true;
+  }
 
   componentDidMount() {
+    this.animateProgressBar();
+  }
+
+  componentDidUpdate() {
+    this.animateProgressBar();
+  }
+
+  animateProgressBar() {
     Animated.timing(this.state.progressBarWidth, {
       toValue: this.props.progress,
       duration: 500,
@@ -87,7 +108,6 @@ class AppRow extends React.Component {
   props: {
     name: string,
     progress: number,
-    previousProgress: number,
     logo: string,
   };
 
@@ -103,7 +123,7 @@ class AppRow extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.logoPlaceholder}>
-          {this.props.logo !== '' &&
+          {this.props.logo != null &&
             <Image style={styles.logo} source={{ uri: this.props.logo }} />}
         </View>
 

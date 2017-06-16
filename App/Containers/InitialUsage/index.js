@@ -3,19 +3,19 @@
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import _ from 'lodash';
-import shortid from 'shortid';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import getInitialUsage from '../AsyncActions/GetInitialUsage';
-import Spacing from '../Components/Spacing';
-import Background from '../Components/Background';
-import HeaderText from '../Components/HeaderText';
-import BodyText from '../Components/BodyText';
-import { firstName } from '../Utils';
-import AppRow from '../Components/InitialUsage/AppRow';
-import LoadingIndicator from '../Components/LoadingIndicator';
-import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../Constants/Colours';
-import { fetchingApps } from '../Reducers/Setup/setupActions';
+import md5 from 'md5';
+import getInitialUsage from '../../AsyncActions/GetInitialUsage';
+import Spacing from '../../Components/Spacing';
+import Background from '../../Components/Background';
+import HeaderText from '../../Components/HeaderText';
+import BodyText from '../../Components/BodyText';
+import { firstName } from '../../Utils';
+import AppRow from './AppRow';
+import LoadingIndicator from '../../Components/LoadingIndicator';
+import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../../Constants/Colours';
+import { fetchingApps } from '../../Reducers/Setup/setupActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
   },
 });
 
-console.disableYellowBox = true;
-
 const getHeaderLabel = (count, usageIsNotComplete) => {
   if (!usageIsNotComplete) return 'Completed';
   else if (count === 1) return `${count} app found`;
@@ -86,49 +84,10 @@ type App = {
 class InitialUsageComponent extends React.Component {
   state = {
     usageIsNotComplete: true,
-    progressHistory: {},
   };
 
   componentDidMount() {
-    console.log('MOUUUUUNT');
-    this.props.reset();
     this.updateUsage();
-
-    //TO remove
-    // setTimeout(
-    //   () => {
-    //     this.props.upd();
-    //     setTimeout(
-    //       () => {
-    //         !this.props.upd();
-    //       },
-    //       2000,
-    //     );
-    //   },
-    //   100,
-    // );
-  }
-
-  componentWillReceiveProps() {
-    const apps = this.props.apps;
-
-    if (apps != null) {
-      const progressHistory = apps.reduce(
-        (previous, app) => ({
-          ...previous,
-          [app.name]: app.progress,
-        }),
-        {},
-      );
-
-      this.setState({ progressHistory });
-    }
-  }
-
-  getPreviousProgress(name) {
-    const progressHistory = this.state.progressHistory[name];
-    if (progressHistory) return progressHistory;
-    return 0;
   }
 
   updateUsage() {
@@ -162,22 +121,14 @@ class InitialUsageComponent extends React.Component {
 
   renderAppRows = apps => {
     if (!apps.length) {
-      return <AppRow name={'Application name'} progress={0} logo={''} />;
+      return <AppRow name={'Application name'} progress={0} logo={null} />;
     }
 
     return apps.map(app => {
       const { name, progress, logo } = app;
 
-      const previousProgress = this.getPreviousProgress(name);
-
       return (
-        <AppRow
-          key={shortid.generate()}
-          name={name}
-          previousProgress={previousProgress}
-          progress={progress}
-          logo={logo}
-        />
+        <AppRow key={md5(name)} name={name} progress={progress} logo={logo} />
       );
     });
   };
@@ -230,48 +181,12 @@ class InitialUsageComponent extends React.Component {
   }
 }
 
-const getProgressValue = timeUsed => {
-  if (timeUsed >= 60) return 100;
-  const percentage = timeUsed / 60 * 100;
-  return Math.round(percentage);
-};
-
-const getAppsInformations = apps =>
-  apps.map(app => ({
-    name: app.Name,
-    logo: app.Logo,
-    progress: getProgressValue(app.TimeUsed),
-  }));
-
 const mapStateToProps = state => {
   const { apps, kidUUID, isFetchingApps } = state.setupState;
   const { name } = state.kidsState[kidUUID] || {};
 
-  // console.log(JSON.stringify(apps));
-  let appsInformation;
-  if (!apps) {
-    appsInformation = [];
-  } else {
-    const filterShortTimeUsedApps = apps.filter(app => app.TimeUsed > 5);
-    const groupedApps = _.reduce(
-      filterShortTimeUsedApps,
-      (previous, app) => {
-        const index = _.findIndex(previous, ['Name', app.Name]);
-        if (index !== -1) {
-          const previousToModify = [...previous];
-          previousToModify[index].TimeUsed =
-            previousToModify[index].TimeUsed + app.TimeUsed;
-          return previousToModify;
-        }
-        return [...previous, app];
-      },
-      [],
-    );
-    appsInformation = getAppsInformations(groupedApps);
-  }
-
   return {
-    apps: appsInformation,
+    apps: apps.length ? apps : [],
     kidName: name ? firstName(name) : '',
     isFetchingApps,
   };
@@ -279,8 +194,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    //TO REMOVE
-    reset: () => dispatch(fetchingApps(false)),
     getApps: () => dispatch(getInitialUsage()),
   };
 };

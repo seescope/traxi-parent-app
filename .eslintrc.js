@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   plugins: ['react', 'react-native', 'jest', 'prettier'],
-  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
+  extends: ['airbnb', 'plugin:jest/recommended'],
   env: {
     es6: true,
     'jest/globals': true,
