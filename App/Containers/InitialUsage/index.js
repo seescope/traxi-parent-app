@@ -1,10 +1,11 @@
 // @flow
+/* eslint flowtype/require-return-type: [2, "always", { "excludeArrowFunctions": "expressionsOnly"}] */
+/* eslint no-duplicate-imports: 0 */
 
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import md5 from 'md5';
 import getInitialUsage from '../../AsyncActions/GetInitialUsage';
 import Spacing from '../../Components/Spacing';
 import Background from '../../Components/Background';
@@ -14,6 +15,9 @@ import { firstName } from '../../Utils';
 import AppRow from './AppRow';
 import LoadingIndicator from '../../Components/LoadingIndicator';
 import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../../Constants/Colours';
+
+import type { RootState } from '../../Reducers';
+import type { Props as AppRowProps } from './AppRow';
 
 const styles = StyleSheet.create({
   container: {
@@ -58,14 +62,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const getHeaderLabel = (count, usageIsNotComplete) => {
+const getHeaderLabel = (count, usageIsNotComplete): string => {
   if (!usageIsNotComplete) return 'Completed';
   else if (count === 1) return `${count} app found`;
   else if (count > 1) return `${count} apps found`;
   return 'Searching for apps...';
 };
 
-const checkIfUsageIsComplete = apps => {
+const checkIfUsageIsComplete = (apps): boolean => {
   if (apps.length < 3) return false;
   return apps.every(app => app.progress === 100);
 };
@@ -76,7 +80,15 @@ const sleep = milliseconds =>
 type App = {
   name: string,
   logo: string,
-  progress: number,
+  progress: number
+};
+
+const getAppRows = (apps: App[]): React.Element<AppRowProps>[] => {
+  if (!apps.length) {
+    return [<AppRow name={'Application name'} progress={0} logo={null} />];
+  }
+
+  return apps.map(app => <AppRow key={app.name} {...app} />);
 };
 
 class InitialUsageComponent extends React.Component {
@@ -114,24 +126,10 @@ class InitialUsageComponent extends React.Component {
     kidName: string,
     apps: App[],
     isFetchingApps: boolean,
-    getApps: () => void,
+    getApps: () => void
   };
 
-  renderAppRows = apps => {
-    if (!apps.length) {
-      return <AppRow name={'Application name'} progress={0} logo={null} />;
-    }
-
-    return apps.map(app => {
-      const { name, progress, logo } = app;
-
-      return (
-        <AppRow key={md5(name)} name={name} progress={progress} logo={logo} />
-      );
-    });
-  };
-
-  render() {
+  render(): React.Element<*> {
     const { kidName, apps } = this.props;
 
     const { usageIsNotComplete } = this.state;
@@ -169,7 +167,7 @@ class InitialUsageComponent extends React.Component {
               </View>
               <View style={styles.headerUnderlineStyle} />
               <View style={styles.cardBody}>
-                {this.renderAppRows(apps)}
+                {getAppRows(apps)}
               </View>
             </View>
           </ScrollView>
@@ -179,23 +177,37 @@ class InitialUsageComponent extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+type StateProps = {
+  apps: App[],
+  kidName: string,
+  isFetchingApps: boolean
+};
+
+const mapStateToProps = (state: RootState): StateProps => {
   const { apps, kidUUID, isFetchingApps } = state.setupState;
+  if (!kidUUID) throw new Error('No Kid UUID found!');
+
   const { name } = state.kidsState[kidUUID] || {};
 
   return {
-    apps: apps.length ? apps : [],
+    apps: apps || [],
     kidName: name ? firstName(name) : '',
     isFetchingApps,
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+type Dispatch = () => Promise<*>;
+
+type DispatchProps = {
+  getApps: () => Promise<*>
+};
+
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
   getApps: () => dispatch(getInitialUsage()),
 });
 
 const InitialUsage = connect(mapStateToProps, mapDispatchToProps)(
-  InitialUsageComponent,
+  InitialUsageComponent
 );
 
 export default InitialUsage;

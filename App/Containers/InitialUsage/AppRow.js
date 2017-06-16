@@ -76,6 +76,12 @@ const getProgressBarStyle = value => {
   };
 };
 
+export type Props = {
+  name: string,
+  progress: number,
+  logo: ?string
+};
+
 class AppRow extends React.Component {
   state = {
     progressBarWidth: new Animated.Value(0),
@@ -105,11 +111,7 @@ class AppRow extends React.Component {
     }).start();
   }
 
-  props: {
-    name: string,
-    progress: number,
-    logo: string,
-  };
+  props: Props;
 
   render() {
     const { progress } = this.props;
