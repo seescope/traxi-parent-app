@@ -43,6 +43,6 @@ it('calls Select Image then navigates to SetupCompletion', () => {
   return onPress(true).then(() => {
     expect(mockDispatch).toHaveBeenCalledWith('TEST_SELECT_IMAGE');
     expect(mockDispatch).toHaveBeenCalledWith('TEST_PERSIST_KID');
-    expect(Actions.setupCompletion).toHaveBeenCalled();
+    expect(Actions.initialUsage).toHaveBeenCalled();
   });
 });

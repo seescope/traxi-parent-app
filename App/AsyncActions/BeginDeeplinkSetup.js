@@ -26,25 +26,24 @@ const beginFreshSetup = (UUID: string, dispatch: Dispatch): void => {
   Actions.splashScreen({ type: 'replace' });
 };
 
-export default (parentUUID: string) => async (
-  dispatch: Dispatch,
-): Promise<any> => {
-  const parent = await fetchParent(parentUUID);
+export default (parentUUID: string) =>
+  async (dispatch: Dispatch): Promise<any> => {
+    const parent = await fetchParent(parentUUID);
 
-  if (!parent) {
-    beginFreshSetup(parentUUID, dispatch);
-    return;
-  }
+    if (!parent) {
+      beginFreshSetup(parentUUID, dispatch);
+      return;
+    }
 
-  const kidUUID = parent.kids[0];
-  const kid = await fetchKid(kidUUID);
+    const kidUUID = parent.kids[0];
+    const kid = await fetchKid(kidUUID);
 
-  if (!kid) {
-    beginFreshSetup(parentUUID, dispatch);
-    return;
-  }
+    if (!kid) {
+      beginFreshSetup(parentUUID, dispatch);
+      return;
+    }
 
-  dispatch(beginDeeplinkSetup(parent, kid));
-  dispatch(userLoggedIn());
-  Actions.setKidImage({ type: 'replace' });
-};
+    dispatch(beginDeeplinkSetup(parent, kid));
+    dispatch(userLoggedIn());
+    Actions.setKidImage({ type: 'replace' });
+  };

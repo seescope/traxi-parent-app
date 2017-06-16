@@ -37,5 +37,8 @@ exports[`renders the root compontent correctly 1`] = `
     component={[Function]}
     initial={false}
   />
+  <View
+    component={[Function]}
+  />
 </View>
 `;
