@@ -1,6 +1,9 @@
+/* eslint no-native-reassign:0 */
+
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import getInitialUsage from '../GetInitialUsage';
+import { Actions } from 'react-native-router-flux';
 
 const MOCK_DATA = [
   {
@@ -38,7 +41,13 @@ const response = {
 };
 
 describe('getInitialUsage', () => {
-  test('getInitialUsage() works proprely the first time', () => {
+  beforeEach(() => {
+    fetch = () => Promise.resolve(response);
+    Actions.dashboard.mockClear();
+  });
+
+  test('fetches the initialUsage of a user for the first time', () => {
+    fetch = () => Promise.resolve(response);
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       parentState: {
@@ -50,11 +59,7 @@ describe('getInitialUsage', () => {
       },
     });
 
-    // eslint-disable-next-line no-native-reassign
-    fetch = () => Promise.resolve(response);
-
     const expected = [
-      { type: 'FETCHED_APPS_STATUS', isFetchingApps: true },
       {
         type: 'FETCHED_APPS',
         apps: [
@@ -70,14 +75,13 @@ describe('getInitialUsage', () => {
           },
         ],
       },
-      { type: 'FETCHED_APPS_STATUS', isFetchingApps: false },
     ];
     return store.dispatch(getInitialUsage()).then(() => {
       expect(store.getActions()).toEqual(expected);
     });
   });
 
-  test('getInitialUsage() works proprely with a previous state', () => {
+  test('updates the previous state with new usage', () => {
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       parentState: {
@@ -108,11 +112,7 @@ describe('getInitialUsage', () => {
       },
     });
 
-    // eslint-disable-next-line no-native-reassign
-    fetch = () => Promise.resolve(response);
-
     const expected = [
-      { type: 'FETCHED_APPS_STATUS', isFetchingApps: true },
       {
         type: 'FETCHED_APPS',
         apps: [
@@ -133,10 +133,50 @@ describe('getInitialUsage', () => {
           },
         ],
       },
-      { type: 'FETCHED_APPS_STATUS', isFetchingApps: false },
     ];
     return store.dispatch(getInitialUsage()).then(() => {
       expect(store.getActions()).toEqual(expected);
+    });
+  });
+
+  test('navigates to the dashboard when there is enough usage', () => {
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore({
+      parentState: {
+        kids: [
+          {
+            UUID: 'uuid',
+          },
+        ],
+      },
+    });
+
+    const GOOD_DATA = [
+      {
+        Category: 'Business',
+        Logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/b8/bd/5e/b8bd5ebb-4cd9-b529-ddf3-22a1f9a497ba/source/512x512bb.jpg',
+        Name: 'Slack - Business Communication for Teams',
+        TimeUsed: 100,
+      },
+      {
+        Category: 'Tools',
+        Logo: 'http://i.imgur.com/sE9S6oZ.png',
+        Name: 'Safari',
+        TimeUsed: 100,
+      },
+    ];
+    const goodResponse = {
+      json: () =>
+        Promise.resolve({
+          statusCode: 200,
+          body: JSON.stringify(GOOD_DATA),
+        }),
+    };
+
+    fetch = () => Promise.resolve(goodResponse);
+
+    return store.dispatch(getInitialUsage()).then(() => {
+      expect(Actions.dashboard).toHaveBeenCalled();
     });
   });
 });

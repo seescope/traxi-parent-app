@@ -1,11 +1,12 @@
 // @flow
 
-import { logError } from '../Utils';
-import { fetchedApps, fetchingApps } from '../Reducers/Setup/setupActions';
 import _ from 'lodash';
+import { Actions } from 'react-native-router-flux';
+import { logError } from '../Utils';
+import { fetchedApps } from '../Reducers/Setup/setupActions';
 
 import type { RootState } from '../Reducers';
-import type { SetupAction } from '../Reducers/Setup';
+import type { SetupAction, AppInformation } from '../Reducers/Setup';
 
 const DEV_API_GATEWAY_URL = 'https://fvfydckah0.execute-api.ap-southeast-2.amazonaws.com/dev?UUID=';
 const PROD_API_GATEWAY_URL = 'https://fshfq7krz5.execute-api.ap-southeast-2.amazonaws.com/prod?UUID=';
@@ -13,6 +14,9 @@ const API_GATEWAY_URL = __DEV__ ? DEV_API_GATEWAY_URL : PROD_API_GATEWAY_URL;
 
 type Dispatch = (action: SetupAction) => void;
 type GetState = () => RootState;
+
+const hasEnoughUsage = (apps: AppInformation[]): boolean =>
+  apps.filter(a => a.progress === 100).length > 1;
 
 const groupAppsByName = apps =>
   apps.reduce(
@@ -29,7 +33,7 @@ const groupAppsByName = apps =>
       }
       return [...previous, app];
     },
-    [],
+    []
   );
 
 const removeLowUsage = apps =>
@@ -41,7 +45,7 @@ const removeLowUsage = apps =>
 
       return [...previous, app];
     },
-    [],
+    []
   );
 
 const addPreviousProgress = (apps, previousApps) =>
@@ -61,7 +65,7 @@ const addPreviousProgress = (apps, previousApps) =>
       }
       return [...previous, app];
     },
-    [],
+    []
   );
 
 const getProgressValue = timeUsed => {
@@ -79,8 +83,6 @@ const getAppsInformations = apps =>
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
-    dispatch(fetchingApps(true));
-
     const state = getState();
     const UUID = state.parentState.kids[0];
 
@@ -93,7 +95,7 @@ export default () =>
       .then(json => {
         if (json.statusCode !== 200) {
           throw new Error(
-            `Error fetching onboarding data ${JSON.stringify(json)}`,
+            `Error fetching onboarding data ${JSON.stringify(json)}`
           );
         }
         return JSON.parse(json.body);
@@ -103,19 +105,22 @@ export default () =>
         const appsWithoutLowUsage = removeLowUsage(appsGrouped);
         const appsCleaned = getAppsInformations(appsWithoutLowUsage);
 
-        if (!state.setupState || !state.setupState.apps) {
-          dispatch(fetchedApps(appsCleaned));
-        } else {
-          const previousAppsFromState = state.setupState.apps;
-          const appsWithOldProgress = addPreviousProgress(
-            appsCleaned,
-            previousAppsFromState,
-          );
-
-          dispatch(fetchedApps(appsWithOldProgress));
+        if (hasEnoughUsage(appsCleaned)) {
+          Actions.dashboard();
         }
 
-        dispatch(fetchingApps(false));
+        if (!state.setupState || !state.setupState.apps) {
+          dispatch(fetchedApps(appsCleaned));
+          return;
+        }
+
+        const previousAppsFromState = state.setupState.apps;
+        const appsWithOldProgress = addPreviousProgress(
+          appsCleaned,
+          previousAppsFromState
+        );
+
+        dispatch(fetchedApps(appsWithOldProgress));
       })
       .catch(error => {
         logError(error);
