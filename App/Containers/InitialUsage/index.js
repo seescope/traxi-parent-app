@@ -5,8 +5,6 @@
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
-import getInitialUsage from '../../AsyncActions/GetInitialUsage';
 import Spacing from '../../Components/Spacing';
 import Background from '../../Components/Background';
 import HeaderText from '../../Components/HeaderText';
@@ -62,25 +60,22 @@ const styles = StyleSheet.create({
   },
 });
 
-const getHeaderLabel = (count, usageIsNotComplete): string => {
-  if (!usageIsNotComplete) return 'Completed';
+const getHeaderLabel = (count, hasEnoughUsage): string => {
+  if (!hasEnoughUsage) return 'Completed';
   else if (count === 1) return `${count} app found`;
   else if (count > 1) return `${count} apps found`;
   return 'Searching for apps...';
 };
 
-const checkIfUsageIsComplete = (apps): boolean => {
-  if (apps.length < 3) return false;
-  return apps.every(app => app.progress === 100);
-};
-
-const sleep = milliseconds =>
-  new Promise(resolve => setTimeout(resolve, milliseconds));
-
 type App = {
   name: string,
   logo: string,
   progress: number
+};
+
+type Props = {
+  kidName: string,
+  apps: App[]
 };
 
 const getAppRows = (apps: App[]): React.Element<AppRowProps>[] => {
@@ -90,101 +85,79 @@ const getAppRows = (apps: App[]): React.Element<AppRowProps>[] => {
 
   return apps.map(app => <AppRow key={app.name} {...app} />);
 };
+// state = {
+//   hasEnoughUsage: true,
+// };
+//
+// componentDidMount() {
+//   this.updateUsage();
+// }
+//
+// updateUsage() {
+//   if (this.props.isFetchingApps) {
+//     sleep(500).then(() => this.updateUsage());
+//     return;
+//   }
+//
+//   const usageIsComplete = checkIfUsageIsComplete(this.props.apps);
+//
+//   if (!usageIsComplete) {
+//     this.props.getApps();
+//     sleep(2000).then(() => this.updateUsage());
+//     return;
+//   }
+//
+//   sleep(1500).then(() => {
+//     Actions.setupCompletion();
+//     this.setState({
+//       hasEnoughUsage: false,
+//     });
+//   });
+// }
 
-class InitialUsageComponent extends React.Component {
-  state = {
-    usageIsNotComplete: true,
-  };
+const InitialUsageComponent = ({ kidName, apps }: Props) => (
+  <Background>
+    <View style={styles.container}>
+      <ScrollView>
+        <HeaderText>
+          Let's see some usage!
+        </HeaderText>
 
-  componentDidMount() {
-    this.updateUsage();
-  }
+        <Spacing height={32} />
 
-  updateUsage() {
-    if (this.props.isFetchingApps) {
-      sleep(500).then(() => this.updateUsage());
-      return;
-    }
+        <BodyText>
+          {kidName}
+          , Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod
+          {'\n\n'}
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          {'\n\n'}
+          Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non
+        </BodyText>
 
-    const usageIsComplete = checkIfUsageIsComplete(this.props.apps);
+        <Spacing height={16} />
 
-    if (!usageIsComplete) {
-      this.props.getApps();
-      sleep(2000).then(() => this.updateUsage());
-      return;
-    }
-
-    sleep(1500).then(() => {
-      Actions.setupCompletion();
-      this.setState({
-        usageIsNotComplete: false,
-      });
-    });
-  }
-
-  props: {
-    kidName: string,
-    apps: App[],
-    isFetchingApps: boolean,
-    getApps: () => void
-  };
-
-  render(): React.Element<*> {
-    const { kidName, apps } = this.props;
-
-    const { usageIsNotComplete } = this.state;
-
-    return (
-      <Background>
-        <View style={styles.container}>
-          <ScrollView>
-            <HeaderText>
-              Let's see some usage!
-            </HeaderText>
-
-            <Spacing height={32} />
-
-            <BodyText>
-              {kidName}
-              , Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod
-              {'\n\n'}
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              {'\n\n'}
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non
-            </BodyText>
-
-            <Spacing height={16} />
-
-            <View style={styles.cardContainer}>
-              <View style={styles.headerContainer}>
-                <Text style={styles.cardHeaderStyle}>
-                  {getHeaderLabel(apps.length, usageIsNotComplete)}
-                </Text>
-                {this.state.usageIsNotComplete && <LoadingIndicator />}
-              </View>
-              <View style={styles.headerUnderlineStyle} />
-              <View style={styles.cardBody}>
-                {getAppRows(apps)}
-              </View>
-            </View>
-          </ScrollView>
+        <View style={styles.cardContainer}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.cardHeaderStyle}>
+              {getHeaderLabel(apps.length)}
+            </Text>
+            <LoadingIndicator />
+          </View>
+          <View style={styles.headerUnderlineStyle} />
+          <View style={styles.cardBody}>
+            {getAppRows(apps)}
+          </View>
         </View>
-      </Background>
-    );
-  }
-}
+      </ScrollView>
+    </View>
+  </Background>
+);
 
-type StateProps = {
-  apps: App[],
-  kidName: string,
-  isFetchingApps: boolean
-};
-
-const mapStateToProps = (state: RootState): StateProps => {
-  const { apps, kidUUID, isFetchingApps } = state.setupState;
+const mapStateToProps = (state: RootState): Props => {
+  const { apps, kidUUID } = state.setupState;
   if (!kidUUID) throw new Error('No Kid UUID found!');
 
   const { name } = state.kidsState[kidUUID] || {};
@@ -192,22 +165,9 @@ const mapStateToProps = (state: RootState): StateProps => {
   return {
     apps: apps || [],
     kidName: name ? firstName(name) : '',
-    isFetchingApps,
   };
 };
 
-type Dispatch = () => Promise<*>;
-
-type DispatchProps = {
-  getApps: () => Promise<*>
-};
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  getApps: () => dispatch(getInitialUsage()),
-});
-
-const InitialUsage = connect(mapStateToProps, mapDispatchToProps)(
-  InitialUsageComponent
-);
+const InitialUsage = connect(mapStateToProps)(InitialUsageComponent);
 
 export default InitialUsage;

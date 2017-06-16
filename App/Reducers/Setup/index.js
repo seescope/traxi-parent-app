@@ -5,7 +5,7 @@ type DeviceType = 'Android' | 'iPhone' | 'iPad' | 'unknown';
 export type AppInformation = {
   name: string,
   logo: string,
-  progress: number,
+  progress: number
 };
 
 export type SetupState = {
@@ -15,15 +15,14 @@ export type SetupState = {
   deviceType: DeviceType,
   loading: boolean,
   sceneName: string,
-  apps: ?(AppInformation[]),
-  isFetchingApps: boolean,
+  apps: ?(AppInformation[])
 };
 
 export type SetupAction =
   | {
       type: 'BEGIN_SETUP',
       kidUUID: string,
-      setupID: number,
+      setupID: number
     }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'NEXT_STEP' }
@@ -41,7 +40,6 @@ const INITIAL_STATE = {
   loading: false,
   sceneName: 'loading',
   apps: [],
-  isFetchingApps: false,
 };
 
 // const INITIAL_STATE = {
@@ -55,7 +53,7 @@ const INITIAL_STATE = {
 
 export default (
   state: SetupState = INITIAL_STATE,
-  action: SetupAction,
+  action: SetupAction
 ): SetupState => {
   switch (action.type) {
     case 'BEGIN_SETUP': {
@@ -103,12 +101,6 @@ export default (
       return {
         ...state,
         apps: action.apps,
-      };
-    }
-    case 'FETCHED_APPS_STATUS': {
-      return {
-        ...state,
-        isFetchingApps: action.isFetchingApps,
       };
     }
     case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {
