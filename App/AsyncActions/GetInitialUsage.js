@@ -1,4 +1,6 @@
 // @flow
+/* eslint flowtype/require-parameter-type: [2, { "excludeArrowFunctions": "expressionsOnly"}] */
+/* eslint flowtype/require-return-type: [2, "always", { "excludeArrowFunctions": "expressionsOnly"}] */
 
 import _ from 'lodash';
 import { Actions } from 'react-native-router-flux';
@@ -6,21 +8,27 @@ import { logError } from '../Utils';
 import { fetchedApps } from '../Reducers/Setup/setupActions';
 
 import type { RootState } from '../Reducers';
-import type { SetupAction, AppInformation } from '../Reducers/Setup';
+import type { SetupAction, AppWithProgress } from '../Reducers/Setup';
 
 const DEV_API_GATEWAY_URL = 'https://fvfydckah0.execute-api.ap-southeast-2.amazonaws.com/dev?UUID=';
 const PROD_API_GATEWAY_URL = 'https://fshfq7krz5.execute-api.ap-southeast-2.amazonaws.com/prod?UUID=';
 const API_GATEWAY_URL = __DEV__ ? DEV_API_GATEWAY_URL : PROD_API_GATEWAY_URL;
 
-type Dispatch = (action: SetupAction) => void;
 type GetState = () => RootState;
+type AsyncAction = (action: any, getState: GetState) => Promise<void>;
+type Dispatch = (action: SetupAction | AsyncAction) => void;
+type App = {
+  Name: string,
+  TimeUsed: number,
+  Logo: string
+};
 
-const hasEnoughUsage = (apps: AppInformation[]): boolean =>
-  apps.filter(a => a.progress === 100).length > 1;
+const hasEnoughUsage = (apps: AppWithProgress[]): boolean =>
+  apps.filter(a => a.progress >= 100).length > 1;
 
-const groupAppsByName = apps =>
+const groupAppsByName = (apps: App[]): App[] =>
   apps.reduce(
-    (previous, app) => {
+    (previous: App[], app: App): App[] => {
       const { Name: name, TimeUsed: timeUsed } = app;
 
       const index = _.findIndex(previous, ['Name', name]);
@@ -36,53 +44,65 @@ const groupAppsByName = apps =>
     []
   );
 
-const removeLowUsage = apps =>
-  apps.reduce(
-    (previous, app) => {
-      const { TimeUsed: timeUsed } = app;
+const getUpdatedProgress = (
+  previous: AppWithProgress,
+  newApp: AppWithProgress
+): number => {
+  // If the data fetched from AppState has more progress than what we currently have,
+  // then use this data.
+  if (newApp.progress >= previous.progress) return newApp.progress;
 
-      if (timeUsed < 5) return previous;
+  // The other possible (but less likely) case is that the session we were previously
+  // tracking has now ended, so we need to combine the usage of our previous session
+  // with the new one.
+  return previous.progress + newApp.progress;
+};
 
-      return [...previous, app];
-    },
-    []
-  );
+const combineProgress = (
+  accumulator: AppWithProgress[],
+  app: AppWithProgress
+): AppWithProgress[] => {
+  if (!accumulator.length) return [app];
 
-const addPreviousProgress = (apps, previousApps) =>
-  previousApps.reduce(
-    (previous, app) => {
-      const { name, progress } = app;
+  const previous = _.head(accumulator);
+  if (app.name !== previous.name) return [app, ...accumulator];
 
-      const index = _.findIndex(apps, ['name', name]);
+  const updated = {
+    ...previous,
+    progress: getUpdatedProgress(previous, app),
+  };
 
-      if (index !== -1) {
-        const oldProgress = apps[index].progress;
-        if (oldProgress < progress) {
-          let sum = oldProgress + progress;
-          if (sum > 100) sum = 100;
-          return [...previous, { ...app, progress: sum }];
-        }
-      }
-      return [...previous, app];
-    },
-    []
-  );
+  return [updated, ..._.tail(accumulator)];
+};
 
-const getProgressValue = timeUsed => {
+// Functional programming, bitch.
+const mergeWithAppsFromState = (
+  previousApps: AppWithProgress[],
+  newApps: AppWithProgress[]
+): AppWithProgress[] =>
+  _.chain(previousApps)
+    .union(newApps)
+    .sortBy('name')
+    .reduce(combineProgress, [])
+    .value();
+
+const getProgressValue = (timeUsed: number): number => {
   if (timeUsed >= 60) return 100;
   const percentage = timeUsed / 60 * 100;
   return Math.round(percentage);
 };
 
-const getAppsInformations = apps =>
-  apps.map(app => ({
-    name: app.Name,
-    logo: app.Logo,
-    progress: getProgressValue(app.TimeUsed),
-  }));
+const parseApp = (app: App): AppWithProgress => ({
+  name: app.Name,
+  logo: app.Logo,
+  progress: getProgressValue(app.TimeUsed),
+});
 
-export default () =>
-  (dispatch: Dispatch, getState: GetState) => {
+const parseApps = (apps: App[]): AppWithProgress[] =>
+  groupAppsByName(apps).filter(a => a.TimeUsed > 5).map(parseApp);
+
+const getInitialUsage = () =>
+  (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const state = getState();
     const UUID = state.parentState.kids[0];
 
@@ -91,38 +111,35 @@ export default () =>
     const url = `${API_GATEWAY_URL}${UUID}`;
 
     return fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        if (json.statusCode !== 200) {
-          throw new Error(
-            `Error fetching onboarding data ${JSON.stringify(json)}`
-          );
-        }
-        return JSON.parse(json.body);
+      .then((response: Response): App[] => {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
       })
-      .then(apps => {
-        const appsGrouped = groupAppsByName(apps);
-        const appsWithoutLowUsage = removeLowUsage(appsGrouped);
-        const appsCleaned = getAppsInformations(appsWithoutLowUsage);
+      .then((rawApps: App[]) => {
+        const apps = parseApps(rawApps);
 
-        if (hasEnoughUsage(appsCleaned)) {
-          Actions.dashboard();
-        }
-
-        if (!state.setupState || !state.setupState.apps) {
-          dispatch(fetchedApps(appsCleaned));
+        if (hasEnoughUsage(apps)) {
+          Actions.setupCompletion();
           return;
         }
 
-        const previousAppsFromState = state.setupState.apps;
-        const appsWithOldProgress = addPreviousProgress(
-          appsCleaned,
-          previousAppsFromState
-        );
+        if (!state.setupState.apps) {
+          dispatch(fetchedApps(apps));
+          dispatch(getInitialUsage());
+          return;
+        }
 
-        dispatch(fetchedApps(appsWithOldProgress));
+        const mergedApps = mergeWithAppsFromState(state.setupState.apps, apps);
+        dispatch(fetchedApps(mergedApps));
+
+        if (hasEnoughUsage(mergedApps)) {
+          Actions.setupCompletion();
+          return;
+        }
+
+        dispatch(getInitialUsage());
       })
-      .catch(error => {
-        logError(error);
-      });
+      .catch(error => logError(error));
   };
+
+export default getInitialUsage;

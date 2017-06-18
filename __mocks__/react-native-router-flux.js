@@ -8,7 +8,7 @@ export const Actions = {
   thankyou: jest.fn(),
   areYouReady: jest.fn(),
   intro: jest.fn(),
-  dashboard: jest.fn(),
+  dashboard: jest.fn(() => 'hey there fancy pants'),
   setupCompletion: jest.fn(),
   setName: jest.fn(),
   deviceSetup: jest.fn(),

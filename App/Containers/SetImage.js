@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux';
 
 import selectImage from '../AsyncActions/SelectImage';
 import persistKid from '../AsyncActions/PersistKid';
+import getInitialUsage from '../AsyncActions/GetInitialUsage';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
@@ -107,6 +108,7 @@ export const mapDispatchToProps = dispatch => ({
     dispatch(selectImage(didSelectImage))
       .then(() => dispatch(persistKid()))
       .then(() => {
+        dispatch(getInitialUsage());
         Actions.initialUsage();
       }),
 });

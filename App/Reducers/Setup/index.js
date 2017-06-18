@@ -2,7 +2,7 @@
 import type { Kid } from '../Kids';
 type DeviceType = 'Android' | 'iPhone' | 'iPad' | 'unknown';
 
-export type AppInformation = {
+export type AppWithProgress = {
   name: string,
   logo: string,
   progress: number
@@ -15,7 +15,7 @@ export type SetupState = {
   deviceType: DeviceType,
   loading: boolean,
   sceneName: string,
-  apps: ?(AppInformation[])
+  apps: ?(AppWithProgress[])
 };
 
 export type SetupAction =
@@ -29,7 +29,7 @@ export type SetupAction =
   | { type: 'PREVIOUS_STEP' }
   | { type: 'STARTED_LOADING' }
   | { type: 'STOPPED_LOADING' }
-  | { type: 'FETCHED_APPS', apps: AppInformation[] }
+  | { type: 'FETCHED_APPS', apps: AppWithProgress[] }
   | { type: 'FETCHED_APPS_STATUS', isFetchingApps: boolean };
 
 const INITIAL_STATE = {
@@ -39,7 +39,7 @@ const INITIAL_STATE = {
   deviceType: 'unknown',
   loading: false,
   sceneName: 'loading',
-  apps: [],
+  apps: undefined,
 };
 
 // const INITIAL_STATE = {
