@@ -3,7 +3,9 @@ jest.mock('../UserLoggedIn', () =>
 
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import createParentAuthentication from '../CreateParentAuthentication';
+import createParentAuthentication, {
+  removeWhiteSpaceFromEmail,
+} from '../CreateParentAuthentication';
 import { mockCreateUser, mockUpdateProfile } from 'firebase';
 
 const TEST_PARENT = {
@@ -23,7 +25,7 @@ describe('CreateParentAuthentication', () => {
     return store.dispatch(createParentAuthentication()).then(() => {
       expect(mockCreateUser).toHaveBeenCalledWith(
         TEST_PARENT.email,
-        TEST_PARENT.password
+        TEST_PARENT.password,
       );
       expect(mockUpdateProfile).toHaveBeenCalledWith({
         displayName: TEST_PARENT.name,
@@ -31,5 +33,11 @@ describe('CreateParentAuthentication', () => {
 
       expect(store.getActions()[0].type).toEqual('TEST_USER_LOGGED_IN');
     });
+  });
+
+  test('Trims whitespace from email correctly', () => {
+    const email = ' something@something.com ';
+    const expected = 'something@something.com';
+    expect(removeWhiteSpaceFromEmail(email)).toBe(expected);
   });
 });
