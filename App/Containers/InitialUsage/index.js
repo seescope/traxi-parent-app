@@ -90,7 +90,7 @@ const getMessage = (apps: App[], kidName: string): string => {
     return `Keep using ${secondApp.name} until the bar turns green`;
   }
   if (firstApp.progress === 100)
-    return `Use another app on ${kidName}'s device'`;
+    return `Use another app on ${kidName}'s device`;
   return '';
 };
 

@@ -25,7 +25,6 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="checkForDevice" component={CheckForDevice} />
       <Scene key="sendReminder" component={SendReminder} />
       <Scene key="deviceSetup" component={DeviceSetup} />
-      <Scene key="congratulations" component={Congratulations} />
       <Scene key="setKidImage" component={SetImage} />
       <Scene key="setupCompletion" component={SetupCompletion} />
       <Scene key="dashboard" component={Dashboard} />

@@ -207,7 +207,7 @@ describe('getInitialUsage', () => {
       },
     ];
     return store.dispatch(getInitialUsage()).then(() => {
-      expect(Actions.setupCompletion).toHaveBeenCalled();
+      expect(Actions.setKidImage).toHaveBeenCalled();
       expect(store.getActions()).toEqual(EXPECTED_ACTIONS);
     });
   });
@@ -275,7 +275,7 @@ describe('getInitialUsage', () => {
     });
 
     return store.dispatch(getInitialUsage()).then(() => {
-      expect(Actions.setupCompletion).toHaveBeenCalled();
+      expect(Actions.setKidImage).toHaveBeenCalled();
       expect(store.getActions()).toEqual(EXPECTED_ACTIONS);
     });
   });

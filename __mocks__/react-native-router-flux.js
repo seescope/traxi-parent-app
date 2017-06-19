@@ -4,7 +4,6 @@ import { View } from 'react-native';
 export const Actions = {
   createKid: jest.fn(),
   walkthrough: jest.fn(),
-  congratulations: jest.fn(),
   thankyou: jest.fn(),
   areYouReady: jest.fn(),
   intro: jest.fn(),

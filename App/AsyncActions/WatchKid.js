@@ -2,11 +2,12 @@
 import * as Firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
+import getInitalUsage from './GetInitialUsage';
 import { kidUpdated } from '../Reducers/Kids/kidsActions';
-import type { Kid, KidsAction } from '../Reducers/Kids/index';
+import type { Kid } from '../Reducers/Kids/index';
 import type { RootState } from '../Reducers';
 
-type Dispatch = (action: KidsAction) => void;
+type Dispatch = (action: any) => void;
 type GetState = () => RootState;
 type FirebaseKid = {
   UUID: string,
@@ -46,6 +47,7 @@ export default () =>
       }
 
       if (installed) {
+        dispatch(getInitalUsage());
         Actions.initialUsage({ type: 'reset' });
         Firebase.database().ref(`kids/${kidUUID}`).off();
       }

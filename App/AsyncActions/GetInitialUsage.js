@@ -124,7 +124,7 @@ const getInitialUsage = () =>
         const apps = parseApps(rawApps);
 
         if (hasEnoughUsage(apps)) {
-          Actions.setupCompletion();
+          Actions.setKidImage();
           return;
         }
 
@@ -138,7 +138,7 @@ const getInitialUsage = () =>
         dispatch(fetchedApps(mergedApps));
 
         if (hasEnoughUsage(mergedApps)) {
-          Actions.setupCompletion();
+          Actions.setKidImage();
           return;
         }
 

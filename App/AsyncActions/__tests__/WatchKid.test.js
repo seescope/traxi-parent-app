@@ -1,3 +1,7 @@
+jest.mock('../GetInitialUsage', () =>
+  () =>
+    dispatch => Promise.resolve(dispatch({ type: 'TEST_GET_INITIAL_USAGE' })));
+
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Actions } from 'react-native-router-flux';
@@ -38,7 +42,7 @@ describe('WatchKid', () => {
       const action = store.getActions()[0];
       expect(action.type).toEqual('KID_UPDATED');
       expect(action.kid).toEqual(EXPECTED_KID);
-      expect(Actions.congratulations).toHaveBeenCalled();
+      expect(Actions.initialUsage).toHaveBeenCalled();
     });
   });
 
@@ -69,7 +73,9 @@ describe('WatchKid', () => {
       const action = store.getActions()[0];
       expect(action.type).toEqual('KID_UPDATED');
       expect(action.kid).toEqual(EXPECTED_KID);
-      expect(Actions.congratulations).toHaveBeenCalled();
+      const { type } = store.getActions()[1];
+      expect(type).toEqual('TEST_GET_INITIAL_USAGE');
+      expect(Actions.initialUsage).toHaveBeenCalled();
     });
   });
 });

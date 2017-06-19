@@ -10,6 +10,7 @@ import migrateDataFromPreviousVersion from './MigrateDataFromPreviousVersion';
 import userLoggedIn from './UserLoggedIn';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
+import getInitalUsage from './GetInitialUsage';
 
 type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
@@ -35,45 +36,44 @@ const hasInstalledKids = (kidsState: KidsState): boolean => {
   return installed.includes(true) || statusProp.includes('INSTALLED');
 };
 
-export default () => async (
-  dispatch: Dispatch,
-  getState: GetState,
-): Promise<any> => {
-  const { kidsState, parentState } = getState();
+export default () =>
+  async (dispatch: Dispatch, getState: GetState): Promise<any> => {
+    const { kidsState, parentState } = getState();
 
-  // eslint-disable-next-line
-  console.log('Booted! Initial state:', kidsState, parentState);
+    // eslint-disable-next-line
+    console.log('Booted! Initial state:', kidsState, parentState);
 
-  const isInstalled = hasInstalledKids(kidsState);
-  const completedSetup = finishedSetup(parentState);
+    const isInstalled = hasInstalledKids(kidsState);
+    const completedSetup = finishedSetup(parentState);
 
-  // The parent has configured at least one kid and completed setup
-  if (isInstalled && completedSetup) {
-    Actions.dashboard({ type: 'replace' });
-    dispatch(userLoggedIn());
-    return dispatch(fetchReports());
-  }
-
-  // The parent has configured at least one kid but not completed setup
-  if (isInstalled && !completedSetup) {
-    Actions.congratulations({ type: 'replace' });
-    dispatch(userLoggedIn());
-    return Promise.resolve();
-  }
-
-  const profileJSON = await AsyncStorage.getItem('profile');
-
-  // The parent is migrating from an older version of the app.
-  if (profileJSON) {
-    const profile = JSON.parse(profileJSON);
-
-    return dispatch(migrateDataFromPreviousVersion(profile)).then(() => {
-      dispatch(fetchReports());
-      dispatch(userLoggedIn());
+    // The parent has configured at least one kid and completed setup
+    if (isInstalled && completedSetup) {
       Actions.dashboard({ type: 'replace' });
-    });
-  }
+      dispatch(userLoggedIn());
+      return dispatch(fetchReports());
+    }
 
-  // Fresh state. Check to see if Deeplink has been set.
-  return dispatch(checkDeeplink());
-};
+    // The parent has configured at least one kid but not completed setup
+    if (isInstalled && !completedSetup) {
+      dispatch(userLoggedIn());
+      dispatch(getInitalUsage());
+      Actions.initialUsage({ type: 'reset' });
+      return Promise.resolve();
+    }
+
+    const profileJSON = await AsyncStorage.getItem('profile');
+
+    // The parent is migrating from an older version of the app.
+    if (profileJSON) {
+      const profile = JSON.parse(profileJSON);
+
+      return dispatch(migrateDataFromPreviousVersion(profile)).then(() => {
+        dispatch(fetchReports());
+        dispatch(userLoggedIn());
+        Actions.dashboard({ type: 'reset' });
+      });
+    }
+
+    // Fresh state. Check to see if Deeplink has been set.
+    return dispatch(checkDeeplink());
+  };

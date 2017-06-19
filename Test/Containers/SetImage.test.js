@@ -46,6 +46,6 @@ it('calls Select Image then navigates to SetupCompletion', () => {
     expect(mockDispatch).toHaveBeenCalledWith('TEST_SELECT_IMAGE');
     expect(mockDispatch).toHaveBeenCalledWith('TEST_PERSIST_KID');
     expect(mockDispatch).toHaveBeenCalledWith('TEST_GET_INITIAL_USAGE');
-    expect(Actions.initialUsage).toHaveBeenCalled();
+    expect(Actions.setupCompletion).toHaveBeenCalled();
   });
 });
