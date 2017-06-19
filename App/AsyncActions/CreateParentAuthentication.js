@@ -6,7 +6,7 @@ import type { ParentState } from '../Reducers/Parent';
 
 type Dispatch = () => void;
 type GetState = () => {
-  parentState: ParentState
+  parentState: ParentState,
 };
 
 const createUser = (email: string, password: string): Promise<any> =>
@@ -32,7 +32,8 @@ export default () =>
       return Promise.reject(new Error('Please enter a password'));
     }
 
-    await createUser(email, password);
+    const cleanedEmail = email.trim();
+    await createUser(cleanedEmail, password);
     await setName(name);
     return dispatch(userLoggedIn());
   };
