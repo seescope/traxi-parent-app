@@ -1,5 +1,6 @@
 import React from 'react';
 import { Animated, Text, StyleSheet, View, Image } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 import {
   LIGHT_GREY,
@@ -11,22 +12,22 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    height: 65,
+    marginVertical: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  progressValue: {
-    marginLeft: 10,
-    width: 40,
+  progress: {
     backgroundColor: TRANSPARENT,
-    color: LIGHT_GREY,
+    color: GREY,
+    fontWeight: '300',
   },
   logoPlaceholder: {
     height: 40,
     width: 40,
     backgroundColor: LIGHT_GREY,
     borderRadius: 8,
+    marginRight: 8,
   },
   logo: {
     height: 40,
@@ -34,26 +35,22 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   name: {
+    fontFamily: 'Raleway',
     backgroundColor: TRANSPARENT,
-    marginLeft: 10,
+    fontWeight: 'bold',
     color: GREY,
+    marginBottom: 4,
+    marginRight: 8,
   },
   informationContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    marginTop: 8,
-    marginBottom: 8,
-  },
-  progressContainer: {
-    flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 5,
+  },
+  progressBarContainer: {
+    flex: 1,
   },
   progressBarPlaceholder: {
-    marginLeft: 10,
-    flex: 1,
     height: 20,
+    flex: 1,
     backgroundColor: LIGHT_GREY,
     borderRadius: 4,
   },
@@ -114,7 +111,7 @@ class AppRow extends React.Component {
   props: Props;
 
   render() {
-    const { progress } = this.props;
+    const { progress, logo, name } = this.props;
     const { progressBarWidth } = this.state;
 
     const percentageWidth = progressBarWidth.interpolate({
@@ -123,32 +120,34 @@ class AppRow extends React.Component {
     });
 
     return (
-      <View style={styles.container}>
+      <Animatable.View
+        useNativeDriver
+        duration={1000}
+        animation="fadeIn"
+        style={styles.container}
+      >
         <View style={styles.logoPlaceholder}>
-          {this.props.logo != null &&
-            <Image style={styles.logo} source={{ uri: this.props.logo }} />}
+          {logo && <Image style={styles.logo} source={{ uri: logo }} />}
         </View>
 
-        <View style={styles.informationContainer}>
-          <Text style={styles.name} ellipsizeMode="tail" numberOfLines={1}>
-            {this.props.name}
-          </Text>
-          <View style={styles.progressContainer}>
-            <Text style={styles.progressValue}>{progress} %</Text>
-            <View style={styles.progressBarPlaceholder}>
-              <Animated.View
-                style={[
-                  styles.progressBar,
-                  getProgressBarStyle(progress),
-                  {
-                    width: percentageWidth,
-                  },
-                ]}
-              />
-            </View>
+        <View style={styles.progressBarContainer}>
+          <View style={styles.informationContainer}>
+            <Text style={styles.name}>{name}:</Text>
+            <Text style={styles.progress}>{progress}%</Text>
+          </View>
+          <View style={styles.progressBarPlaceholder}>
+            <Animated.View
+              style={[
+                styles.progressBar,
+                getProgressBarStyle(progress),
+                {
+                  width: percentageWidth,
+                },
+              ]}
+            />
           </View>
         </View>
-      </View>
+      </Animatable.View>
     );
   }
 }

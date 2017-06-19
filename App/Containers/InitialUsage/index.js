@@ -3,15 +3,17 @@
 /* eslint no-duplicate-imports: 0 */
 
 import React from 'react';
-import { Text, StyleSheet, View, ScrollView } from 'react-native';
+import { PixelRatio, Text, StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import Spacing from '../../Components/Spacing';
 import Background from '../../Components/Background';
 import HeaderText from '../../Components/HeaderText';
 import BodyText from '../../Components/BodyText';
+import InstructionText from './InstructionText';
 import { firstName } from '../../Utils';
 import AppRow from './AppRow';
 import LoadingIndicator from '../../Components/LoadingIndicator';
+import * as Animatable from 'react-native-animatable';
 import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../../Constants/Colours';
 
 import type { RootState } from '../../Reducers';
@@ -43,27 +45,33 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   cardHeaderStyle: {
+    fontFamily: 'Raleway-Regular',
     padding: 8,
     color: GREY,
-    fontSize: 19,
+    fontSize: 17,
+    fontWeight: '500',
+    paddingBottom: 0,
   },
   headerContainer: {
     height: 40,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  message: {
+    fontWeight: 'bold',
+  },
   headerUnderlineStyle: {
+    marginTop: -8,
     marginHorizontal: 9,
-    height: 1,
+    height: 1 / PixelRatio.get(),
     width: 60,
     backgroundColor: LIGHT_GREY,
   },
 });
 
-const getHeaderLabel = (count, hasEnoughUsage): string => {
-  if (!hasEnoughUsage) return 'Completed';
-  else if (count === 1) return `${count} app found`;
-  else if (count > 1) return `${count} apps found`;
+const getHeaderLabel = (count: number): string => {
+  if (count === 1) return 'Found 1 app';
+  if (count > 1) return `Found ${count} apps`;
   return 'Searching for apps...';
 };
 
@@ -80,66 +88,46 @@ type Props = {
 
 const getAppRows = (apps: App[]): React.Element<AppRowProps>[] => {
   if (!apps.length) {
-    return [<AppRow name={'Application name'} progress={0} logo={null} />];
+    return [
+      <AppRow key={'dummy'} name={'Loading...'} progress={0} logo={null} />,
+    ];
   }
 
   return apps.map(app => <AppRow key={app.name} {...app} />);
 };
-// state = {
-//   hasEnoughUsage: true,
-// };
-//
-// componentDidMount() {
-//   this.updateUsage();
-// }
-//
-// updateUsage() {
-//   if (this.props.isFetchingApps) {
-//     sleep(500).then(() => this.updateUsage());
-//     return;
-//   }
-//
-//   const usageIsComplete = checkIfUsageIsComplete(this.props.apps);
-//
-//   if (!usageIsComplete) {
-//     this.props.getApps();
-//     sleep(2000).then(() => this.updateUsage());
-//     return;
-//   }
-//
-//   sleep(1500).then(() => {
-//     Actions.setupCompletion();
-//     this.setState({
-//       hasEnoughUsage: false,
-//     });
-//   });
-// }
+
+const getMessage = (apps: App[], kidName: string): string => {
+  if (!apps.length) return `Use an app on ${kidName}'s device`;
+  const firstApp = apps[0];
+  if (firstApp.progress < 100)
+    return `Keep using ${firstApp.name} until the bar turns green`;
+  if (apps.length > 1) {
+    const secondApp = apps[1];
+    return `Keep using ${secondApp.name} until the bar turns green`;
+  }
+  return '';
+};
 
 const InitialUsageComponent = ({ kidName, apps }: Props) => (
   <Background>
     <View style={styles.container}>
       <ScrollView>
         <HeaderText>
-          Let's see some usage!
+          Let's see some apps!
         </HeaderText>
 
         <Spacing height={32} />
 
-        <BodyText>
-          {kidName}
-          , Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod
-          {'\n\n'}
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          {'\n\n'}
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non
-        </BodyText>
+        {apps.length < 2 && <InstructionText kidName={kidName} />}
 
-        <Spacing height={16} />
+        <Spacing height={32} />
 
-        <View style={styles.cardContainer}>
+        <Animatable.View
+          animation="bounceInUp"
+          useNativeDriver
+          duration={1000}
+          style={styles.cardContainer}
+        >
           <View style={styles.headerContainer}>
             <Text style={styles.cardHeaderStyle}>
               {getHeaderLabel(apps.length)}
@@ -150,8 +138,22 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
           <View style={styles.cardBody}>
             {getAppRows(apps)}
           </View>
-        </View>
+        </Animatable.View>
+        <Animatable.View
+          useNativeDriver
+          delay={1000}
+          duration={1000}
+          key={getMessage(apps, kidName)}
+          animation="bounceInUp"
+        >
+          <BodyText align="center">
+            <Text style={styles.message}>
+              {getMessage(apps, kidName)}
+            </Text>
+          </BodyText>
+        </Animatable.View>
       </ScrollView>
+
     </View>
   </Background>
 );

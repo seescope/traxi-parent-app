@@ -29,7 +29,11 @@ const config = {
   messagingSenderId: '204102393429',
 };
 
-Firebase.initializeApp(config);
+try {
+  Firebase.initializeApp(config);
+} catch (e) {
+  console.warn('Error initialising Firebase', e);
+}
 export default class extends React.Component {
   constructor(props) {
     super(props);
