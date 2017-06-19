@@ -66,7 +66,7 @@ const style = {
     alignItems: 'center',
   },
   labelText: {
-    fontFamily: 'Raleway-Regular',
+    fontFamily: 'Raleway-ExtraBold',
     fontSize: 14,
     color: GREY,
   },

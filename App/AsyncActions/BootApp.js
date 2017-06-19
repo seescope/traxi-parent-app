@@ -15,8 +15,8 @@ import getInitalUsage from './GetInitialUsage';
 type Dispatch = () => Promise<any>;
 type GetState = () => RootState;
 
-const finishedSetup = ({ name, email }: ParentState): boolean =>
-  !lodash.isNil(name) && !lodash.isNil(email);
+const finishedSetup = ({ name, email, password }: ParentState): boolean =>
+  !lodash.isNil(name) && !lodash.isNil(email) && !lodash.isNil(password);
 
 const hasInstalledKids = (kidsState: KidsState): boolean => {
   const installed = lodash
