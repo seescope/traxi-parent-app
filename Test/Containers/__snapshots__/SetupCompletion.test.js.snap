@@ -87,7 +87,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
             style={
               Object {
                 "color": "#545454",
-                "fontFamily": "Raleway-Regular",
+                "fontFamily": "Raleway-ExtraBold",
                 "fontSize": 14,
               }
             }
@@ -135,7 +135,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
             style={
               Object {
                 "color": "#545454",
-                "fontFamily": "Raleway-Regular",
+                "fontFamily": "Raleway-ExtraBold",
                 "fontSize": 14,
               }
             }
@@ -183,7 +183,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
             style={
               Object {
                 "color": "#545454",
-                "fontFamily": "Raleway-Regular",
+                "fontFamily": "Raleway-ExtraBold",
                 "fontSize": 14,
               }
             }
