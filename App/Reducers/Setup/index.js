@@ -1,13 +1,21 @@
 // @flow
 import type { Kid } from '../Kids';
 type DeviceType = 'Android' | 'iPhone' | 'iPad' | 'unknown';
+
+export type AppWithProgress = {
+  name: string,
+  logo: string,
+  progress: number
+};
+
 export type SetupState = {
   step: number,
   kidUUID: ?string,
   setupID: ?number,
   deviceType: DeviceType,
   loading: boolean,
-  sceneName: string
+  sceneName: string,
+  apps: ?(AppWithProgress[])
 };
 
 export type SetupAction =
@@ -20,7 +28,9 @@ export type SetupAction =
   | { type: 'NEXT_STEP' }
   | { type: 'PREVIOUS_STEP' }
   | { type: 'STARTED_LOADING' }
-  | { type: 'STOPPED_LOADING' };
+  | { type: 'STOPPED_LOADING' }
+  | { type: 'FETCHED_APPS', apps: AppWithProgress[] }
+  | { type: 'FETCHED_APPS_STATUS', isFetchingApps: boolean };
 
 const INITIAL_STATE = {
   step: 0,
@@ -29,6 +39,7 @@ const INITIAL_STATE = {
   deviceType: 'unknown',
   loading: false,
   sceneName: 'loading',
+  apps: undefined,
 };
 
 // const INITIAL_STATE = {
@@ -84,6 +95,12 @@ export default (
       return {
         ...state,
         loading: false,
+      };
+    }
+    case 'FETCHED_APPS': {
+      return {
+        ...state,
+        apps: action.apps,
       };
     }
     case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {

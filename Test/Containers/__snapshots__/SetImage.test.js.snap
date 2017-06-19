@@ -7,7 +7,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
       "alignItems": "center",
       "backgroundColor": "#F0F2F7",
       "flex": 1,
-      "justifyContent": "center",
+      "paddingTop": 32,
     }
   }
 >
@@ -50,6 +50,7 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
           Object {
             "backgroundColor": "#FFF",
             "borderRadius": 4,
+            "elevation": 6,
             "margin": 8,
             "marginBottom": 24,
             "padding": 8,

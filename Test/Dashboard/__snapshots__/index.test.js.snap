@@ -189,6 +189,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
+                  "elevation": 6,
                   "margin": 8,
                   "marginBottom": 24,
                   "padding": 8,
@@ -430,6 +431,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
+                  "elevation": 6,
                   "margin": 8,
                   "marginBottom": 24,
                   "padding": 8,
@@ -671,6 +673,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
+                  "elevation": 6,
                   "margin": 8,
                   "marginBottom": 24,
                   "padding": 8,
@@ -912,6 +915,7 @@ exports[`renders correctly 1`] = `
                 Object {
                   "backgroundColor": "#FFF",
                   "borderRadius": 4,
+                  "elevation": 6,
                   "margin": 8,
                   "marginBottom": 24,
                   "padding": 8,

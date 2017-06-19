@@ -1,5 +1,5 @@
 // @flow
-import type { SetupAction } from './index';
+import type { SetupAction, AppWithProgress } from './index';
 
 export function nextStep(): SetupAction {
   return {
@@ -22,5 +22,19 @@ export function startedLoading(): SetupAction {
 export function stoppedLoading(): SetupAction {
   return {
     type: 'STOPPED_LOADING',
+  };
+}
+
+export function fetchedApps(apps: AppWithProgress[]): SetupAction {
+  return {
+    type: 'FETCHED_APPS',
+    apps,
+  };
+}
+
+export function fetchingApps(isFetchingApps: boolean): SetupAction {
+  return {
+    type: 'FETCHED_APPS_STATUS',
+    isFetchingApps,
   };
 }

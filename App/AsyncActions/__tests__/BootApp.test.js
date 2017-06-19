@@ -10,6 +10,9 @@ jest.mock('../MigrateDataFromPreviousVersion', () =>
       Promise.resolve(
         dispatch({ type: 'TEST_MIGRATE_DATA_FROM_PREVIOUS_VERSION', profile })
       ));
+jest.mock('../GetInitialUsage', () =>
+  () =>
+    dispatch => Promise.resolve(dispatch({ type: 'TEST_GET_INITIAL_USAGE' })));
 import { AsyncStorage } from 'react-native';
 import bootApp from '../BootApp';
 import configureMockStore from 'redux-mock-store';
@@ -64,6 +67,7 @@ describe('Boot App', () => {
         UUID: 'abc-123',
         name: 'Jeff',
         email: 'test@email.com',
+        password: 'password',
       },
     };
 
@@ -116,9 +120,11 @@ describe('Boot App', () => {
     const store = mockStore(STATE_WITH_INCOMPLETE_SETUP);
 
     return store.dispatch(bootApp()).then(() => {
-      expect(Actions.congratulations).toHaveBeenCalled();
+      expect(Actions.initialUsage).toHaveBeenCalled();
       const action = store.getActions()[0];
       expect(action.type).toEqual('TEST_USER_LOGGED_IN');
+      const secondAction = store.getActions()[1];
+      expect(secondAction.type).toEqual('TEST_GET_INITIAL_USAGE');
     });
   });
 });

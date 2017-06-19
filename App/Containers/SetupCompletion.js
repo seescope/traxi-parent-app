@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable react/jsx-indent */
+
 import React from 'react';
 import OneSignal from 'react-native-onesignal';
 import { Alert, ScrollView, Text, View } from 'react-native';
@@ -13,6 +15,7 @@ import TextInput from '../Components/TextInput';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
 import LoadingIndicator from '../Components/LoadingIndicator';
+import Spacing from '../Components/Spacing';
 
 import { startedLoading, stoppedLoading } from '../Reducers/Setup/setupActions';
 import * as ParentActions from '../Reducers/Parent/parentActions';
@@ -57,14 +60,13 @@ const style = {
   outerContainer: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 64,
+    paddingTop: 32,
   },
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
   },
   labelText: {
-    fontFamily: 'Raleway-Regular',
+    fontFamily: 'Raleway-ExtraBold',
     fontSize: 14,
     color: GREY,
   },
@@ -107,6 +109,8 @@ export const SetupCompletion = (
   >
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
+
+      <Spacing height={32} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
         <View style={style.innerContainer}>

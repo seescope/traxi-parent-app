@@ -45,6 +45,7 @@ export default StyleSheet.create({
     shadowColor: '#000000',
     shadowOpacity: 0.16,
     shadowRadius: 3,
+    elevation: 6,
     shadowOffset: {
       height: 3,
       width: 3,
