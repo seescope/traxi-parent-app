@@ -252,7 +252,7 @@ describe('getInitialUsage', () => {
     const EXPECTED_ACTIONS = [
       {
         apps: [
-          { name: 'Slack - Business Communication for Teams', progress: 110 },
+          { name: 'Slack - Business Communication for Teams', progress: 100 },
           { logo: undefined, name: 'Safari', progress: 100 },
           { logo: undefined, name: 'Facebook', progress: 55 },
         ],

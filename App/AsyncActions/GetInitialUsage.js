@@ -55,7 +55,9 @@ const getUpdatedProgress = (
   // The other possible (but less likely) case is that the session we were previously
   // tracking has now ended, so we need to combine the usage of our previous session
   // with the new one.
-  return previous.progress + newApp.progress;
+  const combined = previous.progress + newApp.progress;
+
+  return combined > 100 ? 100 : combined;
 };
 
 const combineProgress = (

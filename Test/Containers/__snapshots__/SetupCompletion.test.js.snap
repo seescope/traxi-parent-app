@@ -6,7 +6,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
     Object {
       "alignItems": "center",
       "flex": 1,
-      "paddingTop": 64,
+      "paddingTop": 32,
     }
   }
   style={
@@ -20,7 +20,6 @@ exports[`SetupCompletion Renders correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "justifyContent": "center",
         }
       }
     >
@@ -41,12 +40,20 @@ exports[`SetupCompletion Renders correctly 1`] = `
         Last step!
       </Text>
       <View
+        style={
+          Object {
+            "height": 32,
+          }
+        }
+      />
+      <View
         elevation={6}
         style={
           Array [
             Object {
               "backgroundColor": "#FFF",
               "borderRadius": 4,
+              "elevation": 6,
               "margin": 8,
               "marginBottom": 24,
               "padding": 8,
@@ -61,7 +68,6 @@ exports[`SetupCompletion Renders correctly 1`] = `
             },
             Object {
               "alignItems": "center",
-              "justifyContent": "center",
             },
           ]
         }

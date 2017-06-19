@@ -8,8 +8,6 @@ import { Actions } from 'react-native-router-flux';
 jest.mock('../../App/AsyncActions/SelectImage', () =>
   () => 'TEST_SELECT_IMAGE');
 jest.mock('../../App/AsyncActions/PersistKid', () => () => 'TEST_PERSIST_KID');
-jest.mock('../../App/AsyncActions/GetInitialUsage', () =>
-  () => 'TEST_GET_INITIAL_USAGE');
 
 import SetImageComponent, {
   mapDispatchToProps,
@@ -45,7 +43,6 @@ it('calls Select Image then navigates to SetupCompletion', () => {
   return onPress(true).then(() => {
     expect(mockDispatch).toHaveBeenCalledWith('TEST_SELECT_IMAGE');
     expect(mockDispatch).toHaveBeenCalledWith('TEST_PERSIST_KID');
-    expect(mockDispatch).toHaveBeenCalledWith('TEST_GET_INITIAL_USAGE');
     expect(Actions.setupCompletion).toHaveBeenCalled();
   });
 });

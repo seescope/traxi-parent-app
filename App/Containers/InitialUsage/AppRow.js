@@ -64,15 +64,14 @@ const styles = StyleSheet.create({
 });
 
 const getProgressBarStyle = value => {
-  if (value === 100) {
+  if (value >= 100) {
     return {
       borderRadius: 4,
       backgroundColor: GOOD,
     };
   }
   return {
-    borderBottomLeftRadius: 4,
-    borderTopLeftRadius: 4,
+    borderRadius: 4,
   };
 };
 

@@ -6,7 +6,6 @@ import { Actions } from 'react-native-router-flux';
 
 import selectImage from '../AsyncActions/SelectImage';
 import persistKid from '../AsyncActions/PersistKid';
-import getInitialUsage from '../AsyncActions/GetInitialUsage';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
@@ -16,9 +15,9 @@ import { isIOS, firstName } from '../Utils';
 
 const STYLE = {
   outerContainer: {
+    paddingTop: 32,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: VERY_LIGHT_GREY,
   },
   container: {

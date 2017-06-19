@@ -15,6 +15,7 @@ import TextInput from '../Components/TextInput';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
 import LoadingIndicator from '../Components/LoadingIndicator';
+import Spacing from '../Components/Spacing';
 
 import { startedLoading, stoppedLoading } from '../Reducers/Setup/setupActions';
 import * as ParentActions from '../Reducers/Parent/parentActions';
@@ -31,7 +32,7 @@ import type { SetupState } from '../Reducers/Setup';
 type RootState = {
   parentState: ParentState,
   kidsState: KidsState,
-  setupState: SetupState,
+  setupState: SetupState
 };
 
 type Props = {
@@ -41,13 +42,13 @@ type Props = {
   onPasswordChanged: () => {},
   onEmailChanged: () => {},
   onPress: () => {},
-  loading: boolean,
+  loading: boolean
 };
 
 type Fields = {
   name: string,
   email: string,
-  password: string,
+  password: string
 };
 
 type Dispatch = () => Promise<any>;
@@ -59,11 +60,10 @@ const style = {
   outerContainer: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 64,
+    paddingTop: 32,
   },
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
   },
   labelText: {
     fontFamily: 'Raleway-Regular',
@@ -101,7 +101,7 @@ export const SetupCompletion = (
     email,
     onPress,
     loading,
-  }: Props,
+  }: Props
 ) => (
   <ScrollView
     style={style.background}
@@ -109,6 +109,8 @@ export const SetupCompletion = (
   >
     <View style={style.container}>
       <HeaderText style={style.headerText}>Last step!</HeaderText>
+
+      <Spacing height={32} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
         <View style={style.innerContainer}>

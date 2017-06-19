@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 40,
+    paddingTop: 32,
   },
   cardBody: {
     margin: 10,
