@@ -5,19 +5,19 @@
 import React from 'react';
 import { PixelRatio, Text, StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import Spacing from '../../Components/Spacing';
-import Background from '../../Components/Background';
-import HeaderText from '../../Components/HeaderText';
-import BodyText from '../../Components/BodyText';
+import Spacing from '../Components/Spacing';
+import Background from '../Components/Background';
+import HeaderText from '../Components/HeaderText';
+import BodyText from '../Components/BodyText';
 import InstructionText from './InstructionText';
-import { firstName } from '../../Utils';
+import { firstName } from '../Utils';
 import AppRow from './AppRow';
-import LoadingIndicator from '../../Components/LoadingIndicator';
+import LoadingIndicator from '../Components/LoadingIndicator';
 import * as Animatable from 'react-native-animatable';
-import { LIGHT_GREY, GREY } from '../../Constants/Colours';
-import STYLES from '../../Constants/Styles';
+import { LIGHT_GREY, GREY } from '../Constants/Colours';
+import STYLES from '../Constants/Styles';
 
-import type { RootState } from '../../Reducers';
+import type { RootState } from '../Reducers';
 import type { Props as AppRowProps } from './AppRow';
 
 const styles = StyleSheet.create({

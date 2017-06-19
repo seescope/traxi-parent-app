@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { View } from 'react-native';
-import Spacing from '../../Components/Spacing';
-import BodyText from '../../Components/BodyText';
+import Spacing from '../Components/Spacing';
+import BodyText from '../Components/BodyText';
 
 type Props = {
   kidName: string

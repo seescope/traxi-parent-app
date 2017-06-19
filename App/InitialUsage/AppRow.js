@@ -8,7 +8,7 @@ import {
   TRAXI_BLUE,
   TRANSPARENT,
   GOOD,
-} from '../../Constants/Colours';
+} from '../Constants/Colours';
 
 const styles = StyleSheet.create({
   container: {
