@@ -14,7 +14,7 @@ type FirebaseKid = {
   deviceType: 'iPhone' | 'iPad' | 'Android',
   name: string,
   avatarURL: string,
-  installed: boolean,
+  installed: boolean
 };
 
 // HACK: This is awful, and ugly. Necessary because Traxi updates the
@@ -46,7 +46,7 @@ export default () =>
       }
 
       if (installed) {
-        Actions.congratulations();
+        Actions.initialUsage({ type: 'reset' });
         Firebase.database().ref(`kids/${kidUUID}`).off();
       }
     };

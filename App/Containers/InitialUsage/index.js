@@ -14,7 +14,8 @@ import { firstName } from '../../Utils';
 import AppRow from './AppRow';
 import LoadingIndicator from '../../Components/LoadingIndicator';
 import * as Animatable from 'react-native-animatable';
-import { LIGHT_GREY, GREY, WHITE, SHADOW_COLOR } from '../../Constants/Colours';
+import { LIGHT_GREY, GREY } from '../../Constants/Colours';
+import STYLES from '../../Constants/Styles';
 
 import type { RootState } from '../../Reducers';
 import type { Props as AppRowProps } from './AppRow';
@@ -25,31 +26,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 40,
   },
-  cardContainer: {
-    flex: 1,
-    alignSelf: 'stretch',
-    borderRadius: 8,
-    backgroundColor: WHITE,
-    margin: 10,
-    padding: 8,
-    marginBottom: 28,
-    shadowColor: SHADOW_COLOR,
-    shadowOpacity: 0.16,
-    shadowRadius: 3,
-    shadowOffset: {
-      height: 3,
-      width: 3,
-    },
-  },
   cardBody: {
     margin: 10,
   },
   cardHeaderStyle: {
-    fontFamily: 'Raleway-Regular',
+    fontFamily: 'Raleway-ExtraBold',
     padding: 8,
     color: GREY,
     fontSize: 17,
-    fontWeight: '500',
     paddingBottom: 0,
   },
   headerContainer: {
@@ -105,6 +89,8 @@ const getMessage = (apps: App[], kidName: string): string => {
     const secondApp = apps[1];
     return `Keep using ${secondApp.name} until the bar turns green`;
   }
+  if (firstApp.progress === 100)
+    return `Use another app on ${kidName}'s device'`;
   return '';
 };
 
@@ -120,13 +106,11 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
 
         {apps.length < 2 && <InstructionText kidName={kidName} />}
 
-        <Spacing height={32} />
-
         <Animatable.View
           animation="bounceInUp"
           useNativeDriver
           duration={1000}
-          style={styles.cardContainer}
+          style={STYLES.CARD}
         >
           <View style={styles.headerContainer}>
             <Text style={styles.cardHeaderStyle}>

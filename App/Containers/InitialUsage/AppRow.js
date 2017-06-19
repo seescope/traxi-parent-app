@@ -18,26 +18,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   progress: {
+    fontFamily: 'Raleway-Regular',
     backgroundColor: TRANSPARENT,
     color: GREY,
     fontWeight: '300',
   },
-  logoPlaceholder: {
+  logoContainer: {
+    backgroundColor: TRANSPARENT,
     height: 40,
     width: 40,
-    backgroundColor: LIGHT_GREY,
-    borderRadius: 8,
     marginRight: 8,
   },
+  logoPlaceholder: {
+    flex: 1,
+    backgroundColor: LIGHT_GREY,
+    borderRadius: 8,
+  },
   logo: {
-    height: 40,
-    width: 40,
+    flex: 1,
     borderRadius: 8,
   },
   name: {
-    fontFamily: 'Raleway',
+    fontFamily: 'Raleway-ExtraBold',
     backgroundColor: TRANSPARENT,
-    fontWeight: 'bold',
     color: GREY,
     marginBottom: 4,
     marginRight: 8,
@@ -126,13 +129,15 @@ class AppRow extends React.Component {
         animation="fadeIn"
         style={styles.container}
       >
-        <View style={styles.logoPlaceholder}>
-          {logo && <Image style={styles.logo} source={{ uri: logo }} />}
-        </View>
 
+        <View style={styles.logoContainer}>
+          {logo
+            ? <Image style={styles.logo} source={{ uri: logo }} />
+            : <View style={styles.logoPlaceholder} />}
+        </View>
         <View style={styles.progressBarContainer}>
           <View style={styles.informationContainer}>
-            <Text style={styles.name}>{name}:</Text>
+            <Text style={styles.name}>{name}</Text>
             <Text style={styles.progress}>{progress}%</Text>
           </View>
           <View style={styles.progressBarPlaceholder}>

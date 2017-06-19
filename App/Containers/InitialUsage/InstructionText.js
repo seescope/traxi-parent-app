@@ -35,5 +35,7 @@ export default ({ kidName }: Props) => (
       {kidName}
       &apos;s device and use it until the bar turns green.
     </BodyText>
+
+    <Spacing height={32} />
   </View>
 );
