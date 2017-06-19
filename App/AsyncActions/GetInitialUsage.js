@@ -101,7 +101,7 @@ const parseApp = (app: App): AppWithProgress => ({
 });
 
 const parseApps = (apps: App[]): AppWithProgress[] =>
-  groupAppsByName(apps).filter(a => a.TimeUsed > 5).map(parseApp);
+  groupAppsByName(apps).filter(a => a.TimeUsed > 2).map(parseApp);
 
 const getInitialUsage = () =>
   (dispatch: Dispatch, getState: GetState): Promise<void> => {
