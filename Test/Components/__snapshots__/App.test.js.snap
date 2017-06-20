@@ -32,10 +32,10 @@ exports[`renders the root compontent correctly 1`] = `
   />
   <View
     component={[Function]}
+    initial={false}
   />
   <View
     component={[Function]}
-    initial={false}
   />
 </View>
 `;

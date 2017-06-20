@@ -6,10 +6,28 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:update": "jest --updateSnapshot",
-    "lint": "eslint App Test"
+    "test": "node_modules/.bin/jest",
+    "test:watch": "node_modules/.bin/jest --watch",
+    "test:ci": "node_modules/.bin/jest --runInBand",
+    "test:precommit": "node_modules/.bin/jest --bail --findRelatedTests",
+    "test:update": "node_modules/.bin/jest --updateSnapshot",
+    "lint": "node_modules/.bin/eslint App Test",
+    "lint:precommit": "node_modules/.bin/eslint",
+    "flow:start": "node_modules/.bin/flow",
+    "flow:stop": "node_modules/.bin/flow stop",
+    "flow:check": "node_modules/.bin/flow check",
+    "flow-typed:install": "flow-typed install",
+    "flow-typed:update": "flow-typed update",
+    "prettier:precommit": "node_modules/.bin/prettier --write --trailing-comma all --single-quote",
+    "precommit": "lint-staged && yarn flow:check"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn test:precommit",
+      "yarn lint:precommit",
+      "yarn prettier:precommit",
+      "git add"
+    ]
   },
   "jest": {
     "preset": "react-native",
@@ -23,6 +41,7 @@
     "global": "^4.3.1",
     "google-libphonenumber": "^2.0.7",
     "lodash": "^4.16.6",
+    "md5": "^2.2.1",
     "moment": "^2.13.0",
     "react": "16.0.0-alpha.6",
     "react-addons-pure-render-mixin": "^15.5.2",
@@ -58,7 +77,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^15.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.9.0",
@@ -69,6 +88,7 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-config-prettier": "^1.2.0",
+    "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jest": "^19.0.1",
     "eslint-plugin-jsx-a11y": "^1.2.2",

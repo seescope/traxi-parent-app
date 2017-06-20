@@ -1,15 +1,20 @@
 machine:
   node:
     version: 7.9.0
+  timezone: Australia/Melbourne
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
 dependencies:
   override:
     - yarn
+  cache_directories:
+    - ~/.cache/yarn
 
 test:
   override:
-    - yarn flow
-    - yarn eslint App
+    - yarn flow:check
+    - yarn lint
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
-    - yarn test -- --runInBand
+    - yarn test:ci
     - cp junit.xml $CIRCLE_TEST_REPORTS/junit/

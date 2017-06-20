@@ -62,6 +62,17 @@ describe('Setup Reducer', () => {
     });
   });
 
+  describe('FETCHED_APPS', () => {
+    it('Sets the apps property', () => {
+      const action = {
+        type: 'FETCHED_APPS',
+        apps: [],
+      };
+      const { apps } = reducer(undefined, action);
+      expect(apps).toEqual([]);
+    });
+  });
+
   describe('REACT_NATIVE_ROUTER_FLUX_FOCUS', () => {
     it('Sets the current sceneName', () => {
       const TEST_SCENE_NAME = 'testscene';

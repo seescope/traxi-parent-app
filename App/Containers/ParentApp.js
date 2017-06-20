@@ -4,7 +4,6 @@ import { Scene, Router } from 'react-native-router-flux';
 
 import SplashScreen from '../Components/SplashScreen';
 import SetName from './SetName';
-import Congratulations from './Congratulations';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
@@ -12,6 +11,7 @@ import SetupCompletion from './SetupCompletion';
 import DeviceSetup from './DeviceSetup';
 import Loading from '../Components/Loading';
 import CheckForDevice from './CheckForDevice';
+import InitialUsage from '../InitialUsage';
 import SendReminder from './SendReminder';
 const RouterWithRedux = connect()(Router);
 
@@ -24,11 +24,11 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="checkForDevice" component={CheckForDevice} />
       <Scene key="sendReminder" component={SendReminder} />
       <Scene key="deviceSetup" component={DeviceSetup} />
-      <Scene key="congratulations" component={Congratulations} />
       <Scene key="setKidImage" component={SetImage} />
       <Scene key="setupCompletion" component={SetupCompletion} />
       <Scene key="dashboard" component={Dashboard} />
       <Scene key="playground" initial={false} component={Playground} />
+      <Scene key="initialUsage" component={InitialUsage} />
     </RouterWithRedux>
   </Provider>
 );

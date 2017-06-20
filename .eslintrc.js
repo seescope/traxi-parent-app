@@ -3,14 +3,14 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
-      jsx: true,
-    },
+      jsx: true
+    }
   },
-  plugins: ['react', 'react-native', 'jest', 'prettier'],
+  plugins: ['react', 'react-native', 'jest', 'prettier', 'flowtype'],
   extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   env: {
     es6: true,
-    'jest/globals': true,
+    'jest/globals': true
   },
   rules: {
     quotes: ['error', 'single'],
@@ -25,9 +25,9 @@ module.exports = {
     'import/no-unresolved': 1,
     'react/jsx-indent': 1,
     'jest/no-focused-tests': 2,
-    'jest/no-identical-title': 2,
+    'jest/no-identical-title': 2
   },
   globals: {
-    __DEV__: true,
-  },
+    __DEV__: true
+  }
 };

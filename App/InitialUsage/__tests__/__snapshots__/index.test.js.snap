@@ -1,0 +1,1112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there are no apps 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "paddingTop": 32,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#545454",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 26,
+              "textAlign": "center",
+            }
+          }
+        >
+          Let's see some apps!
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          }
+        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            Now that
+             
+            
+            's device is being monitored by traxi, you can see what apps they're using on their device.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 24,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            After
+             
+            
+             
+            has used an app for more than a 60 seconds, you'll be able to see it with Traxi.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 24,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            To show you how this works, open an app on
+             
+            
+            's device and use it until the bar turns green.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          animation="bounceInUp"
+          duration={1000}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "borderRadius": 4,
+              "elevation": 6,
+              "margin": 8,
+              "marginBottom": 24,
+              "padding": 8,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "shadowOpacity": 0.16,
+              "shadowRadius": 3,
+              "width": 734,
+            }
+          }
+          useNativeDriver={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 17,
+                  "padding": 8,
+                  "paddingBottom": 0,
+                }
+              }
+            >
+              Searching for apps...
+            </Text>
+            <View>
+              <ActivityIndicator
+                animating={true}
+                color="#448AFF"
+                hidesWhenStopped={true}
+                size="large"
+                style={null}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#A6A8AB",
+                "height": 0.5,
+                "marginHorizontal": 9,
+                "marginTop": -8,
+                "width": 60,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            <View
+              animation="fadeIn"
+              duration={1000}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginVertical": 8,
+                }
+              }
+              useNativeDriver={true}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "height": 40,
+                    "marginRight": 8,
+                    "width": 40,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#A6A8AB",
+                      "borderRadius": 8,
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-ExtraBold",
+                        "marginBottom": 4,
+                        "marginRight": 8,
+                      }
+                    }
+                  >
+                    Loading...
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-Regular",
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    0
+                    %
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#A6A8AB",
+                      "borderRadius": 4,
+                      "flex": 1,
+                      "height": 20,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#448AFF",
+                        "borderRadius": 4,
+                        "flex": 1,
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          animation="bounceInUp"
+          delay={1000}
+          duration={1000}
+          useNativeDriver={true}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Use an app on 's device
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`renders correctly when there are two apps 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "paddingTop": 32,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#545454",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 26,
+              "textAlign": "center",
+            }
+          }
+        >
+          Let's see some apps!
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          }
+        />
+        <View
+          animation="bounceInUp"
+          duration={1000}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "borderRadius": 4,
+              "elevation": 6,
+              "margin": 8,
+              "marginBottom": 24,
+              "padding": 8,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "shadowOpacity": 0.16,
+              "shadowRadius": 3,
+              "width": 734,
+            }
+          }
+          useNativeDriver={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 17,
+                  "padding": 8,
+                  "paddingBottom": 0,
+                }
+              }
+            >
+              Found 2 apps
+            </Text>
+            <View>
+              <ActivityIndicator
+                animating={true}
+                color="#448AFF"
+                hidesWhenStopped={true}
+                size="large"
+                style={null}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#A6A8AB",
+                "height": 0.5,
+                "marginHorizontal": 9,
+                "marginTop": -8,
+                "width": 60,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            <View
+              animation="fadeIn"
+              duration={1000}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginVertical": 8,
+                }
+              }
+              useNativeDriver={true}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "height": 40,
+                    "marginRight": 8,
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "something",
+                    }
+                  }
+                  style={
+                    Object {
+                      "borderRadius": 8,
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-ExtraBold",
+                        "marginBottom": 4,
+                        "marginRight": 8,
+                      }
+                    }
+                  >
+                    Trello
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-Regular",
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    10
+                    %
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#A6A8AB",
+                      "borderRadius": 4,
+                      "flex": 1,
+                      "height": 20,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#448AFF",
+                        "borderRadius": 4,
+                        "flex": 1,
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              animation="fadeIn"
+              duration={1000}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginVertical": 8,
+                }
+              }
+              useNativeDriver={true}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "height": 40,
+                    "marginRight": 8,
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "something",
+                    }
+                  }
+                  style={
+                    Object {
+                      "borderRadius": 8,
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-ExtraBold",
+                        "marginBottom": 4,
+                        "marginRight": 8,
+                      }
+                    }
+                  >
+                    Not Trello
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-Regular",
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    10
+                    %
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#A6A8AB",
+                      "borderRadius": 4,
+                      "flex": 1,
+                      "height": 20,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#448AFF",
+                        "borderRadius": 4,
+                        "flex": 1,
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          animation="bounceInUp"
+          delay={1000}
+          duration={1000}
+          useNativeDriver={true}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Keep using Trello until the bar turns green
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`renders correctly when there is one app 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "paddingTop": 32,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#545454",
+              "fontFamily": "Raleway-ExtraBold",
+              "fontSize": 26,
+              "textAlign": "center",
+            }
+          }
+        >
+          Let's see some apps!
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 32,
+            }
+          }
+        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            Now that
+             
+            
+            's device is being monitored by traxi, you can see what apps they're using on their device.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 24,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            After
+             
+            
+             
+            has used an app for more than a 60 seconds, you'll be able to see it with Traxi.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 24,
+              }
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            To show you how this works, open an app on
+             
+            
+            's device and use it until the bar turns green.
+          </Text>
+          <View
+            style={
+              Object {
+                "height": 32,
+              }
+            }
+          />
+        </View>
+        <View
+          animation="bounceInUp"
+          duration={1000}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+              "borderRadius": 4,
+              "elevation": 6,
+              "margin": 8,
+              "marginBottom": 24,
+              "padding": 8,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "shadowOpacity": 0.16,
+              "shadowRadius": 3,
+              "width": 734,
+            }
+          }
+          useNativeDriver={true}
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "height": 40,
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 17,
+                  "padding": 8,
+                  "paddingBottom": 0,
+                }
+              }
+            >
+              Found 1 app
+            </Text>
+            <View>
+              <ActivityIndicator
+                animating={true}
+                color="#448AFF"
+                hidesWhenStopped={true}
+                size="large"
+                style={null}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#A6A8AB",
+                "height": 0.5,
+                "marginHorizontal": 9,
+                "marginTop": -8,
+                "width": 60,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "margin": 10,
+              }
+            }
+          >
+            <View
+              animation="fadeIn"
+              duration={1000}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "marginVertical": 8,
+                }
+              }
+              useNativeDriver={true}
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "transparent",
+                    "height": 40,
+                    "marginRight": 8,
+                    "width": 40,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "something",
+                    }
+                  }
+                  style={
+                    Object {
+                      "borderRadius": 8,
+                      "flex": 1,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-ExtraBold",
+                        "marginBottom": 4,
+                        "marginRight": 8,
+                      }
+                    }
+                  >
+                    Trello
+                  </Text>
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#545454",
+                        "fontFamily": "Raleway-Regular",
+                        "fontWeight": "300",
+                      }
+                    }
+                  >
+                    10
+                    %
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "backgroundColor": "#A6A8AB",
+                      "borderRadius": 4,
+                      "flex": 1,
+                      "height": 20,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "backgroundColor": "#448AFF",
+                        "borderRadius": 4,
+                        "flex": 1,
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          animation="bounceInUp"
+          delay={1000}
+          duration={1000}
+          useNativeDriver={true}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 16,
+                  "paddingHorizontal": 22,
+                  "textAlign": "left",
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Keep using Trello until the bar turns green
+            </Text>
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

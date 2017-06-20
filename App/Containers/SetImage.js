@@ -15,9 +15,9 @@ import { isIOS, firstName } from '../Utils';
 
 const STYLE = {
   outerContainer: {
+    paddingTop: 32,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: VERY_LIGHT_GREY,
   },
   container: {

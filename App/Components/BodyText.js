@@ -16,7 +16,7 @@ const BodyText = ({ children, align }) => (
 );
 
 BodyText.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  children: PropTypes.node,
   align: PropTypes.string,
 };
 
