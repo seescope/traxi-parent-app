@@ -6,7 +6,7 @@ import type { ParentState } from '../Reducers/Parent';
 
 type Dispatch = () => void;
 type GetState = () => {
-  parentState: ParentState
+  parentState: ParentState,
 };
 
 const createUser = (email: string, password: string): Promise<any> =>
@@ -14,6 +14,9 @@ const createUser = (email: string, password: string): Promise<any> =>
 
 const setName = (name: string): Promise<any> =>
   Firebase.auth().currentUser.updateProfile({ displayName: name });
+
+export const removeWhiteSpaceFromEmail = (email: string): string =>
+  email.trim();
 
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<any> => {
@@ -32,7 +35,7 @@ export default () =>
       return Promise.reject(new Error('Please enter a password'));
     }
 
-    await createUser(email, password);
+    await createUser(removeWhiteSpaceFromEmail(email), password);
     await setName(name);
     return dispatch(userLoggedIn());
   };
