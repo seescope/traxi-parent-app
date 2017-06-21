@@ -5,6 +5,10 @@
 import React from 'react';
 import { PixelRatio, Text, StyleSheet, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import * as Animatable from 'react-native-animatable';
+import Intercom from 'react-native-intercom';
+import I18n from 'react-native-i18n';
+
 import Spacing from '../Components/Spacing';
 import Background from '../Components/Background';
 import HeaderText from '../Components/HeaderText';
@@ -13,9 +17,9 @@ import InstructionText from './InstructionText';
 import { firstName } from '../Utils';
 import AppRow from './AppRow';
 import LoadingIndicator from '../Components/LoadingIndicator';
-import * as Animatable from 'react-native-animatable';
 import { LIGHT_GREY, GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+import Button from '../Components/Button';
 
 import type { RootState } from '../Reducers';
 import type { Props as AppRowProps } from './AppRow';
@@ -134,7 +138,11 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
             <Text style={styles.message}>
               {getMessage(apps, kidName)}
             </Text>
+
           </BodyText>
+          <Button onPress={() => Intercom.displayMessageComposer()}>
+            {I18n.t('general.needHelp')}
+          </Button>
         </Animatable.View>
       </ScrollView>
 
