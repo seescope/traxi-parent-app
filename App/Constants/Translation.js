@@ -5,7 +5,7 @@ export default {
     general: {
       nextStep: 'Next step',
       thanks: 'Thanks',
-      needHelp: 'I need help',
+      needHelp: 'Help',
     },
     splashScreen: {
       mainHeader: 'What is your child doing online?',
