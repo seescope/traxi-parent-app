@@ -26,7 +26,7 @@ const unknownInstructions = (step, kidName, setupID) => {
 const iosInstructions = (step, kidName, deviceType) => {
   const instructions = [
     'Tap the "Install"\n button in the top right',
-    'Tap the "Install"\n button again',
+    'Tap the "Trust"\n button',
     'Tap "Done"',
     `Connecting to ${kidName}'s ${deviceType}..`,
   ];
@@ -64,9 +64,7 @@ const instructionText = (step, kidName, deviceType, setupID) => {
     default:
       return unknownInstructions(step, kidName, setupID);
   }
-};
-
-// ReactNative forces us to be explicit about image locations.
+}; // ReactNative forces us to be explicit about image locations.
 const getInstructionImage = (step, deviceType) => {
   switch (deviceType) {
     case 'iPhone':
@@ -79,27 +77,15 @@ const getInstructionImage = (step, deviceType) => {
       return require('../Images/web-step.png');
   }
 };
-
 const getBackground = deviceType => {
   if (deviceType === 'Android')
     return require('../Images/android-background.png');
-
   return require('../Images/iphone-background.png');
-};
-
-// iphone background: 289 x 588
-// iphone image: 250 x 445
-// scaling = (250/289)
-
-// android background: 360 x 588
-// android image: 320 x 570
-
+}; // iphone background: 289 x 588 // iphone image: 250 x 445 // scaling = (250/289) // android background: 360 x 588 // android image: 320 x 570
 const iPhoneHeight = height * (588 / height);
 const iPhoneWidth = width * (289 / width);
-
 const androidHeight = height * (588 / height);
 const androidWidth = width * (286 / width);
-
 const imageDimensions = {
   Android: {
     height: androidHeight,
@@ -118,15 +104,12 @@ const imageDimensions = {
     width: iPhoneWidth,
   },
 };
-
 const isWaitingForDevice = (step, deviceType) =>
   (step === 0 && deviceType === 'unknown') || step === 3;
-
 const getOuterImageStyle = deviceType => {
   const { width: deviceWidth, height: deviceHeight } = imageDimensions[
     deviceType
   ];
-
   return {
     width: deviceWidth,
     height: deviceHeight,
@@ -136,7 +119,6 @@ const getOuterImageStyle = deviceType => {
     justifyContent: 'center',
   };
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -239,7 +221,6 @@ DeviceSetup.propTypes = {
   deviceType: PropTypes.string.isRequired,
   setupID: PropTypes.number.isRequired,
 };
-
 const mapStateToProps = ({ setupState, kidsState }) => {
   const { kidUUID } = setupState;
   const { name, deviceType } = kidsState[kidUUID];
