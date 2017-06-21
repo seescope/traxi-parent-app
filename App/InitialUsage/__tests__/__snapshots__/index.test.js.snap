@@ -356,6 +356,49 @@ exports[`renders correctly when there are no apps 1`] = `
               Use an app on 's device
             </Text>
           </Text>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
     </RCTScrollView>
@@ -737,6 +780,49 @@ exports[`renders correctly when there are two apps 1`] = `
               Keep using Trello until the bar turns green
             </Text>
           </Text>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
     </RCTScrollView>
@@ -1104,6 +1190,49 @@ exports[`renders correctly when there is one app 1`] = `
               Keep using Trello until the bar turns green
             </Text>
           </Text>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginTop": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#448AFF",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 14,
+                }
+              }
+            >
+              [missing "en.general.needHelp" translation]
+               
+            </Text>
+          </View>
         </View>
       </View>
     </RCTScrollView>
