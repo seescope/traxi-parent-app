@@ -1,3 +1,5 @@
+## 7.4.0
+- Add InitialUsage screen to show parents some usage from their child's device before they complete setup.
 ## 7.3.0
 - Chagnge instruction text to explain MDM setup on iOS.
 ## 7.0.0
