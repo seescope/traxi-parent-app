@@ -96,6 +96,8 @@ describe('Tracking Middleware', () => {
       getState: () => {},
     };
     trackingMiddleware(store)(next)(action);
-    expect(Analytics.track).toHaveBeenCalledWith('Received Initial Apps', 3);
+    expect(Analytics.track).toHaveBeenCalledWith('Received Initial Apps', {
+      apps: 3,
+    });
   });
 });

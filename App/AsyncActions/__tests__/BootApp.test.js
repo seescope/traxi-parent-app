@@ -104,7 +104,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are installed kids, but the parent is not configured, show Congratulations', () => {
+  test('If there are installed kids, but the parent is not configured, show InitialUsage', () => {
     const STATE_WITH_INCOMPLETE_SETUP = {
       kidsState: {
         '123-abc': {
