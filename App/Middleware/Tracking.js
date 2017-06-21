@@ -82,7 +82,7 @@ export default (store: Store) =>
       }
 
       if (action.type === 'FETCHED_APPS') {
-        Analytics.track('Received Initial Apps', action.apps.length);
+        Analytics.track('Received Initial Apps', { apps: action.apps.length });
       }
 
       // Fall through
