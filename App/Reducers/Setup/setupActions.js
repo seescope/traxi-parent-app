@@ -31,10 +31,3 @@ export function fetchedApps(apps: AppWithProgress[]): SetupAction {
     apps,
   };
 }
-
-export function fetchingApps(isFetchingApps: boolean): SetupAction {
-  return {
-    type: 'FETCHED_APPS_STATUS',
-    isFetchingApps,
-  };
-}
