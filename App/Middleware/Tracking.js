@@ -81,6 +81,10 @@ export default (store: Store) =>
           Analytics.track('Received Empty Report');
       }
 
+      if (action.type === 'FETCHED_APPS') {
+        Analytics.track('Received Initial Apps', action.apps.length);
+      }
+
       // Fall through
       return next(action);
     };

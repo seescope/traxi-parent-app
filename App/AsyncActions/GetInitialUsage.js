@@ -115,7 +115,6 @@ const getInitialUsage = () =>
     return fetch(url)
       .then((response: Response): App[] => {
         if (!response.ok) {
-          console.log('Error response', response);
           throw new Error(
             `Error fetching data from Lambda endpoint: code ${response.code} statusText: ${response.statusText}`
           );
