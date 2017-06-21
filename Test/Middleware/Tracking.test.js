@@ -85,4 +85,17 @@ describe('Tracking Middleware', () => {
     trackingMiddleware(store)(next)(action);
     expect(Analytics.track).toHaveBeenCalledWith('Received Empty Report');
   });
+
+  test('Tracks when parents have received initial apps', () => {
+    const next = jest.fn();
+    const action = {
+      type: 'FETCHED_APPS',
+      apps: [1, 2, 3],
+    };
+    const store = {
+      getState: () => {},
+    };
+    trackingMiddleware(store)(next)(action);
+    expect(Analytics.track).toHaveBeenCalledWith('Received Initial Apps', 3);
+  });
 });
