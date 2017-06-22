@@ -1,3 +1,7 @@
+## 7.5.0
+- Add Traxi for Families
+    - This allows parents to monitor unlimited devices
+    - This is our first billing at $1.99 per month.
 ## 7.4.0
 - Add InitialUsage screen to show parents some usage from their child's device before they complete setup.
 ## 7.3.0
