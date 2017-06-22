@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Dimensions, Image } from 'react-native';
 import Svg, { Circle as SVGCircle } from 'react-native-svg';
 
-import { GREY, WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
+import { WHITE, TRAXI_BLUE, TRANSPARENT } from '../../Constants/Colours';
 
 const containerStyle = {
   alignItems: 'center',
@@ -38,14 +38,6 @@ const kidAvatar = {
   borderRadius: kidAvatarSize / 2,
   top: -circleSize + 6,
   marginBottom: -kidAvatarSize,
-};
-
-const kidNameStyle = {
-  fontSize: 32,
-  backgroundColor: TRANSPARENT,
-  color: GREY,
-  fontWeight: '200',
-  marginBottom: 16,
 };
 
 const overlayTextHeaderStyle = {
@@ -97,8 +89,6 @@ export const getNiceTimeUnit = usage => {
 
 const KidCircle = ({ kid, usage }) => (
   <View style={containerStyle}>
-    <Text style={kidNameStyle}>{kid.name}</Text>
-
     <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
         r={circleRadius}

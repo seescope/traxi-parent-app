@@ -1,4 +1,4 @@
-// flow-typed signature: 7741b1db717b7ab0fa0b613fceb7c785
+// flow-typed signature: 4492e93677458ecfb0cb10c56b72ce31
 // flow-typed version: <<STUB>>/react-native-locale_v^0.0.14/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

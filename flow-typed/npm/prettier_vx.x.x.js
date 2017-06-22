@@ -1,4 +1,4 @@
-// flow-typed signature: 471fb4e41bc3cb20966c4b91ade82e4d
+// flow-typed signature: feaa667541a4e9c7176cf014c0128f36
 // flow-typed version: <<STUB>>/prettier_v^0.22.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

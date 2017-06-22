@@ -1,4 +1,4 @@
-// flow-typed signature: 230ac96aaabe0f05d8fbdbba82271c2b
+// flow-typed signature: 4a64dc5ca2bf0a8ce71d188d9fe1d324
 // flow-typed version: <<STUB>>/react-native-image-picker_v^0.26.2/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

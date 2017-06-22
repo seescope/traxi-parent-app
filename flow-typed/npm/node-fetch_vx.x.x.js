@@ -1,4 +1,4 @@
-// flow-typed signature: dacdcbf5b6fbf3b4e7946fc1b64c1c56
+// flow-typed signature: 790531d034f14fd75d896c055844c493
 // flow-typed version: <<STUB>>/node-fetch_v^1.6.3/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
@@ -31,6 +31,10 @@ declare module 'node-fetch/lib/fetch-error' {
 }
 
 declare module 'node-fetch/lib/headers' {
+  declare module.exports: any;
+}
+
+declare module 'node-fetch/lib/index' {
   declare module.exports: any;
 }
 
@@ -65,6 +69,9 @@ declare module 'node-fetch/lib/fetch-error.js' {
 }
 declare module 'node-fetch/lib/headers.js' {
   declare module.exports: $Exports<'node-fetch/lib/headers'>;
+}
+declare module 'node-fetch/lib/index.js' {
+  declare module.exports: $Exports<'node-fetch/lib/index'>;
 }
 declare module 'node-fetch/lib/request.js' {
   declare module.exports: $Exports<'node-fetch/lib/request'>;

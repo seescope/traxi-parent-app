@@ -4,14 +4,16 @@ import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TRAXI_BLUE, WHITE, TRANSPARENT } from '../Constants/Colours';
+import { isIOS } from '../Utils';
 
 const style = {
   container: {
     paddingHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 56,
+    height: isIOS ? 72 : 56,
     backgroundColor: TRAXI_BLUE,
+    paddingTop: isIOS && 16,
   },
   title: {
     color: WHITE,

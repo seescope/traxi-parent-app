@@ -1,4 +1,4 @@
-// flow-typed signature: c4d3dfe87cb3a38ffc95ef4f20072880
+// flow-typed signature: 5b178636cc90566fafb0806070592c0a
 // flow-typed version: <<STUB>>/form-data_v^2.1.2/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

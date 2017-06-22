@@ -1,4 +1,4 @@
-// flow-typed signature: f2af3b8a626459ee6749cfef36ca49ae
+// flow-typed signature: 1fbb6bd9634576255951f4ee79481980
 // flow-typed version: <<STUB>>/react-native-material-kit_v^0.4.1/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

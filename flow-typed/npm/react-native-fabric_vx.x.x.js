@@ -1,4 +1,4 @@
-// flow-typed signature: b90a46b50bfe3efe69761a009336bdef
+// flow-typed signature: d439716352b0bc5f80b08660e646b230
 // flow-typed version: <<STUB>>/react-native-fabric_v^0.4.1/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

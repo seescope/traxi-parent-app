@@ -9,6 +9,7 @@ export type Kid = {
 };
 
 export type KidsState = {
+  // $$FlowFixMe
   [string]: Kid
 };
 

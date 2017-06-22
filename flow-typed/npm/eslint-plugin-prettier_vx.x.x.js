@@ -1,4 +1,4 @@
-// flow-typed signature: 46fc209a63c7b285627936fce45e744e
+// flow-typed signature: b28b5f91b4658ad3ed3fd52f190565a8
 // flow-typed version: <<STUB>>/eslint-plugin-prettier_v^2.0.1/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
@@ -22,25 +22,11 @@ declare module 'eslint-plugin-prettier' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'eslint-plugin-prettier/lib/index' {
-  declare module.exports: any;
-}
-
-declare module 'eslint-plugin-prettier/lib/rules/prettier' {
-  declare module.exports: any;
-}
-
-declare module 'eslint-plugin-prettier/tests/lib/rules/prettier' {
+declare module 'eslint-plugin-prettier/eslint-plugin-prettier' {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'eslint-plugin-prettier/lib/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-prettier/lib/index'>;
-}
-declare module 'eslint-plugin-prettier/lib/rules/prettier.js' {
-  declare module.exports: $Exports<'eslint-plugin-prettier/lib/rules/prettier'>;
-}
-declare module 'eslint-plugin-prettier/tests/lib/rules/prettier.js' {
-  declare module.exports: $Exports<'eslint-plugin-prettier/tests/lib/rules/prettier'>;
+declare module 'eslint-plugin-prettier/eslint-plugin-prettier.js' {
+  declare module.exports: $Exports<'eslint-plugin-prettier/eslint-plugin-prettier'>;
 }

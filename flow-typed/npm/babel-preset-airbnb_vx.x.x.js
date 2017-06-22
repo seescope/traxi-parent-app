@@ -1,4 +1,4 @@
-// flow-typed signature: bdacd60b8fb46c3932dfa3365c8d6e7b
+// flow-typed signature: 58df57e8d138861b5a90e90caf42d05e
 // flow-typed version: <<STUB>>/babel-preset-airbnb_v^2.0.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

@@ -4298,9 +4298,9 @@ react-native-svg@^5.1.8:
     color "^0.11.1"
     lodash "^4.16.6"
 
-react-native-swiper@^1.4.6:
+"react-native-swiper@https://github.com/brendan-rius/react-native-swiper":
   version "1.5.4"
-  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.5.4.tgz#a85535b5374ef8d605a7a720e447ac46816ac448"
+  resolved "https://github.com/brendan-rius/react-native-swiper#d579e476636d6739014ed8c18a52724ed8b51225"
 
 react-native-tabs@^1.0.9:
   version "1.0.9"

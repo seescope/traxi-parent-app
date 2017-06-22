@@ -1,4 +1,4 @@
-// flow-typed signature: d9f62e1607820686eac5b1d1b0adf33b
+// flow-typed signature: b7316a185e161ae4f0adc54d85a7790a
 // flow-typed version: <<STUB>>/react-native-onesignal_v^3.0.3/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

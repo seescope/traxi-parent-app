@@ -1,4 +1,4 @@
-// flow-typed signature: 8b1c4686085619d452d39badb187fe77
+// flow-typed signature: a085d893209a0a1321d36bbefa934ec2
 // flow-typed version: <<STUB>>/google-libphonenumber_v^2.0.7/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
