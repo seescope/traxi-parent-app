@@ -1,8 +1,12 @@
+jest.mock('../PersistParent', () =>
+  jest.fn(() => ({
+    type: 'TEST_PERSIST_PARENT',
+  })));
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import upgradeAccount from '../UpgradeAccount';
-// import { mockSet } from 'firebase';
 import InAppBilling from 'react-native-billing';
+import mockPersistParent from '../PersistParent';
 
 const TEST_PARENT = {
   UUID: 'abc-123',
@@ -10,7 +14,7 @@ const TEST_PARENT = {
 };
 
 describe('UpgradeAccount', () => {
-  test('Calls react-native-in-app-billing, updates the parent in Firebase and dispatches ACCOUNT_UPGRADED', () => {
+  test('Calls react-native-in-app-billing, persists the parent and dispatches ACCOUNT_UPGRADED', () => {
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       parentState: TEST_PARENT,
@@ -20,12 +24,9 @@ describe('UpgradeAccount', () => {
       expect(InAppBilling.open).toHaveBeenCalled();
       expect(InAppBilling.subscribe).toHaveBeenCalledWith('something');
       expect(InAppBilling.close).toHaveBeenCalled();
-      // expect(mockSet).toHaveBeenCalledWith({
-      //   ...TEST_PARENT,
-      //   upgradedAt: expect.stringMatching(
-      //     /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/
-      //   ),
-      // });
+      const [action] = store.getActions();
+      expect(action.type).toEqual('ACCOUNT_UPGRADED');
+      expect(mockPersistParent).toHaveBeenCalled();
     });
   });
 });

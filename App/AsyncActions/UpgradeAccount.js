@@ -1,9 +1,11 @@
 // @flow
+import { Alert } from 'react-native';
 import InAppBilling from 'react-native-billing';
+import persistParent from './PersistParent';
 import { accountUpgraded } from '../Reducers/Parent/parentActions';
-import type { ParentAction } from '../Reducers/Parent';
+import { logError } from '../Utils';
 
-type Dispatch = (ParentAction) => void;
+type Dispatch = (any) => void;
 
 const makeInAppPurchase = () =>
   InAppBilling.open()
@@ -13,10 +15,17 @@ const makeInAppPurchase = () =>
       return InAppBilling.close();
     })
     .catch(err => {
-      console.log(err);
+      logError(err);
+      Alert.alert(
+        'There was an error completing your purchase. Please try again.'
+      );
     });
 
+const timestamp = () => new Date().toISOString();
+
 export default () =>
-  async (dispatch: Dispatch): Promise<ParentAction> => {
-    const purchased = await makeInAppPurchase();
+  async (dispatch: Dispatch): Promise<void> => {
+    await makeInAppPurchase();
+    dispatch(accountUpgraded(timestamp()));
+    dispatch(persistParent());
   };

@@ -60,8 +60,9 @@ export function impersonatedParent(parent: ParentState, kids: KidsState) {
   };
 }
 
-export function accountUpgraded() {
+export function accountUpgraded(upgradedAt: string) {
   return {
     type: 'ACCOUNT_UPGRADED',
+    upgradedAt,
   };
 }
