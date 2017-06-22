@@ -2,14 +2,14 @@
 
 import React, { Component } from 'react';
 import { View, Linking, AppState } from 'react-native';
+import Bar from '../Components/Bar';
 
 const style = {
   container: {
     backgroundColor: 'blue',
     flex: 1,
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
+    alignItems: 'center'
+  }
 };
 
 const getUrl = async () => {
@@ -29,7 +29,7 @@ const getUrl = async () => {
 
 class Playground extends Component {
   state = {
-    appState: AppState.currentState,
+    appState: AppState.currentState
   };
 
   // componentDidMount() {
@@ -54,7 +54,11 @@ class Playground extends Component {
   render() {
     const email = getUrl();
 
-    return <View style={style.container} />;
+    return (
+      <View style={style.container}>
+        <Bar title="Test" buttonIcon="bars" onPress={() => alert('testing')} />
+      </View>
+    );
   }
 }
 
