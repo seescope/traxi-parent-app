@@ -142,7 +142,10 @@ const Settings = ({ parent, kids }: Props) => (
         <View style={styles.headerUnderlineStyle} />
         <View style={styles.cardBody}>
           {Object.keys(kids).map(UUID => <KidRow key={UUID} {...kids[UUID]} />)}
-          <TouchableOpacity style={styles.kidRow}>
+          <TouchableOpacity
+            style={styles.kidRow}
+            onPress={() => Actions.upgrade()}
+          >
             <Icon
               color={GOOD}
               name="plus-circle"

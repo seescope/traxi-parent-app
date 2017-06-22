@@ -1,3 +1,4 @@
+// @flow
 export const WHITE = '#FFF';
 export const WHITE_WITH_OPACITY = 'rgba(255, 255, 255, 0.8)';
 export const SHADOW_COLOR = 'rgba(0,0,0,0.5)';

@@ -21,7 +21,8 @@ export type ParentAction =
   | { type: 'SET_EMAIL', email: string }
   | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
   | { type: 'IMPERSONATED_PARENT', kids: KidsState, parent: ParentState }
-  | { type: 'SET_PASSWORD', password: string };
+  | { type: 'SET_PASSWORD', password: string }
+  | { type: 'ACCOUNT_UPGRADED' };
 
 export const INITIAL_STATE = {
   name: undefined,

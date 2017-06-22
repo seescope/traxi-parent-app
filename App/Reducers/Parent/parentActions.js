@@ -59,3 +59,9 @@ export function impersonatedParent(parent: ParentState, kids: KidsState) {
     kids,
   };
 }
+
+export function accountUpgraded() {
+  return {
+    type: 'ACCOUNT_UPGRADED',
+  };
+}
