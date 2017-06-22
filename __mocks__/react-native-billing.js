@@ -1,5 +1,5 @@
 export default {
-  open: () => Promise.resolve(),
+  open: jest.fn(() => Promise.resolve()),
   subscribe: jest.fn(() => Promise.resolve({ success: true })),
-  close: () => Promise.resolve(),
+  close: jest.fn(() => Promise.resolve()),
 };

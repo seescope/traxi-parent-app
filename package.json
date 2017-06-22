@@ -49,6 +49,7 @@
     "react-native-ab": "https://github.com/traxicorp/react-native-ab",
     "react-native-analytics": "https://github.com/traxicorp/react-native-analytics",
     "react-native-animatable": "^0.6.1",
+    "react-native-billing": "^2.3.0",
     "react-native-code-push": "^2.0.2-beta",
     "react-native-device-info": "^0.10.2",
     "react-native-fabric": "^0.4.1",
