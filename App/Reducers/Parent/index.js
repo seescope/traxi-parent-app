@@ -23,7 +23,7 @@ export type ParentAction =
   | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
   | { type: 'IMPERSONATED_PARENT', kids: KidsState, parent: ParentState }
   | { type: 'SET_PASSWORD', password: string }
-  | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string }
+  | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string, setupID: number }
   | { type: 'ACCOUNT_UPGRADED', upgradedAt: string };
 
 export const INITIAL_STATE = {

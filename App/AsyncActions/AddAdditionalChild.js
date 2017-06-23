@@ -8,7 +8,9 @@ import upgradeAccount from './UpgradeAccount';
 import { addedAdditionalChild } from '../Reducers/Parent/parentActions';
 
 import type { RootState } from '../Reducers';
-type Dispatch = () => void;
+// import type { ParentAction } from '../Reducers/Parent';
+
+type Dispatch = (any) => void;
 type GetState = () => RootState;
 
 export default () =>
@@ -21,7 +23,8 @@ export default () =>
 
     // Create the new kid
     const UUID = uuid.v4();
-    dispatch(addedAdditionalChild(UUID));
+    const setupID = Math.round(Math.random() * 10000);
+    dispatch(addedAdditionalChild(UUID, setupID));
 
     // Persist the updated parent and new kid
     dispatch(persistParent());
