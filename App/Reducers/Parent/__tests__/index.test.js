@@ -89,4 +89,14 @@ describe('Parent reducer', () => {
       expect(parent.kids).toEqual(['1', 'abc-123']);
     });
   });
+
+  describe('UPGRADED_ACCOUNT', () => {
+    it('updates the parent state', () => {
+      const TEST_PARENT = { name: 'Something' };
+      const action = { type: 'UPGRADED_ACCOUNT', upgradedAt: 'today' };
+      const upgradedParent = reducer(TEST_PARENT, action);
+
+      expect(upgradedParent.upgradedAt).toEqual('today');
+    });
+  });
 });

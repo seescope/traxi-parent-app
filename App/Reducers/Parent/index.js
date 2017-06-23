@@ -92,6 +92,13 @@ export default function parent(
         kids: [...state.kids, UUID],
       };
     }
+    case 'UPGRADED_ACCOUNT': {
+      const { upgradedAt } = action;
+      return {
+        ...state,
+        upgradedAt,
+      };
+    }
     default:
       return state;
   }
