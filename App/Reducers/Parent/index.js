@@ -85,6 +85,13 @@ export default function parent(
     case 'IMPERSONATED_PARENT': {
       return action.parent;
     }
+    case 'ADDED_ADDITIONAL_CHILD': {
+      const { UUID } = action;
+      return {
+        ...state,
+        kids: [...state.kids, UUID],
+      };
+    }
     default:
       return state;
   }
