@@ -21,9 +21,16 @@ describe('User Logged In', () => {
       UUID: 'abc-123',
       email: 'parent@email.com',
       name: 'Test Parent',
+      kids: ['def-345'],
+    };
+    const mockKids = {
+      'def-345': {
+        name: 'Test Kid',
+      },
     };
     const store = mockStore({
       parentState: mockParent,
+      kidsState: mockKids,
     });
 
     return store.dispatch(userLoggedIn()).then(() => {
@@ -43,6 +50,7 @@ describe('User Logged In', () => {
         UUID: mockParent.UUID,
         email: mockParent.email,
         name: mockParent.name,
+        kidName: 'Test Kid',
       });
     });
   });
