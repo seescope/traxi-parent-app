@@ -66,3 +66,10 @@ export function accountUpgraded(upgradedAt: string) {
     upgradedAt,
   };
 }
+
+export function addedAdditionalChild(UUID: string) {
+  return {
+    type: 'ADDED_ADDITIONAL_CHILD',
+    UUID,
+  };
+}
