@@ -6,6 +6,8 @@ import { Actions } from 'react-native-router-flux';
 
 import selectImage from '../AsyncActions/SelectImage';
 import persistKid from '../AsyncActions/PersistKid';
+import fetchReports from '../AsyncActions/FetchReports';
+
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
@@ -48,7 +50,7 @@ const STYLE = {
   },
 };
 
-const SetImage = ({ kidName, onPress }) => (
+const SetImage = ({ kidName, onPress, isInstalled }) => (
   <View style={STYLE.outerContainer}>
     <View style={STYLE.container}>
       <HeaderText style={STYLE.headerText}>
@@ -78,10 +80,10 @@ const SetImage = ({ kidName, onPress }) => (
 
     </View>
     <View style={STYLE.buttonContainer}>
-      <Button primary onPress={() => onPress(true)}>
+      <Button primary onPress={() => onPress(true, isInstalled)}>
         {I18n.t('setKidImage.chooseAPicture')}
       </Button>
-      <Button onPress={() => onPress(false)}>
+      <Button onPress={() => onPress(false, isInstalled)}>
         {I18n.t('setKidImage.notNow')}
       </Button>
     </View>
@@ -91,22 +93,31 @@ const SetImage = ({ kidName, onPress }) => (
 SetImage.propTypes = {
   kidName: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
+  isInstalled: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   const { kidUUID } = state.setupState;
-  const { name } = state.kidsState[kidUUID] || {};
+  const { name: kidName } = state.kidsState[kidUUID] || {};
+  const { name, email, password } = state.parentState;
 
   return {
-    kidName: firstName(name),
+    kidName: firstName(kidName),
+    isInstalled: !!(name && email && password),
   };
 };
 
 export const mapDispatchToProps = dispatch => ({
-  onPress: didSelectImage =>
+  onPress: (didSelectImage, isInstalled) =>
     dispatch(selectImage(didSelectImage))
       .then(() => dispatch(persistKid()))
       .then(() => {
+        if (isInstalled) {
+          dispatch(fetchReports());
+          Actions.dashboard();
+          return;
+        }
+
         Actions.setupCompletion();
       }),
 });
