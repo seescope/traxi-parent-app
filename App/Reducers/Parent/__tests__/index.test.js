@@ -95,7 +95,6 @@ describe('Parent reducer', () => {
       const TEST_PARENT = { name: 'Something' };
       const action = { type: 'UPGRADED_ACCOUNT', upgradedAt: 'today' };
       const upgradedParent = reducer(TEST_PARENT, action);
-
       expect(upgradedParent.upgradedAt).toEqual('today');
     });
   });
