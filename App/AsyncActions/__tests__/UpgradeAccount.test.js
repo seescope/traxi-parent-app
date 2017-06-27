@@ -22,7 +22,9 @@ describe('UpgradeAccount', () => {
 
     return store.dispatch(upgradeAccount()).then(() => {
       expect(InAppBilling.open).toHaveBeenCalled();
-      expect(InAppBilling.subscribe).toHaveBeenCalledWith('something');
+      expect(InAppBilling.subscribe).toHaveBeenCalledWith(
+        'traxi_for_families_199'
+      );
       expect(InAppBilling.close).toHaveBeenCalled();
       const [action] = store.getActions();
       expect(action.type).toEqual('ACCOUNT_UPGRADED');
