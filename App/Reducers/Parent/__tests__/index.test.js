@@ -90,10 +90,10 @@ describe('Parent reducer', () => {
     });
   });
 
-  describe('UPGRADED_ACCOUNT', () => {
+  describe('ACCOUNT_UPGRADED', () => {
     it('updates the parent state', () => {
       const TEST_PARENT = { name: 'Something' };
-      const action = { type: 'UPGRADED_ACCOUNT', upgradedAt: 'today' };
+      const action = { type: 'ACCOUNT_UPGRADED', upgradedAt: 'today' };
       const upgradedParent = reducer(TEST_PARENT, action);
       expect(upgradedParent.upgradedAt).toEqual('today');
     });

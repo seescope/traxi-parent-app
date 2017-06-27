@@ -92,7 +92,7 @@ export default function parent(
         kids: [...state.kids, UUID],
       };
     }
-    case 'UPGRADED_ACCOUNT': {
+    case 'ACCOUNT_UPGRADED': {
       const { upgradedAt } = action;
       return {
         ...state,
