@@ -62,7 +62,7 @@ describe('onPress', () => {
   });
 
   describe('When an account has not been upgraded', () => {
-    test('Navigates to your Upgrade', () => {
+    test('Navigates to Upgrade', () => {
       const MOCK_DISPATCH = jest.fn();
       const { onPress } = mergeProps(
         {
