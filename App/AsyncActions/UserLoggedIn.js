@@ -10,6 +10,7 @@ export default () =>
     const { parentState } = getState();
     const { UUID, name, email } = parentState;
 
+
     // This should not happen.
     if (!UUID) {
       throw new Error('Error logging user in - UUID not found!');
@@ -24,6 +25,10 @@ export default () =>
       return;
     }
 
+    const kidUUID = kids[0];
+
+    const kidName = kidsState[kidUUID].name;
+
     await Promise.all([
       Analytics.identify(UUID, {
         name,
@@ -37,6 +42,7 @@ export default () =>
         segmentio_id: UUID,
         UUID,
         email,
+        kidName,
       }),
     ]);
 
