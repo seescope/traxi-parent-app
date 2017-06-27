@@ -15,6 +15,7 @@ export const Actions = {
   setKidImage: jest.fn(),
   checkForDevice: jest.fn(),
   initialUsage: jest.fn(),
+  upgrade: jest.fn(),
   pop: jest.fn(),
 };
 

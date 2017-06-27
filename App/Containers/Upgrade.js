@@ -7,11 +7,12 @@ import { Actions } from 'react-native-router-flux';
 
 import { TRAXI_BLUE, GOOD, WHITE, GREY } from '../Constants/Colours';
 import upgradeAccountAction from '../AsyncActions/UpgradeAccount';
+import addAdditionalChild from '../AsyncActions/AddAdditionalChild';
 
 import type { ParentAction } from '../Reducers/Parent';
 
 type Props = {
-  upgradeAccount: () => Promise<ParentAction>
+  onPress: () => Promise<any>
 };
 
 type Dispatch = () => Promise<ParentAction>;
@@ -76,7 +77,7 @@ const Button = (
   return <View style={styles.button}><Component /></View>;
 };
 
-const Upgrade = ({ upgradeAccount }: Props) => (
+const Upgrade = ({ onPress }: Props) => (
   <View style={styles.container}>
     <Text style={styles.header}>Traxi for Families</Text>
     <Image resizeMode="contain" style={styles.logo} source={LOGO} />
@@ -93,15 +94,20 @@ const Upgrade = ({ upgradeAccount }: Props) => (
       <Button
         backgroundColour={GOOD}
         textColour={WHITE}
-        onPress={upgradeAccount}
+        onPress={onPress}
         text="Upgrade now"
       />
     </View>
   </View>
 );
 
-const mapDispatchToProps = (dispatch: Dispatch): Props => ({
-  upgradeAccount: () => dispatch(upgradeAccountAction()),
+export const mapDispatchToProps = (dispatch: Dispatch): Props => ({
+  onPress: async () => {
+    await dispatch(upgradeAccountAction());
+    await dispatch(addAdditionalChild());
+
+    Actions.deviceSetup();
+  },
 });
 
 export default connect(null, mapDispatchToProps, null)(Upgrade);
