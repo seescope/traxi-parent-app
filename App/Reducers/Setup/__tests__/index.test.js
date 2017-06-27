@@ -85,7 +85,7 @@ describe('Setup Reducer', () => {
 
       const action = {
         type: 'ADDED_ADDITIONAL_CHILD',
-        kidUUID: 'abc-123',
+        UUID: 'abc-123',
         setupID: 4,
       };
 

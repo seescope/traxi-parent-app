@@ -8,20 +8,21 @@ import { logError } from '../Utils';
 
 type Dispatch = (any) => void;
 
-const makeInAppPurchase = () =>
-  InAppBilling.open()
-    .then(() => InAppBilling.subscribe('traxi_for_families_199'))
-    .then(details => {
-      console.log('InAppBilling purchase', details);
-      return InAppBilling.close();
-    })
-    .catch(err => {
-      logError(err);
-      Alert.alert(
-        'There was an error completing your purchase. Please try again.'
-      );
-      return InAppBilling.close();
-    });
+const makeInAppPurchase = () => Promise.resolve();
+// const makeInAppPurchase = () =>
+//   InAppBilling.open()
+//     .then(() => InAppBilling.subscribe('traxi_for_families_199'))
+//     .then(details => {
+//       console.log('InAppBilling purchase', details);
+//       return InAppBilling.close();
+//     })
+//     .catch(err => {
+//       logError(err);
+//       Alert.alert(
+//         'There was an error completing your purchase. Please try again.'
+//       );
+//       return InAppBilling.close();
+//     });
 
 const timestamp = () => new Date().toISOString();
 

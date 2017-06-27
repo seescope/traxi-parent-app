@@ -104,7 +104,7 @@ export default (
       };
     }
     case 'ADDED_ADDITIONAL_CHILD': {
-      const { kidUUID, setupID } = action;
+      const { UUID: kidUUID, setupID } = action;
       return {
         ...state,
         kidUUID,
