@@ -115,7 +115,7 @@ const KidRow = ({ name, avatarURL }: Kid) => (
     <Image
       resizeMode="contain"
       style={styles.kidImage}
-      source={{ url: avatarURL }}
+      source={{ uri: avatarURL }}
     />
     <Text style={styles.kidName}>{name}</Text>
   </View>

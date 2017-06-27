@@ -309,7 +309,7 @@ exports[`renders the <Settings> component 1`] = `
               resizeMode="contain"
               source={
                 Object {
-                  "url": undefined,
+                  "uri": undefined,
                 }
               }
               style={
