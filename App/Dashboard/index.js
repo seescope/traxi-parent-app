@@ -190,6 +190,9 @@ class Dashboard extends React.Component {
           onPress={() => Actions.settings()}
         />
         <Swiper
+          showsPagination
+          bounces
+          showsButtons
           loop={false}
           onIndexChanged={index => this.onIndexChanged(index)}
         >
