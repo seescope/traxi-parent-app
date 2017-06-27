@@ -13,7 +13,7 @@ const style = {
     alignItems: 'center',
     height: isIOS ? 72 : 56,
     backgroundColor: TRAXI_BLUE,
-    paddingTop: isIOS && 16,
+    paddingTop: isIOS ? 16 : 0,
   },
   title: {
     color: WHITE,
