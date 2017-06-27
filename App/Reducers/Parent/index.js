@@ -6,6 +6,7 @@ export type ParentState = {
   UUID: ?string,
   email: ?string,
   kids: Array<string>,
+  transactions: ?Array<string>,
   password: ?string,
   upgradedAt: ?string
 };
@@ -25,7 +26,7 @@ export type ParentAction =
   | { type: 'SET_PASSWORD', password: string }
   | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string, setupID: number }
   | { type: 'USER_LOGGED_IN', parent: ParentState }
-  | { type: 'ACCOUNT_UPGRADED', upgradedAt: string };
+  | { type: 'ACCOUNT_UPGRADED', upgradedAt: string, orderId: string };
 
 export const INITIAL_STATE = {
   name: undefined,
@@ -33,6 +34,7 @@ export const INITIAL_STATE = {
   email: undefined,
   password: undefined,
   upgradedAt: undefined,
+  transactions: undefined,
   kids: [],
 };
 // export const INITIAL_STATE = {
@@ -94,10 +96,12 @@ export default function parent(
       };
     }
     case 'ACCOUNT_UPGRADED': {
-      const { upgradedAt } = action;
+      const { upgradedAt, orderId } = action;
+      const transactions = state.transactions || [];
       return {
         ...state,
         upgradedAt,
+        transactions: [...transactions, orderId],
       };
     }
     default:

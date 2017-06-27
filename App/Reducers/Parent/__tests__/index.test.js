@@ -93,9 +93,14 @@ describe('Parent reducer', () => {
   describe('ACCOUNT_UPGRADED', () => {
     it('updates the parent state', () => {
       const TEST_PARENT = { name: 'Something' };
-      const action = { type: 'ACCOUNT_UPGRADED', upgradedAt: 'today' };
+      const action = {
+        type: 'ACCOUNT_UPGRADED',
+        upgradedAt: 'today',
+        orderId: 'order-id',
+      };
       const upgradedParent = reducer(TEST_PARENT, action);
       expect(upgradedParent.upgradedAt).toEqual('today');
+      expect(upgradedParent.transactions).toEqual(['order-id']);
     });
   });
 });

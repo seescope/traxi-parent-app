@@ -14,7 +14,7 @@ const TEST_PARENT = {
 };
 
 describe('UpgradeAccount', () => {
-  test('Calls react-native-in-app-billing, persists the parent and dispatches ACCOUNT_UPGRADED', () => {
+  test('Calls react-native-in-app-billing, persists the parent, saves a record in Firebase and dispatches ACCOUNT_UPGRADED', () => {
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       parentState: TEST_PARENT,
@@ -26,8 +26,12 @@ describe('UpgradeAccount', () => {
         'traxi_for_families_199'
       );
       expect(InAppBilling.close).toHaveBeenCalled();
+
       const [action] = store.getActions();
+
       expect(action.type).toEqual('ACCOUNT_UPGRADED');
+      expect(action.upgradedAt).toBeDefined();
+      expect(action.orderId).toEqual('test-order-id');
       expect(mockPersistParent).toHaveBeenCalled();
     });
   });

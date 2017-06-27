@@ -63,10 +63,14 @@ export function impersonatedParent(
   };
 }
 
-export function accountUpgraded(upgradedAt: string): ParentAction {
+export function accountUpgraded(
+  upgradedAt: string,
+  orderId: string
+): ParentAction {
   return {
     type: 'ACCOUNT_UPGRADED',
     upgradedAt,
+    orderId,
   };
 }
 

@@ -46,6 +46,7 @@ const convertParent = (profile: ProfileFromFirebase): ParentState => ({
   kids: getKidUUIDs(profile.kids),
   password: undefined,
   upgradedAt: undefined,
+  transactions: [],
 });
 
 const convertKid = (kid: KidFromFirebase): Kid => ({
