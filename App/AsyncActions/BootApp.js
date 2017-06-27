@@ -3,7 +3,6 @@ import { AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import lodash from 'lodash';
 
-import type { RootState } from '../Reducers';
 import type { KidsState } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import migrateDataFromPreviousVersion from './MigrateDataFromPreviousVersion';
@@ -12,8 +11,7 @@ import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
 import getInitalUsage from './GetInitialUsage';
 
-type Dispatch = () => Promise<any>;
-type GetState = () => RootState;
+import type { Dispatch, GetState } from '../Reducers';
 
 const finishedSetup = ({ name, email, password }: ParentState): boolean =>
   !lodash.isNil(name) && !lodash.isNil(email) && !lodash.isNil(password);

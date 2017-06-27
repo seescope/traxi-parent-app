@@ -24,6 +24,7 @@ export type ParentAction =
   | { type: 'IMPERSONATED_PARENT', kids: KidsState, parent: ParentState }
   | { type: 'SET_PASSWORD', password: string }
   | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string, setupID: number }
+  | { type: 'USER_LOGGED_IN', parent: ParentState }
   | { type: 'ACCOUNT_UPGRADED', upgradedAt: string };
 
 export const INITIAL_STATE = {

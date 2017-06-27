@@ -2,12 +2,7 @@
 import * as Firebase from 'firebase';
 import userLoggedIn from './UserLoggedIn';
 
-import type { ParentState } from '../Reducers/Parent';
-
-type Dispatch = () => void;
-type GetState = () => {
-  parentState: ParentState,
-};
+import type { Dispatch, GetState } from '../Reducers';
 
 const createUser = (email: string, password: string): Promise<any> =>
   Firebase.auth().createUserWithEmailAndPassword(email, password);

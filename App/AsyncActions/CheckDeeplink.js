@@ -7,12 +7,7 @@ import { beginSetup } from '../Reducers/Parent/parentActions';
 import persistSetupID from './PersistSetupID';
 import userLoggedIn from './UserLoggedIn';
 
-import type { ParentState } from '../Reducers/Parent';
-
-type Dispatch = () => void;
-type GetState = () => {
-  parentState: ParentState
-};
+import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) =>

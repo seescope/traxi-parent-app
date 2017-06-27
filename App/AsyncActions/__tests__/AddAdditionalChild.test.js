@@ -10,15 +10,19 @@ jest.mock('../PersistKid', () =>
   jest.fn(() => ({
     type: 'TEST_PERSIST_KID',
   })));
+jest.mock('../PersistSetupID', () =>
+  jest.fn(() => ({
+    type: 'TEST_PERSIST_SETUP_ID',
+  })));
 
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { Actions } from 'react-native-router-flux';
 
 import addAdditionalChild from '../AddAdditionalChild';
 import mockUpgradeAccount from '../UpgradeAccount';
 import mockPersistParent from '../PersistParent';
 import mockPersistKid from '../PersistKid';
+import mockPersistSetupID from '../PersistSetupID';
 
 const TEST_PARENT = {
   UUID: 'abc-123',
@@ -54,6 +58,7 @@ describe('AddAdditionalChild', () => {
 
       expect(mockPersistParent).toHaveBeenCalled();
       expect(mockPersistKid).toHaveBeenCalledWith(TEST_NEW_KID);
+      expect(mockPersistSetupID).toHaveBeenCalled();
     });
   });
 

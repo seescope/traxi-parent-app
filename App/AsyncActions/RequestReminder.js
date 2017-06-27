@@ -2,17 +2,7 @@
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
 
-import type { SetupState } from '../Reducers/Setup';
-import type { KidsState } from '../Reducers/Kids';
-import type { ParentState } from '../Reducers/Parent';
-
-type Dispatch = () => void;
-type RootState = {
-  kidsState: KidsState,
-  parentState: ParentState,
-  setupState: SetupState
-};
-type GetState = () => RootState;
+import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {

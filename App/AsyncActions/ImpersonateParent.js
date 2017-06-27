@@ -5,10 +5,10 @@ import _ from 'lodash';
 
 import { impersonatedParent } from '../Reducers/Parent/parentActions';
 import fetchReports from './FetchReports';
+
 import type { ParentState } from '../Reducers/Parent';
 import type { Kid } from '../Reducers/Kids';
-
-type Dispatch = () => void;
+import type { Dispatch } from '../Reducers';
 
 const fetchParent = (UUID: string): Promise<ParentState> =>
   database().ref(`parents/${UUID}`).once('value').then(data => data.val());

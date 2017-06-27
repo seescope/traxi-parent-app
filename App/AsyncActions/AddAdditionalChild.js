@@ -1,15 +1,12 @@
 // @flow
 import uuid from 'uuid';
-import { Actions } from 'react-native-router-flux';
 
 import persistParent from './PersistParent';
 import persistKid from './PersistKid';
+import persistSetupID from './PersistSetupID';
 import { addedAdditionalChild } from '../Reducers/Parent/parentActions';
 
-import type { RootState } from '../Reducers';
-
-type Dispatch = (any) => void;
-type GetState = () => RootState;
+import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<any> => {
@@ -23,8 +20,10 @@ export default () =>
     const setupID = Math.round(Math.random() * 10000);
     dispatch(addedAdditionalChild(UUID, setupID));
 
-    // Persist the updated parent and new kid
+    // Persist the updated parent, setupID and new kid
     dispatch(persistParent());
+    dispatch(persistSetupID());
+
     const { kidsState } = getState();
     const newKid = kidsState[UUID];
     dispatch(persistKid(newKid));

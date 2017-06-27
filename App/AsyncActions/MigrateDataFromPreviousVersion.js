@@ -9,7 +9,7 @@ import persistKid from './PersistKid';
 import persistParent from './PersistParent';
 import Analytics from 'react-native-analytics';
 
-type Dispatch = () => Promise<any>;
+import type { Dispatch } from '../Reducers';
 
 type ProfileFromAsyncStorage = {
   UUID: string

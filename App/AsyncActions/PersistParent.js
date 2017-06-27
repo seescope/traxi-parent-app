@@ -1,10 +1,8 @@
 // @flow
 import * as Firebase from 'firebase';
-import type { RootState } from '../Reducers';
 import { cleanObjectForFirebase } from '../Utils';
 
-type Dispatch = () => void;
-type GetState = () => RootState;
+import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
   (dispatch: Dispatch, getState: GetState): Promise<any> => {

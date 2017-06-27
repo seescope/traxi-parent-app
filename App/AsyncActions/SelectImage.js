@@ -1,10 +1,14 @@
 // @flow
+const DEFAULT_IMAGE = 'http://i.imgur.com/PnREspe.png';
+
 import { Alert } from 'react-native';
-import { isIOS, logError } from '../Utils';
 import ImagePicker from 'react-native-image-picker';
+
+import { isIOS, logError } from '../Utils';
 import { setKidImage } from '../Reducers/Kids/kidsActions';
-import type { KidsAction, KidsState } from '../Reducers/Kids/index';
-import type { SetupState } from '../Reducers/Setup/index';
+
+import type { KidsAction } from '../Reducers/Kids/index';
+import type { Dispatch, GetState } from '../Reducers';
 
 const getURI = (response): string => {
   if (isIOS) {
@@ -14,16 +18,8 @@ const getURI = (response): string => {
   return response.uri;
 };
 
-const DEFAULT_IMAGE = 'http://i.imgur.com/PnREspe.png';
-
-type Dispatch = (action: KidsAction) => KidsAction;
-type RootState = () => {
-  kidsState: KidsState,
-  setupState: SetupState,
-};
-
 export default (didSelectImage: boolean) =>
-  (dispatch: Dispatch, getState: RootState): Promise<KidsAction> => {
+  (dispatch: Dispatch, getState: GetState): Promise<KidsAction> => {
     const { setupState } = getState();
     const { kidUUID } = setupState;
 
@@ -53,7 +49,7 @@ export default (didSelectImage: boolean) =>
           if (response.error === 'Photo library permissions not granted') {
             Alert.alert(
               'Unable to access your photos',
-              'Please allow traxi to access your photos to continue.',
+              'Please allow traxi to access your photos to continue.'
             );
           }
 
