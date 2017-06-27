@@ -121,7 +121,7 @@ const KidRow = ({ name, avatarURL }: Kid) => (
   </View>
 );
 
-const Settings = ({ parent, kids }: Props) => (
+const Settings = ({ parent, kids, onPress }: Props) => (
   <View style={styles.container}>
     <Bar
       title="Settings"
@@ -151,10 +151,7 @@ const Settings = ({ parent, kids }: Props) => (
         <View style={styles.headerUnderlineStyle} />
         <View style={styles.cardBody}>
           {Object.keys(kids).map(UUID => <KidRow key={UUID} {...kids[UUID]} />)}
-          <TouchableOpacity
-            style={styles.kidRow}
-            onPress={() => Actions.upgrade()}
-          >
+          <TouchableOpacity style={styles.kidRow} onPress={() => onPress()}>
             <Icon
               color={GOOD}
               name="plus-circle"
@@ -194,4 +191,5 @@ export const mergeProps = (
   },
 });
 
-export default connect(mapStateToProps, null, null)(Settings);
+// $FlowFixMe
+export default connect(mapStateToProps, null, mergeProps)(Settings);
