@@ -103,9 +103,9 @@ const parseApps = (apps: App[]): AppWithProgress[] =>
 const getInitialUsage = () =>
   (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const state = getState();
-    const UUID = state.parentState.kids[0];
+    const UUID = state.setupState.kidUUID;
 
-    if (!UUID) throw new Error('No UUID for parent while getting InitialUsage');
+    if (!UUID) throw new Error('No UUID for kid while getting InitialUsage');
 
     const url = `${API_GATEWAY_URL}${UUID}`;
 
