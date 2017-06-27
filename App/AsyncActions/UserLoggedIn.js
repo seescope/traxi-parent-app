@@ -21,6 +21,7 @@ export default () =>
         type: 'USER_LOGGED_IN',
         parent: parentState,
       });
+      return;
     }
 
     await Promise.all([
