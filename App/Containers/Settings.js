@@ -186,7 +186,7 @@ export const mergeProps = (
   onPress: () => {
     if (parent.upgradedAt) {
       dispatch(addAdditionalChild());
-      Actions.deviceSetup();
+      Actions.setName();
       return;
     }
 

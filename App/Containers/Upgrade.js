@@ -106,7 +106,7 @@ export const mapDispatchToProps = (dispatch: Dispatch): Props => ({
     await dispatch(upgradeAccountAction());
     await dispatch(addAdditionalChild());
 
-    Actions.deviceSetup();
+    Actions.setName();
   },
 });
 

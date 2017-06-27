@@ -54,8 +54,6 @@ describe('AddAdditionalChild', () => {
 
       expect(mockPersistParent).toHaveBeenCalled();
       expect(mockPersistKid).toHaveBeenCalledWith(TEST_NEW_KID);
-
-      expect(Actions.deviceSetup).toHaveBeenCalled();
     });
   });
 

@@ -66,6 +66,6 @@ describe('onPress', () => {
         },
       })
     );
-    expect(Actions.deviceSetup).toHaveBeenCalled();
+    expect(Actions.setName).toHaveBeenCalled();
   });
 });

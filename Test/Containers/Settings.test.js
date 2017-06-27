@@ -57,7 +57,7 @@ describe('onPress', () => {
       expect(MOCK_DISPATCH).toHaveBeenCalledWith({
         type: 'TEST_ADD_ADDITIONAL_CHILD',
       });
-      expect(Actions.deviceSetup).toHaveBeenCalled();
+      expect(Actions.setName).toHaveBeenCalled();
     });
   });
 

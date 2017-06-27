@@ -28,6 +28,4 @@ export default () =>
     const { kidsState } = getState();
     const newKid = kidsState[UUID];
     dispatch(persistKid(newKid));
-
-    Actions.deviceSetup();
   };
