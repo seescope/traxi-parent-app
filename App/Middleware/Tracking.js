@@ -85,6 +85,10 @@ export default (store: Store) =>
         Analytics.track('Received Initial Apps', { apps: action.apps.length });
       }
 
+      if (action.type === 'ACCOUNT_UPGRADED') {
+        Analytics.track('Account Upgraded', { revenue: 1.99 });
+      }
+
       // Fall through
       return next(action);
     };

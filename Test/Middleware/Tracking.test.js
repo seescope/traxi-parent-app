@@ -100,4 +100,18 @@ describe('Tracking Middleware', () => {
       apps: 3,
     });
   });
+
+  test('Tracks when parents upgrade their account', () => {
+    const next = jest.fn();
+    const action = {
+      type: 'ACCOUNT_UPGRADED',
+    };
+    const store = {
+      getState: () => {},
+    };
+    trackingMiddleware(store)(next)(action);
+    expect(Analytics.track).toHaveBeenCalledWith('Account Upgraded', {
+      revenue: 1.99,
+    });
+  });
 });
