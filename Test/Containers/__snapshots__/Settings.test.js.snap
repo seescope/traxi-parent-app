@@ -1,0 +1,410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <Settings> component 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F0F2F7",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#448AFF",
+        "flexDirection": "row",
+        "height": 72,
+        "paddingHorizontal": 16,
+        "paddingTop": 16,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#FFF",
+              "fontSize": 25,
+            },
+            undefined,
+            Object {
+              "fontFamily": "FontAwesome",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "#FFF",
+          "flex": 1,
+          "fontFamily": "Raleway-ExtraBold",
+          "fontSize": 24,
+          "marginRight": 25,
+          "textAlign": "center",
+        }
+      }
+    >
+      Settings
+    </Text>
+  </View>
+  <RCTScrollView
+    style={
+      Object {
+        "backgroundColor": "#F0F2F7",
+        "flex": 1,
+        "paddingTop": 16,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "elevation": 6,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-ExtraBold",
+                "fontSize": 17,
+                "padding": 8,
+                "paddingBottom": 0,
+              }
+            }
+          >
+            Your Details
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A6A8AB",
+              "height": 0.5,
+              "marginHorizontal": 9,
+              "marginTop": -8,
+              "width": 60,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "margin": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginBottom": 16,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Name:
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Name
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "marginBottom": 16,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Email:
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-Regular",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Email
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "borderRadius": 4,
+            "elevation": 6,
+            "margin": 8,
+            "marginBottom": 24,
+            "padding": 8,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 3,
+            },
+            "shadowOpacity": 0.16,
+            "shadowRadius": 3,
+            "width": 734,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#545454",
+                "fontFamily": "Raleway-ExtraBold",
+                "fontSize": 17,
+                "padding": 8,
+                "paddingBottom": 0,
+              }
+            }
+          >
+            Your Children
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#A6A8AB",
+              "height": 0.5,
+              "marginHorizontal": 9,
+              "marginTop": -8,
+              "width": 60,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "margin": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "marginBottom": 16,
+              }
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                Object {
+                  "url": undefined,
+                }
+              }
+              style={
+                Object {
+                  "borderRadius": 20,
+                  "height": 40,
+                  "marginRight": 32,
+                  "width": 40,
+                }
+              }
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 15,
+                }
+              }
+            >
+              John Bobson
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "marginBottom": 16,
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#4CAF50",
+                    "fontSize": 43,
+                  },
+                  Object {
+                    "borderRadius": 20,
+                    "height": 40,
+                    "marginRight": 32,
+                    "width": 40,
+                  },
+                  Object {
+                    "fontFamily": "FontAwesome",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#545454",
+                  "fontFamily": "Raleway-ExtraBold",
+                  "fontSize": 15,
+                }
+              }
+            >
+              Add another child
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

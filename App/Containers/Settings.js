@@ -16,14 +16,23 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import STYLES from '../Constants/Styles';
 import Bar from '../Components/Bar';
 import { GREY, LIGHT_GREY, VERY_LIGHT_GREY, GOOD } from '../Constants/Colours';
+import addAdditionalChild from '../AsyncActions/AddAdditionalChild';
 
 import type { ParentState } from '../Reducers/Parent';
 import type { KidsState, Kid } from '../Reducers/Kids';
 import type { RootState } from '../Reducers';
 
-type Props = {
+type StateProps = {
   parent: ParentState,
   kids: KidsState
+};
+
+type Props = StateProps & {
+  onPress: () => void
+};
+
+type DispatchProps = {
+  dispatch: (any) => any
 };
 
 const styles = StyleSheet.create({
@@ -161,9 +170,28 @@ const Settings = ({ parent, kids }: Props) => (
   </View>
 );
 
-const mapStateToProps = ({ parentState, kidsState }: RootState): Props => ({
+const mapStateToProps = (
+  { parentState, kidsState }: RootState
+): StateProps => ({
   parent: parentState,
   kids: kidsState,
+});
+
+export const mergeProps = (
+  { parent, kids }: StateProps,
+  { dispatch }: DispatchProps
+): Props => ({
+  parent,
+  kids,
+  onPress: () => {
+    if (parent.upgradedAt) {
+      dispatch(addAdditionalChild());
+      Actions.deviceSetup();
+      return;
+    }
+
+    Actions.upgrade();
+  },
 });
 
 export default connect(mapStateToProps, null, null)(Settings);
