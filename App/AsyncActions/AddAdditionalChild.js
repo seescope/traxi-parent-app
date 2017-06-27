@@ -4,11 +4,9 @@ import { Actions } from 'react-native-router-flux';
 
 import persistParent from './PersistParent';
 import persistKid from './PersistKid';
-import upgradeAccount from './UpgradeAccount';
 import { addedAdditionalChild } from '../Reducers/Parent/parentActions';
 
 import type { RootState } from '../Reducers';
-// import type { ParentAction } from '../Reducers/Parent';
 
 type Dispatch = (any) => void;
 type GetState = () => RootState;
@@ -18,8 +16,7 @@ export default () =>
     const { parentState } = getState();
     const { upgradedAt } = parentState;
 
-    // TODO: Handle if parent did not want to upgrade account.
-    if (!upgradedAt) await dispatch(upgradeAccount());
+    if (!upgradedAt) throw new Error('Parent is not upgraded.');
 
     // Create the new kid
     const UUID = uuid.v4();

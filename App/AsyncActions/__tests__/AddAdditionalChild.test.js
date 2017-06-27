@@ -58,4 +58,18 @@ describe('AddAdditionalChild', () => {
       expect(Actions.deviceSetup).toHaveBeenCalled();
     });
   });
+
+  test('Throws error if parent is not already upgraded', () => {
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore({
+      parentState: TEST_PARENT,
+      kidsState: {
+        [TEST_UUID]: TEST_NEW_KID,
+      },
+    });
+
+    return store.dispatch(addAdditionalChild()).catch(error => {
+      expect(error).toBeDefined();
+    });
+  });
 });
