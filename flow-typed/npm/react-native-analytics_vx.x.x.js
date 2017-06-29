@@ -1,4 +1,4 @@
-// flow-typed signature: 80a97ea341e8c6f4afa21df458f2f16a
+// flow-typed signature: 16b3e8fe39c10d84c320bf527b9898f1
 // flow-typed version: <<STUB>>/react-native-analytics_vhttps://github.com/traxicorp/react-native-analytics/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

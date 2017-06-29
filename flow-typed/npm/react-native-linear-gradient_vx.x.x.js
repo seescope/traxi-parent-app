@@ -1,4 +1,4 @@
-// flow-typed signature: ec7b5ee015c89112de3c2afb27cc3cdb
+// flow-typed signature: 677fc192512722a83185cbdc6ec157ce
 // flow-typed version: <<STUB>>/react-native-linear-gradient_v^2.0.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

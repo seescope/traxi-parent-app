@@ -13,6 +13,9 @@ import Loading from '../Components/Loading';
 import CheckForDevice from './CheckForDevice';
 import InitialUsage from '../InitialUsage';
 import SendReminder from './SendReminder';
+import Settings from './Settings';
+import Upgrade from './Upgrade';
+
 const RouterWithRedux = connect()(Router);
 
 const ParentApp = ({ store, backButtonHandler }) => (
@@ -29,6 +32,8 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="dashboard" component={Dashboard} />
       <Scene key="playground" initial={false} component={Playground} />
       <Scene key="initialUsage" component={InitialUsage} />
+      <Scene key="settings" component={Settings} />
+      <Scene key="upgrade" component={Upgrade} />
     </RouterWithRedux>
   </Provider>
 );

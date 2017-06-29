@@ -1,4 +1,4 @@
-// flow-typed signature: 6e5bb6663074f2986bf34fa5d190d90e
+// flow-typed signature: c28863cbe71c3b933cff836649b0bf8e
 // flow-typed version: <<STUB>>/react-native-vector-icons_v^4.0.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

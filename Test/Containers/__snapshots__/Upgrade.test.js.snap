@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the <Upgrade> component 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#448AFF",
+      "flex": 1,
+      "paddingHorizontal": 32,
+      "paddingVertical": 64,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FFF",
+        "fontFamily": "Raleway-ExtraBold",
+        "fontSize": 35,
+        "textAlign": "center",
+      }
+    }
+  >
+    Traxi for Families
+  </Text>
+  <Image
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "marginVertical": 32,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FFF",
+        "fontFamily": "Raleway-Regular",
+        "fontSize": 19,
+        "textAlign": "center",
+      }
+    }
+  >
+    Monitor your family for just
+    
+    
+     $1.99 per month.
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": 32,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      <View
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#545454",
+              "fontFamily": "Raleway-Bold",
+            }
+          }
+        >
+          Not yet
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      <View
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#4CAF50",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Bold",
+            }
+          }
+        >
+          Upgrade now
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

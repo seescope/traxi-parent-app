@@ -9,6 +9,7 @@ export type Kid = {
 };
 
 export type KidsState = {
+  // $$FlowFixMe
   [string]: Kid
 };
 
@@ -22,6 +23,7 @@ export type KidsAction =
   | { type: 'KID_UPDATED', kid: Kid, UUID: string }
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'PROFILE_MIGRATED', kids: KidsState }
+  | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string }
   | { type: 'SET_KID_IMAGE', avatarURL: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
@@ -106,6 +108,13 @@ export default (
     }
     case 'IMPERSONATED_PARENT': {
       return action.kids;
+    }
+    case 'ADDED_ADDITIONAL_CHILD': {
+      const { UUID } = action;
+      return {
+        ...state,
+        [UUID]: createNewKid(UUID),
+      };
     }
     default:
       return state;

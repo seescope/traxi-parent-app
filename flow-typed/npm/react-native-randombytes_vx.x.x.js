@@ -1,4 +1,4 @@
-// flow-typed signature: e72edb0eb692987a07c5531b4e9230fc
+// flow-typed signature: 6bfdf88f2da148a0f7343fc0e1f0d246
 // flow-typed version: <<STUB>>/react-native-randombytes_v^2.1.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

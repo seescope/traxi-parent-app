@@ -1,4 +1,4 @@
-// flow-typed signature: 09e41caee02fe357366bed73816a7f93
+// flow-typed signature: ec304e002f4f010fc29cf598aea3f92b
 // flow-typed version: <<STUB>>/react-native-intercom_v5.8.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

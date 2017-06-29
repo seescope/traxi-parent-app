@@ -5,12 +5,12 @@ import {
   beginSetup,
   beginDeeplinkSetup,
 } from '../Reducers/Parent/parentActions';
+
+import type { Dispatch } from '../Reducers';
 import type { ParentState } from '../Reducers/Parent';
 import type { Kid } from '../Reducers/Kids';
 import persistSetupID from './PersistSetupID';
 import userLoggedIn from './UserLoggedIn';
-
-type Dispatch = () => void;
 
 const fetchParent = (UUID: string): Promise<?ParentState> =>
   database().ref(`parents/${UUID}`).once('value').then(data => data.val());

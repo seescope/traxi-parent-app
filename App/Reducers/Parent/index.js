@@ -6,7 +6,9 @@ export type ParentState = {
   UUID: ?string,
   email: ?string,
   kids: Array<string>,
-  password: ?string
+  transactions: ?Array<string>,
+  password: ?string,
+  upgradedAt: ?string
 };
 
 export type ParentAction =
@@ -21,13 +23,18 @@ export type ParentAction =
   | { type: 'SET_EMAIL', email: string }
   | { type: 'PROFILE_MIGRATED', kids: KidsState, parent: ParentState }
   | { type: 'IMPERSONATED_PARENT', kids: KidsState, parent: ParentState }
-  | { type: 'SET_PASSWORD', password: string };
+  | { type: 'SET_PASSWORD', password: string }
+  | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string, setupID: number }
+  | { type: 'USER_LOGGED_IN', parent: ParentState }
+  | { type: 'ACCOUNT_UPGRADED', upgradedAt: string, orderId: string };
 
 export const INITIAL_STATE = {
   name: undefined,
   UUID: undefined,
   email: undefined,
   password: undefined,
+  upgradedAt: undefined,
+  transactions: undefined,
   kids: [],
 };
 // export const INITIAL_STATE = {
@@ -80,6 +87,22 @@ export default function parent(
     }
     case 'IMPERSONATED_PARENT': {
       return action.parent;
+    }
+    case 'ADDED_ADDITIONAL_CHILD': {
+      const { UUID } = action;
+      return {
+        ...state,
+        kids: [...state.kids, UUID],
+      };
+    }
+    case 'ACCOUNT_UPGRADED': {
+      const { upgradedAt, orderId } = action;
+      const transactions = state.transactions || [];
+      return {
+        ...state,
+        upgradedAt,
+        transactions: [...transactions, orderId],
+      };
     }
     default:
       return state;

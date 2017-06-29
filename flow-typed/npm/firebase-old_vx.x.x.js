@@ -1,4 +1,4 @@
-// flow-typed signature: 2682f05e5fb416032eb070b44960e087
+// flow-typed signature: 7dd81b7e979230596ecce85cd0220c7f
 // flow-typed version: <<STUB>>/firebase-old_vhttps://github.com/traxicorp/firebase-old/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

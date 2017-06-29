@@ -4,11 +4,10 @@ import { Actions } from 'react-native-router-flux';
 
 import getInitalUsage from './GetInitialUsage';
 import { kidUpdated } from '../Reducers/Kids/kidsActions';
-import type { Kid } from '../Reducers/Kids/index';
-import type { RootState } from '../Reducers';
 
-type Dispatch = (action: any) => void;
-type GetState = () => RootState;
+import type { Kid } from '../Reducers/Kids/index';
+import type { Dispatch, GetState } from '../Reducers';
+
 type FirebaseKid = {
   UUID: string,
   status: string,

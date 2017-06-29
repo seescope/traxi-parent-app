@@ -1,23 +1,12 @@
 // @flow
-import type { ParentState } from '../Reducers/Parent';
-import type { KidsState } from '../Reducers/Kids';
-
 import Intercom from 'react-native-intercom';
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
 
-type GetState = () => {
-  parentState: ParentState,
-  kidsState: KidsState,
-};
-type UserLoggedIn = {
-  type: 'USER_LOGGED_IN',
-  parent: ParentState,
-};
-type Dispatch = () => UserLoggedIn;
+import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
-  async (dispatch: Dispatch, getState: GetState): Promise<UserLoggedIn> => {
+  async (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const { parentState, kidsState } = getState();
     const { UUID, name, email, kids } = parentState;
 
@@ -28,10 +17,11 @@ export default () =>
 
     // No Analytics in __DEV__
     if (__DEV__) {
-      return dispatch({
+      dispatch({
         type: 'USER_LOGGED_IN',
         parent: parentState,
       });
+      return;
     }
 
     const kidUUID = kids[0];
@@ -55,7 +45,7 @@ export default () =>
       }),
     ]);
 
-    return dispatch({
+    dispatch({
       type: 'USER_LOGGED_IN',
       parent: parentState,
     });

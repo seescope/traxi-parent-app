@@ -15,7 +15,7 @@ import RootReducer from './App/Reducers';
 import { backButtonHandler, loggingMiddleware } from './App/Utils';
 import bootApp from './App/AsyncActions/BootApp';
 import trackingMiddleware from './App/Middleware/Tracking';
-// import impersonateParent from './App/AsyncActions/ImpersonateParent';
+import impersonateParent from './App/AsyncActions/ImpersonateParent'; // eslint-disable-line
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -51,7 +51,7 @@ export default class extends React.Component {
       this.store.dispatch(bootApp()));
 
     // Uncomment to impersonate a parent for testing.
-    // const PARENT_UUID = 'c1e5153d-32cd-4c21-bfb7-5fc4bf32720a';
+    // const PARENT_UUID = 'ee716cfb-76dc-4e86-9e43-4577a378f255';
     // this.store.dispatch(impersonateParent(PARENT_UUID));
     // console.warn('Impersonating parent', PARENT_UUID);
   }

@@ -1,4 +1,4 @@
-// flow-typed signature: d1de3e6af17cb3955ca0bac2518337fa
+// flow-typed signature: 04ba16a5e7a654f88bbea7f3ef486af5
 // flow-typed version: <<STUB>>/react-native-timer_v^1.1.3/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

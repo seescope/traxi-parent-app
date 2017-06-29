@@ -97,15 +97,9 @@ describe('getInitialUsage', () => {
 
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
-      parentState: {
-        kids: [
-          {
-            UUID: 'uuid',
-          },
-        ],
-      },
       setupState: {
         apps: undefined,
+        kidUUID: 'uuid',
       },
     });
 
@@ -185,15 +179,9 @@ describe('getInitialUsage', () => {
 
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
-      parentState: {
-        kids: [
-          {
-            UUID: 'uuid',
-          },
-        ],
-      },
       setupState: {
         apps: EXISTING_APPS,
+        kidUUID: 'uuid',
       },
     });
     const EXPECTED_ACTIONS = [
@@ -262,15 +250,9 @@ describe('getInitialUsage', () => {
 
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
-      parentState: {
-        kids: [
-          {
-            UUID: 'uuid',
-          },
-        ],
-      },
       setupState: {
         apps: EXISTING_APPS,
+        kidUUID: 'uuid',
       },
     });
 

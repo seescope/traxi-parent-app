@@ -73,6 +73,30 @@ describe('Setup Reducer', () => {
     });
   });
 
+  describe('ADDED_ADDITIONAL_CHILD', () => {
+    it('Resets everything', () => {
+      const firstState = {
+        step: 5,
+        kidUUID: 'adasdasd',
+        setupID: 5,
+        deviceType: 'asdasd',
+        apps: [1, 2, 3],
+      };
+
+      const action = {
+        type: 'ADDED_ADDITIONAL_CHILD',
+        UUID: 'abc-123',
+        setupID: 4,
+      };
+
+      const newState = reducer(firstState, action);
+      expect(newState.kidUUID).toEqual('abc-123');
+      expect(newState.step).toEqual(0);
+      expect(newState.setupID).toEqual(4);
+      expect(newState.apps).toEqual(undefined);
+    });
+  });
+
   describe('REACT_NATIVE_ROUTER_FLUX_FOCUS', () => {
     it('Sets the current sceneName', () => {
       const TEST_SCENE_NAME = 'testscene';

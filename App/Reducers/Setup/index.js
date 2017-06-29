@@ -103,6 +103,16 @@ export default (
         apps: action.apps,
       };
     }
+    case 'ADDED_ADDITIONAL_CHILD': {
+      const { UUID: kidUUID, setupID } = action;
+      return {
+        ...state,
+        kidUUID,
+        setupID,
+        step: 0,
+        apps: undefined,
+      };
+    }
     case 'REACT_NATIVE_ROUTER_FLUX_FOCUS': {
       const sceneName = action.scene && action.scene.name;
       return {

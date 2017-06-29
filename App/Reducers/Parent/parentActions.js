@@ -52,10 +52,35 @@ export function profileMigrated(
   };
 }
 
-export function impersonatedParent(parent: ParentState, kids: KidsState) {
+export function impersonatedParent(
+  parent: ParentState,
+  kids: KidsState
+): ParentAction {
   return {
     type: 'IMPERSONATED_PARENT',
     parent,
     kids,
+  };
+}
+
+export function accountUpgraded(
+  upgradedAt: string,
+  orderId: string
+): ParentAction {
+  return {
+    type: 'ACCOUNT_UPGRADED',
+    upgradedAt,
+    orderId,
+  };
+}
+
+export function addedAdditionalChild(
+  UUID: string,
+  setupID: number
+): ParentAction {
+  return {
+    type: 'ADDED_ADDITIONAL_CHILD',
+    UUID,
+    setupID,
   };
 }

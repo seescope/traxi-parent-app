@@ -17,6 +17,8 @@ const EXPECTED_PARENT = {
   ],
   name: 'Kane Rogers',
   password: undefined,
+  upgradedAt: undefined,
+  transactions: [],
 };
 
 const EXPECTED_KIDS = {
@@ -58,13 +60,13 @@ describe('MigrateDataFromPreviousVersion', () => {
         const persistedAction = store.getActions()[1];
         expect(persistedAction.type).toEqual('KID_PERSISTED');
         expect(persistedAction.kid).toEqual(
-          EXPECTED_KIDS['2f566920-f598-46d2-8bf2-7bcae115bf0a'],
+          EXPECTED_KIDS['2f566920-f598-46d2-8bf2-7bcae115bf0a']
         );
 
         const persistedAction2 = store.getActions()[2];
         expect(persistedAction2.type).toEqual('KID_PERSISTED');
         expect(persistedAction2.kid).toEqual(
-          EXPECTED_KIDS['886b79ea-3572-4b4a-9c25-59b14639ac3d'],
+          EXPECTED_KIDS['886b79ea-3572-4b4a-9c25-59b14639ac3d']
         );
 
         const persistedAction3 = store.getActions()[3];

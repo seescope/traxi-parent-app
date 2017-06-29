@@ -1,4 +1,4 @@
-// flow-typed signature: 35e62ee9d408c68e72acc16e4788bd82
+// flow-typed signature: 849f3bb07ff13a672c1f0ee206c08398
 // flow-typed version: <<STUB>>/react-native-animatable_v^0.6.1/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

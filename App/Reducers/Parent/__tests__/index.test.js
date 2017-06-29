@@ -81,13 +81,26 @@ describe('Parent reducer', () => {
     });
   });
 
-  describe('IMPERSONATED_PARENT', () => {
+  describe('ADDED_ADDITIONAL_CHILD', () => {
+    it('adds an additional child', () => {
+      const TEST_PARENT = { name: 'Something', kids: ['1'] };
+      const action = Actions.addedAdditionalChild('abc-123', 1234);
+      const parent = reducer(TEST_PARENT, action);
+      expect(parent.kids).toEqual(['1', 'abc-123']);
+    });
+  });
+
+  describe('ACCOUNT_UPGRADED', () => {
     it('updates the parent state', () => {
       const TEST_PARENT = { name: 'Something' };
-      const action = Actions.impersonatedParent(TEST_PARENT);
-
-      const parent = reducer(undefined, action);
-      expect(parent).toEqual(TEST_PARENT);
+      const action = {
+        type: 'ACCOUNT_UPGRADED',
+        upgradedAt: 'today',
+        orderId: 'order-id',
+      };
+      const upgradedParent = reducer(TEST_PARENT, action);
+      expect(upgradedParent.upgradedAt).toEqual('today');
+      expect(upgradedParent.transactions).toEqual(['order-id']);
     });
   });
 });

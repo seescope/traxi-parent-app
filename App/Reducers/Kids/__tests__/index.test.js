@@ -3,6 +3,7 @@ import {
   beginDeeplinkSetup,
   profileMigrated,
   impersonatedParent,
+  addedAdditionalChild,
 } from '../../Parent/parentActions';
 import { setKidName, kidUpdated, setKidImage } from '../kidsActions';
 import reducer from '../index.js';
@@ -92,8 +93,19 @@ describe('Kids reducer', () => {
       const TEST_KIDS = { 'abc-123': { name: 'Something' } };
       const action = impersonatedParent(undefined, TEST_KIDS);
 
-      const {name} = reducer(undefined, action)['abc-123'];
+      const { name } = reducer(undefined, action)['abc-123'];
       expect(name).toEqual('Something');
+    });
+  });
+
+  describe('ADDED_ADDITIONAL_CHILD', () => {
+    it('Adds an additional child to state', () => {
+      const INITIAL_STATE = { 'abc-123': { name: 'Something' } };
+      const NEW_KID_UUID = 'def-456';
+
+      const action = addedAdditionalChild(NEW_KID_UUID, 1234);
+      const kids = reducer(INITIAL_STATE, action);
+      expect(kids[NEW_KID_UUID]).toBeDefined();
     });
   });
 });

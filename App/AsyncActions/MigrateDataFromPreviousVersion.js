@@ -9,31 +9,31 @@ import persistKid from './PersistKid';
 import persistParent from './PersistParent';
 import Analytics from 'react-native-analytics';
 
-type Dispatch = () => Promise<any>;
+import type { Dispatch } from '../Reducers';
 
 type ProfileFromAsyncStorage = {
-  UUID: string,
+  UUID: string
 };
 type KidFromFirebase = {
   name: string,
   avatarURL: string,
   UUID: string,
   deviceType: DeviceType,
-  status: string,
+  status: string
 };
 type FirebaseKids = {
-  [string]: KidFromFirebase,
+  [string]: KidFromFirebase
 };
 type ProfileFromFirebase = {
   name: string,
   kids: FirebaseKids,
   UUID: string,
-  email: ?string,
+  email: ?string
 };
 
 type ConvertedProfile = {
   parent: ParentState,
-  kids: KidsState,
+  kids: KidsState
 };
 
 const getKidUUIDs = (kids: FirebaseKids): Array<string> =>
@@ -45,6 +45,8 @@ const convertParent = (profile: ProfileFromFirebase): ParentState => ({
   email: profile.email || '',
   kids: getKidUUIDs(profile.kids),
   password: undefined,
+  upgradedAt: undefined,
+  transactions: [],
 });
 
 const convertKid = (kid: KidFromFirebase): Kid => ({

@@ -1,4 +1,4 @@
-// flow-typed signature: d316a467c8beae4bb55012e956bd107a
+// flow-typed signature: 970fbc0d3b37015027328c173e427d9a
 // flow-typed version: <<STUB>>/redux-segment_v^1.5.0/flow_v0.44.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

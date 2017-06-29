@@ -1,10 +1,12 @@
 // @flow
+/* eslint react/no-multi-comp: 0 */
 import React from 'react';
 import lodash from 'lodash';
 import { connect } from 'react-redux';
-import { ScrollView, RefreshControl } from 'react-native';
+import { View, ScrollView, RefreshControl } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Swiper from 'react-native-swiper';
+import { Actions } from 'react-native-router-flux';
 
 import Spacing from '../Components/Spacing';
 import { VERY_LIGHT_GREY } from '../Constants/Colours';
@@ -14,6 +16,9 @@ import TopAppComponent from './Components/TopApp';
 import TopCategoryComponent from './Components/TopCategory';
 import PeakTimeComponent from './Components/PeakTime';
 import RecentAppComponent from './Components/RecentApp';
+import Bar from '../Components/Bar';
+import { firstName } from '../Utils';
+
 import fetchReportsAction from '../AsyncActions/FetchReports';
 
 import type { KidsState, Kid } from '../Reducers/Kids';
@@ -28,14 +33,14 @@ import type {
 
 type RootState = {
   kidsState: KidsState,
-  reportsState: ReportsState,
+  reportsState: ReportsState
 };
 
 type DashboardProps = {
   reports: ReportsState,
   kids: KidsState,
   loading: boolean,
-  fetchReports: () => Promise<any>,
+  fetchReports: () => Promise<any>
 };
 
 type DashboardScreenProps = {
@@ -45,7 +50,7 @@ type DashboardScreenProps = {
   topCategories: ?CardWithDate<TopCategory>,
   peakTimes: ?CardWithDate<PeakTime>,
   recentApps: ?Array<RecentApp>,
-  fetchReports: () => Promise<any>,
+  fetchReports: () => Promise<any>
 };
 
 const containerStyle = {
@@ -148,21 +153,63 @@ const mapDispatchToProps = dispatch => ({
   fetchReports: () => dispatch(fetchReportsAction()),
 });
 
-const Dashboard = (
-  { reports, kids, loading, fetchReports }: DashboardProps,
-) => (
-  <Swiper>
-    {Object.keys(kids).map(UUID => (
-      <DashboardScreen
-        key={UUID}
-        loading={loading}
-        kid={kids[UUID]}
-        fetchReports={fetchReports}
-        {...reports[UUID]}
-      />
-    ))}
-  </Swiper>
-);
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    const { kids } = props;
+    const { name } = kids[Object.keys(props.kids)[0]];
+
+    this.state = {
+      title: firstName(name),
+    };
+  }
+
+  state: {
+    title: string
+  };
+
+  onIndexChanged(index: number) {
+    const { kids } = this.props;
+    const kidUUID = Object.keys(kids)[index];
+    const { name } = kids[kidUUID];
+    this.setState({
+      title: firstName(name),
+    });
+  }
+
+  props: DashboardProps;
+
+  render() {
+    const { reports, kids, loading, fetchReports } = this.props;
+
+    return (
+      <View>
+        <Bar
+          title={this.state.title}
+          buttonIcon="bars"
+          onPress={() => Actions.settings()}
+        />
+        <Swiper
+          showsPagination
+          bounces
+          showsButtons
+          loop={false}
+          onIndexChanged={index => this.onIndexChanged(index)}
+        >
+          {Object.keys(kids).map(UUID => (
+            <DashboardScreen
+              key={UUID}
+              loading={loading}
+              kid={kids[UUID]}
+              fetchReports={fetchReports}
+              {...reports[UUID]}
+            />
+          ))}
+        </Swiper>
+      </View>
+    );
+  }
+}
 
 // $FlowFixMe
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

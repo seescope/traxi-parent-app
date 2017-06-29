@@ -1,22 +1,19 @@
 // @flow
 /* eslint flowtype/require-parameter-type: [2, { "excludeArrowFunctions": "expressionsOnly"}] */
 /* eslint flowtype/require-return-type: [2, "always", { "excludeArrowFunctions": "expressionsOnly"}] */
-
-import _ from 'lodash';
-import { Actions } from 'react-native-router-flux';
-import { logError } from '../Utils';
-import { fetchedApps } from '../Reducers/Setup/setupActions';
-
-import type { RootState } from '../Reducers';
-import type { SetupAction, AppWithProgress } from '../Reducers/Setup';
-
 const DEV_API_GATEWAY_URL = 'https://fvfydckah0.execute-api.ap-southeast-2.amazonaws.com/dev?UUID=';
 const PROD_API_GATEWAY_URL = 'https://fshfq7krz5.execute-api.ap-southeast-2.amazonaws.com/prod?UUID=';
 const API_GATEWAY_URL = __DEV__ ? DEV_API_GATEWAY_URL : PROD_API_GATEWAY_URL;
 
-type GetState = () => RootState;
-type AsyncAction = (action: any, getState: GetState) => Promise<void>;
-type Dispatch = (action: SetupAction | AsyncAction) => void;
+import _ from 'lodash';
+import { Actions } from 'react-native-router-flux';
+
+import { logError } from '../Utils';
+import { fetchedApps } from '../Reducers/Setup/setupActions';
+
+import type { AppWithProgress } from '../Reducers/Setup';
+import type { Dispatch, GetState } from '../Reducers';
+
 type App = {
   Name: string,
   TimeUsed: number,
@@ -106,9 +103,9 @@ const parseApps = (apps: App[]): AppWithProgress[] =>
 const getInitialUsage = () =>
   (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const state = getState();
-    const UUID = state.parentState.kids[0];
+    const UUID = state.setupState.kidUUID;
 
-    if (!UUID) throw new Error('No UUID for parent while getting InitialUsage');
+    if (!UUID) throw new Error('No UUID for kid while getting InitialUsage');
 
     const url = `${API_GATEWAY_URL}${UUID}`;
 
