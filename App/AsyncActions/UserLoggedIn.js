@@ -7,9 +7,8 @@ import type { Dispatch, GetState } from '../Reducers';
 
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<void> => {
-    const { parentState } = getState();
-    const { UUID, name, email } = parentState;
-
+    const { parentState, kidsState } = getState();
+    const { UUID, name, email, kids } = parentState;
 
     // This should not happen.
     if (!UUID) {
