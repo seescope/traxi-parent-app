@@ -4245,6 +4245,10 @@ react-native-image-picker@^0.26.2:
   version "0.26.3"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.3.tgz#0ad2eede49501a7046d8046a73813696539c3dcd"
 
+react-native-in-app-utils@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-in-app-utils/-/react-native-in-app-utils-5.4.0.tgz#363f5906af5b6a4aa808cccb1d9f451607f2d861"
+
 react-native-intercom@5.8.0:
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/react-native-intercom/-/react-native-intercom-5.8.0.tgz#32382b5da3372f2d99c3160fd165791d10683073"

@@ -61,7 +61,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Hit OK to find your kids in your Address Book</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Hit "OK" to find a photo</string>
 	<key>UIAppFonts</key>
