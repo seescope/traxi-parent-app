@@ -7,7 +7,13 @@ import thunk from 'redux-thunk';
 import upgradeAccount from '../UpgradeAccount';
 import InAppBilling from 'react-native-billing';
 import mockPersistParent from '../PersistParent';
-import { Platform } from 'react-native';
+import { Platform, NativeModules } from 'react-native';
+
+NativeModules.InAppUtils = {
+  loadProducts: (_, cb) => cb(),
+  purchaseProduct: (_, cb) =>
+    cb(null, { transactionIdentifier: 'test-order-id' }),
+};
 
 const TEST_PARENT = {
   UUID: 'abc-123',
