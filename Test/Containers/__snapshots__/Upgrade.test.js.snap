@@ -32,6 +32,7 @@ exports[`renders the <Upgrade> component 1`] = `
     source={1}
     style={
       Object {
+        "height": 667,
         "marginVertical": 32,
       }
     }

@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -24,6 +25,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1D0348627AAE45DBBC02FA5D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBE235C6ED3F4255A2E02234 /* MaterialIcons.ttf */; };
+		23619500A9994E0F9D6AE425 /* libInAppUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 727D50A2135F4BEE8176DB6B /* libInAppUtils.a */; };
 		31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099C10755B114FFBBEB46EBA /* libjschelpers.a */; };
 		3464D6CD68154D93924EF9C9 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770297D0C85649378B99CB5C /* libBVLinearGradient.a */; };
 		36D10BA6DA65496BB302A97D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8740B799E594C499B3996F5 /* Raleway-Bold.ttf */; };
@@ -52,6 +54,7 @@
 		ACFAF011C46E4E1AA02A9BDD /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83E91CF5282B41ADA6566D0E /* Octicons.ttf */; };
 		B514CCC0B4214A388CA13CA3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1862E4468C749E38EFCDEA4 /* FontAwesome.ttf */; };
 		C309AB571DCC538900FDCA63 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C309AB561DCC538900FDCA63 /* NotificationManager.m */; };
+		C31137C21F0DD5D200A7D6A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */; };
 		C32024B91DCC1F5F0084FE8F /* Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = C32024B81DCC1F5F0084FE8F /* Authentication.m */; };
 		C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C336B4411E024EE2005D6F24 /* libRCTAnimation.a */; };
 		C34C75091EC2B23C0073E3BD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C75071EC2B23C0073E3BD /* Bolts.framework */; };
@@ -153,6 +156,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
+		};
+		C30EE6741F06323600600373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43927243291F451EB9DA5CC1 /* InAppUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46E694321B289730000B634E;
+			remoteInfo = InAppUtils;
+		};
+		C30EE6761F06323600600373 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43927243291F451EB9DA5CC1 /* InAppUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46E6943D1B289730000B634E;
+			remoteInfo = InAppUtilsTests;
 		};
 		C3336D1B1E3F0AC800A142B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -394,6 +411,7 @@
 		2B3B1A51F7644CC4B0B7E64C /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		2C7CC788F4D048DFBD9F0455 /* libRNRandomBytes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNRandomBytes.a; sourceTree = "<group>"; };
 		40909FC3FB524E80B6DE3B47 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		43927243291F451EB9DA5CC1 /* InAppUtils.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = InAppUtils.xcodeproj; path = "../node_modules/react-native-in-app-utils/InAppUtils.xcodeproj"; sourceTree = "<group>"; };
 		475BA924530F45DBAD8EDB2E /* libSMXCrashlytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSMXCrashlytics.a; sourceTree = "<group>"; };
 		5193D1C8DBB74B178ED7D89E /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		521B1CD1B352413BB7C39C7E /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; };
@@ -406,6 +424,7 @@
 		5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOneSignal.xcodeproj; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; };
 		67CC55B1355C40F9AF8CE464 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		6DD2C6DCA22CA81713BCC26B /* libPods-traxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-traxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		727D50A2135F4BEE8176DB6B /* libInAppUtils.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libInAppUtils.a; sourceTree = "<group>"; };
 		7505E1BBEE114F4CB23DC267 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		75920FF9F098424C98318244 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../App/Fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		770297D0C85649378B99CB5C /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
@@ -426,6 +445,7 @@
 		BF07A51AC661458CACD5731D /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
 		C309AB551DCC536B00FDCA63 /* NotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		C309AB561DCC538900FDCA63 /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
+		C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C32024A81DCC1F210084FE8F /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		C32024B81DCC1F5F0084FE8F /* Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authentication.m; sourceTree = "<group>"; };
 		C336B4371E024EE2005D6F24 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -473,6 +493,7 @@
 				554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */,
 				0FF736F74A5A4308AE75BB21 /* libRNImagePicker.a in Frameworks */,
 				6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */,
+				C31137C21F0DD5D200A7D6A7 /* StoreKit.framework in Frameworks */,
 				9CED65BFDA6E4FFF994FB073 /* libSMXCrashlytics.a in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
@@ -484,6 +505,7 @@
 				31BDF846329046E28D509C0A /* libjschelpers.a in Frameworks */,
 				4BE31E7F351F435296C5706E /* libRCTOneSignal.a in Frameworks */,
 				8E366B448B6D466381F7A4D5 /* libRNDeviceInfo.a in Frameworks */,
+				23619500A9994E0F9D6AE425 /* libInAppUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +708,7 @@
 				521B1CD1B352413BB7C39C7E /* RNI18n.xcodeproj */,
 				5FFAB3F9B2E9410BAEDB0009 /* RCTOneSignal.xcodeproj */,
 				1465B2C7FB8C46C5BCC47840 /* RNDeviceInfo.xcodeproj */,
+				43927243291F451EB9DA5CC1 /* InAppUtils.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -725,6 +748,7 @@
 		875F757D8C9F124ACC2DD612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */,
 				C34C75071EC2B23C0073E3BD /* Bolts.framework */,
 				C34C75081EC2B23C0073E3BD /* FBSDKCoreKit.framework */,
 				C3FB10911D06A85800F1B2C9 /* libc++.tbd */,
@@ -732,6 +756,15 @@
 				819D939B878B492E9D03D874 /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C30EE66E1F06323600600373 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C30EE6751F06323600600373 /* libInAppUtils.a */,
+				C30EE6771F06323600600373 /* InAppUtilsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C3336CF91E3F0AC800A142B5 /* Products */ = {
@@ -883,6 +916,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -912,6 +948,10 @@
 				{
 					ProductGroup = C3F2E7C01E10B09300671926 /* Products */;
 					ProjectRef = 86F52D4FAE8B447A9227B36C /* CodePush.xcodeproj */;
+				},
+				{
+					ProductGroup = C30EE66E1F06323600600373 /* Products */;
+					ProjectRef = 43927243291F451EB9DA5CC1 /* InAppUtils.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -1103,6 +1143,20 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C30EE6751F06323600600373 /* libInAppUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libInAppUtils.a;
+			remoteRef = C30EE6741F06323600600373 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C30EE6771F06323600600373 /* InAppUtilsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = InAppUtilsTests.xctest;
+			remoteRef = C30EE6761F06323600600373 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C3336D1C1E3F0AC800A142B5 /* libyoga.a */ = {
@@ -1489,6 +1543,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/traxi\"",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
@@ -1541,11 +1596,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/traxi\"",
+					"\"$(SRCROOT)/traxi\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
-				PROVISIONING_PROFILE = "09ce3569-912a-44c2-b811-16f9e9ae2d3c";
+				PROVISIONING_PROFILE = "b331fc49-9e5b-4ff3-9aa0-291808e0b039";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.traxi.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

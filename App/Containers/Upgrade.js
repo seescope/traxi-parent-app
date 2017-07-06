@@ -1,13 +1,14 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import { Image, Text, View, StyleSheet } from 'react-native';
+import { Dimensions, Image, Text, View, StyleSheet } from 'react-native';
 import { MKButton } from 'react-native-material-kit';
 import { Actions } from 'react-native-router-flux';
 
 import { TRAXI_BLUE, GOOD, WHITE, GREY } from '../Constants/Colours';
 import upgradeAccountAction from '../AsyncActions/UpgradeAccount';
 import addAdditionalChild from '../AsyncActions/AddAdditionalChild';
+import { isSmallScreen } from '../Utils';
 
 import type { ParentAction } from '../Reducers/Parent';
 
@@ -19,17 +20,19 @@ type Dispatch = () => Promise<ParentAction>;
 
 // $FlowFixMe
 const LOGO = require('../Images/traxi_for_families.png');
+const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
     backgroundColor: TRAXI_BLUE,
-    paddingVertical: 64,
-    paddingHorizontal: 32,
+    paddingVertical: isSmallScreen ? 32 : 64,
+    paddingHorizontal: isSmallScreen ? 16 : 32,
   },
   logo: {
-    marginVertical: 32,
+    marginVertical: isSmallScreen ? 16 : 32,
+    height: height / 2,
   },
   button: {
     marginHorizontal: 16,
