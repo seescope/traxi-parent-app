@@ -1,6 +1,5 @@
 // @flow
 import Analytics from 'react-native-analytics';
-import _ from 'lodash';
 
 import type { RootState } from '../Reducers';
 import type { ParentAction } from '../Reducers/Parent';
@@ -68,17 +67,17 @@ export default (store: Store) =>
         const { kids } = parentState;
         const { reports } = action;
 
-        const weeklyItems = _.sum(
-          kids.map(k => {
-            const report = reports[k];
-            return report.topApps.week ? report.topApps.week.length : 0;
-          })
-        );
+        const isEmpty = kids.filter(k => {
+          const report = reports[k];
 
-        if (weeklyItems > 0)
-          Analytics.track('Received Valid Report', { weeklyItems });
-        else
-          Analytics.track('Received Empty Report');
+          // Could be null or empty.
+          return report.topApps.today
+            ? report.topApps.today.length === 0
+            : true;
+        }).length > 0;
+
+        if (isEmpty) Analytics.track('Received Empty Report');
+        else Analytics.track('Received Valid Report');
       }
 
       if (action.type === 'FETCHED_APPS') {
