@@ -54,6 +54,7 @@
 		ACFAF011C46E4E1AA02A9BDD /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83E91CF5282B41ADA6566D0E /* Octicons.ttf */; };
 		B514CCC0B4214A388CA13CA3 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1862E4468C749E38EFCDEA4 /* FontAwesome.ttf */; };
 		C309AB571DCC538900FDCA63 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C309AB561DCC538900FDCA63 /* NotificationManager.m */; };
+		C31137C21F0DD5D200A7D6A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */; };
 		C32024B91DCC1F5F0084FE8F /* Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = C32024B81DCC1F5F0084FE8F /* Authentication.m */; };
 		C336B45B1E024EF6005D6F24 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C336B4411E024EE2005D6F24 /* libRCTAnimation.a */; };
 		C34C75091EC2B23C0073E3BD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C75071EC2B23C0073E3BD /* Bolts.framework */; };
@@ -444,6 +445,7 @@
 		BF07A51AC661458CACD5731D /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
 		C309AB551DCC536B00FDCA63 /* NotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		C309AB561DCC538900FDCA63 /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
+		C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C32024A81DCC1F210084FE8F /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		C32024B81DCC1F5F0084FE8F /* Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authentication.m; sourceTree = "<group>"; };
 		C336B4371E024EE2005D6F24 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				554059A3887E43BE928AFAA8 /* libRNSVG.a in Frameworks */,
 				0FF736F74A5A4308AE75BB21 /* libRNImagePicker.a in Frameworks */,
 				6FCE00194FEA463BB7285A87 /* libRNRandomBytes.a in Frameworks */,
+				C31137C21F0DD5D200A7D6A7 /* StoreKit.framework in Frameworks */,
 				9CED65BFDA6E4FFF994FB073 /* libSMXCrashlytics.a in Frameworks */,
 				9EE916B998C84BA7806ED1AD /* libCodePush.a in Frameworks */,
 				49FF3BA8A6E14BA19CBF6BE9 /* libz.tbd in Frameworks */,
@@ -745,6 +748,7 @@
 		875F757D8C9F124ACC2DD612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C31137C11F0DD5D200A7D6A7 /* StoreKit.framework */,
 				C34C75071EC2B23C0073E3BD /* Bolts.framework */,
 				C34C75081EC2B23C0073E3BD /* FBSDKCoreKit.framework */,
 				C3FB10911D06A85800F1B2C9 /* libc++.tbd */,
@@ -910,6 +914,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -1594,7 +1601,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.traxi.app;
 				PRODUCT_NAME = traxi;
-				PROVISIONING_PROFILE = "09ce3569-912a-44c2-b811-16f9e9ae2d3c";
+				PROVISIONING_PROFILE = "b331fc49-9e5b-4ff3-9aa0-291808e0b039";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.traxi.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
