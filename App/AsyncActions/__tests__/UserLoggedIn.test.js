@@ -14,7 +14,7 @@ describe('User Logged In', () => {
     OneSignal.sendTags.mockClear();
   });
 
-  test('Calls Analytics and Intercom correctly when __DEV__ is not set', () => {
+  test('Calls Analytics and Intercom correctly when __DEV__ is not set and user has an email', () => {
     __DEV__ = false;
     const mockStore = configureMockStore([thunk]);
     const mockParent = {
@@ -44,6 +44,7 @@ describe('User Logged In', () => {
       expect(Analytics.identify).toHaveBeenCalledWith(mockParent.UUID, {
         email: mockParent.email,
         name: mockParent.name,
+        kidName: 'Test Kid',
       });
       expect(OneSignal.sendTags).toHaveBeenCalledWith({
         segmentio_id: mockParent.UUID,
@@ -55,7 +56,7 @@ describe('User Logged In', () => {
     });
   });
 
-  test('Does call Analytics, OneSignal and Intercom correctly when __DEV__ is set', () => {
+  test('Does not call Analytics, OneSignal and Intercom when __DEV__ is set to true', () => {
     __DEV__ = true;
 
     const mockStore = configureMockStore([thunk]);
