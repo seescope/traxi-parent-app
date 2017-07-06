@@ -6,6 +6,7 @@ import Intercom from 'react-native-intercom';
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
 import userLoggedIn from '../UserLoggedIn';
+import { Crashlytics } from 'react-native-fabric';
 
 describe('User Logged In', () => {
   beforeEach(() => {
@@ -53,6 +54,9 @@ describe('User Logged In', () => {
         name: mockParent.name,
         kidName: 'Test Kid',
       });
+      expect(Crashlytics.setUserIdentifier).toHaveBeenCalledWith(
+        mockParent.UUID
+      );
     });
   });
 
