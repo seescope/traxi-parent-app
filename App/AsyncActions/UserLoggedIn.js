@@ -2,6 +2,7 @@
 import Intercom from 'react-native-intercom';
 import Analytics from 'react-native-analytics';
 import OneSignal from 'react-native-onesignal';
+import { Crashlytics } from 'react-native-fabric';
 
 import type { Dispatch, GetState } from '../Reducers';
 
@@ -34,6 +35,9 @@ const callOneSignal = (
     kidName,
   });
 
+const callCrashlytics = (UUID: string): Promise<void> =>
+  Crashlytics.setUserIdentifier(UUID);
+
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const { parentState, kidsState } = getState();
@@ -60,6 +64,7 @@ export default () =>
       callAnalytics(UUID, name, email, kidName),
       callIntercom(UUID, email),
       callOneSignal(name, UUID, email, kidName),
+      callCrashlytics(UUID),
     ]);
 
     dispatch({
