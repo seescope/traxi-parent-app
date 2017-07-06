@@ -46,7 +46,7 @@ const handleAndroid = (dispatch: Dispatch): Promise<void> =>
 
 const handleIOS = (dispatch: Dispatch): Promise<void> =>
   new Promise((resolve, reject) => {
-    const product = 'com.traxi.traxi_for_families';
+    const product = 'traxi_for_families';
     const { InAppUtils } = NativeModules;
 
     InAppUtils.loadProducts([product], (error, products) => {
