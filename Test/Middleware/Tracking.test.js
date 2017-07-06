@@ -43,7 +43,7 @@ describe('Tracking Middleware', () => {
       reports: {
         'abc-123': {
           topApps: {
-            week: ['an app'],
+            today: [1, 2],
           },
         },
       },
@@ -57,9 +57,7 @@ describe('Tracking Middleware', () => {
       getState: () => state,
     };
     trackingMiddleware(store)(next)(action);
-    expect(Analytics.track).toHaveBeenCalledWith('Received Valid Report', {
-      weeklyItems: 1,
-    });
+    expect(Analytics.track).toHaveBeenCalledWith('Received Valid Report');
   });
 
   test('Tracks when parents have not received a valid report', () => {
@@ -69,7 +67,8 @@ describe('Tracking Middleware', () => {
       reports: {
         'abc-123': {
           topApps: {
-            week: [],
+            today: [],
+            week: [1, 2],
           },
         },
       },
