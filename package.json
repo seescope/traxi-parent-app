@@ -1,6 +1,6 @@
 {
   "name": "traxi",
-  "version": "7.5.0",
+  "version": "7.5.3",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
