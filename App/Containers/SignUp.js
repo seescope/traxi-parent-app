@@ -92,7 +92,7 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export const SetupCompletion = (
+export const SignUp = (
   {
     onNameChanged,
     onPasswordChanged,
@@ -121,9 +121,6 @@ export const SetupCompletion = (
             autoCapitalize="none"
             keyboardType="email-address"
           />
-
-          <Text style={style.labelText}>Your name:</Text>
-          <TextInput onChangeText={onNameChanged} />
 
           <Text style={style.labelText}>Choose a password:</Text>
           <TextInput secureTextEntry onChangeText={onPasswordChanged} />
@@ -178,4 +175,4 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetupCompletion);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

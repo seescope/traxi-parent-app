@@ -15,9 +15,9 @@ import mockFetchReports from '../../App/AsyncActions/FetchReports';
 import mockCreateParentAuthentication
   from '../../App/AsyncActions/CreateParentAuthentication';
 
-import SetupCompletionComponent, {
+import SignUpComponent, {
   mapDispatchToProps,
-} from '../../App/Containers/SetupCompletion';
+} from '../../App/Containers/SignUp';
 
 Alert.alert = jest.fn();
 
@@ -34,15 +34,15 @@ const testStore = mockStore({
   parentState: {},
 });
 
-const SetupCompletion = () => (
+const SignUp = () => (
   <Provider store={testStore}>
-    <SetupCompletionComponent />
+    <SignUpComponent />
   </Provider>
 );
 
-describe('SetupCompletion', () => {
+describe('SignUp', () => {
   it('Renders correctly', () => {
-    const tree = renderer.create(<SetupCompletion />);
+    const tree = renderer.create(<SignUp />);
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
