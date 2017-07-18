@@ -46,7 +46,7 @@ describe('onPress', () => {
     Actions.dashboard.mockClear();
   });
 
-  it('dispatches SelectImage and PersistKid then navigates to SetupCompletion if the parent is not already set up', () => {
+  it('dispatches SelectImage and PersistKid then navigates to SignUp if the parent is not already set up', () => {
     const mockDispatch = jest.fn(() => Promise.resolve());
     const { onPress } = mapDispatchToProps(mockDispatch);
 
