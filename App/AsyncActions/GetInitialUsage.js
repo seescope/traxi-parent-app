@@ -122,7 +122,7 @@ const getInitialUsage = () =>
         const apps = parseApps(rawApps);
 
         if (hasEnoughUsage(apps)) {
-          Actions.setKidImage();
+          Actions.setKidImage({ type: 'replace' });
           return;
         }
 
@@ -136,7 +136,7 @@ const getInitialUsage = () =>
         dispatch(fetchedApps(mergedApps));
 
         if (hasEnoughUsage(mergedApps)) {
-          Actions.setKidImage();
+          Actions.setKidImage({ type: 'replace' });
           return;
         }
 

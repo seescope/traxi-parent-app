@@ -10,7 +10,6 @@ import Button from '../Components/Button';
 import ProgressTrack from '../Components/ProgressTrack';
 import Spacing from '../Components/Spacing';
 import LoadingIndicator from '../Components/LoadingIndicator';
-import { isIOS } from '../Utils';
 
 const { height, width } = Dimensions.get('window');
 
@@ -152,8 +151,8 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     alignItems: 'center',
-    justifyContent: isIOS ? 'flex-end' : 'center',
-    flexDirection: isIOS ? 'column' : 'row',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
 });
 const DeviceSetup = (

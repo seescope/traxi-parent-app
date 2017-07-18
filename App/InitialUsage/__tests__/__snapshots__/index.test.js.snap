@@ -357,47 +357,43 @@ exports[`renders correctly when there are no apps 1`] = `
             </Text>
           </Text>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
                 "marginTop": 16,
-                "opacity": 1,
               }
             }
-            testID={undefined}
-            tvParallaxProperties={undefined}
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
               style={
                 Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "marginHorizontal": 16,
                 }
               }
             >
-              [missing "en.general.needHelp" translation]
-               
-            </Text>
+              <View
+                onPress={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "rgba(75, 73, 73, 1)",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#FFF",
+                      "fontFamily": "Raleway-Bold",
+                    }
+                  }
+                >
+                  [missing "en.general.needHelp" translation]
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -781,47 +777,43 @@ exports[`renders correctly when there are two apps 1`] = `
             </Text>
           </Text>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
                 "marginTop": 16,
-                "opacity": 1,
               }
             }
-            testID={undefined}
-            tvParallaxProperties={undefined}
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
               style={
                 Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "marginHorizontal": 16,
                 }
               }
             >
-              [missing "en.general.needHelp" translation]
-               
-            </Text>
+              <View
+                onPress={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "rgba(75, 73, 73, 1)",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#FFF",
+                      "fontFamily": "Raleway-Bold",
+                    }
+                  }
+                >
+                  [missing "en.general.needHelp" translation]
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>
@@ -1191,47 +1183,43 @@ exports[`renders correctly when there is one app 1`] = `
             </Text>
           </Text>
           <View
-            accessibilityComponentType={undefined}
-            accessibilityLabel={undefined}
-            accessibilityTraits={undefined}
-            accessible={true}
-            hitSlop={undefined}
-            isTVSelectable={true}
-            onLayout={undefined}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "transparent",
-                "flexDirection": "row",
-                "justifyContent": "center",
                 "marginTop": 16,
-                "opacity": 1,
               }
             }
-            testID={undefined}
-            tvParallaxProperties={undefined}
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
               style={
                 Object {
-                  "color": "#448AFF",
-                  "fontFamily": "Raleway-Regular",
-                  "fontSize": 14,
+                  "marginHorizontal": 16,
                 }
               }
             >
-              [missing "en.general.needHelp" translation]
-               
-            </Text>
+              <View
+                onPress={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "rgba(75, 73, 73, 1)",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#FFF",
+                      "fontFamily": "Raleway-Bold",
+                    }
+                  }
+                >
+                  [missing "en.general.needHelp" translation]
+                </Text>
+              </View>
+            </View>
           </View>
         </View>
       </View>

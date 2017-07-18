@@ -127,95 +127,69 @@ exports[`renders the <SetImage> component correctly without deeplink 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "flexDirection": "column",
+        "flexDirection": "row",
       }
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginTop": 16,
-          "opacity": 1,
+          "marginHorizontal": 16,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        onPress={[Function]}
         style={
           Object {
-            "color": "#448AFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 20,
+            "backgroundColor": "#448AFF",
           }
         }
       >
-        [missing "en.setKidImage.chooseAPicture" translation]
-         
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Bold",
+            }
+          }
+        >
+          [missing "en.setKidImage.chooseAPicture" translation]
+        </Text>
+      </View>
     </View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      isTVSelectable={true}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginTop": 16,
-          "opacity": 1,
+          "marginHorizontal": 16,
         }
       }
-      testID={undefined}
-      tvParallaxProperties={undefined}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        onPress={[Function]}
         style={
           Object {
-            "color": "#448AFF",
-            "fontFamily": "Raleway-Regular",
-            "fontSize": 14,
+            "backgroundColor": "rgba(75, 73, 73, 1)",
           }
         }
       >
-        [missing "en.setKidImage.notNow" translation]
-         
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFF",
+              "fontFamily": "Raleway-Bold",
+            }
+          }
+        >
+          [missing "en.setKidImage.notNow" translation]
+        </Text>
+      </View>
     </View>
   </View>
 </View>
