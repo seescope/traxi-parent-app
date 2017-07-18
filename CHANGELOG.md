@@ -1,3 +1,9 @@
+## 7.5.5
+- Re-work SplashScreen
+
+## 7.5.3
+- Only require a single app to be detected in GetInitialUsage
+
 ## 7.5.0
 - Add Traxi for Families
     - This allows parents to monitor unlimited devices

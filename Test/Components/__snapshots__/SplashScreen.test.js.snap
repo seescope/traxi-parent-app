@@ -14,12 +14,13 @@ exports[`renders the <SplashScreen> component 1`] = `
       Object {
         "alignItems": "center",
         "flex": 1,
+        "justifyContent": "center",
         "paddingHorizontal": 32,
       }
     }
   >
     <Image
-      animation="bounceInDown"
+      animation="bounceInLeft"
       resizeMode="contain"
       source={1}
       style={
@@ -47,14 +48,13 @@ exports[`renders the <SplashScreen> component 1`] = `
           "backgroundColor": "transparent",
           "color": "#545454",
           "fontFamily": "Raleway-ExtraBold",
-          "fontSize": 28,
-          "marginBottom": 16,
+          "fontSize": 22,
           "textAlign": "center",
         }
       }
       useNativeDriver={true}
     >
-      What are your children doing online?
+      What is your child doing online?
     </Text>
     <View
       style={
@@ -107,7 +107,7 @@ exports[`renders the <SplashScreen> component 1`] = `
             }
           }
         >
-          Find out now
+          Start monitoring with Traxi
            
         </Text>
       </View>
