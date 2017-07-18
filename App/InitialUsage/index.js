@@ -86,16 +86,8 @@ const getAppRows = (apps: App[]): React.Element<AppRowProps>[] => {
 
 const getMessage = (apps: App[], kidName: string): string => {
   if (!apps.length) return `Use an app on ${kidName}'s device`;
-  const firstApp = apps[0];
-  if (firstApp.progress < 100)
-    return `Keep using ${firstApp.name} until the bar turns green`;
-  if (apps.length > 1) {
-    const secondApp = apps[1];
-    return `Keep using ${secondApp.name} until the bar turns green`;
-  }
-  if (firstApp.progress === 100)
-    return `Use another app on ${kidName}'s device`;
-  return '';
+
+  return `Keep using ${kidName}'s device until the bar turns green`;
 };
 
 const InitialUsageComponent = ({ kidName, apps }: Props) => (

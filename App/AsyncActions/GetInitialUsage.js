@@ -21,7 +21,7 @@ type App = {
 };
 
 const hasEnoughUsage = (apps: AppWithProgress[]): boolean =>
-  apps.filter(a => a.progress >= 100).length > 1;
+  apps.filter(a => a.progress >= 100).length > 0;
 
 const groupAppsByName = (apps: App[]): App[] =>
   apps.reduce(
