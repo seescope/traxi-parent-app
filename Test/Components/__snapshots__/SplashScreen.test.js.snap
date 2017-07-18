@@ -83,9 +83,20 @@ exports[`renders the <SplashScreen> component 1`] = `
             }
           }
         >
-          Start monitoring with Traxi
-
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Bold",
+              }
+            }
+          >
+            Start monitoring with Traxi
+          </Text>
+        </View>
       </View>
     </View>
   </View>
