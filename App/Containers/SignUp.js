@@ -21,6 +21,8 @@ import * as ParentActions from '../Reducers/Parent/parentActions';
 import * as KidsActions from '../Reducers/Kids/kidsActions';
 
 import persistParent from '../AsyncActions/PersistParent';
+import persistKid from '../AsyncActions/PersistKid';
+import watchKid from '../AsyncActions/WatchKid';
 import createParentAuthentication
   from '../AsyncActions/CreateParentAuthentication';
 
@@ -212,19 +214,18 @@ export const mergeProps = (
   kidUUID,
 
   // Update functions
-  onKidNameChanged: (name: string) => {
-    console.log('Setting kid name and UUID', name, kidUUID);
-    return dispatch(KidsActions.setKidName(name, kidUUID));
-  },
+  onKidNameChanged: (name: string) =>
+    dispatch(KidsActions.setKidName(name, kidUUID)),
   onNameChanged: (name: string) => dispatch(ParentActions.setName(name)),
   onEmailChanged: (updatedEmail: string) =>
     dispatch(ParentActions.setEmail(updatedEmail)),
   onPasswordChanged: (password: string) =>
     dispatch(ParentActions.setPassword(password)),
-
   onCompleteSetup: () => {
     dispatch(startedLoading());
     return dispatch(createParentAuthentication())
+      .then(() => dispatch(persistKid()))
+      .then(() => dispatch(watchKid()))
       .then(() => dispatch(persistParent()))
       .then(() => dispatch(stoppedLoading()))
       .then(() => {

@@ -50,7 +50,7 @@ const STYLE = {
   },
 };
 
-const SetImage = ({ kidName, onPress, isInstalled }) => (
+const SetImage = ({ kidName, onPress }) => (
   <View style={STYLE.outerContainer}>
     <View style={STYLE.container}>
       <HeaderText style={STYLE.headerText}>
@@ -80,10 +80,10 @@ const SetImage = ({ kidName, onPress, isInstalled }) => (
 
     </View>
     <View style={STYLE.buttonContainer}>
-      <Button primary onPress={() => onPress(true, isInstalled)}>
+      <Button primary onPress={() => onPress(true)}>
         {I18n.t('setKidImage.chooseAPicture')}
       </Button>
-      <Button onPress={() => onPress(false, isInstalled)}>
+      <Button onPress={() => onPress(false)}>
         {I18n.t('setKidImage.notNow')}
       </Button>
     </View>
@@ -93,32 +93,24 @@ const SetImage = ({ kidName, onPress, isInstalled }) => (
 SetImage.propTypes = {
   kidName: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  isInstalled: PropTypes.bool.isRequired,
 };
 
 export const mapStateToProps = state => {
   const { kidUUID } = state.setupState;
   const { name: kidName } = state.kidsState[kidUUID] || {};
-  const { name, email, password } = state.parentState;
 
   return {
     kidName: firstName(kidName),
-    isInstalled: !!(name && email && password),
   };
 };
 
 export const mapDispatchToProps = dispatch => ({
-  onPress: (didSelectImage, isInstalled) =>
+  onPress: didSelectImage =>
     dispatch(selectImage(didSelectImage))
       .then(() => dispatch(persistKid()))
       .then(() => {
-        if (isInstalled) {
-          dispatch(fetchReports());
-          Actions.dashboard();
-          return;
-        }
-
-        Actions.setupCompletion();
+        dispatch(fetchReports());
+        Actions.dashboard();
       }),
 });
 
