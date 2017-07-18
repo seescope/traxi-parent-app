@@ -48,7 +48,7 @@ export default class extends React.Component {
 
     // Boot normally. Comment this out if testing.
     persistStore(this.store, { storage: AsyncStorage }, () =>
-      this.store.dispatch(bootApp()));
+      this.store.dispatch(bootApp())).purge();
 
     // Uncomment to impersonate a parent for testing.
     // const PARENT_UUID = 'ee716cfb-76dc-4e86-9e43-4577a378f255';

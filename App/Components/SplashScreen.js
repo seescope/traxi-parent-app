@@ -13,15 +13,15 @@ const { height } = Dimensions.get('window');
 const logoStyle = {
   backgroundColor: TRANSPARENT,
   color: GREY,
-  fontSize: 28,
+  fontSize: 22,
   textAlign: 'center',
   fontFamily: 'Raleway-ExtraBold',
-  marginBottom: 16,
 };
 
 const containerStyle = {
   flex: 1,
   alignItems: 'center',
+  justifyContent: 'center',
   paddingHorizontal: 32,
 };
 
@@ -36,8 +36,8 @@ export default () => (
         useNativeDriver
         resizeMode="contain"
         style={imageStyle}
-        animation="bounceInDown"
-        source={require('../Images/trail_preview.png')}
+        animation="bounceInLeft"
+        source={require('../Images/splash_image.png')}
       />
 
       <Spacing height={32} />
@@ -48,13 +48,15 @@ export default () => (
         delay={1000}
         style={logoStyle}
       >
-        What are your children doing online?
+        What is your child doing online?
       </Animatable.Text>
 
       <Spacing height={32} />
 
       <Animatable.View useNativeDriver animation="bounceInUp" delay={2000}>
-        <Button primary onPress={() => Actions.setName()}>Find out now</Button>
+        <Button primary onPress={() => Actions.setName()}>
+          Start monitoring with Traxi
+        </Button>
       </Animatable.View>
     </View>
   </Background>

@@ -6,8 +6,8 @@ NEW_VERSION=`cat package.json |grep version| egrep -o "\d{1,2}\.\d{1,2}\.\d{1,2}
 CURRENT_GRADLE_VERSION_CODE=`cat android/app/build.gradle |grep versionCode |egrep -o '\d{3}$'`
 CURRENT_GRADLE_VERSION_NAME=`cat android/app/build.gradle |grep versionName |egrep -o '\d{1,2}\.\d{1,2}\.\d{1,2}'`
 NEW_VERSION_CODE=`echo -n $NEW_VERSION | sed 's/\.//g'`
-NEW_SHORT_VERSION_STRING=`echo -n $NEW_VERSION | egrep -o '^\d{1,2}\.\d{1,2}'`
-NEW_BUILD_NUMBER=`echo -n $NEW_VERSION | egrep -o '\d{1,2}$'`
+NEW_SHORT_VERSION_STRING=$NEW_VERSION
+NEW_BUILD_NUMBER=1
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -24,8 +24,8 @@ version_bump() {
 }
 
 release_the_fucker() {
-  # fancy_echo "Releasing Android..🤖 "
-  # (cd android && fastlane deploy)
+  fancy_echo "Releasing Android..🤖 "
+  (cd android && fastlane deploy)
 
   fancy_echo "Releasing iOS.."
   (cd ios && fastlane release)
