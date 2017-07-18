@@ -777,7 +777,7 @@ exports[`renders correctly when there are two apps 1`] = `
                 }
               }
             >
-              Keep using Trello until the bar turns green
+              Keep using 's device until the bar turns green
             </Text>
           </Text>
           <View
@@ -1187,7 +1187,7 @@ exports[`renders correctly when there is one app 1`] = `
                 }
               }
             >
-              Keep using Trello until the bar turns green
+              Keep using 's device until the bar turns green
             </Text>
           </Text>
           <View

@@ -86,7 +86,7 @@ const response = {
 };
 
 describe('getInitialUsage', () => {
-  test('fetches the initialUsage of a user until 2 apps have 100% progress', () => {
+  test('fetches the initialUsage of a user until 1 app has 100% progress', () => {
     // Safety net to stop infinite loops.
     let fetchCalled = 0;
     fetch = () => {
@@ -120,27 +120,11 @@ describe('getInitialUsage', () => {
         ],
         type: 'FETCHED_APPS',
       },
-      {
-        apps: [
-          {
-            logo: 'http://is1.mzstatic.com/image/thumb/Purple127/v4/b8/bd/5e/b8bd5ebb-4cd9-b529-ddf3-22a1f9a497ba/source/512x512bb.jpg',
-            name: 'Slack - Business Communication for Teams',
-            progress: 100,
-          },
-          {
-            logo: 'http://i.imgur.com/sE9S6oZ.png',
-            name: 'Safari',
-            progress: 22,
-          },
-        ],
-        type: 'FETCHED_APPS',
-      },
     ];
 
     return store.dispatch(getInitialUsage()).then(() => {
       expect(store.getActions()).toEqual(EXPECTED_ACTIONS);
-      // KR: Bizarre, assertion will not pass.
-      // expect(Actions.dashboard).toHaveBeenCalled();
+      expect(Actions.setKidImage).toHaveBeenCalled();
     });
   });
 
@@ -184,19 +168,9 @@ describe('getInitialUsage', () => {
         kidUUID: 'uuid',
       },
     });
-    const EXPECTED_ACTIONS = [
-      {
-        apps: [
-          { Name: 'Safari', progress: 100 },
-          { name: 'Slack - Business Communication for Teams', progress: 100 },
-          { logo: undefined, name: 'Facebook', progress: 55 },
-        ],
-        type: 'FETCHED_APPS',
-      },
-    ];
     return store.dispatch(getInitialUsage()).then(() => {
       expect(Actions.setKidImage).toHaveBeenCalled();
-      expect(store.getActions()).toEqual(EXPECTED_ACTIONS);
+      expect(store.getActions()).toEqual([]);
     });
   });
 
@@ -237,17 +211,6 @@ describe('getInitialUsage', () => {
       });
     };
 
-    const EXPECTED_ACTIONS = [
-      {
-        apps: [
-          { name: 'Slack - Business Communication for Teams', progress: 100 },
-          { logo: undefined, name: 'Safari', progress: 100 },
-          { logo: undefined, name: 'Facebook', progress: 55 },
-        ],
-        type: 'FETCHED_APPS',
-      },
-    ];
-
     const mockStore = configureMockStore([thunk]);
     const store = mockStore({
       setupState: {
@@ -258,7 +221,7 @@ describe('getInitialUsage', () => {
 
     return store.dispatch(getInitialUsage()).then(() => {
       expect(Actions.setKidImage).toHaveBeenCalled();
-      expect(store.getActions()).toEqual(EXPECTED_ACTIONS);
+      expect(store.getActions()).toEqual([]);
     });
   });
 });
