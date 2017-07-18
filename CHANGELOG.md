@@ -1,5 +1,6 @@
 ## 7.5.5
 - Re-work SplashScreen
+- Switch to AndroidButton on iOS
 
 ## 7.5.3
 - Only require a single app to be detected in GetInitialUsage
