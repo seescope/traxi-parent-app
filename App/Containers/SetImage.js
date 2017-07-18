@@ -13,7 +13,7 @@ import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import STYLES from '../Constants/Styles';
 import { VERY_LIGHT_GREY, GREY } from '../Constants/Colours';
-import { isIOS, firstName } from '../Utils';
+import { firstName } from '../Utils';
 
 const STYLE = {
   outerContainer: {
@@ -38,7 +38,7 @@ const STYLE = {
     color: GREY,
   },
   buttonContainer: {
-    flexDirection: isIOS ? 'column' : 'row',
+    flexDirection: 'row',
     alignItems: 'center',
   },
   headerText: {

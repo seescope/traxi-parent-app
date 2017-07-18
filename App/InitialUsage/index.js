@@ -55,6 +55,10 @@ const styles = StyleSheet.create({
     width: 60,
     backgroundColor: LIGHT_GREY,
   },
+  buttonContainer: {
+    marginTop: 16,
+    alignItems: 'center',
+  },
 });
 
 const getHeaderLabel = (count: number): string => {
@@ -132,9 +136,11 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
             </Text>
 
           </BodyText>
-          <Button onPress={() => Intercom.displayMessageComposer()}>
-            {I18n.t('general.needHelp')}
-          </Button>
+          <View style={styles.buttonContainer}>
+            <Button onPress={() => Intercom.displayMessageComposer()}>
+              {I18n.t('general.needHelp')}
+            </Button>
+          </View>
         </Animatable.View>
       </ScrollView>
 

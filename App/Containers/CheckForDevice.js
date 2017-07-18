@@ -9,7 +9,7 @@ import Background from '../Components/Background';
 import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { GREY } from '../Constants/Colours';
-import { isIOS, isSmallScreen } from '../Utils';
+import { isSmallScreen } from '../Utils';
 
 const style = {
   container: {
@@ -26,8 +26,8 @@ const style = {
   },
   buttonsContainer: {
     alignItems: 'center',
-    justifyContent: isIOS ? 'flex-end' : 'center',
-    flexDirection: isIOS ? 'column' : 'row',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
   deviceImage: {
     height: 250,
@@ -66,7 +66,7 @@ const CheckForDevice = ({ kidName }) => (
         </Text>
       </View>
 
-      <Spacing height={16} />
+      <Spacing height={32} />
 
       <Animatable.View
         useNativeDriver

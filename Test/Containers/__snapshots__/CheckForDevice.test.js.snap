@@ -105,7 +105,7 @@ exports[`renders the <SetName> component 1`] = `
     <View
       style={
         Object {
-          "height": 16,
+          "height": 32,
         }
       }
     />
@@ -115,97 +115,71 @@ exports[`renders the <SetName> component 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "flexDirection": "column",
-          "justifyContent": "flex-end",
+          "flexDirection": "row",
+          "justifyContent": "center",
         }
       }
       useNativeDriver={true}
     >
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "marginTop": 16,
-            "opacity": 1,
+            "marginHorizontal": 16,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
+          onPress={[Function]}
           style={
             Object {
-              "color": "#448AFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 20,
+              "backgroundColor": "#448AFF",
             }
           }
         >
-          I'm ready
-           
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Bold",
+              }
+            }
+          >
+            I'm ready
+          </Text>
+        </View>
       </View>
       <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "marginTop": 16,
-            "opacity": 1,
+            "marginHorizontal": 16,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
+        <View
+          onPress={[Function]}
           style={
             Object {
-              "color": "#448AFF",
-              "fontFamily": "Raleway-Regular",
-              "fontSize": 14,
+              "backgroundColor": "rgba(75, 73, 73, 1)",
             }
           }
         >
-          Not ready yet
-           
-        </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#FFF",
+                "fontFamily": "Raleway-Bold",
+              }
+            }
+          >
+            Not ready yet
+          </Text>
+        </View>
       </View>
     </View>
   </View>
