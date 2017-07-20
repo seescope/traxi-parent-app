@@ -12,7 +12,6 @@ jest.mock('../../App/AsyncActions/FetchReports', () =>
   () => 'TEST_FETCH_REPORTS');
 
 import SetImageComponent, {
-  mapStateToProps,
   mapDispatchToProps,
 } from '../../App/Containers/SetImage';
 
