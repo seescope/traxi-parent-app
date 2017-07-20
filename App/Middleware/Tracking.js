@@ -85,6 +85,10 @@ export default (store: Store) =>
         Analytics.track('Account Upgraded', { revenue: 1.99 });
       }
 
+      if (action.type === 'ACTIVATED_PARENT') {
+        Analytics.track('Completed Setup');
+      }
+
       // Fall through
       return next(action);
     };
