@@ -35,9 +35,6 @@ export default (store: Store) =>
         if (deviceType !== 'unknown' && !installed) {
           Analytics.track('Verified Device', kid);
         }
-        if (deviceType !== 'unknown' && installed) {
-          Analytics.track('Completed Setup', kid);
-        }
       }
 
       if (action.type === 'BEGIN_SETUP') {

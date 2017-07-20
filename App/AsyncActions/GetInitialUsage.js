@@ -10,6 +10,7 @@ import { Actions } from 'react-native-router-flux';
 
 import { logError } from '../Utils';
 import { fetchedApps } from '../Reducers/Setup/setupActions';
+import { activatedParent } from '../Reducers/Parent/parentActions';
 
 import type { AppWithProgress } from '../Reducers/Setup';
 import type { Dispatch, GetState } from '../Reducers';
@@ -100,10 +101,19 @@ const parseApp = (app: App): AppWithProgress => ({
 const parseApps = (apps: App[]): AppWithProgress[] =>
   groupAppsByName(apps).filter(a => a.TimeUsed > 2).map(parseApp);
 
+const finished = (activatedAt: ?string, dispatch: Dispatch) => {
+  if (!activatedAt) {
+    dispatch(activatedParent());
+  }
+
+  Actions.setKidImage({ type: 'replace' });
+};
+
 const getInitialUsage = () =>
   (dispatch: Dispatch, getState: GetState): Promise<void> => {
-    const state = getState();
-    const UUID = state.setupState.kidUUID;
+    const { setupState, parentState } = getState();
+    const { kidUUID: UUID, apps } = setupState;
+    const { activatedAt } = parentState;
 
     if (!UUID) throw new Error('No UUID for kid while getting InitialUsage');
 
@@ -119,24 +129,24 @@ const getInitialUsage = () =>
         return response.json();
       })
       .then((rawApps: App[]) => {
-        const apps = parseApps(rawApps);
+        const parsedApps = parseApps(rawApps);
 
-        if (hasEnoughUsage(apps)) {
-          Actions.setKidImage({ type: 'replace' });
+        if (hasEnoughUsage(parsedApps)) {
+          finished(activatedAt, dispatch);
           return;
         }
 
-        if (!state.setupState.apps) {
-          dispatch(fetchedApps(apps));
+        if (!apps) {
+          dispatch(fetchedApps(parsedApps));
           dispatch(getInitialUsage());
           return;
         }
 
-        const mergedApps = mergeWithAppsFromState(state.setupState.apps, apps);
+        const mergedApps = mergeWithAppsFromState(apps, parsedApps);
         dispatch(fetchedApps(mergedApps));
 
         if (hasEnoughUsage(mergedApps)) {
-          Actions.setKidImage({ type: 'replace' });
+          finished(activatedAt, dispatch);
           return;
         }
 
