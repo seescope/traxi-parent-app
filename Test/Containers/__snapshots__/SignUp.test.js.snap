@@ -37,7 +37,7 @@ exports[`SignUp Renders correctly 1`] = `
           }
         }
       >
-        Last step!
+        Let's get started!
       </Text>
       <View
         style={
@@ -99,54 +99,6 @@ exports[`SignUp Renders correctly 1`] = `
               autoCapitalize="none"
               autoCorrect={false}
               keyboardType="email-address"
-              onChangeText={[Function]}
-              onSubmitEditing={undefined}
-              placeholderTextColor="rgba(75, 73, 73, 0.8)"
-              secureTextEntry={undefined}
-              style={
-                Object {
-                  "backgroundColor": "transparent",
-                  "borderRadius": 4,
-                  "color": "rgba(75, 73, 73, 1)",
-                  "fontFamily": "Raleway-Regular",
-                  "height": 32,
-                  "marginTop": 4,
-                  "paddingHorizontal": 8,
-                  "width": 686,
-                }
-              }
-              underlineColorAndroid="#448AFF"
-              value={undefined}
-            />
-            <View
-              style={
-                Object {
-                  "backgroundColor": "#448AFF",
-                  "height": 2,
-                  "marginBottom": 16,
-                }
-              }
-            />
-          </View>
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#545454",
-                "fontFamily": "Raleway-ExtraBold",
-                "fontSize": 14,
-              }
-            }
-          >
-            Your name:
-          </Text>
-          <View>
-            <TextInput
-              autoCapitalize="words"
-              autoCorrect={false}
-              keyboardType={undefined}
               onChangeText={[Function]}
               onSubmitEditing={undefined}
               placeholderTextColor="rgba(75, 73, 73, 0.8)"
@@ -262,9 +214,7 @@ exports[`SignUp Renders correctly 1`] = `
               }
             }
           >
-            See 
-            John
-            's usage
+            Next step
           </Text>
         </View>
       </View>
