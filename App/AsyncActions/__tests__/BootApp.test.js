@@ -59,8 +59,7 @@ describe('Boot App', () => {
     const STATE_WITH_KIDS = {
       kidsState: {
         '123-abc': {
-          installed: false,
-          status: 'INSTALLED',
+          installed: true,
         },
       },
       parentState: {
@@ -68,6 +67,7 @@ describe('Boot App', () => {
         name: 'Jeff',
         email: 'test@email.com',
         password: 'password',
+        createdAt: 'some date',
         activatedAt: 'some date',
       },
     };
@@ -114,6 +114,7 @@ describe('Boot App', () => {
       },
       parentState: {
         UUID: 'abc-123',
+        createdAt: 'some date',
       },
     };
 
@@ -141,6 +142,7 @@ describe('Boot App', () => {
         name: 'Jeff',
         email: 'test@email.com',
         password: 'password',
+        createdAt: 'some date',
       },
     };
 
@@ -151,6 +153,36 @@ describe('Boot App', () => {
       expect(Actions.setName).toHaveBeenCalled();
       const action = store.getActions()[0];
       expect(action.type).toEqual('TEST_USER_LOGGED_IN');
+    });
+  });
+
+  test('If the parent is upgrading from a version that did not have the createdAt or activatedAt string, check to see if the kid was installed, then update the parent accordingly', () => {
+    const STATE_WITH_OLD_PARENT_AND_INSTALLED_KIDS = {
+      kidsState: {
+        '123-abc': {
+          UUID: 'abc-123',
+          installed: true,
+        },
+      },
+      parentState: {
+        UUID: 'abc-123',
+        name: 'Jeff',
+        email: 'test@email.com',
+        password: 'password',
+      },
+    };
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(STATE_WITH_OLD_PARENT_AND_INSTALLED_KIDS);
+
+    return store.dispatch(bootApp()).then(() => {
+      const actions = store.getActions();
+
+      expect(actions[0].type).toEqual('ACTIVATED_PARENT');
+      expect(actions[1].type).toEqual('TEST_USER_LOGGED_IN');
+      expect(actions[2].type).toEqual('TEST_FETCH_REPORTS');
+
+      expect(Actions.dashboard).toHaveBeenCalled();
     });
   });
 });

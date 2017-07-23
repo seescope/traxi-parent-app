@@ -3,14 +3,15 @@ import { AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import lodash from 'lodash';
 
-import type { KidsState } from '../Reducers/Kids';
-import type { ParentState } from '../Reducers/Parent';
 import migrateDataFromPreviousVersion from './MigrateDataFromPreviousVersion';
 import userLoggedIn from './UserLoggedIn';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
 import getInitalUsage from './GetInitialUsage';
+import { activatedParent } from '../Reducers/Parent/parentActions';
 
+import type { KidsState } from '../Reducers/Kids';
+import type { ParentState } from '../Reducers/Parent';
 import type { Dispatch, GetState } from '../Reducers';
 
 const hasStartedSetup = ({ name, email, password }: ParentState): boolean =>
@@ -43,10 +44,19 @@ export default () =>
 
     const isInstalled = hasInstalledKids(kidsState);
     const completedSetup = parentState.activatedAt;
+    const isLegacyParent = !parentState.createdAt;
     const startedSetup = hasStartedSetup(parentState);
 
     // The parent has configured at least one kid and completed setup
     if (isInstalled && completedSetup) {
+      Actions.dashboard({ type: 'replace' });
+      dispatch(userLoggedIn());
+      return dispatch(fetchReports());
+    }
+
+    // The parent is upgrading from a version that is missing the activatedAt param
+    if (isInstalled && isLegacyParent) {
+      dispatch(activatedParent());
       Actions.dashboard({ type: 'replace' });
       dispatch(userLoggedIn());
       return dispatch(fetchReports());
