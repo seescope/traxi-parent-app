@@ -78,10 +78,33 @@ exports[`renders the <SendReminder> component 1`] = `
             "color": "#545454",
             "fontFamily": "Raleway-Regular",
             "fontSize": 14,
+            "textAlign": "left",
           }
         }
       >
-        Not ready yet? Enter your email address below and we’ll send you reminder for you to finish setting up
+        Not ready yet? No problem!
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 16,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#545454",
+            "fontFamily": "Raleway-Regular",
+            "fontSize": 14,
+            "textAlign": "left",
+          }
+        }
+      >
+        Tap the button below and Traxi will send you a reminder to set up
          
         John
         ’s device tomorrow.
@@ -93,40 +116,6 @@ exports[`renders the <SendReminder> component 1`] = `
           }
         }
       />
-      <View>
-        <TextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="email-address"
-          onChangeText={[Function]}
-          onSubmitEditing={[Function]}
-          placeholderTextColor="rgba(75, 73, 73, 0.8)"
-          secureTextEntry={undefined}
-          style={
-            Object {
-              "backgroundColor": "transparent",
-              "borderRadius": 4,
-              "color": "rgba(75, 73, 73, 1)",
-              "fontFamily": "Raleway-Regular",
-              "height": 32,
-              "marginTop": 4,
-              "paddingHorizontal": 8,
-              "width": 686,
-            }
-          }
-          underlineColorAndroid="#448AFF"
-          value={undefined}
-        />
-        <View
-          style={
-            Object {
-              "backgroundColor": "#448AFF",
-              "height": 2,
-              "marginBottom": 16,
-            }
-          }
-        />
-      </View>
     </View>
     <View
       style={
