@@ -1,6 +1,4 @@
 jest.mock('../../App/AsyncActions/PersistParent', () => jest.fn());
-jest.mock('../../App/AsyncActions/PersistKid', () => jest.fn());
-jest.mock('../../App/AsyncActions/WatchKid', () => jest.fn());
 jest.mock('../../App/AsyncActions/CreateParentAuthentication', () => jest.fn());
 
 import { Alert } from 'react-native';
@@ -10,9 +8,7 @@ import { Actions } from 'react-native-router-flux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import mockWatchKid from '../../App/AsyncActions/WatchKid';
 import mockPersistParent from '../../App/AsyncActions/PersistParent';
-import mockPersistKid from '../../App/AsyncActions/PersistKid';
 import mockCreateParentAuthentication
   from '../../App/AsyncActions/CreateParentAuthentication';
 
@@ -55,9 +51,7 @@ describe('mergeProps', () => {
       expect(mockDispatch).toHaveBeenCalledWith({ type: 'STOPPED_LOADING' });
       expect(mockCreateParentAuthentication).toHaveBeenCalled();
       expect(mockPersistParent).toHaveBeenCalled();
-      expect(mockPersistKid).toHaveBeenCalled();
-      expect(mockWatchKid).toHaveBeenCalled();
-      expect(Actions.checkForDevice).toHaveBeenCalled();
+      expect(Actions.setName).toHaveBeenCalled();
     });
   });
 

@@ -21,8 +21,6 @@ import * as ParentActions from '../Reducers/Parent/parentActions';
 import * as KidsActions from '../Reducers/Kids/kidsActions';
 
 import persistParent from '../AsyncActions/PersistParent';
-import persistKid from '../AsyncActions/PersistKid';
-import watchKid from '../AsyncActions/WatchKid';
 import createParentAuthentication
   from '../AsyncActions/CreateParentAuthentication';
 
@@ -56,12 +54,6 @@ type StateProps = {
   loading: boolean,
   email: ?string
 };
-
-type State = {
-  step: number
-};
-
-type FormProps = Props & State;
 
 type Fields = {
   name: string,
@@ -106,31 +98,25 @@ const Form = (
     email,
     onEmailChanged,
     onNameChanged,
-    onKidNameChanged,
     onPasswordChanged,
-    step,
-  }: FormProps
-) =>
-  step === 0
-    ? <View key={0} style={style.innerContainer}>
-        <Text style={style.labelText}>Your email address:</Text>
-        <TextInput
-          value={email}
-          onChangeText={onEmailChanged}
-          autoCapitalize="none"
-          keyboardType="email-address"
-        />
+  }: Props
+) => (
+  <View style={style.innerContainer}>
+    <Text style={style.labelText}>Your name:</Text>
+    <TextInput onChangeText={onNameChanged} />
 
-        <Text style={style.labelText}>Choose a password:</Text>
-        <TextInput secureTextEntry onChangeText={onPasswordChanged} />
-      </View>
-    : <View key={1} style={style.innerContainer}>
-        <Text style={style.labelText}>Your name:</Text>
-        <TextInput onChangeText={onNameChanged} />
+    <Text style={style.labelText}>Your email address:</Text>
+    <TextInput
+      value={email}
+      onChangeText={onEmailChanged}
+      autoCapitalize="none"
+      keyboardType="email-address"
+    />
 
-        <Text style={style.labelText}>Your child's name:</Text>
-        <TextInput onChangeText={onKidNameChanged} />
-      </View>;
+    <Text style={style.labelText}>Choose a password:</Text>
+    <TextInput secureTextEntry onChangeText={onPasswordChanged} />
+  </View>
+);
 
 export const validateFields = ({ name, email, password }: Fields): boolean =>
   !!name &&
@@ -140,56 +126,30 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export class SignUp extends React.Component {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      step: 0,
-    };
-  }
+export const SignUp = (props: Props) => (
+  <ScrollView
+    style={style.background}
+    contentContainerStyle={style.outerContainer}
+  >
+    <View style={style.container}>
+      <HeaderText style={style.headerText}>Let's get started!</HeaderText>
 
-  state: State;
+      <Spacing height={32} />
 
-  onPress() {
-    const { step } = this.state;
-    const { onCompleteSetup } = this.props;
+      <View style={[STYLES.CARD, style.container]} elevation={6}>
+        <Form {...props} />
+      </View>
 
-    if (step === 0) this.setState({ step: 1 });
-    else onCompleteSetup();
-  }
-
-  props: Props;
-
-  render() {
-    const { loading } = this.props;
-    const { step } = this.state;
-
-    return (
-      <ScrollView
-        style={style.background}
-        contentContainerStyle={style.outerContainer}
-      >
-        <View style={style.container}>
-          <HeaderText style={style.headerText}>Let's get started!</HeaderText>
-
-          <Spacing height={32} />
-
-          <View style={[STYLES.CARD, style.container]} elevation={6}>
-            <Form step={step} {...this.props} />
-          </View>
-
-        </View>
-        <View style={style.buttonContainer}>
-          {loading
-            ? <LoadingIndicator />
-            : <Button primary onPress={() => this.onPress()}>
-                Next step
-              </Button>}
-        </View>
-      </ScrollView>
-    );
-  }
-}
+    </View>
+    <View style={style.buttonContainer}>
+      {props.loading
+        ? <LoadingIndicator />
+        : <Button primary onPress={props.onCompleteSetup}>
+            Next step
+          </Button>}
+    </View>
+  </ScrollView>
+);
 
 const mapStateToProps = (rootState: RootState): StateProps => {
   const { parentState, setupState } = rootState;
@@ -224,12 +184,10 @@ export const mergeProps = (
   onCompleteSetup: () => {
     dispatch(startedLoading());
     return dispatch(createParentAuthentication())
-      .then(() => dispatch(persistKid()))
-      .then(() => dispatch(watchKid()))
       .then(() => dispatch(persistParent()))
       .then(() => dispatch(stoppedLoading()))
       .then(() => {
-        Actions.checkForDevice({ type: 'reset' });
+        Actions.setName({ type: 'reset' });
       })
       .catch(e => {
         dispatch(stoppedLoading());

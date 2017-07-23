@@ -6,6 +6,7 @@ import SplashScreen from '../Components/SplashScreen';
 import Playground from '../Utils/Playground';
 import Dashboard from '../Dashboard';
 import SetImage from './SetImage';
+import SetName from './SetName';
 import SignUp from './SignUp';
 import DeviceSetup from './DeviceSetup';
 import Loading from '../Components/Loading';
@@ -23,6 +24,7 @@ const ParentApp = ({ store, backButtonHandler }) => (
       <Scene key="loading" initial component={Loading} />
       <Scene key="splashScreen" component={SplashScreen} />
       <Scene key="signUp" component={SignUp} />
+      <Scene key="setName" component={SetName} />
       <Scene key="checkForDevice" component={CheckForDevice} />
       <Scene key="sendReminder" component={SendReminder} />
       <Scene key="deviceSetup" component={DeviceSetup} />
