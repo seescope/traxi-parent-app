@@ -55,7 +55,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are installed kids in kidState, and parent name/email is set fetchReports and navigate to Dashboard', () => {
+  test('If there are installed kids in kidState, and activatedAt is set, fetch reports and navigate to dashboard', () => {
     const STATE_WITH_KIDS = {
       kidsState: {
         '123-abc': {
@@ -68,6 +68,7 @@ describe('Boot App', () => {
         name: 'Jeff',
         email: 'test@email.com',
         password: 'password',
+        activatedAt: 'some date',
       },
     };
 
@@ -85,7 +86,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are no installed kids in kidState, checkDeeplink', () => {
+  test('If there are no installed kids in kidState, and the parent has no name/email/password checkDeeplink', () => {
     const STATE_WITH_NO_KIDS = {
       kidsState: {
         '123-abc': {
@@ -104,7 +105,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are installed kids, but the parent is not configured, show InitialUsage', () => {
+  test('If there are installed kids, but the parent does not have activatedAt, show initialUsage', () => {
     const STATE_WITH_INCOMPLETE_SETUP = {
       kidsState: {
         '123-abc': {
@@ -125,6 +126,31 @@ describe('Boot App', () => {
       expect(action.type).toEqual('TEST_USER_LOGGED_IN');
       const secondAction = store.getActions()[1];
       expect(secondAction.type).toEqual('TEST_GET_INITIAL_USAGE');
+    });
+  });
+
+  test('If the parent has details but the kid does not, go to setName', () => {
+    const STATE_WITH_PARENT_AND_NO_KIDS = {
+      kidsState: {
+        '123-abc': {
+          UUID: 'abc-123',
+        },
+      },
+      parentState: {
+        UUID: 'abc-123',
+        name: 'Jeff',
+        email: 'test@email.com',
+        password: 'password',
+      },
+    };
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(STATE_WITH_PARENT_AND_NO_KIDS);
+
+    return store.dispatch(bootApp()).then(() => {
+      expect(Actions.setName).toHaveBeenCalled();
+      const action = store.getActions()[0];
+      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
     });
   });
 });

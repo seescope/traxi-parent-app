@@ -13,8 +13,8 @@ import getInitalUsage from './GetInitialUsage';
 
 import type { Dispatch, GetState } from '../Reducers';
 
-const finishedSetup = ({ name, email, password }: ParentState): boolean =>
-  !lodash.isNil(name) && !lodash.isNil(email) && !lodash.isNil(password);
+const hasStartedSetup = ({ name, email, password }: ParentState): boolean =>
+  lodash.isString(name) && lodash.isString(email) && lodash.isString(password);
 
 const hasInstalledKids = (kidsState: KidsState): boolean => {
   const installed = lodash
@@ -42,13 +42,21 @@ export default () =>
     console.log('Booted! Initial state:', kidsState, parentState);
 
     const isInstalled = hasInstalledKids(kidsState);
-    const completedSetup = finishedSetup(parentState);
+    const completedSetup = parentState.activatedAt;
+    const startedSetup = hasStartedSetup(parentState);
 
     // The parent has configured at least one kid and completed setup
     if (isInstalled && completedSetup) {
       Actions.dashboard({ type: 'replace' });
       dispatch(userLoggedIn());
       return dispatch(fetchReports());
+    }
+
+    // The parent has signed up, but has not completed setting up their kid:
+    if (!isInstalled && startedSetup) {
+      dispatch(userLoggedIn());
+      Actions.setName({ type: 'reset' });
+      return Promise.resolve();
     }
 
     // The parent has configured at least one kid but not completed setup
