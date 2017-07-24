@@ -1,3 +1,5 @@
+## 7.5.7
+- Don't track InitialApps
 ## 7.5.6
 - Re-work signup flow
 ## 7.5.5
