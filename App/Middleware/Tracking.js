@@ -77,10 +77,6 @@ export default (store: Store) =>
         else Analytics.track('Received Valid Report');
       }
 
-      if (action.type === 'FETCHED_APPS') {
-        Analytics.track('Received Initial Apps', { apps: action.apps.length });
-      }
-
       if (action.type === 'ACCOUNT_UPGRADED') {
         Analytics.track('Account Upgraded', { revenue: 1.99 });
       }
