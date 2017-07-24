@@ -84,3 +84,10 @@ export function addedAdditionalChild(
     setupID,
   };
 }
+
+export function activatedParent(): ParentAction {
+  return {
+    type: 'ACTIVATED_PARENT',
+    activatedAt: new Date().toISOString(),
+  };
+}

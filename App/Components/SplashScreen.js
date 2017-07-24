@@ -54,7 +54,7 @@ export default () => (
       <Spacing height={32} />
 
       <Animatable.View useNativeDriver animation="bounceInUp" delay={2000}>
-        <Button primary onPress={() => Actions.setName()}>
+        <Button primary onPress={() => Actions.signUp()}>
           Start monitoring with Traxi
         </Button>
       </Animatable.View>

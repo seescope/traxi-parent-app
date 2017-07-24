@@ -14,9 +14,12 @@ describe('Parent reducer', () => {
     it('starts setting up the app with a randomly generated UUID', () => {
       const action = Actions.beginSetup();
 
-      const { UUID, kids } = reducer(undefined, action);
+      const { UUID, kids, createdAt } = reducer(undefined, action);
       expect(kids[0]).toEqual(MOCK_UUID);
       expect(UUID).toEqual(MOCK_UUID);
+      expect(createdAt).toMatch(
+        /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/
+      );
     });
 
     it('starts setting up the app with a specified UUID', () => {
@@ -101,6 +104,16 @@ describe('Parent reducer', () => {
       const upgradedParent = reducer(TEST_PARENT, action);
       expect(upgradedParent.upgradedAt).toEqual('today');
       expect(upgradedParent.transactions).toEqual(['order-id']);
+    });
+  });
+
+  describe('ACTIVATED_PARENT', () => {
+    it('updates the activatedAt timestamp', () => {
+      const TEST_PARENT = { name: 'Something' };
+      const { activatedAt } = reducer(TEST_PARENT, Actions.activatedParent());
+      expect(activatedAt).toMatch(
+        /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/
+      );
     });
   });
 });

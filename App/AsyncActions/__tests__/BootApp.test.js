@@ -55,12 +55,11 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are installed kids in kidState, and parent name/email is set fetchReports and navigate to Dashboard', () => {
+  test('If there are installed kids in kidState, and activatedAt is set, fetch reports and navigate to dashboard', () => {
     const STATE_WITH_KIDS = {
       kidsState: {
         '123-abc': {
-          installed: false,
-          status: 'INSTALLED',
+          installed: true,
         },
       },
       parentState: {
@@ -68,6 +67,8 @@ describe('Boot App', () => {
         name: 'Jeff',
         email: 'test@email.com',
         password: 'password',
+        createdAt: 'some date',
+        activatedAt: 'some date',
       },
     };
 
@@ -85,7 +86,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are no installed kids in kidState, checkDeeplink', () => {
+  test('If there are no installed kids in kidState, and the parent has no name/email/password checkDeeplink', () => {
     const STATE_WITH_NO_KIDS = {
       kidsState: {
         '123-abc': {
@@ -104,7 +105,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If there are installed kids, but the parent is not configured, show InitialUsage', () => {
+  test('If there are installed kids, but the parent does not have activatedAt, show initialUsage', () => {
     const STATE_WITH_INCOMPLETE_SETUP = {
       kidsState: {
         '123-abc': {
@@ -113,6 +114,7 @@ describe('Boot App', () => {
       },
       parentState: {
         UUID: 'abc-123',
+        createdAt: 'some date',
       },
     };
 
@@ -125,6 +127,62 @@ describe('Boot App', () => {
       expect(action.type).toEqual('TEST_USER_LOGGED_IN');
       const secondAction = store.getActions()[1];
       expect(secondAction.type).toEqual('TEST_GET_INITIAL_USAGE');
+    });
+  });
+
+  test('If the parent has details but the kid does not, go to setName', () => {
+    const STATE_WITH_PARENT_AND_NO_KIDS = {
+      kidsState: {
+        '123-abc': {
+          UUID: 'abc-123',
+        },
+      },
+      parentState: {
+        UUID: 'abc-123',
+        name: 'Jeff',
+        email: 'test@email.com',
+        password: 'password',
+        createdAt: 'some date',
+      },
+    };
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(STATE_WITH_PARENT_AND_NO_KIDS);
+
+    return store.dispatch(bootApp()).then(() => {
+      expect(Actions.setName).toHaveBeenCalled();
+      const action = store.getActions()[0];
+      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
+    });
+  });
+
+  test('If the parent is upgrading from a version that did not have the createdAt or activatedAt string, check to see if the kid was installed, then update the parent accordingly', () => {
+    const STATE_WITH_OLD_PARENT_AND_INSTALLED_KIDS = {
+      kidsState: {
+        '123-abc': {
+          UUID: 'abc-123',
+          installed: true,
+        },
+      },
+      parentState: {
+        UUID: 'abc-123',
+        name: 'Jeff',
+        email: 'test@email.com',
+        password: 'password',
+      },
+    };
+
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore(STATE_WITH_OLD_PARENT_AND_INSTALLED_KIDS);
+
+    return store.dispatch(bootApp()).then(() => {
+      const actions = store.getActions();
+
+      expect(actions[0].type).toEqual('ACTIVATED_PARENT');
+      expect(actions[1].type).toEqual('TEST_USER_LOGGED_IN');
+      expect(actions[2].type).toEqual('TEST_FETCH_REPORTS');
+
+      expect(Actions.dashboard).toHaveBeenCalled();
     });
   });
 });

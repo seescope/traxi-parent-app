@@ -4,6 +4,12 @@ import thunk from 'redux-thunk';
 import getInitialUsage from '../GetInitialUsage';
 import { Actions } from 'react-native-router-flux';
 
+const ISO_TIMESTAMP_REGEX = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z)/;
+const ACTIVATED_PARENT_ACTION = {
+  type: 'ACTIVATED_PARENT',
+  activatedAt: expect.stringMatching(ISO_TIMESTAMP_REGEX),
+};
+
 const MOCK_FIRST_DATA = [
   {
     Category: 'Business',
@@ -101,6 +107,7 @@ describe('getInitialUsage', () => {
         apps: undefined,
         kidUUID: 'uuid',
       },
+      parentState: {},
     });
 
     const EXPECTED_ACTIONS = [
@@ -120,6 +127,7 @@ describe('getInitialUsage', () => {
         ],
         type: 'FETCHED_APPS',
       },
+      ACTIVATED_PARENT_ACTION,
     ];
 
     return store.dispatch(getInitialUsage()).then(() => {
@@ -167,10 +175,11 @@ describe('getInitialUsage', () => {
         apps: EXISTING_APPS,
         kidUUID: 'uuid',
       },
+      parentState: {},
     });
     return store.dispatch(getInitialUsage()).then(() => {
       expect(Actions.setKidImage).toHaveBeenCalled();
-      expect(store.getActions()).toEqual([]);
+      expect(store.getActions()).toEqual([ACTIVATED_PARENT_ACTION]);
     });
   });
 
@@ -217,11 +226,12 @@ describe('getInitialUsage', () => {
         apps: EXISTING_APPS,
         kidUUID: 'uuid',
       },
+      parentState: {},
     });
 
     return store.dispatch(getInitialUsage()).then(() => {
       expect(Actions.setKidImage).toHaveBeenCalled();
-      expect(store.getActions()).toEqual([]);
+      expect(store.getActions()).toEqual([ACTIVATED_PARENT_ACTION]);
     });
   });
 });

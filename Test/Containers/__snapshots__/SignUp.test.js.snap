@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SetupCompletion Renders correctly 1`] = `
+exports[`SignUp Renders correctly 1`] = `
 <RCTScrollView
   contentContainerStyle={
     Object {
@@ -37,7 +37,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
           }
         }
       >
-        Last step!
+        Let's get started!
       </Text>
       <View
         style={
@@ -92,13 +92,13 @@ exports[`SetupCompletion Renders correctly 1`] = `
               }
             }
           >
-            Your email address:
+            Your name:
           </Text>
           <View>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize="words"
               autoCorrect={false}
-              keyboardType="email-address"
+              keyboardType={undefined}
               onChangeText={[Function]}
               onSubmitEditing={undefined}
               placeholderTextColor="rgba(75, 73, 73, 0.8)"
@@ -140,13 +140,13 @@ exports[`SetupCompletion Renders correctly 1`] = `
               }
             }
           >
-            Your name:
+            Your email address:
           </Text>
           <View>
             <TextInput
-              autoCapitalize="words"
+              autoCapitalize="none"
               autoCorrect={false}
-              keyboardType={undefined}
+              keyboardType="email-address"
               onChangeText={[Function]}
               onSubmitEditing={undefined}
               placeholderTextColor="rgba(75, 73, 73, 0.8)"
@@ -262,9 +262,7 @@ exports[`SetupCompletion Renders correctly 1`] = `
               }
             }
           >
-            See 
-            John
-            's usage
+            Next step
           </Text>
         </View>
       </View>

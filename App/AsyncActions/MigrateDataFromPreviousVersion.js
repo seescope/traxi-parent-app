@@ -2,12 +2,13 @@
 import { AsyncStorage } from 'react-native';
 import * as Firebase from 'firebase';
 import lodash from 'lodash';
+import Analytics from 'react-native-analytics';
+
 import type { Kid, KidsState, DeviceType } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import { profileMigrated } from '../Reducers/Parent/parentActions';
 import persistKid from './PersistKid';
 import persistParent from './PersistParent';
-import Analytics from 'react-native-analytics';
 
 import type { Dispatch } from '../Reducers';
 
@@ -46,6 +47,8 @@ const convertParent = (profile: ProfileFromFirebase): ParentState => ({
   kids: getKidUUIDs(profile.kids),
   password: undefined,
   upgradedAt: undefined,
+  createdAt: new Date().toISOString(),
+  activatedAt: new Date().toISOString(),
   transactions: [],
 });
 

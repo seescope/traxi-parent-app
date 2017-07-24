@@ -12,7 +12,6 @@ jest.mock('../../App/AsyncActions/FetchReports', () =>
   () => 'TEST_FETCH_REPORTS');
 
 import SetImageComponent, {
-  mapStateToProps,
   mapDispatchToProps,
 } from '../../App/Containers/SetImage';
 
@@ -46,18 +45,7 @@ describe('onPress', () => {
     Actions.dashboard.mockClear();
   });
 
-  it('dispatches SelectImage and PersistKid then navigates to SetupCompletion if the parent is not already set up', () => {
-    const mockDispatch = jest.fn(() => Promise.resolve());
-    const { onPress } = mapDispatchToProps(mockDispatch);
-
-    return onPress(true).then(() => {
-      expect(mockDispatch).toHaveBeenCalledWith('TEST_SELECT_IMAGE');
-      expect(mockDispatch).toHaveBeenCalledWith('TEST_PERSIST_KID');
-      expect(Actions.setupCompletion).toHaveBeenCalled();
-    });
-  });
-
-  it('dispatches SelectImage, PersistKid and FetchReports, then navigates to Dashboard if the parent is already set up', () => {
+  it('dispatches SelectImage, PersistKid and FetchReports, then navigates to Dashboard', () => {
     const mockDispatch = jest.fn(() => Promise.resolve());
     const { onPress } = mapDispatchToProps(mockDispatch);
 
@@ -68,25 +56,5 @@ describe('onPress', () => {
       expect(Actions.setupCompletion).not.toHaveBeenCalled();
       expect(Actions.dashboard).toHaveBeenCalled();
     });
-  });
-});
-
-describe('mapStateToProps', () => {
-  it('defines isInstalled as true when the parent has their name, email and password defined', () => {
-    const { isInstalled } = mapStateToProps({
-      kidsState: { a: { name: 'A' } },
-      setupState: { kidUUID: 'a' },
-      parentState: { name: 'A', email: 'B', password: 'C' },
-    });
-    expect(isInstalled).toBeTruthy();
-  });
-
-  it('defines isInstalled as false when the parent has their name, email and password are not defined', () => {
-    const { isInstalled } = mapStateToProps({
-      kidsState: { a: { name: 'A' } },
-      setupState: { kidUUID: 'a' },
-      parentState: { name: null, email: null, password: null },
-    });
-    expect(isInstalled).toBeFalsy();
   });
 });

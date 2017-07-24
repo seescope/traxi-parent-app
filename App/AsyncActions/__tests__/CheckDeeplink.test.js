@@ -20,17 +20,17 @@ import thunk from 'redux-thunk';
 import checkDeeplink from '../CheckDeeplink';
 
 describe('CheckDeeplink', () => {
-  test('If there is an initialURL, beginDeeplinkSetup', () => {
-    mockUUID = 'abc-123';
-
-    const mockStore = configureMockStore([thunk]);
-    const store = mockStore(undefined);
-
-    return store.dispatch(checkDeeplink()).then(() => {
-      const secondAction = store.getActions()[0];
-      expect(secondAction.type).toEqual('TEST_BEGIN_DEEPLINK_SETUP');
-    });
-  });
+  // test('If there is an initialURL, beginDeeplinkSetup', () => {
+  //   mockUUID = 'abc-123';
+  //
+  //   const mockStore = configureMockStore([thunk]);
+  //   const store = mockStore(undefined);
+  //
+  //   return store.dispatch(checkDeeplink()).then(() => {
+  //     const secondAction = store.getActions()[0];
+  //     expect(secondAction.type).toEqual('TEST_BEGIN_DEEPLINK_SETUP');
+  //   });
+  // });
 
   test('If there is no initialURL, dispatch BEGIN_SETUP and navigate to Splash Screen using a Parent UUID if there is one', () => {
     mockUUID = null;

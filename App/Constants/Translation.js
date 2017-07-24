@@ -30,8 +30,8 @@ export default {
       ready: 'I\'m ready!',
     },
     setName: {
-      header: 'Let\'s get started!',
-      kidsName: 'What is your kid\'s name?',
+      header: 'Tell us about your child',
+      kidsName: 'Your child\'s first name',
     },
     setKidImage: {
       setAPictureFor: 'Now, let\'s set a picture for',

@@ -35,9 +35,6 @@ export default (store: Store) =>
         if (deviceType !== 'unknown' && !installed) {
           Analytics.track('Verified Device', kid);
         }
-        if (deviceType !== 'unknown' && installed) {
-          Analytics.track('Completed Setup', kid);
-        }
       }
 
       if (action.type === 'BEGIN_SETUP') {
@@ -86,6 +83,10 @@ export default (store: Store) =>
 
       if (action.type === 'ACCOUNT_UPGRADED') {
         Analytics.track('Account Upgraded', { revenue: 1.99 });
+      }
+
+      if (action.type === 'ACTIVATED_PARENT') {
+        Analytics.track('Completed Setup');
       }
 
       // Fall through

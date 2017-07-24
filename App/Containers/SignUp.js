@@ -3,12 +3,11 @@
 /* eslint-disable react/jsx-indent */
 
 import React from 'react';
-import OneSignal from 'react-native-onesignal';
 import { Alert, ScrollView, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
-import { logError, firstName } from '../Utils';
+import { logError } from '../Utils';
 import Button from '../Components/Button';
 import HeaderText from '../Components/HeaderText';
 import TextInput from '../Components/TextInput';
@@ -19,15 +18,20 @@ import Spacing from '../Components/Spacing';
 
 import { startedLoading, stoppedLoading } from '../Reducers/Setup/setupActions';
 import * as ParentActions from '../Reducers/Parent/parentActions';
+import * as KidsActions from '../Reducers/Kids/kidsActions';
 
 import persistParent from '../AsyncActions/PersistParent';
-import fetchReports from '../AsyncActions/FetchReports';
 import createParentAuthentication
   from '../AsyncActions/CreateParentAuthentication';
 
+import type { Dispatch } from '../Reducers';
 import type { ParentState } from '../Reducers/Parent';
 import type { KidsState } from '../Reducers/Kids';
 import type { SetupState } from '../Reducers/Setup';
+
+type DispatchProps = {
+  dispatch: Dispatch
+};
 
 type RootState = {
   parentState: ParentState,
@@ -36,13 +40,19 @@ type RootState = {
 };
 
 type Props = {
-  kidName: string,
   email: ?string,
-  onNameChanged: () => {},
-  onPasswordChanged: () => {},
-  onEmailChanged: () => {},
-  onPress: () => {},
+  onKidNameChanged: (name: string) => {},
+  onNameChanged: (name: string) => {},
+  onPasswordChanged: (password: string) => {},
+  onEmailChanged: (email: string) => {},
+  onCompleteSetup: () => {},
   loading: boolean
+};
+
+type StateProps = {
+  kidUUID: string,
+  loading: boolean,
+  email: ?string
 };
 
 type Fields = {
@@ -50,8 +60,6 @@ type Fields = {
   email: string,
   password: string
 };
-
-type Dispatch = () => Promise<any>;
 
 const style = {
   background: {
@@ -84,6 +92,32 @@ const style = {
   },
 };
 
+// A little dodgy..
+const Form = (
+  {
+    email,
+    onEmailChanged,
+    onNameChanged,
+    onPasswordChanged,
+  }: Props
+) => (
+  <View style={style.innerContainer}>
+    <Text style={style.labelText}>Your name:</Text>
+    <TextInput onChangeText={onNameChanged} />
+
+    <Text style={style.labelText}>Your email address:</Text>
+    <TextInput
+      value={email}
+      onChangeText={onEmailChanged}
+      autoCapitalize="none"
+      keyboardType="email-address"
+    />
+
+    <Text style={style.labelText}>Choose a password:</Text>
+    <TextInput secureTextEntry onChangeText={onPasswordChanged} />
+  </View>
+);
+
 export const validateFields = ({ name, email, password }: Fields): boolean =>
   !!name &&
   !!email &&
@@ -92,83 +126,68 @@ export const validateFields = ({ name, email, password }: Fields): boolean =>
   email.length > 1 &&
   password.length > 1;
 
-export const SetupCompletion = (
-  {
-    onNameChanged,
-    onPasswordChanged,
-    onEmailChanged,
-    kidName,
-    email,
-    onPress,
-    loading,
-  }: Props
-) => (
+export const SignUp = (props: Props) => (
   <ScrollView
     style={style.background}
     contentContainerStyle={style.outerContainer}
   >
     <View style={style.container}>
-      <HeaderText style={style.headerText}>Last step!</HeaderText>
+      <HeaderText style={style.headerText}>Let's get started!</HeaderText>
 
       <Spacing height={32} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
-        <View style={style.innerContainer}>
-          <Text style={style.labelText}>Your email address:</Text>
-          <TextInput
-            value={email}
-            onChangeText={onEmailChanged}
-            autoCapitalize="none"
-            keyboardType="email-address"
-          />
-
-          <Text style={style.labelText}>Your name:</Text>
-          <TextInput onChangeText={onNameChanged} />
-
-          <Text style={style.labelText}>Choose a password:</Text>
-          <TextInput secureTextEntry onChangeText={onPasswordChanged} />
-        </View>
+        <Form {...props} />
       </View>
+
     </View>
     <View style={style.buttonContainer}>
-      {loading
+      {props.loading
         ? <LoadingIndicator />
-        : <Button primary onPress={onPress}>
-            See {kidName}'s usage
+        : <Button primary onPress={props.onCompleteSetup}>
+            Next step
           </Button>}
     </View>
   </ScrollView>
 );
 
-const mapStateToProps = (rootState: RootState): Object => {
-  const { parentState, setupState, kidsState } = rootState;
-  const { kidUUID, loading } = setupState;
+const mapStateToProps = (rootState: RootState): StateProps => {
+  const { parentState, setupState } = rootState;
+  const { loading, kidUUID } = setupState;
 
-  if (!kidUUID) throw new Error('No kidUUID!');
-
-  const selectedKid = kidsState[kidUUID];
+  if (!kidUUID) throw new Error('NO KID UUID!');
 
   return {
     loading,
     email: parentState.email,
-    kidName: firstName(selectedKid.name),
+    kidUUID,
   };
 };
 
-export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
+export const mergeProps = (
+  { kidUUID, loading, email }: StateProps,
+  { dispatch }: DispatchProps
+): Props => ({
+  // Props from state
+  loading,
+  email,
+  kidUUID,
+
+  // Update functions
+  onKidNameChanged: (name: string) =>
+    dispatch(KidsActions.setKidName(name, kidUUID)),
   onNameChanged: (name: string) => dispatch(ParentActions.setName(name)),
-  onEmailChanged: (email: string) => dispatch(ParentActions.setEmail(email)),
+  onEmailChanged: (updatedEmail: string) =>
+    dispatch(ParentActions.setEmail(updatedEmail)),
   onPasswordChanged: (password: string) =>
     dispatch(ParentActions.setPassword(password)),
-  onPress: () => {
+  onCompleteSetup: () => {
     dispatch(startedLoading());
     return dispatch(createParentAuthentication())
       .then(() => dispatch(persistParent()))
-      .then(() => dispatch(fetchReports()))
       .then(() => dispatch(stoppedLoading()))
       .then(() => {
-        OneSignal.registerForPushNotifications();
-        Actions.dashboard({ type: 'reset' });
+        Actions.setName({ type: 'reset' });
       })
       .catch(e => {
         dispatch(stoppedLoading());
@@ -178,4 +197,5 @@ export const mapDispatchToProps = (dispatch: Dispatch): Object => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetupCompletion);
+// $FlowFixMe
+export default connect(mapStateToProps, null, mergeProps)(SignUp);

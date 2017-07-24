@@ -113,4 +113,16 @@ describe('Tracking Middleware', () => {
       revenue: 1.99,
     });
   });
+
+  test('Tracks when a parent has completed setup and activated', () => {
+    const next = jest.fn();
+    const action = {
+      type: 'ACTIVATED_PARENT',
+    };
+    const store = {
+      getState: () => {},
+    };
+    trackingMiddleware(store)(next)(action);
+    expect(Analytics.track).toHaveBeenCalledWith('Completed Setup');
+  });
 });
