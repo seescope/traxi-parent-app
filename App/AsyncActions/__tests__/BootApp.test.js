@@ -130,7 +130,7 @@ describe('Boot App', () => {
     });
   });
 
-  test('If the parent has details but the kid does not, go to setName', () => {
+  test('If the parent has details but the kid does not, reset the setup state and go to setName', () => {
     const STATE_WITH_PARENT_AND_NO_KIDS = {
       kidsState: {
         '123-abc': {
@@ -151,8 +151,9 @@ describe('Boot App', () => {
 
     return store.dispatch(bootApp()).then(() => {
       expect(Actions.setName).toHaveBeenCalled();
-      const action = store.getActions()[0];
-      expect(action.type).toEqual('TEST_USER_LOGGED_IN');
+      const actions = store.getActions();
+      expect(actions[0].type).toEqual('TEST_USER_LOGGED_IN');
+      expect(actions[1].type).toEqual('RESET_SETUP_STATE');
     });
   });
 

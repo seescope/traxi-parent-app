@@ -8,6 +8,7 @@ import userLoggedIn from './UserLoggedIn';
 import fetchReports from './FetchReports';
 import checkDeeplink from './CheckDeeplink';
 import getInitalUsage from './GetInitialUsage';
+import { resetSetupState } from '../Reducers/Setup/setupActions';
 import { activatedParent } from '../Reducers/Parent/parentActions';
 
 import type { KidsState } from '../Reducers/Kids';
@@ -65,6 +66,7 @@ export default () =>
     // The parent has signed up, but has not completed setting up their kid:
     if (!isInstalled && startedSetup) {
       dispatch(userLoggedIn());
+      dispatch(resetSetupState());
       Actions.setName({ type: 'reset' });
       return Promise.resolve();
     }

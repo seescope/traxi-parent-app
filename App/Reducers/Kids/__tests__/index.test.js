@@ -108,4 +108,23 @@ describe('Kids reducer', () => {
       expect(kids[NEW_KID_UUID]).toBeDefined();
     });
   });
+
+  describe('RESET_SETUP_STATE', () => {
+    it('Resets the setup state', () => {
+      const previousState = {
+        'abc-123': {
+          name: 'Something',
+          deviceType: 'Something',
+        },
+      };
+
+      const action = {
+        type: 'RESET_SETUP_STATE',
+      };
+
+      const { name, deviceType } = reducer(previousState, action)['abc-123'];
+      expect(name).toBeUndefined();
+      expect(deviceType).toEqual('unknown');
+    });
+  });
 });

@@ -31,3 +31,9 @@ export function fetchedApps(apps: AppWithProgress[]): SetupAction {
     apps,
   };
 }
+
+export function resetSetupState(): SetupAction {
+  return {
+    type: 'RESET_SETUP_STATE',
+  };
+}

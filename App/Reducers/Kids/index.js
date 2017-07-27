@@ -24,6 +24,7 @@ export type KidsAction =
   | { type: 'BEGIN_DEEPLINK_SETUP', kid: Kid }
   | { type: 'PROFILE_MIGRATED', kids: KidsState }
   | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string }
+  | { type: 'RESET_SETUP_STATE' }
   | { type: 'SET_KID_IMAGE', avatarURL: string, UUID: string };
 
 const createNewKid = (UUID: string): Kid => ({
@@ -114,6 +115,18 @@ export default (
       return {
         ...state,
         [UUID]: createNewKid(UUID),
+      };
+    }
+    case 'RESET_SETUP_STATE': {
+      const UUID = Object.keys(state)[0];
+      const previousKidState = state[UUID];
+      return {
+        ...state,
+        [UUID]: {
+          ...previousKidState,
+          deviceType: 'unknown',
+          name: undefined,
+        },
       };
     }
     default:

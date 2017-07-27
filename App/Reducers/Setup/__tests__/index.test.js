@@ -111,4 +111,23 @@ describe('Setup Reducer', () => {
       expect(sceneName).toEqual(TEST_SCENE_NAME);
     });
   });
+
+  describe('RESET_SETUP_STATE', () => {
+    it('Resets the setup state', () => {
+      const previousState = {
+        kidUUID: 'abc-123',
+        step: 4,
+        setupID: 1234,
+      };
+
+      const action = {
+        type: 'RESET_SETUP_STATE',
+      };
+
+      const { step, kidUUID, setupID } = reducer(previousState, action);
+      expect(step).toEqual(0);
+      expect(kidUUID).toEqual(previousState.kidUUID);
+      expect(setupID).toEqual(previousState.setupID);
+    });
+  });
 });

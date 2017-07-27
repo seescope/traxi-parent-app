@@ -30,6 +30,7 @@ export type SetupAction =
   | { type: 'STARTED_LOADING' }
   | { type: 'STOPPED_LOADING' }
   | { type: 'FETCHED_APPS', apps: AppWithProgress[] }
+  | { type: 'RESET_SETUP_STATE' }
   | { type: 'FETCHED_APPS_STATUS', isFetchingApps: boolean };
 
 const INITIAL_STATE = {
@@ -118,6 +119,12 @@ export default (
       return {
         ...state,
         sceneName,
+      };
+    }
+    case 'RESET_SETUP_STATE': {
+      return {
+        ...state,
+        step: 0,
       };
     }
     default:
