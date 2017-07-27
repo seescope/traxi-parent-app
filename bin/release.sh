@@ -27,9 +27,9 @@ release_the_fucker() {
   fancy_echo "Releasing Android..🤖 "
   (cd android && fastlane deploy)
 
-  fancy_echo "Releasing iOS.."
-  (cd ios && fastlane release)
-  fancy_echo "You'll probably have to go submit the build to iTunes connect or w/e"
+  # fancy_echo "Releasing iOS.."
+  # (cd ios && fastlane release)
+  # fancy_echo "You'll probably have to go submit the build to iTunes connect or w/e"
 }
 
 fancy_echo "Do you really want to release traxi version $NEW_VERSION? Bump the version in package.json if it's incorrect."

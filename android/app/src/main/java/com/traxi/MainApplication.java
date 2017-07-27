@@ -1,7 +1,8 @@
 package com.traxi;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
+
 
 import com.facebook.react.ReactApplication;
 import com.idehub.Billing.InAppBillingBridgePackage;
@@ -38,7 +39,7 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 	@Override
 	public void onCreate() {
 		super.onCreate();
