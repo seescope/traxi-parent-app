@@ -4197,8 +4197,8 @@ react-dom@15.0.2:
   resolved "https://github.com/traxicorp/react-native-ab#3f08b719f44c50f5efebe9a81d0dc3ef8f9c5331"
 
 "react-native-analytics@https://github.com/traxicorp/react-native-analytics":
-  version "0.2.3"
-  resolved "https://github.com/traxicorp/react-native-analytics#999d8df0f64e9d5b0d86e9894d692b444ad40676"
+  version "0.3.0"
+  resolved "https://github.com/traxicorp/react-native-analytics#78d59a3ee54412dbe895481df935fff2090d06de"
 
 react-native-animatable@^0.6.1:
   version "0.6.1"
