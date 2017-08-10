@@ -24,8 +24,8 @@ version_bump() {
 }
 
 release_the_fucker() {
-  # fancy_echo "Releasing Android..🤖 "
-  # (cd android && fastlane deploy)
+  fancy_echo "Releasing Android..🤖 "
+  (cd android && fastlane deploy)
 
   fancy_echo "Releasing iOS.."
   (cd ios && fastlane release)

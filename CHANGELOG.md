@@ -1,3 +1,5 @@
+## 7.6.0
+- Fix issues with Mixpanel
 ## 7.5.9
 - Fix set up images
 - Support resuming setup better
