@@ -1,6 +1,8 @@
 // @flow
 import * as Firebase from 'firebase';
+
 import userLoggedIn from './UserLoggedIn';
+import { accountCreated } from '../Reducers/Parent/parentActions';
 
 import type { Dispatch, GetState } from '../Reducers';
 
@@ -10,8 +12,7 @@ const createUser = (email: string, password: string): Promise<any> =>
 const setName = (name: string): Promise<any> =>
   Firebase.auth().currentUser.updateProfile({ displayName: name });
 
-export const removeWhiteSpaceFromEmail = (email: string): string =>
-  email.trim();
+const removeWhiteSpaceFromEmail = (email: string): string => email.trim();
 
 export default () =>
   async (dispatch: Dispatch, getState: GetState): Promise<any> => {
@@ -32,5 +33,8 @@ export default () =>
 
     await createUser(removeWhiteSpaceFromEmail(email), password);
     await setName(name);
-    return dispatch(userLoggedIn());
+
+    await dispatch(userLoggedIn());
+
+    return dispatch(accountCreated());
   };

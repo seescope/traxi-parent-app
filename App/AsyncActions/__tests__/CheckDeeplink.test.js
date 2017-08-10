@@ -12,12 +12,16 @@ jest.mock('../../Utils', () => ({
   getUUIDFromDeeplink: () => Promise.resolve(mockUUID),
 }));
 jest.mock('../UserLoggedIn', () =>
-  () => dispatch => Promise.resolve(dispatch({ type: 'TEST_USER_LOGGED_IN' })));
+  jest.fn(() =>
+    dispatch => Promise.resolve(dispatch({ type: 'TEST_USER_LOGGED_IN' }))));
 
 import { Actions } from 'react-native-router-flux';
 import configureMockStore from 'redux-mock-store';
+import mockAnalytics from 'react-native-analytics';
 import thunk from 'redux-thunk';
+
 import checkDeeplink from '../CheckDeeplink';
+import mockUserLoggedIn from '../UserLoggedIn';
 
 describe('CheckDeeplink', () => {
   // test('If there is an initialURL, beginDeeplinkSetup', () => {
@@ -51,7 +55,10 @@ describe('CheckDeeplink', () => {
       expect(store.getActions()[0].parentUUID).toEqual('abc-123');
       expect(store.getActions()[1].type).toEqual('TEST_PERSIST_SETUP_ID');
       expect(store.getActions()[2].type).toEqual('TEST_USER_LOGGED_IN');
+      expect(mockAnalytics.alias).toHaveBeenCalledWith('abc-123');
+      expect(mockAnalytics.flush).toHaveBeenCalled();
       expect(Actions.splashScreen).toHaveBeenCalled();
+      expect(mockUserLoggedIn).toHaveBeenCalled();
     });
   });
 });

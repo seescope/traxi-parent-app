@@ -91,3 +91,9 @@ export function activatedParent(): ParentAction {
     activatedAt: new Date().toISOString(),
   };
 }
+
+export function accountCreated(): ParentAction {
+  return {
+    type: 'ACCOUNT_CREATED',
+  };
+}

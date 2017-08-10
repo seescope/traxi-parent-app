@@ -29,6 +29,7 @@ export type ParentAction =
   | { type: 'ADDED_ADDITIONAL_CHILD', UUID: string, setupID: number }
   | { type: 'USER_LOGGED_IN', parent: ParentState }
   | { type: 'ACCOUNT_UPGRADED', upgradedAt: string, orderId: string }
+  | { type: 'ACCOUNT_CREATED' }
   | { type: 'ACTIVATED_PARENT', activatedAt: string };
 
 export const INITIAL_STATE = {

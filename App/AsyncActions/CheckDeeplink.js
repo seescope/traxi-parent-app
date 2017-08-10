@@ -1,5 +1,6 @@
 // @flow
 import { Actions } from 'react-native-router-flux';
+import Analytics from 'react-native-analytics';
 
 // import beginDeeplinkSetup from './BeginDeeplinkSetup';
 import { getUUIDFromDeeplink } from '../Utils';
@@ -22,11 +23,17 @@ export default () =>
       const { UUID } = parentState;
 
       dispatch(beginSetup(UUID));
+
+      // Appease Mixpanel. See https://segment.com/docs/destinations/mixpanel/#alias
+
+      const updatedUUID = getState().parentState.UUID;
+      Analytics.alias(updatedUUID);
+      Analytics.flush();
+
       dispatch(persistSetupID());
       dispatch(userLoggedIn());
 
       Actions.splashScreen({ type: 'replace' });
-      return null;
       // }
       //
       // return dispatch(beginDeeplinkSetup(UUIDFromDeeplink));
