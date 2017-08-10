@@ -31,8 +31,10 @@ const style = {
   innerContainer: {
     paddingHorizontal: 16,
   },
-  buttonContainer: {
+  buttonsContainer: {
     alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
 };
 
@@ -62,7 +64,10 @@ const SendReminder = ({ kidName, onPress }) => (
 
       <Spacing height={32} />
 
-      <View style={style.buttonContainer}>
+      <View style={style.buttonsContainer}>
+        <Button onPress={() => Actions.pop()}>
+          Back
+        </Button>
         <Button primary onPress={onPress}>
           Remind me tomorrow
         </Button>

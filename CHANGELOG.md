@@ -1,3 +1,8 @@
+## 7.5.9
+- Fix set up images
+- Support resuming setup better
+## 7.5.8
+- Fix multidex on older devices
 ## 7.5.7
 - Don't track InitialApps
 ## 7.5.6
