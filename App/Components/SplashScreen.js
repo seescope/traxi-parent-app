@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Dimensions, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
+import * as firebase from 'firebase';
 
 import Background from '../Components/Background';
 import Button from '../Components/Button';
@@ -28,6 +29,15 @@ const imageStyle = {
   height: height / 2,
 };
 
+const facebookAuth = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(console.warn)
+    .catch(console.error);
+};
+
 export default () => (
   <Background>
     <View style={containerStyle}>
@@ -52,7 +62,7 @@ export default () => (
 
       <Spacing height={16} />
 
-      <TouchableOpacity onPress={() => alert('facebook')}>
+      <TouchableOpacity onPress={facebookAuth}>
         <Animatable.Image
           useNativeDriver
           source={require('../Images/facebook_auth_button.png')}

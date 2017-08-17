@@ -5,6 +5,8 @@ import android.util.Log;
 
 
 import com.facebook.react.ReactApplication;
+import io.fixd.rctlocale.RCTLocalePackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.idehub.Billing.InAppBillingBridgePackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.horcrux.svg.SvgPackage;
@@ -29,6 +31,7 @@ import io.intercom.android.sdk.Intercom;
 // Facebook
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.CallbackManager;
 
 // Custom packages.
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -40,6 +43,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends MultiDexApplication implements ReactApplication {
+	private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+
+  protected static CallbackManager getCallbackManager() {
+    return mCallbackManager;
+  }
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -65,6 +74,8 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new RCTLocalePackage(),
+            new FBSDKPackage(mCallbackManager),
             new InAppBillingBridgePackage(),
             new RNDeviceInfo(),
             new SvgPackage(),
