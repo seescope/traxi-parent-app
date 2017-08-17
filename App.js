@@ -15,6 +15,7 @@ import RootReducer from './App/Reducers';
 import { backButtonHandler, loggingMiddleware } from './App/Utils';
 import bootApp from './App/AsyncActions/BootApp';
 import trackingMiddleware from './App/Middleware/Tracking';
+import firebaseTrackingMiddleware from './App/Middleware/FirebaseTracking';
 import impersonateParent from './App/AsyncActions/ImpersonateParent'; // eslint-disable-line
 
 I18n.fallbacks = true;
@@ -41,7 +42,12 @@ export default class extends React.Component {
       RootReducer,
       undefined,
       compose(
-        applyMiddleware(ReduxThunk, loggingMiddleware, trackingMiddleware),
+        applyMiddleware(
+          ReduxThunk,
+          loggingMiddleware,
+          trackingMiddleware,
+          firebaseTrackingMiddleware
+        ),
         autoRehydrate()
       )
     );
