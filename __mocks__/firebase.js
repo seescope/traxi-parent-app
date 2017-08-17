@@ -31,20 +31,25 @@ const mockSnapshot = {
 export const mockCreateUser = jest.fn(() => Promise.resolve());
 export const mockUpdateProfile = jest.fn(() => Promise.resolve());
 export const mockOn = jest.fn((val, cb) => Promise.resolve(cb(mockSnapshot)));
+export const mockPush = jest.fn(() => ({
+  set: mockSet,
+}));
 
 export const initializeApp = () => {};
+export const mockRef = jest.fn(() => ({
+  once: () =>
+    Promise.resolve({
+      val: () => profile,
+    }),
+  update: () => jest.fn(),
+  set: mockSet,
+  on: mockOn,
+  off: jest.fn(),
+  push: mockPush,
+}));
 
 export const database = () => ({
-  ref: () => ({
-    once: () =>
-      Promise.resolve({
-        val: () => profile,
-      }),
-    update: () => jest.fn(),
-    set: mockSet,
-    on: mockOn,
-    off: jest.fn(),
-  }),
+  ref: mockRef,
   goOffline: () => {},
 });
 
