@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, View, Text, Image } from 'react-native';
+import { TouchableOpacity, Dimensions, View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
 
@@ -22,7 +22,6 @@ const containerStyle = {
   flex: 1,
   alignItems: 'center',
   justifyContent: 'center',
-  paddingHorizontal: 32,
 };
 
 const imageStyle = {
@@ -32,6 +31,17 @@ const imageStyle = {
 export default () => (
   <Background>
     <View style={containerStyle}>
+      <Animatable.Text
+        useNativeDriver
+        animation="bounceIn"
+        delay={1000}
+        style={logoStyle}
+      >
+        Monitor your child with Traxi
+      </Animatable.Text>
+
+      <Spacing height={16} />
+
       <Animatable.Image
         useNativeDriver
         resizeMode="contain"
@@ -40,22 +50,20 @@ export default () => (
         source={require('../Images/splash_image.png')}
       />
 
-      <Spacing height={32} />
+      <Spacing height={16} />
 
-      <Animatable.Text
-        useNativeDriver
-        animation="bounceIn"
-        delay={1000}
-        style={logoStyle}
-      >
-        What is your child doing online?
-      </Animatable.Text>
+      <TouchableOpacity onPress={() => alert('facebook')}>
+        <Animatable.Image
+          useNativeDriver
+          source={require('../Images/facebook_auth_button.png')}
+          animation="bounceInUp"
+          delay={2000}
+        />
+      </TouchableOpacity>
 
-      <Spacing height={32} />
-
-      <Animatable.View useNativeDriver animation="bounceInUp" delay={2000}>
+      <Animatable.View useNativeDriver animation="bounceInUp" delay={2200}>
         <Button primary onPress={() => Actions.signUp()}>
-          Start monitoring with Traxi
+          Sign up with email
         </Button>
       </Animatable.View>
     </View>
