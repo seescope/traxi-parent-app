@@ -35,6 +35,15 @@ export const mockPush = jest.fn(() => ({
   set: mockSet,
 }));
 
+const MOCK_USER = {
+  displayName: 'MOCK_NAME',
+  email: 'MOCK_EMAIL',
+};
+MOCK_USER.toJSON = () => 'jason';
+
+export const mockSignInWithCredential = jest.fn(() =>
+  Promise.resolve(MOCK_USER));
+
 export const initializeApp = () => {};
 export const mockRef = jest.fn(() => ({
   once: () =>
@@ -58,4 +67,9 @@ export const auth = () => ({
     updateProfile: mockUpdateProfile,
   },
   createUserWithEmailAndPassword: mockCreateUser,
+  signInWithCredential: mockSignInWithCredential,
 });
+
+auth.FacebookAuthProvider = {
+  credential: jest.fn(() => 'MOCK_CREDENTIAL'),
+};

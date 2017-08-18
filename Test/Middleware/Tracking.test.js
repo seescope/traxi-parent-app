@@ -110,4 +110,19 @@ describe('Tracking Middleware', () => {
     trackingMiddleware(store)(next)(action);
     expect(Analytics.track).toHaveBeenCalledWith('Completed Setup');
   });
+
+  test('Tracks when a parent has authenticated', () => {
+    const next = jest.fn();
+    const action = {
+      type: 'ACCOUNT_CREATED',
+      authenticationMethod: 'Facebook',
+    };
+    const store = {
+      getState: () => {},
+    };
+    trackingMiddleware(store)(next)(action);
+    expect(Analytics.track).toHaveBeenCalledWith('Signed Up', {
+      authenticationMethod: 'Facebook',
+    });
+  });
 });

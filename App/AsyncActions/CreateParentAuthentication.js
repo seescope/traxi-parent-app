@@ -36,5 +36,5 @@ export default () =>
 
     await dispatch(userLoggedIn());
 
-    return dispatch(accountCreated());
+    return dispatch(accountCreated('Email'));
   };

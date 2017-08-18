@@ -1,3 +1,5 @@
+## 7.6.1
+- Log all Redux actions to Firebase.
 ## 7.6.0
 - Fix issues with Mixpanel
 ## 7.5.9

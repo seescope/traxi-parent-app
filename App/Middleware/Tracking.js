@@ -85,6 +85,11 @@ export default (store: Store) =>
         Analytics.track('Completed Setup');
       }
 
+      if (action.type === 'ACCOUNT_CREATED') {
+        const { authenticationMethod } = action;
+        Analytics.track('Signed Up', { authenticationMethod });
+      }
+
       // Fall through
       return next(action);
     };

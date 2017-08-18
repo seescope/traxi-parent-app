@@ -92,8 +92,9 @@ export function activatedParent(): ParentAction {
   };
 }
 
-export function accountCreated(): ParentAction {
+export function accountCreated(authenticationMethod: string): ParentAction {
   return {
     type: 'ACCOUNT_CREATED',
+    authenticationMethod,
   };
 }
