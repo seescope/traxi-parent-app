@@ -141,7 +141,6 @@ describe('Boot App', () => {
         UUID: 'abc-123',
         name: 'Jeff',
         email: 'test@email.com',
-        password: 'password',
         createdAt: 'some date',
       },
     };
@@ -169,7 +168,6 @@ describe('Boot App', () => {
         UUID: 'abc-123',
         name: 'Jeff',
         email: 'test@email.com',
-        password: 'password',
       },
     };
 

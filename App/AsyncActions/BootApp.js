@@ -15,8 +15,8 @@ import type { KidsState } from '../Reducers/Kids';
 import type { ParentState } from '../Reducers/Parent';
 import type { Dispatch, GetState } from '../Reducers';
 
-const hasStartedSetup = ({ name, email, password }: ParentState): boolean =>
-  lodash.isString(name) && lodash.isString(email) && lodash.isString(password);
+const hasStartedSetup = ({ name, email }: ParentState): boolean =>
+  lodash.isString(name) && lodash.isString(email);
 
 const hasInstalledKids = (kidsState: KidsState): boolean => {
   const installed = lodash

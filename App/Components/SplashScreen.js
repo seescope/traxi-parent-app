@@ -1,13 +1,26 @@
+// @flow
+
 import React from 'react';
-import { TouchableOpacity, Dimensions, View, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import {
+  Alert,
+  TouchableOpacity,
+  Dimensions,
+  View,
+  Text,
+  Image,
+} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import * as Animatable from 'react-native-animatable';
-import * as firebase from 'firebase';
 
 import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
+import authenticateWithFacebook from '../AsyncActions/AuthenticateWithFacebook';
 import { GREY, TRANSPARENT } from '../Constants/Colours';
+
+import type { ParentAction } from '../Reducers/Parent';
+import type { Dispatch } from '../Reducers';
 
 const { height } = Dimensions.get('window');
 
@@ -29,16 +42,14 @@ const imageStyle = {
   height: height / 2,
 };
 
-const facebookAuth = () => {
-  const provider = new firebase.auth.FacebookAuthProvider();
-  firebase
-    .auth()
-    .signInWithPopup(provider)
-    .then(console.warn)
-    .catch(console.error);
+type Props = {
+  facebookAuth: () => Promise<ParentAction>
 };
 
-export default () => (
+const handleError = () =>
+  Alert.alert('Error', 'Unable to login using Facebook. Please try again.');
+
+const SplashScreen = ({ facebookAuth }: Props) => (
   <Background>
     <View style={containerStyle}>
       <Animatable.Text
@@ -79,3 +90,12 @@ export default () => (
     </View>
   </Background>
 );
+
+export const mapDispatchToProps = (dispatch: Dispatch): Props => ({
+  facebookAuth: () =>
+    dispatch(authenticateWithFacebook())
+      .then(() => Actions.setName({ type: 'replace' }))
+      .catch(handleError),
+});
+
+export default connect(null, mapDispatchToProps)(SplashScreen);
