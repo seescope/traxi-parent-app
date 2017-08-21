@@ -1,3 +1,5 @@
+## 7.7.0
+- Add Facebook authentication.
 ## 7.6.1
 - Log all Redux actions to Firebase.
 ## 7.6.0

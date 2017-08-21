@@ -2,6 +2,10 @@ jest.mock('../../App/AsyncActions/AuthenticateWithFacebook', () =>
   () => ({
     type: 'TEST_FACEBOOK_AUTH',
   }));
+jest.mock('../../App/AsyncActions/PersistParent', () =>
+  () => ({
+    type: 'TEST_PERSIST_PARENT',
+  }));
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -29,5 +33,6 @@ it('Wires up mapDispatchToProps correctly', async () => {
   await facebookAuth();
 
   expect(mockDispatch).toHaveBeenCalledWith({ type: 'TEST_FACEBOOK_AUTH' });
+  expect(mockDispatch).toHaveBeenCalledWith({ type: 'TEST_PERSIST_PARENT' });
   expect(Actions.setName).toHaveBeenCalledWith({ type: 'replace' });
 });

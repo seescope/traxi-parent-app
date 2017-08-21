@@ -98,8 +98,8 @@ android {
       applicationId "com.traxi"
       minSdkVersion 16
       targetSdkVersion 22
-      versionCode 761
-      versionName "7.6.1"
+      versionCode 770
+      versionName "7.7.0"
       ndk {
         abiFilters "armeabi-v7a", "x86"
       }
