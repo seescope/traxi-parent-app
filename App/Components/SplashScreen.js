@@ -17,6 +17,7 @@ import Background from '../Components/Background';
 import Button from '../Components/Button';
 import Spacing from '../Components/Spacing';
 import authenticateWithFacebook from '../AsyncActions/AuthenticateWithFacebook';
+import persistParent from '../AsyncActions/PersistParent';
 import { GREY, TRANSPARENT } from '../Constants/Colours';
 
 import type { ParentAction } from '../Reducers/Parent';
@@ -95,6 +96,7 @@ export const mapDispatchToProps = (dispatch: Dispatch): Props => ({
   facebookAuth: () =>
     dispatch(authenticateWithFacebook())
       .then(() => Actions.setName({ type: 'replace' }))
+      .then(() => dispatch(persistParent()))
       .catch(handleError),
 });
 
