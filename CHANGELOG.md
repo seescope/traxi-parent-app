@@ -1,3 +1,5 @@
+## 7.7.1
+- Persist parent when using Facebook auth.
 ## 7.7.0
 - Add Facebook authentication.
 ## 7.6.1
