@@ -17,6 +17,8 @@ import bootApp from './App/AsyncActions/BootApp';
 import trackingMiddleware from './App/Middleware/Tracking';
 import firebaseTrackingMiddleware from './App/Middleware/FirebaseTracking';
 import impersonateParent from './App/AsyncActions/ImpersonateParent'; // eslint-disable-line
+// import actions from './parentAppActions.json';
+// import replayActions from './App/Middleware/ReplayActions';
 
 I18n.fallbacks = true;
 I18n.translations = Translation;
@@ -35,6 +37,7 @@ try {
 } catch (e) {
   console.warn('Error initialising Firebase', e);
 }
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -56,10 +59,24 @@ export default class extends React.Component {
     persistStore(this.store, { storage: AsyncStorage }, () =>
       this.store.dispatch(bootApp()));
 
+    // TEST_PARENT_UUID, useful for... testing.
+
+    // const TEST_PARENT_UUID = 'ee716cfb-76dc-4e86-9e43-4577a378f255';
+
+    // Uncomment to replay actions.
+    // setTimeout(
+    //   () =>
+    //     replayActions(
+    //       TEST_PARENT_UUID,
+    //       actions,
+    //       this.store.dispatch
+    //     ),
+    //   1000
+    // );
+
     // Uncomment to impersonate a parent for testing.
-    // const PARENT_UUID = 'ee716cfb-76dc-4e86-9e43-4577a378f255';
-    // this.store.dispatch(impersonateParent(PARENT_UUID));
-    // console.warn('Impersonating parent', PARENT_UUID);
+    // this.store.dispatch(impersonateParent(TEST_PARENT_UUID));
+    // console.warn('Impersonating parent', TEST_PARENT_UUID);
   }
 
   componentWillMount() {
