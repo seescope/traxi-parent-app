@@ -40,6 +40,8 @@ type RootState = {
 };
 
 type Props = {
+  name: ?string,
+  password: ?string,
   email: ?string,
   onKidNameChanged: (name: string) => {},
   onNameChanged: (name: string) => {},
@@ -50,6 +52,8 @@ type Props = {
 };
 
 type StateProps = {
+  name: ?string,
+  password: ?string,
   kidUUID: string,
   loading: boolean,
   email: ?string
@@ -95,6 +99,8 @@ const style = {
 // A little dodgy..
 const Form = (
   {
+    name,
+    password,
     email,
     onEmailChanged,
     onNameChanged,
@@ -103,7 +109,7 @@ const Form = (
 ) => (
   <View style={style.innerContainer}>
     <Text style={style.labelText}>Your name:</Text>
-    <TextInput onChangeText={onNameChanged} />
+    <TextInput value={name} onChangeText={onNameChanged} />
 
     <Text style={style.labelText}>Your email address:</Text>
     <TextInput
@@ -114,7 +120,11 @@ const Form = (
     />
 
     <Text style={style.labelText}>Choose a password:</Text>
-    <TextInput secureTextEntry onChangeText={onPasswordChanged} />
+    <TextInput
+      value={password}
+      secureTextEntry
+      onChangeText={onPasswordChanged}
+    />
   </View>
 );
 
@@ -154,33 +164,39 @@ export const SignUp = (props: Props) => (
 const mapStateToProps = (rootState: RootState): StateProps => {
   const { parentState, setupState } = rootState;
   const { loading, kidUUID } = setupState;
+  const { name, email, password } = parentState;
 
   if (!kidUUID) throw new Error('NO KID UUID!');
 
   return {
+    name,
+    password,
     loading,
-    email: parentState.email,
+    email,
     kidUUID,
   };
 };
 
 export const mergeProps = (
-  { kidUUID, loading, email }: StateProps,
+  { kidUUID, loading, name, password, email }: StateProps,
   { dispatch }: DispatchProps
 ): Props => ({
   // Props from state
+  name,
+  password,
   loading,
   email,
   kidUUID,
 
   // Update functions
-  onKidNameChanged: (name: string) =>
-    dispatch(KidsActions.setKidName(name, kidUUID)),
-  onNameChanged: (name: string) => dispatch(ParentActions.setName(name)),
+  onKidNameChanged: (updatedName: string) =>
+    dispatch(KidsActions.setKidName(updatedName, kidUUID)),
+  onNameChanged: (updatedName: string) =>
+    dispatch(ParentActions.setName(updatedName)),
   onEmailChanged: (updatedEmail: string) =>
     dispatch(ParentActions.setEmail(updatedEmail)),
-  onPasswordChanged: (password: string) =>
-    dispatch(ParentActions.setPassword(password)),
+  onPasswordChanged: (newPassword: string) =>
+    dispatch(ParentActions.setPassword(newPassword)),
   onCompleteSetup: () => {
     dispatch(startedLoading());
     return dispatch(createParentAuthentication())
