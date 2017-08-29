@@ -53,7 +53,7 @@ const SetName = ({ kidName, onPress, onNameChanged }) => (
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
         <View style={style.innerContainer}>
-          <Text style={style.labelText}>
+          <Text allowFontScaling={false} style={style.labelText}>
             {I18n.t('setName.kidsName')}
           </Text>
 

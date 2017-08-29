@@ -22,7 +22,7 @@ exports[`renders correctly when there are no apps 1`] = `
       <View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -170,7 +170,7 @@ exports[`renders correctly when there are no apps 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -345,7 +345,7 @@ exports[`renders correctly when there are no apps 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -424,7 +424,7 @@ exports[`renders correctly when there are two apps 1`] = `
       <View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -479,7 +479,7 @@ exports[`renders correctly when there are two apps 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -765,7 +765,7 @@ exports[`renders correctly when there are two apps 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -844,7 +844,7 @@ exports[`renders correctly when there is one app 1`] = `
       <View>
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Object {
@@ -992,7 +992,7 @@ exports[`renders correctly when there is one app 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {
@@ -1171,7 +1171,7 @@ exports[`renders correctly when there is one app 1`] = `
           >
             <Text
               accessible={true}
-              allowFontScaling={true}
+              allowFontScaling={false}
               ellipsizeMode="tail"
               style={
                 Object {

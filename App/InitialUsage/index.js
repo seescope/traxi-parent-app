@@ -113,7 +113,7 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
           style={STYLES.CARD}
         >
           <View style={styles.headerContainer}>
-            <Text style={styles.cardHeaderStyle}>
+            <Text allowFontScaling={false} style={styles.cardHeaderStyle}>
               {getHeaderLabel(apps.length)}
             </Text>
             <LoadingIndicator />
@@ -131,7 +131,7 @@ const InitialUsageComponent = ({ kidName, apps }: Props) => (
           animation="bounceInUp"
         >
           <BodyText align="center">
-            <Text style={styles.message}>
+            <Text allowFontScaling={false} style={styles.message}>
               {getMessage(apps, kidName)}
             </Text>
 

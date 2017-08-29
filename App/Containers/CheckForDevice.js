@@ -30,7 +30,8 @@ const style = {
     flexDirection: 'row',
   },
   deviceImage: {
-    height: 250,
+    height: 200,
+    marginVertical: 8,
   },
 };
 
@@ -48,7 +49,7 @@ const CheckForDevice = ({ kidName }) => (
       />
 
       <View style={style.innerContainer}>
-        <Text style={style.labelText}>
+        <Text allowFontScaling={false} style={style.labelText}>
           To start monitoring
           {' '}
           {kidName}
@@ -58,7 +59,7 @@ const CheckForDevice = ({ kidName }) => (
 
         <Spacing height={16} />
 
-        <Text style={style.labelText}>
+        <Text allowFontScaling={false} style={style.labelText}>
           If you don't have it now, we can send you an email tomorrow to remind you to come back and start monitoring
           {' '}
           {kidName}
@@ -74,11 +75,11 @@ const CheckForDevice = ({ kidName }) => (
         animation="bounceIn"
         delay={500}
       >
-        <Button primary onPress={() => Actions.deviceSetup()}>
-          I'm ready
-        </Button>
         <Button onPress={() => Actions.sendReminder()}>
           Not ready yet
+        </Button>
+        <Button primary onPress={() => Actions.deviceSetup()}>
+          I'm ready
         </Button>
       </Animatable.View>
     </View>

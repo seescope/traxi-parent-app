@@ -54,6 +54,7 @@ const SplashScreen = ({ facebookAuth }: Props) => (
   <Background>
     <View style={containerStyle}>
       <Animatable.Text
+        allowFontScaling={false}
         useNativeDriver
         animation="bounceIn"
         delay={1000}

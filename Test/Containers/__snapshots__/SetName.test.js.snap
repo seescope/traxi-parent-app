@@ -20,7 +20,7 @@ exports[`renders the <SetName> component 1`] = `
   >
     <Text
       accessible={true}
-      allowFontScaling={true}
+      allowFontScaling={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -74,7 +74,7 @@ exports[`renders the <SetName> component 1`] = `
       >
         <Text
           accessible={true}
-          allowFontScaling={true}
+          allowFontScaling={false}
           ellipsizeMode="tail"
           style={
             Object {

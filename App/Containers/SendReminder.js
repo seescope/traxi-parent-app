@@ -46,13 +46,13 @@ const SendReminder = ({ kidName, onPress }) => (
       <Spacing height={16} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
-        <Text style={style.labelText}>
+        <Text allowFontScaling={false} style={style.labelText}>
           Not ready yet? No problem!
         </Text>
 
         <Spacing height={16} />
 
-        <Text style={style.labelText}>
+        <Text allowFontScaling={false} style={style.labelText}>
           Tap the button below and Traxi will send you a reminder to set up
           {' '}
           {kidName}
