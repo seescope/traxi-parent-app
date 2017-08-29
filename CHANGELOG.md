@@ -1,3 +1,7 @@
+## 7.7.3
+- Apple was cranky with 7.7.2, so we made 7.7.3.
+## 7.7.2
+- Fix issues with font scaling
 ## 7.7.1
 - Persist parent when using Facebook auth.
 ## 7.7.0
