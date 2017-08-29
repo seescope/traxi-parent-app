@@ -17,7 +17,7 @@ import bootApp from './App/AsyncActions/BootApp';
 import trackingMiddleware from './App/Middleware/Tracking';
 import firebaseTrackingMiddleware from './App/Middleware/FirebaseTracking';
 import impersonateParent from './App/AsyncActions/ImpersonateParent'; // eslint-disable-line
-// import actions from './parentAppActions.json';
+// import actions from './__mocks__/parentAppActions.json';
 // import replayActions from './App/Middleware/ReplayActions';
 
 I18n.fallbacks = true;
@@ -61,16 +61,11 @@ export default class extends React.Component {
 
     // TEST_PARENT_UUID, useful for... testing.
 
-    // const TEST_PARENT_UUID = 'ee716cfb-76dc-4e86-9e43-4577a378f255';
+    // const TEST_PARENT_UUID = '7b558b5c-ca0b-4941-82fc-c0398bf17964';
 
     // Uncomment to replay actions.
     // setTimeout(
-    //   () =>
-    //     replayActions(
-    //       TEST_PARENT_UUID,
-    //       actions,
-    //       this.store.dispatch
-    //     ),
+    //   () => replayActions(TEST_PARENT_UUID, actions, this.store.dispatch),
     //   1000
     // );
 

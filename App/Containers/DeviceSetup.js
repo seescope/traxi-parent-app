@@ -180,6 +180,10 @@ const DeviceSetup = (
         <View style={styles.buttonsContainer}>
           <Spacing height={10} />
 
+          <Button onPress={() => Intercom.displayMessageComposer()}>
+            {I18n.t('general.needHelp')}
+          </Button>
+
           {!isWaitingForDevice(step, deviceType) &&
             <Button primary onPress={nextStep}>
               {I18n.t('general.nextStep')}
@@ -190,10 +194,6 @@ const DeviceSetup = (
               <Spacing height={10} />
               <LoadingIndicator />
             </View>}
-
-          <Button onPress={() => Intercom.displayMessageComposer()}>
-            {I18n.t('general.needHelp')}
-          </Button>
         </View>
       </View>
     </View>

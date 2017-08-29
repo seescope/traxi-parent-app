@@ -108,19 +108,25 @@ const Form = (
   }: Props
 ) => (
   <View style={style.innerContainer}>
-    <Text style={style.labelText}>Your name:</Text>
+    <Text allowFontScaling={false} style={style.labelText}>Your name:</Text>
     <TextInput value={name} onChangeText={onNameChanged} />
 
-    <Text style={style.labelText}>Your email address:</Text>
+    <Text allowFontScaling={false} style={style.labelText}>
+      Your email address:
+    </Text>
     <TextInput
+      allowFontScaling={false}
       value={email}
       onChangeText={onEmailChanged}
       autoCapitalize="none"
       keyboardType="email-address"
     />
 
-    <Text style={style.labelText}>Choose a password:</Text>
+    <Text allowFontScaling={false} style={style.labelText}>
+      Choose a password:
+    </Text>
     <TextInput
+      allowFontScaling={false}
       value={password}
       secureTextEntry
       onChangeText={onPasswordChanged}

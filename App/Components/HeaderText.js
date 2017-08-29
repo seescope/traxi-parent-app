@@ -23,7 +23,7 @@ const headerStyle = style => {
 };
 
 const HeaderText = ({ children, style }) => (
-  <Text style={headerStyle(style)}>{children}</Text>
+  <Text allowFontScaling={false} style={headerStyle(style)}>{children}</Text>
 );
 
 HeaderText.propTypes = {
