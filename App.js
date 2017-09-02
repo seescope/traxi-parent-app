@@ -61,7 +61,7 @@ export default class extends React.Component {
 
     // TEST_PARENT_UUID, useful for... testing.
 
-    // const TEST_PARENT_UUID = '7b558b5c-ca0b-4941-82fc-c0398bf17964';
+    // const TEST_PARENT_UUID = 'test_parent';
 
     // Uncomment to replay actions.
     // setTimeout(

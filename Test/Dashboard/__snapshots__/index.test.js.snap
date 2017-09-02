@@ -212,28 +212,12 @@ exports[`renders correctly 1`] = `
                         Object {
                           "backgroundColor": "transparent",
                           "color": "#FFF",
-                          "fontSize": 96,
-                          "fontWeight": "100",
-                        }
-                      }
-                    >
-                      0
-                    </Text>
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      ellipsizeMode="tail"
-                      style={
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "#FFF",
                           "fontSize": 19,
                           "fontWeight": "200",
                         }
                       }
                     >
-                      minutes
-                       online today
+                      Loading..
                     </Text>
                   </View>
                 </View>

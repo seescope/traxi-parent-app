@@ -7,7 +7,10 @@ import lodash from 'lodash';
 import DeviceInfo from 'react-native-device-info';
 
 import { logError } from '../Utils';
-import { fetchedReports } from '../Reducers/Reports/reportsActions';
+import {
+  fetchingReports,
+  fetchedReports,
+} from '../Reducers/Reports/reportsActions';
 
 import type { Reports } from '../Reducers/Reports';
 import type { Dispatch, GetState } from '../Reducers';
@@ -16,6 +19,7 @@ const EMPTY_REPORTS: Reports = {};
 
 export default () =>
   (dispatch: Dispatch, getState: GetState) => {
+    dispatch(fetchingReports());
     const { kidsState } = getState();
     const UUIDs = Object.keys(kidsState);
     const UUIDString = UUIDs.join(',');
