@@ -178,8 +178,8 @@ describe('Boot App', () => {
       const actions = store.getActions();
 
       expect(actions[0].type).toEqual('ACTIVATED_PARENT');
-      expect(actions[1].type).toEqual('TEST_USER_LOGGED_IN');
-      expect(actions[2].type).toEqual('TEST_FETCH_REPORTS');
+      expect(actions[1].type).toEqual('TEST_FETCH_REPORTS');
+      expect(actions[2].type).toEqual('TEST_USER_LOGGED_IN');
 
       expect(Actions.dashboard).toHaveBeenCalled();
     });

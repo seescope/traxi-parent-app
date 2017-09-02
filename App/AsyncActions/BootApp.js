@@ -37,7 +37,7 @@ const hasInstalledKids = (kidsState: KidsState): boolean => {
 };
 
 export default () =>
-  async (dispatch: Dispatch, getState: GetState): Promise<any> => {
+  async (dispatch: Dispatch, getState: GetState): Promise<void> => {
     const { kidsState, parentState } = getState();
 
     // eslint-disable-next-line
@@ -50,33 +50,35 @@ export default () =>
 
     // The parent has configured at least one kid and completed setup
     if (isInstalled && completedSetup) {
-      Actions.dashboard({ type: 'replace' });
       dispatch(userLoggedIn());
-      return dispatch(fetchReports());
+      dispatch(fetchReports());
+      Actions.dashboard({ type: 'replace' });
+      return;
     }
 
     // The parent is upgrading from a version that is missing the activatedAt param
     if (isInstalled && isLegacyParent) {
       dispatch(activatedParent());
-      Actions.dashboard({ type: 'replace' });
+      dispatch(fetchReports());
       dispatch(userLoggedIn());
-      return dispatch(fetchReports());
+      Actions.dashboard({ type: 'replace' });
+      return;
     }
 
     // The parent has signed up, but has not completed setting up their kid:
     if (!isInstalled && startedSetup) {
       dispatch(userLoggedIn());
       dispatch(resetSetupState());
-      Actions.setName({ type: 'reset' });
-      return Promise.resolve();
+      Actions.setName({ type: 'replace' });
+      return;
     }
 
     // The parent has configured at least one kid but not completed setup
     if (isInstalled && !completedSetup) {
       dispatch(userLoggedIn());
       dispatch(getInitalUsage());
-      Actions.initialUsage({ type: 'reset' });
-      return Promise.resolve();
+      Actions.initialUsage({ type: 'replace' });
+      return;
     }
 
     const profileJSON = await AsyncStorage.getItem('profile');
@@ -85,13 +87,13 @@ export default () =>
     if (profileJSON) {
       const profile = JSON.parse(profileJSON);
 
-      return dispatch(migrateDataFromPreviousVersion(profile)).then(() => {
-        dispatch(fetchReports());
-        dispatch(userLoggedIn());
-        Actions.dashboard({ type: 'reset' });
-      });
+      await dispatch(migrateDataFromPreviousVersion(profile));
+      dispatch(fetchReports());
+      dispatch(userLoggedIn());
+      Actions.dashboard({ type: 'replace' });
+      return;
     }
 
     // Fresh state. Check to see if Deeplink has been set.
-    return dispatch(checkDeeplink());
+    dispatch(checkDeeplink());
   };

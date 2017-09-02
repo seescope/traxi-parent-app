@@ -25,9 +25,10 @@ describe('FetchReports', () => {
       });
 
     return store.dispatch(fetchReports()).then(() => {
-      const action = store.getActions()[0];
-      expect(action.type).toEqual('FETCHED_REPORTS');
-      expect(Object.keys(action.reports)).toContain(TEST_KID.UUID);
+      const actions = store.getActions();
+      expect(actions[0].type).toEqual('FETCHING_REPORTS');
+      expect(actions[1].type).toEqual('FETCHED_REPORTS');
+      expect(Object.keys(actions[1].reports)).toContain(TEST_KID.UUID);
     });
   });
 });

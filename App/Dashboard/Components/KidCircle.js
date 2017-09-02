@@ -54,6 +54,11 @@ const overlayTextSubheaderStyle = {
   fontWeight: '200',
 };
 
+const usageTextContainerStyle = {
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
 // Basic maths.
 const circleRadius = circleSize / 2;
 
@@ -86,8 +91,20 @@ export const getNiceTimeUnit = usage => {
 // Because the stroke extends the size of the circle, there's a bit of weirfness here.
 // The height and width must be extended by 4 to allow room for the stroke.
 // cx and cy are then incremented by 2 because of the change in the bounding box.
+const UsageText = ({ usage }) => (
+  <View style={usageTextContainerStyle}>
+    <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(usage)}</Text>
+    <Text style={overlayTextSubheaderStyle}>
+      {getNiceTimeUnit(usage)} online today
+    </Text>
+  </View>
+);
 
-const KidCircle = ({ kid, usage }) => (
+UsageText.propTypes = {
+  usage: React.PropTypes.number.isRequired,
+};
+
+const KidCircle = ({ kid, usage, loading }) => (
   <View style={containerStyle}>
     <Svg width={circleSize + 4} height={circleSize + 4} style={circleStyle}>
       <SVGCircle
@@ -105,10 +122,9 @@ const KidCircle = ({ kid, usage }) => (
     <Image style={kidAvatar} source={{ uri: kid.avatarURL }} />
 
     <View style={usageOverlayStyle}>
-      <Text style={overlayTextHeaderStyle}>{getNiceTimeUsed(usage)}</Text>
-      <Text style={overlayTextSubheaderStyle}>
-        {getNiceTimeUnit(usage)} online today
-      </Text>
+      {loading
+        ? <Text style={overlayTextSubheaderStyle}>Loading..</Text>
+        : <UsageText usage={usage} />}
     </View>
   </View>
 );
@@ -116,6 +132,7 @@ const KidCircle = ({ kid, usage }) => (
 KidCircle.propTypes = {
   kid: React.PropTypes.object.isRequired,
   usage: React.PropTypes.number.isRequired,
+  loading: React.PropTypes.bool.isRequired,
 };
 
 export default KidCircle;
