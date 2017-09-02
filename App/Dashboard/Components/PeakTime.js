@@ -6,7 +6,6 @@ import { getNiceUsage } from '../../Utils';
 import { SMALL_FONT_SIZE } from '../../Constants/Styles';
 import Bar from './Bar';
 
-
 const rowStyle = {
   flexDirection: 'row',
   alignItems: 'center',
@@ -42,7 +41,7 @@ export const getNiceName = name => {
   return `${startTimeString} - ${endTimeString}`;
 };
 
-const PeakTime = ({ name, usage, max }) =>
+const PeakTime = ({ name, usage, max }) => (
   <View style={rowStyle}>
     <View style={timeTextStyle}>
       <Text style={innerHeaderTextStyle}>{getNiceName(name)}</Text>
@@ -51,6 +50,7 @@ const PeakTime = ({ name, usage, max }) =>
 
     <Bar val={usage} max={max} />
   </View>
+);
 
 PeakTime.propTypes = {
   name: React.PropTypes.string.isRequired,

@@ -1,22 +1,19 @@
 import React from 'react';
 import { Animated, Dimensions } from 'react-native';
 
-
-export const getBarWidth = (max, val, maxWidth) =>
-  maxWidth * (val / max);
+export const getBarWidth = (max, val, maxWidth) => maxWidth * (val / max);
 
 const MINIMUM_SATURATION = 50;
 const MAXIMUM_SATURATION = 100;
 
 const getSaturation = (max, val) =>
-  MINIMUM_SATURATION + ((MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max));
+  MINIMUM_SATURATION + (MAXIMUM_SATURATION - MINIMUM_SATURATION) * (val / max);
 
 export const getBarColour = (max, val) =>
   `hsl(218, ${getSaturation(max, val)}%, 63%)`;
 
 const { width } = Dimensions.get('window');
-const maxWidth = width - 32 - 96 - 16; 
-
+const maxWidth = width - 32 - 96 - 16;
 
 class Bar extends React.Component {
   constructor(props) {
@@ -26,6 +23,14 @@ class Bar extends React.Component {
   }
 
   componentDidMount() {
+    this.animateBars();
+  }
+
+  componentDidUpdate() {
+    this.animateBars();
+  }
+
+  animateBars() {
     const { max, val } = this.props;
     const newWidth = getBarWidth(max, val, maxWidth);
     Animated.spring(this.width, {
@@ -41,7 +46,7 @@ class Bar extends React.Component {
       height: 16,
       backgroundColor: getBarColour(max, val),
       borderRadius: 4,
-    }
+    };
 
     return <Animated.View style={barStyle} />;
   }
