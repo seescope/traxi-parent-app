@@ -1,3 +1,6 @@
+## 7.7.4
+- Fix bars on dashboard
+- Improve boot up experience
 ## 7.7.3
 - Apple was cranky with 7.7.2, so we made 7.7.3.
 ## 7.7.2
