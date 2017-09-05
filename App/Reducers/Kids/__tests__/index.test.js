@@ -113,8 +113,8 @@ describe('Kids reducer', () => {
     it('Resets the setup state', () => {
       const previousState = {
         'abc-123': {
-          name: 'Something',
-          deviceType: 'Something',
+          name: 'Name',
+          deviceType: 'Device Type',
         },
       };
 
@@ -123,7 +123,7 @@ describe('Kids reducer', () => {
       };
 
       const { name, deviceType } = reducer(previousState, action)['abc-123'];
-      expect(name).toBeUndefined();
+      expect(name).toEqual('Name');
       expect(deviceType).toEqual('unknown');
     });
   });
