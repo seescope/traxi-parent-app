@@ -44,11 +44,13 @@ MOCK_USER.toJSON = () => 'jason';
 export const mockSignInWithCredential = jest.fn(() =>
   Promise.resolve(MOCK_USER));
 
+let mockVal = profile;
+
 export const initializeApp = () => {};
 export const mockRef = jest.fn(() => ({
   once: () =>
     Promise.resolve({
-      val: () => profile,
+      val: () => mockVal,
     }),
   update: () => jest.fn(),
   set: mockSet,
@@ -61,6 +63,10 @@ export const database = () => ({
   ref: mockRef,
   goOffline: () => {},
 });
+
+export const setMockVal = val => {
+  mockVal = val;
+};
 
 export const auth = () => ({
   currentUser: {
