@@ -1,3 +1,4 @@
+// @flow
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Text, View, Alert, Keyboard } from 'react-native';
@@ -14,6 +15,23 @@ import HeaderText from '../Components/HeaderText';
 import Spacing from '../Components/Spacing';
 import { GREY } from '../Constants/Colours';
 import STYLES from '../Constants/Styles';
+
+import type { Dispatch } from '../Reducers';
+
+type DispatchProps = {
+  dispatch: Dispatch
+};
+
+type StateProps = {
+  kidName: string,
+  kidUUID: string
+};
+
+type Props = {
+  kidName: string,
+  onPress: () => ?Promise<any>,
+  onNameChanged: (name: string) => void
+};
 
 const style = {
   container: {
@@ -34,7 +52,7 @@ const style = {
 // More than one character, excluding spaces.
 const isValid = kidName => kidName.replace(' ', '').length > 1;
 
-export const verifyName = kidName => {
+export const verifyName = (kidName: string): boolean => {
   Keyboard.dismiss();
   if (isValid(kidName)) {
     return true;
@@ -44,7 +62,7 @@ export const verifyName = kidName => {
   return false;
 };
 
-const SetName = ({ kidName, onPress, onNameChanged }) => (
+const SetName = ({ kidName, onPress, onNameChanged }: Props) => (
   <Background>
     <View style={style.container}>
       <HeaderText>{I18n.t('setName.header')}</HeaderText>
@@ -52,17 +70,14 @@ const SetName = ({ kidName, onPress, onNameChanged }) => (
       <Spacing height={16} />
 
       <View style={[STYLES.CARD, style.container]} elevation={6}>
-        <View style={style.innerContainer}>
+        <View>
           <Text allowFontScaling={false} style={style.labelText}>
             {I18n.t('setName.kidsName')}
           </Text>
 
           <TextInput
             value={kidName}
-            refFunc={ref => {
-              this.textInput = ref;
-            }}
-            onChangeText={text => onNameChanged(text)}
+            onChangeText={onNameChanged}
             onSubmitEditing={() => onPress()}
           />
         </View>
@@ -93,14 +108,19 @@ const mapStateToProps = state => {
   };
 };
 
-export const mergeProps = ({ kidName, kidUUID }, { dispatch }) => ({
+export const mergeProps = (
+  { kidName, kidUUID }: StateProps,
+  { dispatch }: DispatchProps
+): Props => ({
+  kidName,
   onPress: () => {
     if (!verifyName(kidName)) return null;
 
     Actions.checkForDevice();
     return dispatch(persistKid()).then(() => dispatch(watchKid()));
   },
-  onNameChanged: name => dispatch(setKidName(name, kidUUID)),
+  onNameChanged: (name: string) => dispatch(setKidName(name.trim(), kidUUID)),
 });
 
+// $FlowFixMe
 export default connect(mapStateToProps, null, mergeProps)(SetName);

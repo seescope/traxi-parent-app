@@ -69,9 +69,7 @@ exports[`renders the <SetName> component 1`] = `
         ]
       }
     >
-      <View
-        style={undefined}
-      >
+      <View>
         <Text
           accessible={true}
           allowFontScaling={false}
@@ -108,7 +106,7 @@ exports[`renders the <SetName> component 1`] = `
               }
             }
             underlineColorAndroid="#448AFF"
-            value={undefined}
+            value="John Bobson"
           />
           <View
             style={
