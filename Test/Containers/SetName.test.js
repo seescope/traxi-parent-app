@@ -42,9 +42,9 @@ it('handles setting the kid\'s name', () => {
 
   const { onNameChanged } = mergeProps(
     { kidUUID: 'abc-123' },
-    { dispatch: mockDispatch },
+    { dispatch: mockDispatch }
   );
-  onNameChanged('TEST_NAME');
+  onNameChanged('TEST_NAME ');
   expect(mockDispatch).toHaveBeenCalledWith({
     name: 'TEST_NAME',
     UUID: 'abc-123',
@@ -75,7 +75,7 @@ it('persists the kid and navigates to the next screen onPress', () => {
 
   const { onPress } = mergeProps(
     { kidName: TEST_KID_NAME },
-    { dispatch: mockDispatch },
+    { dispatch: mockDispatch }
   );
 
   return onPress(TEST_KID_NAME).then(() => {
