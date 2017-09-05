@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
 export const Actions = {
+  androidBack: jest.fn(),
   createKid: jest.fn(),
   walkthrough: jest.fn(),
   thankyou: jest.fn(),

@@ -137,30 +137,6 @@ export const getProfile = UUID =>
     .once('value')
     .then(snapshot => snapshot.val());
 
-export const backButtonHandler = store => {
-  const { setupState } = store.getState();
-  const { sceneName, step } = setupState;
-  console.log('Back button handler called!', sceneName, step);
-
-  if (sceneName === 'deviceSetup') {
-    if (step === 0) Actions.pop();
-    else store.dispatch({ type: 'PREVIOUS_STEP' });
-
-    return true;
-  }
-
-  try {
-    Actions.pop();
-  } catch (error) {
-    // The user is in the root scene - exit the app.
-    BackAndroid.exitApp();
-    return false;
-  }
-
-  // Default
-  return true;
-};
-
 export const cleanObjectForFirebase = object =>
   lodash.omitBy(object, lodash.isNil);
 
