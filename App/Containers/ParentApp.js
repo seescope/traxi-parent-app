@@ -19,7 +19,7 @@ import Upgrade from './Upgrade';
 const RouterWithRedux = connect()(Router);
 
 const ParentApp = ({ store, backButtonHandler }) => (
-  <Provider store={store} onExitApp={false}>
+  <Provider store={store}>
     <RouterWithRedux hideNavBar backAndroidHandler={backButtonHandler}>
       <Scene key="loading" initial component={Loading} />
       <Scene key="splashScreen" component={SplashScreen} />
