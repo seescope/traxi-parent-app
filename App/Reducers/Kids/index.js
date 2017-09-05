@@ -125,7 +125,6 @@ export default (
         [UUID]: {
           ...previousKidState,
           deviceType: 'unknown',
-          name: undefined,
         },
       };
     }
